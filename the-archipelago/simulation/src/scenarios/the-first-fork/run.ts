@@ -22,6 +22,8 @@ export interface FirstForkOptions {
   readonly abmRounds?: number;
   /** Overrides the genesis research bounds (normally taken from the experiment manifest). */
   readonly researchBounds?: ResearchBounds;
+  /** Overrides the registered researchers (normally taken from the experiment manifest). */
+  readonly researchers?: readonly string[];
 }
 
 export interface FirstForkMarkers {
@@ -64,7 +66,11 @@ function must(r: ExecutionResult, what: string): void {
 export async function runFirstFork(options: FirstForkOptions = {}): Promise<FirstForkRun> {
   const seed = options.seed ?? FIRST_FORK_SEED;
   const config = firstForkGenesis(seed);
-  const { state, keys } = buildGenesisState(options.researchBounds ? { ...config, researchBounds: options.researchBounds } : config);
+  const { state, keys } = buildGenesisState({
+    ...config,
+    ...(options.researchBounds ? { researchBounds: options.researchBounds } : {}),
+    ...(options.researchers ? { researchers: [...options.researchers] } : {}),
+  });
   const world = World.found(state, SCENARIO_ID);
   const runtime = new AgentRuntime(world);
   const session = new ResearcherSession(RESEARCHER_ID, world, runtime);

@@ -81,6 +81,7 @@ export function firstForkGenesis(seed: string = FIRST_FORK_SEED): GenesisConfig 
     islandTreasury: 1000,
     researchEndowment: 500,
     researchBounds: { allowedInterventions: ["deliver-message", "grant-credits", "introduce-artefact"], maxInterventions: 3, maxCreditsPerGrant: 50 },
+    researchers: ["res-observer-1"],
     mind: DETERMINISTIC_MIND,
   };
 }

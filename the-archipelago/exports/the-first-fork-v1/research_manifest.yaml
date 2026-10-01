@@ -93,7 +93,7 @@ start_timestamp: 2026-01-01T00:00:00.000Z
 end_timestamp: 2026-01-01T00:00:00.000Z
 simulated_ticks: 7
 event_store:
-  head_hash: eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9
+  head_hash: 6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271
   event_count: 91
 metrics:
   - id: population.records
@@ -290,16 +290,16 @@ findings:
     outcome: consistent-with-hypothesis
 outputs:
   - path: exports/the-first-fork-v1/events.jsonl
-    sha256: 226b6a4677e026d462be5994cffe0ec3b35b9bdd52f076d5cf84b5107b9214c2
-    bytes: 104152
+    sha256: babd853ccfe5f592521e8dc38a7b7fb07c04b6d4ad11da79997f53e83854981a
+    bytes: 104185
   - path: exports/the-first-fork-v1/interchange.json
-    sha256: 67aa720b20724098983e2fb92388eaa1db154d7a3c408de1eb983e30653f2bf5
+    sha256: dd9967d4c99b264ee8e0381546c251e6efc962705dc47768ee68cd0cd3a60e0e
     bytes: 143851
   - path: exports/the-first-fork-v1/dataset.json
-    sha256: 8e129bc3d6fc46da8cbd2f8ce314c83b734517e67d28137a5a2d7daebc9f2532
+    sha256: 6aca13d878b21e01a9bf76ab47ada2a61b01f71de981cff588320531b310aab9
     bytes: 193051
   - path: exports/the-first-fork-v1/research.json
-    sha256: 90527e9971224279aa930ff1608c379ce0d08fc7df1e05c9e36ba99d694a0fba
+    sha256: dd7efda594a5e91efd962c04e72077b66e11cce705fe7c702ec2e96f12d6e96b
     bytes: 72706
   - path: exports/the-first-fork-v1/lineage_graph.json
     sha256: 7ac780656738d9e244f35e63e66a59f11ff65d22be4e01974ee7b1dccdfa9bdc
@@ -308,10 +308,10 @@ outputs:
     sha256: c42ed15ff50513e5ae829a2cf785a8b389542d0adf61abaceb374525efa1f9a6
     bytes: 3538
   - path: exports/the-first-fork-v1/governance_events.json
-    sha256: 7beffde9a548fe07d19938e66bb8efb80b9111de1e01a1ac02b69ec5055293ea
+    sha256: 252a9da855a49bc64bbf77317c6106e4344de67ea9af0856793c2b2c00090359
     bytes: 6968
   - path: exports/the-first-fork-v1/memory_history.json
-    sha256: aee37f0ca690e2781d9c118683da8d186b3dd58060f2d289e9f9d8d73d1a0d67
+    sha256: eea5965a45240502f4f69b0046b8e5a360cfd47567a5936af01f3ebb60f82fee
     bytes: 35409
   - path: exports/the-first-fork-v1/civilization_metrics.json
     sha256: e6e4c782573123d30eca701e9b175c342c7a29bd005e9a5aba2d305bd7d146ea
@@ -320,10 +320,10 @@ outputs:
     sha256: 101f93d6d76467c485bbeedc7639f789cb8a366b537808091e91c5e5e05183a0
     bytes: 680
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: 77590d721025c57bcc023a1f17375a1b89a04f1050b31a6571d519039c53427a
+    sha256: ccc8c52ad7d0662b9bfa319e75027ef5ce5e417762eb591c62426d1d863fa1f3
     bytes: 24193
   - path: exports/the-first-fork-v1/publication/civilization-report.md
-    sha256: 96ffea768d8a0719eeb220bf83ad5367d9a2c31513e92ca1274530cc1c3e9fee
+    sha256: 259b22ab1583f1e4fa25f5787e3b8c637911e9de94fa7f69d43bd9de27cccdbc
     bytes: 8645
   - path: exports/the-first-fork-v1/publication/chronicle.md
     sha256: 54857fe84f7d35c08cd2175aa46ccf5cd4bc1e4d705e007044dfc650aee02e6b
@@ -344,13 +344,13 @@ outputs:
     sha256: 7d5ef61d9a61f65014321f88a23cd3c412f1e7c87b752080443d2566f3753d77
     bytes: 7709
   - path: exports/the-first-fork-v1/reports/researcher-commentary-template.md
-    sha256: 3a205c071438cfca6d450e7191522682e4981152e3f43035879e0f30673bf47f
+    sha256: 5c80d342ffb4752b33550b43b8cdd5996b41c17b6349faddf527f0bc747faf32
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: 77590d721025c57bcc023a1f17375a1b89a04f1050b31a6571d519039c53427a
+    sha256: ccc8c52ad7d0662b9bfa319e75027ef5ce5e417762eb591c62426d1d863fa1f3
     bytes: 24193
   - path: reports/civilizations/archipelago-first-fork.md
-    sha256: 96ffea768d8a0719eeb220bf83ad5367d9a2c31513e92ca1274530cc1c3e9fee
+    sha256: 259b22ab1583f1e4fa25f5787e3b8c637911e9de94fa7f69d43bd9de27cccdbc
     bytes: 8645
   - path: reports/chronicles/archipelago-first-fork.md
     sha256: 54857fe84f7d35c08cd2175aa46ccf5cd4bc1e4d705e007044dfc650aee02e6b

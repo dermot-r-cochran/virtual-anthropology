@@ -207,7 +207,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 - Simulation: 0.1.0; interchange v1
 - Configuration hash: `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995`
 - Seed: `archipelago/the-first-fork/v1`
-- Event store head hash: `eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9` (91 events)
+- Event store head hash: `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` (91 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
 - Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`
 

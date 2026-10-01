@@ -1,6 +1,6 @@
 # Researcher commentary — the-first-fork-v1
 
-Dataset head hash: `eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9`
+Dataset head hash: `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271`
 
 _Template. Fill each section; keep observations (what the records show) separate from interpretations (what you think they mean)._
 

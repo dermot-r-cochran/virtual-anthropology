@@ -16,7 +16,7 @@
     "scenario:first-fork": "tsx src/cli.ts run ../experiments/the-first-fork/experiment.yaml",
     "publish:first-fork": "SOURCE_DATE_EPOCH=1767225600 tsx src/cli.ts publish ../experiments/the-first-fork/experiment.yaml ..",
     "verify:first-fork": "tsx src/cli.ts verify ../exports/the-first-fork-v1 ../experiments/the-first-fork/experiment.yaml",
-    "bridge": "tsx src/bridge/server.ts"
+    "bridge": "tsx src/bridge/server.ts ../experiments/the-first-fork/experiment.yaml"
   },
   "dependencies": {
     "yaml": "^2.9.1",

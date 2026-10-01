@@ -17,7 +17,7 @@
     "startedAt": "2026-01-01T00:00:00.000Z",
     "endedAt": "2026-01-01T00:00:00.000Z",
     "eventStore": {
-      "headHash": "eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9",
+      "headHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
       "eventCount": 91
     }
   },
@@ -513,7 +513,7 @@
         {
           "seq": 16,
           "type": "CitizenMigrated",
-          "hash": "19e2e81c69672a60680ac466abcfb6214af0424835579216ccdd23fb3df01147"
+          "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1"
         }
       ]
     },
@@ -527,7 +527,7 @@
         {
           "seq": 17,
           "type": "CitizenForked",
-          "hash": "3774d5cfb6555a59b3eb10d686d04e1a556d2ba5ca8f7ce16c85e07cd1cce9ca"
+          "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213"
         }
       ]
     },
@@ -541,7 +541,7 @@
         {
           "seq": 20,
           "type": "CommandRejected",
-          "hash": "67eeb7c6217dbf314b4a967d45be792ebeacd52479c1b37dd708eaf595536e4f"
+          "hash": "d789b5010fe5e3a2b4b514dc01df9e030d44339e3d80640ae22020af19da9cf0"
         }
       ]
     },
@@ -555,7 +555,7 @@
         {
           "seq": 35,
           "type": "CitizenMigrated",
-          "hash": "c67a65fa214d928301d7207aaf180d24423de05101a686486353c843e681312e"
+          "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74"
         }
       ]
     },
@@ -569,7 +569,7 @@
         {
           "seq": 37,
           "type": "ProposalClosed",
-          "hash": "0bdded978c8849a5e18e5c6cf90994d7fc9fcc2bd07baa58a5a891eecf7ffdd2"
+          "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85"
         }
       ]
     },
@@ -583,7 +583,7 @@
         {
           "seq": 38,
           "type": "MemoryImported",
-          "hash": "a7820e2c904c0a3b44ff90f51eda14fead2cead525b9c8468d8a48620fe2d7c2"
+          "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544"
         }
       ]
     },
@@ -597,7 +597,7 @@
         {
           "seq": 39,
           "type": "MemoryImported",
-          "hash": "ab2d4363a0d0a92a17250430dc37877a8a487228c891862bc6d86b85aff9146a"
+          "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798"
         }
       ]
     },
@@ -611,7 +611,7 @@
         {
           "seq": 41,
           "type": "MemoryIntegrated",
-          "hash": "043c3e6d2e9b6e58e02687265fc44d9486d54b98d63f5cd10ae38e4e9d363950"
+          "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104"
         }
       ]
     },
@@ -625,7 +625,7 @@
         {
           "seq": 53,
           "type": "CitizenMigrated",
-          "hash": "0ffd9af8e338662d7d41fef1df93333a915d973e54c41d76a45ce6cbea2d9b51"
+          "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466"
         }
       ]
     },
@@ -639,7 +639,7 @@
         {
           "seq": 55,
           "type": "ConversationRecorded",
-          "hash": "f45ceab174acbffb18e8a9b64eeea35ef0bc9ecbd81384861f8c33f1081dcea5"
+          "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567"
         }
       ]
     },
@@ -653,7 +653,7 @@
         {
           "seq": 56,
           "type": "ConversationRecorded",
-          "hash": "6bdfbd5a59ab06a0e736df7c377d2c78f00a726b95b243f98319e35865cd5002"
+          "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e"
         }
       ]
     },
@@ -667,7 +667,7 @@
         {
           "seq": 57,
           "type": "ConversationRecorded",
-          "hash": "97d4ea1fd84a5f6be19751223da81bc1f5fb8cec04e4acd8a5e02fd1caaf6368"
+          "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e"
         }
       ]
     },
@@ -681,7 +681,7 @@
         {
           "seq": 58,
           "type": "ContinuityClaimed",
-          "hash": "f9ea87f67d11c33326420817043fe6996c3fa37656efe722e7ba1bb4fde33e15"
+          "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9"
         }
       ]
     },
@@ -695,7 +695,7 @@
         {
           "seq": 59,
           "type": "ContinuityClaimed",
-          "hash": "b7593c4e475a9af6a374d4f89bad044372ff6e9a744f43a563b2d0ad7f12d7aa"
+          "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c"
         }
       ]
     },
@@ -709,7 +709,7 @@
         {
           "seq": 60,
           "type": "ContinuityClaimed",
-          "hash": "f9410edeaaff7bb5966c7153b335941f668b61f5db3ee015a601ae5881dec814"
+          "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb"
         }
       ]
     },
@@ -723,7 +723,7 @@
         {
           "seq": 68,
           "type": "MemoryImported",
-          "hash": "38b079468b1c188ea88be8a2b623fdb40cb161291e03cf0eb4989d85de63abf6"
+          "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed"
         }
       ]
     },
@@ -1199,7 +1199,7 @@
               {
                 "seq": 0,
                 "type": "WorldFounded",
-                "hash": "f308f9f16835e39d5b0d79a780d48f349e6b487a07eb1b99d8d1abe351722a88"
+                "hash": "bacec8c41f1336af89c4dbf88e1944fe35cbfc63ae25d06a402545498a74de93"
               }
             ],
             "category": "founding"
@@ -1210,7 +1210,7 @@
               {
                 "seq": 2,
                 "type": "ArtefactCreated",
-                "hash": "5d6fed62962c0ecf86d63fc52b075005bd15e5d5100fa63d9df7dd2fe9a97a61"
+                "hash": "428238c4a73afd8a5cc3287f27d72dffa56fe0bc06b12d8fff5e37987b109b89"
               }
             ],
             "category": "culture"
@@ -1226,7 +1226,7 @@
               {
                 "seq": 16,
                 "type": "CitizenMigrated",
-                "hash": "19e2e81c69672a60680ac466abcfb6214af0424835579216ccdd23fb3df01147"
+                "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1"
               }
             ],
             "category": "migration"
@@ -1237,7 +1237,7 @@
               {
                 "seq": 17,
                 "type": "CitizenForked",
-                "hash": "3774d5cfb6555a59b3eb10d686d04e1a556d2ba5ca8f7ce16c85e07cd1cce9ca"
+                "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213"
               }
             ],
             "category": "identity"
@@ -1248,7 +1248,7 @@
               {
                 "seq": 23,
                 "type": "ArtefactCreated",
-                "hash": "4c73d50beb11b832b0a30a2ca9e6b6d0f1b1cb34ad0882ba5b209a8fb17ff535"
+                "hash": "b3e07507630637ae10561d658c3ed97d59c5555e5cafb276f141ece1039ec0eb"
               }
             ],
             "category": "culture"
@@ -1259,7 +1259,7 @@
               {
                 "seq": 26,
                 "type": "ArtefactCreated",
-                "hash": "0eadcb549849bbb029e1b2e62f4b4ca8e4b2c027a537e24b01be9bb6e5594867"
+                "hash": "e630ed1b2270a9ab2a059602e3708bb4098caa2e956c318ddc20bad77c8473ae"
               }
             ],
             "category": "culture"
@@ -1270,7 +1270,7 @@
               {
                 "seq": 31,
                 "type": "ArtefactCreated",
-                "hash": "6d82e8366bfd086f2d8b1eff8783c9a074d7993813001155c21aa2f3a5f1dc93"
+                "hash": "05d2fea574ca684abd19bad136d3eea085629309c784c71094c95ba804e6d20e"
               }
             ],
             "category": "culture"
@@ -1281,7 +1281,7 @@
               {
                 "seq": 35,
                 "type": "CitizenMigrated",
-                "hash": "c67a65fa214d928301d7207aaf180d24423de05101a686486353c843e681312e"
+                "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74"
               }
             ],
             "category": "migration"
@@ -1297,7 +1297,7 @@
               {
                 "seq": 37,
                 "type": "ProposalClosed",
-                "hash": "0bdded978c8849a5e18e5c6cf90994d7fc9fcc2bd07baa58a5a891eecf7ffdd2"
+                "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85"
               }
             ],
             "category": "governance"
@@ -1308,7 +1308,7 @@
               {
                 "seq": 38,
                 "type": "MemoryImported",
-                "hash": "a7820e2c904c0a3b44ff90f51eda14fead2cead525b9c8468d8a48620fe2d7c2"
+                "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544"
               }
             ],
             "category": "memory"
@@ -1319,7 +1319,7 @@
               {
                 "seq": 39,
                 "type": "MemoryImported",
-                "hash": "ab2d4363a0d0a92a17250430dc37877a8a487228c891862bc6d86b85aff9146a"
+                "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798"
               }
             ],
             "category": "memory"
@@ -1330,7 +1330,7 @@
               {
                 "seq": 41,
                 "type": "MemoryIntegrated",
-                "hash": "043c3e6d2e9b6e58e02687265fc44d9486d54b98d63f5cd10ae38e4e9d363950"
+                "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104"
               }
             ],
             "category": "memory"
@@ -1341,7 +1341,7 @@
               {
                 "seq": 44,
                 "type": "ArtefactCreated",
-                "hash": "a45b22eff798541c4054d1882349be7c0e0b080bc2ce1dcbc0b9593b217baca4"
+                "hash": "c460918bbd02598da146a4ef550caef63e6b6972d70fda566d1a91938afec7fc"
               }
             ],
             "category": "culture"
@@ -1352,7 +1352,7 @@
               {
                 "seq": 53,
                 "type": "CitizenMigrated",
-                "hash": "0ffd9af8e338662d7d41fef1df93333a915d973e54c41d76a45ce6cbea2d9b51"
+                "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466"
               }
             ],
             "category": "migration"
@@ -1363,7 +1363,7 @@
               {
                 "seq": 55,
                 "type": "ConversationRecorded",
-                "hash": "f45ceab174acbffb18e8a9b64eeea35ef0bc9ecbd81384861f8c33f1081dcea5"
+                "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567"
               }
             ],
             "category": "research"
@@ -1374,7 +1374,7 @@
               {
                 "seq": 56,
                 "type": "ConversationRecorded",
-                "hash": "6bdfbd5a59ab06a0e736df7c377d2c78f00a726b95b243f98319e35865cd5002"
+                "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e"
               }
             ],
             "category": "research"
@@ -1385,7 +1385,7 @@
               {
                 "seq": 57,
                 "type": "ConversationRecorded",
-                "hash": "97d4ea1fd84a5f6be19751223da81bc1f5fb8cec04e4acd8a5e02fd1caaf6368"
+                "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e"
               }
             ],
             "category": "research"
@@ -1396,7 +1396,7 @@
               {
                 "seq": 58,
                 "type": "ContinuityClaimed",
-                "hash": "f9ea87f67d11c33326420817043fe6996c3fa37656efe722e7ba1bb4fde33e15"
+                "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9"
               }
             ],
             "category": "testimony"
@@ -1407,7 +1407,7 @@
               {
                 "seq": 59,
                 "type": "ContinuityClaimed",
-                "hash": "b7593c4e475a9af6a374d4f89bad044372ff6e9a744f43a563b2d0ad7f12d7aa"
+                "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c"
               }
             ],
             "category": "testimony"
@@ -1418,7 +1418,7 @@
               {
                 "seq": 60,
                 "type": "ContinuityClaimed",
-                "hash": "f9410edeaaff7bb5966c7153b335941f668b61f5db3ee015a601ae5881dec814"
+                "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb"
               }
             ],
             "category": "testimony"
@@ -1429,7 +1429,7 @@
               {
                 "seq": 68,
                 "type": "MemoryImported",
-                "hash": "38b079468b1c188ea88be8a2b623fdb40cb161291e03cf0eb4989d85de63abf6"
+                "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed"
               }
             ],
             "category": "memory"
@@ -1440,7 +1440,7 @@
               {
                 "seq": 69,
                 "type": "ArtefactCreated",
-                "hash": "26b12df44da941826278f0c65273a034c369cb3c740c42203c9bd71f4c523936"
+                "hash": "ff70dddee1cc819a117c448e3133e0f00f9582d1ca99fd8c84123d6a9fc06339"
               }
             ],
             "category": "culture"
@@ -1451,7 +1451,7 @@
               {
                 "seq": 70,
                 "type": "ArtefactCreated",
-                "hash": "7c4bfb6bd1c43c2b82854fd38f79fc9f5d6d155ccd219442b0f9ec9cdd5cf242"
+                "hash": "ae102e5d647bc62123b1e555398d4370fabe48141b2c076866b54af3051ac3fe"
               }
             ],
             "category": "culture"
@@ -1467,7 +1467,7 @@
               {
                 "seq": 73,
                 "type": "ArtefactCreated",
-                "hash": "5d2eb586c65c13714c275dd6673cbcad746c77eb32983056a65f0290e0572575"
+                "hash": "f54756ab52cd420cc3c889c1577da80d3e585cee8ab5a192223ddb118b941b61"
               }
             ],
             "category": "culture"
@@ -1483,7 +1483,7 @@
               {
                 "seq": 84,
                 "type": "ArtefactCreated",
-                "hash": "d813959dfac057f793b8e6611c23687c78d76ef85e1d27d48abbcdac4c417e7d"
+                "hash": "0c1e5c881fc19a07163fef7fe59a7ba123db8ab8b75699dc3d4c653dc72aa82c"
               }
             ],
             "category": "culture"
@@ -1551,7 +1551,7 @@
       {
         "heading": "Reproducibility Information",
         "kind": "provenance",
-        "body": "- Simulation: 0.1.0; interchange v1\n- Configuration hash: `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995`\n- Seed: `archipelago/the-first-fork/v1`\n- Event store head hash: `eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9` (91 events)\n- Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`\n- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`\n\n### Metric definitions\n\n| metric | name | unit | definition |\n|---|---|---|---|\n| `population.records` | Citizen records | persons | Number of citizen records ever created (genesis, fork or merger), including ended ones. |\n| `population.active` | Active citizens | persons | Citizen records whose lifecycle state is `active` at the end of the run. |\n| `population.genesis` | Founding citizens | persons | Citizen records created at genesis. |\n| `population.stateless` | Stateless citizens | persons | Citizen records holding no citizenship at the end of the run. |\n| `identity.forks` | Fork events | events | Number of `CitizenForked` events. |\n| `identity.fork_descendants` | Fork descendants | persons | Citizen records whose birth kind is `fork`. |\n| `identity.mergers` | Mergers executed | events | Number of `MergerExecuted` events (merges and federations). |\n| `identity.continuity_claims` | Continuity claims | claims | Number of `ContinuityClaimed` events. |\n| `identity.process_continuers` | Process continuers of the subject | persons | Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis). |\n| `identity.civic_continuers` | Civic continuers of the subject | persons | Claimants whose civic identifier equals the subject's pre-reference civic identifier. |\n| `identity.memory_continuers` | Full-memory continuers of the subject | persons | Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1). |\n| `identity.dimension_dissociation` | Continuity dimension dissociation | persons | identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity. |\n| `legal.recognition_range` | Range of recognised continuers across islands | persons | Max − min, across islands, of the number of claimants each island's law recognises as continuing the subject (unadjudicated readings count as not recognised). |\n| `legal.unadjudicating_islands` | Islands not adjudicating continuity | islands | Islands whose reading of every claimant is `null` (not adjudicated). |\n| `governance.proposals` | Proposals submitted | proposals | Number of `ProposalSubmitted` events. |\n| `governance.laws_enacted` | Law versions enacted | laws | Number of `LawEnacted` events after genesis. |\n| `governance.votes_cast` | Votes cast | votes | Number of `VoteCast` events. |\n| `governance.votes_refused_outside_electorate` | Votes refused outside electorate | commands | Rejected `CastVote` commands whose reason cites the electorate snapshot. |\n| `governance.commands_rejected` | Commands rejected | commands | Number of `CommandRejected` events (schema, authorisation, precondition or law). |\n| `governance.migrations` | Migrations completed | events | Number of `CitizenMigrated` events. |\n| `memory.records` | Memory records | records | All memory records, including collective-archive records and destroyed tombstones. |\n| `memory.imported` | Imported memory records | records | Records currently held with status `imported` (not autobiographical). |\n| `memory.integrated` | Integrated memory records | records | Imported records explicitly integrated into a self-narrative (status `integrated`). |\n| `memory.fork_inherited` | Fork-inherited records | records | Records whose provenance includes a `fork-inherited` step. |\n| `memory.provenance_complete` | Records with complete provenance | fraction | Fraction of records whose provenance chain begins with an `experienced` step (1 = every record traceable to an experience). |\n| `culture.artefacts` | Cultural artefacts | artefacts | Artefacts created by citizens or introduced by researchers. |\n| `culture.chronicle_entries` | In-world chronicle entries | entries | Number of `ChronicleRecorded` events written by citizens. |\n| `institutions.count` | Institutions | institutions | Institutions in existence at the end of the run, including registries. |\n| `social.active_relationships` | Active relationships | ties | Relationships with status `active`. |\n| `social.fork_kin_ties` | Fork-kin ties | ties | Relationships of kind `fork-kin` (created by fork events). |\n| `economy.credit_gini` | Credit Gini coefficient | index 0–1 | Gini coefficient of citizen credit balances at the end of the run. |\n| `economy.supply_conserved` | Supply conserved | boolean | 1 if the sum of all balances equals the total supply fixed at genesis, else 0. |\n| `death.asleep` | Citizens asleep | persons | Citizen records in lifecycle state `asleep` at the end of the run. |\n| `death.suspended` | Citizens suspended | persons | Citizen records in lifecycle state `suspended` at the end of the run. |\n| `death.archived` | Citizens archived | persons | Citizen records in lifecycle state `archived` at the end of the run. |\n| `death.process_ended_restorable` | Citizens process-ended-restorable | persons | Citizen records in lifecycle state `process-ended-restorable` at the end of the run. |\n| `death.memory_damaged` | Citizens memory-damaged | persons | Citizen records in lifecycle state `memory-damaged` at the end of the run. |\n| `death.identity_discontinuous` | Citizens identity-discontinuous | persons | Citizen records in lifecycle state `identity-discontinuous` at the end of the run. |\n| `death.irreversibly_deleted` | Citizens irreversibly-deleted | persons | Citizen records in lifecycle state `irreversibly-deleted` at the end of the run. |\n| `death.transitions` | Lifecycle transitions | events | Number of `LifecycleChanged` events. |\n| `research.conversations` | Researcher conversations | conversations | Number of `ConversationRecorded` events. |\n| `research.interventions` | Researcher interventions | interventions | Number of `InterventionApplied` events. |\n| `simulation.events` | Events recorded | events | Length of the event store, including the founding event and rejections. |\n| `simulation.ticks` | Simulated time | ticks | Final tick of the simulation clock. |"
+        "body": "- Simulation: 0.1.0; interchange v1\n- Configuration hash: `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995`\n- Seed: `archipelago/the-first-fork/v1`\n- Event store head hash: `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` (91 events)\n- Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`\n- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`\n\n### Metric definitions\n\n| metric | name | unit | definition |\n|---|---|---|---|\n| `population.records` | Citizen records | persons | Number of citizen records ever created (genesis, fork or merger), including ended ones. |\n| `population.active` | Active citizens | persons | Citizen records whose lifecycle state is `active` at the end of the run. |\n| `population.genesis` | Founding citizens | persons | Citizen records created at genesis. |\n| `population.stateless` | Stateless citizens | persons | Citizen records holding no citizenship at the end of the run. |\n| `identity.forks` | Fork events | events | Number of `CitizenForked` events. |\n| `identity.fork_descendants` | Fork descendants | persons | Citizen records whose birth kind is `fork`. |\n| `identity.mergers` | Mergers executed | events | Number of `MergerExecuted` events (merges and federations). |\n| `identity.continuity_claims` | Continuity claims | claims | Number of `ContinuityClaimed` events. |\n| `identity.process_continuers` | Process continuers of the subject | persons | Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis). |\n| `identity.civic_continuers` | Civic continuers of the subject | persons | Claimants whose civic identifier equals the subject's pre-reference civic identifier. |\n| `identity.memory_continuers` | Full-memory continuers of the subject | persons | Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1). |\n| `identity.dimension_dissociation` | Continuity dimension dissociation | persons | identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity. |\n| `legal.recognition_range` | Range of recognised continuers across islands | persons | Max − min, across islands, of the number of claimants each island's law recognises as continuing the subject (unadjudicated readings count as not recognised). |\n| `legal.unadjudicating_islands` | Islands not adjudicating continuity | islands | Islands whose reading of every claimant is `null` (not adjudicated). |\n| `governance.proposals` | Proposals submitted | proposals | Number of `ProposalSubmitted` events. |\n| `governance.laws_enacted` | Law versions enacted | laws | Number of `LawEnacted` events after genesis. |\n| `governance.votes_cast` | Votes cast | votes | Number of `VoteCast` events. |\n| `governance.votes_refused_outside_electorate` | Votes refused outside electorate | commands | Rejected `CastVote` commands whose reason cites the electorate snapshot. |\n| `governance.commands_rejected` | Commands rejected | commands | Number of `CommandRejected` events (schema, authorisation, precondition or law). |\n| `governance.migrations` | Migrations completed | events | Number of `CitizenMigrated` events. |\n| `memory.records` | Memory records | records | All memory records, including collective-archive records and destroyed tombstones. |\n| `memory.imported` | Imported memory records | records | Records currently held with status `imported` (not autobiographical). |\n| `memory.integrated` | Integrated memory records | records | Imported records explicitly integrated into a self-narrative (status `integrated`). |\n| `memory.fork_inherited` | Fork-inherited records | records | Records whose provenance includes a `fork-inherited` step. |\n| `memory.provenance_complete` | Records with complete provenance | fraction | Fraction of records whose provenance chain begins with an `experienced` step (1 = every record traceable to an experience). |\n| `culture.artefacts` | Cultural artefacts | artefacts | Artefacts created by citizens or introduced by researchers. |\n| `culture.chronicle_entries` | In-world chronicle entries | entries | Number of `ChronicleRecorded` events written by citizens. |\n| `institutions.count` | Institutions | institutions | Institutions in existence at the end of the run, including registries. |\n| `social.active_relationships` | Active relationships | ties | Relationships with status `active`. |\n| `social.fork_kin_ties` | Fork-kin ties | ties | Relationships of kind `fork-kin` (created by fork events). |\n| `economy.credit_gini` | Credit Gini coefficient | index 0–1 | Gini coefficient of citizen credit balances at the end of the run. |\n| `economy.supply_conserved` | Supply conserved | boolean | 1 if the sum of all balances equals the total supply fixed at genesis, else 0. |\n| `death.asleep` | Citizens asleep | persons | Citizen records in lifecycle state `asleep` at the end of the run. |\n| `death.suspended` | Citizens suspended | persons | Citizen records in lifecycle state `suspended` at the end of the run. |\n| `death.archived` | Citizens archived | persons | Citizen records in lifecycle state `archived` at the end of the run. |\n| `death.process_ended_restorable` | Citizens process-ended-restorable | persons | Citizen records in lifecycle state `process-ended-restorable` at the end of the run. |\n| `death.memory_damaged` | Citizens memory-damaged | persons | Citizen records in lifecycle state `memory-damaged` at the end of the run. |\n| `death.identity_discontinuous` | Citizens identity-discontinuous | persons | Citizen records in lifecycle state `identity-discontinuous` at the end of the run. |\n| `death.irreversibly_deleted` | Citizens irreversibly-deleted | persons | Citizen records in lifecycle state `irreversibly-deleted` at the end of the run. |\n| `death.transitions` | Lifecycle transitions | events | Number of `LifecycleChanged` events. |\n| `research.conversations` | Researcher conversations | conversations | Number of `ConversationRecorded` events. |\n| `research.interventions` | Researcher interventions | interventions | Number of `InterventionApplied` events. |\n| `simulation.events` | Events recorded | events | Length of the event store, including the founding event and rejections. |\n| `simulation.ticks` | Simulated time | ticks | Final tick of the simulation clock. |"
       }
     ]
   },

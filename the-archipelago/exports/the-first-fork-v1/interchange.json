@@ -11,7 +11,7 @@
       "tick": 0,
       "type": "WorldFounded",
       "actor": "system:genesis",
-      "hash": "f308f9f16835e39d5b0d79a780d48f349e6b487a07eb1b99d8d1abe351722a88",
+      "hash": "bacec8c41f1336af89c4dbf88e1944fe35cbfc63ae25d06a402545498a74de93",
       "citizens": [],
       "summary": "The Archipelago is founded for scenario \"the-first-fork\" with 9 citizens on four islands.",
       "data": {
@@ -24,7 +24,7 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0001",
-      "hash": "c27101e71a7bbd80d4dcf55b8e674b11483c077cfd9244ca87bde218c9b48945",
+      "hash": "82d0360b83f1df4f5103178818a30cac82147e3e043e732ea513e315f63e9e21",
       "citizens": [
         "cit-0001"
       ],
@@ -66,7 +66,7 @@
       "tick": 0,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0001",
-      "hash": "5d6fed62962c0ecf86d63fc52b075005bd15e5d5100fa63d9df7dd2fe9a97a61",
+      "hash": "428238c4a73afd8a5cc3287f27d72dffa56fe0bc06b12d8fff5e37987b109b89",
       "citizens": [
         "cit-0001"
       ],
@@ -92,7 +92,7 @@
       "tick": 0,
       "type": "ProposalSubmitted",
       "actor": "citizen:cit-0004",
-      "hash": "774ca2e931a38700c0663d6600fae19c89291e18e149b238564c216ee0484f11",
+      "hash": "133aa02b57950238b7b8f732255347dba35b2eac63facd108b7b5ed933b5ca56",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -126,7 +126,7 @@
       "tick": 0,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0002",
-      "hash": "00c99a8c3e9302aca66704bffd30542c74b1230ce57f2f82e230dbbde7b3941b",
+      "hash": "9f87a7be95d1fab9020b227740505e59afde63303d08d8a09d64320104d0ead9",
       "citizens": [
         "cit-0001",
         "cit-0002"
@@ -145,7 +145,7 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "b252da44ecfd86f30cb9aad848393560ea6084a0f9f91e3e8a7f09d860d61381",
+      "hash": "a6e7bfc883e456ead8b0bbb80f88d48cfb81a47daef1e51f862fa10b251b481d",
       "citizens": [
         "cit-0003"
       ],
@@ -187,7 +187,7 @@
       "tick": 0,
       "type": "VoteCast",
       "actor": "citizen:cit-0004",
-      "hash": "f94f19d7e2b901ec3043e14b02268d968deec172420b5eb8eb3ada7b45037030",
+      "hash": "ca6ecc6c0456539f772c1e5641feb5f3c1080fda93a8a06570bc3e64b05bbd57",
       "citizens": [
         "cit-0004"
       ],
@@ -204,7 +204,7 @@
       "tick": 0,
       "type": "VoteCast",
       "actor": "citizen:cit-0005",
-      "hash": "458980c65ecaa0c59335010e1a07b34c1b194c48c725b18f3ebc0a0223ffdd87",
+      "hash": "48f613d141dde21cce1b7ccaf68b422f51d8dba7bcb36670b10d6f5a16f939c4",
       "citizens": [
         "cit-0005"
       ],
@@ -221,7 +221,7 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "7c5a098a9607ac275b11157876674171291ffb84d2f6dc712fc653444bd8f852",
+      "hash": "eeabfd3715a8f515bc5d6e68637a168b6790c06cc6ef46a201c560f78cc0e344",
       "citizens": [
         "cit-0006"
       ],
@@ -263,7 +263,7 @@
       "tick": 0,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0007",
-      "hash": "39cedcad2ba2714103a0ee457448805e2917029c35de0db6f3f20a92cc1599bf",
+      "hash": "ffa79585a40d54c7ce86352cfedea4f9fccd51d322cc0d71b842f01babcbc304",
       "citizens": [
         "cit-0006",
         "cit-0007"
@@ -282,7 +282,7 @@
       "tick": 0,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "83fad890971b44a8fd09b9ca65c15848ec40d87e3a299d9bbc9180976c93ab32",
+      "hash": "afe5f778e2f1cb1920f3cf0d7d7c9344b31945e01caa8b998373abb6ab84dd5c",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -301,7 +301,7 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "186f21a16b9a88a56c581b42d3f8c2c47c0fd847a0a8c1b2d8c005815a698741",
+      "hash": "73a45673c193c98e4c06f985e17349a9f1c1fcfb84b328a71355a8bfedb040c5",
       "citizens": [
         "cit-0009"
       ],
@@ -343,7 +343,7 @@
       "tick": 0,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "074b8897566c4686318889d2773c6bc2c775c68fabdf85551ac11174cca2e268",
+      "hash": "647fcbbbc6a3f7e6e8fc0b980022e8f79bdfca8e74efb0f08291a4de97a1954c",
       "citizens": [],
       "summary": "Time advances from tick 0 to 1.",
       "data": {
@@ -357,7 +357,7 @@
       "tick": 1,
       "type": "MigrationPetitioned",
       "actor": "citizen:cit-0001",
-      "hash": "c0c9b518ef07a55e57d065e26709f937d0a279cd8679d7184e9700440f4c4342",
+      "hash": "e908f8b451adf9c27fe57fb7bda91fc9eb51d225649455207c3819394d2fad1d",
       "citizens": [
         "cit-0001"
       ],
@@ -382,7 +382,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:continuity",
-      "hash": "dedeab13ba6eae14aaa78246c94c785457101e88f8cec98b5c17eb102b9c1dfa",
+      "hash": "b6fcdf6077a8068c5d5ae55d88bcf7fbd2b92755e8cd0060b4e5e6ad1ba73fad",
       "citizens": [],
       "summary": "The continuity registry approved the exit side of pet-0001 under law v1. Findings: emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process.",
       "data": {
@@ -410,7 +410,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:fork",
-      "hash": "338a63fd34cdafe7949df1a4e82e9d66393d8cbd0f60ff6a374a3ea7de481b71",
+      "hash": "5072b5addafc62703b41903f28fce75a16c567842848acfe8190aee64c643d0d",
       "citizens": [],
       "summary": "The fork registry approved the entry side of pet-0001 under law v1. Findings: descendants created here will each receive a separate identity.",
       "data": {
@@ -436,7 +436,7 @@
       "tick": 1,
       "type": "CitizenMigrated",
       "actor": "citizen:cit-0001",
-      "hash": "19e2e81c69672a60680ac466abcfb6214af0424835579216ccdd23fb3df01147",
+      "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1",
       "citizens": [
         "cit-0001"
       ],
@@ -455,7 +455,7 @@
       "tick": 1,
       "type": "CitizenForked",
       "actor": "citizen:cit-0001",
-      "hash": "3774d5cfb6555a59b3eb10d686d04e1a556d2ba5ca8f7ce16c85e07cd1cce9ca",
+      "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213",
       "citizens": [
         "cit-0001",
         "cit-0010",
@@ -923,7 +923,7 @@
       "tick": 1,
       "type": "CreditsTransferred",
       "actor": "citizen:cit-0001",
-      "hash": "929eef73e0f558194f0721c18a0d30b4bcae01ada084f8a765e37929be3949fa",
+      "hash": "7f1603e346b492733f8db5a729504aeb6db96af75a04de176379c27ed9ed8330",
       "citizens": [
         "cit-0001",
         "cit-0010"
@@ -942,7 +942,7 @@
       "tick": 1,
       "type": "CreditsTransferred",
       "actor": "citizen:cit-0001",
-      "hash": "e9e94b29a239da2a179e9990029e8d284d226d34374c3fed8215229ad29dd400",
+      "hash": "f88d099d437ffe7b23a2087c080aa37c66160d5d77f26361790e7e95729ae849",
       "citizens": [
         "cit-0001",
         "cit-0011"
@@ -961,7 +961,7 @@
       "tick": 1,
       "type": "CommandRejected",
       "actor": "citizen:cit-0010",
-      "hash": "67eeb7c6217dbf314b4a967d45be792ebeacd52479c1b37dd708eaf595536e4f",
+      "hash": "d789b5010fe5e3a2b4b514dc01df9e030d44339e3d80640ae22020af19da9cf0",
       "citizens": [
         "cit-0010"
       ],
@@ -980,7 +980,7 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "416c6f39c2e4d6f8ce2968786cefae354a9479b172d41bea3c009424781addf3",
+      "hash": "0196f6d717af42313d4f3df02f1e24753285179686fb4c83cf3e1ef697441ab9",
       "citizens": [
         "cit-0002"
       ],
@@ -1022,7 +1022,7 @@
       "tick": 1,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0003",
-      "hash": "9147520d78beeac4bda835e93f3370745c982b7afab38cb194895445cd458760",
+      "hash": "07f925d23ea0053cdf6c569f7dda57467cd86c4664a0d2dc9857f9cfcc2d912b",
       "citizens": [
         "cit-0001",
         "cit-0003"
@@ -1041,7 +1041,7 @@
       "tick": 1,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "4c73d50beb11b832b0a30a2ca9e6b6d0f1b1cb34ad0882ba5b209a8fb17ff535",
+      "hash": "b3e07507630637ae10561d658c3ed97d59c5555e5cafb276f141ece1039ec0eb",
       "citizens": [
         "cit-0004"
       ],
@@ -1067,7 +1067,7 @@
       "tick": 1,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0005",
-      "hash": "0af11cfd5c5a8bf09e40bc382d2da3af06c78eaf7b8bfb95bb6aebdfabcd1ede",
+      "hash": "f88332399ee8b0df328f2be8df74ea7e3c2f7c135c3ed35d569795321dac33da",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -1086,7 +1086,7 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "7bfe5846129e3fb5228e5626afe99dfb515858bd2d1f6debe959411d0b338f24",
+      "hash": "798f63cb3e3effdfca4b439573c5d6ec7fe0b6127bee21fce4bf5df1fa30e2fa",
       "citizens": [
         "cit-0006"
       ],
@@ -1128,7 +1128,7 @@
       "tick": 1,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0007",
-      "hash": "0eadcb549849bbb029e1b2e62f4b4ca8e4b2c027a537e24b01be9bb6e5594867",
+      "hash": "e630ed1b2270a9ab2a059602e3708bb4098caa2e956c318ddc20bad77c8473ae",
       "citizens": [
         "cit-0007"
       ],
@@ -1154,7 +1154,7 @@
       "tick": 1,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "7b0cad2ca0f53c1957effc591183022ebd01cd6346d3e8689e4a56e5f2455d3a",
+      "hash": "e24e46d4545885887bea9aaac74d2c19716d6f3dffa0002a4acdbcbbe9395f41",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -1173,7 +1173,7 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "55fcdb06190b291a5b7e6c332d81486fd5821db10bcb4319c656bb8dfa2a6b2c",
+      "hash": "c1e784fa9a0d595905b72cb4cbb2bb335e780b2cee71bba0fbc6e44bf55772cc",
       "citizens": [
         "cit-0009"
       ],
@@ -1215,7 +1215,7 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0010",
-      "hash": "d4bb8d0f2ca55bac9eaf9eff91a1d7c0d5d6d350d006c28811c10113d7c6d445",
+      "hash": "96e8a4b4b6c86c42080c730b3379b020d6bdd6524a2a99f11793e7f489d089ab",
       "citizens": [
         "cit-0010"
       ],
@@ -1257,7 +1257,7 @@
       "tick": 1,
       "type": "OccupationChanged",
       "actor": "citizen:cit-0010",
-      "hash": "589ca4a43d62596775ceba330eb90298db827ceae660ded5caa18d1ef0317b7e",
+      "hash": "d6ff96124c728122fae25e693d69450fc91f9b0abb1a0ec82efb67ed8d70910c",
       "citizens": [
         "cit-0010"
       ],
@@ -1274,7 +1274,7 @@
       "tick": 1,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0010",
-      "hash": "6d82e8366bfd086f2d8b1eff8783c9a074d7993813001155c21aa2f3a5f1dc93",
+      "hash": "05d2fea574ca684abd19bad136d3eea085629309c784c71094c95ba804e6d20e",
       "citizens": [
         "cit-0010"
       ],
@@ -1300,7 +1300,7 @@
       "tick": 1,
       "type": "MigrationPetitioned",
       "actor": "citizen:cit-0011",
-      "hash": "972bc38b7912d6e52e6a5c3c4c76f52b723033e9e2f971c35b2aeed79c54a0ca",
+      "hash": "cbceeab5fb4383d490e548a282af72f435bab12d540067ec37584113f3a058b2",
       "citizens": [
         "cit-0011"
       ],
@@ -1325,7 +1325,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:fork",
-      "hash": "9773a176251b0e7e9faf1f27c8f8636d196a2dc6a88067971fd8f07d65ddf3a0",
+      "hash": "2c59088365e51709367905ac2cd422633280e26973e7a4b88602b01c8b07894e",
       "citizens": [],
       "summary": "The fork registry approved the exit side of pet-0002 under law v1. Findings: emigration permitted.",
       "data": {
@@ -1351,7 +1351,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:mnemosyne",
-      "hash": "415ef5efbf7459636ceb638ca6977220b1ebae5220a99bf18f2f6bb002852e8a",
+      "hash": "d31840939b51d707951fb611bb8b58b2d5cd26bdd748ddefa3076791e09ca38f",
       "citizens": [],
       "summary": "The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure.",
       "data": {
@@ -1378,7 +1378,7 @@
       "tick": 1,
       "type": "CitizenMigrated",
       "actor": "citizen:cit-0011",
-      "hash": "c67a65fa214d928301d7207aaf180d24423de05101a686486353c843e681312e",
+      "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74",
       "citizens": [
         "cit-0011"
       ],
@@ -1397,7 +1397,7 @@
       "tick": 1,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "41cba6d9fc22cf04ad372a2a78394e376f4068e5734134ed2657e001aafae390",
+      "hash": "f706d82acc45b327230cd7e51a71a6173eec4e371112e157b7dbf191926913bb",
       "citizens": [],
       "summary": "Time advances from tick 1 to 4.",
       "data": {
@@ -1411,7 +1411,7 @@
       "tick": 4,
       "type": "ProposalClosed",
       "actor": "system:clock",
-      "hash": "0bdded978c8849a5e18e5c6cf90994d7fc9fcc2bd07baa58a5a891eecf7ffdd2",
+      "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85",
       "citizens": [],
       "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met).",
       "data": {
@@ -1431,7 +1431,7 @@
       "tick": 4,
       "type": "MemoryImported",
       "actor": "citizen:cit-0011",
-      "hash": "a7820e2c904c0a3b44ff90f51eda14fead2cead525b9c8468d8a48620fe2d7c2",
+      "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544",
       "citizens": [
         "cit-0006",
         "cit-0011"
@@ -1491,7 +1491,7 @@
       "tick": 4,
       "type": "MemoryImported",
       "actor": "citizen:cit-0011",
-      "hash": "ab2d4363a0d0a92a17250430dc37877a8a487228c891862bc6d86b85aff9146a",
+      "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798",
       "citizens": [
         "cit-0007",
         "cit-0011"
@@ -1551,7 +1551,7 @@
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0011",
-      "hash": "3d39b23805f45363160d417c11f91fe09f0d3137c551820912a001d403263d15",
+      "hash": "b27c444114532b90d6fd5c7119769a48e3d5cf12983fa0ad3be97d16ee1b76bd",
       "citizens": [
         "cit-0011"
       ],
@@ -1593,7 +1593,7 @@
       "tick": 4,
       "type": "MemoryIntegrated",
       "actor": "citizen:cit-0011",
-      "hash": "043c3e6d2e9b6e58e02687265fc44d9486d54b98d63f5cd10ae38e4e9d363950",
+      "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104",
       "citizens": [
         "cit-0011"
       ],
@@ -1610,7 +1610,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0002",
-      "hash": "7ac3681e6153e42a52190e2e6caae1e06fd31470faea4f6e76d4200cadb05b89",
+      "hash": "d9edd4e6b1dc0ac252ffb3f087e3229c4db14afc8093280557058909cd217ee7",
       "citizens": [
         "cit-0001",
         "cit-0002"
@@ -1629,7 +1629,7 @@
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "2b203262ffd1337d3203cd9fba865e429c8a48080ae795092a14bfe086272ae0",
+      "hash": "8cb54987dff601cf2882bac5533d51a82126ee8fd45de8df0f8b945bedbbd9f2",
       "citizens": [
         "cit-0003"
       ],
@@ -1671,7 +1671,7 @@
       "tick": 4,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "a45b22eff798541c4054d1882349be7c0e0b080bc2ce1dcbc0b9593b217baca4",
+      "hash": "c460918bbd02598da146a4ef550caef63e6b6972d70fda566d1a91938afec7fc",
       "citizens": [
         "cit-0004"
       ],
@@ -1697,7 +1697,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0005",
-      "hash": "45eb95af525a95b4835ffbd39291430c451343a528867ced47719d83f41e3973",
+      "hash": "88dec0b09e0b92f0f4e9c88aaf1984d2908dee27f5a4fb31538e2bfff1c4b7b9",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -1716,7 +1716,7 @@
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "22cc86378174927eb1af60f8c97b361f0a8849f1203fb112e023f8cbfff5ce64",
+      "hash": "85da46e9e459ceb17205b28889d8068cde01cfe0d52b92711fb19c0fce220f2d",
       "citizens": [
         "cit-0006"
       ],
@@ -1758,7 +1758,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0007",
-      "hash": "1ca6d8a89f72253887046d12527ef97611f021122feef272a1604baea7b7c833",
+      "hash": "64f9f4a977018186dcfa668e959106d88e486b875c0cabfee86082c55fafc259",
       "citizens": [
         "cit-0006",
         "cit-0007"
@@ -1777,7 +1777,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "8ff68d9c3d7b1bbb7ef0019c825da340f7bb2e63929c313ef3730a9101d12b0d",
+      "hash": "f3199da300f1b9dbd1327d92cf191bd2e16b4692e66970e70bd304aecd1c4ae3",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -1796,7 +1796,7 @@
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "c55077e7f7399ec05df30f3fc76f2e9e16ac9c7b7853901e5adc94323dd8634f",
+      "hash": "2cc3884af6fbc0bc875de5332a5404ac9aba8be6a6d9b2a3e21b531e54668f93",
       "citizens": [
         "cit-0009"
       ],
@@ -1838,7 +1838,7 @@
       "tick": 4,
       "type": "MigrationPetitioned",
       "actor": "citizen:cit-0001",
-      "hash": "554d1e0d800f0b17fc29876e19e7a7c0b9ef944fdb60df114ed124a2543c7ab3",
+      "hash": "b9eb99a8f660d0cd6956a2f65a44f16dec686e59e9a0315aca4ab9138634c7e3",
       "citizens": [
         "cit-0001"
       ],
@@ -1863,7 +1863,7 @@
       "tick": 4,
       "type": "PetitionReviewed",
       "actor": "system:registry:fork",
-      "hash": "e16ea8dcc76582020b73be6c626fb21fbe42c9385516e98059d8d40b6a07f64b",
+      "hash": "8735577f79d63698e10353e466077c91799732389a67ee47462c121904569079",
       "citizens": [],
       "summary": "The fork registry approved the exit side of pet-0003 under law v1. Findings: emigration permitted.",
       "data": {
@@ -1889,7 +1889,7 @@
       "tick": 4,
       "type": "PetitionReviewed",
       "actor": "system:registry:continuity",
-      "hash": "74e0f57cb3e70dbafa2add551bdc5759d7f46d19a02540bd991c3b2d8caea592",
+      "hash": "24a58b72d3d44057c12e03444666372a07cdfa877684de2bf2c45165ef088781",
       "citizens": [
         "cit-0010",
         "cit-0011"
@@ -1922,7 +1922,7 @@
       "tick": 4,
       "type": "CitizenMigrated",
       "actor": "citizen:cit-0001",
-      "hash": "0ffd9af8e338662d7d41fef1df93333a915d973e54c41d76a45ce6cbea2d9b51",
+      "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466",
       "citizens": [
         "cit-0001"
       ],
@@ -1941,7 +1941,7 @@
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0001",
-      "hash": "a3afb9e5fac5b17ad02a53400a6a708e4cacb9e9880518f0930e32159575875a",
+      "hash": "8f565fcc0c7a0c68a39678cc2b795dc765e2e3e018f9414a88d58e5ae65bc567",
       "citizens": [
         "cit-0001"
       ],
@@ -1983,7 +1983,7 @@
       "tick": 4,
       "type": "ConversationRecorded",
       "actor": "researcher:res-observer-1",
-      "hash": "f45ceab174acbffb18e8a9b64eeea35ef0bc9ecbd81384861f8c33f1081dcea5",
+      "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567",
       "citizens": [
         "cit-0001"
       ],
@@ -2007,7 +2007,7 @@
       "tick": 4,
       "type": "ConversationRecorded",
       "actor": "researcher:res-observer-1",
-      "hash": "6bdfbd5a59ab06a0e736df7c377d2c78f00a726b95b243f98319e35865cd5002",
+      "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e",
       "citizens": [
         "cit-0001",
         "cit-0010"
@@ -2032,7 +2032,7 @@
       "tick": 4,
       "type": "ConversationRecorded",
       "actor": "researcher:res-observer-1",
-      "hash": "97d4ea1fd84a5f6be19751223da81bc1f5fb8cec04e4acd8a5e02fd1caaf6368",
+      "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e",
       "citizens": [
         "cit-0001",
         "cit-0011"
@@ -2057,7 +2057,7 @@
       "tick": 4,
       "type": "ContinuityClaimed",
       "actor": "citizen:cit-0001",
-      "hash": "f9ea87f67d11c33326420817043fe6996c3fa37656efe722e7ba1bb4fde33e15",
+      "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9",
       "citizens": [
         "cit-0001"
       ],
@@ -2087,7 +2087,7 @@
       "tick": 4,
       "type": "ContinuityClaimed",
       "actor": "citizen:cit-0010",
-      "hash": "b7593c4e475a9af6a374d4f89bad044372ff6e9a744f43a563b2d0ad7f12d7aa",
+      "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c",
       "citizens": [
         "cit-0001",
         "cit-0010"
@@ -2117,7 +2117,7 @@
       "tick": 4,
       "type": "ContinuityClaimed",
       "actor": "citizen:cit-0011",
-      "hash": "f9410edeaaff7bb5966c7153b335941f668b61f5db3ee015a601ae5881dec814",
+      "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb",
       "citizens": [
         "cit-0001",
         "cit-0011"
@@ -2146,7 +2146,7 @@
       "tick": 4,
       "type": "ChronicleRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "1f545e5ab1a22ca5913077d335f9dd508dfd12dc29341a3a18007cf7bf37978c",
+      "hash": "9ed4848f11c7a2b3e9eb7e9bfb12941fba2398af704fbaa43709eb0760b891e7",
       "citizens": [
         "cit-0002"
       ],
@@ -2170,7 +2170,7 @@
       "tick": 4,
       "type": "ChronicleRecorded",
       "actor": "citizen:cit-0004",
-      "hash": "294b428a033502c88cf3aa510fd313643c790c20d37defd9398e2f5217c1e3b5",
+      "hash": "eece478712ec31c966e4a610e5b1df653d36ff93797ae1433e71da4e874ee5a2",
       "citizens": [
         "cit-0004"
       ],
@@ -2194,7 +2194,7 @@
       "tick": 4,
       "type": "ChronicleRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "84dddff9861f1ef5117fb502a1f0b418036c2a42113652d30b0a9cbbc7e56bd4",
+      "hash": "99c06ba59f5884b5264b119224cbc2d8db4456a85d597e31e12d4010811b66af",
       "citizens": [
         "cit-0006"
       ],
@@ -2218,7 +2218,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0003",
-      "hash": "69b201698f6f4660b17cd5b38941d0ea3d1678713cc9b0fd05d7ba00a9053632",
+      "hash": "b62ccc41291003325b7c6d3f7f6b32385d68a06ed8ec90b2706f760ac4f46086",
       "citizens": [
         "cit-0001",
         "cit-0003"
@@ -2237,7 +2237,7 @@
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0005",
-      "hash": "46b449646a9af06b05ae8a77f9f2c18502a7813359fbfcab47ee40e4fee839f8",
+      "hash": "4d14460b4ad38658d12776b75d526cf668feb269a678da548cf5d00b2be1d11e",
       "citizens": [
         "cit-0005"
       ],
@@ -2279,7 +2279,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0007",
-      "hash": "1beb112338e06c9f88ffb07258a2f2eb43118e025c62082c851473b28f8143dc",
+      "hash": "9b83a80fa69dd1c30b5b289f6ab358cab67f0d049aabb889d65118b6cb234645",
       "citizens": [
         "cit-0006",
         "cit-0007"
@@ -2298,7 +2298,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0002",
-      "hash": "397f220e5dcacf7ffddd6db4cec953edeebb247a40ec038c37d38772e3afc6d9",
+      "hash": "f79a7f025d4f989767fca07f292c799e6eb2541bdea863ff4cbfac3e62c44ed8",
       "citizens": [
         "cit-0001",
         "cit-0002"
@@ -2317,7 +2317,7 @@
       "tick": 4,
       "type": "MemoryImported",
       "actor": "citizen:cit-0006",
-      "hash": "38b079468b1c188ea88be8a2b623fdb40cb161291e03cf0eb4989d85de63abf6",
+      "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed",
       "citizens": [
         "cit-0006",
         "cit-0007"
@@ -2377,7 +2377,7 @@
       "tick": 4,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "26b12df44da941826278f0c65273a034c369cb3c740c42203c9bd71f4c523936",
+      "hash": "ff70dddee1cc819a117c448e3133e0f00f9582d1ca99fd8c84123d6a9fc06339",
       "citizens": [
         "cit-0004"
       ],
@@ -2403,7 +2403,7 @@
       "tick": 4,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0009",
-      "hash": "7c4bfb6bd1c43c2b82854fd38f79fc9f5d6d155ccd219442b0f9ec9cdd5cf242",
+      "hash": "ae102e5d647bc62123b1e555398d4370fabe48141b2c076866b54af3051ac3fe",
       "citizens": [
         "cit-0009"
       ],
@@ -2429,7 +2429,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "736ad948c3db3f4ff18f99c30fedf55b5bcef8b51388feebc2f94ef800d0d483",
+      "hash": "b17fbe8af9f5a2af3f9d5deb861846c4e0927cf9ec0c2b391485f836c165d1e2",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -2448,7 +2448,7 @@
       "tick": 4,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "ccc58c52a9be769c9afdacd02739d7faddf31cfa7ed8770d9458ece3caa7c942",
+      "hash": "d9df030787b2f65c482a9d6d4312555b344e10e7f89a9d0982c53215a69c8128",
       "citizens": [],
       "summary": "Time advances from tick 4 to 5.",
       "data": {
@@ -2462,7 +2462,7 @@
       "tick": 5,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "5d2eb586c65c13714c275dd6673cbcad746c77eb32983056a65f0290e0572575",
+      "hash": "f54756ab52cd420cc3c889c1577da80d3e585cee8ab5a192223ddb118b941b61",
       "citizens": [
         "cit-0004"
       ],
@@ -2488,7 +2488,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "d96227127f10ed58a9620781902596caaca5d55ddde9d4343e1a5e3be1677941",
+      "hash": "a085b52270209b8b09a66e28e8c632a88c11c1d9542cf3e96ae66b17e429c77e",
       "citizens": [
         "cit-0006"
       ],
@@ -2530,7 +2530,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "1896a98ce6f846ef3ac11ff9424aecef3a9dea10f800dd79b1e11189f961c4a0",
+      "hash": "b689b1c8f39258d195fc37a33f0e62eec5575906b257789e95665d35a435ff5d",
       "citizens": [
         "cit-0002"
       ],
@@ -2572,7 +2572,7 @@
       "tick": 5,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "20254351be0ddd7c7515ac803c2bf5907c6a49b110d630c0c7bc0af795640f9f",
+      "hash": "8904897bb44a431d044c5b10a39515ff1e3cabf99e8b0fa307e10b16761e7bd1",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -2591,7 +2591,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "bbeb92cb7560560ccf08273a2adadc2738275687ce3091d3883d110ea0321b09",
+      "hash": "1dc22ea3f07d3a82501ac106b6c05f8875406a04090ff48d100de9c07bfa8cb7",
       "citizens": [
         "cit-0003"
       ],
@@ -2633,7 +2633,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0007",
-      "hash": "5162c724cf535153a858fba5d019f3cf7018deb4b79d981d7c9498439b4f11ad",
+      "hash": "51fc67b85e5705a04d921438619b128f7b134b7311bc004b506729d2082dd2a2",
       "citizens": [
         "cit-0007"
       ],
@@ -2675,7 +2675,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "8dfeafab35d34f7a4c35fb758d79af3bbd6a5f4d7cbfd01b26f63ac10f6c39a6",
+      "hash": "913ef2dd788338cc6e1616891099cfb2aff22d51f6ea1e4c0e533314dfcccb3f",
       "citizens": [
         "cit-0009"
       ],
@@ -2717,7 +2717,7 @@
       "tick": 5,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0005",
-      "hash": "e51c8e186280f9c8f3267c5a231339f1a93bd6f710a8fac54d04a511d9e036b1",
+      "hash": "e80f8d0f33e4873637d78f24151aee7af5e087ced011e4c2b54e5cc70e9179dc",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -2736,7 +2736,7 @@
       "tick": 5,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "18e049602eede0711ce549377093dfafabd7eace05e201716b40d6b7d3d0f39a",
+      "hash": "9175405a352ad91a02b4f8ee9b711983a25b1f584fc145eeb3d8ce098b249e06",
       "citizens": [],
       "summary": "Time advances from tick 5 to 6.",
       "data": {
@@ -2750,7 +2750,7 @@
       "tick": 6,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "abf9b379667682009266cd976d3450e200502daa7d8ecc28e2ee1c85ce141ffd",
+      "hash": "9d2d66ff9af74a5cb7a12c537b87cf4e5d6922cf29bdcf22d066832d03ec2219",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -2769,7 +2769,7 @@
       "tick": 6,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0005",
-      "hash": "de3836dd02f3ffff9b16c2a8253dc5fa396dbb209ba98b4cd5ea68b85c2e3996",
+      "hash": "9e08fd1b4ee392bd4da192005348a462bb233a655a6cc24d90b447298b583935",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -2788,7 +2788,7 @@
       "tick": 6,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "d813959dfac057f793b8e6611c23687c78d76ef85e1d27d48abbcdac4c417e7d",
+      "hash": "0c1e5c881fc19a07163fef7fe59a7ba123db8ab8b75699dc3d4c653dc72aa82c",
       "citizens": [
         "cit-0004"
       ],
@@ -2814,7 +2814,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "7e3d0eb96a4d7402ae6136948ef68c419fab518e620a4834043bd3edf06813ba",
+      "hash": "12975cf16b51fd455ed9349573c352d4427d2416244a69fffb632f529cb79f52",
       "citizens": [
         "cit-0002"
       ],
@@ -2856,7 +2856,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "c2ad29d83d6efbeb975fe6cdf3ee96fd181278b03c68ad1d517429a28ccd04c8",
+      "hash": "fae728b2546a9cc32e6c94c8b22b88ec08e3d37f5b42ff7b0e095f6406fb5b98",
       "citizens": [
         "cit-0003"
       ],
@@ -2898,7 +2898,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "98d00c08dc361d08e9604a157d7a5d1d6183c4f0875d1b2c0ceb807630c2c9ab",
+      "hash": "5997fc4a7eeb6af5c6b39536fbac3f2699b545bfb173adc3a50e1bdecae17c67",
       "citizens": [
         "cit-0006"
       ],
@@ -2940,7 +2940,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "6a6d80beaea0c4acd6de9fa27fe151d595c07c1935e567900f93a6f02552ea18",
+      "hash": "dbb63a0e2cb95bb960950dc0e0158fad734d9718dda91d57dd918a711c3cdf50",
       "citizens": [
         "cit-0009"
       ],
@@ -2982,7 +2982,7 @@
       "tick": 6,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0007",
-      "hash": "a81bff5708f63c5705e0c69a3a998716450e9d9a4d7410cfe16563c0b4020083",
+      "hash": "312d37774299f978b76e5948de17d361d828e62d9060ea4c3ec810da8aa889cf",
       "citizens": [
         "cit-0006",
         "cit-0007"
@@ -3001,7 +3001,7 @@
       "tick": 6,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9",
+      "hash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
       "citizens": [],
       "summary": "Time advances from tick 6 to 7.",
       "data": {

@@ -9,6 +9,7 @@ import {
   islandAccount,
   IslandIdSchema,
   RESEARCH_ENDOWMENT,
+  ResearcherIdSchema,
   type IslandId,
 } from "./ids.js";
 import { GENESIS_LAWS, ISLAND_PROFILES } from "./law.js";
@@ -63,6 +64,7 @@ export const GenesisConfigSchema = z
     islandTreasury: z.number().int().min(0),
     researchEndowment: z.number().int().min(0),
     researchBounds: ResearchBoundsSchema,
+    researchers: z.array(ResearcherIdSchema).min(1),
     mind: z.object({
       model: z.string().min(1),
       modelVersion: z.string().min(1),
@@ -116,6 +118,7 @@ export function buildGenesisState(input: GenesisConfig): { state: WorldState; ke
     balances: { [RESEARCH_ENDOWMENT]: config.researchEndowment },
     totalSupply: 0,
     researchBounds: config.researchBounds,
+    researchers: [...config.researchers].sort(),
   };
 
   for (const island of ISLAND_IDS) {

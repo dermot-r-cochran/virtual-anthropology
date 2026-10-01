@@ -359,5 +359,7 @@ export const WorldStateSchema = z.object({
   balances: z.record(AccountRefSchema, z.number().int().min(0)),
   totalSupply: z.number().int().min(0),
   researchBounds: ResearchBoundsSchema,
+  /** Researchers registered for this experiment at genesis; only they may act as researchers. */
+  researchers: z.array(ResearcherIdSchema),
 });
 export type WorldState = z.infer<typeof WorldStateSchema>;

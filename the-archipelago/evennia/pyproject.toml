@@ -1,0 +1,13 @@
+[project]
+name = "archipelago-evennia"
+version = "0.1.0"
+description = "Evennia world layer for The Archipelago: rooms, regions, citizens and events over the civilization kernel bridge."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+evennia = ["evennia>=6.1.0"]
+
+[tool.setuptools]
+packages = ["archipelago_evennia"]

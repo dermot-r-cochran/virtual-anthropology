@@ -89,8 +89,9 @@ function requireSystem(actor: Actor, id: string): void {
   if (actor.kind !== "system" || actor.id !== id) deny("authorization", `requires system actor ${id}`);
 }
 
-function requireResearcher(actor: Actor): void {
+function requireResearcher(state: WorldState, actor: Actor): void {
   if (actor.kind !== "researcher") deny("authorization", "requires a researcher");
+  if (!state.researchers.includes(actor.id)) deny("authorization", `researcher ${actor.id} is not registered for this experiment`, null, CHARTER.researchBounds);
 }
 
 function accountExists(state: WorldState, ref: AccountRef): boolean {
@@ -502,17 +503,18 @@ function evaluateCommand(state: WorldState, actor: Actor, command: Command): Pol
       if (!(actor.kind === "researcher" || (actor.kind === "system" && actor.id === "clock"))) {
         deny("authorization", "only the clock or a researcher may advance time");
       }
+      if (actor.kind === "researcher") requireResearcher(state, actor);
       return allow(null);
     }
     case "PauseSimulation":
-      requireResearcher(actor);
+      requireResearcher(state, actor);
       return allow(null);
     case "ResumeSimulation":
-      requireResearcher(actor);
+      requireResearcher(state, actor);
       if (!state.paused) deny("precondition", "simulation is not paused");
       return allow(null);
     case "ResearcherIntervention": {
-      requireResearcher(actor);
+      requireResearcher(state, actor);
       const bounds = state.researchBounds;
       const spec = command.spec;
       if (!bounds.allowedInterventions.includes(spec.kind)) {
@@ -530,7 +532,7 @@ function evaluateCommand(state: WorldState, actor: Actor, command: Command): Pol
       return allow(null, [CHARTER.researchBounds]);
     }
     case "RecordConversation": {
-      requireResearcher(actor);
+      requireResearcher(state, actor);
       const c = citizen(state, command.citizen);
       requireActive(c);
       if (!containsDisclosure(command.citizenReply)) {

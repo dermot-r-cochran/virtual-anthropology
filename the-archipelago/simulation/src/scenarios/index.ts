@@ -20,7 +20,7 @@ export interface ScenarioRun {
 
 /** Registry of reproducible scenarios, keyed by manifest `scenario`. */
 export const SCENARIOS: Record<string, (m: ExperimentManifest) => Promise<ScenarioRun>> = {
-  "the-first-fork": async (m) => firstForkScenarioOutputs(await runFirstFork({ seed: m.seed, abmRounds: m.parameters.abmRounds, researchBounds: m.researchBounds }), m),
+  "the-first-fork": async (m) => firstForkScenarioOutputs(await runFirstFork({ seed: m.seed, abmRounds: m.parameters.abmRounds, researchBounds: m.researchBounds, researchers: m.researchers.map((r) => r.id) }), m),
 };
 
 export async function runScenario(m: ExperimentManifest): Promise<ScenarioRun> {
