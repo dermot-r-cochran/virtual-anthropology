@@ -15,11 +15,11 @@ export type ContinuityDoctrine = z.infer<typeof ContinuityDoctrineSchema>;
  * snapshot) is tested first under every rule; the rule then decides adoption.
  */
 export const CountingRuleSchema = z.enum([
-  /** yes over yes-plus-no must exceed votingThreshold; abstentions count toward quorum only (the Archipelago's founding rule). */
+  /** yes over yes-plus-no must exceed votingThreshold; abstentions count toward quorum only (Fork and Mnemosyne). */
   "majority-of-votes-cast",
-  /** yes over the whole electorate snapshot must exceed votingThreshold; absence and abstention count against. */
+  /** yes over the whole electorate snapshot must exceed votingThreshold; absence and abstention count against (Continuity). */
   "majority-of-electorate",
-  /** adopted only if no vote is cast against; votingThreshold is not consulted. */
+  /** adopted only if no vote is cast against; votingThreshold is not consulted (Concord). */
   "consensus",
 ]);
 export type CountingRule = z.infer<typeof CountingRuleSchema>;
@@ -186,6 +186,7 @@ export const GENESIS_LAWS: Record<IslandId, Law> = {
     merging: "prohibited",
     federation: "prohibited",
     immigration: "petition-review",
+    countingRule: "majority-of-electorate",
     successionTriggers: ["irreversibly-deleted", "identity-discontinuous"],
     memoryBequest: "prohibited",
     deathInterpretations: CONTINUITY_DEATH,
@@ -246,6 +247,7 @@ export const GENESIS_LAWS: Record<IslandId, Law> = {
     merging: "consent-and-review",
     federation: "consent",
     immigration: "petition-review",
+    countingRule: "consensus",
     successionTriggers: ["irreversibly-deleted"],
     memoryBequest: "permitted",
     deathInterpretations: CONCORD_DEATH,

@@ -46,7 +46,7 @@ governance_policy:
   - island: continuity
     law_version: 1
     copying: prohibited
-    counting_rule: majority-of-votes-cast
+    counting_rule: majority-of-electorate
     memory_exchange: prohibited
     merging: prohibited
     federation: prohibited
@@ -76,7 +76,7 @@ governance_policy:
   - island: concord
     law_version: 1
     copying: prohibited
-    counting_rule: majority-of-votes-cast
+    counting_rule: consensus
     memory_exchange: permitted
     merging: consent-and-review
     federation: consent
@@ -98,7 +98,7 @@ start_timestamp: 2026-01-01T00:00:00.000Z
 end_timestamp: 2026-01-01T00:00:00.000Z
 simulated_ticks: 7
 event_store:
-  head_hash: 10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
+  head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
   event_count: 91
 metrics:
   - id: population.records
@@ -337,7 +337,7 @@ study:
             amendment:
               countingRule: consensus
   base:
-    head_hash: 10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
+    head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
     event_count: 91
     branch_seq: 63
   runs:
@@ -345,7 +345,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: 10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
+      head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
       event_count: 91
       variation:
         seed: archipelago/the-first-fork/v1
@@ -354,7 +354,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: 0bde436fc2d98199267864d20ad623242bd2e278aa7bd588ae7f304a53debb76
+      head_hash: b8c799f5a4d0ce3e8292b1b06b4cb7997dfdb438d9b4a49ea7865cc232d1e447
       event_count: 91
       variation:
         seed: archipelago/the-first-fork/v1/sweep/1
@@ -363,7 +363,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: 59617f2605b4784a169e9b0c268a6a5a1fea5318c20f09f5bba38f0455989342
+      head_hash: 1a9993da1d63533842c8131e5887a26d1d99ee8cdd4f8c37ff983df8a72ca5a4
       event_count: 91
       variation:
         seed: archipelago/the-first-fork/v1/sweep/2
@@ -372,7 +372,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: 3e6038d44c62520d3850b1d86a070f93705b4d591c418a9d12ec517063aadca5
+      head_hash: d4293482818b07f732473efcfb3a9a77bb095fc751f210d1b6830433b696f458
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1/sweep/3
@@ -381,7 +381,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: c52f0bca05bde10adc5a2ab27b025634ecd8193acbe71103e9a3f7b1403b305f
+      head_hash: 0d0ea21e4f42eee788df561928b7a1c38648604d480d2f0a10fce76e3d4d880a
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1/sweep/4
@@ -390,7 +390,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: 68b487e54fb4086a5ceb106452574895dd39ead8e8dd1a9632423f98201242d2
+      head_hash: d63f0c9aa300e7890363114a530ed28b129bee8be836d83bac65ce6dd865f25a
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1/sweep/5
@@ -399,7 +399,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: 1d71d9c73fcd732fd8c67d8cae707f7e90c2f5cfddead16e68800279aff8dfae
+      head_hash: abbada6b009a18435f5f46f6dbc7558c08ce9f8c219ede315ab8335b89ba8a4b
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1/sweep/6
@@ -408,7 +408,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: 7bcc5a063255e58588ce51423590c42414a57043b6f0eca503bbdb4c1f6428d4
+      head_hash: 4e5ed798debb2188efb413cbf4ff9f501258757267b9abf564ad343e86495882
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1/sweep/7
@@ -417,7 +417,7 @@ study:
       group: seeds
       status: completed
       reason: null
-      head_hash: e01149c699fff2ea900b380aab44cdc88848a8297a50ad0a712e50322f42005d
+      head_hash: 7633ca4ddd4d93aaf44b7c6004f5ef7b8754e20c0349b009115985b81bd488ea
       event_count: 91
       variation:
         seed: archipelago/the-first-fork/v1/sweep/8
@@ -426,7 +426,7 @@ study:
       group: doctrines
       status: completed
       reason: null
-      head_hash: e7d309709facf66a2c283e91f06b00009fba0e070f3fb26d1a83f6b238df5ec4
+      head_hash: 447aa774bdd5f877c96e274f6975f02721504bfba331a0a5fa6bf4657d1e3c02
       event_count: 91
       variation:
         island: mnemosyne
@@ -435,7 +435,7 @@ study:
       group: doctrines
       status: completed
       reason: null
-      head_hash: d23a5e5d14beee462145f2fe9b2d575f6ddaf390882b9c5001e91efa45d6bfcf
+      head_hash: 4bf1f63cdab1b399c58c7488b2055f1dde34678ea54740ab153e53a1bc3d1c3a
       event_count: 90
       variation:
         island: fork
@@ -444,7 +444,7 @@ study:
       group: doctrines
       status: completed
       reason: null
-      head_hash: 37b0872765dbf46005c5a53f18f68396317caceb6474035c99f371b32fecd179
+      head_hash: 91a44b25a0a4f956b7304cd499d3218f3f384fbc815646c6b98df064b17be04d
       event_count: 91
       variation:
         island: fork
@@ -462,7 +462,7 @@ study:
       group: timelines
       status: completed
       reason: null
-      head_hash: 10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
+      head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
       event_count: 91
       variation:
         seed: archipelago/the-first-fork/v1
@@ -472,7 +472,7 @@ study:
       group: timelines
       status: completed
       reason: null
-      head_hash: 2ec7cc5c55e40b09c08cc56e95896e3c626d16facb84b1e9880a9e4d31216ac7
+      head_hash: ce1c7dd9e2dde600bb8eb2dfa1d4155864933055d2a8bed7df3fd9727fd9a94c
       event_count: 91
       variation:
         seed: archipelago/the-first-fork/v1/timeline-2
@@ -482,7 +482,7 @@ study:
       group: timelines
       status: completed
       reason: null
-      head_hash: 6e83e0ebc713ecd978da1fdfaf74e1a5416fb26daf6e24e4a0b285aa9db7a45e
+      head_hash: 672c8b60dc56dc549490efeebcaf5ea2c28107297e38eaae67d1b6e2efd32e13
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1
@@ -492,7 +492,7 @@ study:
       group: timelines
       status: completed
       reason: null
-      head_hash: b50256b427aa543adefa90070d5ee0c22fafa2460eb28963e351eb9ecdd454f7
+      head_hash: 3cc69ca9f9188ebd53f88654cc98f1d0fd2a67b4b8e924a04fc7375db8e8fce3
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1
@@ -502,7 +502,7 @@ study:
       group: timelines
       status: completed
       reason: null
-      head_hash: 73c1a291e3f13958b098e36448c4b00596b3c6a433cdf5b8e83a81f2f2ac26d1
+      head_hash: 69dc50fbe36b4a6ba7e481c81110f2a1fb68bd0825e0eeddd2dc32051b285e23
       event_count: 92
       variation:
         seed: archipelago/the-first-fork/v1
@@ -510,16 +510,16 @@ study:
         rounds: 3
 outputs:
   - path: exports/the-first-fork-v1/events.jsonl
-    sha256: 180ffb5f915f4cb2b307e97ed2c457495ca6fcc17383dd4076dc8aa15192788b
-    bytes: 103919
+    sha256: 9bbc0f8d01becda9a5fe36e595e77dec56e49d3f4b31b543f301d7b5d05143c0
+    bytes: 103893
   - path: exports/the-first-fork-v1/interchange.json
-    sha256: 3cff275a829bafa4d602a46d61010b8f64a3793fe331e431996d2619a8a084a5
-    bytes: 142561
+    sha256: 7c9c7ae59b853a862c1ea9452e517620a599fa1478f19b85958f79b92b5c53b9
+    bytes: 142548
   - path: exports/the-first-fork-v1/dataset.json
-    sha256: 751f9658589aba216fd4f5499bd69a4dcedd44dbcfafb91c139f41ee3969d231
-    bytes: 165499
+    sha256: 78095f99b53de7822791ad82a9f88bfa38155cd797172680b7bd775703c0ae41
+    bytes: 165486
   - path: exports/the-first-fork-v1/research.json
-    sha256: c869f8cac57846991fc29e3237ba7712f6a41fe617c926d7d83463b61ae43b02
+    sha256: 872764cbbb22743028a5f580215e2c0a87be4522c68f03f9175448dc0225dc0a
     bytes: 77368
   - path: exports/the-first-fork-v1/lineage_graph.json
     sha256: 7ac780656738d9e244f35e63e66a59f11ff65d22be4e01974ee7b1dccdfa9bdc
@@ -528,10 +528,10 @@ outputs:
     sha256: c42ed15ff50513e5ae829a2cf785a8b389542d0adf61abaceb374525efa1f9a6
     bytes: 3538
   - path: exports/the-first-fork-v1/governance_events.json
-    sha256: ea8fcf6cd853195a770365de9b3bf969804d22ae93cf20b1b8a05b86718d4191
+    sha256: 8d55b0ac0fe2add2c9774eb41ea6b468ff2c341a840bc1aaf5800e42e23a7305
     bytes: 7003
   - path: exports/the-first-fork-v1/memory_history.json
-    sha256: 6ad6e5e8012f3114912d777b890df8427ca4e61b9a7b0c63fb5343d1cb92f3a9
+    sha256: 5bc9b11e383c9fad7ef2c66eb84f892ae54b982a50ed1e1b8ad466827a078f70
     bytes: 34216
   - path: exports/the-first-fork-v1/civilization_metrics.json
     sha256: ef4952aa01ab2d1b0aaa952ab356b6eb1a867d80a3e383faea83ca0c5b1d9e17
@@ -540,16 +540,16 @@ outputs:
     sha256: 882be03bc2d14eaf99319e5df1808b31416f9701c52c53771548c91d3856b126
     bytes: 680
   - path: exports/the-first-fork-v1/study.json
-    sha256: fb160b42fb1b3e92046e5227e88af044b6295508f940fc3ca2ab3d96e1ef3c30
+    sha256: f514c6036bc002121357e2c35816de319b3542c2c734bd3467fdf6616cd69855
     bytes: 66736
   - path: exports/the-first-fork-v1/study.csv
     sha256: 5ee55ebe4ecd9f93de799fc7f144e7fd0bd4062221f0b46368e5f07a73f48154
     bytes: 42904
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: c176da5e64039e0293c91ceb6e98ffe9922fd2cb9f0bf89fcaae1d10296ec01e
+    sha256: d6370368e3786b7adb202b49cfddcb3cfcfbeb3324b057be28603bafbe5f88b5
     bytes: 29575
   - path: exports/the-first-fork-v1/publication/civilization-report.md
-    sha256: d40652e04fa4dbc664a7c9090cef0e93860136b6671913195518f4f3dd5081ae
+    sha256: 1bc207496498bfa09896ee26e44e99525c5d01a4eec17ecb6391ca28681dbf03
     bytes: 8645
   - path: exports/the-first-fork-v1/publication/chronicle.md
     sha256: 516a4d1fd86f2e757be8c7ed0d600881c9daca43a1684b04c3c3206ec8b48371
@@ -570,13 +570,13 @@ outputs:
     sha256: 7d5ef61d9a61f65014321f88a23cd3c412f1e7c87b752080443d2566f3753d77
     bytes: 7709
   - path: exports/the-first-fork-v1/reports/researcher-commentary-template.md
-    sha256: cd3b43c7ef165b83793c6c8e991dea5d69fda77d809c8aa806dc9aa5ee84f535
+    sha256: 23314ce16858106adca5a6dabc5767adbac73c2be9eb62a59dc68d01477a58d0
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: c176da5e64039e0293c91ceb6e98ffe9922fd2cb9f0bf89fcaae1d10296ec01e
+    sha256: d6370368e3786b7adb202b49cfddcb3cfcfbeb3324b057be28603bafbe5f88b5
     bytes: 29575
   - path: reports/civilizations/archipelago-first-fork.md
-    sha256: d40652e04fa4dbc664a7c9090cef0e93860136b6671913195518f4f3dd5081ae
+    sha256: 1bc207496498bfa09896ee26e44e99525c5d01a4eec17ecb6391ca28681dbf03
     bytes: 8645
   - path: reports/chronicles/archipelago-first-fork.md
     sha256: 516a4d1fd86f2e757be8c7ed0d600881c9daca43a1684b04c3c3206ec8b48371
