@@ -4,9 +4,10 @@
   "experimentId": "the-first-fork-v1",
   "civilizationId": "archipelago-first-fork",
   "title": "The First Fork",
+  "category": "demonstration",
   "scenario": "the-first-fork",
   "seed": "archipelago/the-first-fork/v1",
-  "configurationHash": "1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995",
+  "configurationHash": "b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f",
   "headHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
   "eventCount": 91,
   "findings": [
@@ -97,13 +98,13 @@
     },
     {
       "path": "dataset.json",
-      "sha256": "6aca13d878b21e01a9bf76ab47ada2a61b01f71de981cff588320531b310aab9",
-      "bytes": 193051
+      "sha256": "8e8dff9ef03a3438b6aff552f33f784ae54fbb9dadf6c8b2e9dd84eee1abc3f2",
+      "bytes": 193084
     },
     {
       "path": "research.json",
-      "sha256": "dd7efda594a5e91efd962c04e72077b66e11cce705fe7c702ec2e96f12d6e96b",
-      "bytes": 72706
+      "sha256": "4e85d413f5b098f23d93837424a95c4726a817daf036f65e112902957e506e77",
+      "bytes": 73253
     },
     {
       "path": "lineage_graph.json",
@@ -137,12 +138,12 @@
     },
     {
       "path": "publication/experiment-report.md",
-      "sha256": "ccc8c52ad7d0662b9bfa319e75027ef5ce5e417762eb591c62426d1d863fa1f3",
-      "bytes": 24193
+      "sha256": "1728cbb1aa2c762aed276e9162ec79c741eb49f73be7af89ca6b60adb3731687",
+      "bytes": 24705
     },
     {
       "path": "publication/civilization-report.md",
-      "sha256": "259b22ab1583f1e4fa25f5787e3b8c637911e9de94fa7f69d43bd9de27cccdbc",
+      "sha256": "c694c1ab739e41cc2830bfbacfb9398c8a59faf44295fb6e34a200b725932e1e",
       "bytes": 8645
     },
     {
@@ -182,8 +183,8 @@
     },
     {
       "path": "research_manifest.yaml",
-      "sha256": "0ad601450d768d3c01efa45638bc5c436537e2636398b1aa7f46f83ccd610b72",
-      "bytes": 14647
+      "sha256": "cc662aeaafe945432b99d006a2f2bd4c3a34fd4c67047a321548391fae4c6448",
+      "bytes": 14671
     }
   ]
 }

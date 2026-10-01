@@ -131,6 +131,7 @@ export function researchManifestYaml(b: ResearchBundle, input: ResearchInput, ou
     schema: "archipelago/research-manifest/v1",
     experiment_id: b.experiment.id,
     title: mf.title,
+    category: mf.category,
     question: mf.question,
     hypothesis: mf.hypotheses.map((h) => ({ id: h.id, statement: h.statement, operationalisation: h.operationalisation })),
     world: {

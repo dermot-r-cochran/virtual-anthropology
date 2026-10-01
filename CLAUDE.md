@@ -16,7 +16,7 @@ All simulation commands run from `the-archipelago/simulation/`:
 
 ```bash
 npm ci                        # first thing in a fresh checkout: node_modules/ is gitignored and nothing is installed (Node >= 22.12, see package.json engines)
-npm run check                 # tsc --noEmit, then vitest run (15 tests in test/, two of them fast-check properties)
+npm run check                 # tsc --noEmit, then vitest run (17 tests in test/, two of them fast-check properties)
 npm test                      # vitest only; npm run test:watch to keep it running
 npm run publish:first-fork    # manifest → simulation → event store → exports/the-first-fork-v1/, reports/, research_manifest.yaml (SOURCE_DATE_EPOCH pinned in the script)
 npm run verify:first-fork     # replay the hash chain and check every output file's sha256 against the manifest
@@ -69,6 +69,7 @@ These come from `docs/ethical-framework.md`, `docs/research-methodology.md` and 
 - **Every chronicle statement traces.** Built only from event payloads and snapshot names, each citing an event by sequence and hash; a test checks every reference against the log. The same traceability is why reports restate the metrics they cite rather than paraphrase them.
 - **Researchers are bounded.** Only ids registered at genesis may act; interventions are limited by kind, count and size as the manifest declares; a researcher cannot change a citizen's lifecycle state. The bridge enforces this and a test pins it.
 - **The system never decides which claimant is the real person.** *The First Fork* ends with three continuity claims and evidence that returns no verdict; that is the design, and a test asserts it.
+- **Every manifest says whether it is a demonstration or an experiment** (`category`, required since 2026-10-01; `docs/research-methodology.md`, *Demonstrations and experiments*). A *demonstration*'s protagonists act as the scenario scripts them, so a consistent finding shows that the platform and the declared law tables produce the declared outcome and is not evidence about what citizens would do; an *experiment*'s outcome is not scripted. The label is printed in the report's abstract and design section, in `research_manifest.yaml`, `index.json`, `catalog.json` and on the site, and a demonstration's limitations carry the caveat verbatim. There is no default, because a default would file a run silently. *The First Fork* is a demonstration, and a test pins that it says so everywhere.
 - **Deterministic placeholder minds describe the rules, not cognition.** Results are single runs and support no statistical inference; seed sweeps are listed as future work in the limitations doc, not as something a report may imply.
 
 ## Adding an experiment

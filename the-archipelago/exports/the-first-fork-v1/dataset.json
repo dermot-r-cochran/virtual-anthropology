@@ -6,6 +6,7 @@
     "schemaVersion": 2,
     "id": "the-first-fork-v1",
     "title": "The First Fork",
+    "category": "demonstration",
     "scenario": "the-first-fork",
     "civilizationId": "archipelago-first-fork",
     "description": "A citizen of Continuity migrates to Fork and creates two descendants. One stays on Fork, one moves to Mnemosyne and imports communal memories, and the original returns to Continuity. All three later claim continuity with the pre-fork person. Background citizens are deterministic BDI agents, and an agent-based epilogue follows.",

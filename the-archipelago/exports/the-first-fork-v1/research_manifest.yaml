@@ -2,6 +2,7 @@
 schema: archipelago/research-manifest/v1
 experiment_id: the-first-fork-v1
 title: The First Fork
+category: demonstration
 question:
   id: q-continuity-after-fork
   text: After one fork followed by migration, how do process, civic identity and memory provenance come apart, and how do four legal doctrines read the resulting continuity claims?
@@ -88,7 +89,7 @@ population:
     promptId: archipelago/deterministic-citizen/v1
 simulation_seed: archipelago/the-first-fork/v1
 simulation_version: 0.1.0
-configuration_hash: 1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995
+configuration_hash: b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f
 start_timestamp: 2026-01-01T00:00:00.000Z
 end_timestamp: 2026-01-01T00:00:00.000Z
 simulated_ticks: 7
@@ -296,11 +297,11 @@ outputs:
     sha256: dd9967d4c99b264ee8e0381546c251e6efc962705dc47768ee68cd0cd3a60e0e
     bytes: 143851
   - path: exports/the-first-fork-v1/dataset.json
-    sha256: 6aca13d878b21e01a9bf76ab47ada2a61b01f71de981cff588320531b310aab9
-    bytes: 193051
+    sha256: 8e8dff9ef03a3438b6aff552f33f784ae54fbb9dadf6c8b2e9dd84eee1abc3f2
+    bytes: 193084
   - path: exports/the-first-fork-v1/research.json
-    sha256: dd7efda594a5e91efd962c04e72077b66e11cce705fe7c702ec2e96f12d6e96b
-    bytes: 72706
+    sha256: 4e85d413f5b098f23d93837424a95c4726a817daf036f65e112902957e506e77
+    bytes: 73253
   - path: exports/the-first-fork-v1/lineage_graph.json
     sha256: 7ac780656738d9e244f35e63e66a59f11ff65d22be4e01974ee7b1dccdfa9bdc
     bytes: 3444
@@ -320,10 +321,10 @@ outputs:
     sha256: 101f93d6d76467c485bbeedc7639f789cb8a366b537808091e91c5e5e05183a0
     bytes: 680
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: ccc8c52ad7d0662b9bfa319e75027ef5ce5e417762eb591c62426d1d863fa1f3
-    bytes: 24193
+    sha256: 1728cbb1aa2c762aed276e9162ec79c741eb49f73be7af89ca6b60adb3731687
+    bytes: 24705
   - path: exports/the-first-fork-v1/publication/civilization-report.md
-    sha256: 259b22ab1583f1e4fa25f5787e3b8c637911e9de94fa7f69d43bd9de27cccdbc
+    sha256: c694c1ab739e41cc2830bfbacfb9398c8a59faf44295fb6e34a200b725932e1e
     bytes: 8645
   - path: exports/the-first-fork-v1/publication/chronicle.md
     sha256: 54857fe84f7d35c08cd2175aa46ccf5cd4bc1e4d705e007044dfc650aee02e6b
@@ -347,10 +348,10 @@ outputs:
     sha256: 5c80d342ffb4752b33550b43b8cdd5996b41c17b6349faddf527f0bc747faf32
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: ccc8c52ad7d0662b9bfa319e75027ef5ce5e417762eb591c62426d1d863fa1f3
-    bytes: 24193
+    sha256: 1728cbb1aa2c762aed276e9162ec79c741eb49f73be7af89ca6b60adb3731687
+    bytes: 24705
   - path: reports/civilizations/archipelago-first-fork.md
-    sha256: 259b22ab1583f1e4fa25f5787e3b8c637911e9de94fa7f69d43bd9de27cccdbc
+    sha256: c694c1ab739e41cc2830bfbacfb9398c8a59faf44295fb6e34a200b725932e1e
     bytes: 8645
   - path: reports/chronicles/archipelago-first-fork.md
     sha256: 54857fe84f7d35c08cd2175aa46ccf5cd4bc1e4d705e007044dfc650aee02e6b

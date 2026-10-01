@@ -90,7 +90,7 @@ const views = {
     const kpis = [["Events", "simulation.events"], ["Ticks", "simulation.ticks"], ["Citizen records", "population.records"], ["Forks", "identity.forks"], ["Continuity claims", "identity.continuity_claims"], ["Laws enacted", "governance.laws_enacted"], ["Artefacts", "culture.artefacts"], ["Commands rejected", "governance.commands_rejected"]];
     return `
       <h2>${esc(index.title)}</h2>
-      <p class="muted">Experiment <code>${esc(index.experimentId)}</code> · seed <code>${esc(index.seed)}</code> · head <code>${esc(index.headHash.slice(0, 16))}…</code> · configuration <code>${esc(index.configurationHash.slice(0, 16))}…</code></p>
+      <p class="muted"><span class="tag">${esc(index.category)}</span> <code>${esc(index.experimentId)}</code> · seed <code>${esc(index.seed)}</code> · head <code>${esc(index.headHash.slice(0, 16))}…</code> · configuration <code>${esc(index.configurationHash.slice(0, 16))}…</code></p>
       <div class="card"><strong>Research question.</strong> ${esc(research.question.text)}</div>
       <div class="grid">${kpis.map(([l, id]) => `<div class="card"><div class="kpi">${esc(v(id))}</div><div class="muted">${esc(l)} <code>${esc(id)}</code></div></div>`).join("")}</div>
       <h3>Findings <span class="tag">computed</span></h3>
@@ -100,7 +100,7 @@ const views = {
         const cls = f.outcome.startsWith("consistent") ? "ok" : f.outcome.startsWith("inconsistent") ? "no" : "na";
         return `<tr><td><code>${esc(f.hypothesisId)}</code></td><td>${esc(h?.statement)}</td><td><code>${esc(f.metric)} ${esc(f.comparator)} ${esc(f.threshold)}</code></td><td>${esc(f.observedValue ?? "n/a")}</td><td><span class="tag ${cls}">${esc(f.outcome)}</span></td></tr>`;
       }).join("")}</table>
-      <p class="muted">Findings are mechanical results of each operationalised hypothesis in a single deterministic run. Interpretation is left to researchers.</p>`;
+      <p class="muted">Findings are mechanical results of each operationalised hypothesis in a single deterministic run. Interpretation is left to researchers.${index.category === "demonstration" ? " This run is a demonstration: its protagonists act as the scenario scripts them, so a consistent finding shows the platform and the declared law tables produce the declared outcome, not what citizens would do." : ""}</p>`;
   },
 
   async chronicle(ds) {
@@ -325,7 +325,7 @@ async function start() {
     $("#view").innerHTML = `<p>${esc(err.message)}</p>`;
     return;
   }
-  $("#experiment").innerHTML = catalog.datasets.map((d, i) => `<option value="${i}">${esc(d.title)} (${esc(d.id)})</option>`).join("");
+  $("#experiment").innerHTML = catalog.datasets.map((d, i) => `<option value="${i}">${esc(d.title)} (${esc(d.id)}, ${esc(d.category)})</option>`).join("");
   $("#experiment").addEventListener("change", route);
   window.addEventListener("hashchange", route);
   await route();

@@ -2,6 +2,7 @@
 
 Each directory holds an `experiment.yaml`, the authoritative definition of a reproducible run. It records:
 
+- the `category`: `demonstration` (scenario-authored outcome) or `experiment` (unscripted outcome);
 - the research question and operationalised hypotheses;
 - the seed, minds and researchers;
 - the research bounds and parameters;

@@ -1,6 +1,6 @@
 # Virtual Anthropology Report: archipelago-first-fork
 
-Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` · configuration `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995`
+Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` · configuration `b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f`
 
 > The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations. Every value below is computed from the event store or the final snapshot. Section notes say which.
 
