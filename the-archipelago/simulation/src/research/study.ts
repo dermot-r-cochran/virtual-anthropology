@@ -1,4 +1,5 @@
 import { scenarioDriver, type ScenarioRun } from "../scenarios/index.js";
+import { ENUMERATION, fairEnumeration } from "./enumeration.js";
 import { toResearchInput } from "./adapter.js";
 import type { ExperimentManifest, StudyPlan } from "./manifest.js";
 import { computeMetrics } from "./metric-registry.js";
@@ -42,6 +43,8 @@ export interface StudyResult {
   readonly schema: "archipelago/study/v1";
   readonly base: { headHash: string; eventCount: number; branchSeq: number | null };
   readonly plan: StudyPlan;
+  /** The declared order a branch sweep takes alternatives in (see research/enumeration.ts). */
+  readonly enumeration: string;
   readonly runs: readonly StudyRun[];
   readonly summary: Partial<Record<StudyGroup, StudyGroupSummary>>;
 }
@@ -114,20 +117,15 @@ export async function runStudy(m: ExperimentManifest, base: ScenarioRun): Promis
     const rounds = m.parameters.abmRounds;
     const names = Object.fromEntries(Object.values(base.state.citizens).map((c) => [c.id, c.name]));
     const group: StudyRun[] = [];
-    let n = 0;
-    outer: for (const point of base.choices) {
-      for (let option = 0; option < point.options.length; option++) {
-        if (option === point.chosen) continue;
-        if (n >= plan.branches.budget) break outer;
-        n++;
-        const id = `branch-${n}`;
-        const flip = { seq: point.seq, citizen: point.citizen, label: point.label, occurrence: point.occurrence, option };
-        const variation = { at: point.seq, citizen: names[point.citizen] ?? point.citizen, choice: point.label, from: point.options[point.chosen], to: point.options[option] };
-        try {
-          group.push(completed(m, id, "branches", variation, await driver.branch(m, { rounds, flips: [flip] })));
-        } catch (e) {
-          group.push(infeasible(id, "branches", variation, e));
-        }
+    for (const alt of fairEnumeration(base.choices, plan.branches.budget)) {
+      const { point, option } = alt;
+      const id = `branch-${alt.rank}`;
+      const flip = { seq: point.seq, citizen: point.citizen, label: point.label, occurrence: point.occurrence, option };
+      const variation = { rank: alt.rank, pass: alt.pass, enumeration: ENUMERATION, at: point.seq, citizen: names[point.citizen] ?? point.citizen, choice: point.label, from: point.options[point.chosen], to: point.options[option] };
+      try {
+        group.push(completed(m, id, "branches", variation, await driver.branch(m, { rounds, flips: [flip] })));
+      } catch (e) {
+        group.push(infeasible(id, "branches", variation, e));
       }
     }
     runs.push(...group);
@@ -163,7 +161,7 @@ export async function runStudy(m: ExperimentManifest, base: ScenarioRun): Promis
     summary.timelines = summarise(group, hypothesisIds);
   }
 
-  return { schema: "archipelago/study/v1", base: { headHash: base.headHash, eventCount: base.log.length, branchSeq: base.branchSeq }, plan, runs, summary };
+  return { schema: "archipelago/study/v1", base: { headHash: base.headHash, eventCount: base.log.length, branchSeq: base.branchSeq }, plan, enumeration: ENUMERATION, runs, summary };
 }
 
 /** study.csv: one row per completed run and metric. */

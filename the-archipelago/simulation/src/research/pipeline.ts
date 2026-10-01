@@ -252,8 +252,8 @@ function studyMarkdown(study: StudyResult, manifest: ExperimentManifest): string
   ];
   const branches = study.runs.filter((r) => r.group === "branches");
   if (study.summary.branches) {
-    out.push(`### Branch sweep (${branches.length} timelines, one choice point taken differently in each; hypothesis outcomes ${hyps.join(" / ")})`, "", "| branch | at seq | citizen | choice | taken instead of | events | head | outcomes |", "|---|---:|---|---|---|---:|---|---|",
-      ...branches.map((r) => `| ${r.id} | ${String(r.variation.at)} | ${String(r.variation.citizen)} | ${String(r.variation.choice)} | ${String(r.variation.to)} instead of ${String(r.variation.from)} | ${r.eventCount ?? "—"} | ${head(r)}${r.headHash === study.base.headHash ? " (= base)" : ""} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
+    out.push(`### Branch sweep (${branches.length} timelines, one choice point taken differently in each; hypothesis outcomes ${hyps.join(" / ")})`, "", `_Enumeration \`${study.enumeration}\`: fair (every citizen takes one alternative before any takes a second), unbiased (kinds of choice rotate within a citizen; alternatives in canonical order, one per visit) and representative (within a citizen and kind, points visited in van der Corput order of their position, so picks are spread across the epilogue). The order is declared, not drawn._`, "", "| branch | pass | at seq | citizen | choice | taken instead of | events | head | outcomes |", "|---|---:|---:|---|---|---|---:|---|---|",
+      ...branches.map((r) => `| ${r.id} | ${String(r.variation.pass)} | ${String(r.variation.at)} | ${String(r.variation.citizen)} | ${String(r.variation.choice)} | ${String(r.variation.to)} instead of ${String(r.variation.from)} | ${r.eventCount ?? "—"} | ${head(r)}${r.headHash === study.base.headHash ? " (= base)" : ""} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
       "", ...tally(study.summary.branches), "", ...metricTable(study.summary.branches), "");
   }
   const doctrines = study.runs.filter((r) => r.group === "doctrines");

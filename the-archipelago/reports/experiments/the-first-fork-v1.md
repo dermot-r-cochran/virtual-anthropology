@@ -132,20 +132,22 @@ Base run: head `945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e
 
 ### Branch sweep (12 timelines, one choice point taken differently in each; hypothesis outcomes h1-legal-divergence / h2-dimension-dissociation / h3-no-vote-multiplication)
 
-| branch | at seq | citizen | choice | taken instead of | events | head | outcomes |
-|---|---:|---|---|---|---:|---|---|
-| branch-1 | 65 | Ilan Cho | intention | maintain-relationships → cit-0001 instead of record-experience | 92 | `46eeb257fc34…` | consistent / consistent / consistent |
-| branch-2 | 65 | Ilan Cho | activity | mapped instead of walked | 92 | `21ebd0ebb6c6…` | consistent / consistent / consistent |
-| branch-3 | 65 | Ilan Cho | activity | repaired a lantern at instead of walked | 92 | `bb3b2bae1db0…` | consistent / consistent / consistent |
-| branch-4 | 65 | Ilan Cho | activity | argued about tides at instead of walked | 92 | `acfc72f6c09c…` | consistent / consistent / consistent |
-| branch-5 | 65 | Ilan Cho | activity | kept watch over instead of walked | 92 | `4649ea70bdfb…` | consistent / consistent / consistent |
-| branch-6 | 65 | Ilan Cho | activity | taught a class at instead of walked | 92 | `e0756853c243…` | consistent / consistent / consistent |
-| branch-7 | 65 | Ilan Cho | place | the Lamp Hall instead of Meridian Quay | 92 | `18720e6bcfc7…` | consistent / consistent / consistent |
-| branch-8 | 65 | Ilan Cho | place | the long causeway instead of Meridian Quay | 92 | `4158e9380c43…` | consistent / consistent / consistent |
-| branch-9 | 66 | Juno Ash | intention | create-culture instead of record-experience | 92 | `1fdb7fad77fd…` | consistent / consistent / consistent |
-| branch-10 | 66 | Juno Ash | intention | maintain-relationships → cit-0005 instead of record-experience | 92 | `b3e20804430f…` | consistent / consistent / consistent |
-| branch-11 | 66 | Juno Ash | activity | mapped instead of walked | 92 | `7e5dd51f0f53…` | consistent / consistent / consistent |
-| branch-12 | 66 | Juno Ash | activity | repaired a lantern at instead of walked | 92 | `7360732857c9…` | consistent / consistent / consistent |
+_Enumeration `fair-round-robin/van-der-corput/v1`: fair (every citizen takes one alternative before any takes a second), unbiased (kinds of choice rotate within a citizen; alternatives in canonical order, one per visit) and representative (within a citizen and kind, points visited in van der Corput order of their position, so picks are spread across the epilogue). The order is declared, not drawn._
+
+| branch | pass | at seq | citizen | choice | taken instead of | events | head | outcomes |
+|---|---:|---:|---|---|---|---:|---|---|
+| branch-1 | 1 | 73 | Tamsin Reed | activity | mapped instead of walked | 92 | `de09c2cfef33…` | consistent / consistent / consistent |
+| branch-2 | 1 | 65 | Ilan Cho | activity | mapped instead of walked | 92 | `21ebd0ebb6c6…` | consistent / consistent / consistent |
+| branch-3 | 1 | 66 | Juno Ash | activity | mapped instead of walked | 92 | `7e5dd51f0f53…` | consistent / consistent / consistent |
+| branch-4 | 1 | 67 | Pell Marr | artefact-kind | song instead of poem | 92 | `3aa1d1c670dc…` | consistent / consistent / consistent |
+| branch-5 | 1 | 77 | Sefa Lune | activity | mapped instead of walked | 92 | `de848ca1e0fc…` | consistent / consistent / consistent |
+| branch-6 | 1 | 78 | Rumi Okafor | activity | mapped instead of walked | 92 | `cea83026d550…` | consistent / consistent / consistent |
+| branch-7 | 1 | 70 | Dov Arlen | activity | mapped instead of walked | 92 | `0aff3a1fe159…` | consistent / consistent / consistent |
+| branch-8 | 1 | 71 | Mae Sorrel | activity | mapped instead of walked | 92 | `69766bb301c1…` | consistent / consistent / consistent |
+| branch-9 | 2 | 73 | Tamsin Reed | intention | maintain-relationships → cit-0001 instead of record-experience | 92 | `d7719b0498d1…` | consistent / consistent / consistent |
+| branch-10 | 2 | 65 | Ilan Cho | intention | maintain-relationships → cit-0001 instead of record-experience | 92 | `46eeb257fc34…` | consistent / consistent / consistent |
+| branch-11 | 2 | 66 | Juno Ash | intention | create-culture instead of record-experience | 92 | `1fdb7fad77fd…` | consistent / consistent / consistent |
+| branch-12 | 2 | 67 | Pell Marr | intention | record-experience instead of create-culture | 92 | `419d66443ea1…` | consistent / consistent / consistent |
 
 - `h1-legal-divergence`: consistent in 12 of 12 completed run(s).
 - `h2-dimension-dissociation`: consistent in 12 of 12 completed run(s).
