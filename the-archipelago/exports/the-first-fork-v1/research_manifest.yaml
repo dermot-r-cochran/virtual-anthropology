@@ -340,6 +340,7 @@ study:
             island: fork
             amendment:
               countingRule: consensus
+  enumeration: fair-round-robin/van-der-corput/v1
   base:
     head_hash: 945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e
     event_count: 92
@@ -349,14 +350,17 @@ study:
       group: branches
       status: completed
       reason: null
-      head_hash: 46eeb257fc34638181ad3d11380680e79c9c3925f09f832679611733702dd29d
+      head_hash: de09c2cfef33d48509d79a136156dcdd1cea07872bc42c70344d778781e600f9
       event_count: 92
       variation:
-        at: 65
-        citizen: Ilan Cho
-        choice: intention
-        from: record-experience
-        to: maintain-relationships → cit-0001
+        rank: 1
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 73
+        citizen: Tamsin Reed
+        choice: activity
+        from: walked
+        to: mapped
     - id: branch-2
       group: branches
       status: completed
@@ -364,6 +368,9 @@ study:
       head_hash: 21ebd0ebb6c6a5bbf7b2a0d0df80beea272a1ee8d0ad711b071c59ad40c3c748
       event_count: 92
       variation:
+        rank: 2
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
         at: 65
         citizen: Ilan Cho
         choice: activity
@@ -373,122 +380,152 @@ study:
       group: branches
       status: completed
       reason: null
-      head_hash: bb3b2bae1db0ae7df25b075fd54409fad8775f342ad98ca28ccef7a352ca0af1
+      head_hash: 7e5dd51f0f53931c1ee20a435d007d87496f3b393d63cedb6404b0f8e803e450
       event_count: 92
       variation:
-        at: 65
-        citizen: Ilan Cho
+        rank: 3
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 66
+        citizen: Juno Ash
         choice: activity
         from: walked
-        to: repaired a lantern at
+        to: mapped
     - id: branch-4
       group: branches
       status: completed
       reason: null
-      head_hash: acfc72f6c09c472ef8e9b4a2d7f374495bf441490cccbcefe537bcc130101dc6
+      head_hash: 3aa1d1c670dceb4d2408dd6321fbeaa2a1aebb3b1c506dc779d6a272bae85541
       event_count: 92
       variation:
-        at: 65
-        citizen: Ilan Cho
-        choice: activity
-        from: walked
-        to: argued about tides at
+        rank: 4
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 67
+        citizen: Pell Marr
+        choice: artefact-kind
+        from: poem
+        to: song
     - id: branch-5
       group: branches
       status: completed
       reason: null
-      head_hash: 4649ea70bdfb4a4d277c178b0fc869fd1751cf926b6c9da922d0ee8200d5618d
+      head_hash: de848ca1e0fcfde5da796d2f76f0538d574964699b7d9a205a8c1c203d7425fd
       event_count: 92
       variation:
-        at: 65
-        citizen: Ilan Cho
+        rank: 5
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 77
+        citizen: Sefa Lune
         choice: activity
         from: walked
-        to: kept watch over
+        to: mapped
     - id: branch-6
       group: branches
       status: completed
       reason: null
-      head_hash: e0756853c2430b4940e3383ab2fffb501e9ebbaecba111dab81f6ad7e79ed377
+      head_hash: cea83026d55030478cee4c888ff6c7afa8da7c6f6237a35420558d6a0a9fcebf
       event_count: 92
       variation:
-        at: 65
-        citizen: Ilan Cho
+        rank: 6
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 78
+        citizen: Rumi Okafor
         choice: activity
         from: walked
-        to: taught a class at
+        to: mapped
     - id: branch-7
       group: branches
       status: completed
       reason: null
-      head_hash: 18720e6bcfc7cc382aca95a014361a7bb32f0f65d54ca184746a230726289627
+      head_hash: 0aff3a1fe159285b7a1620d99a2fbe117333f6d23ff5bb4e6c01d1d43c479b4b
       event_count: 92
       variation:
-        at: 65
-        citizen: Ilan Cho
-        choice: place
-        from: Meridian Quay
-        to: the Lamp Hall
+        rank: 7
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 70
+        citizen: Dov Arlen
+        choice: activity
+        from: walked
+        to: mapped
     - id: branch-8
       group: branches
       status: completed
       reason: null
-      head_hash: 4158e9380c43b03808172881931db0fe963d6205e457df92af2d1775f60ae3b8
+      head_hash: 69766bb301c161555bc14a3b5034ac1fba8702c0f89045bbae23ef6185b5eb61
       event_count: 92
       variation:
+        rank: 8
+        pass: 1
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 71
+        citizen: Mae Sorrel
+        choice: activity
+        from: walked
+        to: mapped
+    - id: branch-9
+      group: branches
+      status: completed
+      reason: null
+      head_hash: d7719b0498d1ca84c410ff9c59e16b49f4caecc4f610f9abab74db8692725f6c
+      event_count: 92
+      variation:
+        rank: 9
+        pass: 2
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 73
+        citizen: Tamsin Reed
+        choice: intention
+        from: record-experience
+        to: maintain-relationships → cit-0001
+    - id: branch-10
+      group: branches
+      status: completed
+      reason: null
+      head_hash: 46eeb257fc34638181ad3d11380680e79c9c3925f09f832679611733702dd29d
+      event_count: 92
+      variation:
+        rank: 10
+        pass: 2
+        enumeration: fair-round-robin/van-der-corput/v1
         at: 65
         citizen: Ilan Cho
-        choice: place
-        from: Meridian Quay
-        to: the long causeway
-    - id: branch-9
+        choice: intention
+        from: record-experience
+        to: maintain-relationships → cit-0001
+    - id: branch-11
       group: branches
       status: completed
       reason: null
       head_hash: 1fdb7fad77fd30e35f6836efc0abd1345250fc15ab2280d45e335f2c5c2cfa14
       event_count: 92
       variation:
+        rank: 11
+        pass: 2
+        enumeration: fair-round-robin/van-der-corput/v1
         at: 66
         citizen: Juno Ash
         choice: intention
         from: record-experience
         to: create-culture
-    - id: branch-10
-      group: branches
-      status: completed
-      reason: null
-      head_hash: b3e20804430f438e3e38faf41ea9cd60214530b5fcaae28d02b9154e080f1068
-      event_count: 92
-      variation:
-        at: 66
-        citizen: Juno Ash
-        choice: intention
-        from: record-experience
-        to: maintain-relationships → cit-0005
-    - id: branch-11
-      group: branches
-      status: completed
-      reason: null
-      head_hash: 7e5dd51f0f53931c1ee20a435d007d87496f3b393d63cedb6404b0f8e803e450
-      event_count: 92
-      variation:
-        at: 66
-        citizen: Juno Ash
-        choice: activity
-        from: walked
-        to: mapped
     - id: branch-12
       group: branches
       status: completed
       reason: null
-      head_hash: 7360732857c92f633558a07887e0884566e81e3cbdde35d361b1d3823de0067c
+      head_hash: 419d66443ea12322bb78602378025b37d954175997f49d4734bb3ef94f9dc9ae
       event_count: 92
       variation:
-        at: 66
-        citizen: Juno Ash
-        choice: activity
-        from: walked
-        to: repaired a lantern at
+        rank: 12
+        pass: 2
+        enumeration: fair-round-robin/van-der-corput/v1
+        at: 67
+        citizen: Pell Marr
+        choice: intention
+        from: create-culture
+        to: record-experience
     - id: mnemosyne-no-integration
       group: doctrines
       status: completed
@@ -586,8 +623,8 @@ outputs:
     sha256: 3eb68930738cc0b9d749931f6e6fcbd1539846d3de23909d85bc645fa8b056cf
     bytes: 164494
   - path: exports/the-first-fork-v1/research.json
-    sha256: 72ac5a206fa4ecbf6d0d682123d1f2829f51aa1f58d919487cedd0804ec63ee3
-    bytes: 78686
+    sha256: bce2808c79700119cded74266fb0c84d516e81ece3107500697bf80d9d95775a
+    bytes: 79096
   - path: exports/the-first-fork-v1/lineage_graph.json
     sha256: 979d95e495fd656ec97e1b05c44c45adcbc01a174ad972ce525061a389100cc3
     bytes: 3444
@@ -607,14 +644,14 @@ outputs:
     sha256: 6dda6bb22c9da8c5beda376bc1b40ad764cbc0c44f077b9669fde9d0feda0f0f
     bytes: 675
   - path: exports/the-first-fork-v1/study.json
-    sha256: e15200083d8b0772dd937f70766a693463da3c7032c32befc478f5838a0df9a3
-    bytes: 75204
+    sha256: 9488cb2e94e4ce2c8967144446d3ae0e8f23d8cdf8c8e4b5b0835dcb542c0c2f
+    bytes: 76392
   - path: exports/the-first-fork-v1/study.csv
-    sha256: 55afa1712d076acce27dce5a1dddd8b0a3735c10629891ebf40d0fcdbeaf7c39
+    sha256: ecb9fdfb54af79688f452f2ae4a7d8301c6930f8d04982c2f87a556400ac8dbe
     bytes: 52252
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: 6eaedda45a60630682f547be4335f347c2a9e3ec90faf36c831c876b32c1bb3f
-    bytes: 30727
+    sha256: bf0b38613b96e083a889bf98c588383f98a70cb36ffe664f5601453429846174
+    bytes: 31135
   - path: exports/the-first-fork-v1/publication/civilization-report.md
     sha256: 90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea
     bytes: 8518
@@ -640,8 +677,8 @@ outputs:
     sha256: 050bfe643b7cb78295ed610c1690ad10e5c0d2c0f2e12b9b1531f919ac1b84c1
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: 6eaedda45a60630682f547be4335f347c2a9e3ec90faf36c831c876b32c1bb3f
-    bytes: 30727
+    sha256: bf0b38613b96e083a889bf98c588383f98a70cb36ffe664f5601453429846174
+    bytes: 31135
   - path: reports/civilizations/archipelago-first-fork.md
     sha256: 90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea
     bytes: 8518

@@ -91,6 +91,11 @@ describe("The First Fork and the research pipeline", async () => {
       expect(b.headHash).not.toBe(run.headHash);
     }
     expect(new Set(branches.map((r: { headHash: string }) => r.headHash)).size).toBe(branches.length);
+    expect(study.enumeration).toBe("fair-round-robin/van-der-corput/v1");
+    const withAlternatives = new Set(run.choices.filter((p) => p.options.length > 1).map((p) => p.citizen));
+    const firstPass = branches.filter((r: { variation: { pass: number } }) => r.variation.pass === 1);
+    expect(firstPass.length).toBe(Math.min(withAlternatives.size, branches.length));
+    expect(new Set(firstPass.map((r: { variation: { citizen: string } }) => r.variation.citizen)).size).toBe(firstPass.length);
     expect(study.summary.branches.hypotheses["h1-legal-divergence"].n).toBe(branches.length);
     expect(run.choices.length).toBeGreaterThan(0);
     expect(run.choices.every((p: { chosen: number }) => p.chosen === 0)).toBe(true);
@@ -112,6 +117,7 @@ describe("The First Fork and the research pipeline", async () => {
     expect(out.exportFiles["research_manifest.yaml"]).toMatch(/counting_rule: majority-of-electorate/);
     const md = out.reportFiles[`reports/experiments/${m.id}.md`]!;
     expect(md).toMatch(/^### Branch sweep/m);
+    expect(md).toMatch(/_Enumeration `fair-round-robin\/van-der-corput\/v1`/);
     expect(md).toMatch(/^### Alternate timelines/m);
     expect(md).toMatch(/\(= base\)/);
     expect(md).toMatch(/^- Study replications are deterministic runs/m);

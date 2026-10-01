@@ -19,7 +19,7 @@ branches,branch-1,completed,governance.votes_cast,2
 branches,branch-1,completed,governance.votes_refused_outside_electorate,1
 branches,branch-1,completed,governance.commands_rejected,1
 branches,branch-1,completed,governance.migrations,3
-branches,branch-1,completed,memory.records,62
+branches,branch-1,completed,memory.records,63
 branches,branch-1,completed,memory.imported,1
 branches,branch-1,completed,memory.integrated,1
 branches,branch-1,completed,memory.fork_inherited,8
@@ -376,7 +376,7 @@ branches,branch-9,completed,memory.imported,1
 branches,branch-9,completed,memory.integrated,1
 branches,branch-9,completed,memory.fork_inherited,8
 branches,branch-9,completed,memory.provenance_complete,1
-branches,branch-9,completed,culture.artefacts,8
+branches,branch-9,completed,culture.artefacts,7
 branches,branch-9,completed,culture.chronicle_entries,6
 branches,branch-9,completed,institutions.count,7
 branches,branch-9,completed,social.active_relationships,8
@@ -459,12 +459,12 @@ branches,branch-11,completed,governance.votes_cast,2
 branches,branch-11,completed,governance.votes_refused_outside_electorate,1
 branches,branch-11,completed,governance.commands_rejected,1
 branches,branch-11,completed,governance.migrations,3
-branches,branch-11,completed,memory.records,63
+branches,branch-11,completed,memory.records,62
 branches,branch-11,completed,memory.imported,1
 branches,branch-11,completed,memory.integrated,1
 branches,branch-11,completed,memory.fork_inherited,8
 branches,branch-11,completed,memory.provenance_complete,1
-branches,branch-11,completed,culture.artefacts,7
+branches,branch-11,completed,culture.artefacts,8
 branches,branch-11,completed,culture.chronicle_entries,6
 branches,branch-11,completed,institutions.count,7
 branches,branch-11,completed,social.active_relationships,8
@@ -503,12 +503,12 @@ branches,branch-12,completed,governance.votes_cast,2
 branches,branch-12,completed,governance.votes_refused_outside_electorate,1
 branches,branch-12,completed,governance.commands_rejected,1
 branches,branch-12,completed,governance.migrations,3
-branches,branch-12,completed,memory.records,63
+branches,branch-12,completed,memory.records,64
 branches,branch-12,completed,memory.imported,1
 branches,branch-12,completed,memory.integrated,1
 branches,branch-12,completed,memory.fork_inherited,8
 branches,branch-12,completed,memory.provenance_complete,1
-branches,branch-12,completed,culture.artefacts,7
+branches,branch-12,completed,culture.artefacts,6
 branches,branch-12,completed,culture.chronicle_entries,6
 branches,branch-12,completed,institutions.count,7
 branches,branch-12,completed,social.active_relationships,8

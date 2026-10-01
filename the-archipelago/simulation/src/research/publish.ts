@@ -161,6 +161,7 @@ export function researchManifestYaml(b: ResearchBundle, input: ResearchInput, ou
     study: study
       ? {
           plan: study.plan,
+          enumeration: study.enumeration,
           base: { head_hash: study.base.headHash, event_count: study.base.eventCount, branch_seq: study.base.branchSeq },
           runs: study.runs.map((r) => ({ id: r.id, group: r.group, status: r.status, reason: r.reason, head_hash: r.headHash, event_count: r.eventCount, variation: r.variation })),
         }
