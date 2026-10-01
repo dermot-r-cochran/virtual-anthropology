@@ -280,6 +280,30 @@ const views = {
     return { html, after: () => { $("#s-key").addEventListener("input", render); render(); } };
   },
 
+  async study(ds) {
+    const index = await fetchJson(`${ds.path}/index.json`);
+    if (!index.study) return `<h2>Study</h2><p class="muted">This manifest declares no study.</p>`;
+    const st = await fetchJson(`${ds.path}/study.json`);
+    const hyps = Object.keys(Object.values(st.summary)[0]?.hypotheses ?? {});
+    const outcome = (r) => hyps.map((h) => (r.findings.find((f) => f.hypothesisId === h)?.outcome ?? "n/a").replace("-with-hypothesis", "")).join(" / ");
+    const groups = [["seeds", "Seed sweep"], ["doctrines", "Doctrine variants"], ["timelines", "Alternate timelines"]].filter(([g]) => st.summary[g]);
+    const html = `
+      <h2>Study</h2>
+      <p class="muted">Replications of the base run under declared variations; each a deterministic run identified by its head hash. Base head <code>${esc(st.base.headHash.slice(0, 16))}…</code>${st.base.branchSeq === null ? "" : `, branch point after seq ${esc(st.base.branchSeq)}`}.</p>
+      ${groups.map(([g, label]) => {
+        const s = st.summary[g];
+        const runs = st.runs.filter((r) => r.group === g);
+        return `<h3>${esc(label)} <span class="tag">${esc(s.completed)} of ${esc(s.runs)} completed</span></h3>
+        <table><tr><th>run</th><th>variation</th><th>events</th><th>head</th><th>${hyps.map(esc).join(" / ")}</th></tr>
+        ${runs.map((r) => `<tr><td><code>${esc(r.id)}</code></td><td><code>${esc(JSON.stringify(r.variation))}</code></td><td>${esc(r.eventCount ?? "—")}</td><td>${r.headHash ? `<code title="${esc(r.headHash)}">${esc(r.headHash.slice(0, 12))}…</code>${r.headHash === st.base.headHash ? " <span class=\"tag\">= base</span>" : ""}` : "—"}</td><td>${r.status === "completed" ? esc(outcome(r)) : `<span class="tag no">infeasible</span> ${esc(r.reason)}`}</td></tr>`).join("")}</table>
+        <ul>${hyps.map((h) => { const t = s.hypotheses[h]; return `<li><code>${esc(h)}</code>: consistent in ${esc(t.consistent)} of ${esc(t.n)} completed run(s)</li>`; }).join("")}</ul>
+        <table><tr><th>metric</th><th>n</th><th>min</th><th>median</th><th>mean</th><th>max</th></tr>
+        ${Object.entries(s.metrics).map(([id, v]) => `<tr><td><code>${esc(id)}</code></td><td>${esc(v.n)}</td><td>${esc(v.min)}</td><td>${esc(v.median)}</td><td>${esc(v.mean)}</td><td>${esc(v.max)}</td></tr>`).join("")}</table>`;
+      }).join("")}
+      <p class="muted">Summaries are min, median, mean and max over completed runs and nothing else. Interpretation is left to researchers.</p>`;
+    return html;
+  },
+
   async reports(ds) {
     const index = await fetchJson(`${ds.path}/index.json`);
     const docs = index.files.map((f) => f.path).filter((p) => p.endsWith(".md") || p.endsWith(".mmd") || p.endsWith(".yaml"));

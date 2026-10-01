@@ -67,6 +67,8 @@ export const SYSTEM_ACTOR_IDS = [
   "genesis",
   "clock",
   "environment",
+  /** Enacts a study-declared amendment at a timeline branch point (EnactAmendment); nothing else. */
+  "study",
   ...ISLAND_IDS.map((i) => `registry:${i}` as const),
 ] as const;
 export const SystemActorIdSchema = z.enum(SYSTEM_ACTOR_IDS);

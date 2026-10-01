@@ -175,6 +175,10 @@ export function decide(state: WorldState, command: Command, ctx: DecideContext):
       return [{ type: "VoteCast", proposalId: command.proposalId, voter: command.voter, choice: command.choice }];
     case "CloseProposal":
       return decideCloseProposal(state, command, seq);
+    case "EnactAmendment": {
+      const law = lawOf(state, command.island);
+      return [{ type: "LawEnacted", proposalId: null, law: { ...structuredClone(law), ...structuredClone(command.amendment), version: law.version + 1, enactedAtSeq: seq + 1 } }];
+    }
     case "PetitionMigration": {
       const c = mustCitizen(state, command.citizen);
       return [

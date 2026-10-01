@@ -30,7 +30,6 @@ Generated from the event stream. year = simulation tick + 1. Each statement cite
 - Orin Vale claims continuity with Orin Vale as recorded before seq 17. _[58:ContinuityClaimed]_
 - Orin Vale (branch 1) claims continuity with Orin Vale as recorded before seq 17. _[59:ContinuityClaimed]_
 - Orin Vale (branch 2) claims continuity with Orin Vale as recorded before seq 17. _[60:ContinuityClaimed]_
-- Sefa Lune imports communal memory mem-0009 (from Mnemosyne), first experienced by Rumi Okafor. _[68:MemoryImported]_
 - Juno Ash creates the song "A song of the Register Garden". _[69:ArtefactCreated]_
 - Mae Sorrel creates the essay "An essay of the Common Table". _[70:ArtefactCreated]_
 

@@ -14,7 +14,7 @@ tick,seq,metric,value
 7,90,lifecycle.irreversibly-deleted,0
 7,90,memories.autobiographical,39
 7,90,memories.collective,3
-7,90,memories.imported,2
+7,90,memories.imported,1
 7,90,memories.integrated,1
 7,90,activeRelationships,8
 7,90,artefacts,9
@@ -23,4 +23,4 @@ tick,seq,metric,value
 7,90,forks,1
 7,90,continuityClaims,3
 7,90,creditGini,0.1542
-7,90,meanReputation,1.7273
+7,90,meanReputation,1.5455

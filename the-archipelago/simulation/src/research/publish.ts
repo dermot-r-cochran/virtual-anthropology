@@ -3,6 +3,7 @@ import type { CivilizationChronicle, EpistemicKind, MetricValue, Publication } f
 import type { ResearchInput } from "./interchange.js";
 import { METRIC_INDEX } from "./metric-registry.js";
 import { EPISTEMIC_STATEMENT, type ResearchBundle } from "./pipeline.js";
+import type { StudyResult } from "./study.js";
 
 const KIND_LABEL: Record<EpistemicKind, string> = {
   observation: "Observation — restates recorded events or computed values",
@@ -125,7 +126,7 @@ export interface OutputEntry {
 }
 
 /** research_manifest.yaml: the authoritative provenance document of a run. */
-export function researchManifestYaml(b: ResearchBundle, input: ResearchInput, outputs: readonly OutputEntry[]): string {
+export function researchManifestYaml(b: ResearchBundle, input: ResearchInput, outputs: readonly OutputEntry[], study: StudyResult | null = null): string {
   const mf = b.manifest;
   const doc = {
     schema: "archipelago/research-manifest/v1",
@@ -157,6 +158,13 @@ export function researchManifestYaml(b: ResearchBundle, input: ResearchInput, ou
     event_store: { head_hash: b.experiment.eventStore.headHash, event_count: b.experiment.eventStore.eventCount },
     metrics: b.metricDefinitions.map((d) => ({ id: d.id, unit: d.unit, value: b.metrics.find((x) => x.metric === d.id)?.value ?? null, definition: d.definition })),
     findings: b.findings.map((f) => ({ hypothesis: f.hypothesisId, metric: f.metric, observed: f.observedValue, test: `${f.comparator} ${f.threshold}`, outcome: f.outcome })),
+    study: study
+      ? {
+          plan: study.plan,
+          base: { head_hash: study.base.headHash, event_count: study.base.eventCount, branch_seq: study.base.branchSeq },
+          runs: study.runs.map((r) => ({ id: r.id, group: r.group, status: r.status, reason: r.reason, head_hash: r.headHash, event_count: r.eventCount, variation: r.variation })),
+        }
+      : null,
     outputs: outputs.map((o) => ({ path: o.path, sha256: o.sha256, bytes: o.bytes })),
     limitations: mf.limitations,
     ethics: { consciousness_claims: mf.ethics.consciousnessClaims, statement: EPISTEMIC_STATEMENT, notes: mf.ethics.notes },

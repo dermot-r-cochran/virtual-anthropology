@@ -45,7 +45,7 @@ describe("The First Fork and the research pipeline", async () => {
   it("experiment report has the standard sections and never generates interpretation", () => {
     const md = out.reportFiles[`reports/experiments/${m.id}.md`]!;
     const headings = md.split("\n").filter((l) => l.startsWith("# ")).slice(1).map((l) => l.slice(2));
-    expect(headings).toEqual(["Abstract", "Research Question", "Hypothesis", "Experimental Design", "Configuration", "Results", "Observations", "Interpretation", "Limitations", "Future Work", "Reproducibility Information"]);
+    expect(headings).toEqual(["Abstract", "Research Question", "Hypothesis", "Experimental Design", "Configuration", "Results", "Study", "Observations", "Interpretation", "Limitations", "Future Work", "Reproducibility Information"]);
     expect(md).toMatch(/_Not generated\._/);
     expect(md).toMatch(/configuration hash/);
   });
@@ -56,7 +56,7 @@ describe("The First Fork and the research pipeline", async () => {
   });
 
   it("regeneration with a fixed clock is byte-identical to the committed export", () => {
-    for (const f of ["index.json", "research_manifest.yaml", "research.json", "events.jsonl"]) expect(out.exportFiles[f]).toBe(readFileSync(EXPORTS + f, "utf8"));
+    for (const f of ["index.json", "research_manifest.yaml", "research.json", "events.jsonl", "study.json", "study.csv"]) expect(out.exportFiles[f]).toBe(readFileSync(EXPORTS + f, "utf8"));
   });
 
   it("the First Fork is filed as a demonstration, and every output says so", () => {
@@ -75,6 +75,41 @@ describe("The First Fork and the research pipeline", async () => {
     expect(() => parseManifest(src.replace("category: demonstration\n", ""))).toThrow();
     expect(() => parseManifest(src.replace("category: demonstration", "category: study"))).toThrow();
     expect(parseManifest(src.replace("category: demonstration", "category: experiment")).category).toBe("experiment");
+  });
+
+  it("the study replicates the base run under its declared variations, and the control timeline reproduces it exactly", () => {
+    const study = JSON.parse(out.exportFiles["study.json"]!);
+    expect(study.base.headHash).toBe(run.headHash);
+    expect(study.base.branchSeq).toBe(run.branchSeq);
+    const byId = (id: string) => study.runs.find((r: { id: string }) => r.id === id);
+    const seeds = study.runs.filter((r: { group: string }) => r.group === "seeds");
+    expect(seeds).toHaveLength(m.study!.seeds!.count + 1);
+    expect(seeds[0].variation).toEqual({ seed: m.seed, base: true });
+    expect(new Set(seeds.map((r: { headHash: string }) => r.headHash)).size).toBe(seeds.length);
+    expect(study.summary.seeds.hypotheses["h1-legal-divergence"].n).toBe(seeds.length);
+    expect(byId("control").headHash).toBe(run.headHash);
+    expect(byId("control").eventCount).toBe(run.log.length);
+    expect(byId("second-seed").headHash).not.toBe(run.headHash);
+    expect(byId("fork-closes-its-borders").status).toBe("completed");
+    expect(byId("mnemosyne-no-integration").status).toBe("completed");
+    expect(byId("mnemosyne-no-integration").metrics["memory.integrated"]).toBe(0);
+    expect(byId("fork-single-descendant").status).toBe("infeasible");
+    expect(byId("fork-single-descendant").reason).toMatch(/fork/i);
+    expect(study.summary.doctrines.infeasible).toBe(1);
+    const md = out.reportFiles[`reports/experiments/${m.id}.md`]!;
+    expect(md).toMatch(/^### Seed sweep/m);
+    expect(md).toMatch(/^### Alternate timelines/m);
+    expect(md).toMatch(/\(= base\)/);
+    expect(md).toMatch(/^- Study replications are deterministic runs/m);
+    expect(out.exportFiles["research_manifest.yaml"]).toMatch(/^study:$/m);
+    expect(JSON.parse(out.exportFiles["index.json"]!).study.runs).toBe(study.runs.length);
+  });
+
+  it("manifest validation rejects a malformed study", () => {
+    const src = readFileSync(MANIFEST, "utf8");
+    expect(() => parseManifest(src.replace("      - id: control\n        seed: archipelago/the-first-fork/v1\n", "      - id: control\n"))).toThrow(/seed or an amendment/);
+    expect(() => parseManifest(src.replace("id: second-seed", "id: control"))).toThrow(/duplicate/);
+    expect(parseManifest(src.replace(/^study:[\s\S]*?(?=^ethics:)/m, "")).study).toBeUndefined();
   });
 
   it("manifest validation rejects consciousness claims", () => {

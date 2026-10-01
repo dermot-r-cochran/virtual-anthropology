@@ -349,11 +349,11 @@
     },
     {
       "metric": "memory.records",
-      "value": 45
+      "value": 44
     },
     {
       "metric": "memory.imported",
-      "value": 2
+      "value": 1
     },
     {
       "metric": "memory.integrated",
@@ -373,7 +373,7 @@
     },
     {
       "metric": "culture.chronicle_entries",
-      "value": 3
+      "value": 6
     },
     {
       "metric": "institutions.count",
@@ -464,7 +464,7 @@
         "lifecycle.irreversibly-deleted": 0,
         "memories.autobiographical": 39,
         "memories.collective": 3,
-        "memories.imported": 2,
+        "memories.imported": 1,
         "memories.integrated": 1,
         "activeRelationships": 8,
         "artefacts": 9,
@@ -473,7 +473,7 @@
         "forks": 1,
         "continuityClaims": 3,
         "creditGini": 0.1542,
-        "meanReputation": 1.7273
+        "meanReputation": 1.5455
       }
     }
   ]

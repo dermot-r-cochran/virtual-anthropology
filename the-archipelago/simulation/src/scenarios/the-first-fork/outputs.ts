@@ -29,6 +29,7 @@ export function firstForkScenarioOutputs(run: FirstForkRun, manifest: Experiment
     log,
     state: s,
     headHash: world.headHash,
+    branchSeq: run.branchSeq,
     analyses: { evidence, legal },
     dataset: {
       markers,

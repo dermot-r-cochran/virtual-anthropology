@@ -11,6 +11,7 @@ import type { ExperimentManifest } from "../research/manifest.js";
 import { measure } from "../research/metrics.js";
 import { runResearchPipeline, type RunTimestamps } from "../research/pipeline.js";
 import { chronicleMarkdown, civilizationReportMarkdown, experimentReportMarkdown, researchManifestYaml, type OutputEntry } from "../research/publish.js";
+import { runStudy, studyCsv } from "../research/study.js";
 import { runScenario } from "../scenarios/index.js";
 
 export const DATASET_SCHEMA_VERSION = 2;
@@ -56,7 +57,8 @@ export async function publishExperiment(manifest: ExperimentManifest, clock = ru
   const times: RunTimestamps = { startedAt, endedAt: clock.end() };
   const s = run.state;
   const input = toResearchInput(run.log, s, run.analyses);
-  const bundle = runResearchPipeline(input, manifest, times);
+  const study = await runStudy(manifest, run);
+  const bundle = runResearchPipeline(input, manifest, times, study);
   const id = manifest.id;
   const civ = manifest.civilizationId;
 
@@ -116,6 +118,7 @@ export async function publishExperiment(manifest: ExperimentManifest, clock = ru
     "research.json": json(research),
     ...Object.fromEntries(Object.entries(bundle.visualizationData).map(([k, v]) => [k, json(v)])),
     "civilization_metrics.csv": ["tick,seq,metric,value", ...input.series.flatMap((p) => Object.entries(p.values).map(([k, v]) => `${p.tick},${p.seq},${k},${v}`))].join("\n") + "\n",
+    ...(study ? { "study.json": json(study), "study.csv": studyCsv(study) } : {}),
     "publication/experiment-report.md": experimentMd,
     "publication/civilization-report.md": civilizationMd,
     "publication/chronicle.md": chronicleMd,
@@ -125,7 +128,7 @@ export async function publishExperiment(manifest: ExperimentManifest, clock = ru
     ...Object.entries(exportFiles).map(([p, b]) => entry(`exports/${id}/${p}`, b)),
     ...Object.entries(reportFiles).map(([p, b]) => entry(p, b)),
   ];
-  exportFiles["research_manifest.yaml"] = researchManifestYaml(bundle, input, outputs);
+  exportFiles["research_manifest.yaml"] = researchManifestYaml(bundle, input, outputs, study);
   const index = {
     schemaVersion: DATASET_SCHEMA_VERSION,
     generator: GENERATOR,
@@ -139,6 +142,7 @@ export async function publishExperiment(manifest: ExperimentManifest, clock = ru
     headHash: run.headHash,
     eventCount: run.log.length,
     findings: bundle.findings.map((f) => ({ hypothesisId: f.hypothesisId, outcome: f.outcome })),
+    study: study ? { runs: study.runs.length, completed: study.runs.filter((r) => r.status === "completed").length, groups: Object.fromEntries(Object.entries(study.summary).map(([g, v]) => [g, v.runs])) } : null,
     visualizations: bundle.visualizations,
     files: Object.entries(exportFiles).map(([p, b]) => entry(p, b)),
   };
@@ -159,8 +163,8 @@ export function writeCatalog(root: string): void {
   const datasets = readdirSync(root, { withFileTypes: true })
     .filter((d) => d.isDirectory() && existsSync(join(root, d.name, "index.json")))
     .map((d) => {
-      const idx = JSON.parse(readFileSync(join(root, d.name, "index.json"), "utf8")) as { experimentId: string; civilizationId: string; title: string; category: string; scenario: string; headHash: string; eventCount: number; findings: unknown };
-      return { path: d.name, id: idx.experimentId, civilizationId: idx.civilizationId, title: idx.title, category: idx.category, scenario: idx.scenario, headHash: idx.headHash, eventCount: idx.eventCount, findings: idx.findings };
+      const idx = JSON.parse(readFileSync(join(root, d.name, "index.json"), "utf8")) as { experimentId: string; civilizationId: string; title: string; category: string; scenario: string; headHash: string; eventCount: number; findings: unknown; study: unknown };
+      return { path: d.name, id: idx.experimentId, civilizationId: idx.civilizationId, title: idx.title, category: idx.category, scenario: idx.scenario, headHash: idx.headHash, eventCount: idx.eventCount, findings: idx.findings, study: idx.study ?? null };
     })
     .sort((a, b) => a.path.localeCompare(b.path));
   writeFileSync(join(root, "catalog.json"), json({ schemaVersion: DATASET_SCHEMA_VERSION, datasets }));

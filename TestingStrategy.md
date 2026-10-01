@@ -8,17 +8,20 @@ The repository's claim is that every simulation is publishable: regenerable byte
 
 ## Layer 1 — the simulation suite (`the-archipelago/simulation/test/`, vitest)
 
-Two files, 17 tests, run by `npm test` and, with the typecheck in front of it, by `npm run check`. `tsconfig.json` is strict with `noUncheckedIndexedAccess`, so the typecheck is itself a gate.
+Two files, 22 tests, run by `npm test` and, with the typecheck in front of it, by `npm run check`. `tsconfig.json` is strict with `noUncheckedIndexedAccess`, so the typecheck is itself a gate.
 
-- `kernel.test.ts` (7) — the kernel's guarantees, from a fresh *First Fork* genesis each time:
+- `kernel.test.ts` (10) — the kernel's guarantees, from a fresh *First Fork* genesis each time:
   - the seeded RNG is deterministic per seed;
   - `World.replay` reproduces state and head hash, and tampering with one event is detected;
   - island law: Continuity prohibits copying, Fork creates separate identities without duplicating credits;
   - researchers cannot change a lifecycle state, and unregistered researchers are refused;
   - the disclosure guard requires the artificial-nature statement and blocks manipulation;
+  - `EnactAmendment` is applied for the system actor `study` only (a citizen and the clock are refused at authorisation; an empty amendment is refused) and records `LawEnacted`;
+  - founding law overrides apply to statutory fields only, and a constitutional field in `laws` fails the schema;
+  - a timeline branched at the epilogue with the base seed reproduces the base run exactly, another seed shares the prefix and diverges, and an amendment at the branch is the first event after it;
   - **property** (fast-check): `irreversibly-deleted` is terminal under every transition;
   - **property** (fast-check, 25 runs): random experience and credit-transfer sequences keep every invariant, conserve total supply, and replay to the same head hash.
-- `research.test.ts` (10) — runs the scenario and `publishExperiment` once with a fixed clock, then asserts: the head hash matches the manifest's pinned value; three claimants claim continuity and the evidence returns no verdict; findings are mechanical metric comparisons; every chronicle statement traces to a real event with a matching hash; the experiment report has the standard sections and never generates interpretation; `research_manifest.yaml` carries the required provenance keys; **regeneration is byte-identical to the committed export** for `index.json`, `research_manifest.yaml`, `research.json` and `events.jsonl`; and a manifest claiming consciousness is rejected by the schema; the First Fork is filed as a demonstration and every output (index, provenance manifest, research.json, the report's abstract, design bullet and limitation) says so; and a manifest with a missing or unknown `category` is rejected while `experiment` is accepted.
+- `research.test.ts` (12) — runs the scenario and `publishExperiment` once with a fixed clock, then asserts: the head hash matches the manifest's pinned value; three claimants claim continuity and the evidence returns no verdict; findings are mechanical metric comparisons; every chronicle statement traces to a real event with a matching hash; the experiment report has the standard sections and never generates interpretation; `research_manifest.yaml` carries the required provenance keys; **regeneration is byte-identical to the committed export** for `index.json`, `research_manifest.yaml`, `research.json` and `events.jsonl`; and a manifest claiming consciousness is rejected by the schema; the First Fork is filed as a demonstration and every output (index, provenance manifest, research.json, the report's abstract, design bullet and limitation) says so; and a manifest with a missing or unknown `category` is rejected while `experiment` is accepted; the study replicates the base run as declared (nine distinct seed runs including the base, the `control` timeline reproducing the base head hash, the single-descendant doctrine recorded `infeasible`, the no-integration doctrine completing with zero integrations, the *Study* section and its limitation present, `study:` in the provenance manifest); and a malformed study (a timeline variant with neither seed nor amendment, duplicate variant ids) is rejected while a manifest without a study parses.
 
 ## Layer 2 — the Evennia bridge suite (`the-archipelago/evennia/tests/`, unittest)
 
@@ -38,6 +41,7 @@ Everything fails; nothing warns. There is no lint and no coverage measurement ye
 
 ## Extending
 
+- **A new scenario that should support timelines** implements `ScenarioDriver.branch` and attaches its epilogue minds from the record the way `attachEpilogueMinds` does, with a control-branch test proving the base head hash is reproduced.
 - **A new scenario** lands with its manifest, its registry entry in `scenarios/index.ts`, the generated `exports/<id>/` and `reports/` from a pinned-clock publish run, and a `research.test.ts`-style test that runs it and compares against the committed export. From then on CI's diff holds it still.
 - **A new invariant** goes in `kernel/invariants.ts` and gets a fast-check property in `kernel.test.ts` that drives random command sequences through it, the way supply conservation and replay equality are pinned now.
 - **A new policy guard** (a disclosure pattern, an authorisation rule, an island-law clause) lands with both verdicts: the case refused and the nearest case admitted.
@@ -49,7 +53,7 @@ Everything fails; nothing warns. There is no lint and no coverage measurement ye
 
 - **No coverage measurement.** `coverage/` is already gitignored, but no coverage provider is installed and CI runs none. The account's convention is a ratchet at the measured baseline, raised only with the tests that earn it; measure first, then add the gate at the number measured.
 - **No lint.** Neither ESLint nor Biome for the TypeScript, nor ruff for the Python. Add one green on its first run, never red; a permanently failing check is the one everyone learns to ignore.
-- **Single runs only.** Every experiment is one deterministic run and the limitations doc says so; a seed-sweep harness would turn a finding that holds "in this single run" into one with a distribution behind it. That is research work as much as test work, and the reports' language must not get ahead of it.
+- **Studies summarise, they do not infer.** Seed sweeps, doctrine variants and timelines exist now, but their summaries are min, median, mean, max and counts; no test checks that a report's language stays descriptive beyond the printed limitation, because that is a judgement. The next step on the research side, if wanted, is a declared comparison between groups with its own operationalisation, never a generated one.
 - **The Pages job is untested on pull requests.** A dry assembly step in the `test` job (copy the three directories, check the site's `index.html` and `catalog.json` are where `app.js` looks) would catch a broken site before `main`.
 - **Actions pinned to Node 20 majors.** The runner warns that `checkout@v4`, `setup-node@v4` and `configure-pages@v5` target the deprecated Node 20; bump them when their next majors are stable.
 - **Two identical docs.** `docs/evennia.md` and `evennia/README.md` are byte-identical; a diff check in CI, or collapsing one into a pointer, stops them drifting.

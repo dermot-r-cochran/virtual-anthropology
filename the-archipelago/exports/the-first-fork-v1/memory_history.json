@@ -904,41 +904,6 @@
       "id": "mem-0036",
       "holder": "cit-0006",
       "archive": null,
-      "experiencedBy": "cit-0007",
-      "experiencedAtSeq": 0,
-      "island": "mnemosyne",
-      "status": "imported",
-      "integrity": "intact",
-      "derivedFrom": "mem-0009",
-      "tags": [
-        "communal",
-        "festival"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0007",
-          "atSeq": 0,
-          "island": "mnemosyne"
-        },
-        {
-          "action": "contributed-to-archive",
-          "by": "cit-0007",
-          "atSeq": 0,
-          "island": "mnemosyne"
-        },
-        {
-          "action": "imported-from-archive",
-          "by": "cit-0006",
-          "atSeq": 68,
-          "island": "mnemosyne"
-        }
-      ]
-    },
-    {
-      "id": "mem-0037",
-      "holder": "cit-0006",
-      "archive": null,
       "experiencedBy": "cit-0006",
       "experiencedAtSeq": 74,
       "island": "mnemosyne",
@@ -959,7 +924,7 @@
       ]
     },
     {
-      "id": "mem-0038",
+      "id": "mem-0037",
       "holder": "cit-0002",
       "archive": null,
       "experiencedBy": "cit-0002",
@@ -982,7 +947,7 @@
       ]
     },
     {
-      "id": "mem-0039",
+      "id": "mem-0038",
       "holder": "cit-0003",
       "archive": null,
       "experiencedBy": "cit-0003",
@@ -1005,7 +970,7 @@
       ]
     },
     {
-      "id": "mem-0040",
+      "id": "mem-0039",
       "holder": "cit-0007",
       "archive": null,
       "experiencedBy": "cit-0007",
@@ -1028,7 +993,7 @@
       ]
     },
     {
-      "id": "mem-0041",
+      "id": "mem-0040",
       "holder": "cit-0009",
       "archive": null,
       "experiencedBy": "cit-0009",
@@ -1051,7 +1016,7 @@
       ]
     },
     {
-      "id": "mem-0042",
+      "id": "mem-0041",
       "holder": "cit-0002",
       "archive": null,
       "experiencedBy": "cit-0002",
@@ -1074,7 +1039,7 @@
       ]
     },
     {
-      "id": "mem-0043",
+      "id": "mem-0042",
       "holder": "cit-0003",
       "archive": null,
       "experiencedBy": "cit-0003",
@@ -1097,7 +1062,7 @@
       ]
     },
     {
-      "id": "mem-0044",
+      "id": "mem-0043",
       "holder": "cit-0006",
       "archive": null,
       "experiencedBy": "cit-0006",
@@ -1120,7 +1085,7 @@
       ]
     },
     {
-      "id": "mem-0045",
+      "id": "mem-0044",
       "holder": "cit-0009",
       "archive": null,
       "experiencedBy": "cit-0009",
@@ -1329,17 +1294,6 @@
       "hash": "4d14460b4ad38658d12776b75d526cf668feb269a678da548cf5d00b2be1d11e"
     },
     {
-      "seq": 68,
-      "tick": 4,
-      "type": "MemoryImported",
-      "citizens": [
-        "cit-0006",
-        "cit-0007"
-      ],
-      "summary": "Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
-      "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed"
-    },
-    {
       "seq": 74,
       "tick": 5,
       "type": "ExperienceRecorded",
@@ -1347,7 +1301,7 @@
         "cit-0006"
       ],
       "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune kept watch over the Reading Shore at tick 5.\"",
-      "hash": "a085b52270209b8b09a66e28e8c632a88c11c1d9542cf3e96ae66b17e429c77e"
+      "hash": "70be67f534623af0de68d0b377049ac74e53cd2a9dfccba7ce61809169281401"
     },
     {
       "seq": 75,
@@ -1357,7 +1311,7 @@
         "cit-0002"
       ],
       "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked the long causeway at tick 5.\"",
-      "hash": "b689b1c8f39258d195fc37a33f0e62eec5575906b257789e95665d35a435ff5d"
+      "hash": "32c84ac85dc3fef1e4bc4e6606e050ff32ffbde3031adc7a068d7bde5eb654ca"
     },
     {
       "seq": 77,
@@ -1367,7 +1321,7 @@
         "cit-0003"
       ],
       "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho mapped Meridian Quay at tick 5.\"",
-      "hash": "1dc22ea3f07d3a82501ac106b6c05f8875406a04090ff48d100de9c07bfa8cb7"
+      "hash": "2793af0054794fd9ac0a16670e4b38029ddb4c48528f10a425f23a22ebe412d8"
     },
     {
       "seq": 78,
@@ -1377,7 +1331,7 @@
         "cit-0007"
       ],
       "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor taught a class at the Stacks at tick 5.\"",
-      "hash": "51fc67b85e5705a04d921438619b128f7b134b7311bc004b506729d2082dd2a2"
+      "hash": "2b872d57abec47efbdff23e0fd06925b9e64cfb850528978f03d39aaaec8f89b"
     },
     {
       "seq": 79,
@@ -1387,7 +1341,7 @@
         "cit-0009"
       ],
       "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Common Table at tick 5.\"",
-      "hash": "913ef2dd788338cc6e1616891099cfb2aff22d51f6ea1e4c0e533314dfcccb3f"
+      "hash": "ecf146ac56b3801ce0f6456c63df6b7ec97fd423decffec1d6cbe1543327a462"
     },
     {
       "seq": 85,
@@ -1397,7 +1351,7 @@
         "cit-0002"
       ],
       "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed taught a class at the long causeway at tick 6.\"",
-      "hash": "12975cf16b51fd455ed9349573c352d4427d2416244a69fffb632f529cb79f52"
+      "hash": "0e99305079e3425cf6e8c76d6e2805bf0a4988a9ec78258880522d202bbce4e9"
     },
     {
       "seq": 86,
@@ -1407,7 +1361,7 @@
         "cit-0003"
       ],
       "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at Meridian Quay at tick 6.\"",
-      "hash": "fae728b2546a9cc32e6c94c8b22b88ec08e3d37f5b42ff7b0e095f6406fb5b98"
+      "hash": "7f849dac917c89e9d4f0f7f6de88f8d0d46dc74187f1a3d2f98123a999b4b8f3"
     },
     {
       "seq": 87,
@@ -1417,7 +1371,7 @@
         "cit-0006"
       ],
       "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune argued about tides at the Stacks at tick 6.\"",
-      "hash": "5997fc4a7eeb6af5c6b39536fbac3f2699b545bfb173adc3a50e1bdecae17c67"
+      "hash": "f02783046075ebe064ae1d59555fd4c70768a5d97f642db0098ec3395d75fce0"
     },
     {
       "seq": 88,
@@ -1427,7 +1381,7 @@
         "cit-0009"
       ],
       "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Accord Bridge at tick 6.\"",
-      "hash": "dbb63a0e2cb95bb960950dc0e0158fad734d9718dda91d57dd918a711c3cdf50"
+      "hash": "3f731b28b41341d18892866642a262fc8230186d9f4fe58686f778a86def3e97"
     }
   ]
 }

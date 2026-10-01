@@ -89,12 +89,12 @@ population:
     promptId: archipelago/deterministic-citizen/v1
 simulation_seed: archipelago/the-first-fork/v1
 simulation_version: 0.1.0
-configuration_hash: b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f
+configuration_hash: 58ade219ea8f5b4499aec0fd41b17b9c62dde74b49b4c28aca523459f74e5e05
 start_timestamp: 2026-01-01T00:00:00.000Z
 end_timestamp: 2026-01-01T00:00:00.000Z
 simulated_ticks: 7
 event_store:
-  head_hash: 6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271
+  head_hash: 3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
   event_count: 91
 metrics:
   - id: population.records
@@ -179,11 +179,11 @@ metrics:
     definition: Number of `CitizenMigrated` events.
   - id: memory.records
     unit: records
-    value: 45
+    value: 44
     definition: All memory records, including collective-archive records and destroyed tombstones.
   - id: memory.imported
     unit: records
-    value: 2
+    value: 1
     definition: Records currently held with status `imported` (not autobiographical).
   - id: memory.integrated
     unit: records
@@ -203,7 +203,7 @@ metrics:
     definition: Artefacts created by citizens or introduced by researchers.
   - id: culture.chronicle_entries
     unit: entries
-    value: 3
+    value: 6
     definition: Number of `ChronicleRecorded` events written by citizens.
   - id: institutions.count
     unit: institutions
@@ -289,19 +289,206 @@ findings:
     observed: 1
     test: ">= 1"
     outcome: consistent-with-hypothesis
+study:
+  plan:
+    seeds:
+      count: 8
+    doctrines:
+      - id: mnemosyne-no-integration
+        island: mnemosyne
+        amendment: &a1
+          importedMemoryIntegration: prohibited
+      - id: fork-descendants-without-citizenship
+        island: fork
+        amendment: &a2
+          descendantCitizenship: none
+      - id: fork-single-descendant
+        island: fork
+        amendment: &a3
+          maxDescendantsPerFork: 1
+    timelines:
+      rounds: 3
+      variants:
+        - id: control
+          seed: archipelago/the-first-fork/v1
+        - id: second-seed
+          seed: archipelago/the-first-fork/v1/timeline-2
+        - id: fork-closes-its-borders
+          amendment: &a4
+            island: fork
+            amendment:
+              immigration: closed
+        - id: mnemosyne-opens-its-borders
+          amendment: &a5
+            island: mnemosyne
+            amendment:
+              immigration: open
+  base:
+    head_hash: 3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
+    event_count: 91
+    branch_seq: 63
+  runs:
+    - id: seed-0
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: 3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
+      event_count: 91
+      variation:
+        seed: archipelago/the-first-fork/v1
+        base: true
+    - id: seed-1
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: 59f1254303d30beb05fbe56169a4256a2cf9d477c9d4d495d3fa64c863870359
+      event_count: 91
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/1
+        base: false
+    - id: seed-2
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: 5d7ed94bac6720d1e5fcc44b95691fc3d05e554027480946fb92217e40c7c355
+      event_count: 91
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/2
+        base: false
+    - id: seed-3
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: 980d6e2ed5fd520d4b988787effc34f144f012e5fc38d5b3d211ae6acff4bb36
+      event_count: 92
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/3
+        base: false
+    - id: seed-4
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: b43de0f64ee89f20366b8f6a452968efa356bdfa8e8bc83ec88b206c8447274c
+      event_count: 92
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/4
+        base: false
+    - id: seed-5
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: 555c087c36f385294bdaf7d1d467fde3f6f1c186bb6751dda6f03d3db9e69704
+      event_count: 92
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/5
+        base: false
+    - id: seed-6
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: dc944583ab61763ac74dbe1e5f3a653bc1973930954d8ea3a9fd21f0a021ca27
+      event_count: 92
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/6
+        base: false
+    - id: seed-7
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: 418dc094b3efec87843ccd154c815526f839af1fa071de22b6160ab085470586
+      event_count: 92
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/7
+        base: false
+    - id: seed-8
+      group: seeds
+      status: completed
+      reason: null
+      head_hash: 940ed590169d1b911fa13a21a6f467d3979234760b900ce45b423780cea4bd71
+      event_count: 91
+      variation:
+        seed: archipelago/the-first-fork/v1/sweep/8
+        base: false
+    - id: mnemosyne-no-integration
+      group: doctrines
+      status: completed
+      reason: null
+      head_hash: 18d3245a1e58c7dbabf9bf77d9b6fa2f37ff8e47b17c6a8cfb249d6fa2b56325
+      event_count: 91
+      variation:
+        island: mnemosyne
+        amendment: *a1
+    - id: fork-descendants-without-citizenship
+      group: doctrines
+      status: completed
+      reason: null
+      head_hash: da807d8b79e3985ca4ab08544badd5872c138b517ecbefedf404595b68abf7fc
+      event_count: 90
+      variation:
+        island: fork
+        amendment: *a2
+    - id: fork-single-descendant
+      group: doctrines
+      status: infeasible
+      reason: "The First Fork: fork did not occur"
+      head_hash: null
+      event_count: null
+      variation:
+        island: fork
+        amendment: *a3
+    - id: control
+      group: timelines
+      status: completed
+      reason: null
+      head_hash: 3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
+      event_count: 91
+      variation:
+        seed: archipelago/the-first-fork/v1
+        amendment: null
+        rounds: 3
+    - id: second-seed
+      group: timelines
+      status: completed
+      reason: null
+      head_hash: f31c557db64b98ae8a8ce301f76588217b69897425d2d119df6e8277de8d7fc4
+      event_count: 91
+      variation:
+        seed: archipelago/the-first-fork/v1/timeline-2
+        amendment: null
+        rounds: 3
+    - id: fork-closes-its-borders
+      group: timelines
+      status: completed
+      reason: null
+      head_hash: 8be3dc1ed4d9ab72c1f5a1a9d6330dc79c36810fe938ef93b1620273e42073bc
+      event_count: 92
+      variation:
+        seed: archipelago/the-first-fork/v1
+        amendment: *a4
+        rounds: 3
+    - id: mnemosyne-opens-its-borders
+      group: timelines
+      status: completed
+      reason: null
+      head_hash: a334f712b203c954d43732f00b7b51b0b83d660b4dcf913c84a003903f442a03
+      event_count: 92
+      variation:
+        seed: archipelago/the-first-fork/v1
+        amendment: *a5
+        rounds: 3
 outputs:
   - path: exports/the-first-fork-v1/events.jsonl
-    sha256: babd853ccfe5f592521e8dc38a7b7fb07c04b6d4ad11da79997f53e83854981a
-    bytes: 104185
+    sha256: be5db939414ab768cf8fd9d3a011244e946e26096f40ff509399c02086b34260
+    bytes: 103559
   - path: exports/the-first-fork-v1/interchange.json
-    sha256: dd9967d4c99b264ee8e0381546c251e6efc962705dc47768ee68cd0cd3a60e0e
-    bytes: 143851
+    sha256: 3a0e55a3a6751585b63ec99010d8a058cd51e2e4ded8987402e5e37e4de833e1
+    bytes: 142276
   - path: exports/the-first-fork-v1/dataset.json
-    sha256: 8e8dff9ef03a3438b6aff552f33f784ae54fbb9dadf6c8b2e9dd84eee1abc3f2
-    bytes: 193084
+    sha256: 51f33a8975e596570e609c72649139a0d135604ce24fd90f5c8947287b0afaae
+    bytes: 164848
   - path: exports/the-first-fork-v1/research.json
-    sha256: 4e85d413f5b098f23d93837424a95c4726a817daf036f65e112902957e506e77
-    bytes: 73253
+    sha256: 5c18972c498c3abccd2531eeccab1e2fc6edd366a0c16d57acc07b5a4c06201c
+    bytes: 76945
   - path: exports/the-first-fork-v1/lineage_graph.json
     sha256: 7ac780656738d9e244f35e63e66a59f11ff65d22be4e01974ee7b1dccdfa9bdc
     bytes: 3444
@@ -312,26 +499,32 @@ outputs:
     sha256: 252a9da855a49bc64bbf77317c6106e4344de67ea9af0856793c2b2c00090359
     bytes: 6968
   - path: exports/the-first-fork-v1/memory_history.json
-    sha256: eea5965a45240502f4f69b0046b8e5a360cfd47567a5936af01f3ebb60f82fee
-    bytes: 35409
+    sha256: 69be35b98b2ed37ae4a7b757fd02fa0e5e940e45c379a8deceb749920c1e4ffa
+    bytes: 34216
   - path: exports/the-first-fork-v1/civilization_metrics.json
-    sha256: e6e4c782573123d30eca701e9b175c342c7a29bd005e9a5aba2d305bd7d146ea
+    sha256: ef4952aa01ab2d1b0aaa952ab356b6eb1a867d80a3e383faea83ca0c5b1d9e17
     bytes: 13278
   - path: exports/the-first-fork-v1/civilization_metrics.csv
-    sha256: 101f93d6d76467c485bbeedc7639f789cb8a366b537808091e91c5e5e05183a0
+    sha256: 882be03bc2d14eaf99319e5df1808b31416f9701c52c53771548c91d3856b126
     bytes: 680
+  - path: exports/the-first-fork-v1/study.json
+    sha256: 34b23eea3103f202441d682e31f4b050682199280dacc04890cc5ce5adc5a2e7
+    bytes: 61162
+  - path: exports/the-first-fork-v1/study.csv
+    sha256: 19bd224dcc8c7f0ed1323889ae7488b67ea0ebc6ba78877935eef815708dfa51
+    bytes: 36758
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: 1728cbb1aa2c762aed276e9162ec79c741eb49f73be7af89ca6b60adb3731687
-    bytes: 24705
+    sha256: 1b1140736530a4d9f7551198aedc713b1c7d6348073b30722dae4dea90fd786c
+    bytes: 29203
   - path: exports/the-first-fork-v1/publication/civilization-report.md
-    sha256: c694c1ab739e41cc2830bfbacfb9398c8a59faf44295fb6e34a200b725932e1e
+    sha256: 8826d522ac4c3131b783c92613dafc0ac58d60875c7eeffed43f0ce00db6aa32
     bytes: 8645
   - path: exports/the-first-fork-v1/publication/chronicle.md
-    sha256: 54857fe84f7d35c08cd2175aa46ccf5cd4bc1e4d705e007044dfc650aee02e6b
-    bytes: 2720
+    sha256: 516a4d1fd86f2e757be8c7ed0d600881c9daca43a1684b04c3c3206ec8b48371
+    bytes: 2601
   - path: exports/the-first-fork-v1/reports/timeline.md
-    sha256: 153c9acf8286a0fa8c1e45c984d681c00f34ced07e6a5857855ad58187c36e05
-    bytes: 16901
+    sha256: dcb178ade34164b7fa0e71e44209c421ff78f5b253ff1e29670caccc3040d18e
+    bytes: 16973
   - path: exports/the-first-fork-v1/reports/lineage.mmd
     sha256: ce700f704c55f731e36df4858f1b3d1c69780321fc940d623d2066122bb3f3bd
     bytes: 531
@@ -345,17 +538,17 @@ outputs:
     sha256: 7d5ef61d9a61f65014321f88a23cd3c412f1e7c87b752080443d2566f3753d77
     bytes: 7709
   - path: exports/the-first-fork-v1/reports/researcher-commentary-template.md
-    sha256: 5c80d342ffb4752b33550b43b8cdd5996b41c17b6349faddf527f0bc747faf32
+    sha256: dbc8c5d6dae17878ef312b0838b363f3aa2de3f0f105e5ed05fbe9b920366735
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: 1728cbb1aa2c762aed276e9162ec79c741eb49f73be7af89ca6b60adb3731687
-    bytes: 24705
+    sha256: 1b1140736530a4d9f7551198aedc713b1c7d6348073b30722dae4dea90fd786c
+    bytes: 29203
   - path: reports/civilizations/archipelago-first-fork.md
-    sha256: c694c1ab739e41cc2830bfbacfb9398c8a59faf44295fb6e34a200b725932e1e
+    sha256: 8826d522ac4c3131b783c92613dafc0ac58d60875c7eeffed43f0ce00db6aa32
     bytes: 8645
   - path: reports/chronicles/archipelago-first-fork.md
-    sha256: 54857fe84f7d35c08cd2175aa46ccf5cd4bc1e4d705e007044dfc650aee02e6b
-    bytes: 2720
+    sha256: 516a4d1fd86f2e757be8c7ed0d600881c9daca43a1684b04c3c3206ec8b48371
+    bytes: 2601
 limitations:
   - Protagonist behaviour is scripted. The scenario demonstrates institutional consequences; it does not test emergent behaviour.
   - Background agents are deterministic BDI rule systems, not models of human or digital cognition.

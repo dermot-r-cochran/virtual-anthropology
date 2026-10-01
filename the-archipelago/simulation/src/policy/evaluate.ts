@@ -264,6 +264,13 @@ function evaluateCommand(state: WorldState, actor: Actor, command: Command): Pol
       if (command.voter in p.votes) deny("precondition", "vote already cast");
       return allow(law, [cite(law, "voting")]);
     }
+    case "EnactAmendment": {
+      requireSystem(actor, "study");
+      const law = lawOf(state, command.island);
+      const amended = LawSchema.safeParse({ ...law, ...command.amendment });
+      if (!amended.success) deny("law", "amendment would produce an invalid law", law, "amendment");
+      return allow(law, [cite(law, "amendment")]);
+    }
     case "CloseProposal": {
       const p = state.proposals[command.proposalId];
       if (!p) deny("precondition", `unknown proposal ${command.proposalId}`);

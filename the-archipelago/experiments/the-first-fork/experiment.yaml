@@ -57,6 +57,30 @@ researchBounds:
   maxCreditsPerGrant: 50
 parameters:
   abmRounds: 3
+study:
+  seeds:
+    count: 8
+  doctrines:
+    - id: mnemosyne-no-integration
+      island: mnemosyne
+      amendment: { importedMemoryIntegration: prohibited }
+    - id: fork-descendants-without-citizenship
+      island: fork
+      amendment: { descendantCitizenship: none }
+    - id: fork-single-descendant
+      island: fork
+      amendment: { maxDescendantsPerFork: 1 }
+  timelines:
+    rounds: 3
+    variants:
+      - id: control
+        seed: archipelago/the-first-fork/v1
+      - id: second-seed
+        seed: archipelago/the-first-fork/v1/timeline-2
+      - id: fork-closes-its-borders
+        amendment: { island: fork, amendment: { immigration: closed } }
+      - id: mnemosyne-opens-its-borders
+        amendment: { island: mnemosyne, amendment: { immigration: open } }
 ethics:
   consciousnessClaims: none
   notes:
@@ -70,9 +94,9 @@ limitations:
   - Population is small (11 records). Metrics are descriptive and support no statistical inference.
   - Memory bequest covers only non-destroyed memories.
 futureWork:
-  - Vary the seed and the number of descendants; report distributions rather than single runs.
+  - Vary the number of descendants and the length of the epilogue; widen the seed sweep.
   - Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.
   - Add a Concord scenario in which claimants petition to federate.
 reproducibility:
-  expectedHeadHash: 6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271
+  expectedHeadHash: 3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
   expectedEventCount: 91

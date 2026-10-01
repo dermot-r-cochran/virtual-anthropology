@@ -73,6 +73,65 @@
     "parameters": {
       "abmRounds": 3
     },
+    "study": {
+      "seeds": {
+        "count": 8
+      },
+      "doctrines": [
+        {
+          "id": "mnemosyne-no-integration",
+          "island": "mnemosyne",
+          "amendment": {
+            "importedMemoryIntegration": "prohibited"
+          }
+        },
+        {
+          "id": "fork-descendants-without-citizenship",
+          "island": "fork",
+          "amendment": {
+            "descendantCitizenship": "none"
+          }
+        },
+        {
+          "id": "fork-single-descendant",
+          "island": "fork",
+          "amendment": {
+            "maxDescendantsPerFork": 1
+          }
+        }
+      ],
+      "timelines": {
+        "rounds": 3,
+        "variants": [
+          {
+            "id": "control",
+            "seed": "archipelago/the-first-fork/v1"
+          },
+          {
+            "id": "second-seed",
+            "seed": "archipelago/the-first-fork/v1/timeline-2"
+          },
+          {
+            "id": "fork-closes-its-borders",
+            "amendment": {
+              "island": "fork",
+              "amendment": {
+                "immigration": "closed"
+              }
+            }
+          },
+          {
+            "id": "mnemosyne-opens-its-borders",
+            "amendment": {
+              "island": "mnemosyne",
+              "amendment": {
+                "immigration": "open"
+              }
+            }
+          }
+        ]
+      }
+    },
     "ethics": {
       "consciousnessClaims": "none",
       "notes": [
@@ -89,17 +148,17 @@
       "Memory bequest covers only non-destroyed memories."
     ],
     "futureWork": [
-      "Vary the seed and the number of descendants; report distributions rather than single runs.",
+      "Vary the number of descendants and the length of the epilogue; widen the seed sweep.",
       "Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.",
       "Add a Concord scenario in which claimants petition to federate."
     ],
     "reproducibility": {
-      "expectedHeadHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+      "expectedHeadHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
       "expectedEventCount": 91
     }
   },
   "store": {
-    "headHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+    "headHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
     "eventCount": 91,
     "finalSeq": 90,
     "finalTick": 7,
@@ -562,7 +621,7 @@
         "continuity",
         "fork"
       ],
-      "reputation": 5,
+      "reputation": 4,
       "values": {
         "autonomy": 0.4,
         "caution": -0.1,
@@ -798,7 +857,7 @@
       "citizenships": [
         "mnemosyne"
       ],
-      "reputation": 4,
+      "reputation": 3,
       "values": {
         "autonomy": 0.74,
         "caution": 0.97,
@@ -812,7 +871,7 @@
       ],
       "credits": 100,
       "selfNarrativeMemories": 7,
-      "heldMemories": 1,
+      "heldMemories": 0,
       "provenance": {
         "kind": "deterministic",
         "model": "archipelago-deterministic",
@@ -1128,6 +1187,46 @@
         17
       ],
       "atSeq": 63
+    },
+    {
+      "id": "chr-0004",
+      "chronicler": "cit-0007",
+      "island": "mnemosyne",
+      "text": "Rumi Okafor notes 4 recent events touching their work on mnemosyne.",
+      "references": [
+        9,
+        26,
+        39,
+        47
+      ],
+      "atSeq": 66
+    },
+    {
+      "id": "chr-0005",
+      "chronicler": "cit-0002",
+      "island": "continuity",
+      "text": "Tamsin Reed notes 4 recent events touching their work on continuity.",
+      "references": [
+        4,
+        21,
+        42,
+        61
+      ],
+      "atSeq": 67
+    },
+    {
+      "id": "chr-0006",
+      "chronicler": "cit-0006",
+      "island": "mnemosyne",
+      "text": "Sefa Lune notes 7 recent events touching their work on mnemosyne.",
+      "references": [
+        25,
+        38,
+        46,
+        47,
+        63
+      ],
+      "atSeq": 68
     }
   ],
   "artefacts": [
@@ -1446,7 +1545,7 @@
     "memories": {
       "autobiographical": 39,
       "collective": 3,
-      "imported": 2,
+      "imported": 1,
       "integrated": 1
     },
     "activeRelationships": 8,
@@ -1456,7 +1555,7 @@
     "forks": 1,
     "continuityClaims": 3,
     "creditGini": 0.1542,
-    "meanReputation": 1.7273
+    "meanReputation": 1.5455
   },
   "scenario": {
     "markers": {
@@ -2365,40 +2464,37 @@
         "seq": 66,
         "tick": 4,
         "actor": "citizen:cit-0007",
-        "type": "CitizenEndorsed",
-        "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+        "type": "ChronicleRecorded",
+        "summary": "Rumi Okafor (cit-0007) writes in the mnemosyne chronicle: \"Rumi Okafor notes 4 recent events touching their work on mnemosyne.\"",
         "beat": null,
         "citizens": [
-          "cit-0006",
           "cit-0007"
         ],
-        "hash": "9b83a80fa69dd1c30b5b289f6ab358cab67f0d049aabb889d65118b6cb234645"
+        "hash": "918e00055051f36329c67f1b9b75d2941843df196957d2d438bd1944aa1cdc6b"
       },
       {
         "seq": 67,
         "tick": 4,
         "actor": "citizen:cit-0002",
-        "type": "CitizenEndorsed",
-        "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+        "type": "ChronicleRecorded",
+        "summary": "Tamsin Reed (cit-0002) writes in the continuity chronicle: \"Tamsin Reed notes 4 recent events touching their work on continuity.\"",
         "beat": null,
         "citizens": [
-          "cit-0001",
           "cit-0002"
         ],
-        "hash": "f79a7f025d4f989767fca07f292c799e6eb2541bdea863ff4cbfac3e62c44ed8"
+        "hash": "176158d4712c0d403882e0417d5349ed1ae591ed784649e1879389a43e95f02c"
       },
       {
         "seq": 68,
         "tick": 4,
         "actor": "citizen:cit-0006",
-        "type": "MemoryImported",
-        "summary": "Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+        "type": "ChronicleRecorded",
+        "summary": "Sefa Lune (cit-0006) writes in the mnemosyne chronicle: \"Sefa Lune notes 7 recent events touching their work on mnemosyne.\"",
         "beat": null,
         "citizens": [
-          "cit-0006",
-          "cit-0007"
+          "cit-0006"
         ],
-        "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed"
+        "hash": "017f7126a4fef22ef7e0620426510e1f5de88ca8e633aa66480b0c0f37a8e2c6"
       },
       {
         "seq": 69,
@@ -2410,7 +2506,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "ff70dddee1cc819a117c448e3133e0f00f9582d1ca99fd8c84123d6a9fc06339"
+        "hash": "e7b9b4a37b9b06bb067bac872c2453aa394421d8cb617e95a20f89c7fbd69c10"
       },
       {
         "seq": 70,
@@ -2422,7 +2518,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "ae102e5d647bc62123b1e555398d4370fabe48141b2c076866b54af3051ac3fe"
+        "hash": "4e86753f207ed9798cc3e218e4e1d54c1930be1b0b3cd328b7d3594aea589130"
       },
       {
         "seq": 71,
@@ -2435,7 +2531,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "b17fbe8af9f5a2af3f9d5deb861846c4e0927cf9ec0c2b391485f836c165d1e2"
+        "hash": "1bd4a9bbb11f2c76cba77da08b15e20005f5402fddd0d260b288087f55d3fa91"
       },
       {
         "seq": 72,
@@ -2445,7 +2541,7 @@
         "summary": "Time advances from tick 4 to 5.",
         "beat": null,
         "citizens": [],
-        "hash": "d9df030787b2f65c482a9d6d4312555b344e10e7f89a9d0982c53215a69c8128"
+        "hash": "6ab6f963d3302cd4627e281ca0f565ae020be5b099f26b15d509e5e5abab4339"
       },
       {
         "seq": 73,
@@ -2457,7 +2553,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "f54756ab52cd420cc3c889c1577da80d3e585cee8ab5a192223ddb118b941b61"
+        "hash": "d5099067a5894fac95812a358ad5a1387fe909226a5e9a76974c9d8b2ddf1e19"
       },
       {
         "seq": 74,
@@ -2469,7 +2565,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "a085b52270209b8b09a66e28e8c632a88c11c1d9542cf3e96ae66b17e429c77e"
+        "hash": "70be67f534623af0de68d0b377049ac74e53cd2a9dfccba7ce61809169281401"
       },
       {
         "seq": 75,
@@ -2481,7 +2577,7 @@
         "citizens": [
           "cit-0002"
         ],
-        "hash": "b689b1c8f39258d195fc37a33f0e62eec5575906b257789e95665d35a435ff5d"
+        "hash": "32c84ac85dc3fef1e4bc4e6606e050ff32ffbde3031adc7a068d7bde5eb654ca"
       },
       {
         "seq": 76,
@@ -2494,7 +2590,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "8904897bb44a431d044c5b10a39515ff1e3cabf99e8b0fa307e10b16761e7bd1"
+        "hash": "ebfa7ff26f6cb59e7b343109735b679fd8c79927bd23bd356caf48ea2ac658c0"
       },
       {
         "seq": 77,
@@ -2506,7 +2602,7 @@
         "citizens": [
           "cit-0003"
         ],
-        "hash": "1dc22ea3f07d3a82501ac106b6c05f8875406a04090ff48d100de9c07bfa8cb7"
+        "hash": "2793af0054794fd9ac0a16670e4b38029ddb4c48528f10a425f23a22ebe412d8"
       },
       {
         "seq": 78,
@@ -2518,7 +2614,7 @@
         "citizens": [
           "cit-0007"
         ],
-        "hash": "51fc67b85e5705a04d921438619b128f7b134b7311bc004b506729d2082dd2a2"
+        "hash": "2b872d57abec47efbdff23e0fd06925b9e64cfb850528978f03d39aaaec8f89b"
       },
       {
         "seq": 79,
@@ -2530,7 +2626,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "913ef2dd788338cc6e1616891099cfb2aff22d51f6ea1e4c0e533314dfcccb3f"
+        "hash": "ecf146ac56b3801ce0f6456c63df6b7ec97fd423decffec1d6cbe1543327a462"
       },
       {
         "seq": 80,
@@ -2543,7 +2639,7 @@
           "cit-0004",
           "cit-0005"
         ],
-        "hash": "e80f8d0f33e4873637d78f24151aee7af5e087ced011e4c2b54e5cc70e9179dc"
+        "hash": "5d32f23da88c42789936c0b17dda443f8c403b5a38b9312bcc8e8ed5f076fe79"
       },
       {
         "seq": 81,
@@ -2553,7 +2649,7 @@
         "summary": "Time advances from tick 5 to 6.",
         "beat": null,
         "citizens": [],
-        "hash": "9175405a352ad91a02b4f8ee9b711983a25b1f584fc145eeb3d8ce098b249e06"
+        "hash": "5aea5b54cabca17aa173db25efab0db63a2ed723aeb0653b94076a08986d68b1"
       },
       {
         "seq": 82,
@@ -2566,7 +2662,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "9d2d66ff9af74a5cb7a12c537b87cf4e5d6922cf29bdcf22d066832d03ec2219"
+        "hash": "7b15ecc3010f8e3fdf4a3c5aa554aa5edb859776ee7ea1504173fa682f9baed1"
       },
       {
         "seq": 83,
@@ -2579,7 +2675,7 @@
           "cit-0004",
           "cit-0005"
         ],
-        "hash": "9e08fd1b4ee392bd4da192005348a462bb233a655a6cc24d90b447298b583935"
+        "hash": "83a36327a50978860c17aeaccdc03bdbb8bffd6851c663a820bbfa4bfaf552d2"
       },
       {
         "seq": 84,
@@ -2591,7 +2687,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "0c1e5c881fc19a07163fef7fe59a7ba123db8ab8b75699dc3d4c653dc72aa82c"
+        "hash": "5528e7eb98f82f98dd400767867b600bbf00c80c70d0a97faac6e0c092df91fa"
       },
       {
         "seq": 85,
@@ -2603,7 +2699,7 @@
         "citizens": [
           "cit-0002"
         ],
-        "hash": "12975cf16b51fd455ed9349573c352d4427d2416244a69fffb632f529cb79f52"
+        "hash": "0e99305079e3425cf6e8c76d6e2805bf0a4988a9ec78258880522d202bbce4e9"
       },
       {
         "seq": 86,
@@ -2615,7 +2711,7 @@
         "citizens": [
           "cit-0003"
         ],
-        "hash": "fae728b2546a9cc32e6c94c8b22b88ec08e3d37f5b42ff7b0e095f6406fb5b98"
+        "hash": "7f849dac917c89e9d4f0f7f6de88f8d0d46dc74187f1a3d2f98123a999b4b8f3"
       },
       {
         "seq": 87,
@@ -2627,7 +2723,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "5997fc4a7eeb6af5c6b39536fbac3f2699b545bfb173adc3a50e1bdecae17c67"
+        "hash": "f02783046075ebe064ae1d59555fd4c70768a5d97f642db0098ec3395d75fce0"
       },
       {
         "seq": 88,
@@ -2639,7 +2735,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "dbb63a0e2cb95bb960950dc0e0158fad734d9718dda91d57dd918a711c3cdf50"
+        "hash": "3f731b28b41341d18892866642a262fc8230186d9f4fe58686f778a86def3e97"
       },
       {
         "seq": 89,
@@ -2652,7 +2748,7 @@
           "cit-0006",
           "cit-0007"
         ],
-        "hash": "312d37774299f978b76e5948de17d361d828e62d9060ea4c3ec810da8aa889cf"
+        "hash": "6876d80e57536d4221a7e8884cb5c6db4d7c7fc6ebafe94a78ccb201cf7093c9"
       },
       {
         "seq": 90,
@@ -2662,7 +2758,7 @@
         "summary": "Time advances from tick 6 to 7.",
         "beat": null,
         "citizens": [],
-        "hash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271"
+        "hash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e"
       }
     ],
     "continuityEvents": [
@@ -3099,18 +3195,6 @@
         ],
         "sourceEvent": "ContinuityClaimed",
         "detail": "claims continuity with cit-0001 before seq 17 on grounds: shared-autobiographical-memory, provenance-verified"
-      },
-      {
-        "seq": 68,
-        "tick": 4,
-        "citizen": "cit-0006",
-        "dimension": "memory",
-        "effect": "extended",
-        "related": [
-          "cit-0007"
-        ],
-        "sourceEvent": "MemoryImported",
-        "detail": "imported mem-0036 from archive record mem-0009; experienced by cit-0007; not autobiographical"
       }
     ],
     "lineageFocus": {
@@ -4324,7 +4408,7 @@
         "memories": {
           "autobiographical": 30,
           "collective": 3,
-          "imported": 2,
+          "imported": 1,
           "integrated": 1
         },
         "activeRelationships": 8,
@@ -4334,7 +4418,7 @@
         "forks": 1,
         "continuityClaims": 3,
         "creditGini": 0.1542,
-        "meanReputation": 1.2727
+        "meanReputation": 1.0909
       },
       {
         "round": 2,
@@ -4375,7 +4459,7 @@
         "memories": {
           "autobiographical": 35,
           "collective": 3,
-          "imported": 2,
+          "imported": 1,
           "integrated": 1
         },
         "activeRelationships": 8,
@@ -4385,7 +4469,7 @@
         "forks": 1,
         "continuityClaims": 3,
         "creditGini": 0.1542,
-        "meanReputation": 1.4545
+        "meanReputation": 1.2727
       },
       {
         "round": 3,
@@ -4426,7 +4510,7 @@
         "memories": {
           "autobiographical": 39,
           "collective": 3,
-          "imported": 2,
+          "imported": 1,
           "integrated": 1
         },
         "activeRelationships": 8,
@@ -4436,828 +4520,10 @@
         "forks": 1,
         "continuityClaims": 3,
         "creditGini": 0.1542,
-        "meanReputation": 1.7273
+        "meanReputation": 1.5455
       }
     ],
     "agentProposals": [
-      {
-        "beat": "prelude",
-        "proposer": "cit-0001",
-        "rationale": "pre-fork experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0001",
-        "reasons": []
-      },
-      {
-        "beat": "prelude",
-        "proposer": "cit-0001",
-        "rationale": "pre-fork artefact",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0002",
-        "reasons": []
-      },
-      {
-        "beat": "prelude",
-        "proposer": "cit-0004",
-        "rationale": "governance",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0004"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0003",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0002",
-        "rationale": "BDI intention maintain-relationships → cit-0001",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0002"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0004",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0003",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0003"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0005",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0004",
-        "rationale": "BDI intention participate-in-governance → prop-0001; values lean 1.09",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0004"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0006",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0005",
-        "rationale": "BDI intention participate-in-governance → prop-0001; values lean -0.64",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0005"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0007",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0006",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0006"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0008",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0007",
-        "rationale": "BDI intention maintain-relationships → cit-0006",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0007"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0009",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0008",
-        "rationale": "BDI intention maintain-relationships → cit-0009",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0008"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0010",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0009",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0009"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0011",
-        "reasons": []
-      },
-      {
-        "beat": "petition-to-fork",
-        "proposer": "cit-0001",
-        "rationale": "goal: understand branching",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0013",
-        "reasons": []
-      },
-      {
-        "beat": "migrate-to-fork",
-        "proposer": "cit-0001",
-        "rationale": "petition approved on both sides",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0016",
-        "reasons": []
-      },
-      {
-        "beat": "the-fork",
-        "proposer": "cit-0001",
-        "rationale": "the first fork",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0017",
-        "reasons": []
-      },
-      {
-        "beat": "endowment",
-        "proposer": "cit-0001",
-        "rationale": "endow descendants",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0018",
-        "reasons": []
-      },
-      {
-        "beat": "endowment",
-        "proposer": "cit-0001",
-        "rationale": "endow descendants",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0019",
-        "reasons": []
-      },
-      {
-        "beat": "endowment",
-        "proposer": "cit-0010",
-        "rationale": "tests whether a branch inherits a vote",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
-        },
-        "outcome": "rejected",
-        "commandId": "cmd-0020",
-        "reasons": [
-          "cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer"
-        ]
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0002",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0002"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0021",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0003",
-        "rationale": "BDI intention maintain-relationships → cit-0001",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0003"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0022",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0004",
-        "rationale": "BDI intention create-culture",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0004"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0023",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0005",
-        "rationale": "BDI intention maintain-relationships → cit-0004",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0005"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0024",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0006",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0006"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0025",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0007",
-        "rationale": "BDI intention create-culture",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0007"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0026",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0008",
-        "rationale": "BDI intention maintain-relationships → cit-0009",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0008"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0027",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0009",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0009"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0028",
-        "reasons": []
-      },
-      {
-        "beat": "branch-life",
-        "proposer": "cit-0010",
-        "rationale": "post-fork life",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0029",
-        "reasons": []
-      },
-      {
-        "beat": "branch-life",
-        "proposer": "cit-0010",
-        "rationale": "continue the work, differently",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0030",
-        "reasons": []
-      },
-      {
-        "beat": "branch-life",
-        "proposer": "cit-0010",
-        "rationale": "reflection",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0031",
-        "reasons": []
-      },
-      {
-        "beat": "branch-life",
-        "proposer": "cit-0011",
-        "rationale": "curiosity about memory",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0032",
-        "reasons": []
-      },
-      {
-        "beat": "to-mnemosyne",
-        "proposer": "cit-0011",
-        "rationale": "petition approved on both sides",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0035",
-        "reasons": []
-      },
-      {
-        "beat": "imports",
-        "proposer": "cit-0011",
-        "rationale": "import communal memory (flood)",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0038",
-        "reasons": []
-      },
-      {
-        "beat": "imports",
-        "proposer": "cit-0011",
-        "rationale": "import communal memory (festival)",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0039",
-        "reasons": []
-      },
-      {
-        "beat": "imports",
-        "proposer": "cit-0011",
-        "rationale": "post-fork life",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0040",
-        "reasons": []
-      },
-      {
-        "beat": "integrate",
-        "proposer": "cit-0011",
-        "rationale": "adopt the festival into my own story, explicitly",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0041",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0002",
-        "rationale": "BDI intention maintain-relationships → cit-0001",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0002"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0042",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0003",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0003"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0043",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0004",
-        "rationale": "BDI intention create-culture",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0004"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0044",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0005",
-        "rationale": "BDI intention maintain-relationships → cit-0004",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0005"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0045",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0006",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0006"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0046",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0007",
-        "rationale": "BDI intention maintain-relationships → cit-0006",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0007"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0047",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0008",
-        "rationale": "BDI intention maintain-relationships → cit-0009",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0008"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0048",
-        "reasons": []
-      },
-      {
-        "beat": "interlude",
-        "proposer": "cit-0009",
-        "rationale": "BDI intention record-experience",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0009"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0049",
-        "reasons": []
-      },
-      {
-        "beat": "petition-return",
-        "proposer": "cit-0001",
-        "rationale": "return home",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0050",
-        "reasons": []
-      },
-      {
-        "beat": "homecoming",
-        "proposer": "cit-0001",
-        "rationale": "petition approved on both sides",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0053",
-        "reasons": []
-      },
-      {
-        "beat": "homecoming",
-        "proposer": "cit-0001",
-        "rationale": "homecoming",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0054",
-        "reasons": []
-      },
-      {
-        "beat": "claims",
-        "proposer": "cit-0001",
-        "rationale": "claim",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0058",
-        "reasons": []
-      },
-      {
-        "beat": "claims",
-        "proposer": "cit-0010",
-        "rationale": "claim",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0059",
-        "reasons": []
-      },
-      {
-        "beat": "claims",
-        "proposer": "cit-0011",
-        "rationale": "claim",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0060",
-        "reasons": []
-      },
-      {
-        "beat": "chronicle",
-        "proposer": "cit-0002",
-        "rationale": "chronicle",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0002"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0061",
-        "reasons": []
-      },
-      {
-        "beat": "chronicle",
-        "proposer": "cit-0004",
-        "rationale": "chronicle",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0004"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0062",
-        "reasons": []
-      },
-      {
-        "beat": "chronicle",
-        "proposer": "cit-0006",
-        "rationale": "chronicle",
-        "generator": {
-          "kind": "deterministic",
-          "model": "archipelago-deterministic",
-          "modelVersion": "1.0.0",
-          "promptId": "archipelago/deterministic-citizen/v1",
-          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
-          "seed": "archipelago/the-first-fork/v1/cit-0006"
-        },
-        "outcome": "applied",
-        "commandId": "cmd-0063",
-        "reasons": []
-      },
       {
         "beat": "interlude",
         "proposer": "cit-0003",
@@ -5293,7 +4559,7 @@
       {
         "beat": "interlude",
         "proposer": "cit-0007",
-        "rationale": "BDI intention maintain-relationships → cit-0006",
+        "rationale": "BDI intention keep-chronicle",
         "generator": {
           "kind": "deterministic",
           "model": "archipelago-deterministic",
@@ -5309,7 +4575,7 @@
       {
         "beat": "interlude",
         "proposer": "cit-0002",
-        "rationale": "BDI intention maintain-relationships → cit-0001",
+        "rationale": "BDI intention keep-chronicle",
         "generator": {
           "kind": "deterministic",
           "model": "archipelago-deterministic",
@@ -5325,7 +4591,7 @@
       {
         "beat": "interlude",
         "proposer": "cit-0006",
-        "rationale": "BDI intention explore-collective-memory → mem-0009",
+        "rationale": "BDI intention keep-chronicle",
         "generator": {
           "kind": "deterministic",
           "model": "archipelago-deterministic",
