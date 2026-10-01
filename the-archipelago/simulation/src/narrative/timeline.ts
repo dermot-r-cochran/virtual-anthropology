@@ -34,7 +34,7 @@ export function summarizeEvent(rec: RecordedEvent, s: WorldState): string {
     case "InstitutionLeft": return `${n(e.citizen)} leaves ${e.institutionId}.`;
     case "ProposalSubmitted": return `${n(e.proposal.proposer)} proposes "${e.proposal.title}" on ${e.proposal.island}; electorate of ${e.proposal.electorate.length} snapshotted; closes at tick ${e.proposal.closesAtTick}.`;
     case "VoteCast": return `${n(e.voter)} votes ${e.choice} on ${e.proposalId}.`;
-    case "ProposalClosed": return `${e.proposalId} is ${e.outcome} (yes ${e.tally.yes}, no ${e.tally.no}, abstain ${e.tally.abstain}; quorum ${e.quorumMet ? "met" : "not met"}).`;
+    case "ProposalClosed": return `${e.proposalId} is ${e.outcome} (yes ${e.tally.yes}, no ${e.tally.no}, abstain ${e.tally.abstain}; quorum ${e.quorumMet ? "met" : "not met"}; counted by ${e.countingRule}).`;
     case "LawEnacted": return `Law of ${e.law.island} v${e.law.version} is enacted${e.proposalId ? ` by ${e.proposalId}` : ""}.`;
     case "MigrationPetitioned": return `${n(e.petition.citizen)} petitions to migrate ${e.petition.from} → ${e.petition.to}: "${e.petition.reason}"`;
     case "PetitionReviewed": return `The ${e.decision.island} registry ${e.decision.decision} the ${e.side} side of ${e.petitionId} under law v${e.decision.lawVersion}. Findings: ${e.decision.findings.join("; ")}.`;

@@ -1,3 +1,4 @@
+import type { Law } from "../domain/law.js";
 import { sha256Hex } from "./canonical.js";
 import type { CommandOf, Command } from "./commands.js";
 import type { DomainEvent } from "./events.js";
@@ -402,6 +403,20 @@ export function createDecideContext(state: WorldState): DecideContext {
   return { seq: state.seq + 1, ids: new Ids(state.counters) };
 }
 
+/** Whether a tally carries under an island's counting rule; quorum is tested by the caller. */
+export function carried(rule: Law["countingRule"], tally: { yes: number; no: number; abstain: number }, electorate: number, threshold: number): boolean {
+  switch (rule) {
+    case "majority-of-votes-cast": {
+      const decisive = tally.yes + tally.no;
+      return decisive > 0 && tally.yes / decisive > threshold;
+    }
+    case "majority-of-electorate":
+      return electorate > 0 && tally.yes / electorate > threshold;
+    case "consensus":
+      return tally.no === 0 && tally.yes > 0;
+  }
+}
+
 function decideCloseProposal(state: WorldState, command: CommandOf<"CloseProposal">, seq: number): DomainEvent[] {
   const p = state.proposals[command.proposalId];
   if (!p) throw new Error("decide: unknown proposal");
@@ -410,10 +425,9 @@ function decideCloseProposal(state: WorldState, command: CommandOf<"CloseProposa
   for (const v of Object.values(p.votes)) tally[v]++;
   const turnout = tally.yes + tally.no + tally.abstain;
   const quorumMet = p.electorate.length > 0 && turnout / p.electorate.length >= law.votingQuorum;
-  const decisive = tally.yes + tally.no;
-  const adopted = quorumMet && decisive > 0 && tally.yes / decisive > law.votingThreshold;
+  const adopted = quorumMet && carried(law.countingRule, tally, p.electorate.length, law.votingThreshold);
   const events: DomainEvent[] = [
-    { type: "ProposalClosed", proposalId: p.id, outcome: adopted ? "adopted" : "rejected", tally, quorumMet },
+    { type: "ProposalClosed", proposalId: p.id, outcome: adopted ? "adopted" : "rejected", tally, quorumMet, countingRule: law.countingRule },
   ];
   if (adopted && p.amendment) {
     events.push({

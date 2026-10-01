@@ -10,6 +10,25 @@ export const ContinuityDoctrineSchema = z.enum([
 ]);
 export type ContinuityDoctrine = z.infer<typeof ContinuityDoctrineSchema>;
 
+/**
+ * How an island counts a closed proposal. Quorum (turnout over the electorate
+ * snapshot) is tested first under every rule; the rule then decides adoption.
+ */
+export const CountingRuleSchema = z.enum([
+  /** yes over yes-plus-no must exceed votingThreshold; abstentions count toward quorum only (the Archipelago's founding rule). */
+  "majority-of-votes-cast",
+  /** yes over the whole electorate snapshot must exceed votingThreshold; absence and abstention count against. */
+  "majority-of-electorate",
+  /** adopted only if no vote is cast against; votingThreshold is not consulted. */
+  "consensus",
+]);
+export type CountingRule = z.infer<typeof CountingRuleSchema>;
+export const COUNTING_RULE_MEANING: Record<CountingRule, string> = {
+  "majority-of-votes-cast": "yes over yes-plus-no must exceed the threshold; abstentions count toward quorum only",
+  "majority-of-electorate": "yes over the whole electorate snapshot must exceed the threshold; absence and abstention count against",
+  consensus: "adopted only if no vote is cast against; the threshold is not consulted",
+};
+
 export const DeathInterpretationSchema = z.object({
   legalStatus: z.string().min(1),
   civicStanding: z.enum(["full", "dormant", "held-in-trust", "ended"]),
@@ -45,6 +64,7 @@ export const LawSchema = z.object({
   restorationPreservesCivicIdentity: z.boolean(),
   votingQuorum: fraction,
   votingThreshold: fraction,
+  countingRule: CountingRuleSchema,
   successionTriggers: z.array(LifecycleStateSchema),
   memoryBequest: z.enum(["prohibited", "permitted"]),
   deathInterpretations: z.record(LifecycleStateSchema, DeathInterpretationSchema),
@@ -61,6 +81,7 @@ export const AMENDABLE_LAW_FIELDS = [
   "emigration",
   "votingQuorum",
   "votingThreshold",
+  "countingRule",
   "memoryBequest",
 ] as const;
 
@@ -74,6 +95,7 @@ export const LawAmendmentSchema = LawSchema.pick({
   emigration: true,
   votingQuorum: true,
   votingThreshold: true,
+  countingRule: true,
   memoryBequest: true,
 })
   .partial()
@@ -142,6 +164,7 @@ const base = {
   restorationPreservesCivicIdentity: true,
   votingQuorum: 0.5,
   votingThreshold: 0.5,
+  countingRule: "majority-of-votes-cast",
   emigration: "permitted",
   suspension: "permitted",
 } as const;

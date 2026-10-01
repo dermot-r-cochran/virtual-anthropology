@@ -21,7 +21,7 @@ export function snapshotOf(s: WorldState): Snapshot {
       reputation: c.reputation, credits: s.balances[`citizen:${c.id}`] ?? 0,
     })),
     islands: Object.values(s.islands).map((i) => ({
-      id: i.id, name: i.name, lawVersion: i.law.version, doctrine: i.law.continuityDoctrine, copying: i.law.copying,
+      id: i.id, name: i.name, lawVersion: i.law.version, doctrine: i.law.continuityDoctrine, copying: i.law.copying, countingRule: i.law.countingRule,
       memoryExchange: i.law.memoryExchange, merging: i.law.merging, federation: i.law.federation,
       immigration: i.law.immigration, emigration: i.law.emigration, descendantCitizenship: i.law.descendantCitizenship,
     })),
