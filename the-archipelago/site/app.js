@@ -286,7 +286,7 @@ const views = {
     const st = await fetchJson(`${ds.path}/study.json`);
     const hyps = Object.keys(Object.values(st.summary)[0]?.hypotheses ?? {});
     const outcome = (r) => hyps.map((h) => (r.findings.find((f) => f.hypothesisId === h)?.outcome ?? "n/a").replace("-with-hypothesis", "")).join(" / ");
-    const groups = [["seeds", "Seed sweep"], ["doctrines", "Doctrine variants"], ["timelines", "Alternate timelines"]].filter(([g]) => st.summary[g]);
+    const groups = [["branches", "Branch sweep (one choice taken differently per timeline)"], ["doctrines", "Doctrine variants"], ["timelines", "Alternate timelines"]].filter(([g]) => st.summary[g]);
     const html = `
       <h2>Study</h2>
       <p class="muted">Replications of the base run under declared variations; each a deterministic run identified by its head hash. Base head <code>${esc(st.base.headHash.slice(0, 16))}…</code>${st.base.branchSeq === null ? "" : `, branch point after seq ${esc(st.base.branchSeq)}`}.</p>

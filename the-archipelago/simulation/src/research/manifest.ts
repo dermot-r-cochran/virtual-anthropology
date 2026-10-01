@@ -11,20 +11,32 @@ const variantId = z.string().regex(/^[a-z0-9][a-z0-9-]*$/);
 
 /**
  * A study: replications of the base run under declared variations, each a
- * deterministic run of its own. `seeds` reruns the scenario under derived
- * seeds; `doctrines` reruns it with statutory law overridden at founding;
+ * deterministic run of its own. `branches` takes each recorded choice point
+ * after the branch point differently, one flip per timeline, up to a budget;
+ * `doctrines` reruns the scenario with statutory law overridden at founding;
  * `timelines` replays the base record to the scenario's branch point and
- * continues the epilogue under another seed and/or an amendment enacted there.
+ * continues the epilogue with declared flips and/or an amendment enacted there.
+ * Nothing is random anywhere, so there is nothing to sweep by seed.
  */
+export const FlipSchema = z
+  .object({
+    seq: z.number().int().min(1),
+    /** A genesis key (e.g. "pell") or a citizen id. */
+    citizen: z.string().min(1),
+    label: z.string().min(1),
+    occurrence: z.number().int().min(0).default(0),
+    option: z.number().int().min(0),
+  })
+  .strict();
 export const StudyPlanSchema = z
   .object({
-    seeds: z.object({ count: z.number().int().min(1).max(64) }).strict().optional(),
+    branches: z.object({ budget: z.number().int().min(1).max(256) }).strict().optional(),
     doctrines: z.array(z.object({ id: variantId, island: IslandIdSchema, amendment: LawAmendmentSchema }).strict()).min(1).optional(),
     timelines: z
       .object({
         rounds: z.number().int().min(1).max(100),
         variants: z
-          .array(z.object({ id: variantId, seed: z.string().min(1).optional(), amendment: z.object({ island: IslandIdSchema, amendment: LawAmendmentSchema }).strict().optional() }).strict())
+          .array(z.object({ id: variantId, flips: z.array(FlipSchema).optional(), amendment: z.object({ island: IslandIdSchema, amendment: LawAmendmentSchema }).strict().optional() }).strict())
           .min(1),
       })
       .strict()
@@ -32,8 +44,7 @@ export const StudyPlanSchema = z
   })
   .strict()
   .superRefine((p, ctx) => {
-    if (!p.seeds && !p.doctrines && !p.timelines) ctx.addIssue({ code: "custom", message: "a study must declare seeds, doctrines or timelines" });
-    for (const v of p.timelines?.variants ?? []) if (!v.seed && !v.amendment) ctx.addIssue({ code: "custom", message: `timeline variant ${v.id} must set a seed or an amendment` });
+    if (!p.branches && !p.doctrines && !p.timelines) ctx.addIssue({ code: "custom", message: "a study must declare branches, doctrines or timelines" });
     const ids = [...(p.doctrines ?? []).map((d) => d.id), ...(p.timelines?.variants ?? []).map((v) => v.id)];
     if (new Set(ids).size !== ids.length) ctx.addIssue({ code: "custom", message: "duplicate study variant ids" });
   });

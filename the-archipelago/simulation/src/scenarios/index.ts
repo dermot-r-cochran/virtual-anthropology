@@ -1,3 +1,4 @@
+import type { ChoicePoint, Flip } from "../agents/choice.js";
 import type { IslandId } from "../domain/ids.js";
 import type { LawAmendment } from "../domain/law.js";
 import type { WorldState } from "../domain/model.js";
@@ -15,6 +16,10 @@ export interface ScenarioRun {
   readonly headHash: string;
   /** The seq of the last scripted event, after which a timeline may branch; null when the scenario has no branch point. */
   readonly branchSeq: number | null;
+  /** The choice points after the branch point, in order, with the option taken at each. */
+  readonly choices: readonly ChoicePoint[];
+  /** Flips declared for this run whose choice point never occurred. */
+  readonly unusedFlips: readonly string[];
   readonly analyses: { evidence: ContinuityEvidence | null; legal: readonly IslandInterpretation[] | null };
   /** Scenario-specific dataset content (merged into dataset.json). */
   readonly dataset: Record<string, unknown>;
@@ -22,16 +27,15 @@ export interface ScenarioRun {
   readonly files: Record<string, string>;
 }
 
-/** A study's variation of the base run: another seed, and/or statutory law overridden at founding. */
+/** A study's variation of the base run: statutory law overridden at founding. */
 export interface ScenarioVariation {
-  readonly seed?: string;
   readonly laws?: Partial<Record<IslandId, LawAmendment>>;
 }
 
-/** A study's alternate timeline: the base record to its branch point, then an epilogue under this seed, after this amendment if any. */
+/** A study's alternate timeline: the base record to its branch point, then an epilogue with these flips taken, after this amendment if any. */
 export interface ScenarioBranch {
-  readonly seed: string;
   readonly rounds: number;
+  readonly flips?: readonly Flip[];
   readonly amendment?: { readonly island: IslandId; readonly amendment: LawAmendment };
 }
 
@@ -42,7 +46,7 @@ export interface ScenarioDriver {
 }
 
 const firstForkOptions = (m: ExperimentManifest, v?: ScenarioVariation) => ({
-  seed: v?.seed ?? m.seed,
+  seed: m.seed,
   abmRounds: m.parameters.abmRounds,
   researchBounds: m.researchBounds,
   researchers: m.researchers.map((r) => r.id),

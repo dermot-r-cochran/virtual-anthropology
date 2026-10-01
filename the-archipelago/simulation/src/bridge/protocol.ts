@@ -43,7 +43,7 @@ export interface Bridge {
   handle(line: string): Promise<BridgeResponse>;
 }
 
-export function createBridge(run: FirstForkRun, seed: string): Bridge {
+export function createBridge(run: FirstForkRun): Bridge {
   const { world, runtime } = run;
   const sessions = new Map<string, ResearcherSession>([[run.session.researcherId, run.session]]);
   const session = (id: string | undefined) => {
@@ -85,7 +85,7 @@ export function createBridge(run: FirstForkRun, seed: string): Bridge {
         return { reply: r.reply, flags: r.flags, blocked: r.blocked, recorded: outcome(r.recorded) };
       }
       case "step": {
-        const rounds = await runAgentBasedRounds(world, runtime, { rounds: req.params.rounds, seed: `${seed}/live-${liveRounds}`, ticksPerRound: 1 });
+        const rounds = await runAgentBasedRounds(world, runtime, { rounds: req.params.rounds, ticksPerRound: 1 });
         liveRounds += req.params.rounds;
         return { rounds: rounds.map((r) => ({ round: r.round, applied: r.applied, rejected: r.rejected, tick: r.tick })), seq: world.state.seq };
       }

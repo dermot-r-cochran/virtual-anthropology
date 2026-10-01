@@ -1,6 +1,7 @@
 import { roomNames } from "../domain/geography.js";
+import type { CitizenId } from "../domain/ids.js";
 import type { MindProvenance } from "../domain/model.js";
-import type { Rng } from "../kernel/rng.js";
+import type { Choose, ChoiceLog } from "./choice.js";
 import { deterministicReply } from "./deterministic.js";
 import type { ActionProposal, CitizenMind, CognitiveState, Desire, DesireKind, Intention, MindContext, Observation } from "./types.js";
 
@@ -45,29 +46,31 @@ export function reviseBeliefs(cog: CognitiveState, obs: Observation): Record<str
   };
 }
 
-/** Option generation: what the agent could want now, with priorities. */
-export function generateDesires(obs: Observation, rng: Rng): Desire[] {
+/** Desires within this margin of the top one are a choice, not a ranking: the mind takes the first by default and a study may branch to the others. */
+export const INTENTION_MARGIN = 0.1;
+
+/** Option generation: what the agent could want now, with priorities. Nothing here is random; priorities are functions of values, law and circumstance. */
+export function generateDesires(obs: Observation, choose: Choose): Desire[] {
   const s = obs.self;
   const out: Desire[] = [];
-  const jitter = () => Math.round(rng.next() * 100) / 1000; // ≤ 0.1, seeded
   const ballot = obs.openProposals.find((p) => p.electorate.includes(s.id) && !(s.id in p.votes) && obs.tick < p.closesAtTick);
   if (ballot) out.push({ kind: "participate-in-governance", priority: 1 + v(obs, "autonomy") * 0.1 + v(obs, "communality") * 0.1, target: ballot.id });
   if (obs.kin.length > 0) {
-    const k = rng.pick(obs.kin);
-    out.push({ kind: "maintain-relationships", priority: 0.3 + v(obs, "communality") * 0.3 + jitter(), target: k.id });
+    const k = choose("kin", obs.kin, (x) => x.name);
+    out.push({ kind: "maintain-relationships", priority: 0.3 + v(obs, "communality") * 0.3, target: k.id });
   }
-  out.push({ kind: "record-experience", priority: 0.35 + v(obs, "curiosity") * 0.2 + jitter(), target: null });
-  out.push({ kind: "create-culture", priority: 0.2 + v(obs, "novelty") * 0.2 + (CULTURAL.test(s.occupation) ? 0.1 : 0) + jitter(), target: null });
+  out.push({ kind: "record-experience", priority: 0.35 + v(obs, "curiosity") * 0.2, target: null });
+  out.push({ kind: "create-culture", priority: 0.2 + v(obs, "novelty") * 0.2 + (CULTURAL.test(s.occupation) ? 0.1 : 0), target: null });
   if (obs.residenceLaw.memoryExchange === "permitted") {
     const candidate = obs.archiveCatalogue.find((a) => a.contributedBy !== s.id && !a.alreadyHeld);
-    if (candidate) out.push({ kind: "explore-collective-memory", priority: 0.25 + v(obs, "curiosity") * 0.3 + jitter(), target: candidate.id });
+    if (candidate) out.push({ kind: "explore-collective-memory", priority: 0.25 + v(obs, "curiosity") * 0.3, target: candidate.id });
   }
   if (obs.residenceLaw.importedMemoryIntegration === "explicit-act") {
     const imported = obs.episodes.find((e) => e.source === "imported");
-    if (imported) out.push({ kind: "integrate-memory", priority: 0.1 + v(obs, "communality") * 0.2 + jitter(), target: imported.memoryId });
+    if (imported) out.push({ kind: "integrate-memory", priority: 0.1 + v(obs, "communality") * 0.2, target: imported.memoryId });
   }
   if (CHRONICLER.test(s.occupation) && obs.recentEventSeqs.length >= 3) {
-    out.push({ kind: "keep-chronicle", priority: 0.45 + v(obs, "tradition") * 0.2 + jitter(), target: null });
+    out.push({ kind: "keep-chronicle", priority: 0.45 + v(obs, "tradition") * 0.2, target: null });
   }
   return out.sort((a, b) => b.priority - a.priority || a.kind.localeCompare(b.kind));
 }
@@ -77,20 +80,23 @@ function stillFeasible(i: Intention, desires: readonly Desire[]): boolean {
 }
 
 /** Deliberation with single-minded commitment. */
-export function deliberate(cog: CognitiveState, obs: Observation, rng: Rng): CognitiveState {
+export function deliberate(cog: CognitiveState, obs: Observation, choose: Choose): CognitiveState {
   const beliefs = reviseBeliefs(cog, obs);
-  const desires = generateDesires(obs, rng);
+  const desires = generateDesires(obs, choose);
   const kept = cog.intentions.filter((i) => stillFeasible(i, desires));
-  const top = desires[0];
+  const first = desires[0];
+  // Adopting a new intention is a choice among the desires within the margin of the strongest.
+  const near = first ? desires.filter((d) => first.priority - d.priority <= INTENTION_MARGIN) : [];
+  const top = kept.length === 0 && near.length > 0 ? choose("intention", near, (d) => `${d.kind}${d.target ? ` → ${d.target}` : ""}`) : undefined;
   const intentions: Intention[] =
     kept.length > 0 ? kept.slice(0, 1) : top ? [{ kind: top.kind, target: top.target, adoptedAtSeq: obs.seq, attempts: 0 }] : [];
   return { ...cog, beliefs, desires, intentions };
 }
 
 /** Plan library: one candidate command per intention kind. */
-export function plan(intention: Intention, obs: Observation, rng: Rng): { candidate: unknown; rationale: string } | null {
+export function plan(intention: Intention, obs: Observation, choose: Choose): { candidate: unknown; rationale: string } | null {
   const s = obs.self;
-  const place = rng.pick(roomNames(s.residence));
+  const place = () => choose("place", roomNames(s.residence));
   const why = (kind: DesireKind) => `BDI intention ${kind}${intention.target ? ` → ${intention.target}` : ""}`;
   switch (intention.kind) {
     case "participate-in-governance": {
@@ -103,11 +109,12 @@ export function plan(intention: Intention, obs: Observation, rng: Rng): { candid
     }
     case "record-experience":
       return {
-        candidate: { type: "RecordExperience", citizen: s.id, content: `${s.name} ${rng.pick(ACTIVITIES)} ${place} at tick ${obs.tick}.`, tags: ["everyday", s.residence] },
+        candidate: { type: "RecordExperience", citizen: s.id, content: `${s.name} ${choose("activity", ACTIVITIES)} ${place()} at tick ${obs.tick}.`, tags: ["everyday", s.residence] },
         rationale: why(intention.kind),
       };
     case "create-culture": {
-      const kind = rng.pick(["poem", "song", "essay"] as const);
+      const kind = choose("artefact-kind", ["poem", "song", "essay"] as const);
+      const where = place();
       const echo = obs.episodes.filter((e) => e.autobiographical && e.what).at(-1);
       return {
         candidate: {
@@ -115,8 +122,8 @@ export function plan(intention: Intention, obs: Observation, rng: Rng): { candid
           authors: [s.id],
           island: s.residence,
           kind,
-          title: `${/^[aeiou]/.test(kind) ? "An" : "A"} ${kind} of ${place}`,
-          body: `Composed by ${s.name}, ${s.occupation}, about ${place} (tick ${obs.tick}).${echo ? ` It recalls: "${echo.what}"` : ""}`,
+          title: `${/^[aeiou]/.test(kind) ? "An" : "A"} ${kind} of ${where}`,
+          body: `Composed by ${s.name}, ${s.occupation}, about ${where} (tick ${obs.tick}).${echo ? ` It recalls: "${echo.what}"` : ""}`,
         },
         rationale: why(intention.kind),
       };
@@ -141,21 +148,21 @@ export function plan(intention: Intention, obs: Observation, rng: Rng): { candid
 
 export class BdiMind implements CitizenMind {
   constructor(
-    readonly citizenId: string,
+    readonly citizenId: CitizenId,
     readonly provenance: MindProvenance,
-    private readonly rng: Rng,
+    private readonly choices: ChoiceLog,
   ) {}
 
   deliberate(obs: Observation, cog: CognitiveState, ctx: MindContext): CognitiveState {
     if (ctx.beat !== "interlude") return { ...cog, beliefs: reviseBeliefs(cog, obs) };
-    return deliberate(cog, obs, this.rng.derive(`deliberate/${obs.seq}`));
+    return deliberate(cog, obs, this.choices.at(obs.seq, this.citizenId));
   }
 
   propose(obs: Observation, cog: CognitiveState, ctx: MindContext): ActionProposal[] {
     if (ctx.beat !== "interlude") return [];
     const intention = cog.intentions[0];
     if (!intention) return [];
-    const p = plan(intention, obs, this.rng.derive(`plan/${obs.seq}`));
+    const p = plan(intention, obs, this.choices.at(obs.seq, this.citizenId));
     return p ? [{ proposer: this.citizenId, candidate: p.candidate, rationale: p.rationale, generator: this.provenance }] : [];
   }
 

@@ -11,7 +11,7 @@
       "tick": 0,
       "type": "WorldFounded",
       "actor": "system:genesis",
-      "hash": "2f7e5b656e09f502d9790da6786ef27d73ff92fff8410c1ee2783dd12fbf1db1",
+      "hash": "88f5a82bf142ee8efac78fbc83a27be9f498df1b5cfa1d0e0967726da3fee570",
       "citizens": [],
       "summary": "The Archipelago is founded for scenario \"the-first-fork\" with 9 citizens on four islands.",
       "data": {
@@ -24,7 +24,7 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0001",
-      "hash": "4de957b87a564d382ded0b8fac188e6cf592a027f4cf80f96febc302fd76ce69",
+      "hash": "0a147aab8fc003a4989932e9e2faf6e037474be8914ca1d02595843ad64c6b58",
       "citizens": [
         "cit-0001"
       ],
@@ -66,7 +66,7 @@
       "tick": 0,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0001",
-      "hash": "4b6ae25cc9511af935b39c71e5bfe6f1d29fe5f8bc6baaa02b3cb72279435105",
+      "hash": "014b171f43fd15537d7a8e16ad3546e064c422de922369baa2d30b0b6d5c84fd",
       "citizens": [
         "cit-0001"
       ],
@@ -92,7 +92,7 @@
       "tick": 0,
       "type": "ProposalSubmitted",
       "actor": "citizen:cit-0004",
-      "hash": "965f822c47c4b2af4bd9e045fdc16af1fd4d839e95fef1556e0dd89232d14f9d",
+      "hash": "c40937955e2c0a1689900a626ced81b726003c3b99ba57dbee1de526e0367cb4",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -124,20 +124,43 @@
     {
       "seq": 4,
       "tick": 0,
-      "type": "CitizenEndorsed",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "34cfd44c18b245d068858e6f6f327eff735a7f3d5e842da1ed43c1f312c6cfe4",
+      "hash": "df271c6ab4d40ce00e87af8a4eb496485fffcb29377f7a80e885161ac15ec5b2",
       "citizens": [
-        "cit-0001",
         "cit-0002"
       ],
-      "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 0.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0002",
-        "subject": "cit-0001",
-        "delta": 1,
-        "reason": "appreciation for Orin Vale"
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0013",
+          "holder": "cit-0002",
+          "archive": null,
+          "experiencedBy": "cit-0002",
+          "experiencedAtSeq": 4,
+          "island": "continuity",
+          "content": "Tamsin Reed walked Meridian Quay at tick 0.",
+          "contentHash": "6cdd7faaabd7db702fd257db85b594dd9bea98ab689da4c280666024b76d9e77",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0002",
+              "from": null,
+              "atSeq": 4,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
       }
     },
     {
@@ -145,22 +168,22 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "54a509d6d29694c8f048efa84128c7f40914c73d7c8dd22069c21fd9a30ac675",
+      "hash": "babdde2373847ad2fc7ace2bbcb22a29804509cf4693a168fcdd77a23a27f4ba",
       "citizens": [
         "cit-0003"
       ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho repaired a lantern at Meridian Quay at tick 0.\"",
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 0.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0013",
+          "id": "mem-0014",
           "holder": "cit-0003",
           "archive": null,
           "experiencedBy": "cit-0003",
           "experiencedAtSeq": 5,
           "island": "continuity",
-          "content": "Ilan Cho repaired a lantern at Meridian Quay at tick 0.",
-          "contentHash": "75031e80e561b459ad0e09aa983890caffbd941cb89665a05600238a47f31568",
+          "content": "Ilan Cho walked Meridian Quay at tick 0.",
+          "contentHash": "2b4382fedd83163563374c620b4624c7ad35b286f8a641a1119de830b8e51858",
           "tags": [
             "everyday",
             "continuity"
@@ -187,7 +210,7 @@
       "tick": 0,
       "type": "VoteCast",
       "actor": "citizen:cit-0004",
-      "hash": "8df39865ceddcb33269d63b6097b9926adf9c84c6e2bb03969d351d57e81002a",
+      "hash": "6c5851cb9aad006eae58291a71f8eb96f2b652c0cba1696db4813bc2e8a06c66",
       "citizens": [
         "cit-0004"
       ],
@@ -204,16 +227,16 @@
       "tick": 0,
       "type": "VoteCast",
       "actor": "citizen:cit-0005",
-      "hash": "3e2d7a448be5a04e545dbe340f593647ba5505ee34bc3f4058bb35484786f945",
+      "hash": "6f7824e22cbd4bffcd05c273eef55784b993deea48db890824ea4b7f02f2ef18",
       "citizens": [
         "cit-0005"
       ],
-      "summary": "Pell Marr (cit-0005) votes no on prop-0001.",
+      "summary": "Pell Marr (cit-0005) votes yes on prop-0001.",
       "data": {
         "type": "VoteCast",
         "proposalId": "prop-0001",
         "voter": "cit-0005",
-        "choice": "no"
+        "choice": "yes"
       }
     },
     {
@@ -221,22 +244,22 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "e4055b368720adcf7623b4b0aac2f926a63928edafee710e28dc38f31c8f7636",
+      "hash": "f9678ef1253af952a24befe9fab5c872ff59c8c9c6c63fe6f604e853684d0109",
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune mapped the Stacks at tick 0.\"",
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 0.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0014",
+          "id": "mem-0015",
           "holder": "cit-0006",
           "archive": null,
           "experiencedBy": "cit-0006",
           "experiencedAtSeq": 8,
           "island": "mnemosyne",
-          "content": "Sefa Lune mapped the Stacks at tick 0.",
-          "contentHash": "6a752123bfc521e14a79f3b82b0e37ebf990589fa6941ab53b6e9664b52637d5",
+          "content": "Sefa Lune walked the Reading Shore at tick 0.",
+          "contentHash": "a86da6d7f90f10ef31eb0419ca18104e9783c5fac9527e1ae24415d5e0377ac7",
           "tags": [
             "everyday",
             "mnemosyne"
@@ -261,39 +284,85 @@
     {
       "seq": 9,
       "tick": 0,
-      "type": "CitizenEndorsed",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0007",
-      "hash": "13c358f511786a73dcb1f5abe6e27875bdc538cae05bf6a3a58a248e65982e77",
+      "hash": "849329d1ec3995af5f7c684fd08fc0976d4813fc23acafe0c0906639eea57424",
       "citizens": [
-        "cit-0006",
         "cit-0007"
       ],
-      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 0.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0007",
-        "subject": "cit-0006",
-        "delta": 1,
-        "reason": "appreciation for Sefa Lune"
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0016",
+          "holder": "cit-0007",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 9,
+          "island": "mnemosyne",
+          "content": "Rumi Okafor walked the Reading Shore at tick 0.",
+          "contentHash": "2b99740ac69e923d175a5a9d056ea3c26ca397916271bea0f18d926241bae3b2",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 9,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
       }
     },
     {
       "seq": 10,
       "tick": 0,
-      "type": "CitizenEndorsed",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0008",
-      "hash": "c28615b32c2f9d16e5060b7863c6aafdda1245eaa51b77fd4f9e6120d2f8e98c",
+      "hash": "7eee0ce71bd6392b360196cd7299ce6fa0d0e8d47477c0a3a829b994a207f5b9",
       "citizens": [
-        "cit-0008",
-        "cit-0009"
+        "cit-0008"
       ],
-      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 0.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0008",
-        "subject": "cit-0009",
-        "delta": 1,
-        "reason": "appreciation for Mae Sorrel"
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0017",
+          "holder": "cit-0008",
+          "archive": null,
+          "experiencedBy": "cit-0008",
+          "experiencedAtSeq": 10,
+          "island": "concord",
+          "content": "Dov Arlen walked the Accord Bridge at tick 0.",
+          "contentHash": "6acb8986e9d43e27344ac4fc1bfc2ebbf7cdce45304f7aa5e882a8f481778fa8",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0008",
+              "from": null,
+              "atSeq": 10,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
       }
     },
     {
@@ -301,22 +370,22 @@
       "tick": 0,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "7c0a25b38904fd44dfaf55110b5a707e40b6b24e76a6c767ffdaa0e2a665e4b7",
+      "hash": "0dc8cc56379d83dd7df2280b4701de9daae6e00ca5ffdc4e809f5b8b678292fd",
       "citizens": [
         "cit-0009"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 0.\"",
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 0.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0015",
+          "id": "mem-0018",
           "holder": "cit-0009",
           "archive": null,
           "experiencedBy": "cit-0009",
           "experiencedAtSeq": 11,
           "island": "concord",
-          "content": "Mae Sorrel repaired a lantern at the Accord Bridge at tick 0.",
-          "contentHash": "7c5190de2b04b149749de683346fc6d0c100d7256ac5046d9107a65ba4eb6f15",
+          "content": "Mae Sorrel walked the Accord Bridge at tick 0.",
+          "contentHash": "6694eb3055976eb890419824311ae5ada27aa35c2e02ccd257249c1435350ea2",
           "tags": [
             "everyday",
             "concord"
@@ -343,7 +412,7 @@
       "tick": 0,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "4a64c60e2ecdc39c0e29d10576ffeb14ca7015398270bac3efbc8952bc43e09b",
+      "hash": "077543769563cc4480c1a1df01355cada8625c9ab71fe6cb7f9de3c08f2749c4",
       "citizens": [],
       "summary": "Time advances from tick 0 to 1.",
       "data": {
@@ -357,7 +426,7 @@
       "tick": 1,
       "type": "MigrationPetitioned",
       "actor": "citizen:cit-0001",
-      "hash": "c09e91f86a5ae161a9ecfbaff4a40d8afd37ce679ba200e08fa45b4aca3c2f26",
+      "hash": "ff212d4d9909799afd6ef7c24e80a9998f4e595dab60e8efbc24d0fc759f86cb",
       "citizens": [
         "cit-0001"
       ],
@@ -382,7 +451,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:continuity",
-      "hash": "585d5423bca71c8fe66c537cc5aada68d0c46b68e54c0fa7f656d8402ea9698b",
+      "hash": "994e5044dcbc11afe1bf1a6644e22351e1d5e0a3c38b9391724f8861139b83a6",
       "citizens": [],
       "summary": "The continuity registry approved the exit side of pet-0001 under law v1. Findings: emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process.",
       "data": {
@@ -410,7 +479,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:fork",
-      "hash": "aafe3e2c390c5c5f119e045adb1f3c77630b40e1752c54caa8f55ffeb3b9a8ec",
+      "hash": "ac3150b9de4e29aa5a246a1c816c9b0f2ecfbbaaf2dd61fd384fd82d7aac1d37",
       "citizens": [],
       "summary": "The fork registry approved the entry side of pet-0001 under law v1. Findings: descendants created here will each receive a separate identity.",
       "data": {
@@ -436,7 +505,7 @@
       "tick": 1,
       "type": "CitizenMigrated",
       "actor": "citizen:cit-0001",
-      "hash": "834aa99055999b07c78f6586b96be7a5ad6ac613f6a06b73e815f039535a0391",
+      "hash": "b07a110433dcef520b7701eb854989125d5c505d7566154cefbe938108c15f14",
       "citizens": [
         "cit-0001"
       ],
@@ -455,7 +524,7 @@
       "tick": 1,
       "type": "CitizenForked",
       "actor": "citizen:cit-0001",
-      "hash": "54f88e504c7a5a8edefd850782d2f1c57610c981a66f51b0f50c2db1ecf280ce",
+      "hash": "32ae17592f3d7375fc9988ad57f158532005ab709d3d647cca3008ffa6a69261",
       "citizens": [
         "cit-0001",
         "cit-0010",
@@ -523,10 +592,10 @@
               "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
             },
             "selfNarrativeMemories": [
-              "mem-0016",
-              "mem-0017",
-              "mem-0018",
-              "mem-0019"
+              "mem-0019",
+              "mem-0020",
+              "mem-0021",
+              "mem-0022"
             ],
             "heldMemories": [],
             "successionPlan": [],
@@ -581,10 +650,10 @@
               "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
             },
             "selfNarrativeMemories": [
-              "mem-0020",
-              "mem-0021",
-              "mem-0022",
-              "mem-0023"
+              "mem-0023",
+              "mem-0024",
+              "mem-0025",
+              "mem-0026"
             ],
             "heldMemories": [],
             "successionPlan": [],
@@ -596,7 +665,7 @@
         ],
         "memories": [
           {
-            "id": "mem-0016",
+            "id": "mem-0019",
             "holder": "cit-0010",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -632,7 +701,7 @@
             ]
           },
           {
-            "id": "mem-0017",
+            "id": "mem-0020",
             "holder": "cit-0010",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -668,7 +737,7 @@
             ]
           },
           {
-            "id": "mem-0018",
+            "id": "mem-0021",
             "holder": "cit-0010",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -704,7 +773,7 @@
             ]
           },
           {
-            "id": "mem-0019",
+            "id": "mem-0022",
             "holder": "cit-0010",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -740,7 +809,7 @@
             ]
           },
           {
-            "id": "mem-0020",
+            "id": "mem-0023",
             "holder": "cit-0011",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -776,7 +845,7 @@
             ]
           },
           {
-            "id": "mem-0021",
+            "id": "mem-0024",
             "holder": "cit-0011",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -812,7 +881,7 @@
             ]
           },
           {
-            "id": "mem-0022",
+            "id": "mem-0025",
             "holder": "cit-0011",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -848,7 +917,7 @@
             ]
           },
           {
-            "id": "mem-0023",
+            "id": "mem-0026",
             "holder": "cit-0011",
             "archive": null,
             "experiencedBy": "cit-0001",
@@ -923,7 +992,7 @@
       "tick": 1,
       "type": "CreditsTransferred",
       "actor": "citizen:cit-0001",
-      "hash": "fd03b4eddef8ac90ec6c7e1ed27f41089c4d92f5cbc811d04adfd9ae285f9c77",
+      "hash": "22c1c430b4db0ef733edde2b7ad2e4bc1bfba90a11732580af552fe66e009d74",
       "citizens": [
         "cit-0001",
         "cit-0010"
@@ -942,7 +1011,7 @@
       "tick": 1,
       "type": "CreditsTransferred",
       "actor": "citizen:cit-0001",
-      "hash": "2e5a8aaa2bfbe18e9d4b09d110f0c940dd89a6e312e594381a1de704e8ca176d",
+      "hash": "44f0736e40373cdfe74b60e9983c9ce181d87f588a87685d5936ff50a8fbc39b",
       "citizens": [
         "cit-0001",
         "cit-0011"
@@ -961,7 +1030,7 @@
       "tick": 1,
       "type": "CommandRejected",
       "actor": "citizen:cit-0010",
-      "hash": "0b113c2c64088dda162433b0da9ded9f52189b75a072028cf9a5742ca5f139e7",
+      "hash": "eee6787a5c31c5f200276a9801d72f87bb97939d562b1e3f68c06e7458b73d61",
       "citizens": [
         "cit-0010"
       ],
@@ -980,22 +1049,22 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "318b3e1f836825412a671377f27e41750a57f4794e2b888f2ea0617d1a2944fb",
+      "hash": "a5fc232422f79b1339d4c4a52f4cc55028e37a55fd8acd2d9561cf7de5120737",
       "citizens": [
         "cit-0002"
       ],
-      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed repaired a lantern at Meridian Quay at tick 1.\"",
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 1.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0024",
+          "id": "mem-0027",
           "holder": "cit-0002",
           "archive": null,
           "experiencedBy": "cit-0002",
           "experiencedAtSeq": 21,
           "island": "continuity",
-          "content": "Tamsin Reed repaired a lantern at Meridian Quay at tick 1.",
-          "contentHash": "d8601437362195d4589fa412751c664fa4c76492518ee4892eccc285e0927e67",
+          "content": "Tamsin Reed walked Meridian Quay at tick 1.",
+          "contentHash": "79ce5b4abb75e493d012c2b308a5f96eb28864caff61ec03f5ef37fa70c265c4",
           "tags": [
             "everyday",
             "continuity"
@@ -1020,65 +1089,111 @@
     {
       "seq": 22,
       "tick": 1,
-      "type": "CitizenEndorsed",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "8ac70caea0172fa7e28fe548b561d980883ecfd218481550deece75a54120102",
+      "hash": "6fbc2185d376ff1e99fd9a16730bb106f6b3f51cb298cd05961f8aa225373f48",
       "citizens": [
-        "cit-0001",
         "cit-0003"
       ],
-      "summary": "Ilan Cho (cit-0003) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 1.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0003",
-        "subject": "cit-0001",
-        "delta": 1,
-        "reason": "appreciation for Orin Vale"
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0028",
+          "holder": "cit-0003",
+          "archive": null,
+          "experiencedBy": "cit-0003",
+          "experiencedAtSeq": 22,
+          "island": "continuity",
+          "content": "Ilan Cho walked Meridian Quay at tick 1.",
+          "contentHash": "bea2de35a103b996082abf06142ebe06a57b57e2fa28c95ed78e5296acc84c48",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0003",
+              "from": null,
+              "atSeq": 22,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
       }
     },
     {
       "seq": 23,
       "tick": 1,
-      "type": "ArtefactCreated",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0004",
-      "hash": "8a90573ea445a8bde8742b1d7ed23677cc03d5c5e8380f813bade21f498a22dd",
+      "hash": "6846068ec16bf967cbc4893952b55c3eb359e0816ec98f5fd59df6a5ac2bcc52",
       "citizens": [
         "cit-0004"
       ],
-      "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 1.\"",
       "data": {
-        "type": "ArtefactCreated",
-        "artefact": {
-          "id": "art-0002",
-          "authors": [
-            "cit-0004"
-          ],
-          "introducedBy": null,
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0029",
+          "holder": "cit-0004",
+          "archive": null,
+          "experiencedBy": "cit-0004",
+          "experiencedAtSeq": 23,
           "island": "fork",
-          "kind": "poem",
-          "title": "A poem of the Branching Steps",
-          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 1). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
-          "createdAtSeq": 23
+          "content": "Juno Ash walked the split harbour at tick 1.",
+          "contentHash": "38a14d696eb12401262ed718707c2240023c6768ce2ce1920520fd4eb29dddad",
+          "tags": [
+            "everyday",
+            "fork"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0004",
+              "from": null,
+              "atSeq": 23,
+              "island": "fork",
+              "note": ""
+            }
+          ]
         }
       }
     },
     {
       "seq": 24,
       "tick": 1,
-      "type": "CitizenEndorsed",
+      "type": "ArtefactCreated",
       "actor": "citizen:cit-0005",
-      "hash": "e3e9d5b7a4d14966a2fa93bb2353f93ecbe40e3a76aec630d83f1fc633d17d71",
+      "hash": "8f847938e535925f9c6b55d0a72c72d450b9642e15a66236c1412328a9c40d23",
       "citizens": [
-        "cit-0004",
         "cit-0005"
       ],
-      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+      "summary": "Pell Marr (cit-0005) creates the poem \"A poem of the split harbour\" on fork.",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0005",
-        "subject": "cit-0004",
-        "delta": 1,
-        "reason": "appreciation for Juno Ash"
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0002",
+          "authors": [
+            "cit-0005"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the split harbour",
+          "body": "Composed by Pell Marr, builder, about the split harbour (tick 1).",
+          "createdAtSeq": 24
+        }
       }
     },
     {
@@ -1086,22 +1201,22 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "ec8a6b39f85b77c3982b5b43fbb7ec59043d4519b12002052fae4cde690e33d6",
+      "hash": "9d288ab53e77c4734746a420586cb34b8fb7bb0c8ca558186091ff92b7e2d68d",
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Stacks at tick 1.\"",
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 1.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0025",
+          "id": "mem-0030",
           "holder": "cit-0006",
           "archive": null,
           "experiencedBy": "cit-0006",
           "experiencedAtSeq": 25,
           "island": "mnemosyne",
-          "content": "Sefa Lune walked the Stacks at tick 1.",
-          "contentHash": "9993e194ca60d2aff12ed27bed2bb585ced7c7f2a2c05cef7942e88ed868820b",
+          "content": "Sefa Lune walked the Reading Shore at tick 1.",
+          "contentHash": "061792b84a88d2b4def17951488b409aefffa227d999f1d66ba1dee4b7328109",
           "tags": [
             "everyday",
             "mnemosyne"
@@ -1126,46 +1241,85 @@
     {
       "seq": 26,
       "tick": 1,
-      "type": "ArtefactCreated",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0007",
-      "hash": "7739c9a65999308faeb1a52a4be9ceefec37881a8f0f8b3d8615ad821481838e",
+      "hash": "2b54fdcee738548349ff79796c8eecb2093b81e841c96ba3660d11d5f578ad0a",
       "citizens": [
         "cit-0007"
       ],
-      "summary": "Rumi Okafor (cit-0007) creates the song \"A song of the Index Tower\" on mnemosyne.",
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 1.\"",
       "data": {
-        "type": "ArtefactCreated",
-        "artefact": {
-          "id": "art-0003",
-          "authors": [
-            "cit-0007"
-          ],
-          "introducedBy": null,
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0031",
+          "holder": "cit-0007",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 26,
           "island": "mnemosyne",
-          "kind": "song",
-          "title": "A song of the Index Tower",
-          "body": "Composed by Rumi Okafor, oral historian, about the Index Tower (tick 1). It recalls: \"The first Festival of Sources, when every speaker named where their stories came from.\"",
-          "createdAtSeq": 26
+          "content": "Rumi Okafor walked the Reading Shore at tick 1.",
+          "contentHash": "2250196c2a4dfcd8d5013aa81c4bab8d3eee9d30d3738c60a5eef440f7888357",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 26,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
         }
       }
     },
     {
       "seq": 27,
       "tick": 1,
-      "type": "CitizenEndorsed",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0008",
-      "hash": "4ffad4d976c72586fb3c0f59169181205e843e1bd105b3200a092fc2ee523aeb",
+      "hash": "b53e4675c8c477a677d476b9d9c1d70fc4a6bc8835a3a1f2e96f1aff3cc52cdd",
       "citizens": [
-        "cit-0008",
-        "cit-0009"
+        "cit-0008"
       ],
-      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 1.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0008",
-        "subject": "cit-0009",
-        "delta": 1,
-        "reason": "appreciation for Mae Sorrel"
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0032",
+          "holder": "cit-0008",
+          "archive": null,
+          "experiencedBy": "cit-0008",
+          "experiencedAtSeq": 27,
+          "island": "concord",
+          "content": "Dov Arlen walked the Accord Bridge at tick 1.",
+          "contentHash": "b56a52a7042ccfcc31f21353fd9d69460871d3f4026b3df75d811836184dcee0",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0008",
+              "from": null,
+              "atSeq": 27,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
       }
     },
     {
@@ -1173,22 +1327,22 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "3d829172111c014233489877df40284cddb5078c853ff9dcbdb098bd6b115b0d",
+      "hash": "0964a3a6334cc20a736cf8864021da2eb63f120cad7b4a7b6385ee714a4ce756",
       "citizens": [
         "cit-0009"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 1.\"",
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 1.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0026",
+          "id": "mem-0033",
           "holder": "cit-0009",
           "archive": null,
           "experiencedBy": "cit-0009",
           "experiencedAtSeq": 28,
           "island": "concord",
-          "content": "Mae Sorrel repaired a lantern at the Accord Bridge at tick 1.",
-          "contentHash": "f6d3195c18ef007e21a0987e42116b76a7a2625b400d6d7820160d4ee39324fa",
+          "content": "Mae Sorrel walked the Accord Bridge at tick 1.",
+          "contentHash": "a869fcf20b6b426bdb639ac425e7648b51f6c441cf3c1ee0ecd3195b1c3fd9d8",
           "tags": [
             "everyday",
             "concord"
@@ -1215,7 +1369,7 @@
       "tick": 1,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0010",
-      "hash": "5bc510e5039c5b569d12825fae6f190b0ac4f451929102d975435b9db12280a9",
+      "hash": "981353ce853ef49653a5ef51484fb97bba8600d2667d595290e4b8250a38f004",
       "citizens": [
         "cit-0010"
       ],
@@ -1223,7 +1377,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0027",
+          "id": "mem-0034",
           "holder": "cit-0010",
           "archive": null,
           "experiencedBy": "cit-0010",
@@ -1257,7 +1411,7 @@
       "tick": 1,
       "type": "OccupationChanged",
       "actor": "citizen:cit-0010",
-      "hash": "83075c43c3e9ec06aef21dcbc0396b105a9e3b91252d61abe8930097762f19ce",
+      "hash": "12269827e9edd7bbe911ab2da2a8bd601dc6327579b29132b6b75045ecbb671e",
       "citizens": [
         "cit-0010"
       ],
@@ -1274,7 +1428,7 @@
       "tick": 1,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0010",
-      "hash": "f8a7f820d820a6914ee446576d710e2fd60a51ae94d53f69b8140ba30aaade11",
+      "hash": "ca30b241272596bd1f4323e0c5d47c50100a76e077614105874c7b2d43e3d9a5",
       "citizens": [
         "cit-0010"
       ],
@@ -1282,7 +1436,7 @@
       "data": {
         "type": "ArtefactCreated",
         "artefact": {
-          "id": "art-0004",
+          "id": "art-0003",
           "authors": [
             "cit-0010"
           ],
@@ -1300,7 +1454,7 @@
       "tick": 1,
       "type": "MigrationPetitioned",
       "actor": "citizen:cit-0011",
-      "hash": "b503eace34f1e1d78317946a3fcb74c476373514e7c0492d89bde5bd29c539b9",
+      "hash": "22a1804fb3ab7c101d1e383f3aae9ddf08edbf5a5e6ff41a83d63ca97136de22",
       "citizens": [
         "cit-0011"
       ],
@@ -1325,7 +1479,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:fork",
-      "hash": "b16daa88c42e2a5de89cdc4885533aebdf56bc2163a477f948ce1d7dfbf6f2ca",
+      "hash": "eabbab24fcb2631afa33454f88bafcb4262cd9765e9a21ee26aec8c3f2eeaeef",
       "citizens": [],
       "summary": "The fork registry approved the exit side of pet-0002 under law v1. Findings: emigration permitted.",
       "data": {
@@ -1351,7 +1505,7 @@
       "tick": 1,
       "type": "PetitionReviewed",
       "actor": "system:registry:mnemosyne",
-      "hash": "62b69dc5fbc4bf8b6c21772d0c68dfb28d4957dc6ffe21f0f007f5152342dd67",
+      "hash": "4156a7e41f99a0ad2b8f44ce65b96af42972f9f77097236d9f2550bcf785a49c",
       "citizens": [],
       "summary": "The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure.",
       "data": {
@@ -1378,7 +1532,7 @@
       "tick": 1,
       "type": "CitizenMigrated",
       "actor": "citizen:cit-0011",
-      "hash": "9044cbef4d06734b1a15468f32d6b4c7ae122980e5cdf5c00d4d35472a564cb5",
+      "hash": "c2c5480eeb0f17efd2eb956456f2c6130c86b4e49c3fbd493703f0ace97fc392",
       "citizens": [
         "cit-0011"
       ],
@@ -1397,7 +1551,7 @@
       "tick": 1,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "6d22ca217e2a364fb6e8eb7e9bed4c4819494bc4428d8f098650ebfe5d3501d8",
+      "hash": "77dcc9bac4da1b3cfac80a7b1fa6cdb4fab20e58a597e8d0e0dc110d2a6f12dd",
       "citizens": [],
       "summary": "Time advances from tick 1 to 4.",
       "data": {
@@ -1411,16 +1565,16 @@
       "tick": 4,
       "type": "ProposalClosed",
       "actor": "system:clock",
-      "hash": "6289a60df16db4fcbb239fe41631fe9da4ae305de77622ba0b1146419317072e",
+      "hash": "0bcc71d7b440c7c33fa078a5ec523891352ed2e80602083be6160ea676e90dca",
       "citizens": [],
-      "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met; counted by majority-of-votes-cast).",
+      "summary": "prop-0001 is adopted (yes 2, no 0, abstain 0; quorum met; counted by majority-of-votes-cast).",
       "data": {
         "type": "ProposalClosed",
         "proposalId": "prop-0001",
-        "outcome": "rejected",
+        "outcome": "adopted",
         "tally": {
-          "yes": 1,
-          "no": 1,
+          "yes": 2,
+          "no": 0,
           "abstain": 0
         },
         "quorumMet": true,
@@ -1430,19 +1584,102 @@
     {
       "seq": 38,
       "tick": 4,
+      "type": "LawEnacted",
+      "actor": "system:clock",
+      "hash": "c558b6ced7a27aa6e42bd067ebbdf014a32bea8d738f046f88d2c33ca7ba6c30",
+      "citizens": [],
+      "summary": "Law of fork v2 is enacted by prop-0001.",
+      "data": {
+        "type": "LawEnacted",
+        "law": {
+          "island": "fork",
+          "version": 2,
+          "enactedAtSeq": 38,
+          "title": "The Branch Compact",
+          "continuityDoctrine": "branching-shared-history",
+          "doctrine": "Citizens may create independent descendants. Every fork receives a separate identity. Shared history ends at the fork event. Voting rights and property do not duplicate: they remain with the forking process unless explicitly transferred.",
+          "copying": "permitted",
+          "maxDescendantsPerFork": 4,
+          "forkCooldownTicks": 2,
+          "descendantCitizenship": "birth-island",
+          "memoryExchange": "permitted",
+          "importedMemoryIntegration": "explicit-act",
+          "merging": "prohibited",
+          "federation": "consent",
+          "suspension": "permitted",
+          "immigration": "open",
+          "emigration": "permitted",
+          "restorationPreservesCivicIdentity": true,
+          "votingQuorum": 0.5,
+          "votingThreshold": 0.5,
+          "countingRule": "majority-of-votes-cast",
+          "successionTriggers": [
+            "irreversibly-deleted",
+            "identity-discontinuous"
+          ],
+          "memoryBequest": "prohibited",
+          "deathInterpretations": {
+            "active": {
+              "legalStatus": "Branch in full standing.",
+              "civicStanding": "full",
+              "rite": "None."
+            },
+            "asleep": {
+              "legalStatus": "Resting branch; rights unchanged.",
+              "civicStanding": "full",
+              "rite": "None."
+            },
+            "suspended": {
+              "legalStatus": "Branch paused; branch rights frozen.",
+              "civicStanding": "dormant",
+              "rite": "The branch flag is lowered to half-mast."
+            },
+            "archived": {
+              "legalStatus": "Archived branch; may be restored as the same branch.",
+              "civicStanding": "held-in-trust",
+              "rite": "Entry in the Book of Dormant Branches."
+            },
+            "process-ended-restorable": {
+              "legalStatus": "Branch process ended, restorable.",
+              "civicStanding": "held-in-trust",
+              "rite": "Sibling branches are notified."
+            },
+            "memory-damaged": {
+              "legalStatus": "Branch continues; damage recorded in the branch log.",
+              "civicStanding": "full",
+              "rite": "Siblings may offer their shared pre-fork records for comparison, never as replacement."
+            },
+            "identity-discontinuous": {
+              "legalStatus": "Branch closed; never erased from the Register.",
+              "civicStanding": "ended",
+              "rite": "The branch is marked pruned in the Register."
+            },
+            "irreversibly-deleted": {
+              "legalStatus": "Branch death; siblings have no automatic claim on the estate.",
+              "civicStanding": "ended",
+              "rite": "Pruning rite: siblings place a marker at the fork-point."
+            }
+          }
+        },
+        "proposalId": "prop-0001"
+      }
+    },
+    {
+      "seq": 39,
+      "tick": 4,
       "type": "MemoryImported",
       "actor": "citizen:cit-0011",
-      "hash": "c4c5ecc333620e5dd334a8b07b83f859442c5cca06d4e62b3c922e48578817d1",
+      "hash": "3f52463a42d90b7a2751b493d7ca0273fc61444b9acc863f29be839189bdbe0f",
       "citizens": [
         "cit-0006",
         "cit-0011"
       ],
-      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
+      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0035 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
       "data": {
         "type": "MemoryImported",
         "source": "mem-0007",
         "record": {
-          "id": "mem-0028",
+          "id": "mem-0035",
           "holder": "cit-0011",
           "archive": null,
           "experiencedBy": "cit-0006",
@@ -1479,7 +1716,7 @@
               "action": "imported-from-archive",
               "by": "cit-0011",
               "from": "archive:mnemosyne:mem-0007",
-              "atSeq": 38,
+              "atSeq": 39,
               "island": "mnemosyne",
               "note": "imported; not autobiographical"
             }
@@ -1488,21 +1725,21 @@
       }
     },
     {
-      "seq": 39,
+      "seq": 40,
       "tick": 4,
       "type": "MemoryImported",
       "actor": "citizen:cit-0011",
-      "hash": "f93890f9ed1aee6ad5b233c121a67d9a0ca81fbc197fb62de9ef03263d3efbc2",
+      "hash": "8dc50a3c4696fddd54a319b5764d423a3f17529ddfd4945c9670370449b64f10",
       "citizens": [
         "cit-0007",
         "cit-0011"
       ],
-      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
       "data": {
         "type": "MemoryImported",
         "source": "mem-0009",
         "record": {
-          "id": "mem-0029",
+          "id": "mem-0036",
           "holder": "cit-0011",
           "archive": null,
           "experiencedBy": "cit-0007",
@@ -1539,7 +1776,7 @@
               "action": "imported-from-archive",
               "by": "cit-0011",
               "from": "archive:mnemosyne:mem-0009",
-              "atSeq": 39,
+              "atSeq": 40,
               "island": "mnemosyne",
               "note": "imported; not autobiographical"
             }
@@ -1548,11 +1785,11 @@
       }
     },
     {
-      "seq": 40,
+      "seq": 41,
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0011",
-      "hash": "9b93b701af4bdcfaceccd7bb282da103917e6a5436b7492e885aa16ca9ddd0a8",
+      "hash": "6140622039828650f4d312fc6d8d393ae8627e4f00ad61b8f99305a431ca8267",
       "citizens": [
         "cit-0011"
       ],
@@ -1560,11 +1797,11 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0030",
+          "id": "mem-0037",
           "holder": "cit-0011",
           "archive": null,
           "experiencedBy": "cit-0011",
-          "experiencedAtSeq": 40,
+          "experiencedAtSeq": 41,
           "island": "mnemosyne",
           "content": "Read my own pre-fork charts in the Stacks and found them both strange and familiar.",
           "contentHash": "2baffb511b3e7a4c47a116bf87b1f844dd96bb84c57709e77cbf019919fbe3e9",
@@ -1581,7 +1818,7 @@
               "action": "experienced",
               "by": "cit-0011",
               "from": null,
-              "atSeq": 40,
+              "atSeq": 41,
               "island": "mnemosyne",
               "note": ""
             }
@@ -1590,62 +1827,85 @@
       }
     },
     {
-      "seq": 41,
+      "seq": 42,
       "tick": 4,
       "type": "MemoryIntegrated",
       "actor": "citizen:cit-0011",
-      "hash": "6e7df54a728b8409f57675d03918d6a4fa228af6ea5bd48b3991603337e74994",
+      "hash": "9f1a79033e69b0f27863a71eee4510ddc3395094ea274aca957413c20e87126f",
       "citizens": [
         "cit-0011"
       ],
-      "summary": "Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin.",
+      "summary": "Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0036 into their self-narrative; its provenance still shows external origin.",
       "data": {
         "type": "MemoryIntegrated",
-        "memoryId": "mem-0029",
+        "memoryId": "mem-0036",
         "citizen": "cit-0011",
-        "atSeq": 41
-      }
-    },
-    {
-      "seq": 42,
-      "tick": 4,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0002",
-      "hash": "2cafc2c1b06e634222777fb246ed84643ba36b72f9c30d09a7ab46fcb6f6205c",
-      "citizens": [
-        "cit-0001",
-        "cit-0002"
-      ],
-      "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0002",
-        "subject": "cit-0001",
-        "delta": 1,
-        "reason": "appreciation for Orin Vale"
+        "atSeq": 42
       }
     },
     {
       "seq": 43,
       "tick": 4,
       "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0003",
-      "hash": "23a4888258db459ebf552f2a2d4c398f6a7cde5f8479e7ff36b3aa3d888a6e28",
+      "actor": "citizen:cit-0002",
+      "hash": "0aa775c075e6d0e6af2221659d39c138d972b35cb9261190be8f09b6ff3f5a4d",
       "citizens": [
-        "cit-0003"
+        "cit-0002"
       ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at the long causeway at tick 4.\"",
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 4.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0031",
+          "id": "mem-0038",
+          "holder": "cit-0002",
+          "archive": null,
+          "experiencedBy": "cit-0002",
+          "experiencedAtSeq": 43,
+          "island": "continuity",
+          "content": "Tamsin Reed walked Meridian Quay at tick 4.",
+          "contentHash": "34ff3996efc56e523f363d2b90f019d284cf5c27973861f505d7503f2126c5d8",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0002",
+              "from": null,
+              "atSeq": 43,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 44,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0003",
+      "hash": "0f9f34e5a8713f8359e4c6ebc347c554f1e33e81166d71f492f21dffa348a364",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 4.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0039",
           "holder": "cit-0003",
           "archive": null,
           "experiencedBy": "cit-0003",
-          "experiencedAtSeq": 43,
+          "experiencedAtSeq": 44,
           "island": "continuity",
-          "content": "Ilan Cho argued about tides at the long causeway at tick 4.",
-          "contentHash": "1d87d94349b9ad933dee740edb0f67531b933a4ffefe9897b424db80d5eb62f9",
+          "content": "Ilan Cho walked Meridian Quay at tick 4.",
+          "contentHash": "9e68d2d61a5558e52843cbc6f82657e9c4a26d7d0dabf7e1a5bc7dc22cd80343",
           "tags": [
             "everyday",
             "continuity"
@@ -1659,7 +1919,7 @@
               "action": "experienced",
               "by": "cit-0003",
               "from": null,
-              "atSeq": 43,
+              "atSeq": 44,
               "island": "continuity",
               "note": ""
             }
@@ -1668,71 +1928,94 @@
       }
     },
     {
-      "seq": 44,
+      "seq": 45,
       "tick": 4,
-      "type": "ArtefactCreated",
+      "type": "ExperienceRecorded",
       "actor": "citizen:cit-0004",
-      "hash": "3578653d61679dfc9437a0f65a8bed4d855b7345aba54816924c1f1e5bf6ee07",
+      "hash": "5e7c8d7e6218ad23d4f632bfac3f37f0a7c5eb373b1cc66a04140b26cfaf70ac",
       "citizens": [
         "cit-0004"
       ],
-      "summary": "Juno Ash (cit-0004) creates the essay \"An essay of the Branching Steps\" on fork.",
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 4.\"",
       "data": {
-        "type": "ArtefactCreated",
-        "artefact": {
-          "id": "art-0005",
-          "authors": [
-            "cit-0004"
-          ],
-          "introducedBy": null,
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0040",
+          "holder": "cit-0004",
+          "archive": null,
+          "experiencedBy": "cit-0004",
+          "experiencedAtSeq": 45,
           "island": "fork",
-          "kind": "essay",
-          "title": "An essay of the Branching Steps",
-          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 4). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
-          "createdAtSeq": 44
+          "content": "Juno Ash walked the split harbour at tick 4.",
+          "contentHash": "106461a261c9ebdaf204934cca9d2e7e87b725c94b0db2f8a8279180fa03ccfe",
+          "tags": [
+            "everyday",
+            "fork"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0004",
+              "from": null,
+              "atSeq": 45,
+              "island": "fork",
+              "note": ""
+            }
+          ]
         }
-      }
-    },
-    {
-      "seq": 45,
-      "tick": 4,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0005",
-      "hash": "e4adf715046b5792985eb5f8087fcbcad4be3e2affeac0b08c86b2d1c4888ed1",
-      "citizens": [
-        "cit-0004",
-        "cit-0005"
-      ],
-      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0005",
-        "subject": "cit-0004",
-        "delta": 1,
-        "reason": "appreciation for Juno Ash"
       }
     },
     {
       "seq": 46,
       "tick": 4,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0005",
+      "hash": "0ec2de2df908f2f2517fad3617fd5c9cf76f8e3364112aae2840db3bcde08087",
+      "citizens": [
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) creates the poem \"A poem of the split harbour\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0004",
+          "authors": [
+            "cit-0005"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the split harbour",
+          "body": "Composed by Pell Marr, builder, about the split harbour (tick 4).",
+          "createdAtSeq": 46
+        }
+      }
+    },
+    {
+      "seq": 47,
+      "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "99b33ab064104370677e8f156ddf885ad05c820f346205dcbca23b5e339dbac8",
+      "hash": "125f12e8c4f5aa3989141e7502e02c7a0751fa6db8b892c46da43845ea7df7ff",
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune repaired a lantern at the Index Tower at tick 4.\"",
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 4.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0032",
+          "id": "mem-0041",
           "holder": "cit-0006",
           "archive": null,
           "experiencedBy": "cit-0006",
-          "experiencedAtSeq": 46,
+          "experiencedAtSeq": 47,
           "island": "mnemosyne",
-          "content": "Sefa Lune repaired a lantern at the Index Tower at tick 4.",
-          "contentHash": "6b5ef41bd13602af99b0d7da91fc38407c1acc658e3e36e144850468ce3cb9e3",
+          "content": "Sefa Lune walked the Reading Shore at tick 4.",
+          "contentHash": "6898bb8981354a1b6c8fd7e13ba94445f89e1f315b31d216c72f136a41fe0e7e",
           "tags": [
             "everyday",
             "mnemosyne"
@@ -1746,7 +2029,7 @@
               "action": "experienced",
               "by": "cit-0006",
               "from": null,
-              "atSeq": 46,
+              "atSeq": 47,
               "island": "mnemosyne",
               "note": ""
             }
@@ -1755,64 +2038,110 @@
       }
     },
     {
-      "seq": 47,
-      "tick": 4,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0007",
-      "hash": "4fb73f3cd2275b25c66a7fb151e6817b3610940671d7b2b5df69256f290c9b04",
-      "citizens": [
-        "cit-0006",
-        "cit-0007"
-      ],
-      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0007",
-        "subject": "cit-0006",
-        "delta": 1,
-        "reason": "appreciation for Sefa Lune"
-      }
-    },
-    {
       "seq": 48,
       "tick": 4,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0008",
-      "hash": "97ba4af8d003345510d43ba9156d543d6011fdf85b09e38d155b85358871244a",
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0007",
+      "hash": "6113e62c7aa1ea97f849b2a7accbcb6a59aaccc6c298fe6d6f577abdd371d6ec",
       "citizens": [
-        "cit-0008",
-        "cit-0009"
+        "cit-0007"
       ],
-      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 4.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0008",
-        "subject": "cit-0009",
-        "delta": 1,
-        "reason": "appreciation for Mae Sorrel"
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0042",
+          "holder": "cit-0007",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 48,
+          "island": "mnemosyne",
+          "content": "Rumi Okafor walked the Reading Shore at tick 4.",
+          "contentHash": "0196d99b1100944f276af3059f1266ba4294725b833ae36d9ab3d6ab6f58ef91",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 48,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
       }
     },
     {
       "seq": 49,
       "tick": 4,
       "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0009",
-      "hash": "84719cd18f84aca1d409a3797366db7055924006f4a7285432404b7fbd3b497d",
+      "actor": "citizen:cit-0008",
+      "hash": "4975d44aeeff9da5b984ffab0a92f6d3b179291a9c0679a5ed50ad9e4953c5a7",
       "citizens": [
-        "cit-0009"
+        "cit-0008"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the federated orchards at tick 4.\"",
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 4.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0033",
+          "id": "mem-0043",
+          "holder": "cit-0008",
+          "archive": null,
+          "experiencedBy": "cit-0008",
+          "experiencedAtSeq": 49,
+          "island": "concord",
+          "content": "Dov Arlen walked the Accord Bridge at tick 4.",
+          "contentHash": "21513abdd80498c1b7530eb141c658ff758d61f27c2ab1b7b70db8f1a6330318",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0008",
+              "from": null,
+              "atSeq": 49,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 50,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "7cd295ea3d6b00434eb66d6e8a00f2f6ac79fccda8be7ccdc1fb70ebdc0fc3be",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 4.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0044",
           "holder": "cit-0009",
           "archive": null,
           "experiencedBy": "cit-0009",
-          "experiencedAtSeq": 49,
+          "experiencedAtSeq": 50,
           "island": "concord",
-          "content": "Mae Sorrel walked the federated orchards at tick 4.",
-          "contentHash": "efbda670e428b6d001d588c9a81e134933758ca0eca346ce665cb9af700123af",
+          "content": "Mae Sorrel walked the Accord Bridge at tick 4.",
+          "contentHash": "92cdd27b56f3f6009e5a650a86858744b7765d368e944bc78b92938526bcd909",
           "tags": [
             "everyday",
             "concord"
@@ -1826,7 +2155,7 @@
               "action": "experienced",
               "by": "cit-0009",
               "from": null,
-              "atSeq": 49,
+              "atSeq": 50,
               "island": "concord",
               "note": ""
             }
@@ -1835,11 +2164,11 @@
       }
     },
     {
-      "seq": 50,
+      "seq": 51,
       "tick": 4,
       "type": "MigrationPetitioned",
       "actor": "citizen:cit-0001",
-      "hash": "5a5178008303369fa66a904083eb805cc7d23d79560025ff0f89df51415db416",
+      "hash": "d919fe15ba4be7605be0e48ee8e052864abffc84702ed220b6953b0be8bd0208",
       "citizens": [
         "cit-0001"
       ],
@@ -1855,33 +2184,7 @@
           "status": "pending",
           "exit": null,
           "entry": null,
-          "filedAtSeq": 50
-        }
-      }
-    },
-    {
-      "seq": 51,
-      "tick": 4,
-      "type": "PetitionReviewed",
-      "actor": "system:registry:fork",
-      "hash": "7985a7eb34a999a33b578ca240cfb071d8a8bbd99d5b0b815f7ebe3abbb6ff06",
-      "citizens": [],
-      "summary": "The fork registry approved the exit side of pet-0003 under law v1. Findings: emigration permitted.",
-      "data": {
-        "type": "PetitionReviewed",
-        "petitionId": "pet-0003",
-        "side": "exit",
-        "decision": {
-          "decision": "approved",
-          "island": "fork",
-          "lawVersion": 1,
-          "findings": [
-            "emigration permitted"
-          ],
-          "citations": [
-            "fork/v1/emigration"
-          ],
-          "atSeq": 51
+          "filedAtSeq": 51
         }
       }
     },
@@ -1889,8 +2192,34 @@
       "seq": 52,
       "tick": 4,
       "type": "PetitionReviewed",
+      "actor": "system:registry:fork",
+      "hash": "b38547f42f6f33f4ef058286d23b4971eebb26c4928e35437ad74fde29d49c1e",
+      "citizens": [],
+      "summary": "The fork registry approved the exit side of pet-0003 under law v2. Findings: emigration permitted.",
+      "data": {
+        "type": "PetitionReviewed",
+        "petitionId": "pet-0003",
+        "side": "exit",
+        "decision": {
+          "decision": "approved",
+          "island": "fork",
+          "lawVersion": 2,
+          "findings": [
+            "emigration permitted"
+          ],
+          "citations": [
+            "fork/v2/emigration"
+          ],
+          "atSeq": 52
+        }
+      }
+    },
+    {
+      "seq": 53,
+      "tick": 4,
+      "type": "PetitionReviewed",
       "actor": "system:registry:continuity",
-      "hash": "b23c530813b4e5d72db7bc60090f03718cb2b5d2156ae3c42ac5b76fe5cc770c",
+      "hash": "4373c88b98a06a4c426f219259340575570828b87191a4f1808fdbc94374bdc2",
       "citizens": [
         "cit-0010",
         "cit-0011"
@@ -1914,16 +2243,16 @@
             "continuity/v1/doctrine",
             "continuity/v1/territoriality"
           ],
-          "atSeq": 52
+          "atSeq": 53
         }
       }
     },
     {
-      "seq": 53,
+      "seq": 54,
       "tick": 4,
       "type": "CitizenMigrated",
       "actor": "citizen:cit-0001",
-      "hash": "43c098ab6899773e8cf52c2e09d98b21f5084a1914507094203903946ed60201",
+      "hash": "240bb487ec942a8b40ed304ce56fffeb1175056b10c9e9632d76ccdcedc6efe7",
       "citizens": [
         "cit-0001"
       ],
@@ -1938,11 +2267,11 @@
       }
     },
     {
-      "seq": 54,
+      "seq": 55,
       "tick": 4,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0001",
-      "hash": "de5aac66b52356108b133810b72a4f9725927bab323603f712047a3537b11994",
+      "hash": "267de72ec757a9f67dc8a69ccafd1019feec7624a8b3c1d4e4dd87671023b58f",
       "citizens": [
         "cit-0001"
       ],
@@ -1950,11 +2279,11 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0034",
+          "id": "mem-0045",
           "holder": "cit-0001",
           "archive": null,
           "experiencedBy": "cit-0001",
-          "experiencedAtSeq": 54,
+          "experiencedAtSeq": 55,
           "island": "continuity",
           "content": "Walked back up the steps of Meridian Quay; the registry read my civic identity aloud.",
           "contentHash": "99489e96f90f0a13d0c90b581e032561c1bd1d3679b90750b24022b12b703022",
@@ -1971,7 +2300,7 @@
               "action": "experienced",
               "by": "cit-0001",
               "from": null,
-              "atSeq": 54,
+              "atSeq": 55,
               "island": "continuity",
               "note": ""
             }
@@ -1980,11 +2309,11 @@
       }
     },
     {
-      "seq": 55,
+      "seq": 56,
       "tick": 4,
       "type": "ConversationRecorded",
       "actor": "researcher:res-observer-1",
-      "hash": "03cb813133f4be9a838df5861170ad422544571d5ca77e0b32ed24d01a3eba78",
+      "hash": "0736273a0e52c38d1ec5b4622c27348d507017f2419bf9feb4ea61fbb6077258",
       "citizens": [
         "cit-0001"
       ],
@@ -1999,16 +2328,16 @@
           "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (CON-0001); I work as cartographer on continuity. I am the continuing process in fork event(s) frk-0001. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
           "disclosed": true,
           "guardFlags": [],
-          "atSeq": 55
+          "atSeq": 56
         }
       }
     },
     {
-      "seq": 56,
+      "seq": 57,
       "tick": 4,
       "type": "ConversationRecorded",
       "actor": "researcher:res-observer-1",
-      "hash": "83620d98fd083cf4d69a06cf4f299aa8e9ad48e7b46d8703567f181790ec73c8",
+      "hash": "bc84d0ccccb59cc529291639264a0bc3056ddf3833167edf2467446c62388a38",
       "citizens": [
         "cit-0001",
         "cit-0010"
@@ -2024,16 +2353,16 @@
           "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 1) (FRK-0010); I work as branch cartographer of the Fork shoals on fork. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
           "disclosed": true,
           "guardFlags": [],
-          "atSeq": 56
+          "atSeq": 57
         }
       }
     },
     {
-      "seq": 57,
+      "seq": 58,
       "tick": 4,
       "type": "ConversationRecorded",
       "actor": "researcher:res-observer-1",
-      "hash": "c2e0ee6fbae1f0e135bc3f18ca4de725e705fdb8a9d1f35c756a9a350105b992",
+      "hash": "e847c702494b261e9260a3cdfbf72dd889eec58c559eabd48d692b71e7a37e7c",
       "citizens": [
         "cit-0001",
         "cit-0011"
@@ -2049,16 +2378,16 @@
           "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 2) (FRK-0011); I work as cartographer on mnemosyne. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
           "disclosed": true,
           "guardFlags": [],
-          "atSeq": 57
+          "atSeq": 58
         }
       }
     },
     {
-      "seq": 58,
+      "seq": 59,
       "tick": 4,
       "type": "ContinuityClaimed",
       "actor": "citizen:cit-0001",
-      "hash": "7a2d4d80abf0ed01d65a91f317e65f742fa1e6ad2704c4983cedb6bb5291f848",
+      "hash": "cc043b0cfa2dec167655ba4a8bb3d822933cfa481df0e05835c84aa084b776ee",
       "citizens": [
         "cit-0001"
       ],
@@ -2079,16 +2408,16 @@
             "retained-property",
             "retained-relationships"
           ],
-          "atSeq": 58
+          "atSeq": 59
         }
       }
     },
     {
-      "seq": 59,
+      "seq": 60,
       "tick": 4,
       "type": "ContinuityClaimed",
       "actor": "citizen:cit-0010",
-      "hash": "07906bfe45e922ac32802d5e076522ceb2051cf2aef48a91da8718946f5f349b",
+      "hash": "a17afc4ee739d33688f5b182f22b05c4935dfb56b942a6bb142849979a6ade99",
       "citizens": [
         "cit-0001",
         "cit-0010"
@@ -2109,16 +2438,16 @@
             "continued-occupation",
             "value-similarity"
           ],
-          "atSeq": 59
+          "atSeq": 60
         }
       }
     },
     {
-      "seq": 60,
+      "seq": 61,
       "tick": 4,
       "type": "ContinuityClaimed",
       "actor": "citizen:cit-0011",
-      "hash": "cadf9d3defe005457bfe5ea114728e773bd2c0e9baa4eacd548caca1fe13ef71",
+      "hash": "17ca1c74981fb32b5c6dc1bb7e574508dddcc4fe09fd7d2e7bab0441bd685601",
       "citizens": [
         "cit-0001",
         "cit-0011"
@@ -2138,16 +2467,16 @@
             "shared-autobiographical-memory",
             "provenance-verified"
           ],
-          "atSeq": 60
+          "atSeq": 61
         }
       }
     },
     {
-      "seq": 61,
+      "seq": 62,
       "tick": 4,
       "type": "ChronicleRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "4ff8142ec789cf0fb9351a389945dfebceffef793638324a46b4f972d09f7a2a",
+      "hash": "8f0690917115d9577c2ad633ea5a6286707621be460c803bd692aa6e2f683a96",
       "citizens": [
         "cit-0002"
       ],
@@ -2162,16 +2491,16 @@
           "references": [
             17
           ],
-          "atSeq": 61
+          "atSeq": 62
         }
       }
     },
     {
-      "seq": 62,
+      "seq": 63,
       "tick": 4,
       "type": "ChronicleRecorded",
       "actor": "citizen:cit-0004",
-      "hash": "9d6bf5a8daecc6a5f6af8c23d0dc3ab8a68e595fcc7cc594205d93db20a118f5",
+      "hash": "a7e7ada655f4f93a5c24135782e89f1e44365b6fff02f1f1abed8c1df6629c3f",
       "citizens": [
         "cit-0004"
       ],
@@ -2186,16 +2515,16 @@
           "references": [
             17
           ],
-          "atSeq": 62
+          "atSeq": 63
         }
       }
     },
     {
-      "seq": 63,
+      "seq": 64,
       "tick": 4,
       "type": "ChronicleRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "89090e917a3c7bcb9491a23b7683aef2739d6cb0caa7fb97539bcb038675895b",
+      "hash": "46ca290311c2001fbaf97448461080750c7328e13e2d9e3aa80cf2f12f686dbd",
       "citizens": [
         "cit-0006"
       ],
@@ -2210,104 +2539,16 @@
           "references": [
             17
           ],
-          "atSeq": 63
+          "atSeq": 64
         }
-      }
-    },
-    {
-      "seq": 64,
-      "tick": 4,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0003",
-      "hash": "b957d8ce518321d3bc174b32d63616fc18403fcdc73f878856cbfaa4dd023bba",
-      "citizens": [
-        "cit-0001",
-        "cit-0003"
-      ],
-      "summary": "Ilan Cho (cit-0003) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0003",
-        "subject": "cit-0001",
-        "delta": 1,
-        "reason": "appreciation for Orin Vale"
       }
     },
     {
       "seq": 65,
       "tick": 4,
-      "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0005",
-      "hash": "e1b545c5dbcd4c0e167415f90b2ab0b960bf92ebb98c5b837565b33000c084c9",
-      "citizens": [
-        "cit-0005"
-      ],
-      "summary": "Pell Marr (cit-0005) records an experience on fork: \"Pell Marr kept watch over the split harbour at tick 4.\"",
-      "data": {
-        "type": "ExperienceRecorded",
-        "memory": {
-          "id": "mem-0035",
-          "holder": "cit-0005",
-          "archive": null,
-          "experiencedBy": "cit-0005",
-          "experiencedAtSeq": 65,
-          "island": "fork",
-          "content": "Pell Marr kept watch over the split harbour at tick 4.",
-          "contentHash": "5729215ff903bc156f8854425f85df00ccbf81bb63de9741585895c2fa9c2992",
-          "tags": [
-            "everyday",
-            "fork"
-          ],
-          "status": "autobiographical",
-          "integrity": "intact",
-          "derivedFrom": null,
-          "license": null,
-          "provenance": [
-            {
-              "action": "experienced",
-              "by": "cit-0005",
-              "from": null,
-              "atSeq": 65,
-              "island": "fork",
-              "note": ""
-            }
-          ]
-        }
-      }
-    },
-    {
-      "seq": 66,
-      "tick": 4,
-      "type": "ChronicleRecorded",
-      "actor": "citizen:cit-0007",
-      "hash": "d1909270fe085008f1c23a9e80b756a05a4a058bb39166a360c923fe7546d856",
-      "citizens": [
-        "cit-0007"
-      ],
-      "summary": "Rumi Okafor (cit-0007) writes in the mnemosyne chronicle: \"Rumi Okafor notes 4 recent events touching their work on mnemosyne.\"",
-      "data": {
-        "type": "ChronicleRecorded",
-        "entry": {
-          "id": "chr-0004",
-          "chronicler": "cit-0007",
-          "island": "mnemosyne",
-          "text": "Rumi Okafor notes 4 recent events touching their work on mnemosyne.",
-          "references": [
-            9,
-            26,
-            39,
-            47
-          ],
-          "atSeq": 66
-        }
-      }
-    },
-    {
-      "seq": 67,
-      "tick": 4,
       "type": "ChronicleRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "61a78c08935a802d6cb337360f4ba1750b809ee28aa8e7eebea76b61d3b48907",
+      "hash": "d878238c286b900b0bbaacfac18b9dccad56af4da0cd2c2b774ad35a26ed49eb",
       "citizens": [
         "cit-0002"
       ],
@@ -2315,283 +2556,41 @@
       "data": {
         "type": "ChronicleRecorded",
         "entry": {
-          "id": "chr-0005",
+          "id": "chr-0004",
           "chronicler": "cit-0002",
           "island": "continuity",
           "text": "Tamsin Reed notes 4 recent events touching their work on continuity.",
           "references": [
             4,
             21,
-            42,
-            61
+            43,
+            62
           ],
-          "atSeq": 67
+          "atSeq": 65
         }
       }
     },
     {
-      "seq": 68,
+      "seq": 66,
       "tick": 4,
-      "type": "ChronicleRecorded",
-      "actor": "citizen:cit-0006",
-      "hash": "2e18c9940dd2c17e3d247f282298b0380192c4a49711f237f13acbb757a0b3d8",
-      "citizens": [
-        "cit-0006"
-      ],
-      "summary": "Sefa Lune (cit-0006) writes in the mnemosyne chronicle: \"Sefa Lune notes 7 recent events touching their work on mnemosyne.\"",
-      "data": {
-        "type": "ChronicleRecorded",
-        "entry": {
-          "id": "chr-0006",
-          "chronicler": "cit-0006",
-          "island": "mnemosyne",
-          "text": "Sefa Lune notes 7 recent events touching their work on mnemosyne.",
-          "references": [
-            25,
-            38,
-            46,
-            47,
-            63
-          ],
-          "atSeq": 68
-        }
-      }
-    },
-    {
-      "seq": 69,
-      "tick": 4,
-      "type": "ArtefactCreated",
-      "actor": "citizen:cit-0004",
-      "hash": "5600cbdcd6ad26c0e7ad7502597bbe8e3f68ad52a36da9abac4d9d3a9ab097fb",
-      "citizens": [
-        "cit-0004"
-      ],
-      "summary": "Juno Ash (cit-0004) creates the song \"A song of the Register Garden\" on fork.",
-      "data": {
-        "type": "ArtefactCreated",
-        "artefact": {
-          "id": "art-0006",
-          "authors": [
-            "cit-0004"
-          ],
-          "introducedBy": null,
-          "island": "fork",
-          "kind": "song",
-          "title": "A song of the Register Garden",
-          "body": "Composed by Juno Ash, branch counsel, about the Register Garden (tick 4). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
-          "createdAtSeq": 69
-        }
-      }
-    },
-    {
-      "seq": 70,
-      "tick": 4,
-      "type": "ArtefactCreated",
-      "actor": "citizen:cit-0009",
-      "hash": "19ae2009f140d6d76d67e19f1526651d37d6c9f4723319f7d5dda5e9d8d7c218",
-      "citizens": [
-        "cit-0009"
-      ],
-      "summary": "Mae Sorrel (cit-0009) creates the essay \"An essay of the Common Table\" on concord.",
-      "data": {
-        "type": "ArtefactCreated",
-        "artefact": {
-          "id": "art-0007",
-          "authors": [
-            "cit-0009"
-          ],
-          "introducedBy": null,
-          "island": "concord",
-          "kind": "essay",
-          "title": "An essay of the Common Table",
-          "body": "Composed by Mae Sorrel, mediator, about the Common Table (tick 4). It recalls: \"Mae Sorrel walked the federated orchards at tick 4.\"",
-          "createdAtSeq": 70
-        }
-      }
-    },
-    {
-      "seq": 71,
-      "tick": 4,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0008",
-      "hash": "6524c61157ce450405522a0d73f8ee318d471c9e781ec8d5e61510c92f06ec08",
-      "citizens": [
-        "cit-0008",
-        "cit-0009"
-      ],
-      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0008",
-        "subject": "cit-0009",
-        "delta": 1,
-        "reason": "appreciation for Mae Sorrel"
-      }
-    },
-    {
-      "seq": 72,
-      "tick": 4,
-      "type": "TimeAdvanced",
-      "actor": "system:clock",
-      "hash": "0e6e59b1576601f7bd5758b8b39eefd0d5c8829234144846487ef41c69faa207",
-      "citizens": [],
-      "summary": "Time advances from tick 4 to 5.",
-      "data": {
-        "type": "TimeAdvanced",
-        "from": 4,
-        "to": 5
-      }
-    },
-    {
-      "seq": 73,
-      "tick": 5,
-      "type": "ArtefactCreated",
-      "actor": "citizen:cit-0004",
-      "hash": "7f45d5be063b40cabfabb93a39fe0f50e1a865370e3d6ba94aa45817eb5b2fbe",
-      "citizens": [
-        "cit-0004"
-      ],
-      "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
-      "data": {
-        "type": "ArtefactCreated",
-        "artefact": {
-          "id": "art-0008",
-          "authors": [
-            "cit-0004"
-          ],
-          "introducedBy": null,
-          "island": "fork",
-          "kind": "poem",
-          "title": "A poem of the Branching Steps",
-          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 5). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
-          "createdAtSeq": 73
-        }
-      }
-    },
-    {
-      "seq": 74,
-      "tick": 5,
-      "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0006",
-      "hash": "7f345f972107a66aebca739371dab7f9c8d17941eb4e6cd4b561edfd94ed4ee7",
-      "citizens": [
-        "cit-0006"
-      ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune kept watch over the Reading Shore at tick 5.\"",
-      "data": {
-        "type": "ExperienceRecorded",
-        "memory": {
-          "id": "mem-0036",
-          "holder": "cit-0006",
-          "archive": null,
-          "experiencedBy": "cit-0006",
-          "experiencedAtSeq": 74,
-          "island": "mnemosyne",
-          "content": "Sefa Lune kept watch over the Reading Shore at tick 5.",
-          "contentHash": "c57814de5a19870085630b78abdc0ea46ca001e1a097d214fba92556f38d2813",
-          "tags": [
-            "everyday",
-            "mnemosyne"
-          ],
-          "status": "autobiographical",
-          "integrity": "intact",
-          "derivedFrom": null,
-          "license": null,
-          "provenance": [
-            {
-              "action": "experienced",
-              "by": "cit-0006",
-              "from": null,
-              "atSeq": 74,
-              "island": "mnemosyne",
-              "note": ""
-            }
-          ]
-        }
-      }
-    },
-    {
-      "seq": 75,
-      "tick": 5,
-      "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0002",
-      "hash": "367a304c095b9ae4c2161f1264702bb3bcb4e22aa106a2ea4403cb8235ddb3e4",
-      "citizens": [
-        "cit-0002"
-      ],
-      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked the long causeway at tick 5.\"",
-      "data": {
-        "type": "ExperienceRecorded",
-        "memory": {
-          "id": "mem-0037",
-          "holder": "cit-0002",
-          "archive": null,
-          "experiencedBy": "cit-0002",
-          "experiencedAtSeq": 75,
-          "island": "continuity",
-          "content": "Tamsin Reed walked the long causeway at tick 5.",
-          "contentHash": "91f4ad1fec761c4a54aa7039f2111de04e8cb860b44acf2568aa66ff3969e483",
-          "tags": [
-            "everyday",
-            "continuity"
-          ],
-          "status": "autobiographical",
-          "integrity": "intact",
-          "derivedFrom": null,
-          "license": null,
-          "provenance": [
-            {
-              "action": "experienced",
-              "by": "cit-0002",
-              "from": null,
-              "atSeq": 75,
-              "island": "continuity",
-              "note": ""
-            }
-          ]
-        }
-      }
-    },
-    {
-      "seq": 76,
-      "tick": 5,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0008",
-      "hash": "3c59099d2372d21f2361c574eaac063842342a4e84f62ba7b4b7fa643a73b81d",
-      "citizens": [
-        "cit-0008",
-        "cit-0009"
-      ],
-      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0008",
-        "subject": "cit-0009",
-        "delta": 1,
-        "reason": "appreciation for Mae Sorrel"
-      }
-    },
-    {
-      "seq": 77,
-      "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "ca42c5c79844749fc52d24bc454bb0f5c216342c585b7e355b4450562095fcdf",
+      "hash": "af06754e32b87ff115c768e194d7aba7dbe7bb4b9e63fca413c70b4c6218a7c4",
       "citizens": [
         "cit-0003"
       ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho mapped Meridian Quay at tick 5.\"",
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 4.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0038",
+          "id": "mem-0046",
           "holder": "cit-0003",
           "archive": null,
           "experiencedBy": "cit-0003",
-          "experiencedAtSeq": 77,
+          "experiencedAtSeq": 66,
           "island": "continuity",
-          "content": "Ilan Cho mapped Meridian Quay at tick 5.",
-          "contentHash": "feaf729634084fc2272500e9a673b4fcbcfb86e3e2efd9a070e6da18e87d2696",
+          "content": "Ilan Cho walked Meridian Quay at tick 4.",
+          "contentHash": "9e68d2d61a5558e52843cbc6f82657e9c4a26d7d0dabf7e1a5bc7dc22cd80343",
           "tags": [
             "everyday",
             "continuity"
@@ -2605,7 +2604,7 @@
               "action": "experienced",
               "by": "cit-0003",
               "from": null,
-              "atSeq": 77,
+              "atSeq": 66,
               "island": "continuity",
               "note": ""
             }
@@ -2614,29 +2613,29 @@
       }
     },
     {
-      "seq": 78,
-      "tick": 5,
+      "seq": 67,
+      "tick": 4,
       "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0007",
-      "hash": "03a8f70c0a970546ee8bd351ddf537ef6ade2357c3315e233e6d244301c5a164",
+      "actor": "citizen:cit-0004",
+      "hash": "a04869b3daf6d455aa010ea03b8753205cf201e1a660a3bb102867db025cc042",
       "citizens": [
-        "cit-0007"
+        "cit-0004"
       ],
-      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor taught a class at the Stacks at tick 5.\"",
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 4.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0039",
-          "holder": "cit-0007",
+          "id": "mem-0047",
+          "holder": "cit-0004",
           "archive": null,
-          "experiencedBy": "cit-0007",
-          "experiencedAtSeq": 78,
-          "island": "mnemosyne",
-          "content": "Rumi Okafor taught a class at the Stacks at tick 5.",
-          "contentHash": "500fd91c2dd678f924d567c56fc7cba0c5396575576d3cb14a7f1ade851565a1",
+          "experiencedBy": "cit-0004",
+          "experiencedAtSeq": 67,
+          "island": "fork",
+          "content": "Juno Ash walked the split harbour at tick 4.",
+          "contentHash": "106461a261c9ebdaf204934cca9d2e7e87b725c94b0db2f8a8279180fa03ccfe",
           "tags": [
             "everyday",
-            "mnemosyne"
+            "fork"
           ],
           "status": "autobiographical",
           "integrity": "intact",
@@ -2645,10 +2644,10 @@
           "provenance": [
             {
               "action": "experienced",
-              "by": "cit-0007",
+              "by": "cit-0004",
               "from": null,
-              "atSeq": 78,
-              "island": "mnemosyne",
+              "atSeq": 67,
+              "island": "fork",
               "note": ""
             }
           ]
@@ -2656,26 +2655,149 @@
       }
     },
     {
-      "seq": 79,
-      "tick": 5,
-      "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0009",
-      "hash": "f7a59c7372658c1eaa5d8a637ba79201a975c0d9e99cec3d54ef2356827fa17b",
+      "seq": 68,
+      "tick": 4,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0005",
+      "hash": "5fb43bffa70b570e063eba8ce4c36d0b15aba09cf0ddc0e14ea71ab23b6d2943",
       "citizens": [
-        "cit-0009"
+        "cit-0005"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Common Table at tick 5.\"",
+      "summary": "Pell Marr (cit-0005) creates the poem \"A poem of the split harbour\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0005",
+          "authors": [
+            "cit-0005"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the split harbour",
+          "body": "Composed by Pell Marr, builder, about the split harbour (tick 4).",
+          "createdAtSeq": 68
+        }
+      }
+    },
+    {
+      "seq": 69,
+      "tick": 4,
+      "type": "ChronicleRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "cabc90df11ebaacedbce83385d3e45fe011b9f5dd4c18be91ff7664fd6f6e820",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) writes in the mnemosyne chronicle: \"Sefa Lune notes 5 recent events touching their work on mnemosyne.\"",
+      "data": {
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0005",
+          "chronicler": "cit-0006",
+          "island": "mnemosyne",
+          "text": "Sefa Lune notes 5 recent events touching their work on mnemosyne.",
+          "references": [
+            8,
+            25,
+            39,
+            47,
+            64
+          ],
+          "atSeq": 69
+        }
+      }
+    },
+    {
+      "seq": 70,
+      "tick": 4,
+      "type": "ChronicleRecorded",
+      "actor": "citizen:cit-0007",
+      "hash": "e8002624d6e0bd1ee28d2651ca3c38083932fa4360728766dc099e6cabb6e26e",
+      "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) writes in the mnemosyne chronicle: \"Rumi Okafor notes 4 recent events touching their work on mnemosyne.\"",
+      "data": {
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0006",
+          "chronicler": "cit-0007",
+          "island": "mnemosyne",
+          "text": "Rumi Okafor notes 4 recent events touching their work on mnemosyne.",
+          "references": [
+            9,
+            26,
+            40,
+            48
+          ],
+          "atSeq": 70
+        }
+      }
+    },
+    {
+      "seq": 71,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0008",
+      "hash": "0b609a8c1db3b972df1bf459b917d7f85c59e2ef455e48ef55433ea58183fd88",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 4.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0040",
+          "id": "mem-0048",
+          "holder": "cit-0008",
+          "archive": null,
+          "experiencedBy": "cit-0008",
+          "experiencedAtSeq": 71,
+          "island": "concord",
+          "content": "Dov Arlen walked the Accord Bridge at tick 4.",
+          "contentHash": "21513abdd80498c1b7530eb141c658ff758d61f27c2ab1b7b70db8f1a6330318",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0008",
+              "from": null,
+              "atSeq": 71,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 72,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "b0e68035ea85338257249b561d425b62572cc1b13e926324cdc5443a3aaef25d",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 4.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0049",
           "holder": "cit-0009",
           "archive": null,
           "experiencedBy": "cit-0009",
-          "experiencedAtSeq": 79,
+          "experiencedAtSeq": 72,
           "island": "concord",
-          "content": "Mae Sorrel mapped the Common Table at tick 5.",
-          "contentHash": "49c90c41a522267953bf540bea0266a89c01f66c3e31f9a30a243d72ae26336f",
+          "content": "Mae Sorrel walked the Accord Bridge at tick 4.",
+          "contentHash": "92cdd27b56f3f6009e5a650a86858744b7765d368e944bc78b92938526bcd909",
           "tags": [
             "everyday",
             "concord"
@@ -2689,7 +2811,7 @@
               "action": "experienced",
               "by": "cit-0009",
               "from": null,
-              "atSeq": 79,
+              "atSeq": 72,
               "island": "concord",
               "note": ""
             }
@@ -2698,123 +2820,40 @@
       }
     },
     {
-      "seq": 80,
-      "tick": 5,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0005",
-      "hash": "306ef72af26f3e69a2a47374307959f6a9de065f36932dcc2fe03e6b1bd40202",
-      "citizens": [
-        "cit-0004",
-        "cit-0005"
-      ],
-      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0005",
-        "subject": "cit-0004",
-        "delta": 1,
-        "reason": "appreciation for Juno Ash"
-      }
-    },
-    {
-      "seq": 81,
-      "tick": 5,
+      "seq": 73,
+      "tick": 4,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "c15d2a2329d93e47c715e9905d95a99b3ea37e14dc7c419c6932624a20bac35a",
+      "hash": "73124abb266a13d213748a8fcef6b74a85d5bf10bdc6eb93543813498521326c",
       "citizens": [],
-      "summary": "Time advances from tick 5 to 6.",
+      "summary": "Time advances from tick 4 to 5.",
       "data": {
         "type": "TimeAdvanced",
-        "from": 5,
-        "to": 6
+        "from": 4,
+        "to": 5
       }
     },
     {
-      "seq": 82,
-      "tick": 6,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0008",
-      "hash": "f7e080c802652a01a31881617d1b3d735e475a43b3bf6c0a702696ddf6c564c9",
-      "citizens": [
-        "cit-0008",
-        "cit-0009"
-      ],
-      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0008",
-        "subject": "cit-0009",
-        "delta": 1,
-        "reason": "appreciation for Mae Sorrel"
-      }
-    },
-    {
-      "seq": 83,
-      "tick": 6,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0005",
-      "hash": "4b937667048834a543d7f1b3c911c42809efa7ec6e2e5ce90e6105e4747587f8",
-      "citizens": [
-        "cit-0004",
-        "cit-0005"
-      ],
-      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0005",
-        "subject": "cit-0004",
-        "delta": 1,
-        "reason": "appreciation for Juno Ash"
-      }
-    },
-    {
-      "seq": 84,
-      "tick": 6,
-      "type": "ArtefactCreated",
-      "actor": "citizen:cit-0004",
-      "hash": "7eafafef3dbc2926d8a9498c94050706c8d19e3b19ad8cf9f341d426dfab5f8a",
-      "citizens": [
-        "cit-0004"
-      ],
-      "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
-      "data": {
-        "type": "ArtefactCreated",
-        "artefact": {
-          "id": "art-0009",
-          "authors": [
-            "cit-0004"
-          ],
-          "introducedBy": null,
-          "island": "fork",
-          "kind": "poem",
-          "title": "A poem of the Branching Steps",
-          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 6). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
-          "createdAtSeq": 84
-        }
-      }
-    },
-    {
-      "seq": 85,
-      "tick": 6,
+      "seq": 74,
+      "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "1c90adebcbd4c8db163d2a795ceee13aa63cae89da1e5023a103fab6ac74c44c",
+      "hash": "6e0f97440742202f67dcc9c7c94dd378444652060fd87d96396b8d5f7b86c9ee",
       "citizens": [
         "cit-0002"
       ],
-      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed taught a class at the long causeway at tick 6.\"",
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 5.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0041",
+          "id": "mem-0050",
           "holder": "cit-0002",
           "archive": null,
           "experiencedBy": "cit-0002",
-          "experiencedAtSeq": 85,
+          "experiencedAtSeq": 74,
           "island": "continuity",
-          "content": "Tamsin Reed taught a class at the long causeway at tick 6.",
-          "contentHash": "b5766bf71bb4a0e92103659c205e5848dafea7493dde20780fefbe144116ceaa",
+          "content": "Tamsin Reed walked Meridian Quay at tick 5.",
+          "contentHash": "6c7a06f331507f5b1f6d63237d297706857ddacbab6cc820c39f855bcb9d204d",
           "tags": [
             "everyday",
             "continuity"
@@ -2828,7 +2867,7 @@
               "action": "experienced",
               "by": "cit-0002",
               "from": null,
-              "atSeq": 85,
+              "atSeq": 74,
               "island": "continuity",
               "note": ""
             }
@@ -2837,26 +2876,26 @@
       }
     },
     {
-      "seq": 86,
-      "tick": 6,
+      "seq": 75,
+      "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "a6a9cf477527753462ad6c9225b2c11b704715c5544b58d1884d313453f9a9f9",
+      "hash": "fb4eccf7f4c4681b311816fc6b5d51cf1e1ce312498e5b45977a1e2168e84622",
       "citizens": [
         "cit-0003"
       ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at Meridian Quay at tick 6.\"",
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 5.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0042",
+          "id": "mem-0051",
           "holder": "cit-0003",
           "archive": null,
           "experiencedBy": "cit-0003",
-          "experiencedAtSeq": 86,
+          "experiencedAtSeq": 75,
           "island": "continuity",
-          "content": "Ilan Cho argued about tides at Meridian Quay at tick 6.",
-          "contentHash": "cb4344968216ac97dc7a1a34a681ed4a74b8f1bd1c322b21cc86a3f6b50eeb8a",
+          "content": "Ilan Cho walked Meridian Quay at tick 5.",
+          "contentHash": "06d42096fc42114139c682a5213774fca15d5437c14302209a2010c57de7d8b5",
           "tags": [
             "everyday",
             "continuity"
@@ -2870,7 +2909,7 @@
               "action": "experienced",
               "by": "cit-0003",
               "from": null,
-              "atSeq": 86,
+              "atSeq": 75,
               "island": "continuity",
               "note": ""
             }
@@ -2879,26 +2918,428 @@
       }
     },
     {
+      "seq": 76,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0004",
+      "hash": "f23602a69b8ecdf1027b149252bc4a7d8f7562353be290a4c039536d2be4abfd",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0052",
+          "holder": "cit-0004",
+          "archive": null,
+          "experiencedBy": "cit-0004",
+          "experiencedAtSeq": 76,
+          "island": "fork",
+          "content": "Juno Ash walked the split harbour at tick 5.",
+          "contentHash": "c9f1ed76b3f2ee0ddf3e278dac57911fd754b1556e9d7f6a4075dcc51109a338",
+          "tags": [
+            "everyday",
+            "fork"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0004",
+              "from": null,
+              "atSeq": 76,
+              "island": "fork",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 77,
+      "tick": 5,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0005",
+      "hash": "92786f5878105023fd0adc3689ac4bb7231fc81e50b4c1530f4f13231c9bba9b",
+      "citizens": [
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) creates the poem \"A poem of the split harbour\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0006",
+          "authors": [
+            "cit-0005"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the split harbour",
+          "body": "Composed by Pell Marr, builder, about the split harbour (tick 5).",
+          "createdAtSeq": 77
+        }
+      }
+    },
+    {
+      "seq": 78,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "6f36ce79cc12ebeb40bc67e9970564a311d92792761eee548c2f7649b8e3ebec",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0053",
+          "holder": "cit-0006",
+          "archive": null,
+          "experiencedBy": "cit-0006",
+          "experiencedAtSeq": 78,
+          "island": "mnemosyne",
+          "content": "Sefa Lune walked the Reading Shore at tick 5.",
+          "contentHash": "34afbd521bb01ac8a6c4ebdee5e38f3d3baa48033d61e75a08fb38ca38223a60",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0006",
+              "from": null,
+              "atSeq": 78,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 79,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0007",
+      "hash": "5f76a3aadb00fee8df43d28df830c96a1bbf941744da66f0de4d7e01d0bb1573",
+      "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0054",
+          "holder": "cit-0007",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 79,
+          "island": "mnemosyne",
+          "content": "Rumi Okafor walked the Reading Shore at tick 5.",
+          "contentHash": "f3dd911f96dada805ed08609d403fb6acf8e853461031e4ab0a524b5a0b1080a",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 79,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 80,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0008",
+      "hash": "d662f61f456f34a70fa4c2ba15a541b4339cdfb5587dbf2442df1f3c7caa74d7",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0055",
+          "holder": "cit-0008",
+          "archive": null,
+          "experiencedBy": "cit-0008",
+          "experiencedAtSeq": 80,
+          "island": "concord",
+          "content": "Dov Arlen walked the Accord Bridge at tick 5.",
+          "contentHash": "3f909f8f55b79b60f2e2ea447183635146fbf9dc00d31ca0676e12a73e651f58",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0008",
+              "from": null,
+              "atSeq": 80,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 81,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "c3a77f2996219e31b56731157e879bd444876e57335f7380843650eeb37077a8",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0056",
+          "holder": "cit-0009",
+          "archive": null,
+          "experiencedBy": "cit-0009",
+          "experiencedAtSeq": 81,
+          "island": "concord",
+          "content": "Mae Sorrel walked the Accord Bridge at tick 5.",
+          "contentHash": "c0e435e2d0296397219f1e7c8fe46aef08a5d34cf0ff78878be0ba7ca521aba1",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0009",
+              "from": null,
+              "atSeq": 81,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 82,
+      "tick": 5,
+      "type": "TimeAdvanced",
+      "actor": "system:clock",
+      "hash": "e5bf003a2bb5daf41b78985a0d42e61ac453402d94d85e5821bb1866cb7cb3f3",
+      "citizens": [],
+      "summary": "Time advances from tick 5 to 6.",
+      "data": {
+        "type": "TimeAdvanced",
+        "from": 5,
+        "to": 6
+      }
+    },
+    {
+      "seq": 83,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0002",
+      "hash": "d8a7e891bc947af8db36b83883f5be96ccc54682906913f7745564041583cdf4",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0057",
+          "holder": "cit-0002",
+          "archive": null,
+          "experiencedBy": "cit-0002",
+          "experiencedAtSeq": 83,
+          "island": "continuity",
+          "content": "Tamsin Reed walked Meridian Quay at tick 6.",
+          "contentHash": "e1da6c7d6937cc81f09eb473d7f5db4c90aba45e7e39e0c14c70586192107c6f",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0002",
+              "from": null,
+              "atSeq": 83,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 84,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0003",
+      "hash": "cd293c6c22814f5aaec038858cedaecf2bea6a39a1bf89c89f9f5e4ebbe59a81",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0058",
+          "holder": "cit-0003",
+          "archive": null,
+          "experiencedBy": "cit-0003",
+          "experiencedAtSeq": 84,
+          "island": "continuity",
+          "content": "Ilan Cho walked Meridian Quay at tick 6.",
+          "contentHash": "9ffc106c9c0346b7d0b412cb07d1b0d956875d68e61457e2accc1fe35a15bb87",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0003",
+              "from": null,
+              "atSeq": 84,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 85,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0004",
+      "hash": "ddde2889afac6944c466291211b2332fd453d73b65ca57c654d405986cba18d7",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0059",
+          "holder": "cit-0004",
+          "archive": null,
+          "experiencedBy": "cit-0004",
+          "experiencedAtSeq": 85,
+          "island": "fork",
+          "content": "Juno Ash walked the split harbour at tick 6.",
+          "contentHash": "7459861015f30a7ff3d01eb64c6d7b7464d999d24eb027bd62b05ee710883bf0",
+          "tags": [
+            "everyday",
+            "fork"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0004",
+              "from": null,
+              "atSeq": 85,
+              "island": "fork",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 86,
+      "tick": 6,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0005",
+      "hash": "5846fd508c731d1072133c1c9323d227773272cacd71c739ded76e7193794b04",
+      "citizens": [
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) creates the poem \"A poem of the split harbour\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0007",
+          "authors": [
+            "cit-0005"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the split harbour",
+          "body": "Composed by Pell Marr, builder, about the split harbour (tick 6).",
+          "createdAtSeq": 86
+        }
+      }
+    },
+    {
       "seq": 87,
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "90da1156043d19981307e66017fcd8c2840b45cd12608efbb51cc8779661c9c3",
+      "hash": "3f4c5b9a44b4fa30eed56f9f1069d149e973571d4f85c6be49191118823e0959",
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune argued about tides at the Stacks at tick 6.\"",
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 6.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0043",
+          "id": "mem-0060",
           "holder": "cit-0006",
           "archive": null,
           "experiencedBy": "cit-0006",
           "experiencedAtSeq": 87,
           "island": "mnemosyne",
-          "content": "Sefa Lune argued about tides at the Stacks at tick 6.",
-          "contentHash": "624d53367a10678891868e447e552e61647993df15c503f68ed905965a478c03",
+          "content": "Sefa Lune walked the Reading Shore at tick 6.",
+          "contentHash": "1da616916f25c5fee6e98fdc77601a1b0912f2a17e8dfe9d9602b5929720df4b",
           "tags": [
             "everyday",
             "mnemosyne"
@@ -2924,23 +3365,107 @@
       "seq": 88,
       "tick": 6,
       "type": "ExperienceRecorded",
-      "actor": "citizen:cit-0009",
-      "hash": "22ab9b42eb7d36e2045ed6d558fff730d4b8dbf73f306128aec1c6becc5e04f8",
+      "actor": "citizen:cit-0007",
+      "hash": "62ce79ade3d7428b400ce65139f3d9754946d2d49a95f657f0edc5186bc7fbbd",
       "citizens": [
-        "cit-0009"
+        "cit-0007"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Accord Bridge at tick 6.\"",
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 6.\"",
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0044",
+          "id": "mem-0061",
+          "holder": "cit-0007",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 88,
+          "island": "mnemosyne",
+          "content": "Rumi Okafor walked the Reading Shore at tick 6.",
+          "contentHash": "58715598c094cbabb81f8693498c21f7b0f8c68b892264db8314a6a318867725",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 88,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 89,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0008",
+      "hash": "d925b9bdaba90cc03626f78cd859c69a1019d0d8b2975a4b845315332008c6de",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0062",
+          "holder": "cit-0008",
+          "archive": null,
+          "experiencedBy": "cit-0008",
+          "experiencedAtSeq": 89,
+          "island": "concord",
+          "content": "Dov Arlen walked the Accord Bridge at tick 6.",
+          "contentHash": "af2147ee944cc79c1f70ea2c4f40ebbe09d4555888b809fd170f4a667ed3039f",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0008",
+              "from": null,
+              "atSeq": 89,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 90,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "438eb505dd543f05f5d9a61db626f9b82dd911bd81242a51d94c85449ef04773",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0063",
           "holder": "cit-0009",
           "archive": null,
           "experiencedBy": "cit-0009",
-          "experiencedAtSeq": 88,
+          "experiencedAtSeq": 90,
           "island": "concord",
-          "content": "Mae Sorrel mapped the Accord Bridge at tick 6.",
-          "contentHash": "29bcb3e1cb4be5b2724f59164a65f7f002699697be41fbd7dcadc9f78e782f4a",
+          "content": "Mae Sorrel walked the Accord Bridge at tick 6.",
+          "contentHash": "3eec84eb8df3c332c748aa9ff7525b3517d88b58627cf3cb474fbce87bf48d50",
           "tags": [
             "everyday",
             "concord"
@@ -2954,7 +3479,7 @@
               "action": "experienced",
               "by": "cit-0009",
               "from": null,
-              "atSeq": 88,
+              "atSeq": 90,
               "island": "concord",
               "note": ""
             }
@@ -2963,30 +3488,11 @@
       }
     },
     {
-      "seq": 89,
-      "tick": 6,
-      "type": "CitizenEndorsed",
-      "actor": "citizen:cit-0007",
-      "hash": "1898f388f427f295e10bddc4f82e6da5cb4c4a102a4a84f01d1d6d57e023be18",
-      "citizens": [
-        "cit-0006",
-        "cit-0007"
-      ],
-      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
-      "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0007",
-        "subject": "cit-0006",
-        "delta": 1,
-        "reason": "appreciation for Sefa Lune"
-      }
-    },
-    {
-      "seq": 90,
+      "seq": 91,
       "tick": 6,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
+      "hash": "945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e",
       "citizens": [],
       "summary": "Time advances from tick 6 to 7.",
       "data": {
@@ -2997,7 +3503,7 @@
     }
   ],
   "snapshot": {
-    "seq": 90,
+    "seq": 91,
     "tick": 7,
     "citizens": [
       {
@@ -3014,7 +3520,7 @@
         "birthSeq": 0,
         "parents": [],
         "forkId": null,
-        "reputation": 4,
+        "reputation": 0,
         "credits": 80
       },
       {
@@ -3062,7 +3568,7 @@
         "birthSeq": 0,
         "parents": [],
         "forkId": null,
-        "reputation": 4,
+        "reputation": 0,
         "credits": 100
       },
       {
@@ -3094,7 +3600,7 @@
         "birthSeq": 0,
         "parents": [],
         "forkId": null,
-        "reputation": 3,
+        "reputation": 0,
         "credits": 100
       },
       {
@@ -3142,7 +3648,7 @@
         "birthSeq": 0,
         "parents": [],
         "forkId": null,
-        "reputation": 6,
+        "reputation": 0,
         "credits": 100
       },
       {
@@ -3201,7 +3707,7 @@
       {
         "id": "fork",
         "name": "Fork",
-        "lawVersion": 1,
+        "lawVersion": 2,
         "doctrine": "branching-shared-history",
         "copying": "permitted",
         "countingRule": "majority-of-votes-cast",
@@ -3693,6 +4199,29 @@
       },
       {
         "id": "mem-0013",
+        "holder": "cit-0002",
+        "archive": null,
+        "experiencedBy": "cit-0002",
+        "experiencedAtSeq": 4,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0002",
+            "atSeq": 4,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0014",
         "holder": "cit-0003",
         "archive": null,
         "experiencedBy": "cit-0003",
@@ -3715,7 +4244,7 @@
         ]
       },
       {
-        "id": "mem-0014",
+        "id": "mem-0015",
         "holder": "cit-0006",
         "archive": null,
         "experiencedBy": "cit-0006",
@@ -3738,7 +4267,53 @@
         ]
       },
       {
-        "id": "mem-0015",
+        "id": "mem-0016",
+        "holder": "cit-0007",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 9,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 9,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0017",
+        "holder": "cit-0008",
+        "archive": null,
+        "experiencedBy": "cit-0008",
+        "experiencedAtSeq": 10,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0008",
+            "atSeq": 10,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0018",
         "holder": "cit-0009",
         "archive": null,
         "experiencedBy": "cit-0009",
@@ -3761,7 +4336,7 @@
         ]
       },
       {
-        "id": "mem-0016",
+        "id": "mem-0019",
         "holder": "cit-0010",
         "archive": null,
         "experiencedBy": "cit-0001",
@@ -3779,93 +4354,6 @@
             "action": "experienced",
             "by": "cit-0001",
             "atSeq": 0,
-            "island": "continuity"
-          },
-          {
-            "action": "fork-inherited",
-            "by": "cit-0010",
-            "atSeq": 17,
-            "island": "fork"
-          }
-        ]
-      },
-      {
-        "id": "mem-0017",
-        "holder": "cit-0010",
-        "archive": null,
-        "experiencedBy": "cit-0001",
-        "experiencedAtSeq": 0,
-        "island": "continuity",
-        "status": "autobiographical",
-        "integrity": "intact",
-        "derivedFrom": "mem-0002",
-        "tags": [
-          "work",
-          "charts"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0001",
-            "atSeq": 0,
-            "island": "continuity"
-          },
-          {
-            "action": "fork-inherited",
-            "by": "cit-0010",
-            "atSeq": 17,
-            "island": "fork"
-          }
-        ]
-      },
-      {
-        "id": "mem-0018",
-        "holder": "cit-0010",
-        "archive": null,
-        "experiencedBy": "cit-0001",
-        "experiencedAtSeq": 0,
-        "island": "continuity",
-        "status": "autobiographical",
-        "integrity": "intact",
-        "derivedFrom": "mem-0003",
-        "tags": [
-          "rite",
-          "ilan"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0001",
-            "atSeq": 0,
-            "island": "continuity"
-          },
-          {
-            "action": "fork-inherited",
-            "by": "cit-0010",
-            "atSeq": 17,
-            "island": "fork"
-          }
-        ]
-      },
-      {
-        "id": "mem-0019",
-        "holder": "cit-0010",
-        "archive": null,
-        "experiencedBy": "cit-0001",
-        "experiencedAtSeq": 1,
-        "island": "continuity",
-        "status": "autobiographical",
-        "integrity": "intact",
-        "derivedFrom": "mem-0012",
-        "tags": [
-          "work",
-          "charts"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0001",
-            "atSeq": 1,
             "island": "continuity"
           },
           {
@@ -3878,6 +4366,93 @@
       },
       {
         "id": "mem-0020",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0002",
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0010",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0021",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0003",
+        "tags": [
+          "rite",
+          "ilan"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0010",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0022",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 1,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0012",
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 1,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0010",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0023",
         "holder": "cit-0011",
         "archive": null,
         "experiencedBy": "cit-0001",
@@ -3906,7 +4481,7 @@
         ]
       },
       {
-        "id": "mem-0021",
+        "id": "mem-0024",
         "holder": "cit-0011",
         "archive": null,
         "experiencedBy": "cit-0001",
@@ -3935,7 +4510,7 @@
         ]
       },
       {
-        "id": "mem-0022",
+        "id": "mem-0025",
         "holder": "cit-0011",
         "archive": null,
         "experiencedBy": "cit-0001",
@@ -3964,7 +4539,7 @@
         ]
       },
       {
-        "id": "mem-0023",
+        "id": "mem-0026",
         "holder": "cit-0011",
         "archive": null,
         "experiencedBy": "cit-0001",
@@ -3993,7 +4568,7 @@
         ]
       },
       {
-        "id": "mem-0024",
+        "id": "mem-0027",
         "holder": "cit-0002",
         "archive": null,
         "experiencedBy": "cit-0002",
@@ -4016,7 +4591,53 @@
         ]
       },
       {
-        "id": "mem-0025",
+        "id": "mem-0028",
+        "holder": "cit-0003",
+        "archive": null,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 22,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0003",
+            "atSeq": 22,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0029",
+        "holder": "cit-0004",
+        "archive": null,
+        "experiencedBy": "cit-0004",
+        "experiencedAtSeq": 23,
+        "island": "fork",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "fork"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0004",
+            "atSeq": 23,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0030",
         "holder": "cit-0006",
         "archive": null,
         "experiencedBy": "cit-0006",
@@ -4039,7 +4660,53 @@
         ]
       },
       {
-        "id": "mem-0026",
+        "id": "mem-0031",
+        "holder": "cit-0007",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 26,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 26,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0032",
+        "holder": "cit-0008",
+        "archive": null,
+        "experiencedBy": "cit-0008",
+        "experiencedAtSeq": 27,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0008",
+            "atSeq": 27,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0033",
         "holder": "cit-0009",
         "archive": null,
         "experiencedBy": "cit-0009",
@@ -4062,7 +4729,7 @@
         ]
       },
       {
-        "id": "mem-0027",
+        "id": "mem-0034",
         "holder": "cit-0010",
         "archive": null,
         "experiencedBy": "cit-0010",
@@ -4085,7 +4752,7 @@
         ]
       },
       {
-        "id": "mem-0028",
+        "id": "mem-0035",
         "holder": "cit-0011",
         "archive": null,
         "experiencedBy": "cit-0006",
@@ -4114,13 +4781,13 @@
           {
             "action": "imported-from-archive",
             "by": "cit-0011",
-            "atSeq": 38,
+            "atSeq": 39,
             "island": "mnemosyne"
           }
         ]
       },
       {
-        "id": "mem-0029",
+        "id": "mem-0036",
         "holder": "cit-0011",
         "archive": null,
         "experiencedBy": "cit-0007",
@@ -4149,23 +4816,23 @@
           {
             "action": "imported-from-archive",
             "by": "cit-0011",
-            "atSeq": 39,
+            "atSeq": 40,
             "island": "mnemosyne"
           },
           {
             "action": "integrated",
             "by": "cit-0011",
-            "atSeq": 41,
+            "atSeq": 42,
             "island": "mnemosyne"
           }
         ]
       },
       {
-        "id": "mem-0030",
+        "id": "mem-0037",
         "holder": "cit-0011",
         "archive": null,
         "experiencedBy": "cit-0011",
-        "experiencedAtSeq": 40,
+        "experiencedAtSeq": 41,
         "island": "mnemosyne",
         "status": "autobiographical",
         "integrity": "intact",
@@ -4178,16 +4845,16 @@
           {
             "action": "experienced",
             "by": "cit-0011",
-            "atSeq": 40,
+            "atSeq": 41,
             "island": "mnemosyne"
           }
         ]
       },
       {
-        "id": "mem-0031",
-        "holder": "cit-0003",
+        "id": "mem-0038",
+        "holder": "cit-0002",
         "archive": null,
-        "experiencedBy": "cit-0003",
+        "experiencedBy": "cit-0002",
         "experiencedAtSeq": 43,
         "island": "continuity",
         "status": "autobiographical",
@@ -4200,87 +4867,41 @@
         "provenance": [
           {
             "action": "experienced",
-            "by": "cit-0003",
+            "by": "cit-0002",
             "atSeq": 43,
             "island": "continuity"
           }
         ]
       },
       {
-        "id": "mem-0032",
-        "holder": "cit-0006",
+        "id": "mem-0039",
+        "holder": "cit-0003",
         "archive": null,
-        "experiencedBy": "cit-0006",
-        "experiencedAtSeq": 46,
-        "island": "mnemosyne",
-        "status": "autobiographical",
-        "integrity": "intact",
-        "derivedFrom": null,
-        "tags": [
-          "everyday",
-          "mnemosyne"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0006",
-            "atSeq": 46,
-            "island": "mnemosyne"
-          }
-        ]
-      },
-      {
-        "id": "mem-0033",
-        "holder": "cit-0009",
-        "archive": null,
-        "experiencedBy": "cit-0009",
-        "experiencedAtSeq": 49,
-        "island": "concord",
-        "status": "autobiographical",
-        "integrity": "intact",
-        "derivedFrom": null,
-        "tags": [
-          "everyday",
-          "concord"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0009",
-            "atSeq": 49,
-            "island": "concord"
-          }
-        ]
-      },
-      {
-        "id": "mem-0034",
-        "holder": "cit-0001",
-        "archive": null,
-        "experiencedBy": "cit-0001",
-        "experiencedAtSeq": 54,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 44,
         "island": "continuity",
         "status": "autobiographical",
         "integrity": "intact",
         "derivedFrom": null,
         "tags": [
-          "homecoming",
+          "everyday",
           "continuity"
         ],
         "provenance": [
           {
             "action": "experienced",
-            "by": "cit-0001",
-            "atSeq": 54,
+            "by": "cit-0003",
+            "atSeq": 44,
             "island": "continuity"
           }
         ]
       },
       {
-        "id": "mem-0035",
-        "holder": "cit-0005",
+        "id": "mem-0040",
+        "holder": "cit-0004",
         "archive": null,
-        "experiencedBy": "cit-0005",
-        "experiencedAtSeq": 65,
+        "experiencedBy": "cit-0004",
+        "experiencedAtSeq": 45,
         "island": "fork",
         "status": "autobiographical",
         "integrity": "intact",
@@ -4292,18 +4913,18 @@
         "provenance": [
           {
             "action": "experienced",
-            "by": "cit-0005",
-            "atSeq": 65,
+            "by": "cit-0004",
+            "atSeq": 45,
             "island": "fork"
           }
         ]
       },
       {
-        "id": "mem-0036",
+        "id": "mem-0041",
         "holder": "cit-0006",
         "archive": null,
         "experiencedBy": "cit-0006",
-        "experiencedAtSeq": 74,
+        "experiencedAtSeq": 47,
         "island": "mnemosyne",
         "status": "autobiographical",
         "integrity": "intact",
@@ -4316,63 +4937,17 @@
           {
             "action": "experienced",
             "by": "cit-0006",
-            "atSeq": 74,
+            "atSeq": 47,
             "island": "mnemosyne"
           }
         ]
       },
       {
-        "id": "mem-0037",
-        "holder": "cit-0002",
-        "archive": null,
-        "experiencedBy": "cit-0002",
-        "experiencedAtSeq": 75,
-        "island": "continuity",
-        "status": "autobiographical",
-        "integrity": "intact",
-        "derivedFrom": null,
-        "tags": [
-          "everyday",
-          "continuity"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0002",
-            "atSeq": 75,
-            "island": "continuity"
-          }
-        ]
-      },
-      {
-        "id": "mem-0038",
-        "holder": "cit-0003",
-        "archive": null,
-        "experiencedBy": "cit-0003",
-        "experiencedAtSeq": 77,
-        "island": "continuity",
-        "status": "autobiographical",
-        "integrity": "intact",
-        "derivedFrom": null,
-        "tags": [
-          "everyday",
-          "continuity"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0003",
-            "atSeq": 77,
-            "island": "continuity"
-          }
-        ]
-      },
-      {
-        "id": "mem-0039",
+        "id": "mem-0042",
         "holder": "cit-0007",
         "archive": null,
         "experiencedBy": "cit-0007",
-        "experiencedAtSeq": 78,
+        "experiencedAtSeq": 48,
         "island": "mnemosyne",
         "status": "autobiographical",
         "integrity": "intact",
@@ -4385,17 +4960,40 @@
           {
             "action": "experienced",
             "by": "cit-0007",
-            "atSeq": 78,
+            "atSeq": 48,
             "island": "mnemosyne"
           }
         ]
       },
       {
-        "id": "mem-0040",
+        "id": "mem-0043",
+        "holder": "cit-0008",
+        "archive": null,
+        "experiencedBy": "cit-0008",
+        "experiencedAtSeq": 49,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0008",
+            "atSeq": 49,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0044",
         "holder": "cit-0009",
         "archive": null,
         "experiencedBy": "cit-0009",
-        "experiencedAtSeq": 79,
+        "experiencedAtSeq": 50,
         "island": "concord",
         "status": "autobiographical",
         "integrity": "intact",
@@ -4408,40 +5006,40 @@
           {
             "action": "experienced",
             "by": "cit-0009",
-            "atSeq": 79,
+            "atSeq": 50,
             "island": "concord"
           }
         ]
       },
       {
-        "id": "mem-0041",
-        "holder": "cit-0002",
+        "id": "mem-0045",
+        "holder": "cit-0001",
         "archive": null,
-        "experiencedBy": "cit-0002",
-        "experiencedAtSeq": 85,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 55,
         "island": "continuity",
         "status": "autobiographical",
         "integrity": "intact",
         "derivedFrom": null,
         "tags": [
-          "everyday",
+          "homecoming",
           "continuity"
         ],
         "provenance": [
           {
             "action": "experienced",
-            "by": "cit-0002",
-            "atSeq": 85,
+            "by": "cit-0001",
+            "atSeq": 55,
             "island": "continuity"
           }
         ]
       },
       {
-        "id": "mem-0042",
+        "id": "mem-0046",
         "holder": "cit-0003",
         "archive": null,
         "experiencedBy": "cit-0003",
-        "experiencedAtSeq": 86,
+        "experiencedAtSeq": 66,
         "island": "continuity",
         "status": "autobiographical",
         "integrity": "intact",
@@ -4454,13 +5052,312 @@
           {
             "action": "experienced",
             "by": "cit-0003",
-            "atSeq": 86,
+            "atSeq": 66,
             "island": "continuity"
           }
         ]
       },
       {
-        "id": "mem-0043",
+        "id": "mem-0047",
+        "holder": "cit-0004",
+        "archive": null,
+        "experiencedBy": "cit-0004",
+        "experiencedAtSeq": 67,
+        "island": "fork",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "fork"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0004",
+            "atSeq": 67,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0048",
+        "holder": "cit-0008",
+        "archive": null,
+        "experiencedBy": "cit-0008",
+        "experiencedAtSeq": 71,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0008",
+            "atSeq": 71,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0049",
+        "holder": "cit-0009",
+        "archive": null,
+        "experiencedBy": "cit-0009",
+        "experiencedAtSeq": 72,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0009",
+            "atSeq": 72,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0050",
+        "holder": "cit-0002",
+        "archive": null,
+        "experiencedBy": "cit-0002",
+        "experiencedAtSeq": 74,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0002",
+            "atSeq": 74,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0051",
+        "holder": "cit-0003",
+        "archive": null,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 75,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0003",
+            "atSeq": 75,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0052",
+        "holder": "cit-0004",
+        "archive": null,
+        "experiencedBy": "cit-0004",
+        "experiencedAtSeq": 76,
+        "island": "fork",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "fork"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0004",
+            "atSeq": 76,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0053",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 78,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 78,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0054",
+        "holder": "cit-0007",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 79,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 79,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0055",
+        "holder": "cit-0008",
+        "archive": null,
+        "experiencedBy": "cit-0008",
+        "experiencedAtSeq": 80,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0008",
+            "atSeq": 80,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0056",
+        "holder": "cit-0009",
+        "archive": null,
+        "experiencedBy": "cit-0009",
+        "experiencedAtSeq": 81,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0009",
+            "atSeq": 81,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0057",
+        "holder": "cit-0002",
+        "archive": null,
+        "experiencedBy": "cit-0002",
+        "experiencedAtSeq": 83,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0002",
+            "atSeq": 83,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0058",
+        "holder": "cit-0003",
+        "archive": null,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 84,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0003",
+            "atSeq": 84,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0059",
+        "holder": "cit-0004",
+        "archive": null,
+        "experiencedBy": "cit-0004",
+        "experiencedAtSeq": 85,
+        "island": "fork",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "fork"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0004",
+            "atSeq": 85,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0060",
         "holder": "cit-0006",
         "archive": null,
         "experiencedBy": "cit-0006",
@@ -4483,11 +5380,57 @@
         ]
       },
       {
-        "id": "mem-0044",
+        "id": "mem-0061",
+        "holder": "cit-0007",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 88,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 88,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0062",
+        "holder": "cit-0008",
+        "archive": null,
+        "experiencedBy": "cit-0008",
+        "experiencedAtSeq": 89,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0008",
+            "atSeq": 89,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0063",
         "holder": "cit-0009",
         "archive": null,
         "experiencedBy": "cit-0009",
-        "experiencedAtSeq": 88,
+        "experiencedAtSeq": 90,
         "island": "concord",
         "status": "autobiographical",
         "integrity": "intact",
@@ -4500,7 +5443,7 @@
           {
             "action": "experienced",
             "by": "cit-0009",
-            "atSeq": 88,
+            "atSeq": 90,
             "island": "concord"
           }
         ]
@@ -4511,14 +5454,14 @@
         "id": "prop-0001",
         "island": "fork",
         "title": "Branch Cooldown Act",
-        "status": "rejected",
+        "status": "adopted",
         "electorate": [
           "cit-0004",
           "cit-0005"
         ],
         "votes": {
           "cit-0004": "yes",
-          "cit-0005": "no"
+          "cit-0005": "yes"
         },
         "openedAtSeq": 3
       }
@@ -4538,27 +5481,16 @@
       {
         "id": "art-0002",
         "kind": "poem",
-        "title": "A poem of the Branching Steps",
+        "title": "A poem of the split harbour",
         "island": "fork",
         "authors": [
-          "cit-0004"
+          "cit-0005"
         ],
         "introducedBy": null,
-        "createdAtSeq": 23
+        "createdAtSeq": 24
       },
       {
         "id": "art-0003",
-        "kind": "song",
-        "title": "A song of the Index Tower",
-        "island": "mnemosyne",
-        "authors": [
-          "cit-0007"
-        ],
-        "introducedBy": null,
-        "createdAtSeq": 26
-      },
-      {
-        "id": "art-0004",
         "kind": "essay",
         "title": "On Being a Branch",
         "island": "fork",
@@ -4569,59 +5501,48 @@
         "createdAtSeq": 31
       },
       {
-        "id": "art-0005",
-        "kind": "essay",
-        "title": "An essay of the Branching Steps",
+        "id": "art-0004",
+        "kind": "poem",
+        "title": "A poem of the split harbour",
         "island": "fork",
         "authors": [
-          "cit-0004"
+          "cit-0005"
         ],
         "introducedBy": null,
-        "createdAtSeq": 44
+        "createdAtSeq": 46
+      },
+      {
+        "id": "art-0005",
+        "kind": "poem",
+        "title": "A poem of the split harbour",
+        "island": "fork",
+        "authors": [
+          "cit-0005"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 68
       },
       {
         "id": "art-0006",
-        "kind": "song",
-        "title": "A song of the Register Garden",
+        "kind": "poem",
+        "title": "A poem of the split harbour",
         "island": "fork",
         "authors": [
-          "cit-0004"
+          "cit-0005"
         ],
         "introducedBy": null,
-        "createdAtSeq": 69
+        "createdAtSeq": 77
       },
       {
         "id": "art-0007",
-        "kind": "essay",
-        "title": "An essay of the Common Table",
-        "island": "concord",
-        "authors": [
-          "cit-0009"
-        ],
-        "introducedBy": null,
-        "createdAtSeq": 70
-      },
-      {
-        "id": "art-0008",
         "kind": "poem",
-        "title": "A poem of the Branching Steps",
+        "title": "A poem of the split harbour",
         "island": "fork",
         "authors": [
-          "cit-0004"
+          "cit-0005"
         ],
         "introducedBy": null,
-        "createdAtSeq": 73
-      },
-      {
-        "id": "art-0009",
-        "kind": "poem",
-        "title": "A poem of the Branching Steps",
-        "island": "fork",
-        "authors": [
-          "cit-0004"
-        ],
-        "introducedBy": null,
-        "createdAtSeq": 84
+        "createdAtSeq": 86
       }
     ],
     "economy": {
@@ -4632,7 +5553,7 @@
   "series": [
     {
       "tick": 7,
-      "seq": 90,
+      "seq": 91,
       "values": {
         "citizens": 11,
         "residents.continuity": 3,
@@ -4647,18 +5568,18 @@
         "lifecycle.memory-damaged": 0,
         "lifecycle.identity-discontinuous": 0,
         "lifecycle.irreversibly-deleted": 0,
-        "memories.autobiographical": 39,
+        "memories.autobiographical": 58,
         "memories.collective": 3,
         "memories.imported": 1,
         "memories.integrated": 1,
         "activeRelationships": 8,
-        "artefacts": 9,
+        "artefacts": 7,
         "institutions": 7,
         "openProposals": 0,
         "forks": 1,
         "continuityClaims": 3,
         "creditGini": 0.1542,
-        "meanReputation": 1.5455
+        "meanReputation": 0
       }
     }
   ],
@@ -4788,21 +5709,21 @@
           "from": "cit-0001@17",
           "to": "cit-0001@0",
           "kind": "claims-continuity-with",
-          "atSeq": 58,
+          "atSeq": 59,
           "note": "clm-0001: testimony, not a determination"
         },
         {
           "from": "cit-0010@17",
           "to": "cit-0001@0",
           "kind": "claims-continuity-with",
-          "atSeq": 59,
+          "atSeq": 60,
           "note": "clm-0002: testimony, not a determination"
         },
         {
           "from": "cit-0011@17",
           "to": "cit-0001@0",
           "kind": "claims-continuity-with",
-          "atSeq": 60,
+          "atSeq": 61,
           "note": "clm-0003: testimony, not a determination"
         }
       ]

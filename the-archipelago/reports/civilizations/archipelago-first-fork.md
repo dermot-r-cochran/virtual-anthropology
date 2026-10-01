@@ -1,6 +1,6 @@
 # Virtual Anthropology Report: archipelago-first-fork
 
-Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5` · configuration `35981af6722c6c3ac908fff304080f2c04a4eb0bb21593dd43f0935f501971ed`
+Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e` · configuration `1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090`
 
 > The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations. Every value below is computed from the event store or the final snapshot. Section notes say which.
 
@@ -43,7 +43,7 @@ _Island law at the end of the run (snapshot)._
 | island | law v | doctrine | copying | memory exchange | merging | immigration | descendant citizenship | citizens |
 |---|---:|---|---|---|---|---|---|---:|
 | Continuity | 1 | single-continuous-process | prohibited | prohibited | prohibited | petition-review | none | 3 |
-| Fork | 1 | branching-shared-history | permitted | permitted | prohibited | open | birth-island | 5 |
+| Fork | 2 | branching-shared-history | permitted | permitted | prohibited | open | birth-island | 5 |
 | Mnemosyne | 1 | memory-provenance | prohibited | permitted | prohibited | petition-review | none | 3 |
 | Concord | 1 | consensual-federation | prohibited | permitted | consent-and-review | petition-review | none | 2 |
 
@@ -53,33 +53,31 @@ _Island law at the end of the run (snapshot)._
 |---|---|---:|---|
 | Proposals submitted | `governance.proposals` | 1 | proposals |
 | Votes cast | `governance.votes_cast` | 2 | votes |
-| Law versions enacted | `governance.laws_enacted` | 0 | laws |
+| Law versions enacted | `governance.laws_enacted` | 1 | laws |
 | Votes refused outside electorate | `governance.votes_refused_outside_electorate` | 1 | commands |
 | Commands rejected | `governance.commands_rejected` | 1 | commands |
 | Migrations completed | `governance.migrations` | 3 | events |
 
 | proposal | island | title | status |
 |---|---|---|---|
-| `prop-0001` | Fork | Branch Cooldown Act | rejected |
+| `prop-0001` | Fork | Branch Cooldown Act | adopted |
 
 # Culture
 
 | measure | metric | value | unit |
 |---|---|---:|---|
-| Cultural artefacts | `culture.artefacts` | 9 | artefacts |
+| Cultural artefacts | `culture.artefacts` | 7 | artefacts |
 | In-world chronicle entries | `culture.chronicle_entries` | 6 | entries |
 
 | artefact | kind | title | island | origin |
 |---|---|---|---|---|
 | `art-0001` | map | Survey of the Northern Shoals | Continuity | citizens |
-| `art-0002` | poem | A poem of the Branching Steps | Fork | citizens |
-| `art-0003` | song | A song of the Index Tower | Mnemosyne | citizens |
-| `art-0004` | essay | On Being a Branch | Fork | citizens |
-| `art-0005` | essay | An essay of the Branching Steps | Fork | citizens |
-| `art-0006` | song | A song of the Register Garden | Fork | citizens |
-| `art-0007` | essay | An essay of the Common Table | Concord | citizens |
-| `art-0008` | poem | A poem of the Branching Steps | Fork | citizens |
-| `art-0009` | poem | A poem of the Branching Steps | Fork | citizens |
+| `art-0002` | poem | A poem of the split harbour | Fork | citizens |
+| `art-0003` | essay | On Being a Branch | Fork | citizens |
+| `art-0004` | poem | A poem of the split harbour | Fork | citizens |
+| `art-0005` | poem | A poem of the split harbour | Fork | citizens |
+| `art-0006` | poem | A poem of the split harbour | Fork | citizens |
+| `art-0007` | poem | A poem of the split harbour | Fork | citizens |
 
 # Institutions
 
@@ -105,11 +103,11 @@ _From the chronicle. Each line cites its source events._
 - Year 2: First migration: Orin Vale migrates from Continuity to Fork. _[16:CitizenMigrated]_
 - Year 2: First identity fork: Orin Vale forks on Fork, creating Orin Vale (branch 1) and Orin Vale (branch 2). _[17:CitizenForked]_
 - Year 2: Orin Vale (branch 2) migrates from Fork to Mnemosyne. _[35:CitizenMigrated]_
-- Year 5: Proposal "Branch Cooldown Act" is rejected (1 yes, 1 no). _[37:ProposalClosed]_
-- Year 5: Orin Vale migrates from Fork to Continuity. _[53:CitizenMigrated]_
-- Year 5: Orin Vale claims continuity with Orin Vale as recorded before seq 17. _[58:ContinuityClaimed]_
-- Year 5: Orin Vale (branch 1) claims continuity with Orin Vale as recorded before seq 17. _[59:ContinuityClaimed]_
-- Year 5: Orin Vale (branch 2) claims continuity with Orin Vale as recorded before seq 17. _[60:ContinuityClaimed]_
+- Year 5: First law reform: Reform passed on Fork: "Branch Cooldown Act" (2 yes, 0 no). _[37:ProposalClosed, 38:LawEnacted]_
+- Year 5: Orin Vale migrates from Fork to Continuity. _[54:CitizenMigrated]_
+- Year 5: Orin Vale claims continuity with Orin Vale as recorded before seq 17. _[59:ContinuityClaimed]_
+- Year 5: Orin Vale (branch 1) claims continuity with Orin Vale as recorded before seq 17. _[60:ContinuityClaimed]_
+- Year 5: Orin Vale (branch 2) claims continuity with Orin Vale as recorded before seq 17. _[61:ContinuityClaimed]_
 
 # Identity Fork Statistics
 
@@ -148,6 +146,6 @@ _Each statement restates the cited metrics. Interpretation is left to researcher
 - 3 continuity claim(s) were recorded. Among the claimants, 1 share the subject's process identifier, 1 share the civic identifier and 3 hold every pre-reference self-narrative record (dissociation = 2). _[`identity.continuity_claims`, `identity.process_continuers`, `identity.civic_continuers`, `identity.memory_continuers`, `identity.dimension_dissociation`]_
 - The number of claimants recognised as continuing the subject differs by 3 across islands. 1 island(s) do not adjudicate. _[`legal.recognition_range`, `legal.unadjudicating_islands`]_
 - 1 vote(s) were refused because the voter was outside the electorate snapshot. _[`governance.votes_refused_outside_electorate`]_
-- 1 command(s) were rejected by validation, authorisation or law. 0 law version(s) were enacted. _[`governance.commands_rejected`, `governance.laws_enacted`]_
+- 1 command(s) were rejected by validation, authorisation or law. 1 law version(s) were enacted. _[`governance.commands_rejected`, `governance.laws_enacted`]_
 - 1 imported record(s) remain marked as imported and 1 were integrated into a self-narrative. Provenance completeness is 1. _[`memory.imported`, `memory.integrated`, `memory.provenance_complete`]_
 - The credit Gini coefficient is 0.1542. Supply conserved = 1. _[`economy.credit_gini`, `economy.supply_conserved`]_

@@ -4,7 +4,7 @@ import { buildGenesisState } from "../src/domain/genesis.js";
 import { canTransition, LIFECYCLE_STATES } from "../src/domain/lifecycle.js";
 import { canonicalJson } from "../src/kernel/canonical.js";
 import { checkInvariants } from "../src/kernel/invariants.js";
-import { createRng } from "../src/kernel/rng.js";
+import { ChoiceLog } from "../src/agents/choice.js";
 import { World } from "../src/kernel/world.js";
 import { guardReply } from "../src/policy/disclosure.js";
 import { firstForkGenesis, FIRST_FORK_SEED } from "../src/scenarios/the-first-fork/genesis.js";
@@ -17,9 +17,18 @@ function fresh() {
 const as = (id: string) => ({ kind: "citizen" as const, id });
 
 describe("kernel", () => {
-  it("rng is deterministic per seed", () => {
-    const a = createRng("s"), b = createRng("s");
-    expect([a.next(), a.next()]).toEqual([b.next(), b.next()]);
+  it("a choice log takes the first option by default, applies a flip at its exact point, counts occurrences and reports moot flips", () => {
+    const plain = new ChoiceLog();
+    expect(plain.choose(5, "cit-0001", "place", ["quay", "garden", "stacks"], String)).toBe("quay");
+    expect(plain.choose(5, "cit-0001", "place", ["quay", "garden"], String)).toBe("quay");
+    expect(plain.points.map((p) => p.occurrence)).toEqual([0, 1]);
+    const flipped = new ChoiceLog([{ seq: 5, citizen: "cit-0001", label: "place", occurrence: 1, option: 1 }, { seq: 9, citizen: "cit-0002", label: "kin", option: 0 }]);
+    expect(flipped.choose(5, "cit-0001", "place", ["quay", "garden", "stacks"], String)).toBe("quay");
+    expect(flipped.choose(5, "cit-0001", "place", ["quay", "garden"], String)).toBe("garden");
+    expect(flipped.points[1]?.chosen).toBe(1);
+    expect(flipped.unusedFlips()).toEqual(["9:cit-0002:kin#0"]);
+    expect(() => new ChoiceLog([{ seq: 1, citizen: "c", label: "x", option: 3 }]).choose(1, "c", "x", ["a", "b"], String)).toThrow(/not one of 2/);
+    expect(() => plain.choose(1, "c", "x", [], String)).toThrow(/no options/);
   });
 
   it("replay reproduces state and head hash; tampering is detected", () => {
@@ -124,15 +133,24 @@ describe("kernel", () => {
     expect(() => buildGenesisState({ ...firstForkGenesis(FIRST_FORK_SEED), laws: { continuity: { copying: "permitted" } as never } })).toThrow();
   });
 
-  it("a timeline branched at the epilogue with the base seed reproduces the base run exactly; another seed or an amendment diverges", async () => {
+  it("a timeline branched at the epilogue with no flips reproduces the base run exactly; a flip or an amendment diverges", async () => {
     const base = await runFirstFork({ abmRounds: 2 });
-    const control = await branchFirstFork(base, { seed: base.seed, rounds: 2 });
+    expect(base.choices.length).toBeGreaterThan(0);
+    expect(base.choices.every((p) => p.seq >= base.branchSeq && p.chosen === 0)).toBe(true);
+    const control = await branchFirstFork(base, { rounds: 2 });
     expect(control.world.headHash).toBe(base.world.headHash);
     expect(control.world.log.length).toBe(base.world.log.length);
-    const other = await branchFirstFork(base, { seed: `${base.seed}/other`, rounds: 2 });
-    expect(other.world.log.slice(0, base.branchSeq + 1).map((r) => r.hash)).toEqual(base.world.log.slice(0, base.branchSeq + 1).map((r) => r.hash));
+    expect(control.choices).toEqual(base.choices);
+    const point = base.choices.find((p) => p.options.length > 1)!;
+    const other = await branchFirstFork(base, { rounds: 2, flips: [{ seq: point.seq, citizen: point.citizen, label: point.label, occurrence: point.occurrence, option: 1 }] });
+    expect(other.world.log.slice(0, point.seq + 1).map((r) => r.hash)).toEqual(base.world.log.slice(0, point.seq + 1).map((r) => r.hash));
     expect(other.world.headHash).not.toBe(base.world.headHash);
-    const amended = await branchFirstFork(base, { seed: base.seed, rounds: 2, amendment: { island: "fork", amendment: { immigration: "closed" } } });
+    expect(other.choices.find((p) => p.seq === point.seq && p.citizen === point.citizen && p.label === point.label)?.chosen).toBe(1);
+    expect(other.unusedFlips).toEqual([]);
+    const moot = await branchFirstFork(base, { rounds: 2, flips: [{ seq: 9999, citizen: "pell", label: "place", option: 1 }] });
+    expect(moot.world.headHash).toBe(base.world.headHash);
+    expect(moot.unusedFlips).toHaveLength(1);
+    const amended = await branchFirstFork(base, { rounds: 2, amendment: { island: "fork", amendment: { immigration: "closed" } } });
     expect(amended.world.log[base.branchSeq + 1]?.event.type).toBe("LawEnacted");
     expect(amended.world.state.islands.fork.law.immigration).toBe("closed");
   });

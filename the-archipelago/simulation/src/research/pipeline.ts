@@ -231,7 +231,7 @@ function section(heading: string, kind: Publication["sections"][number]["kind"],
 }
 
 /** Findings → publication draft. Interpretation is left to researchers, explicitly. */
-const STUDY_LIMITATION = "Study replications are deterministic runs under declared variations of seed, founding law or the branch point. A distribution over seeds is a distribution over the generator and the rules, not over anything else, and a timeline's divergence is a consequence of the variation declared at its branch, nothing more.";
+const STUDY_LIMITATION = "Study replications are deterministic runs under declared variations: one choice point taken differently, founding law overridden, or flips and amendments at the branch point. Nothing in the simulation is random, so no run is a sample of anything; a branch differs from the base by exactly the choice it declares, and its divergence is a consequence of that choice under the rules, nothing more.";
 
 function studyMarkdown(study: StudyResult, manifest: ExperimentManifest): string {
   const out: string[] = [
@@ -250,11 +250,11 @@ function studyMarkdown(study: StudyResult, manifest: ExperimentManifest): string
     "| metric | n | min | median | mean | max |", "|---|---:|---:|---:|---:|---:|",
     ...hypMetrics.map((id) => { const v = s.metrics[id]; return v ? `| \`${id}\` | ${v.n} | ${v.min} | ${v.median} | ${v.mean} | ${v.max} |` : `| \`${id}\` | 0 | — | — | — | — |`; }),
   ];
-  const seeds = study.runs.filter((r) => r.group === "seeds");
-  if (study.summary.seeds) {
-    out.push(`### Seed sweep (${seeds.length} runs, hypothesis outcomes ${hyps.join(" / ")})`, "", "| run | seed | events | head | outcomes |", "|---|---|---:|---|---|",
-      ...seeds.map((r) => `| ${r.id} | \`${String(r.variation.seed)}\` | ${r.eventCount ?? "—"} | ${head(r)} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
-      "", ...tally(study.summary.seeds), "", ...metricTable(study.summary.seeds), "");
+  const branches = study.runs.filter((r) => r.group === "branches");
+  if (study.summary.branches) {
+    out.push(`### Branch sweep (${branches.length} timelines, one choice point taken differently in each; hypothesis outcomes ${hyps.join(" / ")})`, "", "| branch | at seq | citizen | choice | taken instead of | events | head | outcomes |", "|---|---:|---|---|---|---:|---|---|",
+      ...branches.map((r) => `| ${r.id} | ${String(r.variation.at)} | ${String(r.variation.citizen)} | ${String(r.variation.choice)} | ${String(r.variation.to)} instead of ${String(r.variation.from)} | ${r.eventCount ?? "—"} | ${head(r)}${r.headHash === study.base.headHash ? " (= base)" : ""} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
+      "", ...tally(study.summary.branches), "", ...metricTable(study.summary.branches), "");
   }
   const doctrines = study.runs.filter((r) => r.group === "doctrines");
   if (study.summary.doctrines) {
@@ -264,8 +264,8 @@ function studyMarkdown(study: StudyResult, manifest: ExperimentManifest): string
   }
   const timelines = study.runs.filter((r) => r.group === "timelines");
   if (study.summary.timelines) {
-    out.push(`### Alternate timelines (${timelines.length} runs, branched after seq ${study.base.branchSeq ?? "—"})`, "", "| timeline | seed | amendment at the branch | events | head | outcomes |", "|---|---|---|---:|---|---|",
-      ...timelines.map((r) => `| ${r.id} | \`${String(r.variation.seed)}\` | ${r.variation.amendment ? `\`${JSON.stringify(r.variation.amendment)}\`` : "none"} | ${r.eventCount ?? "—"} | ${head(r)}${r.headHash === study.base.headHash ? " (= base)" : ""} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
+    out.push(`### Alternate timelines (${timelines.length} runs, branched after seq ${study.base.branchSeq ?? "—"})`, "", "| timeline | flips | amendment at the branch | events | head | outcomes |", "|---|---|---|---:|---|---|",
+      ...timelines.map((r) => `| ${r.id} | ${Array.isArray(r.variation.flips) && r.variation.flips.length > 0 ? `\`${JSON.stringify(r.variation.flips)}\`` : "none"} | ${r.variation.amendment ? `\`${JSON.stringify(r.variation.amendment)}\`` : "none"} | ${r.eventCount ?? "—"} | ${head(r)}${r.headHash === study.base.headHash ? " (= base)" : ""} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
       "", ...tally(study.summary.timelines), "", ...metricTable(study.summary.timelines), "");
   }
   return out.join("\n");

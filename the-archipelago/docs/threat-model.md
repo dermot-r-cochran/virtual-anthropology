@@ -9,6 +9,6 @@
 | Invented conclusions in reports | Findings and chronicles are generated only from metrics and events. Tests check the traceability of chronicle statements. |
 | XSS in the static site | All data is HTML-escaped before rendering. A strict CSP allows no inline scripts or styles. |
 | Bridge input abuse | Strict zod validation, length limits and bounded `step` rounds. The bridge runs over local stdio only, with no network listener. |
-| Non-reproducible outputs | Seeded RNG, pinned head hash in the manifest, `SOURCE_DATE_EPOCH`, and a CI diff check. |
+| Non-reproducible outputs | No randomness anywhere (choice points with declared defaults), pinned head hash in the manifest, `SOURCE_DATE_EPOCH`, and a CI diff check. |
 
 Out of scope: multi-tenant hosting, authentication of Evennia accounts beyond Evennia's own permissions (commands require `perm(Researcher)` or Builder), and adversarial LLM jailbreaks beyond pattern guards.

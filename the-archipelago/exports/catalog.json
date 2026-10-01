@@ -8,8 +8,8 @@
       "title": "The First Fork",
       "category": "demonstration",
       "scenario": "the-first-fork",
-      "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
-      "eventCount": 91,
+      "headHash": "945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e",
+      "eventCount": 92,
       "findings": [
         {
           "hypothesisId": "h1-legal-divergence",
@@ -25,10 +25,10 @@
         }
       ],
       "study": {
-        "runs": 18,
-        "completed": 17,
+        "runs": 21,
+        "completed": 20,
         "groups": {
-          "seeds": 9,
+          "branches": 12,
           "doctrines": 4,
           "timelines": 5
         }

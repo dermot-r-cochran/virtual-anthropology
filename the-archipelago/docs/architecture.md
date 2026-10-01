@@ -31,7 +31,7 @@ A language model may propose actions or dialogue (`agents/llm.ts`). Only validat
 
 ## Determinism
 
-- All randomness comes from seeded RNGs (`kernel/rng.ts`).
+- There is no randomness. Where a mind has more than one option it records a **choice point** (`agents/choice.ts`) and takes the first in canonical order; a study takes the alternatives as branching timelines. Agents act in identifier order; an unstated value axis is neutral. The manifest's `seed` is the run's identity in provenance and nothing is derived from it.
 - Every event is hash-chained, and `World.replay` re-verifies the whole chain.
 - The configuration hash is the canonical JSON of the experiment manifest without its `reproducibility` block.
 - Report timestamps use the wall clock unless `SOURCE_DATE_EPOCH` is set. CI pins it and requires regenerated outputs to be byte-identical to the committed ones.
