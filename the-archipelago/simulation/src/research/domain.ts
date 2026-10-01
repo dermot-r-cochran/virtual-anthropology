@@ -51,10 +51,24 @@ export type MetricDefinition = z.infer<typeof MetricDefinitionSchema>;
 export const MetricValueSchema = z.object({ metric: z.string(), value: z.number() }).strict();
 export type MetricValue = z.infer<typeof MetricValueSchema>;
 
+/**
+ * What a run is for. A demonstration's protagonists act as the scenario
+ * scripts them, so its findings show that the platform and the declared law
+ * tables produce the declared outcome; they are not observations of what
+ * citizens would do. An experiment's outcome is not scripted.
+ */
+export const ExperimentCategorySchema = z.enum(["demonstration", "experiment"]);
+export type ExperimentCategory = z.infer<typeof ExperimentCategorySchema>;
+export const CATEGORY_MEANING: Record<ExperimentCategory, string> = {
+  demonstration: "the protagonists' actions are authored by the scenario, so a finding consistent with its hypothesis shows that the platform and the declared law tables produce the declared outcome. It is not evidence about what citizens would do.",
+  experiment: "the outcome is not scripted; findings are observations of this run under the declared rules, seed and parameters.",
+};
+
 export const ExperimentSchema = z
   .object({
     id: slug,
     title: text,
+    category: ExperimentCategorySchema,
     civilizationId: slug,
     questionId: slug,
     hypothesisIds: z.array(slug),

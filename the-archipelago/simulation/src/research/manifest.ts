@@ -4,7 +4,7 @@ import { z } from "zod";
 import { ResearcherIdSchema } from "../domain/ids.js";
 import { ResearchBoundsSchema } from "../domain/model.js";
 import { canonicalJson, sha256Hex } from "../kernel/canonical.js";
-import { HypothesisSchema, ResearchQuestionSchema } from "./domain.js";
+import { ExperimentCategorySchema, HypothesisSchema, ResearchQuestionSchema } from "./domain.js";
 
 /**
  * The experiment definition (input). It pins everything needed to reproduce a
@@ -15,6 +15,8 @@ export const ExperimentManifestSchema = z
     schemaVersion: z.literal(2),
     id: z.string().regex(/^[a-z0-9][a-z0-9-]*$/),
     title: z.string().min(1),
+    /** demonstration (scenario-authored outcome) or experiment (unscripted outcome). Required: a default would file a run silently. */
+    category: ExperimentCategorySchema,
     scenario: z.string().regex(/^[a-z0-9-]+$/),
     civilizationId: z.string().regex(/^[a-z0-9][a-z0-9-]*$/),
     description: z.string().min(1),

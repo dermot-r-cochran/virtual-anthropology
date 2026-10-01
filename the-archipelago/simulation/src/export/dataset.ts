@@ -132,6 +132,7 @@ export async function publishExperiment(manifest: ExperimentManifest, clock = ru
     experimentId: id,
     civilizationId: civ,
     title: manifest.title,
+    category: manifest.category,
     scenario: manifest.scenario,
     seed: manifest.seed,
     configurationHash: bundle.experiment.configurationHash,
@@ -158,8 +159,8 @@ export function writeCatalog(root: string): void {
   const datasets = readdirSync(root, { withFileTypes: true })
     .filter((d) => d.isDirectory() && existsSync(join(root, d.name, "index.json")))
     .map((d) => {
-      const idx = JSON.parse(readFileSync(join(root, d.name, "index.json"), "utf8")) as { experimentId: string; civilizationId: string; title: string; scenario: string; headHash: string; eventCount: number; findings: unknown };
-      return { path: d.name, id: idx.experimentId, civilizationId: idx.civilizationId, title: idx.title, scenario: idx.scenario, headHash: idx.headHash, eventCount: idx.eventCount, findings: idx.findings };
+      const idx = JSON.parse(readFileSync(join(root, d.name, "index.json"), "utf8")) as { experimentId: string; civilizationId: string; title: string; category: string; scenario: string; headHash: string; eventCount: number; findings: unknown };
+      return { path: d.name, id: idx.experimentId, civilizationId: idx.civilizationId, title: idx.title, category: idx.category, scenario: idx.scenario, headHash: idx.headHash, eventCount: idx.eventCount, findings: idx.findings };
     })
     .sort((a, b) => a.path.localeCompare(b.path));
   writeFileSync(join(root, "catalog.json"), json({ schemaVersion: DATASET_SCHEMA_VERSION, datasets }));

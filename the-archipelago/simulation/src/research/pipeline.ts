@@ -15,8 +15,7 @@ import {
   type MetricValue,
   type Observation,
   type Publication,
-  type Visualization,
-} from "./domain.js";
+  type Visualization, CATEGORY_MEANING } from "./domain.js";
 import type { ResearchInput, StreamEvent } from "./interchange.js";
 import { INTERCHANGE_VERSION } from "./interchange.js";
 import { configurationHash, type ExperimentManifest } from "./manifest.js";
@@ -245,7 +244,7 @@ export function draftPublication(experiment: Experiment, manifest: ExperimentMan
     status: "draft",
     sections: [
       section("Abstract", "observation", [
-        `Experiment \`${experiment.id}\` ran scenario \`${experiment.scenario}\` with seed \`${experiment.seed}\` on simulation ${experiment.simulationVersion}.`,
+        `${experiment.category === "demonstration" ? "Demonstration" : "Experiment"} \`${experiment.id}\` ran scenario \`${experiment.scenario}\` with seed \`${experiment.seed}\` on simulation ${experiment.simulationVersion}.`,
         `The event store recorded ${val("simulation.events")} events over ${val("simulation.ticks")} ticks, with ${val("population.records")} citizen records, ${val("identity.forks")} fork event(s) and ${val("identity.continuity_claims")} continuity claim(s).`,
         `${findings.length} operationalised hypotheses were evaluated: ${consistent} result(s) consistent and ${findings.length - consistent} not consistent with the hypothesis as operationalised.`,
         "This abstract restates computed values only. It contains no interpretation.",
@@ -255,6 +254,7 @@ export function draftPublication(experiment: Experiment, manifest: ExperimentMan
       section("Experimental Design", "method", [
         `_Scenario description (researcher-authored):_ ${manifest.description}`,
         "",
+        `- Category: ${manifest.category} — ${CATEGORY_MEANING[manifest.category]}`,
         `- Minds: ${manifest.minds.kind} (\`${manifest.minds.model}\` ${manifest.minds.modelVersion}, prompt \`${manifest.minds.promptId}\`)`,
         `- Researchers: ${manifest.researchers.map((r) => `\`${r.id}\` (${r.role})`).join("; ")}`,
         `- Research bounds: interventions ${manifest.researchBounds.allowedInterventions.join(", ")}; at most ${manifest.researchBounds.maxInterventions}; max grant ${manifest.researchBounds.maxCreditsPerGrant}`,
@@ -281,7 +281,7 @@ export function draftPublication(experiment: Experiment, manifest: ExperimentMan
       ].join("\n")),
       section("Observations", "observation", observations.map((o) => `- **${o.id}** (${o.basis}): ${o.statement} _[trace: ${trace(o)}]_`).join("\n")),
       section("Interpretation", "interpretation", "_Not generated._ The system does not produce interpretations or conclusions beyond the computed findings above. Researchers may add interpretation here. It must be labelled as interpretation and kept separate from observations. Any discussion of consciousness must be framed as a labelled hypothesis or as fiction."),
-      section("Limitations", "limitation", [...manifest.limitations, "Single deterministic run. Results describe this run and support no statistical inference.", EPISTEMIC_STATEMENT].map((l) => `- ${l}`).join("\n")),
+      section("Limitations", "limitation", [...manifest.limitations, ...(manifest.category === "demonstration" ? [`Demonstration: ${CATEGORY_MEANING.demonstration}`] : []), "Single deterministic run. Results describe this run and support no statistical inference.", EPISTEMIC_STATEMENT].map((l) => `- ${l}`).join("\n")),
       section("Future Work", "method", manifest.futureWork.length > 0 ? manifest.futureWork.map((f) => `- ${f}`).join("\n") : "- None recorded."),
       section("Reproducibility Information", "provenance", [
         `- Simulation: ${experiment.simulationVersion}; interchange v${INTERCHANGE_VERSION}`,
@@ -306,6 +306,7 @@ export function runResearchPipeline(input: ResearchInput, manifest: ExperimentMa
   const experiment = ExperimentSchema.parse({
     id: manifest.id,
     title: manifest.title,
+    category: manifest.category,
     civilizationId: manifest.civilizationId,
     questionId: manifest.question.id,
     hypothesisIds: manifest.hypotheses.map((h) => h.id),

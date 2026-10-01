@@ -59,6 +59,24 @@ describe("The First Fork and the research pipeline", async () => {
     for (const f of ["index.json", "research_manifest.yaml", "research.json", "events.jsonl"]) expect(out.exportFiles[f]).toBe(readFileSync(EXPORTS + f, "utf8"));
   });
 
+  it("the First Fork is filed as a demonstration, and every output says so", () => {
+    expect(m.category).toBe("demonstration");
+    expect(JSON.parse(out.exportFiles["index.json"]!).category).toBe("demonstration");
+    expect(out.exportFiles["research_manifest.yaml"]).toMatch(/^category: demonstration$/m);
+    expect(research.experiment.category).toBe("demonstration");
+    const md = out.reportFiles[`reports/experiments/${m.id}.md`]!;
+    expect(md).toMatch(/^Demonstration `the-first-fork-v1` ran scenario/m);
+    expect(md).toMatch(/^- Category: demonstration — /m);
+    expect(md).toMatch(/^- Demonstration: the protagonists' actions are authored by the scenario/m);
+  });
+
+  it("manifest validation rejects a missing or unknown category", () => {
+    const src = readFileSync(MANIFEST, "utf8");
+    expect(() => parseManifest(src.replace("category: demonstration\n", ""))).toThrow();
+    expect(() => parseManifest(src.replace("category: demonstration", "category: study"))).toThrow();
+    expect(parseManifest(src.replace("category: demonstration", "category: experiment")).category).toBe("experiment");
+  });
+
   it("manifest validation rejects consciousness claims", () => {
     const src = readFileSync(MANIFEST, "utf8").replace("consciousnessClaims: none", "consciousnessClaims: asserted");
     expect(() => parseManifest(src)).toThrow();

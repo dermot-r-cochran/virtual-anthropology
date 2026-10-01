@@ -8,7 +8,7 @@ The repository's claim is that every simulation is publishable: regenerable byte
 
 ## Layer 1 — the simulation suite (`the-archipelago/simulation/test/`, vitest)
 
-Two files, 15 tests, run by `npm test` and, with the typecheck in front of it, by `npm run check`. `tsconfig.json` is strict with `noUncheckedIndexedAccess`, so the typecheck is itself a gate.
+Two files, 17 tests, run by `npm test` and, with the typecheck in front of it, by `npm run check`. `tsconfig.json` is strict with `noUncheckedIndexedAccess`, so the typecheck is itself a gate.
 
 - `kernel.test.ts` (7) — the kernel's guarantees, from a fresh *First Fork* genesis each time:
   - the seeded RNG is deterministic per seed;
@@ -18,7 +18,7 @@ Two files, 15 tests, run by `npm test` and, with the typecheck in front of it, b
   - the disclosure guard requires the artificial-nature statement and blocks manipulation;
   - **property** (fast-check): `irreversibly-deleted` is terminal under every transition;
   - **property** (fast-check, 25 runs): random experience and credit-transfer sequences keep every invariant, conserve total supply, and replay to the same head hash.
-- `research.test.ts` (8) — runs the scenario and `publishExperiment` once with a fixed clock, then asserts: the head hash matches the manifest's pinned value; three claimants claim continuity and the evidence returns no verdict; findings are mechanical metric comparisons; every chronicle statement traces to a real event with a matching hash; the experiment report has the standard sections and never generates interpretation; `research_manifest.yaml` carries the required provenance keys; **regeneration is byte-identical to the committed export** for `index.json`, `research_manifest.yaml`, `research.json` and `events.jsonl`; and a manifest claiming consciousness is rejected by the schema.
+- `research.test.ts` (10) — runs the scenario and `publishExperiment` once with a fixed clock, then asserts: the head hash matches the manifest's pinned value; three claimants claim continuity and the evidence returns no verdict; findings are mechanical metric comparisons; every chronicle statement traces to a real event with a matching hash; the experiment report has the standard sections and never generates interpretation; `research_manifest.yaml` carries the required provenance keys; **regeneration is byte-identical to the committed export** for `index.json`, `research_manifest.yaml`, `research.json` and `events.jsonl`; and a manifest claiming consciousness is rejected by the schema; the First Fork is filed as a demonstration and every output (index, provenance manifest, research.json, the report's abstract, design bullet and limitation) says so; and a manifest with a missing or unknown `category` is rejected while `experiment` is accepted.
 
 ## Layer 2 — the Evennia bridge suite (`the-archipelago/evennia/tests/`, unittest)
 

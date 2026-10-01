@@ -3,6 +3,7 @@
 schemaVersion: 2
 id: the-first-fork-v1
 title: The First Fork
+category: demonstration
 scenario: the-first-fork
 civilizationId: archipelago-first-fork
 description: >-

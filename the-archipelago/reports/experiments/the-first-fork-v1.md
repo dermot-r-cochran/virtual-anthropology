@@ -8,7 +8,7 @@ _Publication draft `pub-the-first-fork-v1`, generated from experiment `the-first
 
 > _Epistemic category: Observation — restates recorded events or computed values._
 
-Experiment `the-first-fork-v1` ran scenario `the-first-fork` with seed `archipelago/the-first-fork/v1` on simulation 0.1.0. The event store recorded 91 events over 7 ticks, with 11 citizen records, 1 fork event(s) and 3 continuity claim(s). 3 operationalised hypotheses were evaluated: 3 result(s) consistent and 0 not consistent with the hypothesis as operationalised. This abstract restates computed values only. It contains no interpretation.
+Demonstration `the-first-fork-v1` ran scenario `the-first-fork` with seed `archipelago/the-first-fork/v1` on simulation 0.1.0. The event store recorded 91 events over 7 ticks, with 11 citizen records, 1 fork event(s) and 3 continuity claim(s). 3 operationalised hypotheses were evaluated: 3 result(s) consistent and 0 not consistent with the hypothesis as operationalised. This abstract restates computed values only. It contains no interpretation.
 
 # Research Question
 
@@ -35,6 +35,7 @@ _Motivation (researcher-authored):_ Digital-person identity debates often assume
 
 _Scenario description (researcher-authored):_ A citizen of Continuity migrates to Fork and creates two descendants. One stays on Fork, one moves to Mnemosyne and imports communal memories, and the original returns to Continuity. All three later claim continuity with the pre-fork person. Background citizens are deterministic BDI agents, and an agent-based epilogue follows.
 
+- Category: demonstration — the protagonists' actions are authored by the scenario, so a finding consistent with its hypothesis shows that the platform and the declared law tables produce the declared outcome. It is not evidence about what citizens would do.
 - Minds: deterministic (`archipelago-deterministic` 1.0.0, prompt `archipelago/deterministic-citizen/v1`)
 - Researchers: `res-observer-1` (observer and interlocutor; asks each claimant the same continuity question)
 - Research bounds: interventions deliver-message, grant-credits, introduce-artefact; at most 3; max grant 50
@@ -51,7 +52,7 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | civilization id | `archipelago-first-fork` |
 | simulation version | 0.1.0 |
 | interchange version | 1 |
-| configuration hash | `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995` |
+| configuration hash | `b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f` |
 | seed | `archipelago/the-first-fork/v1` |
 | start timestamp | 2026-01-01T00:00:00.000Z |
 | end timestamp | 2026-01-01T00:00:00.000Z |
@@ -189,6 +190,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 - Island legal readings are rule-based encodings of four doctrines, not a survey of legal theory.
 - Population is small (11 records). Metrics are descriptive and support no statistical inference.
 - Memory bequest covers only non-destroyed memories.
+- Demonstration: the protagonists' actions are authored by the scenario, so a finding consistent with its hypothesis shows that the platform and the declared law tables produce the declared outcome. It is not evidence about what citizens would do.
 - Single deterministic run. Results describe this run and support no statistical inference.
 - The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations.
 
@@ -205,7 +207,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 > _Epistemic category: Provenance — identifiers for reproduction._
 
 - Simulation: 0.1.0; interchange v1
-- Configuration hash: `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995`
+- Configuration hash: `b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f`
 - Seed: `archipelago/the-first-fork/v1`
 - Event store head hash: `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` (91 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
