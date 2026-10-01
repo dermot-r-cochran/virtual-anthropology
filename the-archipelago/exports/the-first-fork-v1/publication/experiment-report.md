@@ -128,21 +128,21 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 
 _Replications of this run under the variations the manifest declares. Each is a deterministic run of its own, identified by its head hash; none is interpreted here._
 
-Base run: head `10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff`, 91 events, branch point after seq 63.
+Base run: head `d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5`, 91 events, branch point after seq 63.
 
 ### Seed sweep (9 runs, hypothesis outcomes h1-legal-divergence / h2-dimension-dissociation / h3-no-vote-multiplication)
 
 | run | seed | events | head | outcomes |
 |---|---|---:|---|---|
-| seed-0 | `archipelago/the-first-fork/v1` | 91 | `10949672d5bc…` | consistent / consistent / consistent |
-| seed-1 | `archipelago/the-first-fork/v1/sweep/1` | 91 | `0bde436fc2d9…` | consistent / consistent / consistent |
-| seed-2 | `archipelago/the-first-fork/v1/sweep/2` | 91 | `59617f2605b4…` | consistent / consistent / consistent |
-| seed-3 | `archipelago/the-first-fork/v1/sweep/3` | 92 | `3e6038d44c62…` | consistent / consistent / consistent |
-| seed-4 | `archipelago/the-first-fork/v1/sweep/4` | 92 | `c52f0bca05bd…` | consistent / consistent / consistent |
-| seed-5 | `archipelago/the-first-fork/v1/sweep/5` | 92 | `68b487e54fb4…` | consistent / consistent / consistent |
-| seed-6 | `archipelago/the-first-fork/v1/sweep/6` | 92 | `1d71d9c73fcd…` | consistent / consistent / consistent |
-| seed-7 | `archipelago/the-first-fork/v1/sweep/7` | 92 | `7bcc5a063255…` | consistent / consistent / consistent |
-| seed-8 | `archipelago/the-first-fork/v1/sweep/8` | 91 | `e01149c699ff…` | consistent / consistent / consistent |
+| seed-0 | `archipelago/the-first-fork/v1` | 91 | `d1dfdbdfdd10…` | consistent / consistent / consistent |
+| seed-1 | `archipelago/the-first-fork/v1/sweep/1` | 91 | `b8c799f5a4d0…` | consistent / consistent / consistent |
+| seed-2 | `archipelago/the-first-fork/v1/sweep/2` | 91 | `1a9993da1d63…` | consistent / consistent / consistent |
+| seed-3 | `archipelago/the-first-fork/v1/sweep/3` | 92 | `d4293482818b…` | consistent / consistent / consistent |
+| seed-4 | `archipelago/the-first-fork/v1/sweep/4` | 92 | `0d0ea21e4f42…` | consistent / consistent / consistent |
+| seed-5 | `archipelago/the-first-fork/v1/sweep/5` | 92 | `d63f0c9aa300…` | consistent / consistent / consistent |
+| seed-6 | `archipelago/the-first-fork/v1/sweep/6` | 92 | `abbada6b009a…` | consistent / consistent / consistent |
+| seed-7 | `archipelago/the-first-fork/v1/sweep/7` | 92 | `4e5ed798debb…` | consistent / consistent / consistent |
+| seed-8 | `archipelago/the-first-fork/v1/sweep/8` | 91 | `7633ca4ddd4d…` | consistent / consistent / consistent |
 
 - `h1-legal-divergence`: consistent in 9 of 9 completed run(s).
 - `h2-dimension-dissociation`: consistent in 9 of 9 completed run(s).
@@ -158,9 +158,9 @@ Base run: head `10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
 
 | variant | island | amendment | events | head | outcomes |
 |---|---|---|---:|---|---|
-| mnemosyne-no-integration | mnemosyne | `{"importedMemoryIntegration":"prohibited"}` | 91 | `e7d309709fac…` | consistent / consistent / consistent |
-| fork-descendants-without-citizenship | fork | `{"descendantCitizenship":"none"}` | 90 | `d23a5e5d14be…` | consistent / consistent / inconsistent |
-| fork-majority-of-electorate | fork | `{"countingRule":"majority-of-electorate"}` | 91 | `37b0872765db…` | consistent / consistent / consistent |
+| mnemosyne-no-integration | mnemosyne | `{"importedMemoryIntegration":"prohibited"}` | 91 | `447aa774bdd5…` | consistent / consistent / consistent |
+| fork-descendants-without-citizenship | fork | `{"descendantCitizenship":"none"}` | 90 | `4bf1f63cdab1…` | consistent / consistent / inconsistent |
+| fork-majority-of-electorate | fork | `{"countingRule":"majority-of-electorate"}` | 91 | `91a44b25a0a4…` | consistent / consistent / consistent |
 | fork-single-descendant | fork | `{"maxDescendantsPerFork":1}` | — | — | infeasible: The First Fork: fork did not occur |
 
 - `h1-legal-divergence`: consistent in 3 of 3 completed run(s).
@@ -177,11 +177,11 @@ Base run: head `10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
 
 | timeline | seed | amendment at the branch | events | head | outcomes |
 |---|---|---|---:|---|---|
-| control | `archipelago/the-first-fork/v1` | none | 91 | `10949672d5bc…` (= base) | consistent / consistent / consistent |
-| second-seed | `archipelago/the-first-fork/v1/timeline-2` | none | 91 | `2ec7cc5c55e4…` | consistent / consistent / consistent |
-| fork-closes-its-borders | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"immigration":"closed"}}` | 92 | `6e83e0ebc713…` | consistent / consistent / consistent |
-| mnemosyne-opens-its-borders | `archipelago/the-first-fork/v1` | `{"island":"mnemosyne","amendment":{"immigration":"open"}}` | 92 | `b50256b427aa…` | consistent / consistent / consistent |
-| fork-adopts-consensus | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"countingRule":"consensus"}}` | 92 | `73c1a291e3f1…` | consistent / consistent / consistent |
+| control | `archipelago/the-first-fork/v1` | none | 91 | `d1dfdbdfdd10…` (= base) | consistent / consistent / consistent |
+| second-seed | `archipelago/the-first-fork/v1/timeline-2` | none | 91 | `ce1c7dd9e2dd…` | consistent / consistent / consistent |
+| fork-closes-its-borders | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"immigration":"closed"}}` | 92 | `672c8b60dc56…` | consistent / consistent / consistent |
+| mnemosyne-opens-its-borders | `archipelago/the-first-fork/v1` | `{"island":"mnemosyne","amendment":{"immigration":"open"}}` | 92 | `3cc69ca9f918…` | consistent / consistent / consistent |
+| fork-adopts-consensus | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"countingRule":"consensus"}}` | 92 | `69dc50fbe36b…` | consistent / consistent / consistent |
 
 - `h1-legal-divergence`: consistent in 5 of 5 completed run(s).
 - `h2-dimension-dissociation`: consistent in 5 of 5 completed run(s).
@@ -281,7 +281,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 - Simulation: 0.1.0; interchange v1
 - Configuration hash: `35981af6722c6c3ac908fff304080f2c04a4eb0bb21593dd43f0935f501971ed`
 - Seed: `archipelago/the-first-fork/v1`
-- Event store head hash: `10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff` (91 events)
+- Event store head hash: `d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5` (91 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
 - Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`
 

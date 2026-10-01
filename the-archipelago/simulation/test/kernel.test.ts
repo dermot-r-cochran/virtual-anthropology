@@ -77,6 +77,16 @@ describe("kernel", () => {
     expect(empty.status).toBe("rejected");
   });
 
+  it("each island's founding counting rule follows its doctrine", () => {
+    const { world } = fresh();
+    expect(Object.fromEntries(Object.values(world.state.islands).map((i) => [i.law.island, i.law.countingRule]))).toEqual({
+      continuity: "majority-of-electorate",
+      fork: "majority-of-votes-cast",
+      mnemosyne: "majority-of-votes-cast",
+      concord: "consensus",
+    });
+  });
+
   it("the counting rule is island law: the same tally carries or fails by the rule in force", () => {
     const outcomeUnder = (rule: "majority-of-votes-cast" | "majority-of-electorate" | "consensus", votes: Record<string, "yes" | "no" | "abstain">) => {
       const { world, keys } = fresh();

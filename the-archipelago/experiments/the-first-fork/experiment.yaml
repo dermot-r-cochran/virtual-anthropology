@@ -103,5 +103,5 @@ futureWork:
   - Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.
   - Add a Concord scenario in which claimants petition to federate.
 reproducibility:
-  expectedHeadHash: 10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
+  expectedHeadHash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
   expectedEventCount: 91

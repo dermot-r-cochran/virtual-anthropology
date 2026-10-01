@@ -1,7 +1,7 @@
 {
   "schema": "archipelago/study/v1",
   "base": {
-    "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
+    "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
     "eventCount": 91,
     "branchSeq": 63
   },
@@ -90,7 +90,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
+      "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -166,7 +166,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "0bde436fc2d98199267864d20ad623242bd2e278aa7bd588ae7f304a53debb76",
+      "headHash": "b8c799f5a4d0ce3e8292b1b06b4cb7997dfdb438d9b4a49ea7865cc232d1e447",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -242,7 +242,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "59617f2605b4784a169e9b0c268a6a5a1fea5318c20f09f5bba38f0455989342",
+      "headHash": "1a9993da1d63533842c8131e5887a26d1d99ee8cdd4f8c37ff983df8a72ca5a4",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -318,7 +318,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "3e6038d44c62520d3850b1d86a070f93705b4d591c418a9d12ec517063aadca5",
+      "headHash": "d4293482818b07f732473efcfb3a9a77bb095fc751f210d1b6830433b696f458",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -394,7 +394,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "c52f0bca05bde10adc5a2ab27b025634ecd8193acbe71103e9a3f7b1403b305f",
+      "headHash": "0d0ea21e4f42eee788df561928b7a1c38648604d480d2f0a10fce76e3d4d880a",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -470,7 +470,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "68b487e54fb4086a5ceb106452574895dd39ead8e8dd1a9632423f98201242d2",
+      "headHash": "d63f0c9aa300e7890363114a530ed28b129bee8be836d83bac65ce6dd865f25a",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -546,7 +546,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "1d71d9c73fcd732fd8c67d8cae707f7e90c2f5cfddead16e68800279aff8dfae",
+      "headHash": "abbada6b009a18435f5f46f6dbc7558c08ce9f8c219ede315ab8335b89ba8a4b",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -622,7 +622,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "7bcc5a063255e58588ce51423590c42414a57043b6f0eca503bbdb4c1f6428d4",
+      "headHash": "4e5ed798debb2188efb413cbf4ff9f501258757267b9abf564ad343e86495882",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -698,7 +698,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "e01149c699fff2ea900b380aab44cdc88848a8297a50ad0a712e50322f42005d",
+      "headHash": "7633ca4ddd4d93aaf44b7c6004f5ef7b8754e20c0349b009115985b81bd488ea",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -776,7 +776,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "e7d309709facf66a2c283e91f06b00009fba0e070f3fb26d1a83f6b238df5ec4",
+      "headHash": "447aa774bdd5f877c96e274f6975f02721504bfba331a0a5fa6bf4657d1e3c02",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -854,7 +854,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "d23a5e5d14beee462145f2fe9b2d575f6ddaf390882b9c5001e91efa45d6bfcf",
+      "headHash": "4bf1f63cdab1b399c58c7488b2055f1dde34678ea54740ab153e53a1bc3d1c3a",
       "eventCount": 90,
       "branchSeq": 62,
       "metrics": {
@@ -932,7 +932,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "37b0872765dbf46005c5a53f18f68396317caceb6474035c99f371b32fecd179",
+      "headHash": "91a44b25a0a4f956b7304cd499d3218f3f384fbc815646c6b98df064b17be04d",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -1026,7 +1026,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
+      "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -1103,7 +1103,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "2ec7cc5c55e40b09c08cc56e95896e3c626d16facb84b1e9880a9e4d31216ac7",
+      "headHash": "ce1c7dd9e2dde600bb8eb2dfa1d4155864933055d2a8bed7df3fd9727fd9a94c",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -1185,7 +1185,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "6e83e0ebc713ecd978da1fdfaf74e1a5416fb26daf6e24e4a0b285aa9db7a45e",
+      "headHash": "672c8b60dc56dc549490efeebcaf5ea2c28107297e38eaae67d1b6e2efd32e13",
       "eventCount": 92,
       "branchSeq": 63,
       "metrics": {
@@ -1267,7 +1267,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "b50256b427aa543adefa90070d5ee0c22fafa2460eb28963e351eb9ecdd454f7",
+      "headHash": "3cc69ca9f9188ebd53f88654cc98f1d0fd2a67b4b8e924a04fc7375db8e8fce3",
       "eventCount": 92,
       "branchSeq": 63,
       "metrics": {
@@ -1349,7 +1349,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "73c1a291e3f13958b098e36448c4b00596b3c6a433cdf5b8e83a81f2f2ac26d1",
+      "headHash": "69dc50fbe36b4a6ba7e481c81110f2a1fb68bd0825e0eeddd2dc32051b285e23",
       "eventCount": 92,
       "branchSeq": 63,
       "metrics": {

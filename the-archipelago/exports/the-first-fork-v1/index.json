@@ -8,7 +8,7 @@
   "scenario": "the-first-fork",
   "seed": "archipelago/the-first-fork/v1",
   "configurationHash": "35981af6722c6c3ac908fff304080f2c04a4eb0bb21593dd43f0935f501971ed",
-  "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
+  "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
   "eventCount": 91,
   "findings": [
     {
@@ -97,22 +97,22 @@
   "files": [
     {
       "path": "events.jsonl",
-      "sha256": "180ffb5f915f4cb2b307e97ed2c457495ca6fcc17383dd4076dc8aa15192788b",
-      "bytes": 103919
+      "sha256": "9bbc0f8d01becda9a5fe36e595e77dec56e49d3f4b31b543f301d7b5d05143c0",
+      "bytes": 103893
     },
     {
       "path": "interchange.json",
-      "sha256": "3cff275a829bafa4d602a46d61010b8f64a3793fe331e431996d2619a8a084a5",
-      "bytes": 142561
+      "sha256": "7c9c7ae59b853a862c1ea9452e517620a599fa1478f19b85958f79b92b5c53b9",
+      "bytes": 142548
     },
     {
       "path": "dataset.json",
-      "sha256": "751f9658589aba216fd4f5499bd69a4dcedd44dbcfafb91c139f41ee3969d231",
-      "bytes": 165499
+      "sha256": "78095f99b53de7822791ad82a9f88bfa38155cd797172680b7bd775703c0ae41",
+      "bytes": 165486
     },
     {
       "path": "research.json",
-      "sha256": "c869f8cac57846991fc29e3237ba7712f6a41fe617c926d7d83463b61ae43b02",
+      "sha256": "872764cbbb22743028a5f580215e2c0a87be4522c68f03f9175448dc0225dc0a",
       "bytes": 77368
     },
     {
@@ -127,12 +127,12 @@
     },
     {
       "path": "governance_events.json",
-      "sha256": "ea8fcf6cd853195a770365de9b3bf969804d22ae93cf20b1b8a05b86718d4191",
+      "sha256": "8d55b0ac0fe2add2c9774eb41ea6b468ff2c341a840bc1aaf5800e42e23a7305",
       "bytes": 7003
     },
     {
       "path": "memory_history.json",
-      "sha256": "6ad6e5e8012f3114912d777b890df8427ca4e61b9a7b0c63fb5343d1cb92f3a9",
+      "sha256": "5bc9b11e383c9fad7ef2c66eb84f892ae54b982a50ed1e1b8ad466827a078f70",
       "bytes": 34216
     },
     {
@@ -147,7 +147,7 @@
     },
     {
       "path": "study.json",
-      "sha256": "fb160b42fb1b3e92046e5227e88af044b6295508f940fc3ca2ab3d96e1ef3c30",
+      "sha256": "f514c6036bc002121357e2c35816de319b3542c2c734bd3467fdf6616cd69855",
       "bytes": 66736
     },
     {
@@ -157,12 +157,12 @@
     },
     {
       "path": "publication/experiment-report.md",
-      "sha256": "c176da5e64039e0293c91ceb6e98ffe9922fd2cb9f0bf89fcaae1d10296ec01e",
+      "sha256": "d6370368e3786b7adb202b49cfddcb3cfcfbeb3324b057be28603bafbe5f88b5",
       "bytes": 29575
     },
     {
       "path": "publication/civilization-report.md",
-      "sha256": "d40652e04fa4dbc664a7c9090cef0e93860136b6671913195518f4f3dd5081ae",
+      "sha256": "1bc207496498bfa09896ee26e44e99525c5d01a4eec17ecb6391ca28681dbf03",
       "bytes": 8645
     },
     {
@@ -197,13 +197,13 @@
     },
     {
       "path": "reports/researcher-commentary-template.md",
-      "sha256": "cd3b43c7ef165b83793c6c8e991dea5d69fda77d809c8aa806dc9aa5ee84f535",
+      "sha256": "23314ce16858106adca5a6dabc5767adbac73c2be9eb62a59dc68d01477a58d0",
       "bytes": 1451
     },
     {
       "path": "research_manifest.yaml",
-      "sha256": "59d8cdbe2c45bf2324abff16c0161096f088c256ff7f16d2fc9da95d744691eb",
-      "bytes": 21476
+      "sha256": "bc4856f9404c439be5aa7b5ee7d68ea26b1c6e2bf477b6b674e794534db24db0",
+      "bytes": 21463
     }
   ]
 }

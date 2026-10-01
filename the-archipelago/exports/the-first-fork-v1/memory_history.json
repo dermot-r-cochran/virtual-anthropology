@@ -1117,7 +1117,7 @@
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Charted a channel through the outer shoals that no one had mapped.\"",
-      "hash": "33781d5b2958cc44902f2e9ff99fad10de9da4b1519230b1f4a81aa39066f140"
+      "hash": "4de957b87a564d382ded0b8fac188e6cf592a027f4cf80f96febc302fd76ce69"
     },
     {
       "seq": 5,
@@ -1127,7 +1127,7 @@
         "cit-0003"
       ],
       "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho repaired a lantern at Meridian Quay at tick 0.\"",
-      "hash": "0935bd76ca6ae61ec1b234dffb312add46dadcdfe22f9d39e6d5dd731707054e"
+      "hash": "54a509d6d29694c8f048efa84128c7f40914c73d7c8dd22069c21fd9a30ac675"
     },
     {
       "seq": 8,
@@ -1137,7 +1137,7 @@
         "cit-0006"
       ],
       "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune mapped the Stacks at tick 0.\"",
-      "hash": "d3a326bc027d43d94bdd18bb308bb56909e2015d3295ccd90da01d3e785d50f6"
+      "hash": "e4055b368720adcf7623b4b0aac2f926a63928edafee710e28dc38f31c8f7636"
     },
     {
       "seq": 11,
@@ -1147,7 +1147,7 @@
         "cit-0009"
       ],
       "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 0.\"",
-      "hash": "bce73be04f05796064af283ce5563a89642b9264f211ee252341b4af7e76b704"
+      "hash": "7c0a25b38904fd44dfaf55110b5a707e40b6b24e76a6c767ffdaa0e2a665e4b7"
     },
     {
       "seq": 17,
@@ -1159,7 +1159,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (cit-0001) forks on fork (frk-0001), creating Orin Vale (branch 1) (cit-0010, FRK-0010) and Orin Vale (branch 2) (cit-0011, FRK-0011). Shared history ends here.",
-      "hash": "c47616e96e6925dcdb32eb3157c738fcfbf12023ac6816a41e694674bd910667"
+      "hash": "54f88e504c7a5a8edefd850782d2f1c57610c981a66f51b0f50c2db1ecf280ce"
     },
     {
       "seq": 21,
@@ -1169,7 +1169,7 @@
         "cit-0002"
       ],
       "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed repaired a lantern at Meridian Quay at tick 1.\"",
-      "hash": "f158e5040a2997dd04b1a003bf35663307febcea2780bcb925aa683650a533ed"
+      "hash": "318b3e1f836825412a671377f27e41750a57f4794e2b888f2ea0617d1a2944fb"
     },
     {
       "seq": 25,
@@ -1179,7 +1179,7 @@
         "cit-0006"
       ],
       "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Stacks at tick 1.\"",
-      "hash": "2c43fdb38a726f4d6ec4936e01ad6c30d8300ec56e7ae3783872b643df2f5db4"
+      "hash": "ec8a6b39f85b77c3982b5b43fbb7ec59043d4519b12002052fae4cde690e33d6"
     },
     {
       "seq": 28,
@@ -1189,7 +1189,7 @@
         "cit-0009"
       ],
       "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 1.\"",
-      "hash": "ccf60c48f1cb3c829b5758bb6b7e3c03da41d0bede2eb1093a9b0b30891193f8"
+      "hash": "3d829172111c014233489877df40284cddb5078c853ff9dcbdb098bd6b115b0d"
     },
     {
       "seq": 29,
@@ -1199,7 +1199,7 @@
         "cit-0010"
       ],
       "summary": "Orin Vale (branch 1) (cit-0010) records an experience on fork: \"First morning as a branch: the Register Garden had a new bed with my name on it.\"",
-      "hash": "05f27c33e65128ead218735af29ae57e44c949f1d40a4da848d64b2061c2f4cb"
+      "hash": "5bc510e5039c5b569d12825fae6f190b0ac4f451929102d975435b9db12280a9"
     },
     {
       "seq": 38,
@@ -1210,7 +1210,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
-      "hash": "a26eaafd0d9584c5fbb01a0248e8728ef1365941134673b4c4af4cb74fb5366d"
+      "hash": "c4c5ecc333620e5dd334a8b07b83f859442c5cca06d4e62b3c922e48578817d1"
     },
     {
       "seq": 39,
@@ -1221,7 +1221,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
-      "hash": "c2b0cf04b579ee5d911552c9afe7fc8392e3f2710d4f7bfeb53b9f557c3c26ff"
+      "hash": "f93890f9ed1aee6ad5b233c121a67d9a0ca81fbc197fb62de9ef03263d3efbc2"
     },
     {
       "seq": 40,
@@ -1231,7 +1231,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (branch 2) (cit-0011) records an experience on mnemosyne: \"Read my own pre-fork charts in the Stacks and found them both strange and familiar.\"",
-      "hash": "3e194f076bcbe37b504ac4a92ba0a8b967641bc5464f174b5a7fd6b5fdc78344"
+      "hash": "9b93b701af4bdcfaceccd7bb282da103917e6a5436b7492e885aa16ca9ddd0a8"
     },
     {
       "seq": 41,
@@ -1241,7 +1241,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin.",
-      "hash": "d01c31ee57cebc9baab87a6a375cc5fe058d1961a732af01b4f8a6d3330cab56"
+      "hash": "6e7df54a728b8409f57675d03918d6a4fa228af6ea5bd48b3991603337e74994"
     },
     {
       "seq": 43,
@@ -1251,7 +1251,7 @@
         "cit-0003"
       ],
       "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at the long causeway at tick 4.\"",
-      "hash": "4a36d38a9ba30907b0aae54b1b8edd44ecb332921c1a62636e09d196fef78b13"
+      "hash": "23a4888258db459ebf552f2a2d4c398f6a7cde5f8479e7ff36b3aa3d888a6e28"
     },
     {
       "seq": 46,
@@ -1261,7 +1261,7 @@
         "cit-0006"
       ],
       "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune repaired a lantern at the Index Tower at tick 4.\"",
-      "hash": "399e1feda11e540a1c212a3a10cbd3149cd5916bf1aeda7e85b8b2a8da46f7fa"
+      "hash": "99b33ab064104370677e8f156ddf885ad05c820f346205dcbca23b5e339dbac8"
     },
     {
       "seq": 49,
@@ -1271,7 +1271,7 @@
         "cit-0009"
       ],
       "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the federated orchards at tick 4.\"",
-      "hash": "18779c29b9726a4d723c68fde9ce08e3f9c2b12d1fb4a6411d01ecee87649ac2"
+      "hash": "84719cd18f84aca1d409a3797366db7055924006f4a7285432404b7fbd3b497d"
     },
     {
       "seq": 54,
@@ -1281,7 +1281,7 @@
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Walked back up the steps of Meridian Quay; the registry read my civic identity aloud.\"",
-      "hash": "3950849fa77bbdca3f0f7f48f5382818ae4e3223db43239c4602e5edb7213ce8"
+      "hash": "de5aac66b52356108b133810b72a4f9725927bab323603f712047a3537b11994"
     },
     {
       "seq": 65,
@@ -1291,7 +1291,7 @@
         "cit-0005"
       ],
       "summary": "Pell Marr (cit-0005) records an experience on fork: \"Pell Marr kept watch over the split harbour at tick 4.\"",
-      "hash": "ae6fdf0ef2194c3e7aee7f488c280cf5dffe712724c126ad67b3f76671c658ca"
+      "hash": "e1b545c5dbcd4c0e167415f90b2ab0b960bf92ebb98c5b837565b33000c084c9"
     },
     {
       "seq": 74,
@@ -1301,7 +1301,7 @@
         "cit-0006"
       ],
       "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune kept watch over the Reading Shore at tick 5.\"",
-      "hash": "8370ba72ec75b7259869c2da991a5723d95e6358510d43aff85a34c5d0303bc3"
+      "hash": "7f345f972107a66aebca739371dab7f9c8d17941eb4e6cd4b561edfd94ed4ee7"
     },
     {
       "seq": 75,
@@ -1311,7 +1311,7 @@
         "cit-0002"
       ],
       "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked the long causeway at tick 5.\"",
-      "hash": "7948f9eca80d781d46b56730ec7237b1dadb144b6e0e444bc1b77caf512787fc"
+      "hash": "367a304c095b9ae4c2161f1264702bb3bcb4e22aa106a2ea4403cb8235ddb3e4"
     },
     {
       "seq": 77,
@@ -1321,7 +1321,7 @@
         "cit-0003"
       ],
       "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho mapped Meridian Quay at tick 5.\"",
-      "hash": "e6af703d7d5006f17b84fc275e95eb857a70cf9f476946c26d7b1bf9b1ee25aa"
+      "hash": "ca42c5c79844749fc52d24bc454bb0f5c216342c585b7e355b4450562095fcdf"
     },
     {
       "seq": 78,
@@ -1331,7 +1331,7 @@
         "cit-0007"
       ],
       "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor taught a class at the Stacks at tick 5.\"",
-      "hash": "9ced0c2303be6adc2db98d2bc3746fbdec38eb5e7795f7658268f462f29d823b"
+      "hash": "03a8f70c0a970546ee8bd351ddf537ef6ade2357c3315e233e6d244301c5a164"
     },
     {
       "seq": 79,
@@ -1341,7 +1341,7 @@
         "cit-0009"
       ],
       "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Common Table at tick 5.\"",
-      "hash": "586adadbf5879420135c2998f01099483d3e6dde086182af734e18b83dfb6837"
+      "hash": "f7a59c7372658c1eaa5d8a637ba79201a975c0d9e99cec3d54ef2356827fa17b"
     },
     {
       "seq": 85,
@@ -1351,7 +1351,7 @@
         "cit-0002"
       ],
       "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed taught a class at the long causeway at tick 6.\"",
-      "hash": "e1e3bb425967587c2c1aeb4e106fbf002962fc3b61542b4ad093a79f785807db"
+      "hash": "1c90adebcbd4c8db163d2a795ceee13aa63cae89da1e5023a103fab6ac74c44c"
     },
     {
       "seq": 86,
@@ -1361,7 +1361,7 @@
         "cit-0003"
       ],
       "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at Meridian Quay at tick 6.\"",
-      "hash": "f0714448ea1dff623855b5c1e9394619c5cf8428b46dd7404f97dbef6899465d"
+      "hash": "a6a9cf477527753462ad6c9225b2c11b704715c5544b58d1884d313453f9a9f9"
     },
     {
       "seq": 87,
@@ -1371,7 +1371,7 @@
         "cit-0006"
       ],
       "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune argued about tides at the Stacks at tick 6.\"",
-      "hash": "25cff3d0d576a3c3c4e36bb9df8d0d49ef20e186acbff2afa20dffad8bace7c6"
+      "hash": "90da1156043d19981307e66017fcd8c2840b45cd12608efbb51cc8779661c9c3"
     },
     {
       "seq": 88,
@@ -1381,7 +1381,7 @@
         "cit-0009"
       ],
       "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Accord Bridge at tick 6.\"",
-      "hash": "451ef14b8af0c82fa5f598bebb22a2deaf606e6acffeb627fd8e83f1870b979f"
+      "hash": "22ab9b42eb7d36e2045ed6d558fff730d4b8dbf73f306128aec1c6becc5e04f8"
     }
   ]
 }
