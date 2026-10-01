@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 2,
+  "generator": "the-archipelago/simulation 0.1.0",
+  "experimentId": "the-first-fork-v1",
+  "civilizationId": "archipelago-first-fork",
+  "title": "The First Fork",
+  "scenario": "the-first-fork",
+  "seed": "archipelago/the-first-fork/v1",
+  "configurationHash": "1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995",
+  "headHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+  "eventCount": 91,
+  "findings": [
+    {
+      "hypothesisId": "h1-legal-divergence",
+      "outcome": "consistent-with-hypothesis"
+    },
+    {
+      "hypothesisId": "h2-dimension-dissociation",
+      "outcome": "consistent-with-hypothesis"
+    },
+    {
+      "hypothesisId": "h3-no-vote-multiplication",
+      "outcome": "consistent-with-hypothesis"
+    }
+  ],
+  "visualizations": [
+    {
+      "id": "viz-lineage",
+      "title": "Identity lineage (person-stages)",
+      "kind": "graph",
+      "dataFile": "lineage_graph.json",
+      "description": "Person-stages split at forks and mergers; edges show record continuation, forks, mergers and continuity claims (testimony).",
+      "encoding": {
+        "node": "person-stage",
+        "edge": "kind",
+        "colour": "edge kind"
+      }
+    },
+    {
+      "id": "viz-relationships",
+      "title": "Relationship network",
+      "kind": "network",
+      "dataFile": "relationship_network.json",
+      "description": "Citizens as nodes and relationships as links.",
+      "encoding": {
+        "node": "citizen",
+        "link": "relationship",
+        "colour": "residence",
+        "stroke": "kind"
+      }
+    },
+    {
+      "id": "viz-governance",
+      "title": "Governance timeline",
+      "kind": "timeline",
+      "dataFile": "governance_events.json",
+      "description": "Proposals, votes, laws, petitions, migrations, mergers and policy refusals over time.",
+      "encoding": {
+        "x": "seq",
+        "row": "type"
+      }
+    },
+    {
+      "id": "viz-memory",
+      "title": "Memory history",
+      "kind": "timeline",
+      "dataFile": "memory_history.json",
+      "description": "Memory records with their provenance chains, and memory events over time.",
+      "encoding": {
+        "x": "seq",
+        "row": "holder",
+        "colour": "status"
+      }
+    },
+    {
+      "id": "viz-metrics",
+      "title": "Civilization metrics over time",
+      "kind": "timeseries",
+      "dataFile": "civilization_metrics.json",
+      "description": "Snapshot metrics at the end of each tick, plus final metric values with definitions.",
+      "encoding": {
+        "x": "tick",
+        "y": "metric value"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "events.jsonl",
+      "sha256": "babd853ccfe5f592521e8dc38a7b7fb07c04b6d4ad11da79997f53e83854981a",
+      "bytes": 104185
+    },
+    {
+      "path": "interchange.json",
+      "sha256": "dd9967d4c99b264ee8e0381546c251e6efc962705dc47768ee68cd0cd3a60e0e",
+      "bytes": 143851
+    },
+    {
+      "path": "dataset.json",
+      "sha256": "6aca13d878b21e01a9bf76ab47ada2a61b01f71de981cff588320531b310aab9",
+      "bytes": 193051
+    },
+    {
+      "path": "research.json",
+      "sha256": "dd7efda594a5e91efd962c04e72077b66e11cce705fe7c702ec2e96f12d6e96b",
+      "bytes": 72706
+    },
+    {
+      "path": "lineage_graph.json",
+      "sha256": "7ac780656738d9e244f35e63e66a59f11ff65d22be4e01974ee7b1dccdfa9bdc",
+      "bytes": 3444
+    },
+    {
+      "path": "relationship_network.json",
+      "sha256": "c42ed15ff50513e5ae829a2cf785a8b389542d0adf61abaceb374525efa1f9a6",
+      "bytes": 3538
+    },
+    {
+      "path": "governance_events.json",
+      "sha256": "252a9da855a49bc64bbf77317c6106e4344de67ea9af0856793c2b2c00090359",
+      "bytes": 6968
+    },
+    {
+      "path": "memory_history.json",
+      "sha256": "eea5965a45240502f4f69b0046b8e5a360cfd47567a5936af01f3ebb60f82fee",
+      "bytes": 35409
+    },
+    {
+      "path": "civilization_metrics.json",
+      "sha256": "e6e4c782573123d30eca701e9b175c342c7a29bd005e9a5aba2d305bd7d146ea",
+      "bytes": 13278
+    },
+    {
+      "path": "civilization_metrics.csv",
+      "sha256": "101f93d6d76467c485bbeedc7639f789cb8a366b537808091e91c5e5e05183a0",
+      "bytes": 680
+    },
+    {
+      "path": "publication/experiment-report.md",
+      "sha256": "ccc8c52ad7d0662b9bfa319e75027ef5ce5e417762eb591c62426d1d863fa1f3",
+      "bytes": 24193
+    },
+    {
+      "path": "publication/civilization-report.md",
+      "sha256": "259b22ab1583f1e4fa25f5787e3b8c637911e9de94fa7f69d43bd9de27cccdbc",
+      "bytes": 8645
+    },
+    {
+      "path": "publication/chronicle.md",
+      "sha256": "54857fe84f7d35c08cd2175aa46ccf5cd4bc1e4d705e007044dfc650aee02e6b",
+      "bytes": 2720
+    },
+    {
+      "path": "reports/timeline.md",
+      "sha256": "153c9acf8286a0fa8c1e45c984d681c00f34ced07e6a5857855ad58187c36e05",
+      "bytes": 16901
+    },
+    {
+      "path": "reports/lineage.mmd",
+      "sha256": "ce700f704c55f731e36df4858f1b3d1c69780321fc940d623d2066122bb3f3bd",
+      "bytes": 531
+    },
+    {
+      "path": "reports/memory-provenance.md",
+      "sha256": "ef4c88ef16e56b70445e4743ca0c803a1c8a1d9eb9a20e28b1a6802bec8e0b30",
+      "bytes": 4429
+    },
+    {
+      "path": "reports/continuity-evidence.md",
+      "sha256": "27621213cdaa3e095bb0cecc5cc9d0c9635fc058b37512109c9644be0d93326a",
+      "bytes": 2535
+    },
+    {
+      "path": "reports/legal-interpretations.md",
+      "sha256": "7d5ef61d9a61f65014321f88a23cd3c412f1e7c87b752080443d2566f3753d77",
+      "bytes": 7709
+    },
+    {
+      "path": "reports/researcher-commentary-template.md",
+      "sha256": "5c80d342ffb4752b33550b43b8cdd5996b41c17b6349faddf527f0bc747faf32",
+      "bytes": 1451
+    },
+    {
+      "path": "research_manifest.yaml",
+      "sha256": "0ad601450d768d3c01efa45638bc5c436537e2636398b1aa7f46f83ccd610b72",
+      "bytes": 14647
+    }
+  ]
+}

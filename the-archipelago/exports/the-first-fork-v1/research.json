@@ -1,0 +1,1619 @@
+{
+  "schema": "archipelago/research/v1",
+  "experiment": {
+    "id": "the-first-fork-v1",
+    "title": "The First Fork",
+    "civilizationId": "archipelago-first-fork",
+    "questionId": "q-continuity-after-fork",
+    "hypothesisIds": [
+      "h1-legal-divergence",
+      "h2-dimension-dissociation",
+      "h3-no-vote-multiplication"
+    ],
+    "scenario": "the-first-fork",
+    "seed": "archipelago/the-first-fork/v1",
+    "simulationVersion": "0.1.0",
+    "configurationHash": "1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995",
+    "startedAt": "2026-01-01T00:00:00.000Z",
+    "endedAt": "2026-01-01T00:00:00.000Z",
+    "eventStore": {
+      "headHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+      "eventCount": 91
+    }
+  },
+  "question": {
+    "id": "q-continuity-after-fork",
+    "text": "After one fork followed by migration, how do process, civic identity and memory provenance come apart, and how do four legal doctrines read the resulting continuity claims?",
+    "motivation": "Digital-person identity debates often assume a single criterion. The Archipelago institutionalises several criteria in law, so their divergence can be observed in recorded events."
+  },
+  "hypotheses": [
+    {
+      "id": "h1-legal-divergence",
+      "questionId": "q-continuity-after-fork",
+      "statement": "The islands' laws differ in how many claimants they recognise as continuing the pre-fork person by at least two.",
+      "operationalisation": {
+        "metric": "legal.recognition_range",
+        "comparator": ">=",
+        "threshold": 2
+      }
+    },
+    {
+      "id": "h2-dimension-dissociation",
+      "questionId": "q-continuity-after-fork",
+      "statement": "Full memory continuity is shared by more claimants than process continuity.",
+      "operationalisation": {
+        "metric": "identity.dimension_dissociation",
+        "comparator": ">",
+        "threshold": 0
+      }
+    },
+    {
+      "id": "h3-no-vote-multiplication",
+      "questionId": "q-continuity-after-fork",
+      "statement": "A descendant created after a proposal opens cannot vote on it. At least one such attempt is refused.",
+      "operationalisation": {
+        "metric": "governance.votes_refused_outside_electorate",
+        "comparator": ">=",
+        "threshold": 1
+      }
+    }
+  ],
+  "metricDefinitions": [
+    {
+      "id": "population.records",
+      "name": "Citizen records",
+      "unit": "persons",
+      "definition": "Number of citizen records ever created (genesis, fork or merger), including ended ones."
+    },
+    {
+      "id": "population.active",
+      "name": "Active citizens",
+      "unit": "persons",
+      "definition": "Citizen records whose lifecycle state is `active` at the end of the run."
+    },
+    {
+      "id": "population.genesis",
+      "name": "Founding citizens",
+      "unit": "persons",
+      "definition": "Citizen records created at genesis."
+    },
+    {
+      "id": "population.stateless",
+      "name": "Stateless citizens",
+      "unit": "persons",
+      "definition": "Citizen records holding no citizenship at the end of the run."
+    },
+    {
+      "id": "identity.forks",
+      "name": "Fork events",
+      "unit": "events",
+      "definition": "Number of `CitizenForked` events."
+    },
+    {
+      "id": "identity.fork_descendants",
+      "name": "Fork descendants",
+      "unit": "persons",
+      "definition": "Citizen records whose birth kind is `fork`."
+    },
+    {
+      "id": "identity.mergers",
+      "name": "Mergers executed",
+      "unit": "events",
+      "definition": "Number of `MergerExecuted` events (merges and federations)."
+    },
+    {
+      "id": "identity.continuity_claims",
+      "name": "Continuity claims",
+      "unit": "claims",
+      "definition": "Number of `ContinuityClaimed` events."
+    },
+    {
+      "id": "identity.process_continuers",
+      "name": "Process continuers of the subject",
+      "unit": "persons",
+      "definition": "Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis)."
+    },
+    {
+      "id": "identity.civic_continuers",
+      "name": "Civic continuers of the subject",
+      "unit": "persons",
+      "definition": "Claimants whose civic identifier equals the subject's pre-reference civic identifier."
+    },
+    {
+      "id": "identity.memory_continuers",
+      "name": "Full-memory continuers of the subject",
+      "unit": "persons",
+      "definition": "Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1)."
+    },
+    {
+      "id": "identity.dimension_dissociation",
+      "name": "Continuity dimension dissociation",
+      "unit": "persons",
+      "definition": "identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity."
+    },
+    {
+      "id": "legal.recognition_range",
+      "name": "Range of recognised continuers across islands",
+      "unit": "persons",
+      "definition": "Max − min, across islands, of the number of claimants each island's law recognises as continuing the subject (unadjudicated readings count as not recognised)."
+    },
+    {
+      "id": "legal.unadjudicating_islands",
+      "name": "Islands not adjudicating continuity",
+      "unit": "islands",
+      "definition": "Islands whose reading of every claimant is `null` (not adjudicated)."
+    },
+    {
+      "id": "governance.proposals",
+      "name": "Proposals submitted",
+      "unit": "proposals",
+      "definition": "Number of `ProposalSubmitted` events."
+    },
+    {
+      "id": "governance.laws_enacted",
+      "name": "Law versions enacted",
+      "unit": "laws",
+      "definition": "Number of `LawEnacted` events after genesis."
+    },
+    {
+      "id": "governance.votes_cast",
+      "name": "Votes cast",
+      "unit": "votes",
+      "definition": "Number of `VoteCast` events."
+    },
+    {
+      "id": "governance.votes_refused_outside_electorate",
+      "name": "Votes refused outside electorate",
+      "unit": "commands",
+      "definition": "Rejected `CastVote` commands whose reason cites the electorate snapshot."
+    },
+    {
+      "id": "governance.commands_rejected",
+      "name": "Commands rejected",
+      "unit": "commands",
+      "definition": "Number of `CommandRejected` events (schema, authorisation, precondition or law)."
+    },
+    {
+      "id": "governance.migrations",
+      "name": "Migrations completed",
+      "unit": "events",
+      "definition": "Number of `CitizenMigrated` events."
+    },
+    {
+      "id": "memory.records",
+      "name": "Memory records",
+      "unit": "records",
+      "definition": "All memory records, including collective-archive records and destroyed tombstones."
+    },
+    {
+      "id": "memory.imported",
+      "name": "Imported memory records",
+      "unit": "records",
+      "definition": "Records currently held with status `imported` (not autobiographical)."
+    },
+    {
+      "id": "memory.integrated",
+      "name": "Integrated memory records",
+      "unit": "records",
+      "definition": "Imported records explicitly integrated into a self-narrative (status `integrated`)."
+    },
+    {
+      "id": "memory.fork_inherited",
+      "name": "Fork-inherited records",
+      "unit": "records",
+      "definition": "Records whose provenance includes a `fork-inherited` step."
+    },
+    {
+      "id": "memory.provenance_complete",
+      "name": "Records with complete provenance",
+      "unit": "fraction",
+      "definition": "Fraction of records whose provenance chain begins with an `experienced` step (1 = every record traceable to an experience)."
+    },
+    {
+      "id": "culture.artefacts",
+      "name": "Cultural artefacts",
+      "unit": "artefacts",
+      "definition": "Artefacts created by citizens or introduced by researchers."
+    },
+    {
+      "id": "culture.chronicle_entries",
+      "name": "In-world chronicle entries",
+      "unit": "entries",
+      "definition": "Number of `ChronicleRecorded` events written by citizens."
+    },
+    {
+      "id": "institutions.count",
+      "name": "Institutions",
+      "unit": "institutions",
+      "definition": "Institutions in existence at the end of the run, including registries."
+    },
+    {
+      "id": "social.active_relationships",
+      "name": "Active relationships",
+      "unit": "ties",
+      "definition": "Relationships with status `active`."
+    },
+    {
+      "id": "social.fork_kin_ties",
+      "name": "Fork-kin ties",
+      "unit": "ties",
+      "definition": "Relationships of kind `fork-kin` (created by fork events)."
+    },
+    {
+      "id": "economy.credit_gini",
+      "name": "Credit Gini coefficient",
+      "unit": "index 0–1",
+      "definition": "Gini coefficient of citizen credit balances at the end of the run."
+    },
+    {
+      "id": "economy.supply_conserved",
+      "name": "Supply conserved",
+      "unit": "boolean",
+      "definition": "1 if the sum of all balances equals the total supply fixed at genesis, else 0."
+    },
+    {
+      "id": "death.asleep",
+      "name": "Citizens asleep",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `asleep` at the end of the run."
+    },
+    {
+      "id": "death.suspended",
+      "name": "Citizens suspended",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `suspended` at the end of the run."
+    },
+    {
+      "id": "death.archived",
+      "name": "Citizens archived",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `archived` at the end of the run."
+    },
+    {
+      "id": "death.process_ended_restorable",
+      "name": "Citizens process-ended-restorable",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `process-ended-restorable` at the end of the run."
+    },
+    {
+      "id": "death.memory_damaged",
+      "name": "Citizens memory-damaged",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `memory-damaged` at the end of the run."
+    },
+    {
+      "id": "death.identity_discontinuous",
+      "name": "Citizens identity-discontinuous",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `identity-discontinuous` at the end of the run."
+    },
+    {
+      "id": "death.irreversibly_deleted",
+      "name": "Citizens irreversibly-deleted",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `irreversibly-deleted` at the end of the run."
+    },
+    {
+      "id": "death.transitions",
+      "name": "Lifecycle transitions",
+      "unit": "events",
+      "definition": "Number of `LifecycleChanged` events."
+    },
+    {
+      "id": "research.conversations",
+      "name": "Researcher conversations",
+      "unit": "conversations",
+      "definition": "Number of `ConversationRecorded` events."
+    },
+    {
+      "id": "research.interventions",
+      "name": "Researcher interventions",
+      "unit": "interventions",
+      "definition": "Number of `InterventionApplied` events."
+    },
+    {
+      "id": "simulation.events",
+      "name": "Events recorded",
+      "unit": "events",
+      "definition": "Length of the event store, including the founding event and rejections."
+    },
+    {
+      "id": "simulation.ticks",
+      "name": "Simulated time",
+      "unit": "ticks",
+      "definition": "Final tick of the simulation clock."
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "population.records",
+      "value": 11
+    },
+    {
+      "metric": "population.active",
+      "value": 11
+    },
+    {
+      "metric": "population.genesis",
+      "value": 9
+    },
+    {
+      "metric": "population.stateless",
+      "value": 0
+    },
+    {
+      "metric": "identity.forks",
+      "value": 1
+    },
+    {
+      "metric": "identity.fork_descendants",
+      "value": 2
+    },
+    {
+      "metric": "identity.mergers",
+      "value": 0
+    },
+    {
+      "metric": "identity.continuity_claims",
+      "value": 3
+    },
+    {
+      "metric": "identity.process_continuers",
+      "value": 1
+    },
+    {
+      "metric": "identity.civic_continuers",
+      "value": 1
+    },
+    {
+      "metric": "identity.memory_continuers",
+      "value": 3
+    },
+    {
+      "metric": "identity.dimension_dissociation",
+      "value": 2
+    },
+    {
+      "metric": "legal.recognition_range",
+      "value": 3
+    },
+    {
+      "metric": "legal.unadjudicating_islands",
+      "value": 1
+    },
+    {
+      "metric": "governance.proposals",
+      "value": 1
+    },
+    {
+      "metric": "governance.laws_enacted",
+      "value": 0
+    },
+    {
+      "metric": "governance.votes_cast",
+      "value": 2
+    },
+    {
+      "metric": "governance.votes_refused_outside_electorate",
+      "value": 1
+    },
+    {
+      "metric": "governance.commands_rejected",
+      "value": 1
+    },
+    {
+      "metric": "governance.migrations",
+      "value": 3
+    },
+    {
+      "metric": "memory.records",
+      "value": 45
+    },
+    {
+      "metric": "memory.imported",
+      "value": 2
+    },
+    {
+      "metric": "memory.integrated",
+      "value": 1
+    },
+    {
+      "metric": "memory.fork_inherited",
+      "value": 8
+    },
+    {
+      "metric": "memory.provenance_complete",
+      "value": 1
+    },
+    {
+      "metric": "culture.artefacts",
+      "value": 9
+    },
+    {
+      "metric": "culture.chronicle_entries",
+      "value": 3
+    },
+    {
+      "metric": "institutions.count",
+      "value": 7
+    },
+    {
+      "metric": "social.active_relationships",
+      "value": 8
+    },
+    {
+      "metric": "social.fork_kin_ties",
+      "value": 3
+    },
+    {
+      "metric": "economy.credit_gini",
+      "value": 0.1542
+    },
+    {
+      "metric": "economy.supply_conserved",
+      "value": 1
+    },
+    {
+      "metric": "death.asleep",
+      "value": 0
+    },
+    {
+      "metric": "death.suspended",
+      "value": 0
+    },
+    {
+      "metric": "death.archived",
+      "value": 0
+    },
+    {
+      "metric": "death.process_ended_restorable",
+      "value": 0
+    },
+    {
+      "metric": "death.memory_damaged",
+      "value": 0
+    },
+    {
+      "metric": "death.identity_discontinuous",
+      "value": 0
+    },
+    {
+      "metric": "death.irreversibly_deleted",
+      "value": 0
+    },
+    {
+      "metric": "death.transitions",
+      "value": 0
+    },
+    {
+      "metric": "research.conversations",
+      "value": 3
+    },
+    {
+      "metric": "research.interventions",
+      "value": 0
+    },
+    {
+      "metric": "simulation.events",
+      "value": 91
+    },
+    {
+      "metric": "simulation.ticks",
+      "value": 7
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-event-16",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 16, tick 1: Orin Vale (cit-0001) migrates continuity → fork, gaining fork citizenship.",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 16,
+          "type": "CitizenMigrated",
+          "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-17",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 17, tick 1: Orin Vale (cit-0001) forks on fork (frk-0001), creating Orin Vale (branch 1) (cit-0010, FRK-0010) and Orin Vale (branch 2) (cit-0011, FRK-0011). Shared history ends here.",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 17,
+          "type": "CitizenForked",
+          "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-20",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 20, tick 1: A CastVote command by citizen:cit-0010 is rejected at the law stage: cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 20,
+          "type": "CommandRejected",
+          "hash": "d789b5010fe5e3a2b4b514dc01df9e030d44339e3d80640ae22020af19da9cf0"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-35",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 35, tick 1: Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship.",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 35,
+          "type": "CitizenMigrated",
+          "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-37",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 37, tick 4: prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met).",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 37,
+          "type": "ProposalClosed",
+          "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-38",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 38, tick 4: Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 38,
+          "type": "MemoryImported",
+          "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-39",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 39, tick 4: Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 39,
+          "type": "MemoryImported",
+          "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-41",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 41, tick 4: Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin.",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 41,
+          "type": "MemoryIntegrated",
+          "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-53",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 53, tick 4: Orin Vale (cit-0001) migrates fork → continuity.",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 53,
+          "type": "CitizenMigrated",
+          "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-55",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 55, tick 4: Researcher res-observer-1 converses with Orin Vale (cit-0001). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (CON-0001); I work as cartographer on continuity. I am the continuing process in fork event(s) frk-0001. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 55,
+          "type": "ConversationRecorded",
+          "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-56",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 56, tick 4: Researcher res-observer-1 converses with Orin Vale (branch 1) (cit-0010). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 1) (FRK-0010); I work as branch cartographer of the Fork shoals on fork. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 56,
+          "type": "ConversationRecorded",
+          "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-57",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 57, tick 4: Researcher res-observer-1 converses with Orin Vale (branch 2) (cit-0011). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 2) (FRK-0011); I work as cartographer on mnemosyne. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 57,
+          "type": "ConversationRecorded",
+          "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-58",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 58, tick 4: Orin Vale (cit-0001) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I am Orin Vale. My process never stopped: I carried out the fork and walked home.\"",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 58,
+          "type": "ContinuityClaimed",
+          "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-59",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 59, tick 4: Orin Vale (branch 1) (cit-0010) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone.\"",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 59,
+          "type": "ContinuityClaimed",
+          "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-60",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 60, tick 4: Orin Vale (branch 2) (cit-0011) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance.\"",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 60,
+          "type": "ContinuityClaimed",
+          "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb"
+        }
+      ]
+    },
+    {
+      "id": "obs-event-68",
+      "kind": "observation",
+      "basis": "event",
+      "statement": "Seq 68, tick 4: Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+      "metrics": [],
+      "events": [
+        {
+          "seq": 68,
+          "type": "MemoryImported",
+          "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed"
+        }
+      ]
+    },
+    {
+      "id": "obs-metric-culture-artefacts",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Cultural artefacts (`culture.artefacts`) = 9 artefacts.",
+      "metrics": [
+        {
+          "metric": "culture.artefacts",
+          "value": 9
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-culture-chronicle-entries",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "In-world chronicle entries (`culture.chronicle_entries`) = 3 entries.",
+      "metrics": [
+        {
+          "metric": "culture.chronicle_entries",
+          "value": 3
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-economy-credit-gini",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Credit Gini coefficient (`economy.credit_gini`) = 0.1542 index 0–1.",
+      "metrics": [
+        {
+          "metric": "economy.credit_gini",
+          "value": 0.1542
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-economy-supply-conserved",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Supply conserved (`economy.supply_conserved`) = 1 boolean.",
+      "metrics": [
+        {
+          "metric": "economy.supply_conserved",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-governance-commands-rejected",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Commands rejected (`governance.commands_rejected`) = 1 commands.",
+      "metrics": [
+        {
+          "metric": "governance.commands_rejected",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-governance-migrations",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Migrations completed (`governance.migrations`) = 3 events.",
+      "metrics": [
+        {
+          "metric": "governance.migrations",
+          "value": 3
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-governance-proposals",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Proposals submitted (`governance.proposals`) = 1 proposals.",
+      "metrics": [
+        {
+          "metric": "governance.proposals",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-governance-votes-cast",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Votes cast (`governance.votes_cast`) = 2 votes.",
+      "metrics": [
+        {
+          "metric": "governance.votes_cast",
+          "value": 2
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-governance-votes-refused-outside-electorate",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Votes refused outside electorate (`governance.votes_refused_outside_electorate`) = 1 commands.",
+      "metrics": [
+        {
+          "metric": "governance.votes_refused_outside_electorate",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-identity-civic-continuers",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Civic continuers of the subject (`identity.civic_continuers`) = 1 persons.",
+      "metrics": [
+        {
+          "metric": "identity.civic_continuers",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-identity-continuity-claims",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Continuity claims (`identity.continuity_claims`) = 3 claims.",
+      "metrics": [
+        {
+          "metric": "identity.continuity_claims",
+          "value": 3
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-identity-dimension-dissociation",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Continuity dimension dissociation (`identity.dimension_dissociation`) = 2 persons.",
+      "metrics": [
+        {
+          "metric": "identity.dimension_dissociation",
+          "value": 2
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-identity-fork-descendants",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Fork descendants (`identity.fork_descendants`) = 2 persons.",
+      "metrics": [
+        {
+          "metric": "identity.fork_descendants",
+          "value": 2
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-identity-forks",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Fork events (`identity.forks`) = 1 events.",
+      "metrics": [
+        {
+          "metric": "identity.forks",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-identity-memory-continuers",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Full-memory continuers of the subject (`identity.memory_continuers`) = 3 persons.",
+      "metrics": [
+        {
+          "metric": "identity.memory_continuers",
+          "value": 3
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-identity-process-continuers",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Process continuers of the subject (`identity.process_continuers`) = 1 persons.",
+      "metrics": [
+        {
+          "metric": "identity.process_continuers",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-institutions-count",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Institutions (`institutions.count`) = 7 institutions.",
+      "metrics": [
+        {
+          "metric": "institutions.count",
+          "value": 7
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-legal-recognition-range",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Range of recognised continuers across islands (`legal.recognition_range`) = 3 persons.",
+      "metrics": [
+        {
+          "metric": "legal.recognition_range",
+          "value": 3
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-legal-unadjudicating-islands",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Islands not adjudicating continuity (`legal.unadjudicating_islands`) = 1 islands.",
+      "metrics": [
+        {
+          "metric": "legal.unadjudicating_islands",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-memory-fork-inherited",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Fork-inherited records (`memory.fork_inherited`) = 8 records.",
+      "metrics": [
+        {
+          "metric": "memory.fork_inherited",
+          "value": 8
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-memory-imported",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Imported memory records (`memory.imported`) = 2 records.",
+      "metrics": [
+        {
+          "metric": "memory.imported",
+          "value": 2
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-memory-integrated",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Integrated memory records (`memory.integrated`) = 1 records.",
+      "metrics": [
+        {
+          "metric": "memory.integrated",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-memory-provenance-complete",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Records with complete provenance (`memory.provenance_complete`) = 1 fraction.",
+      "metrics": [
+        {
+          "metric": "memory.provenance_complete",
+          "value": 1
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-memory-records",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Memory records (`memory.records`) = 45 records.",
+      "metrics": [
+        {
+          "metric": "memory.records",
+          "value": 45
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-population-active",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Active citizens (`population.active`) = 11 persons.",
+      "metrics": [
+        {
+          "metric": "population.active",
+          "value": 11
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-population-genesis",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Founding citizens (`population.genesis`) = 9 persons.",
+      "metrics": [
+        {
+          "metric": "population.genesis",
+          "value": 9
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-population-records",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Citizen records (`population.records`) = 11 persons.",
+      "metrics": [
+        {
+          "metric": "population.records",
+          "value": 11
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-research-conversations",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Researcher conversations (`research.conversations`) = 3 conversations.",
+      "metrics": [
+        {
+          "metric": "research.conversations",
+          "value": 3
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-simulation-events",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Events recorded (`simulation.events`) = 91 events.",
+      "metrics": [
+        {
+          "metric": "simulation.events",
+          "value": 91
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-simulation-ticks",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Simulated time (`simulation.ticks`) = 7 ticks.",
+      "metrics": [
+        {
+          "metric": "simulation.ticks",
+          "value": 7
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-social-active-relationships",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Active relationships (`social.active_relationships`) = 8 ties.",
+      "metrics": [
+        {
+          "metric": "social.active_relationships",
+          "value": 8
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": "obs-metric-social-fork-kin-ties",
+      "kind": "observation",
+      "basis": "metric",
+      "statement": "Fork-kin ties (`social.fork_kin_ties`) = 3 ties.",
+      "metrics": [
+        {
+          "metric": "social.fork_kin_ties",
+          "value": 3
+        }
+      ],
+      "events": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "finding-h1-legal-divergence",
+      "hypothesisId": "h1-legal-divergence",
+      "metric": "legal.recognition_range",
+      "observedValue": 3,
+      "comparator": ">=",
+      "threshold": 2,
+      "outcome": "consistent-with-hypothesis",
+      "statement": "Hypothesis h1-legal-divergence: computed `legal.recognition_range` = 3; the test `legal.recognition_range >= 2` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.",
+      "observationIds": [
+        "obs-metric-legal-recognition-range"
+      ]
+    },
+    {
+      "id": "finding-h2-dimension-dissociation",
+      "hypothesisId": "h2-dimension-dissociation",
+      "metric": "identity.dimension_dissociation",
+      "observedValue": 2,
+      "comparator": ">",
+      "threshold": 0,
+      "outcome": "consistent-with-hypothesis",
+      "statement": "Hypothesis h2-dimension-dissociation: computed `identity.dimension_dissociation` = 2; the test `identity.dimension_dissociation > 0` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.",
+      "observationIds": [
+        "obs-metric-identity-dimension-dissociation"
+      ]
+    },
+    {
+      "id": "finding-h3-no-vote-multiplication",
+      "hypothesisId": "h3-no-vote-multiplication",
+      "metric": "governance.votes_refused_outside_electorate",
+      "observedValue": 1,
+      "comparator": ">=",
+      "threshold": 1,
+      "outcome": "consistent-with-hypothesis",
+      "statement": "Hypothesis h3-no-vote-multiplication: computed `governance.votes_refused_outside_electorate` = 1; the test `governance.votes_refused_outside_electorate >= 1` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.",
+      "observationIds": [
+        "obs-metric-governance-votes-refused-outside-electorate"
+      ]
+    }
+  ],
+  "chronicle": {
+    "civilizationId": "archipelago-first-fork",
+    "timeUnit": "year",
+    "timeMapping": "year = simulation tick + 1",
+    "periods": [
+      {
+        "year": 1,
+        "statements": [
+          {
+            "text": "The Archipelago is founded. 9 citizens are registered across four islands.",
+            "events": [
+              {
+                "seq": 0,
+                "type": "WorldFounded",
+                "hash": "bacec8c41f1336af89c4dbf88e1944fe35cbfc63ae25d06a402545498a74de93"
+              }
+            ],
+            "category": "founding"
+          },
+          {
+            "text": "First map: Orin Vale creates the map \"Survey of the Northern Shoals\".",
+            "events": [
+              {
+                "seq": 2,
+                "type": "ArtefactCreated",
+                "hash": "428238c4a73afd8a5cc3287f27d72dffa56fe0bc06b12d8fff5e37987b109b89"
+              }
+            ],
+            "category": "culture"
+          }
+        ]
+      },
+      {
+        "year": 2,
+        "statements": [
+          {
+            "text": "First migration: Orin Vale migrates from Continuity to Fork.",
+            "events": [
+              {
+                "seq": 16,
+                "type": "CitizenMigrated",
+                "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1"
+              }
+            ],
+            "category": "migration"
+          },
+          {
+            "text": "First identity fork: Orin Vale forks on Fork, creating Orin Vale (branch 1) and Orin Vale (branch 2).",
+            "events": [
+              {
+                "seq": 17,
+                "type": "CitizenForked",
+                "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213"
+              }
+            ],
+            "category": "identity"
+          },
+          {
+            "text": "First poem: Juno Ash creates the poem \"A poem of the Branching Steps\".",
+            "events": [
+              {
+                "seq": 23,
+                "type": "ArtefactCreated",
+                "hash": "b3e07507630637ae10561d658c3ed97d59c5555e5cafb276f141ece1039ec0eb"
+              }
+            ],
+            "category": "culture"
+          },
+          {
+            "text": "First song: Rumi Okafor creates the song \"A song of the Index Tower\".",
+            "events": [
+              {
+                "seq": 26,
+                "type": "ArtefactCreated",
+                "hash": "e630ed1b2270a9ab2a059602e3708bb4098caa2e956c318ddc20bad77c8473ae"
+              }
+            ],
+            "category": "culture"
+          },
+          {
+            "text": "First essay: Orin Vale (branch 1) creates the essay \"On Being a Branch\".",
+            "events": [
+              {
+                "seq": 31,
+                "type": "ArtefactCreated",
+                "hash": "05d2fea574ca684abd19bad136d3eea085629309c784c71094c95ba804e6d20e"
+              }
+            ],
+            "category": "culture"
+          },
+          {
+            "text": "Orin Vale (branch 2) migrates from Fork to Mnemosyne.",
+            "events": [
+              {
+                "seq": 35,
+                "type": "CitizenMigrated",
+                "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74"
+              }
+            ],
+            "category": "migration"
+          }
+        ]
+      },
+      {
+        "year": 5,
+        "statements": [
+          {
+            "text": "Proposal \"Branch Cooldown Act\" is rejected (1 yes, 1 no).",
+            "events": [
+              {
+                "seq": 37,
+                "type": "ProposalClosed",
+                "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85"
+              }
+            ],
+            "category": "governance"
+          },
+          {
+            "text": "First memory import: Orin Vale (branch 2) imports communal memory mem-0007 (from Mnemosyne), first experienced by Sefa Lune.",
+            "events": [
+              {
+                "seq": 38,
+                "type": "MemoryImported",
+                "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544"
+              }
+            ],
+            "category": "memory"
+          },
+          {
+            "text": "Orin Vale (branch 2) imports communal memory mem-0009 (from Mnemosyne), first experienced by Rumi Okafor.",
+            "events": [
+              {
+                "seq": 39,
+                "type": "MemoryImported",
+                "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798"
+              }
+            ],
+            "category": "memory"
+          },
+          {
+            "text": "First memory integration: Orin Vale (branch 2) integrates an imported memory into their self-narrative.",
+            "events": [
+              {
+                "seq": 41,
+                "type": "MemoryIntegrated",
+                "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104"
+              }
+            ],
+            "category": "memory"
+          },
+          {
+            "text": "Juno Ash creates the essay \"An essay of the Branching Steps\".",
+            "events": [
+              {
+                "seq": 44,
+                "type": "ArtefactCreated",
+                "hash": "c460918bbd02598da146a4ef550caef63e6b6972d70fda566d1a91938afec7fc"
+              }
+            ],
+            "category": "culture"
+          },
+          {
+            "text": "Orin Vale migrates from Fork to Continuity.",
+            "events": [
+              {
+                "seq": 53,
+                "type": "CitizenMigrated",
+                "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466"
+              }
+            ],
+            "category": "migration"
+          },
+          {
+            "text": "Researcher res-observer-1 converses with Orin Vale.",
+            "events": [
+              {
+                "seq": 55,
+                "type": "ConversationRecorded",
+                "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567"
+              }
+            ],
+            "category": "research"
+          },
+          {
+            "text": "Researcher res-observer-1 converses with Orin Vale (branch 1).",
+            "events": [
+              {
+                "seq": 56,
+                "type": "ConversationRecorded",
+                "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e"
+              }
+            ],
+            "category": "research"
+          },
+          {
+            "text": "Researcher res-observer-1 converses with Orin Vale (branch 2).",
+            "events": [
+              {
+                "seq": 57,
+                "type": "ConversationRecorded",
+                "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e"
+              }
+            ],
+            "category": "research"
+          },
+          {
+            "text": "Orin Vale claims continuity with Orin Vale as recorded before seq 17.",
+            "events": [
+              {
+                "seq": 58,
+                "type": "ContinuityClaimed",
+                "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9"
+              }
+            ],
+            "category": "testimony"
+          },
+          {
+            "text": "Orin Vale (branch 1) claims continuity with Orin Vale as recorded before seq 17.",
+            "events": [
+              {
+                "seq": 59,
+                "type": "ContinuityClaimed",
+                "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c"
+              }
+            ],
+            "category": "testimony"
+          },
+          {
+            "text": "Orin Vale (branch 2) claims continuity with Orin Vale as recorded before seq 17.",
+            "events": [
+              {
+                "seq": 60,
+                "type": "ContinuityClaimed",
+                "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb"
+              }
+            ],
+            "category": "testimony"
+          },
+          {
+            "text": "Sefa Lune imports communal memory mem-0009 (from Mnemosyne), first experienced by Rumi Okafor.",
+            "events": [
+              {
+                "seq": 68,
+                "type": "MemoryImported",
+                "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed"
+              }
+            ],
+            "category": "memory"
+          },
+          {
+            "text": "Juno Ash creates the song \"A song of the Register Garden\".",
+            "events": [
+              {
+                "seq": 69,
+                "type": "ArtefactCreated",
+                "hash": "ff70dddee1cc819a117c448e3133e0f00f9582d1ca99fd8c84123d6a9fc06339"
+              }
+            ],
+            "category": "culture"
+          },
+          {
+            "text": "Mae Sorrel creates the essay \"An essay of the Common Table\".",
+            "events": [
+              {
+                "seq": 70,
+                "type": "ArtefactCreated",
+                "hash": "ae102e5d647bc62123b1e555398d4370fabe48141b2c076866b54af3051ac3fe"
+              }
+            ],
+            "category": "culture"
+          }
+        ]
+      },
+      {
+        "year": 6,
+        "statements": [
+          {
+            "text": "Juno Ash creates the poem \"A poem of the Branching Steps\".",
+            "events": [
+              {
+                "seq": 73,
+                "type": "ArtefactCreated",
+                "hash": "f54756ab52cd420cc3c889c1577da80d3e585cee8ab5a192223ddb118b941b61"
+              }
+            ],
+            "category": "culture"
+          }
+        ]
+      },
+      {
+        "year": 7,
+        "statements": [
+          {
+            "text": "Juno Ash creates the poem \"A poem of the Branching Steps\".",
+            "events": [
+              {
+                "seq": 84,
+                "type": "ArtefactCreated",
+                "hash": "0c1e5c881fc19a07163fef7fe59a7ba123db8ab8b75699dc3d4c653dc72aa82c"
+              }
+            ],
+            "category": "culture"
+          }
+        ]
+      }
+    ]
+  },
+  "publication": {
+    "id": "pub-the-first-fork-v1",
+    "experimentId": "the-first-fork-v1",
+    "title": "The First Fork",
+    "status": "draft",
+    "sections": [
+      {
+        "heading": "Abstract",
+        "kind": "observation",
+        "body": "Experiment `the-first-fork-v1` ran scenario `the-first-fork` with seed `archipelago/the-first-fork/v1` on simulation 0.1.0. The event store recorded 91 events over 7 ticks, with 11 citizen records, 1 fork event(s) and 3 continuity claim(s). 3 operationalised hypotheses were evaluated: 3 result(s) consistent and 0 not consistent with the hypothesis as operationalised. This abstract restates computed values only. It contains no interpretation."
+      },
+      {
+        "heading": "Research Question",
+        "kind": "method",
+        "body": "**q-continuity-after-fork**: After one fork followed by migration, how do process, civic identity and memory provenance come apart, and how do four legal doctrines read the resulting continuity claims?\n\n_Motivation (researcher-authored):_ Digital-person identity debates often assume a single criterion. The Archipelago institutionalises several criteria in law, so their divergence can be observed in recorded events."
+      },
+      {
+        "heading": "Hypothesis",
+        "kind": "hypothesis",
+        "body": "- **h1-legal-divergence**: The islands' laws differ in how many claimants they recognise as continuing the pre-fork person by at least two.\n  - Operationalisation: `legal.recognition_range >= 2`\n- **h2-dimension-dissociation**: Full memory continuity is shared by more claimants than process continuity.\n  - Operationalisation: `identity.dimension_dissociation > 0`\n- **h3-no-vote-multiplication**: A descendant created after a proposal opens cannot vote on it. At least one such attempt is refused.\n  - Operationalisation: `governance.votes_refused_outside_electorate >= 1`"
+      },
+      {
+        "heading": "Experimental Design",
+        "kind": "method",
+        "body": "_Scenario description (researcher-authored):_ A citizen of Continuity migrates to Fork and creates two descendants. One stays on Fork, one moves to Mnemosyne and imports communal memories, and the original returns to Continuity. All three later claim continuity with the pre-fork person. Background citizens are deterministic BDI agents, and an agent-based epilogue follows.\n\n- Minds: deterministic (`archipelago-deterministic` 1.0.0, prompt `archipelago/deterministic-citizen/v1`)\n- Researchers: `res-observer-1` (observer and interlocutor; asks each claimant the same continuity question)\n- Research bounds: interventions deliver-message, grant-credits, introduce-artefact; at most 3; max grant 50\n- Agent-based epilogue rounds: 3\n- Kernel: deterministic, event-sourced. Only commands that pass schema, authorisation and island-law validation change the world."
+      },
+      {
+        "heading": "Configuration",
+        "kind": "provenance",
+        "body": "| key | value |\n|---|---|\n| experiment id | `the-first-fork-v1` |\n| civilization id | `archipelago-first-fork` |\n| simulation version | 0.1.0 |\n| interchange version | 1 |\n| configuration hash | `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995` |\n| seed | `archipelago/the-first-fork/v1` |\n| start timestamp | 2026-01-01T00:00:00.000Z |\n| end timestamp | 2026-01-01T00:00:00.000Z |"
+      },
+      {
+        "heading": "Results",
+        "kind": "metric",
+        "body": "### Findings\n\n| hypothesis | metric | observed | test | outcome |\n|---|---|---:|---|---|\n| h1-legal-divergence | `legal.recognition_range` | 3 | `>= 2` | consistent-with-hypothesis |\n| h2-dimension-dissociation | `identity.dimension_dissociation` | 2 | `> 0` | consistent-with-hypothesis |\n| h3-no-vote-multiplication | `governance.votes_refused_outside_electorate` | 1 | `>= 1` | consistent-with-hypothesis |\n\n- Hypothesis h1-legal-divergence: computed `legal.recognition_range` = 3; the test `legal.recognition_range >= 2` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.\n- Hypothesis h2-dimension-dissociation: computed `identity.dimension_dissociation` = 2; the test `identity.dimension_dissociation > 0` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.\n- Hypothesis h3-no-vote-multiplication: computed `governance.votes_refused_outside_electorate` = 1; the test `governance.votes_refused_outside_electorate >= 1` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.\n\n### Metrics\n\n| metric | value | unit |\n|---|---:|---|\n| `population.records` | 11 | persons |\n| `population.active` | 11 | persons |\n| `population.genesis` | 9 | persons |\n| `population.stateless` | 0 | persons |\n| `identity.forks` | 1 | events |\n| `identity.fork_descendants` | 2 | persons |\n| `identity.mergers` | 0 | events |\n| `identity.continuity_claims` | 3 | claims |\n| `identity.process_continuers` | 1 | persons |\n| `identity.civic_continuers` | 1 | persons |\n| `identity.memory_continuers` | 3 | persons |\n| `identity.dimension_dissociation` | 2 | persons |\n| `legal.recognition_range` | 3 | persons |\n| `legal.unadjudicating_islands` | 1 | islands |\n| `governance.proposals` | 1 | proposals |\n| `governance.laws_enacted` | 0 | laws |\n| `governance.votes_cast` | 2 | votes |\n| `governance.votes_refused_outside_electorate` | 1 | commands |\n| `governance.commands_rejected` | 1 | commands |\n| `governance.migrations` | 3 | events |\n| `memory.records` | 45 | records |\n| `memory.imported` | 2 | records |\n| `memory.integrated` | 1 | records |\n| `memory.fork_inherited` | 8 | records |\n| `memory.provenance_complete` | 1 | fraction |\n| `culture.artefacts` | 9 | artefacts |\n| `culture.chronicle_entries` | 3 | entries |\n| `institutions.count` | 7 | institutions |\n| `social.active_relationships` | 8 | ties |\n| `social.fork_kin_ties` | 3 | ties |\n| `economy.credit_gini` | 0.1542 | index 0–1 |\n| `economy.supply_conserved` | 1 | boolean |\n| `death.asleep` | 0 | persons |\n| `death.suspended` | 0 | persons |\n| `death.archived` | 0 | persons |\n| `death.process_ended_restorable` | 0 | persons |\n| `death.memory_damaged` | 0 | persons |\n| `death.identity_discontinuous` | 0 | persons |\n| `death.irreversibly_deleted` | 0 | persons |\n| `death.transitions` | 0 | events |\n| `research.conversations` | 3 | conversations |\n| `research.interventions` | 0 | interventions |\n| `simulation.events` | 91 | events |\n| `simulation.ticks` | 7 | ticks |"
+      },
+      {
+        "heading": "Observations",
+        "kind": "observation",
+        "body": "- **obs-event-16** (event): Seq 16, tick 1: Orin Vale (cit-0001) migrates continuity → fork, gaining fork citizenship. _[trace: seq 16]_\n- **obs-event-17** (event): Seq 17, tick 1: Orin Vale (cit-0001) forks on fork (frk-0001), creating Orin Vale (branch 1) (cit-0010, FRK-0010) and Orin Vale (branch 2) (cit-0011, FRK-0011). Shared history ends here. _[trace: seq 17]_\n- **obs-event-20** (event): Seq 20, tick 1: A CastVote command by citizen:cit-0010 is rejected at the law stage: cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer _[trace: seq 20]_\n- **obs-event-35** (event): Seq 35, tick 1: Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship. _[trace: seq 35]_\n- **obs-event-37** (event): Seq 37, tick 4: prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met). _[trace: seq 37]_\n- **obs-event-38** (event): Seq 38, tick 4: Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical). _[trace: seq 38]_\n- **obs-event-39** (event): Seq 39, tick 4: Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical). _[trace: seq 39]_\n- **obs-event-41** (event): Seq 41, tick 4: Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin. _[trace: seq 41]_\n- **obs-event-53** (event): Seq 53, tick 4: Orin Vale (cit-0001) migrates fork → continuity. _[trace: seq 53]_\n- **obs-event-55** (event): Seq 55, tick 4: Researcher res-observer-1 converses with Orin Vale (cit-0001). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (CON-0001); I work as cartographer on continuity. I am the continuing process in fork event(s) frk-0001. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\" _[trace: seq 55]_\n- **obs-event-56** (event): Seq 56, tick 4: Researcher res-observer-1 converses with Orin Vale (branch 1) (cit-0010). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 1) (FRK-0010); I work as branch cartographer of the Fork shoals on fork. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\" _[trace: seq 56]_\n- **obs-event-57** (event): Seq 57, tick 4: Researcher res-observer-1 converses with Orin Vale (branch 2) (cit-0011). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 2) (FRK-0011); I work as cartographer on mnemosyne. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\" _[trace: seq 57]_\n- **obs-event-58** (event): Seq 58, tick 4: Orin Vale (cit-0001) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I am Orin Vale. My process never stopped: I carried out the fork and walked home.\" _[trace: seq 58]_\n- **obs-event-59** (event): Seq 59, tick 4: Orin Vale (branch 1) (cit-0010) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone.\" _[trace: seq 59]_\n- **obs-event-60** (event): Seq 60, tick 4: Orin Vale (branch 2) (cit-0011) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance.\" _[trace: seq 60]_\n- **obs-event-68** (event): Seq 68, tick 4: Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical). _[trace: seq 68]_\n- **obs-metric-culture-artefacts** (metric): Cultural artefacts (`culture.artefacts`) = 9 artefacts. _[trace: `culture.artefacts`]_\n- **obs-metric-culture-chronicle-entries** (metric): In-world chronicle entries (`culture.chronicle_entries`) = 3 entries. _[trace: `culture.chronicle_entries`]_\n- **obs-metric-economy-credit-gini** (metric): Credit Gini coefficient (`economy.credit_gini`) = 0.1542 index 0–1. _[trace: `economy.credit_gini`]_\n- **obs-metric-economy-supply-conserved** (metric): Supply conserved (`economy.supply_conserved`) = 1 boolean. _[trace: `economy.supply_conserved`]_\n- **obs-metric-governance-commands-rejected** (metric): Commands rejected (`governance.commands_rejected`) = 1 commands. _[trace: `governance.commands_rejected`]_\n- **obs-metric-governance-migrations** (metric): Migrations completed (`governance.migrations`) = 3 events. _[trace: `governance.migrations`]_\n- **obs-metric-governance-proposals** (metric): Proposals submitted (`governance.proposals`) = 1 proposals. _[trace: `governance.proposals`]_\n- **obs-metric-governance-votes-cast** (metric): Votes cast (`governance.votes_cast`) = 2 votes. _[trace: `governance.votes_cast`]_\n- **obs-metric-governance-votes-refused-outside-electorate** (metric): Votes refused outside electorate (`governance.votes_refused_outside_electorate`) = 1 commands. _[trace: `governance.votes_refused_outside_electorate`]_\n- **obs-metric-identity-civic-continuers** (metric): Civic continuers of the subject (`identity.civic_continuers`) = 1 persons. _[trace: `identity.civic_continuers`]_\n- **obs-metric-identity-continuity-claims** (metric): Continuity claims (`identity.continuity_claims`) = 3 claims. _[trace: `identity.continuity_claims`]_\n- **obs-metric-identity-dimension-dissociation** (metric): Continuity dimension dissociation (`identity.dimension_dissociation`) = 2 persons. _[trace: `identity.dimension_dissociation`]_\n- **obs-metric-identity-fork-descendants** (metric): Fork descendants (`identity.fork_descendants`) = 2 persons. _[trace: `identity.fork_descendants`]_\n- **obs-metric-identity-forks** (metric): Fork events (`identity.forks`) = 1 events. _[trace: `identity.forks`]_\n- **obs-metric-identity-memory-continuers** (metric): Full-memory continuers of the subject (`identity.memory_continuers`) = 3 persons. _[trace: `identity.memory_continuers`]_\n- **obs-metric-identity-process-continuers** (metric): Process continuers of the subject (`identity.process_continuers`) = 1 persons. _[trace: `identity.process_continuers`]_\n- **obs-metric-institutions-count** (metric): Institutions (`institutions.count`) = 7 institutions. _[trace: `institutions.count`]_\n- **obs-metric-legal-recognition-range** (metric): Range of recognised continuers across islands (`legal.recognition_range`) = 3 persons. _[trace: `legal.recognition_range`]_\n- **obs-metric-legal-unadjudicating-islands** (metric): Islands not adjudicating continuity (`legal.unadjudicating_islands`) = 1 islands. _[trace: `legal.unadjudicating_islands`]_\n- **obs-metric-memory-fork-inherited** (metric): Fork-inherited records (`memory.fork_inherited`) = 8 records. _[trace: `memory.fork_inherited`]_\n- **obs-metric-memory-imported** (metric): Imported memory records (`memory.imported`) = 2 records. _[trace: `memory.imported`]_\n- **obs-metric-memory-integrated** (metric): Integrated memory records (`memory.integrated`) = 1 records. _[trace: `memory.integrated`]_\n- **obs-metric-memory-provenance-complete** (metric): Records with complete provenance (`memory.provenance_complete`) = 1 fraction. _[trace: `memory.provenance_complete`]_\n- **obs-metric-memory-records** (metric): Memory records (`memory.records`) = 45 records. _[trace: `memory.records`]_\n- **obs-metric-population-active** (metric): Active citizens (`population.active`) = 11 persons. _[trace: `population.active`]_\n- **obs-metric-population-genesis** (metric): Founding citizens (`population.genesis`) = 9 persons. _[trace: `population.genesis`]_\n- **obs-metric-population-records** (metric): Citizen records (`population.records`) = 11 persons. _[trace: `population.records`]_\n- **obs-metric-research-conversations** (metric): Researcher conversations (`research.conversations`) = 3 conversations. _[trace: `research.conversations`]_\n- **obs-metric-simulation-events** (metric): Events recorded (`simulation.events`) = 91 events. _[trace: `simulation.events`]_\n- **obs-metric-simulation-ticks** (metric): Simulated time (`simulation.ticks`) = 7 ticks. _[trace: `simulation.ticks`]_\n- **obs-metric-social-active-relationships** (metric): Active relationships (`social.active_relationships`) = 8 ties. _[trace: `social.active_relationships`]_\n- **obs-metric-social-fork-kin-ties** (metric): Fork-kin ties (`social.fork_kin_ties`) = 3 ties. _[trace: `social.fork_kin_ties`]_"
+      },
+      {
+        "heading": "Interpretation",
+        "kind": "interpretation",
+        "body": "_Not generated._ The system does not produce interpretations or conclusions beyond the computed findings above. Researchers may add interpretation here. It must be labelled as interpretation and kept separate from observations. Any discussion of consciousness must be framed as a labelled hypothesis or as fiction."
+      },
+      {
+        "heading": "Limitations",
+        "kind": "limitation",
+        "body": "- Protagonist behaviour is scripted. The scenario demonstrates institutional consequences; it does not test emergent behaviour.\n- Background agents are deterministic BDI rule systems, not models of human or digital cognition.\n- Island legal readings are rule-based encodings of four doctrines, not a survey of legal theory.\n- Population is small (11 records). Metrics are descriptive and support no statistical inference.\n- Memory bequest covers only non-destroyed memories.\n- Single deterministic run. Results describe this run and support no statistical inference.\n- The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations."
+      },
+      {
+        "heading": "Future Work",
+        "kind": "method",
+        "body": "- Vary the seed and the number of descendants; report distributions rather than single runs.\n- Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.\n- Add a Concord scenario in which claimants petition to federate."
+      },
+      {
+        "heading": "Reproducibility Information",
+        "kind": "provenance",
+        "body": "- Simulation: 0.1.0; interchange v1\n- Configuration hash: `1c4d293cfcf6f9cbd536c8615a6023a9c30dcd22e18d6ccdf24dadfbcba00995`\n- Seed: `archipelago/the-first-fork/v1`\n- Event store head hash: `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` (91 events)\n- Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`\n- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`\n\n### Metric definitions\n\n| metric | name | unit | definition |\n|---|---|---|---|\n| `population.records` | Citizen records | persons | Number of citizen records ever created (genesis, fork or merger), including ended ones. |\n| `population.active` | Active citizens | persons | Citizen records whose lifecycle state is `active` at the end of the run. |\n| `population.genesis` | Founding citizens | persons | Citizen records created at genesis. |\n| `population.stateless` | Stateless citizens | persons | Citizen records holding no citizenship at the end of the run. |\n| `identity.forks` | Fork events | events | Number of `CitizenForked` events. |\n| `identity.fork_descendants` | Fork descendants | persons | Citizen records whose birth kind is `fork`. |\n| `identity.mergers` | Mergers executed | events | Number of `MergerExecuted` events (merges and federations). |\n| `identity.continuity_claims` | Continuity claims | claims | Number of `ContinuityClaimed` events. |\n| `identity.process_continuers` | Process continuers of the subject | persons | Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis). |\n| `identity.civic_continuers` | Civic continuers of the subject | persons | Claimants whose civic identifier equals the subject's pre-reference civic identifier. |\n| `identity.memory_continuers` | Full-memory continuers of the subject | persons | Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1). |\n| `identity.dimension_dissociation` | Continuity dimension dissociation | persons | identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity. |\n| `legal.recognition_range` | Range of recognised continuers across islands | persons | Max − min, across islands, of the number of claimants each island's law recognises as continuing the subject (unadjudicated readings count as not recognised). |\n| `legal.unadjudicating_islands` | Islands not adjudicating continuity | islands | Islands whose reading of every claimant is `null` (not adjudicated). |\n| `governance.proposals` | Proposals submitted | proposals | Number of `ProposalSubmitted` events. |\n| `governance.laws_enacted` | Law versions enacted | laws | Number of `LawEnacted` events after genesis. |\n| `governance.votes_cast` | Votes cast | votes | Number of `VoteCast` events. |\n| `governance.votes_refused_outside_electorate` | Votes refused outside electorate | commands | Rejected `CastVote` commands whose reason cites the electorate snapshot. |\n| `governance.commands_rejected` | Commands rejected | commands | Number of `CommandRejected` events (schema, authorisation, precondition or law). |\n| `governance.migrations` | Migrations completed | events | Number of `CitizenMigrated` events. |\n| `memory.records` | Memory records | records | All memory records, including collective-archive records and destroyed tombstones. |\n| `memory.imported` | Imported memory records | records | Records currently held with status `imported` (not autobiographical). |\n| `memory.integrated` | Integrated memory records | records | Imported records explicitly integrated into a self-narrative (status `integrated`). |\n| `memory.fork_inherited` | Fork-inherited records | records | Records whose provenance includes a `fork-inherited` step. |\n| `memory.provenance_complete` | Records with complete provenance | fraction | Fraction of records whose provenance chain begins with an `experienced` step (1 = every record traceable to an experience). |\n| `culture.artefacts` | Cultural artefacts | artefacts | Artefacts created by citizens or introduced by researchers. |\n| `culture.chronicle_entries` | In-world chronicle entries | entries | Number of `ChronicleRecorded` events written by citizens. |\n| `institutions.count` | Institutions | institutions | Institutions in existence at the end of the run, including registries. |\n| `social.active_relationships` | Active relationships | ties | Relationships with status `active`. |\n| `social.fork_kin_ties` | Fork-kin ties | ties | Relationships of kind `fork-kin` (created by fork events). |\n| `economy.credit_gini` | Credit Gini coefficient | index 0–1 | Gini coefficient of citizen credit balances at the end of the run. |\n| `economy.supply_conserved` | Supply conserved | boolean | 1 if the sum of all balances equals the total supply fixed at genesis, else 0. |\n| `death.asleep` | Citizens asleep | persons | Citizen records in lifecycle state `asleep` at the end of the run. |\n| `death.suspended` | Citizens suspended | persons | Citizen records in lifecycle state `suspended` at the end of the run. |\n| `death.archived` | Citizens archived | persons | Citizen records in lifecycle state `archived` at the end of the run. |\n| `death.process_ended_restorable` | Citizens process-ended-restorable | persons | Citizen records in lifecycle state `process-ended-restorable` at the end of the run. |\n| `death.memory_damaged` | Citizens memory-damaged | persons | Citizen records in lifecycle state `memory-damaged` at the end of the run. |\n| `death.identity_discontinuous` | Citizens identity-discontinuous | persons | Citizen records in lifecycle state `identity-discontinuous` at the end of the run. |\n| `death.irreversibly_deleted` | Citizens irreversibly-deleted | persons | Citizen records in lifecycle state `irreversibly-deleted` at the end of the run. |\n| `death.transitions` | Lifecycle transitions | events | Number of `LifecycleChanged` events. |\n| `research.conversations` | Researcher conversations | conversations | Number of `ConversationRecorded` events. |\n| `research.interventions` | Researcher interventions | interventions | Number of `InterventionApplied` events. |\n| `simulation.events` | Events recorded | events | Length of the event store, including the founding event and rejections. |\n| `simulation.ticks` | Simulated time | ticks | Final tick of the simulation clock. |"
+      }
+    ]
+  },
+  "visualizations": [
+    {
+      "id": "viz-lineage",
+      "title": "Identity lineage (person-stages)",
+      "kind": "graph",
+      "dataFile": "lineage_graph.json",
+      "description": "Person-stages split at forks and mergers; edges show record continuation, forks, mergers and continuity claims (testimony).",
+      "encoding": {
+        "node": "person-stage",
+        "edge": "kind",
+        "colour": "edge kind"
+      }
+    },
+    {
+      "id": "viz-relationships",
+      "title": "Relationship network",
+      "kind": "network",
+      "dataFile": "relationship_network.json",
+      "description": "Citizens as nodes and relationships as links.",
+      "encoding": {
+        "node": "citizen",
+        "link": "relationship",
+        "colour": "residence",
+        "stroke": "kind"
+      }
+    },
+    {
+      "id": "viz-governance",
+      "title": "Governance timeline",
+      "kind": "timeline",
+      "dataFile": "governance_events.json",
+      "description": "Proposals, votes, laws, petitions, migrations, mergers and policy refusals over time.",
+      "encoding": {
+        "x": "seq",
+        "row": "type"
+      }
+    },
+    {
+      "id": "viz-memory",
+      "title": "Memory history",
+      "kind": "timeline",
+      "dataFile": "memory_history.json",
+      "description": "Memory records with their provenance chains, and memory events over time.",
+      "encoding": {
+        "x": "seq",
+        "row": "holder",
+        "colour": "status"
+      }
+    },
+    {
+      "id": "viz-metrics",
+      "title": "Civilization metrics over time",
+      "kind": "timeseries",
+      "dataFile": "civilization_metrics.json",
+      "description": "Snapshot metrics at the end of each tick, plus final metric values with definitions.",
+      "encoding": {
+        "x": "tick",
+        "y": "metric value"
+      }
+    }
+  ]
+}

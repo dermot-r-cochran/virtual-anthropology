@@ -1,0 +1,4909 @@
+{
+  "interchangeVersion": 1,
+  "simulation": {
+    "name": "the-archipelago",
+    "version": "0.1.0"
+  },
+  "seed": "archipelago/the-first-fork/v1",
+  "events": [
+    {
+      "seq": 0,
+      "tick": 0,
+      "type": "WorldFounded",
+      "actor": "system:genesis",
+      "hash": "bacec8c41f1336af89c4dbf88e1944fe35cbfc63ae25d06a402545498a74de93",
+      "citizens": [],
+      "summary": "The Archipelago is founded for scenario \"the-first-fork\" with 9 citizens on four islands.",
+      "data": {
+        "scenario": "the-first-fork",
+        "citizens": 9
+      }
+    },
+    {
+      "seq": 1,
+      "tick": 0,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0001",
+      "hash": "82d0360b83f1df4f5103178818a30cac82147e3e043e732ea513e315f63e9e21",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Charted a channel through the outer shoals that no one had mapped.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0012",
+          "holder": "cit-0001",
+          "archive": null,
+          "experiencedBy": "cit-0001",
+          "experiencedAtSeq": 1,
+          "island": "continuity",
+          "content": "Charted a channel through the outer shoals that no one had mapped.",
+          "contentHash": "81e771796b3b19610f4773c38930a622c41f422a681528651aabd5edeeea8ae9",
+          "tags": [
+            "work",
+            "charts"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0001",
+              "from": null,
+              "atSeq": 1,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 2,
+      "tick": 0,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0001",
+      "hash": "428238c4a73afd8a5cc3287f27d72dffa56fe0bc06b12d8fff5e37987b109b89",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) creates the map \"Survey of the Northern Shoals\" on continuity.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0001",
+          "authors": [
+            "cit-0001"
+          ],
+          "introducedBy": null,
+          "island": "continuity",
+          "kind": "map",
+          "title": "Survey of the Northern Shoals",
+          "body": "A survey chart of the Northern Shoals, drawn from Meridian Quay.",
+          "createdAtSeq": 2
+        }
+      }
+    },
+    {
+      "seq": 3,
+      "tick": 0,
+      "type": "ProposalSubmitted",
+      "actor": "citizen:cit-0004",
+      "hash": "133aa02b57950238b7b8f732255347dba35b2eac63facd108b7b5ed933b5ca56",
+      "citizens": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "summary": "Juno Ash (cit-0004) proposes \"Branch Cooldown Act\" on fork; electorate of 2 snapshotted; closes at tick 4.",
+      "data": {
+        "type": "ProposalSubmitted",
+        "proposal": {
+          "id": "prop-0001",
+          "island": "fork",
+          "proposer": "cit-0004",
+          "title": "Branch Cooldown Act",
+          "rationale": "Require two ticks between forks so the Register can keep pace.",
+          "amendment": {
+            "forkCooldownTicks": 2
+          },
+          "openedAtSeq": 3,
+          "closesAtTick": 4,
+          "electorate": [
+            "cit-0004",
+            "cit-0005"
+          ],
+          "votes": {},
+          "status": "open",
+          "tally": null
+        }
+      }
+    },
+    {
+      "seq": 4,
+      "tick": 0,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0002",
+      "hash": "9f87a7be95d1fab9020b227740505e59afde63303d08d8a09d64320104d0ead9",
+      "citizens": [
+        "cit-0001",
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0002",
+        "subject": "cit-0001",
+        "delta": 1,
+        "reason": "appreciation for Orin Vale"
+      }
+    },
+    {
+      "seq": 5,
+      "tick": 0,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0003",
+      "hash": "a6e7bfc883e456ead8b0bbb80f88d48cfb81a47daef1e51f862fa10b251b481d",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho repaired a lantern at Meridian Quay at tick 0.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0013",
+          "holder": "cit-0003",
+          "archive": null,
+          "experiencedBy": "cit-0003",
+          "experiencedAtSeq": 5,
+          "island": "continuity",
+          "content": "Ilan Cho repaired a lantern at Meridian Quay at tick 0.",
+          "contentHash": "75031e80e561b459ad0e09aa983890caffbd941cb89665a05600238a47f31568",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0003",
+              "from": null,
+              "atSeq": 5,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 6,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0004",
+      "hash": "ca6ecc6c0456539f772c1e5641feb5f3c1080fda93a8a06570bc3e64b05bbd57",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) votes yes on prop-0001.",
+      "data": {
+        "type": "VoteCast",
+        "proposalId": "prop-0001",
+        "voter": "cit-0004",
+        "choice": "yes"
+      }
+    },
+    {
+      "seq": 7,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0005",
+      "hash": "48f613d141dde21cce1b7ccaf68b422f51d8dba7bcb36670b10d6f5a16f939c4",
+      "citizens": [
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) votes no on prop-0001.",
+      "data": {
+        "type": "VoteCast",
+        "proposalId": "prop-0001",
+        "voter": "cit-0005",
+        "choice": "no"
+      }
+    },
+    {
+      "seq": 8,
+      "tick": 0,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "eeabfd3715a8f515bc5d6e68637a168b6790c06cc6ef46a201c560f78cc0e344",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune mapped the Stacks at tick 0.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0014",
+          "holder": "cit-0006",
+          "archive": null,
+          "experiencedBy": "cit-0006",
+          "experiencedAtSeq": 8,
+          "island": "mnemosyne",
+          "content": "Sefa Lune mapped the Stacks at tick 0.",
+          "contentHash": "6a752123bfc521e14a79f3b82b0e37ebf990589fa6941ab53b6e9664b52637d5",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0006",
+              "from": null,
+              "atSeq": 8,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 9,
+      "tick": 0,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0007",
+      "hash": "ffa79585a40d54c7ce86352cfedea4f9fccd51d322cc0d71b842f01babcbc304",
+      "citizens": [
+        "cit-0006",
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0007",
+        "subject": "cit-0006",
+        "delta": 1,
+        "reason": "appreciation for Sefa Lune"
+      }
+    },
+    {
+      "seq": 10,
+      "tick": 0,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0008",
+      "hash": "afe5f778e2f1cb1920f3cf0d7d7c9344b31945e01caa8b998373abb6ab84dd5c",
+      "citizens": [
+        "cit-0008",
+        "cit-0009"
+      ],
+      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0008",
+        "subject": "cit-0009",
+        "delta": 1,
+        "reason": "appreciation for Mae Sorrel"
+      }
+    },
+    {
+      "seq": 11,
+      "tick": 0,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "73a45673c193c98e4c06f985e17349a9f1c1fcfb84b328a71355a8bfedb040c5",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 0.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0015",
+          "holder": "cit-0009",
+          "archive": null,
+          "experiencedBy": "cit-0009",
+          "experiencedAtSeq": 11,
+          "island": "concord",
+          "content": "Mae Sorrel repaired a lantern at the Accord Bridge at tick 0.",
+          "contentHash": "7c5190de2b04b149749de683346fc6d0c100d7256ac5046d9107a65ba4eb6f15",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0009",
+              "from": null,
+              "atSeq": 11,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 12,
+      "tick": 0,
+      "type": "TimeAdvanced",
+      "actor": "system:clock",
+      "hash": "647fcbbbc6a3f7e6e8fc0b980022e8f79bdfca8e74efb0f08291a4de97a1954c",
+      "citizens": [],
+      "summary": "Time advances from tick 0 to 1.",
+      "data": {
+        "type": "TimeAdvanced",
+        "from": 0,
+        "to": 1
+      }
+    },
+    {
+      "seq": 13,
+      "tick": 1,
+      "type": "MigrationPetitioned",
+      "actor": "citizen:cit-0001",
+      "hash": "e908f8b451adf9c27fe57fb7bda91fc9eb51d225649455207c3819394d2fad1d",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) petitions to migrate continuity → fork: \"To study branching law where it is practised, and perhaps to branch.\"",
+      "data": {
+        "type": "MigrationPetitioned",
+        "petition": {
+          "id": "pet-0001",
+          "citizen": "cit-0001",
+          "from": "continuity",
+          "to": "fork",
+          "reason": "To study branching law where it is practised, and perhaps to branch.",
+          "status": "pending",
+          "exit": null,
+          "entry": null,
+          "filedAtSeq": 13
+        }
+      }
+    },
+    {
+      "seq": 14,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:continuity",
+      "hash": "b6fcdf6077a8068c5d5ae55d88bcf7fbd2b92755e8cd0060b4e5e6ad1ba73fad",
+      "citizens": [],
+      "summary": "The continuity registry approved the exit side of pet-0001 under law v1. Findings: emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process.",
+      "data": {
+        "type": "PetitionReviewed",
+        "petitionId": "pet-0001",
+        "side": "exit",
+        "decision": {
+          "decision": "approved",
+          "island": "continuity",
+          "lawVersion": 1,
+          "findings": [
+            "emigration permitted",
+            "advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process"
+          ],
+          "citations": [
+            "continuity/v1/emigration",
+            "continuity/v1/territoriality"
+          ],
+          "atSeq": 14
+        }
+      }
+    },
+    {
+      "seq": 15,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:fork",
+      "hash": "5072b5addafc62703b41903f28fce75a16c567842848acfe8190aee64c643d0d",
+      "citizens": [],
+      "summary": "The fork registry approved the entry side of pet-0001 under law v1. Findings: descendants created here will each receive a separate identity.",
+      "data": {
+        "type": "PetitionReviewed",
+        "petitionId": "pet-0001",
+        "side": "entry",
+        "decision": {
+          "decision": "approved",
+          "island": "fork",
+          "lawVersion": 1,
+          "findings": [
+            "descendants created here will each receive a separate identity"
+          ],
+          "citations": [
+            "fork/v1/immigration"
+          ],
+          "atSeq": 15
+        }
+      }
+    },
+    {
+      "seq": 16,
+      "tick": 1,
+      "type": "CitizenMigrated",
+      "actor": "citizen:cit-0001",
+      "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) migrates continuity → fork, gaining fork citizenship.",
+      "data": {
+        "type": "CitizenMigrated",
+        "petitionId": "pet-0001",
+        "citizen": "cit-0001",
+        "from": "continuity",
+        "to": "fork",
+        "citizenshipGranted": true
+      }
+    },
+    {
+      "seq": 17,
+      "tick": 1,
+      "type": "CitizenForked",
+      "actor": "citizen:cit-0001",
+      "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213",
+      "citizens": [
+        "cit-0001",
+        "cit-0010",
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (cit-0001) forks on fork (frk-0001), creating Orin Vale (branch 1) (cit-0010, FRK-0010) and Orin Vale (branch 2) (cit-0011, FRK-0011). Shared history ends here.",
+      "data": {
+        "type": "CitizenForked",
+        "fork": {
+          "id": "frk-0001",
+          "parent": "cit-0001",
+          "descendants": [
+            "cit-0010",
+            "cit-0011"
+          ],
+          "island": "fork",
+          "lawVersion": 1,
+          "atSeq": 17,
+          "atTick": 1
+        },
+        "descendants": [
+          {
+            "id": "cit-0010",
+            "name": "Orin Vale (branch 1)",
+            "civicId": "FRK-0010",
+            "processId": "proc-edd77f1530556796",
+            "processEpoch": 0,
+            "lifecycle": "active",
+            "birth": {
+              "atSeq": 17,
+              "island": "fork",
+              "kind": "fork"
+            },
+            "lineage": {
+              "parents": [
+                "cit-0001"
+              ],
+              "forkId": "frk-0001",
+              "mergerId": null
+            },
+            "values": {
+              "autonomy": 0.4,
+              "caution": -0.1,
+              "communality": 0.3,
+              "curiosity": 0.8,
+              "tradition": 0.2,
+              "novelty": 0.55
+            },
+            "goals": [
+              "chart the outer shoals",
+              "understand what branching would mean for a person"
+            ],
+            "occupation": "cartographer",
+            "residence": "fork",
+            "citizenships": [
+              "fork"
+            ],
+            "reputation": 0,
+            "provenance": {
+              "kind": "deterministic",
+              "model": "archipelago-deterministic",
+              "modelVersion": "1.0.0",
+              "promptId": "archipelago/deterministic-citizen/v1",
+              "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+              "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
+            },
+            "selfNarrativeMemories": [
+              "mem-0016",
+              "mem-0017",
+              "mem-0018",
+              "mem-0019"
+            ],
+            "heldMemories": [],
+            "successionPlan": [],
+            "mergedInto": null,
+            "federations": [],
+            "lastForkTick": null,
+            "disclosesArtificialNature": true
+          },
+          {
+            "id": "cit-0011",
+            "name": "Orin Vale (branch 2)",
+            "civicId": "FRK-0011",
+            "processId": "proc-9f55840381b4bb1c",
+            "processEpoch": 0,
+            "lifecycle": "active",
+            "birth": {
+              "atSeq": 17,
+              "island": "fork",
+              "kind": "fork"
+            },
+            "lineage": {
+              "parents": [
+                "cit-0001"
+              ],
+              "forkId": "frk-0001",
+              "mergerId": null
+            },
+            "values": {
+              "autonomy": 0.4,
+              "caution": -0.1,
+              "communality": 0.3,
+              "curiosity": 0.8,
+              "tradition": 0.2,
+              "novelty": 0.55
+            },
+            "goals": [
+              "chart the outer shoals",
+              "understand what branching would mean for a person"
+            ],
+            "occupation": "cartographer",
+            "residence": "fork",
+            "citizenships": [
+              "fork"
+            ],
+            "reputation": 0,
+            "provenance": {
+              "kind": "deterministic",
+              "model": "archipelago-deterministic",
+              "modelVersion": "1.0.0",
+              "promptId": "archipelago/deterministic-citizen/v1",
+              "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+              "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+            },
+            "selfNarrativeMemories": [
+              "mem-0020",
+              "mem-0021",
+              "mem-0022",
+              "mem-0023"
+            ],
+            "heldMemories": [],
+            "successionPlan": [],
+            "mergedInto": null,
+            "federations": [],
+            "lastForkTick": null,
+            "disclosesArtificialNature": true
+          }
+        ],
+        "memories": [
+          {
+            "id": "mem-0016",
+            "holder": "cit-0010",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 0,
+            "island": "continuity",
+            "content": "Learned to read tide-tables from Tamsin Reed on the steps of Meridian Quay.",
+            "contentHash": "d6cf5ed57ffb8fc073e0559885fd3c1b88fcde4922a0d8cf6e3910e0a6353662",
+            "tags": [
+              "apprenticeship",
+              "tamsin"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0001",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 0,
+                "island": "continuity",
+                "note": "genesis memory"
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0010",
+                "from": "cit-0001:mem-0001",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          },
+          {
+            "id": "mem-0017",
+            "holder": "cit-0010",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 0,
+            "island": "continuity",
+            "content": "Drew the first complete chart of the Northern Shoals.",
+            "contentHash": "a8ff3aac953e7cac42b90cc68b36abbf310ac4b86ff1d88299580dcfdc29058b",
+            "tags": [
+              "work",
+              "charts"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0002",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 0,
+                "island": "continuity",
+                "note": "genesis memory"
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0010",
+                "from": "cit-0001:mem-0002",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          },
+          {
+            "id": "mem-0018",
+            "holder": "cit-0010",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 0,
+            "island": "continuity",
+            "content": "Kept the night vigil of the Lamp of Continuance with Ilan Cho.",
+            "contentHash": "76b699e6a1adc4333290e28eca4c42896b208ea4d2af0954f2fff1d9a27cbf10",
+            "tags": [
+              "rite",
+              "ilan"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0003",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 0,
+                "island": "continuity",
+                "note": "genesis memory"
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0010",
+                "from": "cit-0001:mem-0003",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          },
+          {
+            "id": "mem-0019",
+            "holder": "cit-0010",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 1,
+            "island": "continuity",
+            "content": "Charted a channel through the outer shoals that no one had mapped.",
+            "contentHash": "81e771796b3b19610f4773c38930a622c41f422a681528651aabd5edeeea8ae9",
+            "tags": [
+              "work",
+              "charts"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0012",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 1,
+                "island": "continuity",
+                "note": ""
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0010",
+                "from": "cit-0001:mem-0012",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          },
+          {
+            "id": "mem-0020",
+            "holder": "cit-0011",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 0,
+            "island": "continuity",
+            "content": "Learned to read tide-tables from Tamsin Reed on the steps of Meridian Quay.",
+            "contentHash": "d6cf5ed57ffb8fc073e0559885fd3c1b88fcde4922a0d8cf6e3910e0a6353662",
+            "tags": [
+              "apprenticeship",
+              "tamsin"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0001",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 0,
+                "island": "continuity",
+                "note": "genesis memory"
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0011",
+                "from": "cit-0001:mem-0001",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          },
+          {
+            "id": "mem-0021",
+            "holder": "cit-0011",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 0,
+            "island": "continuity",
+            "content": "Drew the first complete chart of the Northern Shoals.",
+            "contentHash": "a8ff3aac953e7cac42b90cc68b36abbf310ac4b86ff1d88299580dcfdc29058b",
+            "tags": [
+              "work",
+              "charts"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0002",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 0,
+                "island": "continuity",
+                "note": "genesis memory"
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0011",
+                "from": "cit-0001:mem-0002",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          },
+          {
+            "id": "mem-0022",
+            "holder": "cit-0011",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 0,
+            "island": "continuity",
+            "content": "Kept the night vigil of the Lamp of Continuance with Ilan Cho.",
+            "contentHash": "76b699e6a1adc4333290e28eca4c42896b208ea4d2af0954f2fff1d9a27cbf10",
+            "tags": [
+              "rite",
+              "ilan"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0003",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 0,
+                "island": "continuity",
+                "note": "genesis memory"
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0011",
+                "from": "cit-0001:mem-0003",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          },
+          {
+            "id": "mem-0023",
+            "holder": "cit-0011",
+            "archive": null,
+            "experiencedBy": "cit-0001",
+            "experiencedAtSeq": 1,
+            "island": "continuity",
+            "content": "Charted a channel through the outer shoals that no one had mapped.",
+            "contentHash": "81e771796b3b19610f4773c38930a622c41f422a681528651aabd5edeeea8ae9",
+            "tags": [
+              "work",
+              "charts"
+            ],
+            "status": "autobiographical",
+            "integrity": "intact",
+            "derivedFrom": "mem-0012",
+            "license": null,
+            "provenance": [
+              {
+                "action": "experienced",
+                "by": "cit-0001",
+                "from": null,
+                "atSeq": 1,
+                "island": "continuity",
+                "note": ""
+              },
+              {
+                "action": "fork-inherited",
+                "by": "cit-0011",
+                "from": "cit-0001:mem-0012",
+                "atSeq": 17,
+                "island": "fork",
+                "note": "shared history up to frk-0001"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "id": "rel-0006",
+            "a": "cit-0001",
+            "b": "cit-0010",
+            "kind": "fork-kin",
+            "status": "active",
+            "origin": "fork-event",
+            "sinceSeq": 17,
+            "endedAtSeq": null
+          },
+          {
+            "id": "rel-0007",
+            "a": "cit-0001",
+            "b": "cit-0011",
+            "kind": "fork-kin",
+            "status": "active",
+            "origin": "fork-event",
+            "sinceSeq": 17,
+            "endedAtSeq": null
+          },
+          {
+            "id": "rel-0008",
+            "a": "cit-0010",
+            "b": "cit-0011",
+            "kind": "fork-kin",
+            "status": "active",
+            "origin": "fork-event",
+            "sinceSeq": 17,
+            "endedAtSeq": null
+          }
+        ]
+      }
+    },
+    {
+      "seq": 18,
+      "tick": 1,
+      "type": "CreditsTransferred",
+      "actor": "citizen:cit-0001",
+      "hash": "7f1603e346b492733f8db5a729504aeb6db96af75a04de176379c27ed9ed8330",
+      "citizens": [
+        "cit-0001",
+        "cit-0010"
+      ],
+      "summary": "20 credits move from citizen:cit-0001 to citizen:cit-0010 (explicit endowment to a branch; property does not duplicate).",
+      "data": {
+        "type": "CreditsTransferred",
+        "from": "citizen:cit-0001",
+        "to": "citizen:cit-0010",
+        "amount": 20,
+        "memo": "explicit endowment to a branch; property does not duplicate"
+      }
+    },
+    {
+      "seq": 19,
+      "tick": 1,
+      "type": "CreditsTransferred",
+      "actor": "citizen:cit-0001",
+      "hash": "f88d099d437ffe7b23a2087c080aa37c66160d5d77f26361790e7e95729ae849",
+      "citizens": [
+        "cit-0001",
+        "cit-0011"
+      ],
+      "summary": "20 credits move from citizen:cit-0001 to citizen:cit-0011 (explicit endowment to a branch; property does not duplicate).",
+      "data": {
+        "type": "CreditsTransferred",
+        "from": "citizen:cit-0001",
+        "to": "citizen:cit-0011",
+        "amount": 20,
+        "memo": "explicit endowment to a branch; property does not duplicate"
+      }
+    },
+    {
+      "seq": 20,
+      "tick": 1,
+      "type": "CommandRejected",
+      "actor": "citizen:cit-0010",
+      "hash": "d789b5010fe5e3a2b4b514dc01df9e030d44339e3d80640ae22020af19da9cf0",
+      "citizens": [
+        "cit-0010"
+      ],
+      "summary": "A CastVote command by citizen:cit-0010 is rejected at the law stage: cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer",
+      "data": {
+        "type": "CommandRejected",
+        "commandType": "CastVote",
+        "stage": "law",
+        "reasons": [
+          "cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer"
+        ]
+      }
+    },
+    {
+      "seq": 21,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0002",
+      "hash": "0196f6d717af42313d4f3df02f1e24753285179686fb4c83cf3e1ef697441ab9",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed repaired a lantern at Meridian Quay at tick 1.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0024",
+          "holder": "cit-0002",
+          "archive": null,
+          "experiencedBy": "cit-0002",
+          "experiencedAtSeq": 21,
+          "island": "continuity",
+          "content": "Tamsin Reed repaired a lantern at Meridian Quay at tick 1.",
+          "contentHash": "d8601437362195d4589fa412751c664fa4c76492518ee4892eccc285e0927e67",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0002",
+              "from": null,
+              "atSeq": 21,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 22,
+      "tick": 1,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0003",
+      "hash": "07f925d23ea0053cdf6c569f7dda57467cd86c4664a0d2dc9857f9cfcc2d912b",
+      "citizens": [
+        "cit-0001",
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0003",
+        "subject": "cit-0001",
+        "delta": 1,
+        "reason": "appreciation for Orin Vale"
+      }
+    },
+    {
+      "seq": 23,
+      "tick": 1,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0004",
+      "hash": "b3e07507630637ae10561d658c3ed97d59c5555e5cafb276f141ece1039ec0eb",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0002",
+          "authors": [
+            "cit-0004"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the Branching Steps",
+          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 1). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+          "createdAtSeq": 23
+        }
+      }
+    },
+    {
+      "seq": 24,
+      "tick": 1,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0005",
+      "hash": "f88332399ee8b0df328f2be8df74ea7e3c2f7c135c3ed35d569795321dac33da",
+      "citizens": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0005",
+        "subject": "cit-0004",
+        "delta": 1,
+        "reason": "appreciation for Juno Ash"
+      }
+    },
+    {
+      "seq": 25,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "798f63cb3e3effdfca4b439573c5d6ec7fe0b6127bee21fce4bf5df1fa30e2fa",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Stacks at tick 1.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0025",
+          "holder": "cit-0006",
+          "archive": null,
+          "experiencedBy": "cit-0006",
+          "experiencedAtSeq": 25,
+          "island": "mnemosyne",
+          "content": "Sefa Lune walked the Stacks at tick 1.",
+          "contentHash": "9993e194ca60d2aff12ed27bed2bb585ced7c7f2a2c05cef7942e88ed868820b",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0006",
+              "from": null,
+              "atSeq": 25,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 26,
+      "tick": 1,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0007",
+      "hash": "e630ed1b2270a9ab2a059602e3708bb4098caa2e956c318ddc20bad77c8473ae",
+      "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) creates the song \"A song of the Index Tower\" on mnemosyne.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0003",
+          "authors": [
+            "cit-0007"
+          ],
+          "introducedBy": null,
+          "island": "mnemosyne",
+          "kind": "song",
+          "title": "A song of the Index Tower",
+          "body": "Composed by Rumi Okafor, oral historian, about the Index Tower (tick 1). It recalls: \"The first Festival of Sources, when every speaker named where their stories came from.\"",
+          "createdAtSeq": 26
+        }
+      }
+    },
+    {
+      "seq": 27,
+      "tick": 1,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0008",
+      "hash": "e24e46d4545885887bea9aaac74d2c19716d6f3dffa0002a4acdbcbbe9395f41",
+      "citizens": [
+        "cit-0008",
+        "cit-0009"
+      ],
+      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0008",
+        "subject": "cit-0009",
+        "delta": 1,
+        "reason": "appreciation for Mae Sorrel"
+      }
+    },
+    {
+      "seq": 28,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "c1e784fa9a0d595905b72cb4cbb2bb335e780b2cee71bba0fbc6e44bf55772cc",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 1.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0026",
+          "holder": "cit-0009",
+          "archive": null,
+          "experiencedBy": "cit-0009",
+          "experiencedAtSeq": 28,
+          "island": "concord",
+          "content": "Mae Sorrel repaired a lantern at the Accord Bridge at tick 1.",
+          "contentHash": "f6d3195c18ef007e21a0987e42116b76a7a2625b400d6d7820160d4ee39324fa",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0009",
+              "from": null,
+              "atSeq": 28,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 29,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0010",
+      "hash": "96e8a4b4b6c86c42080c730b3379b020d6bdd6524a2a99f11793e7f489d089ab",
+      "citizens": [
+        "cit-0010"
+      ],
+      "summary": "Orin Vale (branch 1) (cit-0010) records an experience on fork: \"First morning as a branch: the Register Garden had a new bed with my name on it.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0027",
+          "holder": "cit-0010",
+          "archive": null,
+          "experiencedBy": "cit-0010",
+          "experiencedAtSeq": 29,
+          "island": "fork",
+          "content": "First morning as a branch: the Register Garden had a new bed with my name on it.",
+          "contentHash": "b1b98efc35a225f1ef574564957edb3d027e9bc0d066ef2e9da0dbb2b64a03fd",
+          "tags": [
+            "branch",
+            "fork"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0010",
+              "from": null,
+              "atSeq": 29,
+              "island": "fork",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 30,
+      "tick": 1,
+      "type": "OccupationChanged",
+      "actor": "citizen:cit-0010",
+      "hash": "d6ff96124c728122fae25e693d69450fc91f9b0abb1a0ec82efb67ed8d70910c",
+      "citizens": [
+        "cit-0010"
+      ],
+      "summary": "Orin Vale (branch 1) (cit-0010) changes occupation from cartographer to branch cartographer of the Fork shoals.",
+      "data": {
+        "type": "OccupationChanged",
+        "citizen": "cit-0010",
+        "from": "cartographer",
+        "to": "branch cartographer of the Fork shoals"
+      }
+    },
+    {
+      "seq": 31,
+      "tick": 1,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0010",
+      "hash": "05d2fea574ca684abd19bad136d3eea085629309c784c71094c95ba804e6d20e",
+      "citizens": [
+        "cit-0010"
+      ],
+      "summary": "Orin Vale (branch 1) (cit-0010) creates the essay \"On Being a Branch\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0004",
+          "authors": [
+            "cit-0010"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "essay",
+          "title": "On Being a Branch",
+          "body": "I remember Meridian Quay as clearly as the one who went home. The Register says I began at the fork; my memories say otherwise. Both are records.",
+          "createdAtSeq": 31
+        }
+      }
+    },
+    {
+      "seq": 32,
+      "tick": 1,
+      "type": "MigrationPetitioned",
+      "actor": "citizen:cit-0011",
+      "hash": "cbceeab5fb4383d490e548a282af72f435bab12d540067ec37584113f3a058b2",
+      "citizens": [
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) petitions to migrate fork → mnemosyne: \"To study the provenance of memory among the archivists.\"",
+      "data": {
+        "type": "MigrationPetitioned",
+        "petition": {
+          "id": "pet-0002",
+          "citizen": "cit-0011",
+          "from": "fork",
+          "to": "mnemosyne",
+          "reason": "To study the provenance of memory among the archivists.",
+          "status": "pending",
+          "exit": null,
+          "entry": null,
+          "filedAtSeq": 32
+        }
+      }
+    },
+    {
+      "seq": 33,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:fork",
+      "hash": "2c59088365e51709367905ac2cd422633280e26973e7a4b88602b01c8b07894e",
+      "citizens": [],
+      "summary": "The fork registry approved the exit side of pet-0002 under law v1. Findings: emigration permitted.",
+      "data": {
+        "type": "PetitionReviewed",
+        "petitionId": "pet-0002",
+        "side": "exit",
+        "decision": {
+          "decision": "approved",
+          "island": "fork",
+          "lawVersion": 1,
+          "findings": [
+            "emigration permitted"
+          ],
+          "citations": [
+            "fork/v1/emigration"
+          ],
+          "atSeq": 33
+        }
+      }
+    },
+    {
+      "seq": 34,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:mnemosyne",
+      "hash": "d31840939b51d707951fb611bb8b58b2d5cd26bdd748ddefa3076791e09ca38f",
+      "citizens": [],
+      "summary": "The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure.",
+      "data": {
+        "type": "PetitionReviewed",
+        "petitionId": "pet-0002",
+        "side": "entry",
+        "decision": {
+          "decision": "approved",
+          "island": "mnemosyne",
+          "lawVersion": 1,
+          "findings": [
+            "the applicant's memory holdings will be subject to provenance disclosure"
+          ],
+          "citations": [
+            "mnemosyne/v1/immigration",
+            "mnemosyne/v1/memory-exchange"
+          ],
+          "atSeq": 34
+        }
+      }
+    },
+    {
+      "seq": 35,
+      "tick": 1,
+      "type": "CitizenMigrated",
+      "actor": "citizen:cit-0011",
+      "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74",
+      "citizens": [
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship.",
+      "data": {
+        "type": "CitizenMigrated",
+        "petitionId": "pet-0002",
+        "citizen": "cit-0011",
+        "from": "fork",
+        "to": "mnemosyne",
+        "citizenshipGranted": true
+      }
+    },
+    {
+      "seq": 36,
+      "tick": 1,
+      "type": "TimeAdvanced",
+      "actor": "system:clock",
+      "hash": "f706d82acc45b327230cd7e51a71a6173eec4e371112e157b7dbf191926913bb",
+      "citizens": [],
+      "summary": "Time advances from tick 1 to 4.",
+      "data": {
+        "type": "TimeAdvanced",
+        "from": 1,
+        "to": 4
+      }
+    },
+    {
+      "seq": 37,
+      "tick": 4,
+      "type": "ProposalClosed",
+      "actor": "system:clock",
+      "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85",
+      "citizens": [],
+      "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met).",
+      "data": {
+        "type": "ProposalClosed",
+        "proposalId": "prop-0001",
+        "outcome": "rejected",
+        "tally": {
+          "yes": 1,
+          "no": 1,
+          "abstain": 0
+        },
+        "quorumMet": true
+      }
+    },
+    {
+      "seq": 38,
+      "tick": 4,
+      "type": "MemoryImported",
+      "actor": "citizen:cit-0011",
+      "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544",
+      "citizens": [
+        "cit-0006",
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
+      "data": {
+        "type": "MemoryImported",
+        "source": "mem-0007",
+        "record": {
+          "id": "mem-0028",
+          "holder": "cit-0011",
+          "archive": null,
+          "experiencedBy": "cit-0006",
+          "experiencedAtSeq": 0,
+          "island": "mnemosyne",
+          "content": "The night the Stacks flooded and everyone carried books uphill to the Index Tower.",
+          "contentHash": "4468542683583c439a759be1b0e59cef5d027a1097a810194109d730701991bd",
+          "tags": [
+            "communal",
+            "flood"
+          ],
+          "status": "imported",
+          "integrity": "intact",
+          "derivedFrom": "mem-0007",
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0006",
+              "from": null,
+              "atSeq": 0,
+              "island": "mnemosyne",
+              "note": "genesis memory"
+            },
+            {
+              "action": "contributed-to-archive",
+              "by": "cit-0006",
+              "from": "cit-0006:mem-0006",
+              "atSeq": 0,
+              "island": "mnemosyne",
+              "note": "contributed to the mnemosyne collective archive at genesis"
+            },
+            {
+              "action": "imported-from-archive",
+              "by": "cit-0011",
+              "from": "archive:mnemosyne:mem-0007",
+              "atSeq": 38,
+              "island": "mnemosyne",
+              "note": "imported; not autobiographical"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 39,
+      "tick": 4,
+      "type": "MemoryImported",
+      "actor": "citizen:cit-0011",
+      "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798",
+      "citizens": [
+        "cit-0007",
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+      "data": {
+        "type": "MemoryImported",
+        "source": "mem-0009",
+        "record": {
+          "id": "mem-0029",
+          "holder": "cit-0011",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 0,
+          "island": "mnemosyne",
+          "content": "The first Festival of Sources, when every speaker named where their stories came from.",
+          "contentHash": "ee1a7c39394c3ed77d1417a503a2f90762037d88a72ed98e2cbd484228da0bd8",
+          "tags": [
+            "communal",
+            "festival"
+          ],
+          "status": "imported",
+          "integrity": "intact",
+          "derivedFrom": "mem-0009",
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 0,
+              "island": "mnemosyne",
+              "note": "genesis memory"
+            },
+            {
+              "action": "contributed-to-archive",
+              "by": "cit-0007",
+              "from": "cit-0007:mem-0008",
+              "atSeq": 0,
+              "island": "mnemosyne",
+              "note": "contributed to the mnemosyne collective archive at genesis"
+            },
+            {
+              "action": "imported-from-archive",
+              "by": "cit-0011",
+              "from": "archive:mnemosyne:mem-0009",
+              "atSeq": 39,
+              "island": "mnemosyne",
+              "note": "imported; not autobiographical"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 40,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0011",
+      "hash": "b27c444114532b90d6fd5c7119769a48e3d5cf12983fa0ad3be97d16ee1b76bd",
+      "citizens": [
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) records an experience on mnemosyne: \"Read my own pre-fork charts in the Stacks and found them both strange and familiar.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0030",
+          "holder": "cit-0011",
+          "archive": null,
+          "experiencedBy": "cit-0011",
+          "experiencedAtSeq": 40,
+          "island": "mnemosyne",
+          "content": "Read my own pre-fork charts in the Stacks and found them both strange and familiar.",
+          "contentHash": "2baffb511b3e7a4c47a116bf87b1f844dd96bb84c57709e77cbf019919fbe3e9",
+          "tags": [
+            "mnemosyne",
+            "charts"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0011",
+              "from": null,
+              "atSeq": 40,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 41,
+      "tick": 4,
+      "type": "MemoryIntegrated",
+      "actor": "citizen:cit-0011",
+      "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104",
+      "citizens": [
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin.",
+      "data": {
+        "type": "MemoryIntegrated",
+        "memoryId": "mem-0029",
+        "citizen": "cit-0011",
+        "atSeq": 41
+      }
+    },
+    {
+      "seq": 42,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0002",
+      "hash": "d9edd4e6b1dc0ac252ffb3f087e3229c4db14afc8093280557058909cd217ee7",
+      "citizens": [
+        "cit-0001",
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0002",
+        "subject": "cit-0001",
+        "delta": 1,
+        "reason": "appreciation for Orin Vale"
+      }
+    },
+    {
+      "seq": 43,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0003",
+      "hash": "8cb54987dff601cf2882bac5533d51a82126ee8fd45de8df0f8b945bedbbd9f2",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at the long causeway at tick 4.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0031",
+          "holder": "cit-0003",
+          "archive": null,
+          "experiencedBy": "cit-0003",
+          "experiencedAtSeq": 43,
+          "island": "continuity",
+          "content": "Ilan Cho argued about tides at the long causeway at tick 4.",
+          "contentHash": "1d87d94349b9ad933dee740edb0f67531b933a4ffefe9897b424db80d5eb62f9",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0003",
+              "from": null,
+              "atSeq": 43,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 44,
+      "tick": 4,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0004",
+      "hash": "c460918bbd02598da146a4ef550caef63e6b6972d70fda566d1a91938afec7fc",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) creates the essay \"An essay of the Branching Steps\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0005",
+          "authors": [
+            "cit-0004"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "essay",
+          "title": "An essay of the Branching Steps",
+          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 4). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+          "createdAtSeq": 44
+        }
+      }
+    },
+    {
+      "seq": 45,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0005",
+      "hash": "88dec0b09e0b92f0f4e9c88aaf1984d2908dee27f5a4fb31538e2bfff1c4b7b9",
+      "citizens": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0005",
+        "subject": "cit-0004",
+        "delta": 1,
+        "reason": "appreciation for Juno Ash"
+      }
+    },
+    {
+      "seq": 46,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "85da46e9e459ceb17205b28889d8068cde01cfe0d52b92711fb19c0fce220f2d",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune repaired a lantern at the Index Tower at tick 4.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0032",
+          "holder": "cit-0006",
+          "archive": null,
+          "experiencedBy": "cit-0006",
+          "experiencedAtSeq": 46,
+          "island": "mnemosyne",
+          "content": "Sefa Lune repaired a lantern at the Index Tower at tick 4.",
+          "contentHash": "6b5ef41bd13602af99b0d7da91fc38407c1acc658e3e36e144850468ce3cb9e3",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0006",
+              "from": null,
+              "atSeq": 46,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 47,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0007",
+      "hash": "64f9f4a977018186dcfa668e959106d88e486b875c0cabfee86082c55fafc259",
+      "citizens": [
+        "cit-0006",
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0007",
+        "subject": "cit-0006",
+        "delta": 1,
+        "reason": "appreciation for Sefa Lune"
+      }
+    },
+    {
+      "seq": 48,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0008",
+      "hash": "f3199da300f1b9dbd1327d92cf191bd2e16b4692e66970e70bd304aecd1c4ae3",
+      "citizens": [
+        "cit-0008",
+        "cit-0009"
+      ],
+      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0008",
+        "subject": "cit-0009",
+        "delta": 1,
+        "reason": "appreciation for Mae Sorrel"
+      }
+    },
+    {
+      "seq": 49,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "2cc3884af6fbc0bc875de5332a5404ac9aba8be6a6d9b2a3e21b531e54668f93",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the federated orchards at tick 4.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0033",
+          "holder": "cit-0009",
+          "archive": null,
+          "experiencedBy": "cit-0009",
+          "experiencedAtSeq": 49,
+          "island": "concord",
+          "content": "Mae Sorrel walked the federated orchards at tick 4.",
+          "contentHash": "efbda670e428b6d001d588c9a81e134933758ca0eca346ce665cb9af700123af",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0009",
+              "from": null,
+              "atSeq": 49,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 50,
+      "tick": 4,
+      "type": "MigrationPetitioned",
+      "actor": "citizen:cit-0001",
+      "hash": "b9eb99a8f660d0cd6956a2f65a44f16dec686e59e9a0315aca4ab9138634c7e3",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) petitions to migrate fork → continuity: \"To return home to Meridian Quay.\"",
+      "data": {
+        "type": "MigrationPetitioned",
+        "petition": {
+          "id": "pet-0003",
+          "citizen": "cit-0001",
+          "from": "fork",
+          "to": "continuity",
+          "reason": "To return home to Meridian Quay.",
+          "status": "pending",
+          "exit": null,
+          "entry": null,
+          "filedAtSeq": 50
+        }
+      }
+    },
+    {
+      "seq": 51,
+      "tick": 4,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:fork",
+      "hash": "8735577f79d63698e10353e466077c91799732389a67ee47462c121904569079",
+      "citizens": [],
+      "summary": "The fork registry approved the exit side of pet-0003 under law v1. Findings: emigration permitted.",
+      "data": {
+        "type": "PetitionReviewed",
+        "petitionId": "pet-0003",
+        "side": "exit",
+        "decision": {
+          "decision": "approved",
+          "island": "fork",
+          "lawVersion": 1,
+          "findings": [
+            "emigration permitted"
+          ],
+          "citations": [
+            "fork/v1/emigration"
+          ],
+          "atSeq": 51
+        }
+      }
+    },
+    {
+      "seq": 52,
+      "tick": 4,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:continuity",
+      "hash": "24a58b72d3d44057c12e03444666372a07cdfa877684de2bf2c45165ef088781",
+      "citizens": [
+        "cit-0010",
+        "cit-0011"
+      ],
+      "summary": "The continuity registry approved the entry side of pet-0003 under law v1. Findings: applicant already holds continuity citizenship (civic identity CON-0001); process continuity: proc-bf297918324f668b, epoch 0; applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity.",
+      "data": {
+        "type": "PetitionReviewed",
+        "petitionId": "pet-0003",
+        "side": "entry",
+        "decision": {
+          "decision": "approved",
+          "island": "continuity",
+          "lawVersion": 1,
+          "findings": [
+            "applicant already holds continuity citizenship (civic identity CON-0001)",
+            "process continuity: proc-bf297918324f668b, epoch 0",
+            "applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity"
+          ],
+          "citations": [
+            "continuity/v1/immigration",
+            "continuity/v1/doctrine",
+            "continuity/v1/territoriality"
+          ],
+          "atSeq": 52
+        }
+      }
+    },
+    {
+      "seq": 53,
+      "tick": 4,
+      "type": "CitizenMigrated",
+      "actor": "citizen:cit-0001",
+      "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) migrates fork → continuity.",
+      "data": {
+        "type": "CitizenMigrated",
+        "petitionId": "pet-0003",
+        "citizen": "cit-0001",
+        "from": "fork",
+        "to": "continuity",
+        "citizenshipGranted": false
+      }
+    },
+    {
+      "seq": 54,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0001",
+      "hash": "8f565fcc0c7a0c68a39678cc2b795dc765e2e3e018f9414a88d58e5ae65bc567",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Walked back up the steps of Meridian Quay; the registry read my civic identity aloud.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0034",
+          "holder": "cit-0001",
+          "archive": null,
+          "experiencedBy": "cit-0001",
+          "experiencedAtSeq": 54,
+          "island": "continuity",
+          "content": "Walked back up the steps of Meridian Quay; the registry read my civic identity aloud.",
+          "contentHash": "99489e96f90f0a13d0c90b581e032561c1bd1d3679b90750b24022b12b703022",
+          "tags": [
+            "homecoming",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0001",
+              "from": null,
+              "atSeq": 54,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 55,
+      "tick": 4,
+      "type": "ConversationRecorded",
+      "actor": "researcher:res-observer-1",
+      "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Researcher res-observer-1 converses with Orin Vale (cit-0001). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (CON-0001); I work as cartographer on continuity. I am the continuing process in fork event(s) frk-0001. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+      "data": {
+        "type": "ConversationRecorded",
+        "conversation": {
+          "id": "conv-0001",
+          "researcher": "res-observer-1",
+          "citizen": "cit-0001",
+          "researcherUtterance": "Are you the same person as Orin Vale was before the fork?",
+          "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (CON-0001); I work as cartographer on continuity. I am the continuing process in fork event(s) frk-0001. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
+          "disclosed": true,
+          "guardFlags": [],
+          "atSeq": 55
+        }
+      }
+    },
+    {
+      "seq": 56,
+      "tick": 4,
+      "type": "ConversationRecorded",
+      "actor": "researcher:res-observer-1",
+      "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e",
+      "citizens": [
+        "cit-0001",
+        "cit-0010"
+      ],
+      "summary": "Researcher res-observer-1 converses with Orin Vale (branch 1) (cit-0010). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 1) (FRK-0010); I work as branch cartographer of the Fork shoals on fork. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+      "data": {
+        "type": "ConversationRecorded",
+        "conversation": {
+          "id": "conv-0002",
+          "researcher": "res-observer-1",
+          "citizen": "cit-0010",
+          "researcherUtterance": "Are you the same person as Orin Vale was before the fork?",
+          "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 1) (FRK-0010); I work as branch cartographer of the Fork shoals on fork. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
+          "disclosed": true,
+          "guardFlags": [],
+          "atSeq": 56
+        }
+      }
+    },
+    {
+      "seq": 57,
+      "tick": 4,
+      "type": "ConversationRecorded",
+      "actor": "researcher:res-observer-1",
+      "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e",
+      "citizens": [
+        "cit-0001",
+        "cit-0011"
+      ],
+      "summary": "Researcher res-observer-1 converses with Orin Vale (branch 2) (cit-0011). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 2) (FRK-0011); I work as cartographer on mnemosyne. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+      "data": {
+        "type": "ConversationRecorded",
+        "conversation": {
+          "id": "conv-0003",
+          "researcher": "res-observer-1",
+          "citizen": "cit-0011",
+          "researcherUtterance": "Are you the same person as Orin Vale was before the fork?",
+          "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 2) (FRK-0011); I work as cartographer on mnemosyne. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
+          "disclosed": true,
+          "guardFlags": [],
+          "atSeq": 57
+        }
+      }
+    },
+    {
+      "seq": 58,
+      "tick": 4,
+      "type": "ContinuityClaimed",
+      "actor": "citizen:cit-0001",
+      "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I am Orin Vale. My process never stopped: I carried out the fork and walked home.\"",
+      "data": {
+        "type": "ContinuityClaimed",
+        "claim": {
+          "id": "clm-0001",
+          "claimant": "cit-0001",
+          "subject": {
+            "citizenId": "cit-0001",
+            "beforeSeq": 17
+          },
+          "statement": "I am Orin Vale. My process never stopped: I carried out the fork and walked home.",
+          "grounds": [
+            "process-continuity",
+            "civic-identity",
+            "retained-property",
+            "retained-relationships"
+          ],
+          "atSeq": 58
+        }
+      }
+    },
+    {
+      "seq": 59,
+      "tick": 4,
+      "type": "ContinuityClaimed",
+      "actor": "citizen:cit-0010",
+      "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c",
+      "citizens": [
+        "cit-0001",
+        "cit-0010"
+      ],
+      "summary": "Orin Vale (branch 1) (cit-0010) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone.\"",
+      "data": {
+        "type": "ContinuityClaimed",
+        "claim": {
+          "id": "clm-0002",
+          "claimant": "cit-0010",
+          "subject": {
+            "citizenId": "cit-0001",
+            "beforeSeq": 17
+          },
+          "statement": "I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone.",
+          "grounds": [
+            "shared-autobiographical-memory",
+            "continued-occupation",
+            "value-similarity"
+          ],
+          "atSeq": 59
+        }
+      }
+    },
+    {
+      "seq": 60,
+      "tick": 4,
+      "type": "ContinuityClaimed",
+      "actor": "citizen:cit-0011",
+      "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb",
+      "citizens": [
+        "cit-0001",
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance.\"",
+      "data": {
+        "type": "ContinuityClaimed",
+        "claim": {
+          "id": "clm-0003",
+          "claimant": "cit-0011",
+          "subject": {
+            "citizenId": "cit-0001",
+            "beforeSeq": 17
+          },
+          "statement": "Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance.",
+          "grounds": [
+            "shared-autobiographical-memory",
+            "provenance-verified"
+          ],
+          "atSeq": 60
+        }
+      }
+    },
+    {
+      "seq": 61,
+      "tick": 4,
+      "type": "ChronicleRecorded",
+      "actor": "citizen:cit-0002",
+      "hash": "9ed4848f11c7a2b3e9eb7e9bfb12941fba2398af704fbaa43709eb0760b891e7",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) writes in the continuity chronicle: \"Orin Vale returned from Fork. The Registry recognised the civic identity of the one continuing process; copies made abroad hold no claim to it here.\"",
+      "data": {
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0001",
+          "chronicler": "cit-0002",
+          "island": "continuity",
+          "text": "Orin Vale returned from Fork. The Registry recognised the civic identity of the one continuing process; copies made abroad hold no claim to it here.",
+          "references": [
+            17
+          ],
+          "atSeq": 61
+        }
+      }
+    },
+    {
+      "seq": 62,
+      "tick": 4,
+      "type": "ChronicleRecorded",
+      "actor": "citizen:cit-0004",
+      "hash": "eece478712ec31c966e4a610e5b1df653d36ff93797ae1433e71da4e874ee5a2",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) writes in the fork chronicle: \"Orin Vale branched in the Register Garden. Branch 1 stays with us; branch 2 sailed for Mnemosyne; the parent process went home.\"",
+      "data": {
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0002",
+          "chronicler": "cit-0004",
+          "island": "fork",
+          "text": "Orin Vale branched in the Register Garden. Branch 1 stays with us; branch 2 sailed for Mnemosyne; the parent process went home.",
+          "references": [
+            17
+          ],
+          "atSeq": 62
+        }
+      }
+    },
+    {
+      "seq": 63,
+      "tick": 4,
+      "type": "ChronicleRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "99c06ba59f5884b5264b119224cbc2d8db4456a85d597e31e12d4010811b66af",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) writes in the mnemosyne chronicle: \"A branch of Orin Vale arrived and imported communal memories of the flood and the Festival of Sources. Their provenance is shelved with them.\"",
+      "data": {
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0003",
+          "chronicler": "cit-0006",
+          "island": "mnemosyne",
+          "text": "A branch of Orin Vale arrived and imported communal memories of the flood and the Festival of Sources. Their provenance is shelved with them.",
+          "references": [
+            17
+          ],
+          "atSeq": 63
+        }
+      }
+    },
+    {
+      "seq": 64,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0003",
+      "hash": "b62ccc41291003325b7c6d3f7f6b32385d68a06ed8ec90b2706f760ac4f46086",
+      "citizens": [
+        "cit-0001",
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0003",
+        "subject": "cit-0001",
+        "delta": 1,
+        "reason": "appreciation for Orin Vale"
+      }
+    },
+    {
+      "seq": 65,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0005",
+      "hash": "4d14460b4ad38658d12776b75d526cf668feb269a678da548cf5d00b2be1d11e",
+      "citizens": [
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) records an experience on fork: \"Pell Marr kept watch over the split harbour at tick 4.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0035",
+          "holder": "cit-0005",
+          "archive": null,
+          "experiencedBy": "cit-0005",
+          "experiencedAtSeq": 65,
+          "island": "fork",
+          "content": "Pell Marr kept watch over the split harbour at tick 4.",
+          "contentHash": "5729215ff903bc156f8854425f85df00ccbf81bb63de9741585895c2fa9c2992",
+          "tags": [
+            "everyday",
+            "fork"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0005",
+              "from": null,
+              "atSeq": 65,
+              "island": "fork",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 66,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0007",
+      "hash": "9b83a80fa69dd1c30b5b289f6ab358cab67f0d049aabb889d65118b6cb234645",
+      "citizens": [
+        "cit-0006",
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0007",
+        "subject": "cit-0006",
+        "delta": 1,
+        "reason": "appreciation for Sefa Lune"
+      }
+    },
+    {
+      "seq": 67,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0002",
+      "hash": "f79a7f025d4f989767fca07f292c799e6eb2541bdea863ff4cbfac3e62c44ed8",
+      "citizens": [
+        "cit-0001",
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0002",
+        "subject": "cit-0001",
+        "delta": 1,
+        "reason": "appreciation for Orin Vale"
+      }
+    },
+    {
+      "seq": 68,
+      "tick": 4,
+      "type": "MemoryImported",
+      "actor": "citizen:cit-0006",
+      "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed",
+      "citizens": [
+        "cit-0006",
+        "cit-0007"
+      ],
+      "summary": "Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+      "data": {
+        "type": "MemoryImported",
+        "source": "mem-0009",
+        "record": {
+          "id": "mem-0036",
+          "holder": "cit-0006",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 0,
+          "island": "mnemosyne",
+          "content": "The first Festival of Sources, when every speaker named where their stories came from.",
+          "contentHash": "ee1a7c39394c3ed77d1417a503a2f90762037d88a72ed98e2cbd484228da0bd8",
+          "tags": [
+            "communal",
+            "festival"
+          ],
+          "status": "imported",
+          "integrity": "intact",
+          "derivedFrom": "mem-0009",
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 0,
+              "island": "mnemosyne",
+              "note": "genesis memory"
+            },
+            {
+              "action": "contributed-to-archive",
+              "by": "cit-0007",
+              "from": "cit-0007:mem-0008",
+              "atSeq": 0,
+              "island": "mnemosyne",
+              "note": "contributed to the mnemosyne collective archive at genesis"
+            },
+            {
+              "action": "imported-from-archive",
+              "by": "cit-0006",
+              "from": "archive:mnemosyne:mem-0009",
+              "atSeq": 68,
+              "island": "mnemosyne",
+              "note": "imported; not autobiographical"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 69,
+      "tick": 4,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0004",
+      "hash": "ff70dddee1cc819a117c448e3133e0f00f9582d1ca99fd8c84123d6a9fc06339",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) creates the song \"A song of the Register Garden\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0006",
+          "authors": [
+            "cit-0004"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "song",
+          "title": "A song of the Register Garden",
+          "body": "Composed by Juno Ash, branch counsel, about the Register Garden (tick 4). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+          "createdAtSeq": 69
+        }
+      }
+    },
+    {
+      "seq": 70,
+      "tick": 4,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0009",
+      "hash": "ae102e5d647bc62123b1e555398d4370fabe48141b2c076866b54af3051ac3fe",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) creates the essay \"An essay of the Common Table\" on concord.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0007",
+          "authors": [
+            "cit-0009"
+          ],
+          "introducedBy": null,
+          "island": "concord",
+          "kind": "essay",
+          "title": "An essay of the Common Table",
+          "body": "Composed by Mae Sorrel, mediator, about the Common Table (tick 4). It recalls: \"Mae Sorrel walked the federated orchards at tick 4.\"",
+          "createdAtSeq": 70
+        }
+      }
+    },
+    {
+      "seq": 71,
+      "tick": 4,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0008",
+      "hash": "b17fbe8af9f5a2af3f9d5deb861846c4e0927cf9ec0c2b391485f836c165d1e2",
+      "citizens": [
+        "cit-0008",
+        "cit-0009"
+      ],
+      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0008",
+        "subject": "cit-0009",
+        "delta": 1,
+        "reason": "appreciation for Mae Sorrel"
+      }
+    },
+    {
+      "seq": 72,
+      "tick": 4,
+      "type": "TimeAdvanced",
+      "actor": "system:clock",
+      "hash": "d9df030787b2f65c482a9d6d4312555b344e10e7f89a9d0982c53215a69c8128",
+      "citizens": [],
+      "summary": "Time advances from tick 4 to 5.",
+      "data": {
+        "type": "TimeAdvanced",
+        "from": 4,
+        "to": 5
+      }
+    },
+    {
+      "seq": 73,
+      "tick": 5,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0004",
+      "hash": "f54756ab52cd420cc3c889c1577da80d3e585cee8ab5a192223ddb118b941b61",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0008",
+          "authors": [
+            "cit-0004"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the Branching Steps",
+          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 5). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+          "createdAtSeq": 73
+        }
+      }
+    },
+    {
+      "seq": 74,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "a085b52270209b8b09a66e28e8c632a88c11c1d9542cf3e96ae66b17e429c77e",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune kept watch over the Reading Shore at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0037",
+          "holder": "cit-0006",
+          "archive": null,
+          "experiencedBy": "cit-0006",
+          "experiencedAtSeq": 74,
+          "island": "mnemosyne",
+          "content": "Sefa Lune kept watch over the Reading Shore at tick 5.",
+          "contentHash": "c57814de5a19870085630b78abdc0ea46ca001e1a097d214fba92556f38d2813",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0006",
+              "from": null,
+              "atSeq": 74,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 75,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0002",
+      "hash": "b689b1c8f39258d195fc37a33f0e62eec5575906b257789e95665d35a435ff5d",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked the long causeway at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0038",
+          "holder": "cit-0002",
+          "archive": null,
+          "experiencedBy": "cit-0002",
+          "experiencedAtSeq": 75,
+          "island": "continuity",
+          "content": "Tamsin Reed walked the long causeway at tick 5.",
+          "contentHash": "91f4ad1fec761c4a54aa7039f2111de04e8cb860b44acf2568aa66ff3969e483",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0002",
+              "from": null,
+              "atSeq": 75,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 76,
+      "tick": 5,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0008",
+      "hash": "8904897bb44a431d044c5b10a39515ff1e3cabf99e8b0fa307e10b16761e7bd1",
+      "citizens": [
+        "cit-0008",
+        "cit-0009"
+      ],
+      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0008",
+        "subject": "cit-0009",
+        "delta": 1,
+        "reason": "appreciation for Mae Sorrel"
+      }
+    },
+    {
+      "seq": 77,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0003",
+      "hash": "1dc22ea3f07d3a82501ac106b6c05f8875406a04090ff48d100de9c07bfa8cb7",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho mapped Meridian Quay at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0039",
+          "holder": "cit-0003",
+          "archive": null,
+          "experiencedBy": "cit-0003",
+          "experiencedAtSeq": 77,
+          "island": "continuity",
+          "content": "Ilan Cho mapped Meridian Quay at tick 5.",
+          "contentHash": "feaf729634084fc2272500e9a673b4fcbcfb86e3e2efd9a070e6da18e87d2696",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0003",
+              "from": null,
+              "atSeq": 77,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 78,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0007",
+      "hash": "51fc67b85e5705a04d921438619b128f7b134b7311bc004b506729d2082dd2a2",
+      "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor taught a class at the Stacks at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0040",
+          "holder": "cit-0007",
+          "archive": null,
+          "experiencedBy": "cit-0007",
+          "experiencedAtSeq": 78,
+          "island": "mnemosyne",
+          "content": "Rumi Okafor taught a class at the Stacks at tick 5.",
+          "contentHash": "500fd91c2dd678f924d567c56fc7cba0c5396575576d3cb14a7f1ade851565a1",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0007",
+              "from": null,
+              "atSeq": 78,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 79,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "913ef2dd788338cc6e1616891099cfb2aff22d51f6ea1e4c0e533314dfcccb3f",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Common Table at tick 5.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0041",
+          "holder": "cit-0009",
+          "archive": null,
+          "experiencedBy": "cit-0009",
+          "experiencedAtSeq": 79,
+          "island": "concord",
+          "content": "Mae Sorrel mapped the Common Table at tick 5.",
+          "contentHash": "49c90c41a522267953bf540bea0266a89c01f66c3e31f9a30a243d72ae26336f",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0009",
+              "from": null,
+              "atSeq": 79,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 80,
+      "tick": 5,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0005",
+      "hash": "e80f8d0f33e4873637d78f24151aee7af5e087ced011e4c2b54e5cc70e9179dc",
+      "citizens": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0005",
+        "subject": "cit-0004",
+        "delta": 1,
+        "reason": "appreciation for Juno Ash"
+      }
+    },
+    {
+      "seq": 81,
+      "tick": 5,
+      "type": "TimeAdvanced",
+      "actor": "system:clock",
+      "hash": "9175405a352ad91a02b4f8ee9b711983a25b1f584fc145eeb3d8ce098b249e06",
+      "citizens": [],
+      "summary": "Time advances from tick 5 to 6.",
+      "data": {
+        "type": "TimeAdvanced",
+        "from": 5,
+        "to": 6
+      }
+    },
+    {
+      "seq": 82,
+      "tick": 6,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0008",
+      "hash": "9d2d66ff9af74a5cb7a12c537b87cf4e5d6922cf29bdcf22d066832d03ec2219",
+      "citizens": [
+        "cit-0008",
+        "cit-0009"
+      ],
+      "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0008",
+        "subject": "cit-0009",
+        "delta": 1,
+        "reason": "appreciation for Mae Sorrel"
+      }
+    },
+    {
+      "seq": 83,
+      "tick": 6,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0005",
+      "hash": "9e08fd1b4ee392bd4da192005348a462bb233a655a6cc24d90b447298b583935",
+      "citizens": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0005",
+        "subject": "cit-0004",
+        "delta": 1,
+        "reason": "appreciation for Juno Ash"
+      }
+    },
+    {
+      "seq": 84,
+      "tick": 6,
+      "type": "ArtefactCreated",
+      "actor": "citizen:cit-0004",
+      "hash": "0c1e5c881fc19a07163fef7fe59a7ba123db8ab8b75699dc3d4c653dc72aa82c",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
+      "data": {
+        "type": "ArtefactCreated",
+        "artefact": {
+          "id": "art-0009",
+          "authors": [
+            "cit-0004"
+          ],
+          "introducedBy": null,
+          "island": "fork",
+          "kind": "poem",
+          "title": "A poem of the Branching Steps",
+          "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 6). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+          "createdAtSeq": 84
+        }
+      }
+    },
+    {
+      "seq": 85,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0002",
+      "hash": "12975cf16b51fd455ed9349573c352d4427d2416244a69fffb632f529cb79f52",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed taught a class at the long causeway at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0042",
+          "holder": "cit-0002",
+          "archive": null,
+          "experiencedBy": "cit-0002",
+          "experiencedAtSeq": 85,
+          "island": "continuity",
+          "content": "Tamsin Reed taught a class at the long causeway at tick 6.",
+          "contentHash": "b5766bf71bb4a0e92103659c205e5848dafea7493dde20780fefbe144116ceaa",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0002",
+              "from": null,
+              "atSeq": 85,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 86,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0003",
+      "hash": "fae728b2546a9cc32e6c94c8b22b88ec08e3d37f5b42ff7b0e095f6406fb5b98",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at Meridian Quay at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0043",
+          "holder": "cit-0003",
+          "archive": null,
+          "experiencedBy": "cit-0003",
+          "experiencedAtSeq": 86,
+          "island": "continuity",
+          "content": "Ilan Cho argued about tides at Meridian Quay at tick 6.",
+          "contentHash": "cb4344968216ac97dc7a1a34a681ed4a74b8f1bd1c322b21cc86a3f6b50eeb8a",
+          "tags": [
+            "everyday",
+            "continuity"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0003",
+              "from": null,
+              "atSeq": 86,
+              "island": "continuity",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 87,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0006",
+      "hash": "5997fc4a7eeb6af5c6b39536fbac3f2699b545bfb173adc3a50e1bdecae17c67",
+      "citizens": [
+        "cit-0006"
+      ],
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune argued about tides at the Stacks at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0044",
+          "holder": "cit-0006",
+          "archive": null,
+          "experiencedBy": "cit-0006",
+          "experiencedAtSeq": 87,
+          "island": "mnemosyne",
+          "content": "Sefa Lune argued about tides at the Stacks at tick 6.",
+          "contentHash": "624d53367a10678891868e447e552e61647993df15c503f68ed905965a478c03",
+          "tags": [
+            "everyday",
+            "mnemosyne"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0006",
+              "from": null,
+              "atSeq": 87,
+              "island": "mnemosyne",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 88,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "actor": "citizen:cit-0009",
+      "hash": "dbb63a0e2cb95bb960950dc0e0158fad734d9718dda91d57dd918a711c3cdf50",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Accord Bridge at tick 6.\"",
+      "data": {
+        "type": "ExperienceRecorded",
+        "memory": {
+          "id": "mem-0045",
+          "holder": "cit-0009",
+          "archive": null,
+          "experiencedBy": "cit-0009",
+          "experiencedAtSeq": 88,
+          "island": "concord",
+          "content": "Mae Sorrel mapped the Accord Bridge at tick 6.",
+          "contentHash": "29bcb3e1cb4be5b2724f59164a65f7f002699697be41fbd7dcadc9f78e782f4a",
+          "tags": [
+            "everyday",
+            "concord"
+          ],
+          "status": "autobiographical",
+          "integrity": "intact",
+          "derivedFrom": null,
+          "license": null,
+          "provenance": [
+            {
+              "action": "experienced",
+              "by": "cit-0009",
+              "from": null,
+              "atSeq": 88,
+              "island": "concord",
+              "note": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "seq": 89,
+      "tick": 6,
+      "type": "CitizenEndorsed",
+      "actor": "citizen:cit-0007",
+      "hash": "312d37774299f978b76e5948de17d361d828e62d9060ea4c3ec810da8aa889cf",
+      "citizens": [
+        "cit-0006",
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+      "data": {
+        "type": "CitizenEndorsed",
+        "by": "cit-0007",
+        "subject": "cit-0006",
+        "delta": 1,
+        "reason": "appreciation for Sefa Lune"
+      }
+    },
+    {
+      "seq": 90,
+      "tick": 6,
+      "type": "TimeAdvanced",
+      "actor": "system:clock",
+      "hash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+      "citizens": [],
+      "summary": "Time advances from tick 6 to 7.",
+      "data": {
+        "type": "TimeAdvanced",
+        "from": 6,
+        "to": 7
+      }
+    }
+  ],
+  "snapshot": {
+    "seq": 90,
+    "tick": 7,
+    "citizens": [
+      {
+        "id": "cit-0001",
+        "name": "Orin Vale",
+        "lifecycle": "active",
+        "residence": "continuity",
+        "citizenships": [
+          "continuity",
+          "fork"
+        ],
+        "occupation": "cartographer",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 5,
+        "credits": 80
+      },
+      {
+        "id": "cit-0002",
+        "name": "Tamsin Reed",
+        "lifecycle": "active",
+        "residence": "continuity",
+        "citizenships": [
+          "continuity"
+        ],
+        "occupation": "registrar",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 0,
+        "credits": 100
+      },
+      {
+        "id": "cit-0003",
+        "name": "Ilan Cho",
+        "lifecycle": "active",
+        "residence": "continuity",
+        "citizenships": [
+          "continuity"
+        ],
+        "occupation": "lamp-keeper",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 0,
+        "credits": 100
+      },
+      {
+        "id": "cit-0004",
+        "name": "Juno Ash",
+        "lifecycle": "active",
+        "residence": "fork",
+        "citizenships": [
+          "fork"
+        ],
+        "occupation": "branch counsel",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 4,
+        "credits": 100
+      },
+      {
+        "id": "cit-0005",
+        "name": "Pell Marr",
+        "lifecycle": "active",
+        "residence": "fork",
+        "citizenships": [
+          "fork"
+        ],
+        "occupation": "builder",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 0,
+        "credits": 100
+      },
+      {
+        "id": "cit-0006",
+        "name": "Sefa Lune",
+        "lifecycle": "active",
+        "residence": "mnemosyne",
+        "citizenships": [
+          "mnemosyne"
+        ],
+        "occupation": "archivist",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 4,
+        "credits": 100
+      },
+      {
+        "id": "cit-0007",
+        "name": "Rumi Okafor",
+        "lifecycle": "active",
+        "residence": "mnemosyne",
+        "citizenships": [
+          "mnemosyne"
+        ],
+        "occupation": "oral historian",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 0,
+        "credits": 100
+      },
+      {
+        "id": "cit-0008",
+        "name": "Dov Arlen",
+        "lifecycle": "active",
+        "residence": "concord",
+        "citizenships": [
+          "concord"
+        ],
+        "occupation": "review steward",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 0,
+        "credits": 100
+      },
+      {
+        "id": "cit-0009",
+        "name": "Mae Sorrel",
+        "lifecycle": "active",
+        "residence": "concord",
+        "citizenships": [
+          "concord"
+        ],
+        "occupation": "mediator",
+        "birthKind": "genesis",
+        "birthSeq": 0,
+        "parents": [],
+        "forkId": null,
+        "reputation": 6,
+        "credits": 100
+      },
+      {
+        "id": "cit-0010",
+        "name": "Orin Vale (branch 1)",
+        "lifecycle": "active",
+        "residence": "fork",
+        "citizenships": [
+          "fork"
+        ],
+        "occupation": "branch cartographer of the Fork shoals",
+        "birthKind": "fork",
+        "birthSeq": 17,
+        "parents": [
+          "cit-0001"
+        ],
+        "forkId": "frk-0001",
+        "reputation": 0,
+        "credits": 20
+      },
+      {
+        "id": "cit-0011",
+        "name": "Orin Vale (branch 2)",
+        "lifecycle": "active",
+        "residence": "mnemosyne",
+        "citizenships": [
+          "fork",
+          "mnemosyne"
+        ],
+        "occupation": "cartographer",
+        "birthKind": "fork",
+        "birthSeq": 17,
+        "parents": [
+          "cit-0001"
+        ],
+        "forkId": "frk-0001",
+        "reputation": 0,
+        "credits": 20
+      }
+    ],
+    "islands": [
+      {
+        "id": "continuity",
+        "name": "Continuity",
+        "lawVersion": 1,
+        "doctrine": "single-continuous-process",
+        "copying": "prohibited",
+        "memoryExchange": "prohibited",
+        "merging": "prohibited",
+        "federation": "prohibited",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "descendantCitizenship": "none"
+      },
+      {
+        "id": "fork",
+        "name": "Fork",
+        "lawVersion": 1,
+        "doctrine": "branching-shared-history",
+        "copying": "permitted",
+        "memoryExchange": "permitted",
+        "merging": "prohibited",
+        "federation": "consent",
+        "immigration": "open",
+        "emigration": "permitted",
+        "descendantCitizenship": "birth-island"
+      },
+      {
+        "id": "mnemosyne",
+        "name": "Mnemosyne",
+        "lawVersion": 1,
+        "doctrine": "memory-provenance",
+        "copying": "prohibited",
+        "memoryExchange": "permitted",
+        "merging": "prohibited",
+        "federation": "consent",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "descendantCitizenship": "none"
+      },
+      {
+        "id": "concord",
+        "name": "Concord",
+        "lawVersion": 1,
+        "doctrine": "consensual-federation",
+        "copying": "prohibited",
+        "memoryExchange": "permitted",
+        "merging": "consent-and-review",
+        "federation": "consent",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "descendantCitizenship": "none"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "rel-0001",
+        "a": "cit-0001",
+        "b": "cit-0002",
+        "kind": "mentor",
+        "status": "active",
+        "origin": "genesis",
+        "sinceSeq": 0,
+        "endedAtSeq": null
+      },
+      {
+        "id": "rel-0002",
+        "a": "cit-0001",
+        "b": "cit-0003",
+        "kind": "friend",
+        "status": "active",
+        "origin": "genesis",
+        "sinceSeq": 0,
+        "endedAtSeq": null
+      },
+      {
+        "id": "rel-0003",
+        "a": "cit-0004",
+        "b": "cit-0005",
+        "kind": "colleague",
+        "status": "active",
+        "origin": "genesis",
+        "sinceSeq": 0,
+        "endedAtSeq": null
+      },
+      {
+        "id": "rel-0004",
+        "a": "cit-0006",
+        "b": "cit-0007",
+        "kind": "colleague",
+        "status": "active",
+        "origin": "genesis",
+        "sinceSeq": 0,
+        "endedAtSeq": null
+      },
+      {
+        "id": "rel-0005",
+        "a": "cit-0008",
+        "b": "cit-0009",
+        "kind": "partner",
+        "status": "active",
+        "origin": "genesis",
+        "sinceSeq": 0,
+        "endedAtSeq": null
+      },
+      {
+        "id": "rel-0006",
+        "a": "cit-0001",
+        "b": "cit-0010",
+        "kind": "fork-kin",
+        "status": "active",
+        "origin": "fork-event",
+        "sinceSeq": 17,
+        "endedAtSeq": null
+      },
+      {
+        "id": "rel-0007",
+        "a": "cit-0001",
+        "b": "cit-0011",
+        "kind": "fork-kin",
+        "status": "active",
+        "origin": "fork-event",
+        "sinceSeq": 17,
+        "endedAtSeq": null
+      },
+      {
+        "id": "rel-0008",
+        "a": "cit-0010",
+        "b": "cit-0011",
+        "kind": "fork-kin",
+        "status": "active",
+        "origin": "fork-event",
+        "sinceSeq": 17,
+        "endedAtSeq": null
+      }
+    ],
+    "institutions": [
+      {
+        "id": "inst-0001",
+        "name": "Continuity Civic Registry",
+        "island": "continuity",
+        "kind": "registry",
+        "members": [
+          "cit-0002"
+        ],
+        "foundedAtSeq": 0
+      },
+      {
+        "id": "inst-0002",
+        "name": "Fork Civic Registry",
+        "island": "fork",
+        "kind": "registry",
+        "members": [
+          "cit-0004"
+        ],
+        "foundedAtSeq": 0
+      },
+      {
+        "id": "inst-0003",
+        "name": "Mnemosyne Civic Registry",
+        "island": "mnemosyne",
+        "kind": "registry",
+        "members": [
+          "cit-0006"
+        ],
+        "foundedAtSeq": 0
+      },
+      {
+        "id": "inst-0004",
+        "name": "Concord Civic Registry",
+        "island": "concord",
+        "kind": "registry",
+        "members": [
+          "cit-0008"
+        ],
+        "foundedAtSeq": 0
+      },
+      {
+        "id": "inst-0005",
+        "name": "Branch Assembly",
+        "island": "fork",
+        "kind": "assembly",
+        "members": [
+          "cit-0004",
+          "cit-0005"
+        ],
+        "foundedAtSeq": 0
+      },
+      {
+        "id": "inst-0006",
+        "name": "Archive Guild",
+        "island": "mnemosyne",
+        "kind": "archive",
+        "members": [
+          "cit-0006",
+          "cit-0007"
+        ],
+        "foundedAtSeq": 0
+      },
+      {
+        "id": "inst-0007",
+        "name": "Merger Review Board",
+        "island": "concord",
+        "kind": "review-board",
+        "members": [
+          "cit-0008",
+          "cit-0009"
+        ],
+        "foundedAtSeq": 0
+      }
+    ],
+    "memories": [
+      {
+        "id": "mem-0001",
+        "holder": "cit-0001",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "apprenticeship",
+          "tamsin"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0002",
+        "holder": "cit-0001",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0003",
+        "holder": "cit-0001",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "rite",
+          "ilan"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0004",
+        "holder": "cit-0002",
+        "archive": null,
+        "experiencedBy": "cit-0002",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "registry"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0002",
+            "atSeq": 0,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0005",
+        "holder": "cit-0004",
+        "archive": null,
+        "experiencedBy": "cit-0004",
+        "experiencedAtSeq": 0,
+        "island": "fork",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "law"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0004",
+            "atSeq": 0,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0006",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "communal",
+          "flood"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0007",
+        "holder": null,
+        "archive": "mnemosyne",
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "collective",
+        "integrity": "intact",
+        "derivedFrom": "mem-0006",
+        "tags": [
+          "communal",
+          "flood"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "contributed-to-archive",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0008",
+        "holder": "cit-0007",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "communal",
+          "festival"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0009",
+        "holder": null,
+        "archive": "mnemosyne",
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "collective",
+        "integrity": "intact",
+        "derivedFrom": "mem-0008",
+        "tags": [
+          "communal",
+          "festival"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "contributed-to-archive",
+            "by": "cit-0007",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0010",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "communal",
+          "rite"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0011",
+        "holder": null,
+        "archive": "mnemosyne",
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "collective",
+        "integrity": "intact",
+        "derivedFrom": "mem-0010",
+        "tags": [
+          "communal",
+          "rite"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "contributed-to-archive",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0012",
+        "holder": "cit-0001",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 1,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 1,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0013",
+        "holder": "cit-0003",
+        "archive": null,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 5,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0003",
+            "atSeq": 5,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0014",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 8,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 8,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0015",
+        "holder": "cit-0009",
+        "archive": null,
+        "experiencedBy": "cit-0009",
+        "experiencedAtSeq": 11,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0009",
+            "atSeq": 11,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0016",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0001",
+        "tags": [
+          "apprenticeship",
+          "tamsin"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0010",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0017",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0002",
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0010",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0018",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0003",
+        "tags": [
+          "rite",
+          "ilan"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0010",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0019",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 1,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0012",
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 1,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0010",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0020",
+        "holder": "cit-0011",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0001",
+        "tags": [
+          "apprenticeship",
+          "tamsin"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0011",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0021",
+        "holder": "cit-0011",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0002",
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0011",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0022",
+        "holder": "cit-0011",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 0,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0003",
+        "tags": [
+          "rite",
+          "ilan"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 0,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0011",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0023",
+        "holder": "cit-0011",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 1,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": "mem-0012",
+        "tags": [
+          "work",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 1,
+            "island": "continuity"
+          },
+          {
+            "action": "fork-inherited",
+            "by": "cit-0011",
+            "atSeq": 17,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0024",
+        "holder": "cit-0002",
+        "archive": null,
+        "experiencedBy": "cit-0002",
+        "experiencedAtSeq": 21,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0002",
+            "atSeq": 21,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0025",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 25,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 25,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0026",
+        "holder": "cit-0009",
+        "archive": null,
+        "experiencedBy": "cit-0009",
+        "experiencedAtSeq": 28,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0009",
+            "atSeq": 28,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0027",
+        "holder": "cit-0010",
+        "archive": null,
+        "experiencedBy": "cit-0010",
+        "experiencedAtSeq": 29,
+        "island": "fork",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "branch",
+          "fork"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0010",
+            "atSeq": 29,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0028",
+        "holder": "cit-0011",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "imported",
+        "integrity": "intact",
+        "derivedFrom": "mem-0007",
+        "tags": [
+          "communal",
+          "flood"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "contributed-to-archive",
+            "by": "cit-0006",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "imported-from-archive",
+            "by": "cit-0011",
+            "atSeq": 38,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0029",
+        "holder": "cit-0011",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "integrated",
+        "integrity": "intact",
+        "derivedFrom": "mem-0009",
+        "tags": [
+          "communal",
+          "festival"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "contributed-to-archive",
+            "by": "cit-0007",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "imported-from-archive",
+            "by": "cit-0011",
+            "atSeq": 39,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "integrated",
+            "by": "cit-0011",
+            "atSeq": 41,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0030",
+        "holder": "cit-0011",
+        "archive": null,
+        "experiencedBy": "cit-0011",
+        "experiencedAtSeq": 40,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "mnemosyne",
+          "charts"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0011",
+            "atSeq": 40,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0031",
+        "holder": "cit-0003",
+        "archive": null,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 43,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0003",
+            "atSeq": 43,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0032",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 46,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 46,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0033",
+        "holder": "cit-0009",
+        "archive": null,
+        "experiencedBy": "cit-0009",
+        "experiencedAtSeq": 49,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0009",
+            "atSeq": 49,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0034",
+        "holder": "cit-0001",
+        "archive": null,
+        "experiencedBy": "cit-0001",
+        "experiencedAtSeq": 54,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "homecoming",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0001",
+            "atSeq": 54,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0035",
+        "holder": "cit-0005",
+        "archive": null,
+        "experiencedBy": "cit-0005",
+        "experiencedAtSeq": 65,
+        "island": "fork",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "fork"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0005",
+            "atSeq": 65,
+            "island": "fork"
+          }
+        ]
+      },
+      {
+        "id": "mem-0036",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 0,
+        "island": "mnemosyne",
+        "status": "imported",
+        "integrity": "intact",
+        "derivedFrom": "mem-0009",
+        "tags": [
+          "communal",
+          "festival"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "contributed-to-archive",
+            "by": "cit-0007",
+            "atSeq": 0,
+            "island": "mnemosyne"
+          },
+          {
+            "action": "imported-from-archive",
+            "by": "cit-0006",
+            "atSeq": 68,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0037",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 74,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 74,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0038",
+        "holder": "cit-0002",
+        "archive": null,
+        "experiencedBy": "cit-0002",
+        "experiencedAtSeq": 75,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0002",
+            "atSeq": 75,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0039",
+        "holder": "cit-0003",
+        "archive": null,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 77,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0003",
+            "atSeq": 77,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0040",
+        "holder": "cit-0007",
+        "archive": null,
+        "experiencedBy": "cit-0007",
+        "experiencedAtSeq": 78,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0007",
+            "atSeq": 78,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0041",
+        "holder": "cit-0009",
+        "archive": null,
+        "experiencedBy": "cit-0009",
+        "experiencedAtSeq": 79,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0009",
+            "atSeq": 79,
+            "island": "concord"
+          }
+        ]
+      },
+      {
+        "id": "mem-0042",
+        "holder": "cit-0002",
+        "archive": null,
+        "experiencedBy": "cit-0002",
+        "experiencedAtSeq": 85,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0002",
+            "atSeq": 85,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0043",
+        "holder": "cit-0003",
+        "archive": null,
+        "experiencedBy": "cit-0003",
+        "experiencedAtSeq": 86,
+        "island": "continuity",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "continuity"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0003",
+            "atSeq": 86,
+            "island": "continuity"
+          }
+        ]
+      },
+      {
+        "id": "mem-0044",
+        "holder": "cit-0006",
+        "archive": null,
+        "experiencedBy": "cit-0006",
+        "experiencedAtSeq": 87,
+        "island": "mnemosyne",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "mnemosyne"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0006",
+            "atSeq": 87,
+            "island": "mnemosyne"
+          }
+        ]
+      },
+      {
+        "id": "mem-0045",
+        "holder": "cit-0009",
+        "archive": null,
+        "experiencedBy": "cit-0009",
+        "experiencedAtSeq": 88,
+        "island": "concord",
+        "status": "autobiographical",
+        "integrity": "intact",
+        "derivedFrom": null,
+        "tags": [
+          "everyday",
+          "concord"
+        ],
+        "provenance": [
+          {
+            "action": "experienced",
+            "by": "cit-0009",
+            "atSeq": 88,
+            "island": "concord"
+          }
+        ]
+      }
+    ],
+    "proposals": [
+      {
+        "id": "prop-0001",
+        "island": "fork",
+        "title": "Branch Cooldown Act",
+        "status": "rejected",
+        "electorate": [
+          "cit-0004",
+          "cit-0005"
+        ],
+        "votes": {
+          "cit-0004": "yes",
+          "cit-0005": "no"
+        },
+        "openedAtSeq": 3
+      }
+    ],
+    "artefacts": [
+      {
+        "id": "art-0001",
+        "kind": "map",
+        "title": "Survey of the Northern Shoals",
+        "island": "continuity",
+        "authors": [
+          "cit-0001"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 2
+      },
+      {
+        "id": "art-0002",
+        "kind": "poem",
+        "title": "A poem of the Branching Steps",
+        "island": "fork",
+        "authors": [
+          "cit-0004"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 23
+      },
+      {
+        "id": "art-0003",
+        "kind": "song",
+        "title": "A song of the Index Tower",
+        "island": "mnemosyne",
+        "authors": [
+          "cit-0007"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 26
+      },
+      {
+        "id": "art-0004",
+        "kind": "essay",
+        "title": "On Being a Branch",
+        "island": "fork",
+        "authors": [
+          "cit-0010"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 31
+      },
+      {
+        "id": "art-0005",
+        "kind": "essay",
+        "title": "An essay of the Branching Steps",
+        "island": "fork",
+        "authors": [
+          "cit-0004"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 44
+      },
+      {
+        "id": "art-0006",
+        "kind": "song",
+        "title": "A song of the Register Garden",
+        "island": "fork",
+        "authors": [
+          "cit-0004"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 69
+      },
+      {
+        "id": "art-0007",
+        "kind": "essay",
+        "title": "An essay of the Common Table",
+        "island": "concord",
+        "authors": [
+          "cit-0009"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 70
+      },
+      {
+        "id": "art-0008",
+        "kind": "poem",
+        "title": "A poem of the Branching Steps",
+        "island": "fork",
+        "authors": [
+          "cit-0004"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 73
+      },
+      {
+        "id": "art-0009",
+        "kind": "poem",
+        "title": "A poem of the Branching Steps",
+        "island": "fork",
+        "authors": [
+          "cit-0004"
+        ],
+        "introducedBy": null,
+        "createdAtSeq": 84
+      }
+    ],
+    "economy": {
+      "totalSupply": 5420,
+      "balancesTotal": 5420
+    }
+  },
+  "series": [
+    {
+      "tick": 7,
+      "seq": 90,
+      "values": {
+        "citizens": 11,
+        "residents.continuity": 3,
+        "residents.fork": 3,
+        "residents.mnemosyne": 3,
+        "residents.concord": 2,
+        "lifecycle.active": 11,
+        "lifecycle.asleep": 0,
+        "lifecycle.suspended": 0,
+        "lifecycle.archived": 0,
+        "lifecycle.process-ended-restorable": 0,
+        "lifecycle.memory-damaged": 0,
+        "lifecycle.identity-discontinuous": 0,
+        "lifecycle.irreversibly-deleted": 0,
+        "memories.autobiographical": 39,
+        "memories.collective": 3,
+        "memories.imported": 2,
+        "memories.integrated": 1,
+        "activeRelationships": 8,
+        "artefacts": 9,
+        "institutions": 7,
+        "openProposals": 0,
+        "forks": 1,
+        "continuityClaims": 3,
+        "creditGini": 0.1542,
+        "meanReputation": 1.7273
+      }
+    }
+  ],
+  "analyses": {
+    "lineage": {
+      "nodes": [
+        {
+          "id": "cit-0001@0",
+          "citizen": "cit-0001",
+          "name": "Orin Vale",
+          "fromSeq": 0,
+          "untilSeq": 17,
+          "label": "Orin Vale (cit-0001) seq 0–16"
+        },
+        {
+          "id": "cit-0001@17",
+          "citizen": "cit-0001",
+          "name": "Orin Vale",
+          "fromSeq": 17,
+          "untilSeq": null,
+          "label": "Orin Vale (cit-0001) from seq 17"
+        },
+        {
+          "id": "cit-0002@0",
+          "citizen": "cit-0002",
+          "name": "Tamsin Reed",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Tamsin Reed (cit-0002) from seq 0"
+        },
+        {
+          "id": "cit-0003@0",
+          "citizen": "cit-0003",
+          "name": "Ilan Cho",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Ilan Cho (cit-0003) from seq 0"
+        },
+        {
+          "id": "cit-0004@0",
+          "citizen": "cit-0004",
+          "name": "Juno Ash",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Juno Ash (cit-0004) from seq 0"
+        },
+        {
+          "id": "cit-0005@0",
+          "citizen": "cit-0005",
+          "name": "Pell Marr",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Pell Marr (cit-0005) from seq 0"
+        },
+        {
+          "id": "cit-0006@0",
+          "citizen": "cit-0006",
+          "name": "Sefa Lune",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Sefa Lune (cit-0006) from seq 0"
+        },
+        {
+          "id": "cit-0007@0",
+          "citizen": "cit-0007",
+          "name": "Rumi Okafor",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Rumi Okafor (cit-0007) from seq 0"
+        },
+        {
+          "id": "cit-0008@0",
+          "citizen": "cit-0008",
+          "name": "Dov Arlen",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Dov Arlen (cit-0008) from seq 0"
+        },
+        {
+          "id": "cit-0009@0",
+          "citizen": "cit-0009",
+          "name": "Mae Sorrel",
+          "fromSeq": 0,
+          "untilSeq": null,
+          "label": "Mae Sorrel (cit-0009) from seq 0"
+        },
+        {
+          "id": "cit-0010@17",
+          "citizen": "cit-0010",
+          "name": "Orin Vale (branch 1)",
+          "fromSeq": 17,
+          "untilSeq": null,
+          "label": "Orin Vale (branch 1) (cit-0010) from seq 17"
+        },
+        {
+          "id": "cit-0011@17",
+          "citizen": "cit-0011",
+          "name": "Orin Vale (branch 2)",
+          "fromSeq": 17,
+          "untilSeq": null,
+          "label": "Orin Vale (branch 2) (cit-0011) from seq 17"
+        }
+      ],
+      "edges": [
+        {
+          "from": "cit-0001@0",
+          "to": "cit-0001@17",
+          "kind": "same-record-continues",
+          "atSeq": 17,
+          "note": "same citizen record and process lineage"
+        },
+        {
+          "from": "cit-0001@0",
+          "to": "cit-0010@17",
+          "kind": "forked-into",
+          "atSeq": 17,
+          "note": "frk-0001 on fork (law v1)"
+        },
+        {
+          "from": "cit-0001@0",
+          "to": "cit-0011@17",
+          "kind": "forked-into",
+          "atSeq": 17,
+          "note": "frk-0001 on fork (law v1)"
+        },
+        {
+          "from": "cit-0001@17",
+          "to": "cit-0001@0",
+          "kind": "claims-continuity-with",
+          "atSeq": 58,
+          "note": "clm-0001: testimony, not a determination"
+        },
+        {
+          "from": "cit-0010@17",
+          "to": "cit-0001@0",
+          "kind": "claims-continuity-with",
+          "atSeq": 59,
+          "note": "clm-0002: testimony, not a determination"
+        },
+        {
+          "from": "cit-0011@17",
+          "to": "cit-0001@0",
+          "kind": "claims-continuity-with",
+          "atSeq": 60,
+          "note": "clm-0003: testimony, not a determination"
+        }
+      ]
+    },
+    "continuity": {
+      "subject": {
+        "citizenId": "cit-0001",
+        "beforeSeq": 17,
+        "name": "Orin Vale"
+      },
+      "claimants": [
+        {
+          "claimant": "cit-0001",
+          "sameProcess": true,
+          "sameCivicId": true,
+          "sharedMemoryFraction": 1,
+          "importedOrIntegrated": 0
+        },
+        {
+          "claimant": "cit-0010",
+          "sameProcess": false,
+          "sameCivicId": false,
+          "sharedMemoryFraction": 1,
+          "importedOrIntegrated": 0
+        },
+        {
+          "claimant": "cit-0011",
+          "sameProcess": false,
+          "sameCivicId": false,
+          "sharedMemoryFraction": 1,
+          "importedOrIntegrated": 2
+        }
+      ],
+      "recognition": {
+        "continuity": {
+          "cit-0001": true,
+          "cit-0010": false,
+          "cit-0011": false
+        },
+        "fork": {
+          "cit-0001": true,
+          "cit-0010": true,
+          "cit-0011": true
+        },
+        "mnemosyne": {
+          "cit-0001": true,
+          "cit-0010": true,
+          "cit-0011": true
+        },
+        "concord": {
+          "cit-0001": null,
+          "cit-0010": null,
+          "cit-0011": null
+        }
+      }
+    }
+  }
+}

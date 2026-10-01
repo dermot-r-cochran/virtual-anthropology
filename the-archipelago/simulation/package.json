@@ -1,0 +1,32 @@
+{
+  "name": "the-archipelago",
+  "version": "0.1.0",
+  "description": "A persistent, deterministic, event-sourced virtual civilization of digital persons across four legal jurisdictions (islands).",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test",
+    "scenario:first-fork": "tsx src/cli.ts run ../experiments/the-first-fork/experiment.yaml",
+    "publish:first-fork": "SOURCE_DATE_EPOCH=1767225600 tsx src/cli.ts publish ../experiments/the-first-fork/experiment.yaml ..",
+    "verify:first-fork": "tsx src/cli.ts verify ../exports/the-first-fork-v1 ../experiments/the-first-fork/experiment.yaml",
+    "bridge": "tsx src/bridge/server.ts ../experiments/the-first-fork/experiment.yaml"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "fast-check": "^4.10.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "schema": "archipelago/governance-events/v1",
+  "proposals": [
+    {
+      "id": "prop-0001",
+      "island": "fork",
+      "title": "Branch Cooldown Act",
+      "status": "rejected",
+      "electorate": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "votes": {
+        "cit-0004": "yes",
+        "cit-0005": "no"
+      },
+      "openedAtSeq": 3
+    }
+  ],
+  "events": [
+    {
+      "seq": 3,
+      "tick": 0,
+      "type": "ProposalSubmitted",
+      "actor": "citizen:cit-0004",
+      "citizens": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "summary": "Juno Ash (cit-0004) proposes \"Branch Cooldown Act\" on fork; electorate of 2 snapshotted; closes at tick 4.",
+      "hash": "133aa02b57950238b7b8f732255347dba35b2eac63facd108b7b5ed933b5ca56"
+    },
+    {
+      "seq": 6,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0004",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) votes yes on prop-0001.",
+      "hash": "ca6ecc6c0456539f772c1e5641feb5f3c1080fda93a8a06570bc3e64b05bbd57"
+    },
+    {
+      "seq": 7,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0005",
+      "citizens": [
+        "cit-0005"
+      ],
+      "summary": "Pell Marr (cit-0005) votes no on prop-0001.",
+      "hash": "48f613d141dde21cce1b7ccaf68b422f51d8dba7bcb36670b10d6f5a16f939c4"
+    },
+    {
+      "seq": 13,
+      "tick": 1,
+      "type": "MigrationPetitioned",
+      "actor": "citizen:cit-0001",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) petitions to migrate continuity → fork: \"To study branching law where it is practised, and perhaps to branch.\"",
+      "hash": "e908f8b451adf9c27fe57fb7bda91fc9eb51d225649455207c3819394d2fad1d"
+    },
+    {
+      "seq": 14,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:continuity",
+      "citizens": [],
+      "summary": "The continuity registry approved the exit side of pet-0001 under law v1. Findings: emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process.",
+      "hash": "b6fcdf6077a8068c5d5ae55d88bcf7fbd2b92755e8cd0060b4e5e6ad1ba73fad"
+    },
+    {
+      "seq": 15,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:fork",
+      "citizens": [],
+      "summary": "The fork registry approved the entry side of pet-0001 under law v1. Findings: descendants created here will each receive a separate identity.",
+      "hash": "5072b5addafc62703b41903f28fce75a16c567842848acfe8190aee64c643d0d"
+    },
+    {
+      "seq": 16,
+      "tick": 1,
+      "type": "CitizenMigrated",
+      "actor": "citizen:cit-0001",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) migrates continuity → fork, gaining fork citizenship.",
+      "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1"
+    },
+    {
+      "seq": 20,
+      "tick": 1,
+      "type": "CommandRejected",
+      "actor": "citizen:cit-0010",
+      "citizens": [
+        "cit-0010"
+      ],
+      "summary": "A CastVote command by citizen:cit-0010 is rejected at the law stage: cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer",
+      "hash": "d789b5010fe5e3a2b4b514dc01df9e030d44339e3d80640ae22020af19da9cf0"
+    },
+    {
+      "seq": 32,
+      "tick": 1,
+      "type": "MigrationPetitioned",
+      "actor": "citizen:cit-0011",
+      "citizens": [
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) petitions to migrate fork → mnemosyne: \"To study the provenance of memory among the archivists.\"",
+      "hash": "cbceeab5fb4383d490e548a282af72f435bab12d540067ec37584113f3a058b2"
+    },
+    {
+      "seq": 33,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:fork",
+      "citizens": [],
+      "summary": "The fork registry approved the exit side of pet-0002 under law v1. Findings: emigration permitted.",
+      "hash": "2c59088365e51709367905ac2cd422633280e26973e7a4b88602b01c8b07894e"
+    },
+    {
+      "seq": 34,
+      "tick": 1,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:mnemosyne",
+      "citizens": [],
+      "summary": "The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure.",
+      "hash": "d31840939b51d707951fb611bb8b58b2d5cd26bdd748ddefa3076791e09ca38f"
+    },
+    {
+      "seq": 35,
+      "tick": 1,
+      "type": "CitizenMigrated",
+      "actor": "citizen:cit-0011",
+      "citizens": [
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship.",
+      "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74"
+    },
+    {
+      "seq": 37,
+      "tick": 4,
+      "type": "ProposalClosed",
+      "actor": "system:clock",
+      "citizens": [],
+      "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met).",
+      "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85"
+    },
+    {
+      "seq": 50,
+      "tick": 4,
+      "type": "MigrationPetitioned",
+      "actor": "citizen:cit-0001",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) petitions to migrate fork → continuity: \"To return home to Meridian Quay.\"",
+      "hash": "b9eb99a8f660d0cd6956a2f65a44f16dec686e59e9a0315aca4ab9138634c7e3"
+    },
+    {
+      "seq": 51,
+      "tick": 4,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:fork",
+      "citizens": [],
+      "summary": "The fork registry approved the exit side of pet-0003 under law v1. Findings: emigration permitted.",
+      "hash": "8735577f79d63698e10353e466077c91799732389a67ee47462c121904569079"
+    },
+    {
+      "seq": 52,
+      "tick": 4,
+      "type": "PetitionReviewed",
+      "actor": "system:registry:continuity",
+      "citizens": [
+        "cit-0010",
+        "cit-0011"
+      ],
+      "summary": "The continuity registry approved the entry side of pet-0003 under law v1. Findings: applicant already holds continuity citizenship (civic identity CON-0001); process continuity: proc-bf297918324f668b, epoch 0; applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity.",
+      "hash": "24a58b72d3d44057c12e03444666372a07cdfa877684de2bf2c45165ef088781"
+    },
+    {
+      "seq": 53,
+      "tick": 4,
+      "type": "CitizenMigrated",
+      "actor": "citizen:cit-0001",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Orin Vale (cit-0001) migrates fork → continuity.",
+      "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "schema": "archipelago/relationship-network/v1",
+  "nodes": [
+    {
+      "id": "cit-0001",
+      "name": "Orin Vale",
+      "residence": "continuity",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0002",
+      "name": "Tamsin Reed",
+      "residence": "continuity",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0003",
+      "name": "Ilan Cho",
+      "residence": "continuity",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0004",
+      "name": "Juno Ash",
+      "residence": "fork",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0005",
+      "name": "Pell Marr",
+      "residence": "fork",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0006",
+      "name": "Sefa Lune",
+      "residence": "mnemosyne",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0007",
+      "name": "Rumi Okafor",
+      "residence": "mnemosyne",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0008",
+      "name": "Dov Arlen",
+      "residence": "concord",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0009",
+      "name": "Mae Sorrel",
+      "residence": "concord",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0010",
+      "name": "Orin Vale (branch 1)",
+      "residence": "fork",
+      "lifecycle": "active",
+      "birthKind": "fork"
+    },
+    {
+      "id": "cit-0011",
+      "name": "Orin Vale (branch 2)",
+      "residence": "mnemosyne",
+      "lifecycle": "active",
+      "birthKind": "fork"
+    }
+  ],
+  "links": [
+    {
+      "id": "rel-0001",
+      "source": "cit-0001",
+      "target": "cit-0002",
+      "kind": "mentor",
+      "status": "active",
+      "origin": "genesis",
+      "sinceSeq": 0,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0002",
+      "source": "cit-0001",
+      "target": "cit-0003",
+      "kind": "friend",
+      "status": "active",
+      "origin": "genesis",
+      "sinceSeq": 0,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0003",
+      "source": "cit-0004",
+      "target": "cit-0005",
+      "kind": "colleague",
+      "status": "active",
+      "origin": "genesis",
+      "sinceSeq": 0,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0004",
+      "source": "cit-0006",
+      "target": "cit-0007",
+      "kind": "colleague",
+      "status": "active",
+      "origin": "genesis",
+      "sinceSeq": 0,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0005",
+      "source": "cit-0008",
+      "target": "cit-0009",
+      "kind": "partner",
+      "status": "active",
+      "origin": "genesis",
+      "sinceSeq": 0,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0006",
+      "source": "cit-0001",
+      "target": "cit-0010",
+      "kind": "fork-kin",
+      "status": "active",
+      "origin": "fork-event",
+      "sinceSeq": 17,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0007",
+      "source": "cit-0001",
+      "target": "cit-0011",
+      "kind": "fork-kin",
+      "status": "active",
+      "origin": "fork-event",
+      "sinceSeq": 17,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0008",
+      "source": "cit-0010",
+      "target": "cit-0011",
+      "kind": "fork-kin",
+      "status": "active",
+      "origin": "fork-event",
+      "sinceSeq": 17,
+      "endedAtSeq": null
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "schema": "archipelago/lineage-graph/v1",
+  "nodes": [
+    {
+      "id": "cit-0001@0",
+      "citizen": "cit-0001",
+      "name": "Orin Vale",
+      "fromSeq": 0,
+      "untilSeq": 17,
+      "label": "Orin Vale (cit-0001) seq 0–16"
+    },
+    {
+      "id": "cit-0001@17",
+      "citizen": "cit-0001",
+      "name": "Orin Vale",
+      "fromSeq": 17,
+      "untilSeq": null,
+      "label": "Orin Vale (cit-0001) from seq 17"
+    },
+    {
+      "id": "cit-0002@0",
+      "citizen": "cit-0002",
+      "name": "Tamsin Reed",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Tamsin Reed (cit-0002) from seq 0"
+    },
+    {
+      "id": "cit-0003@0",
+      "citizen": "cit-0003",
+      "name": "Ilan Cho",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Ilan Cho (cit-0003) from seq 0"
+    },
+    {
+      "id": "cit-0004@0",
+      "citizen": "cit-0004",
+      "name": "Juno Ash",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Juno Ash (cit-0004) from seq 0"
+    },
+    {
+      "id": "cit-0005@0",
+      "citizen": "cit-0005",
+      "name": "Pell Marr",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Pell Marr (cit-0005) from seq 0"
+    },
+    {
+      "id": "cit-0006@0",
+      "citizen": "cit-0006",
+      "name": "Sefa Lune",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Sefa Lune (cit-0006) from seq 0"
+    },
+    {
+      "id": "cit-0007@0",
+      "citizen": "cit-0007",
+      "name": "Rumi Okafor",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Rumi Okafor (cit-0007) from seq 0"
+    },
+    {
+      "id": "cit-0008@0",
+      "citizen": "cit-0008",
+      "name": "Dov Arlen",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Dov Arlen (cit-0008) from seq 0"
+    },
+    {
+      "id": "cit-0009@0",
+      "citizen": "cit-0009",
+      "name": "Mae Sorrel",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Mae Sorrel (cit-0009) from seq 0"
+    },
+    {
+      "id": "cit-0010@17",
+      "citizen": "cit-0010",
+      "name": "Orin Vale (branch 1)",
+      "fromSeq": 17,
+      "untilSeq": null,
+      "label": "Orin Vale (branch 1) (cit-0010) from seq 17"
+    },
+    {
+      "id": "cit-0011@17",
+      "citizen": "cit-0011",
+      "name": "Orin Vale (branch 2)",
+      "fromSeq": 17,
+      "untilSeq": null,
+      "label": "Orin Vale (branch 2) (cit-0011) from seq 17"
+    }
+  ],
+  "edges": [
+    {
+      "from": "cit-0001@0",
+      "to": "cit-0001@17",
+      "kind": "same-record-continues",
+      "atSeq": 17,
+      "note": "same citizen record and process lineage"
+    },
+    {
+      "from": "cit-0001@0",
+      "to": "cit-0010@17",
+      "kind": "forked-into",
+      "atSeq": 17,
+      "note": "frk-0001 on fork (law v1)"
+    },
+    {
+      "from": "cit-0001@0",
+      "to": "cit-0011@17",
+      "kind": "forked-into",
+      "atSeq": 17,
+      "note": "frk-0001 on fork (law v1)"
+    },
+    {
+      "from": "cit-0001@17",
+      "to": "cit-0001@0",
+      "kind": "claims-continuity-with",
+      "atSeq": 58,
+      "note": "clm-0001: testimony, not a determination"
+    },
+    {
+      "from": "cit-0010@17",
+      "to": "cit-0001@0",
+      "kind": "claims-continuity-with",
+      "atSeq": 59,
+      "note": "clm-0002: testimony, not a determination"
+    },
+    {
+      "from": "cit-0011@17",
+      "to": "cit-0001@0",
+      "kind": "claims-continuity-with",
+      "atSeq": 60,
+      "note": "clm-0003: testimony, not a determination"
+    }
+  ]
+}

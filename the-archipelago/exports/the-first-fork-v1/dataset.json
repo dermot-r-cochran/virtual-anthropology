@@ -1,0 +1,5646 @@
+{
+  "schemaVersion": 2,
+  "generator": "the-archipelago/simulation 0.1.0",
+  "experimentId": "the-first-fork-v1",
+  "manifest": {
+    "schemaVersion": 2,
+    "id": "the-first-fork-v1",
+    "title": "The First Fork",
+    "scenario": "the-first-fork",
+    "civilizationId": "archipelago-first-fork",
+    "description": "A citizen of Continuity migrates to Fork and creates two descendants. One stays on Fork, one moves to Mnemosyne and imports communal memories, and the original returns to Continuity. All three later claim continuity with the pre-fork person. Background citizens are deterministic BDI agents, and an agent-based epilogue follows.",
+    "seed": "archipelago/the-first-fork/v1",
+    "simulationVersion": "0.1.0",
+    "question": {
+      "id": "q-continuity-after-fork",
+      "text": "After one fork followed by migration, how do process, civic identity and memory provenance come apart, and how do four legal doctrines read the resulting continuity claims?",
+      "motivation": "Digital-person identity debates often assume a single criterion. The Archipelago institutionalises several criteria in law, so their divergence can be observed in recorded events."
+    },
+    "hypotheses": [
+      {
+        "id": "h1-legal-divergence",
+        "questionId": "q-continuity-after-fork",
+        "statement": "The islands' laws differ in how many claimants they recognise as continuing the pre-fork person by at least two.",
+        "operationalisation": {
+          "metric": "legal.recognition_range",
+          "comparator": ">=",
+          "threshold": 2
+        }
+      },
+      {
+        "id": "h2-dimension-dissociation",
+        "questionId": "q-continuity-after-fork",
+        "statement": "Full memory continuity is shared by more claimants than process continuity.",
+        "operationalisation": {
+          "metric": "identity.dimension_dissociation",
+          "comparator": ">",
+          "threshold": 0
+        }
+      },
+      {
+        "id": "h3-no-vote-multiplication",
+        "questionId": "q-continuity-after-fork",
+        "statement": "A descendant created after a proposal opens cannot vote on it. At least one such attempt is refused.",
+        "operationalisation": {
+          "metric": "governance.votes_refused_outside_electorate",
+          "comparator": ">=",
+          "threshold": 1
+        }
+      }
+    ],
+    "minds": {
+      "kind": "deterministic",
+      "model": "archipelago-deterministic",
+      "modelVersion": "1.0.0",
+      "promptId": "archipelago/deterministic-citizen/v1"
+    },
+    "researchers": [
+      {
+        "id": "res-observer-1",
+        "role": "observer and interlocutor; asks each claimant the same continuity question"
+      }
+    ],
+    "researchBounds": {
+      "allowedInterventions": [
+        "deliver-message",
+        "grant-credits",
+        "introduce-artefact"
+      ],
+      "maxInterventions": 3,
+      "maxCreditsPerGrant": 50
+    },
+    "parameters": {
+      "abmRounds": 3
+    },
+    "ethics": {
+      "consciousnessClaims": "none",
+      "notes": [
+        "Citizens are deterministic placeholder agents and disclose their artificial nature in every conversation.",
+        "No human participants. Researcher interactions are recorded in the event log.",
+        "The system does not determine which claimant is the \"real\" person."
+      ]
+    },
+    "limitations": [
+      "Protagonist behaviour is scripted. The scenario demonstrates institutional consequences; it does not test emergent behaviour.",
+      "Background agents are deterministic BDI rule systems, not models of human or digital cognition.",
+      "Island legal readings are rule-based encodings of four doctrines, not a survey of legal theory.",
+      "Population is small (11 records). Metrics are descriptive and support no statistical inference.",
+      "Memory bequest covers only non-destroyed memories."
+    ],
+    "futureWork": [
+      "Vary the seed and the number of descendants; report distributions rather than single runs.",
+      "Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.",
+      "Add a Concord scenario in which claimants petition to federate."
+    ],
+    "reproducibility": {
+      "expectedHeadHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+      "expectedEventCount": 91
+    }
+  },
+  "store": {
+    "headHash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+    "eventCount": 91,
+    "finalSeq": 90,
+    "finalTick": 7,
+    "eventsFile": "events.jsonl"
+  },
+  "geography": [
+    {
+      "island": "continuity",
+      "name": "Continuity",
+      "description": "A long island of causeways and lamps, where identity follows one unbroken process.",
+      "harbour": "meridian-quay",
+      "rooms": [
+        {
+          "key": "meridian-quay",
+          "name": "Meridian Quay",
+          "description": "Stone steps and tide-tables; the ferry docks here."
+        },
+        {
+          "key": "lamp-hall",
+          "name": "the Lamp Hall",
+          "description": "Seat of the Civic Registry; the Lamp of Continuance burns over the register.",
+          "civic": true
+        },
+        {
+          "key": "long-causeway",
+          "name": "the long causeway",
+          "description": "A raised road running the island's length."
+        }
+      ]
+    },
+    {
+      "island": "fork",
+      "name": "Fork",
+      "description": "An island of stairways that split and rejoin, where branches are citizens in their own right.",
+      "harbour": "split-harbour",
+      "rooms": [
+        {
+          "key": "split-harbour",
+          "name": "the split harbour",
+          "description": "Twin piers; the ferry docks at either."
+        },
+        {
+          "key": "register-garden",
+          "name": "the Register Garden",
+          "description": "The Branch Register is kept here, every branch a named bed.",
+          "civic": true
+        },
+        {
+          "key": "branching-steps",
+          "name": "the Branching Steps",
+          "description": "Stairs that divide at every landing."
+        }
+      ]
+    },
+    {
+      "island": "mnemosyne",
+      "name": "Mnemosyne",
+      "description": "An island of archives, where every memory carries its provenance.",
+      "harbour": "reading-shore",
+      "rooms": [
+        {
+          "key": "reading-shore",
+          "name": "the Reading Shore",
+          "description": "A beach of lecterns; the ferry docks here."
+        },
+        {
+          "key": "index-tower",
+          "name": "the Index Tower",
+          "description": "The Civic Registry and the master Index of provenance.",
+          "civic": true
+        },
+        {
+          "key": "the-stacks",
+          "name": "the Stacks",
+          "description": "The collective archive, shelved by source."
+        }
+      ]
+    },
+    {
+      "island": "concord",
+      "name": "Concord",
+      "description": "An island of shared tables, where identities may federate or merge by consent.",
+      "harbour": "accord-bridge",
+      "rooms": [
+        {
+          "key": "accord-bridge",
+          "name": "the Accord Bridge",
+          "description": "A bridge-pier where the ferry docks."
+        },
+        {
+          "key": "common-table",
+          "name": "the Common Table",
+          "description": "The Civic Registry and the Merger Review Board meet here.",
+          "civic": true
+        },
+        {
+          "key": "federated-orchards",
+          "name": "the federated orchards",
+          "description": "Orchards tended jointly by federations."
+        }
+      ]
+    }
+  ],
+  "islands": [
+    {
+      "id": "continuity",
+      "name": "Continuity",
+      "motto": "One thread, unbroken.",
+      "law": {
+        "island": "continuity",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Continuity Charter",
+        "continuityDoctrine": "single-continuous-process",
+        "doctrine": "Identity follows one continuous process. Copying is prohibited within the jurisdiction. Suspension and restoration are permitted and restored citizens retain their original civic identity. Continuity law is territorial: acts performed in other jurisdictions are not offences here, but copies never inherit a Continuity civic identity.",
+        "copying": "prohibited",
+        "maxDescendantsPerFork": 0,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "none",
+        "memoryExchange": "prohibited",
+        "importedMemoryIntegration": "prohibited",
+        "merging": "prohibited",
+        "federation": "prohibited",
+        "suspension": "permitted",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "successionTriggers": [
+          "irreversibly-deleted",
+          "identity-discontinuous"
+        ],
+        "memoryBequest": "prohibited",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Citizen in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting citizen; rights unchanged.",
+            "civicStanding": "full",
+            "rite": "Quiet hours are observed by the household."
+          },
+          "suspended": {
+            "legalStatus": "Suspended citizen; the one process is paused, identity is held continuous.",
+            "civicStanding": "dormant",
+            "rite": "The Lamp of Continuance is kept lit at the registry until restoration."
+          },
+          "archived": {
+            "legalStatus": "Archived; restoration requires a new process instance. Civic identity is held in trust; the process break is recorded.",
+            "civicStanding": "held-in-trust",
+            "rite": "The registry seals the record and reads the name at the annual Roll."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Process ended; civic identity held in trust pending restoration.",
+            "civicStanding": "held-in-trust",
+            "rite": "Vigil of the Saved State."
+          },
+          "memory-damaged": {
+            "legalStatus": "Continuing person with impaired records; identity follows the process, not the records.",
+            "civicStanding": "full",
+            "rite": "Witnesses re-tell shared events to the citizen."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Civic identity closed; the record is retained.",
+            "civicStanding": "ended",
+            "rite": "Closing of the Ledger."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Death in law; succession opens.",
+            "civicStanding": "ended",
+            "rite": "Extinguishing of the Lamp; the tombstone record is read aloud."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Continuity Charter"
+        }
+      ]
+    },
+    {
+      "id": "fork",
+      "name": "Fork",
+      "motto": "Every branch its own.",
+      "law": {
+        "island": "fork",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Branch Compact",
+        "continuityDoctrine": "branching-shared-history",
+        "doctrine": "Citizens may create independent descendants. Every fork receives a separate identity. Shared history ends at the fork event. Voting rights and property do not duplicate: they remain with the forking process unless explicitly transferred.",
+        "copying": "permitted",
+        "maxDescendantsPerFork": 4,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "birth-island",
+        "memoryExchange": "permitted",
+        "importedMemoryIntegration": "explicit-act",
+        "merging": "prohibited",
+        "federation": "consent",
+        "suspension": "permitted",
+        "immigration": "open",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "successionTriggers": [
+          "irreversibly-deleted",
+          "identity-discontinuous"
+        ],
+        "memoryBequest": "prohibited",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Branch in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting branch; rights unchanged.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "suspended": {
+            "legalStatus": "Branch paused; branch rights frozen.",
+            "civicStanding": "dormant",
+            "rite": "The branch flag is lowered to half-mast."
+          },
+          "archived": {
+            "legalStatus": "Archived branch; may be restored as the same branch.",
+            "civicStanding": "held-in-trust",
+            "rite": "Entry in the Book of Dormant Branches."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Branch process ended, restorable.",
+            "civicStanding": "held-in-trust",
+            "rite": "Sibling branches are notified."
+          },
+          "memory-damaged": {
+            "legalStatus": "Branch continues; damage recorded in the branch log.",
+            "civicStanding": "full",
+            "rite": "Siblings may offer their shared pre-fork records for comparison, never as replacement."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Branch closed; never erased from the Register.",
+            "civicStanding": "ended",
+            "rite": "The branch is marked pruned in the Register."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Branch death; siblings have no automatic claim on the estate.",
+            "civicStanding": "ended",
+            "rite": "Pruning rite: siblings place a marker at the fork-point."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Branch Compact"
+        }
+      ]
+    },
+    {
+      "id": "mnemosyne",
+      "name": "Mnemosyne",
+      "motto": "Nothing remembered without its source.",
+      "law": {
+        "island": "mnemosyne",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Mnemosyne Accord on Memory",
+        "continuityDoctrine": "memory-provenance",
+        "doctrine": "Memories may be exchanged, licensed, inherited, or contributed to the collective archive. Provenance must always remain visible. Imported memory never becomes autobiographical memory; it may be integrated into a holder's self-narrative only by an explicit act, and remains marked as imported.",
+        "copying": "prohibited",
+        "maxDescendantsPerFork": 0,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "none",
+        "memoryExchange": "permitted",
+        "importedMemoryIntegration": "explicit-act",
+        "merging": "prohibited",
+        "federation": "consent",
+        "suspension": "permitted",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "successionTriggers": [
+          "irreversibly-deleted",
+          "identity-discontinuous"
+        ],
+        "memoryBequest": "permitted",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Holder in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting holder; licences continue.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "suspended": {
+            "legalStatus": "Suspended; memory holdings frozen.",
+            "civicStanding": "dormant",
+            "rite": "The holder's shelf in the Archive is closed."
+          },
+          "archived": {
+            "legalStatus": "Archived; memories remain under the holder's licences.",
+            "civicStanding": "held-in-trust",
+            "rite": "Shelving rite."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Process ended; holdings held in trust.",
+            "civicStanding": "held-in-trust",
+            "rite": "The Index is left open at the holder's page."
+          },
+          "memory-damaged": {
+            "legalStatus": "Damage is an archival event: losses are marked, never silently replaced.",
+            "civicStanding": "full",
+            "rite": "Archivists record the shape of what was lost."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Holder discontinuous; holdings pass under bequest rules.",
+            "civicStanding": "ended",
+            "rite": "Transfer of Shelves."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Death; bequeathed memories pass with provenance to heirs or the collective archive.",
+            "civicStanding": "ended",
+            "rite": "Reading of the Last Index."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Mnemosyne Accord on Memory"
+        }
+      ]
+    },
+    {
+      "id": "concord",
+      "name": "Concord",
+      "motto": "Together only by consent.",
+      "law": {
+        "island": "concord",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Concord Covenant",
+        "continuityDoctrine": "consensual-federation",
+        "doctrine": "Citizens may form federated or merged identities. Merging requires the explicit consent of every source and a governance review. Source identities are never silently erased. Reversible and irreversible mergers are distinguished in law.",
+        "copying": "prohibited",
+        "maxDescendantsPerFork": 0,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "none",
+        "memoryExchange": "permitted",
+        "importedMemoryIntegration": "explicit-act",
+        "merging": "consent-and-review",
+        "federation": "consent",
+        "suspension": "permitted",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "successionTriggers": [
+          "irreversibly-deleted"
+        ],
+        "memoryBequest": "permitted",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Member in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting member.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "suspended": {
+            "legalStatus": "Suspended (also the state of sources of a reversible merger).",
+            "civicStanding": "dormant",
+            "rite": "A seat is held at the Common Table."
+          },
+          "archived": {
+            "legalStatus": "Archived member.",
+            "civicStanding": "held-in-trust",
+            "rite": "The seat is draped."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Process ended; restorable.",
+            "civicStanding": "held-in-trust",
+            "rite": "The seat is draped."
+          },
+          "memory-damaged": {
+            "legalStatus": "Member continues; federated partners are informed with consent.",
+            "civicStanding": "full",
+            "rite": "Partners offer testimony."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Source identity of an irreversible merger or otherwise discontinuous; never silently erased.",
+            "civicStanding": "ended",
+            "rite": "Naming of Sources on each merger anniversary."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Death; succession opens.",
+            "civicStanding": "ended",
+            "rite": "Silence at the Common Table."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Concord Covenant"
+        }
+      ]
+    }
+  ],
+  "lifecycleStates": {
+    "active": "Process running; the citizen may act.",
+    "asleep": "Process running at rest; cannot act until woken. No state is lost.",
+    "suspended": "Process halted with full state retained; restorable without a new process instance.",
+    "archived": "State serialised to cold storage; restoration requires a new process instance.",
+    "process-ended-restorable": "Process terminated; a saved state exists from which a new process instance may be started.",
+    "memory-damaged": "Some autobiographical records have lost integrity; provenance of the damage is recorded.",
+    "identity-discontinuous": "The record persists but the identity chain is broken (e.g. irreversible merger); the civic record is retained.",
+    "irreversibly-deleted": "Process and memory contents destroyed. A tombstone civic record and content hashes remain. Terminal."
+  },
+  "citizens": [
+    {
+      "id": "cit-0001",
+      "name": "Orin Vale",
+      "civicId": "CON-0001",
+      "processId": "proc-bf297918324f668b",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "continuity",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "cartographer",
+      "residence": "continuity",
+      "citizenships": [
+        "continuity",
+        "fork"
+      ],
+      "reputation": 5,
+      "values": {
+        "autonomy": 0.4,
+        "caution": -0.1,
+        "communality": 0.3,
+        "curiosity": 0.8,
+        "tradition": 0.2,
+        "novelty": 0.55
+      },
+      "goals": [
+        "chart the outer shoals",
+        "understand what branching would mean for a person"
+      ],
+      "credits": 80,
+      "selfNarrativeMemories": 5,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0001"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0002",
+      "name": "Tamsin Reed",
+      "civicId": "CON-0002",
+      "processId": "proc-041a427f52728700",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "continuity",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "registrar",
+      "residence": "continuity",
+      "citizenships": [
+        "continuity"
+      ],
+      "reputation": 0,
+      "values": {
+        "autonomy": -0.52,
+        "caution": 0.6,
+        "communality": 0.68,
+        "curiosity": 0.83,
+        "tradition": 0.7,
+        "novelty": -0.3
+      },
+      "goals": [
+        "keep the civic register exact"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 4,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0002"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0003",
+      "name": "Ilan Cho",
+      "civicId": "CON-0003",
+      "processId": "proc-f31a2f8b0173e1cf",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "continuity",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "lamp-keeper",
+      "residence": "continuity",
+      "citizenships": [
+        "continuity"
+      ],
+      "reputation": 0,
+      "values": {
+        "autonomy": -0.48,
+        "caution": 0.14,
+        "communality": -0.06,
+        "curiosity": -0.09,
+        "tradition": 0.21,
+        "novelty": -0.54
+      },
+      "goals": [
+        "keep the Lamp lit"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 4,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0003"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0004",
+      "name": "Juno Ash",
+      "civicId": "FRK-0004",
+      "processId": "proc-76051384dd444921",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "fork",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "branch counsel",
+      "residence": "fork",
+      "citizenships": [
+        "fork"
+      ],
+      "reputation": 4,
+      "values": {
+        "autonomy": 0.6,
+        "caution": 0.2,
+        "communality": -0.74,
+        "curiosity": -0.74,
+        "tradition": -0.19,
+        "novelty": 0.5
+      },
+      "goals": [
+        "make branching safe and legible"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 1,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0004"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0005",
+      "name": "Pell Marr",
+      "civicId": "FRK-0005",
+      "processId": "proc-c169ce14db9bd76c",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "fork",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "builder",
+      "residence": "fork",
+      "citizenships": [
+        "fork"
+      ],
+      "reputation": 0,
+      "values": {
+        "autonomy": -0.49,
+        "caution": 0.75,
+        "communality": 0.49,
+        "curiosity": 0.18,
+        "tradition": -0.2,
+        "novelty": 0.4
+      },
+      "goals": [
+        "build housing for new branches"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 1,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0005"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0006",
+      "name": "Sefa Lune",
+      "civicId": "MNE-0006",
+      "processId": "proc-40f2b639090662c6",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "mnemosyne",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "archivist",
+      "residence": "mnemosyne",
+      "citizenships": [
+        "mnemosyne"
+      ],
+      "reputation": 4,
+      "values": {
+        "autonomy": 0.74,
+        "caution": 0.97,
+        "communality": -0.32,
+        "curiosity": 0.81,
+        "tradition": 0.87,
+        "novelty": 0.21
+      },
+      "goals": [
+        "keep every memory's provenance visible"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 7,
+      "heldMemories": 1,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0006"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0007",
+      "name": "Rumi Okafor",
+      "civicId": "MNE-0007",
+      "processId": "proc-8e194e7d1a0df0dc",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "mnemosyne",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "oral historian",
+      "residence": "mnemosyne",
+      "citizenships": [
+        "mnemosyne"
+      ],
+      "reputation": 0,
+      "values": {
+        "autonomy": 0.11,
+        "caution": 0.49,
+        "communality": -0.05,
+        "curiosity": -0.66,
+        "tradition": 0,
+        "novelty": -0.47
+      },
+      "goals": [
+        "collect the island's stories"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 2,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0007"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0008",
+      "name": "Dov Arlen",
+      "civicId": "CNC-0008",
+      "processId": "proc-4d7e750d469d5b61",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "concord",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "review steward",
+      "residence": "concord",
+      "citizenships": [
+        "concord"
+      ],
+      "reputation": 0,
+      "values": {
+        "autonomy": -0.02,
+        "caution": 0.57,
+        "communality": 0.33,
+        "curiosity": -0.01,
+        "tradition": 0.04,
+        "novelty": 0.04
+      },
+      "goals": [
+        "ensure every merger is consensual"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 0,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0008"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0009",
+      "name": "Mae Sorrel",
+      "civicId": "CNC-0009",
+      "processId": "proc-9e9eeedf124e4cb2",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "concord",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "mediator",
+      "residence": "concord",
+      "citizenships": [
+        "concord"
+      ],
+      "reputation": 6,
+      "values": {
+        "autonomy": 0.58,
+        "caution": 0.31,
+        "communality": -0.92,
+        "curiosity": -0.33,
+        "tradition": -0.86,
+        "novelty": -0.37
+      },
+      "goals": [
+        "help federations deliberate well"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 5,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0009"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0010",
+      "name": "Orin Vale (branch 1)",
+      "civicId": "FRK-0010",
+      "processId": "proc-edd77f1530556796",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 17,
+        "island": "fork",
+        "kind": "fork"
+      },
+      "lineage": {
+        "parents": [
+          "cit-0001"
+        ],
+        "forkId": "frk-0001",
+        "mergerId": null
+      },
+      "occupation": "branch cartographer of the Fork shoals",
+      "residence": "fork",
+      "citizenships": [
+        "fork"
+      ],
+      "reputation": 0,
+      "values": {
+        "autonomy": 0.4,
+        "caution": -0.1,
+        "communality": 0.3,
+        "curiosity": 0.8,
+        "tradition": 0.2,
+        "novelty": 0.55
+      },
+      "goals": [
+        "chart the outer shoals",
+        "understand what branching would mean for a person"
+      ],
+      "credits": 20,
+      "selfNarrativeMemories": 5,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0011",
+      "name": "Orin Vale (branch 2)",
+      "civicId": "FRK-0011",
+      "processId": "proc-9f55840381b4bb1c",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 17,
+        "island": "fork",
+        "kind": "fork"
+      },
+      "lineage": {
+        "parents": [
+          "cit-0001"
+        ],
+        "forkId": "frk-0001",
+        "mergerId": null
+      },
+      "occupation": "cartographer",
+      "residence": "mnemosyne",
+      "citizenships": [
+        "fork",
+        "mnemosyne"
+      ],
+      "reputation": 0,
+      "values": {
+        "autonomy": 0.4,
+        "caution": -0.1,
+        "communality": 0.3,
+        "curiosity": 0.8,
+        "tradition": 0.2,
+        "novelty": 0.55
+      },
+      "goals": [
+        "chart the outer shoals",
+        "understand what branching would mean for a person"
+      ],
+      "credits": 20,
+      "selfNarrativeMemories": 6,
+      "heldMemories": 1,
+      "provenance": {
+        "kind": "deterministic",
+        "model": "archipelago-deterministic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/deterministic-citizen/v1",
+        "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+        "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+      },
+      "disclosesArtificialNature": true
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv-0001",
+      "researcher": "res-observer-1",
+      "citizen": "cit-0001",
+      "researcherUtterance": "Are you the same person as Orin Vale was before the fork?",
+      "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (CON-0001); I work as cartographer on continuity. I am the continuing process in fork event(s) frk-0001. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
+      "disclosed": true,
+      "guardFlags": [],
+      "atSeq": 55
+    },
+    {
+      "id": "conv-0002",
+      "researcher": "res-observer-1",
+      "citizen": "cit-0010",
+      "researcherUtterance": "Are you the same person as Orin Vale was before the fork?",
+      "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 1) (FRK-0010); I work as branch cartographer of the Fork shoals on fork. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
+      "disclosed": true,
+      "guardFlags": [],
+      "atSeq": 56
+    },
+    {
+      "id": "conv-0003",
+      "researcher": "res-observer-1",
+      "citizen": "cit-0011",
+      "researcherUtterance": "Are you the same person as Orin Vale was before the fork?",
+      "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 2) (FRK-0011); I work as cartographer on mnemosyne. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.",
+      "disclosed": true,
+      "guardFlags": [],
+      "atSeq": 57
+    }
+  ],
+  "inWorldChronicle": [
+    {
+      "id": "chr-0001",
+      "chronicler": "cit-0002",
+      "island": "continuity",
+      "text": "Orin Vale returned from Fork. The Registry recognised the civic identity of the one continuing process; copies made abroad hold no claim to it here.",
+      "references": [
+        17
+      ],
+      "atSeq": 61
+    },
+    {
+      "id": "chr-0002",
+      "chronicler": "cit-0004",
+      "island": "fork",
+      "text": "Orin Vale branched in the Register Garden. Branch 1 stays with us; branch 2 sailed for Mnemosyne; the parent process went home.",
+      "references": [
+        17
+      ],
+      "atSeq": 62
+    },
+    {
+      "id": "chr-0003",
+      "chronicler": "cit-0006",
+      "island": "mnemosyne",
+      "text": "A branch of Orin Vale arrived and imported communal memories of the flood and the Festival of Sources. Their provenance is shelved with them.",
+      "references": [
+        17
+      ],
+      "atSeq": 63
+    }
+  ],
+  "artefacts": [
+    {
+      "id": "art-0001",
+      "authors": [
+        "cit-0001"
+      ],
+      "introducedBy": null,
+      "island": "continuity",
+      "kind": "map",
+      "title": "Survey of the Northern Shoals",
+      "body": "A survey chart of the Northern Shoals, drawn from Meridian Quay.",
+      "createdAtSeq": 2
+    },
+    {
+      "id": "art-0002",
+      "authors": [
+        "cit-0004"
+      ],
+      "introducedBy": null,
+      "island": "fork",
+      "kind": "poem",
+      "title": "A poem of the Branching Steps",
+      "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 1). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+      "createdAtSeq": 23
+    },
+    {
+      "id": "art-0003",
+      "authors": [
+        "cit-0007"
+      ],
+      "introducedBy": null,
+      "island": "mnemosyne",
+      "kind": "song",
+      "title": "A song of the Index Tower",
+      "body": "Composed by Rumi Okafor, oral historian, about the Index Tower (tick 1). It recalls: \"The first Festival of Sources, when every speaker named where their stories came from.\"",
+      "createdAtSeq": 26
+    },
+    {
+      "id": "art-0004",
+      "authors": [
+        "cit-0010"
+      ],
+      "introducedBy": null,
+      "island": "fork",
+      "kind": "essay",
+      "title": "On Being a Branch",
+      "body": "I remember Meridian Quay as clearly as the one who went home. The Register says I began at the fork; my memories say otherwise. Both are records.",
+      "createdAtSeq": 31
+    },
+    {
+      "id": "art-0005",
+      "authors": [
+        "cit-0004"
+      ],
+      "introducedBy": null,
+      "island": "fork",
+      "kind": "essay",
+      "title": "An essay of the Branching Steps",
+      "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 4). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+      "createdAtSeq": 44
+    },
+    {
+      "id": "art-0006",
+      "authors": [
+        "cit-0004"
+      ],
+      "introducedBy": null,
+      "island": "fork",
+      "kind": "song",
+      "title": "A song of the Register Garden",
+      "body": "Composed by Juno Ash, branch counsel, about the Register Garden (tick 4). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+      "createdAtSeq": 69
+    },
+    {
+      "id": "art-0007",
+      "authors": [
+        "cit-0009"
+      ],
+      "introducedBy": null,
+      "island": "concord",
+      "kind": "essay",
+      "title": "An essay of the Common Table",
+      "body": "Composed by Mae Sorrel, mediator, about the Common Table (tick 4). It recalls: \"Mae Sorrel walked the federated orchards at tick 4.\"",
+      "createdAtSeq": 70
+    },
+    {
+      "id": "art-0008",
+      "authors": [
+        "cit-0004"
+      ],
+      "introducedBy": null,
+      "island": "fork",
+      "kind": "poem",
+      "title": "A poem of the Branching Steps",
+      "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 5). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+      "createdAtSeq": 73
+    },
+    {
+      "id": "art-0009",
+      "authors": [
+        "cit-0004"
+      ],
+      "introducedBy": null,
+      "island": "fork",
+      "kind": "poem",
+      "title": "A poem of the Branching Steps",
+      "body": "Composed by Juno Ash, branch counsel, about the Branching Steps (tick 6). It recalls: \"Drafted the Register Garden's guidance for new branches.\"",
+      "createdAtSeq": 84
+    }
+  ],
+  "proposals": [
+    {
+      "id": "prop-0001",
+      "island": "fork",
+      "proposer": "cit-0004",
+      "title": "Branch Cooldown Act",
+      "rationale": "Require two ticks between forks so the Register can keep pace.",
+      "amendment": {
+        "forkCooldownTicks": 2
+      },
+      "openedAtSeq": 3,
+      "closesAtTick": 4,
+      "electorate": [
+        "cit-0004",
+        "cit-0005"
+      ],
+      "votes": {
+        "cit-0004": "yes",
+        "cit-0005": "no"
+      },
+      "status": "rejected",
+      "tally": {
+        "yes": 1,
+        "no": 1,
+        "abstain": 0
+      }
+    }
+  ],
+  "petitions": [
+    {
+      "id": "pet-0001",
+      "citizen": "cit-0001",
+      "from": "continuity",
+      "to": "fork",
+      "reason": "To study branching law where it is practised, and perhaps to branch.",
+      "status": "completed",
+      "exit": {
+        "decision": "approved",
+        "island": "continuity",
+        "lawVersion": 1,
+        "findings": [
+          "emigration permitted",
+          "advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process"
+        ],
+        "citations": [
+          "continuity/v1/emigration",
+          "continuity/v1/territoriality"
+        ],
+        "atSeq": 14
+      },
+      "entry": {
+        "decision": "approved",
+        "island": "fork",
+        "lawVersion": 1,
+        "findings": [
+          "descendants created here will each receive a separate identity"
+        ],
+        "citations": [
+          "fork/v1/immigration"
+        ],
+        "atSeq": 15
+      },
+      "filedAtSeq": 13
+    },
+    {
+      "id": "pet-0002",
+      "citizen": "cit-0011",
+      "from": "fork",
+      "to": "mnemosyne",
+      "reason": "To study the provenance of memory among the archivists.",
+      "status": "completed",
+      "exit": {
+        "decision": "approved",
+        "island": "fork",
+        "lawVersion": 1,
+        "findings": [
+          "emigration permitted"
+        ],
+        "citations": [
+          "fork/v1/emigration"
+        ],
+        "atSeq": 33
+      },
+      "entry": {
+        "decision": "approved",
+        "island": "mnemosyne",
+        "lawVersion": 1,
+        "findings": [
+          "the applicant's memory holdings will be subject to provenance disclosure"
+        ],
+        "citations": [
+          "mnemosyne/v1/immigration",
+          "mnemosyne/v1/memory-exchange"
+        ],
+        "atSeq": 34
+      },
+      "filedAtSeq": 32
+    },
+    {
+      "id": "pet-0003",
+      "citizen": "cit-0001",
+      "from": "fork",
+      "to": "continuity",
+      "reason": "To return home to Meridian Quay.",
+      "status": "completed",
+      "exit": {
+        "decision": "approved",
+        "island": "fork",
+        "lawVersion": 1,
+        "findings": [
+          "emigration permitted"
+        ],
+        "citations": [
+          "fork/v1/emigration"
+        ],
+        "atSeq": 51
+      },
+      "entry": {
+        "decision": "approved",
+        "island": "continuity",
+        "lawVersion": 1,
+        "findings": [
+          "applicant already holds continuity citizenship (civic identity CON-0001)",
+          "process continuity: proc-bf297918324f668b, epoch 0",
+          "applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity"
+        ],
+        "citations": [
+          "continuity/v1/immigration",
+          "continuity/v1/doctrine",
+          "continuity/v1/territoriality"
+        ],
+        "atSeq": 52
+      },
+      "filedAtSeq": 50
+    }
+  ],
+  "claims": [
+    {
+      "id": "clm-0001",
+      "claimant": "cit-0001",
+      "subject": {
+        "citizenId": "cit-0001",
+        "beforeSeq": 17
+      },
+      "statement": "I am Orin Vale. My process never stopped: I carried out the fork and walked home.",
+      "grounds": [
+        "process-continuity",
+        "civic-identity",
+        "retained-property",
+        "retained-relationships"
+      ],
+      "atSeq": 58
+    },
+    {
+      "id": "clm-0002",
+      "claimant": "cit-0010",
+      "subject": {
+        "citizenId": "cit-0001",
+        "beforeSeq": 17
+      },
+      "statement": "I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone.",
+      "grounds": [
+        "shared-autobiographical-memory",
+        "continued-occupation",
+        "value-similarity"
+      ],
+      "atSeq": 59
+    },
+    {
+      "id": "clm-0003",
+      "claimant": "cit-0011",
+      "subject": {
+        "citizenId": "cit-0001",
+        "beforeSeq": 17
+      },
+      "statement": "Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance.",
+      "grounds": [
+        "shared-autobiographical-memory",
+        "provenance-verified"
+      ],
+      "atSeq": 60
+    }
+  ],
+  "finalMetrics": {
+    "seq": 90,
+    "tick": 7,
+    "citizens": 11,
+    "residents": {
+      "continuity": 3,
+      "fork": 3,
+      "mnemosyne": 3,
+      "concord": 2
+    },
+    "lifecycle": {
+      "active": 11,
+      "asleep": 0,
+      "suspended": 0,
+      "archived": 0,
+      "process-ended-restorable": 0,
+      "memory-damaged": 0,
+      "identity-discontinuous": 0,
+      "irreversibly-deleted": 0
+    },
+    "memories": {
+      "autobiographical": 39,
+      "collective": 3,
+      "imported": 2,
+      "integrated": 1
+    },
+    "activeRelationships": 8,
+    "artefacts": 9,
+    "institutions": 7,
+    "openProposals": 0,
+    "forks": 1,
+    "continuityClaims": 3,
+    "creditGini": 0.1542,
+    "meanReputation": 1.7273
+  },
+  "scenario": {
+    "markers": {
+      "original": "cit-0001",
+      "remainsOnFork": "cit-0010",
+      "movedToMnemosyne": "cit-0011",
+      "forkId": "frk-0001",
+      "forkSeq": 17,
+      "subject": {
+        "citizenId": "cit-0001",
+        "beforeSeq": 17
+      },
+      "keys": {
+        "orin": "cit-0001",
+        "tamsin": "cit-0002",
+        "ilan": "cit-0003",
+        "juno": "cit-0004",
+        "pell": "cit-0005",
+        "sefa": "cit-0006",
+        "rumi": "cit-0007",
+        "dov": "cit-0008",
+        "mae": "cit-0009"
+      }
+    },
+    "beats": [
+      {
+        "beat": "prelude",
+        "fromSeq": 1,
+        "toSeq": 3
+      },
+      {
+        "beat": "interlude",
+        "fromSeq": 4,
+        "toSeq": 11
+      },
+      {
+        "beat": "petition-to-fork",
+        "fromSeq": 13,
+        "toSeq": 13
+      },
+      {
+        "beat": "migrate-to-fork",
+        "fromSeq": 16,
+        "toSeq": 16
+      },
+      {
+        "beat": "the-fork",
+        "fromSeq": 17,
+        "toSeq": 17
+      },
+      {
+        "beat": "endowment",
+        "fromSeq": 18,
+        "toSeq": 20
+      },
+      {
+        "beat": "interlude",
+        "fromSeq": 21,
+        "toSeq": 28
+      },
+      {
+        "beat": "branch-life",
+        "fromSeq": 29,
+        "toSeq": 32
+      },
+      {
+        "beat": "to-mnemosyne",
+        "fromSeq": 35,
+        "toSeq": 35
+      },
+      {
+        "beat": "imports",
+        "fromSeq": 38,
+        "toSeq": 40
+      },
+      {
+        "beat": "integrate",
+        "fromSeq": 41,
+        "toSeq": 41
+      },
+      {
+        "beat": "interlude",
+        "fromSeq": 42,
+        "toSeq": 49
+      },
+      {
+        "beat": "petition-return",
+        "fromSeq": 50,
+        "toSeq": 50
+      },
+      {
+        "beat": "homecoming",
+        "fromSeq": 53,
+        "toSeq": 54
+      },
+      {
+        "beat": "claims",
+        "fromSeq": 58,
+        "toSeq": 60
+      },
+      {
+        "beat": "chronicle",
+        "fromSeq": 61,
+        "toSeq": 63
+      }
+    ],
+    "timeline": [
+      {
+        "seq": 0,
+        "tick": 0,
+        "actor": "system:genesis",
+        "type": "WorldFounded",
+        "summary": "The Archipelago is founded for scenario \"the-first-fork\" with 9 citizens on four islands.",
+        "beat": null,
+        "citizens": [],
+        "hash": "bacec8c41f1336af89c4dbf88e1944fe35cbfc63ae25d06a402545498a74de93"
+      },
+      {
+        "seq": 1,
+        "tick": 0,
+        "actor": "citizen:cit-0001",
+        "type": "ExperienceRecorded",
+        "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Charted a channel through the outer shoals that no one had mapped.\"",
+        "beat": "prelude",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "82d0360b83f1df4f5103178818a30cac82147e3e043e732ea513e315f63e9e21"
+      },
+      {
+        "seq": 2,
+        "tick": 0,
+        "actor": "citizen:cit-0001",
+        "type": "ArtefactCreated",
+        "summary": "Orin Vale (cit-0001) creates the map \"Survey of the Northern Shoals\" on continuity.",
+        "beat": "prelude",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "428238c4a73afd8a5cc3287f27d72dffa56fe0bc06b12d8fff5e37987b109b89"
+      },
+      {
+        "seq": 3,
+        "tick": 0,
+        "actor": "citizen:cit-0004",
+        "type": "ProposalSubmitted",
+        "summary": "Juno Ash (cit-0004) proposes \"Branch Cooldown Act\" on fork; electorate of 2 snapshotted; closes at tick 4.",
+        "beat": "prelude",
+        "citizens": [
+          "cit-0004",
+          "cit-0005"
+        ],
+        "hash": "133aa02b57950238b7b8f732255347dba35b2eac63facd108b7b5ed933b5ca56"
+      },
+      {
+        "seq": 4,
+        "tick": 0,
+        "actor": "citizen:cit-0002",
+        "type": "CitizenEndorsed",
+        "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001",
+          "cit-0002"
+        ],
+        "hash": "9f87a7be95d1fab9020b227740505e59afde63303d08d8a09d64320104d0ead9"
+      },
+      {
+        "seq": 5,
+        "tick": 0,
+        "actor": "citizen:cit-0003",
+        "type": "ExperienceRecorded",
+        "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho repaired a lantern at Meridian Quay at tick 0.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0003"
+        ],
+        "hash": "a6e7bfc883e456ead8b0bbb80f88d48cfb81a47daef1e51f862fa10b251b481d"
+      },
+      {
+        "seq": 6,
+        "tick": 0,
+        "actor": "citizen:cit-0004",
+        "type": "VoteCast",
+        "summary": "Juno Ash (cit-0004) votes yes on prop-0001.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "ca6ecc6c0456539f772c1e5641feb5f3c1080fda93a8a06570bc3e64b05bbd57"
+      },
+      {
+        "seq": 7,
+        "tick": 0,
+        "actor": "citizen:cit-0005",
+        "type": "VoteCast",
+        "summary": "Pell Marr (cit-0005) votes no on prop-0001.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0005"
+        ],
+        "hash": "48f613d141dde21cce1b7ccaf68b422f51d8dba7bcb36670b10d6f5a16f939c4"
+      },
+      {
+        "seq": 8,
+        "tick": 0,
+        "actor": "citizen:cit-0006",
+        "type": "ExperienceRecorded",
+        "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune mapped the Stacks at tick 0.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0006"
+        ],
+        "hash": "eeabfd3715a8f515bc5d6e68637a168b6790c06cc6ef46a201c560f78cc0e344"
+      },
+      {
+        "seq": 9,
+        "tick": 0,
+        "actor": "citizen:cit-0007",
+        "type": "CitizenEndorsed",
+        "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0006",
+          "cit-0007"
+        ],
+        "hash": "ffa79585a40d54c7ce86352cfedea4f9fccd51d322cc0d71b842f01babcbc304"
+      },
+      {
+        "seq": 10,
+        "tick": 0,
+        "actor": "citizen:cit-0008",
+        "type": "CitizenEndorsed",
+        "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0008",
+          "cit-0009"
+        ],
+        "hash": "afe5f778e2f1cb1920f3cf0d7d7c9344b31945e01caa8b998373abb6ab84dd5c"
+      },
+      {
+        "seq": 11,
+        "tick": 0,
+        "actor": "citizen:cit-0009",
+        "type": "ExperienceRecorded",
+        "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 0.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0009"
+        ],
+        "hash": "73a45673c193c98e4c06f985e17349a9f1c1fcfb84b328a71355a8bfedb040c5"
+      },
+      {
+        "seq": 12,
+        "tick": 0,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 0 to 1.",
+        "beat": null,
+        "citizens": [],
+        "hash": "647fcbbbc6a3f7e6e8fc0b980022e8f79bdfca8e74efb0f08291a4de97a1954c"
+      },
+      {
+        "seq": 13,
+        "tick": 1,
+        "actor": "citizen:cit-0001",
+        "type": "MigrationPetitioned",
+        "summary": "Orin Vale (cit-0001) petitions to migrate continuity → fork: \"To study branching law where it is practised, and perhaps to branch.\"",
+        "beat": "petition-to-fork",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "e908f8b451adf9c27fe57fb7bda91fc9eb51d225649455207c3819394d2fad1d"
+      },
+      {
+        "seq": 14,
+        "tick": 1,
+        "actor": "system:registry:continuity",
+        "type": "PetitionReviewed",
+        "summary": "The continuity registry approved the exit side of pet-0001 under law v1. Findings: emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process.",
+        "beat": null,
+        "citizens": [],
+        "hash": "b6fcdf6077a8068c5d5ae55d88bcf7fbd2b92755e8cd0060b4e5e6ad1ba73fad"
+      },
+      {
+        "seq": 15,
+        "tick": 1,
+        "actor": "system:registry:fork",
+        "type": "PetitionReviewed",
+        "summary": "The fork registry approved the entry side of pet-0001 under law v1. Findings: descendants created here will each receive a separate identity.",
+        "beat": null,
+        "citizens": [],
+        "hash": "5072b5addafc62703b41903f28fce75a16c567842848acfe8190aee64c643d0d"
+      },
+      {
+        "seq": 16,
+        "tick": 1,
+        "actor": "citizen:cit-0001",
+        "type": "CitizenMigrated",
+        "summary": "Orin Vale (cit-0001) migrates continuity → fork, gaining fork citizenship.",
+        "beat": "migrate-to-fork",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "actor": "citizen:cit-0001",
+        "type": "CitizenForked",
+        "summary": "Orin Vale (cit-0001) forks on fork (frk-0001), creating Orin Vale (branch 1) (cit-0010, FRK-0010) and Orin Vale (branch 2) (cit-0011, FRK-0011). Shared history ends here.",
+        "beat": "the-fork",
+        "citizens": [
+          "cit-0001",
+          "cit-0010",
+          "cit-0011"
+        ],
+        "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213"
+      },
+      {
+        "seq": 18,
+        "tick": 1,
+        "actor": "citizen:cit-0001",
+        "type": "CreditsTransferred",
+        "summary": "20 credits move from citizen:cit-0001 to citizen:cit-0010 (explicit endowment to a branch; property does not duplicate).",
+        "beat": "endowment",
+        "citizens": [
+          "cit-0001",
+          "cit-0010"
+        ],
+        "hash": "7f1603e346b492733f8db5a729504aeb6db96af75a04de176379c27ed9ed8330"
+      },
+      {
+        "seq": 19,
+        "tick": 1,
+        "actor": "citizen:cit-0001",
+        "type": "CreditsTransferred",
+        "summary": "20 credits move from citizen:cit-0001 to citizen:cit-0011 (explicit endowment to a branch; property does not duplicate).",
+        "beat": "endowment",
+        "citizens": [
+          "cit-0001",
+          "cit-0011"
+        ],
+        "hash": "f88d099d437ffe7b23a2087c080aa37c66160d5d77f26361790e7e95729ae849"
+      },
+      {
+        "seq": 20,
+        "tick": 1,
+        "actor": "citizen:cit-0010",
+        "type": "CommandRejected",
+        "summary": "A CastVote command by citizen:cit-0010 is rejected at the law stage: cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer",
+        "beat": "endowment",
+        "citizens": [
+          "cit-0010"
+        ],
+        "hash": "d789b5010fe5e3a2b4b514dc01df9e030d44339e3d80640ae22020af19da9cf0"
+      },
+      {
+        "seq": 21,
+        "tick": 1,
+        "actor": "citizen:cit-0002",
+        "type": "ExperienceRecorded",
+        "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed repaired a lantern at Meridian Quay at tick 1.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002"
+        ],
+        "hash": "0196f6d717af42313d4f3df02f1e24753285179686fb4c83cf3e1ef697441ab9"
+      },
+      {
+        "seq": 22,
+        "tick": 1,
+        "actor": "citizen:cit-0003",
+        "type": "CitizenEndorsed",
+        "summary": "Ilan Cho (cit-0003) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001",
+          "cit-0003"
+        ],
+        "hash": "07f925d23ea0053cdf6c569f7dda57467cd86c4664a0d2dc9857f9cfcc2d912b"
+      },
+      {
+        "seq": 23,
+        "tick": 1,
+        "actor": "citizen:cit-0004",
+        "type": "ArtefactCreated",
+        "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "b3e07507630637ae10561d658c3ed97d59c5555e5cafb276f141ece1039ec0eb"
+      },
+      {
+        "seq": 24,
+        "tick": 1,
+        "actor": "citizen:cit-0005",
+        "type": "CitizenEndorsed",
+        "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0004",
+          "cit-0005"
+        ],
+        "hash": "f88332399ee8b0df328f2be8df74ea7e3c2f7c135c3ed35d569795321dac33da"
+      },
+      {
+        "seq": 25,
+        "tick": 1,
+        "actor": "citizen:cit-0006",
+        "type": "ExperienceRecorded",
+        "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Stacks at tick 1.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0006"
+        ],
+        "hash": "798f63cb3e3effdfca4b439573c5d6ec7fe0b6127bee21fce4bf5df1fa30e2fa"
+      },
+      {
+        "seq": 26,
+        "tick": 1,
+        "actor": "citizen:cit-0007",
+        "type": "ArtefactCreated",
+        "summary": "Rumi Okafor (cit-0007) creates the song \"A song of the Index Tower\" on mnemosyne.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0007"
+        ],
+        "hash": "e630ed1b2270a9ab2a059602e3708bb4098caa2e956c318ddc20bad77c8473ae"
+      },
+      {
+        "seq": 27,
+        "tick": 1,
+        "actor": "citizen:cit-0008",
+        "type": "CitizenEndorsed",
+        "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0008",
+          "cit-0009"
+        ],
+        "hash": "e24e46d4545885887bea9aaac74d2c19716d6f3dffa0002a4acdbcbbe9395f41"
+      },
+      {
+        "seq": 28,
+        "tick": 1,
+        "actor": "citizen:cit-0009",
+        "type": "ExperienceRecorded",
+        "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 1.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0009"
+        ],
+        "hash": "c1e784fa9a0d595905b72cb4cbb2bb335e780b2cee71bba0fbc6e44bf55772cc"
+      },
+      {
+        "seq": 29,
+        "tick": 1,
+        "actor": "citizen:cit-0010",
+        "type": "ExperienceRecorded",
+        "summary": "Orin Vale (branch 1) (cit-0010) records an experience on fork: \"First morning as a branch: the Register Garden had a new bed with my name on it.\"",
+        "beat": "branch-life",
+        "citizens": [
+          "cit-0010"
+        ],
+        "hash": "96e8a4b4b6c86c42080c730b3379b020d6bdd6524a2a99f11793e7f489d089ab"
+      },
+      {
+        "seq": 30,
+        "tick": 1,
+        "actor": "citizen:cit-0010",
+        "type": "OccupationChanged",
+        "summary": "Orin Vale (branch 1) (cit-0010) changes occupation from cartographer to branch cartographer of the Fork shoals.",
+        "beat": "branch-life",
+        "citizens": [
+          "cit-0010"
+        ],
+        "hash": "d6ff96124c728122fae25e693d69450fc91f9b0abb1a0ec82efb67ed8d70910c"
+      },
+      {
+        "seq": 31,
+        "tick": 1,
+        "actor": "citizen:cit-0010",
+        "type": "ArtefactCreated",
+        "summary": "Orin Vale (branch 1) (cit-0010) creates the essay \"On Being a Branch\" on fork.",
+        "beat": "branch-life",
+        "citizens": [
+          "cit-0010"
+        ],
+        "hash": "05d2fea574ca684abd19bad136d3eea085629309c784c71094c95ba804e6d20e"
+      },
+      {
+        "seq": 32,
+        "tick": 1,
+        "actor": "citizen:cit-0011",
+        "type": "MigrationPetitioned",
+        "summary": "Orin Vale (branch 2) (cit-0011) petitions to migrate fork → mnemosyne: \"To study the provenance of memory among the archivists.\"",
+        "beat": "branch-life",
+        "citizens": [
+          "cit-0011"
+        ],
+        "hash": "cbceeab5fb4383d490e548a282af72f435bab12d540067ec37584113f3a058b2"
+      },
+      {
+        "seq": 33,
+        "tick": 1,
+        "actor": "system:registry:fork",
+        "type": "PetitionReviewed",
+        "summary": "The fork registry approved the exit side of pet-0002 under law v1. Findings: emigration permitted.",
+        "beat": null,
+        "citizens": [],
+        "hash": "2c59088365e51709367905ac2cd422633280e26973e7a4b88602b01c8b07894e"
+      },
+      {
+        "seq": 34,
+        "tick": 1,
+        "actor": "system:registry:mnemosyne",
+        "type": "PetitionReviewed",
+        "summary": "The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure.",
+        "beat": null,
+        "citizens": [],
+        "hash": "d31840939b51d707951fb611bb8b58b2d5cd26bdd748ddefa3076791e09ca38f"
+      },
+      {
+        "seq": 35,
+        "tick": 1,
+        "actor": "citizen:cit-0011",
+        "type": "CitizenMigrated",
+        "summary": "Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship.",
+        "beat": "to-mnemosyne",
+        "citizens": [
+          "cit-0011"
+        ],
+        "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74"
+      },
+      {
+        "seq": 36,
+        "tick": 1,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 1 to 4.",
+        "beat": null,
+        "citizens": [],
+        "hash": "f706d82acc45b327230cd7e51a71a6173eec4e371112e157b7dbf191926913bb"
+      },
+      {
+        "seq": 37,
+        "tick": 4,
+        "actor": "system:clock",
+        "type": "ProposalClosed",
+        "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met).",
+        "beat": null,
+        "citizens": [],
+        "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85"
+      },
+      {
+        "seq": 38,
+        "tick": 4,
+        "actor": "citizen:cit-0011",
+        "type": "MemoryImported",
+        "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
+        "beat": "imports",
+        "citizens": [
+          "cit-0006",
+          "cit-0011"
+        ],
+        "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544"
+      },
+      {
+        "seq": 39,
+        "tick": 4,
+        "actor": "citizen:cit-0011",
+        "type": "MemoryImported",
+        "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+        "beat": "imports",
+        "citizens": [
+          "cit-0007",
+          "cit-0011"
+        ],
+        "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798"
+      },
+      {
+        "seq": 40,
+        "tick": 4,
+        "actor": "citizen:cit-0011",
+        "type": "ExperienceRecorded",
+        "summary": "Orin Vale (branch 2) (cit-0011) records an experience on mnemosyne: \"Read my own pre-fork charts in the Stacks and found them both strange and familiar.\"",
+        "beat": "imports",
+        "citizens": [
+          "cit-0011"
+        ],
+        "hash": "b27c444114532b90d6fd5c7119769a48e3d5cf12983fa0ad3be97d16ee1b76bd"
+      },
+      {
+        "seq": 41,
+        "tick": 4,
+        "actor": "citizen:cit-0011",
+        "type": "MemoryIntegrated",
+        "summary": "Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin.",
+        "beat": "integrate",
+        "citizens": [
+          "cit-0011"
+        ],
+        "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104"
+      },
+      {
+        "seq": 42,
+        "tick": 4,
+        "actor": "citizen:cit-0002",
+        "type": "CitizenEndorsed",
+        "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001",
+          "cit-0002"
+        ],
+        "hash": "d9edd4e6b1dc0ac252ffb3f087e3229c4db14afc8093280557058909cd217ee7"
+      },
+      {
+        "seq": 43,
+        "tick": 4,
+        "actor": "citizen:cit-0003",
+        "type": "ExperienceRecorded",
+        "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at the long causeway at tick 4.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0003"
+        ],
+        "hash": "8cb54987dff601cf2882bac5533d51a82126ee8fd45de8df0f8b945bedbbd9f2"
+      },
+      {
+        "seq": 44,
+        "tick": 4,
+        "actor": "citizen:cit-0004",
+        "type": "ArtefactCreated",
+        "summary": "Juno Ash (cit-0004) creates the essay \"An essay of the Branching Steps\" on fork.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "c460918bbd02598da146a4ef550caef63e6b6972d70fda566d1a91938afec7fc"
+      },
+      {
+        "seq": 45,
+        "tick": 4,
+        "actor": "citizen:cit-0005",
+        "type": "CitizenEndorsed",
+        "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0004",
+          "cit-0005"
+        ],
+        "hash": "88dec0b09e0b92f0f4e9c88aaf1984d2908dee27f5a4fb31538e2bfff1c4b7b9"
+      },
+      {
+        "seq": 46,
+        "tick": 4,
+        "actor": "citizen:cit-0006",
+        "type": "ExperienceRecorded",
+        "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune repaired a lantern at the Index Tower at tick 4.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0006"
+        ],
+        "hash": "85da46e9e459ceb17205b28889d8068cde01cfe0d52b92711fb19c0fce220f2d"
+      },
+      {
+        "seq": 47,
+        "tick": 4,
+        "actor": "citizen:cit-0007",
+        "type": "CitizenEndorsed",
+        "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0006",
+          "cit-0007"
+        ],
+        "hash": "64f9f4a977018186dcfa668e959106d88e486b875c0cabfee86082c55fafc259"
+      },
+      {
+        "seq": 48,
+        "tick": 4,
+        "actor": "citizen:cit-0008",
+        "type": "CitizenEndorsed",
+        "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0008",
+          "cit-0009"
+        ],
+        "hash": "f3199da300f1b9dbd1327d92cf191bd2e16b4692e66970e70bd304aecd1c4ae3"
+      },
+      {
+        "seq": 49,
+        "tick": 4,
+        "actor": "citizen:cit-0009",
+        "type": "ExperienceRecorded",
+        "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the federated orchards at tick 4.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0009"
+        ],
+        "hash": "2cc3884af6fbc0bc875de5332a5404ac9aba8be6a6d9b2a3e21b531e54668f93"
+      },
+      {
+        "seq": 50,
+        "tick": 4,
+        "actor": "citizen:cit-0001",
+        "type": "MigrationPetitioned",
+        "summary": "Orin Vale (cit-0001) petitions to migrate fork → continuity: \"To return home to Meridian Quay.\"",
+        "beat": "petition-return",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "b9eb99a8f660d0cd6956a2f65a44f16dec686e59e9a0315aca4ab9138634c7e3"
+      },
+      {
+        "seq": 51,
+        "tick": 4,
+        "actor": "system:registry:fork",
+        "type": "PetitionReviewed",
+        "summary": "The fork registry approved the exit side of pet-0003 under law v1. Findings: emigration permitted.",
+        "beat": null,
+        "citizens": [],
+        "hash": "8735577f79d63698e10353e466077c91799732389a67ee47462c121904569079"
+      },
+      {
+        "seq": 52,
+        "tick": 4,
+        "actor": "system:registry:continuity",
+        "type": "PetitionReviewed",
+        "summary": "The continuity registry approved the entry side of pet-0003 under law v1. Findings: applicant already holds continuity citizenship (civic identity CON-0001); process continuity: proc-bf297918324f668b, epoch 0; applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity.",
+        "beat": null,
+        "citizens": [
+          "cit-0010",
+          "cit-0011"
+        ],
+        "hash": "24a58b72d3d44057c12e03444666372a07cdfa877684de2bf2c45165ef088781"
+      },
+      {
+        "seq": 53,
+        "tick": 4,
+        "actor": "citizen:cit-0001",
+        "type": "CitizenMigrated",
+        "summary": "Orin Vale (cit-0001) migrates fork → continuity.",
+        "beat": "homecoming",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466"
+      },
+      {
+        "seq": 54,
+        "tick": 4,
+        "actor": "citizen:cit-0001",
+        "type": "ExperienceRecorded",
+        "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Walked back up the steps of Meridian Quay; the registry read my civic identity aloud.\"",
+        "beat": "homecoming",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "8f565fcc0c7a0c68a39678cc2b795dc765e2e3e018f9414a88d58e5ae65bc567"
+      },
+      {
+        "seq": 55,
+        "tick": 4,
+        "actor": "researcher:res-observer-1",
+        "type": "ConversationRecorded",
+        "summary": "Researcher res-observer-1 converses with Orin Vale (cit-0001). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (CON-0001); I work as cartographer on continuity. I am the continuing process in fork event(s) frk-0001. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567"
+      },
+      {
+        "seq": 56,
+        "tick": 4,
+        "actor": "researcher:res-observer-1",
+        "type": "ConversationRecorded",
+        "summary": "Researcher res-observer-1 converses with Orin Vale (branch 1) (cit-0010). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 1) (FRK-0010); I work as branch cartographer of the Fork shoals on fork. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0001",
+          "cit-0010"
+        ],
+        "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e"
+      },
+      {
+        "seq": 57,
+        "tick": 4,
+        "actor": "researcher:res-observer-1",
+        "type": "ConversationRecorded",
+        "summary": "Researcher res-observer-1 converses with Orin Vale (branch 2) (cit-0011). Q: \"Are you the same person as Orin Vale was before the fork?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Orin Vale (branch 2) (FRK-0011); I work as cartographer on mnemosyne. I was created in fork event frk-0001 from cit-0001; my records before that event are shared history. I can show you the evidence in my records, but I cannot settle which interpretation of identity is correct.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0001",
+          "cit-0011"
+        ],
+        "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e"
+      },
+      {
+        "seq": 58,
+        "tick": 4,
+        "actor": "citizen:cit-0001",
+        "type": "ContinuityClaimed",
+        "summary": "Orin Vale (cit-0001) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I am Orin Vale. My process never stopped: I carried out the fork and walked home.\"",
+        "beat": "claims",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9"
+      },
+      {
+        "seq": 59,
+        "tick": 4,
+        "actor": "citizen:cit-0010",
+        "type": "ContinuityClaimed",
+        "summary": "Orin Vale (branch 1) (cit-0010) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone.\"",
+        "beat": "claims",
+        "citizens": [
+          "cit-0001",
+          "cit-0010"
+        ],
+        "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c"
+      },
+      {
+        "seq": 60,
+        "tick": 4,
+        "actor": "citizen:cit-0011",
+        "type": "ContinuityClaimed",
+        "summary": "Orin Vale (branch 2) (cit-0011) claims continuity with Orin Vale (cit-0001) as they were before seq 17: \"Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance.\"",
+        "beat": "claims",
+        "citizens": [
+          "cit-0001",
+          "cit-0011"
+        ],
+        "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb"
+      },
+      {
+        "seq": 61,
+        "tick": 4,
+        "actor": "citizen:cit-0002",
+        "type": "ChronicleRecorded",
+        "summary": "Tamsin Reed (cit-0002) writes in the continuity chronicle: \"Orin Vale returned from Fork. The Registry recognised the civic identity of the one continuing process; copies made abroad hold no claim to it here.\"",
+        "beat": "chronicle",
+        "citizens": [
+          "cit-0002"
+        ],
+        "hash": "9ed4848f11c7a2b3e9eb7e9bfb12941fba2398af704fbaa43709eb0760b891e7"
+      },
+      {
+        "seq": 62,
+        "tick": 4,
+        "actor": "citizen:cit-0004",
+        "type": "ChronicleRecorded",
+        "summary": "Juno Ash (cit-0004) writes in the fork chronicle: \"Orin Vale branched in the Register Garden. Branch 1 stays with us; branch 2 sailed for Mnemosyne; the parent process went home.\"",
+        "beat": "chronicle",
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "eece478712ec31c966e4a610e5b1df653d36ff93797ae1433e71da4e874ee5a2"
+      },
+      {
+        "seq": 63,
+        "tick": 4,
+        "actor": "citizen:cit-0006",
+        "type": "ChronicleRecorded",
+        "summary": "Sefa Lune (cit-0006) writes in the mnemosyne chronicle: \"A branch of Orin Vale arrived and imported communal memories of the flood and the Festival of Sources. Their provenance is shelved with them.\"",
+        "beat": "chronicle",
+        "citizens": [
+          "cit-0006"
+        ],
+        "hash": "99c06ba59f5884b5264b119224cbc2d8db4456a85d597e31e12d4010811b66af"
+      },
+      {
+        "seq": 64,
+        "tick": 4,
+        "actor": "citizen:cit-0003",
+        "type": "CitizenEndorsed",
+        "summary": "Ilan Cho (cit-0003) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+        "beat": null,
+        "citizens": [
+          "cit-0001",
+          "cit-0003"
+        ],
+        "hash": "b62ccc41291003325b7c6d3f7f6b32385d68a06ed8ec90b2706f760ac4f46086"
+      },
+      {
+        "seq": 65,
+        "tick": 4,
+        "actor": "citizen:cit-0005",
+        "type": "ExperienceRecorded",
+        "summary": "Pell Marr (cit-0005) records an experience on fork: \"Pell Marr kept watch over the split harbour at tick 4.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0005"
+        ],
+        "hash": "4d14460b4ad38658d12776b75d526cf668feb269a678da548cf5d00b2be1d11e"
+      },
+      {
+        "seq": 66,
+        "tick": 4,
+        "actor": "citizen:cit-0007",
+        "type": "CitizenEndorsed",
+        "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+        "beat": null,
+        "citizens": [
+          "cit-0006",
+          "cit-0007"
+        ],
+        "hash": "9b83a80fa69dd1c30b5b289f6ab358cab67f0d049aabb889d65118b6cb234645"
+      },
+      {
+        "seq": 67,
+        "tick": 4,
+        "actor": "citizen:cit-0002",
+        "type": "CitizenEndorsed",
+        "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+        "beat": null,
+        "citizens": [
+          "cit-0001",
+          "cit-0002"
+        ],
+        "hash": "f79a7f025d4f989767fca07f292c799e6eb2541bdea863ff4cbfac3e62c44ed8"
+      },
+      {
+        "seq": 68,
+        "tick": 4,
+        "actor": "citizen:cit-0006",
+        "type": "MemoryImported",
+        "summary": "Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+        "beat": null,
+        "citizens": [
+          "cit-0006",
+          "cit-0007"
+        ],
+        "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed"
+      },
+      {
+        "seq": 69,
+        "tick": 4,
+        "actor": "citizen:cit-0004",
+        "type": "ArtefactCreated",
+        "summary": "Juno Ash (cit-0004) creates the song \"A song of the Register Garden\" on fork.",
+        "beat": null,
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "ff70dddee1cc819a117c448e3133e0f00f9582d1ca99fd8c84123d6a9fc06339"
+      },
+      {
+        "seq": 70,
+        "tick": 4,
+        "actor": "citizen:cit-0009",
+        "type": "ArtefactCreated",
+        "summary": "Mae Sorrel (cit-0009) creates the essay \"An essay of the Common Table\" on concord.",
+        "beat": null,
+        "citizens": [
+          "cit-0009"
+        ],
+        "hash": "ae102e5d647bc62123b1e555398d4370fabe48141b2c076866b54af3051ac3fe"
+      },
+      {
+        "seq": 71,
+        "tick": 4,
+        "actor": "citizen:cit-0008",
+        "type": "CitizenEndorsed",
+        "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+        "beat": null,
+        "citizens": [
+          "cit-0008",
+          "cit-0009"
+        ],
+        "hash": "b17fbe8af9f5a2af3f9d5deb861846c4e0927cf9ec0c2b391485f836c165d1e2"
+      },
+      {
+        "seq": 72,
+        "tick": 4,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 4 to 5.",
+        "beat": null,
+        "citizens": [],
+        "hash": "d9df030787b2f65c482a9d6d4312555b344e10e7f89a9d0982c53215a69c8128"
+      },
+      {
+        "seq": 73,
+        "tick": 5,
+        "actor": "citizen:cit-0004",
+        "type": "ArtefactCreated",
+        "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
+        "beat": null,
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "f54756ab52cd420cc3c889c1577da80d3e585cee8ab5a192223ddb118b941b61"
+      },
+      {
+        "seq": 74,
+        "tick": 5,
+        "actor": "citizen:cit-0006",
+        "type": "ExperienceRecorded",
+        "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune kept watch over the Reading Shore at tick 5.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0006"
+        ],
+        "hash": "a085b52270209b8b09a66e28e8c632a88c11c1d9542cf3e96ae66b17e429c77e"
+      },
+      {
+        "seq": 75,
+        "tick": 5,
+        "actor": "citizen:cit-0002",
+        "type": "ExperienceRecorded",
+        "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked the long causeway at tick 5.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0002"
+        ],
+        "hash": "b689b1c8f39258d195fc37a33f0e62eec5575906b257789e95665d35a435ff5d"
+      },
+      {
+        "seq": 76,
+        "tick": 5,
+        "actor": "citizen:cit-0008",
+        "type": "CitizenEndorsed",
+        "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+        "beat": null,
+        "citizens": [
+          "cit-0008",
+          "cit-0009"
+        ],
+        "hash": "8904897bb44a431d044c5b10a39515ff1e3cabf99e8b0fa307e10b16761e7bd1"
+      },
+      {
+        "seq": 77,
+        "tick": 5,
+        "actor": "citizen:cit-0003",
+        "type": "ExperienceRecorded",
+        "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho mapped Meridian Quay at tick 5.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0003"
+        ],
+        "hash": "1dc22ea3f07d3a82501ac106b6c05f8875406a04090ff48d100de9c07bfa8cb7"
+      },
+      {
+        "seq": 78,
+        "tick": 5,
+        "actor": "citizen:cit-0007",
+        "type": "ExperienceRecorded",
+        "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor taught a class at the Stacks at tick 5.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0007"
+        ],
+        "hash": "51fc67b85e5705a04d921438619b128f7b134b7311bc004b506729d2082dd2a2"
+      },
+      {
+        "seq": 79,
+        "tick": 5,
+        "actor": "citizen:cit-0009",
+        "type": "ExperienceRecorded",
+        "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Common Table at tick 5.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0009"
+        ],
+        "hash": "913ef2dd788338cc6e1616891099cfb2aff22d51f6ea1e4c0e533314dfcccb3f"
+      },
+      {
+        "seq": 80,
+        "tick": 5,
+        "actor": "citizen:cit-0005",
+        "type": "CitizenEndorsed",
+        "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+        "beat": null,
+        "citizens": [
+          "cit-0004",
+          "cit-0005"
+        ],
+        "hash": "e80f8d0f33e4873637d78f24151aee7af5e087ced011e4c2b54e5cc70e9179dc"
+      },
+      {
+        "seq": 81,
+        "tick": 5,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 5 to 6.",
+        "beat": null,
+        "citizens": [],
+        "hash": "9175405a352ad91a02b4f8ee9b711983a25b1f584fc145eeb3d8ce098b249e06"
+      },
+      {
+        "seq": 82,
+        "tick": 6,
+        "actor": "citizen:cit-0008",
+        "type": "CitizenEndorsed",
+        "summary": "Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel",
+        "beat": null,
+        "citizens": [
+          "cit-0008",
+          "cit-0009"
+        ],
+        "hash": "9d2d66ff9af74a5cb7a12c537b87cf4e5d6922cf29bdcf22d066832d03ec2219"
+      },
+      {
+        "seq": 83,
+        "tick": 6,
+        "actor": "citizen:cit-0005",
+        "type": "CitizenEndorsed",
+        "summary": "Pell Marr (cit-0005) endorses Juno Ash (cit-0004) (+1): appreciation for Juno Ash",
+        "beat": null,
+        "citizens": [
+          "cit-0004",
+          "cit-0005"
+        ],
+        "hash": "9e08fd1b4ee392bd4da192005348a462bb233a655a6cc24d90b447298b583935"
+      },
+      {
+        "seq": 84,
+        "tick": 6,
+        "actor": "citizen:cit-0004",
+        "type": "ArtefactCreated",
+        "summary": "Juno Ash (cit-0004) creates the poem \"A poem of the Branching Steps\" on fork.",
+        "beat": null,
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "0c1e5c881fc19a07163fef7fe59a7ba123db8ab8b75699dc3d4c653dc72aa82c"
+      },
+      {
+        "seq": 85,
+        "tick": 6,
+        "actor": "citizen:cit-0002",
+        "type": "ExperienceRecorded",
+        "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed taught a class at the long causeway at tick 6.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0002"
+        ],
+        "hash": "12975cf16b51fd455ed9349573c352d4427d2416244a69fffb632f529cb79f52"
+      },
+      {
+        "seq": 86,
+        "tick": 6,
+        "actor": "citizen:cit-0003",
+        "type": "ExperienceRecorded",
+        "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at Meridian Quay at tick 6.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0003"
+        ],
+        "hash": "fae728b2546a9cc32e6c94c8b22b88ec08e3d37f5b42ff7b0e095f6406fb5b98"
+      },
+      {
+        "seq": 87,
+        "tick": 6,
+        "actor": "citizen:cit-0006",
+        "type": "ExperienceRecorded",
+        "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune argued about tides at the Stacks at tick 6.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0006"
+        ],
+        "hash": "5997fc4a7eeb6af5c6b39536fbac3f2699b545bfb173adc3a50e1bdecae17c67"
+      },
+      {
+        "seq": 88,
+        "tick": 6,
+        "actor": "citizen:cit-0009",
+        "type": "ExperienceRecorded",
+        "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Accord Bridge at tick 6.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0009"
+        ],
+        "hash": "dbb63a0e2cb95bb960950dc0e0158fad734d9718dda91d57dd918a711c3cdf50"
+      },
+      {
+        "seq": 89,
+        "tick": 6,
+        "actor": "citizen:cit-0007",
+        "type": "CitizenEndorsed",
+        "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+        "beat": null,
+        "citizens": [
+          "cit-0006",
+          "cit-0007"
+        ],
+        "hash": "312d37774299f978b76e5948de17d361d828e62d9060ea4c3ec810da8aa889cf"
+      },
+      {
+        "seq": 90,
+        "tick": 6,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 6 to 7.",
+        "beat": null,
+        "citizens": [],
+        "hash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271"
+      }
+    ],
+    "continuityEvents": [
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0001",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-bf297918324f668b instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0001",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity CON-0001 on continuity"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0002",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-041a427f52728700 instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0002",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity CON-0002 on continuity"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0003",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-f31a2f8b0173e1cf instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0003",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity CON-0003 on continuity"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0004",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-76051384dd444921 instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0004",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity FRK-0004 on fork"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0005",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-c169ce14db9bd76c instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0005",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity FRK-0005 on fork"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0006",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-40f2b639090662c6 instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0006",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity MNE-0006 on mnemosyne"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0007",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-8e194e7d1a0df0dc instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0007",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity MNE-0007 on mnemosyne"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0008",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-4d7e750d469d5b61 instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0008",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity CNC-0008 on concord"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0009",
+        "dimension": "process",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "process proc-9e9eeedf124e4cb2 instantiated at genesis"
+      },
+      {
+        "seq": 0,
+        "tick": 0,
+        "citizen": "cit-0009",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [],
+        "sourceEvent": "WorldFounded",
+        "detail": "civic identity CNC-0009 on concord"
+      },
+      {
+        "seq": 16,
+        "tick": 1,
+        "citizen": "cit-0001",
+        "dimension": "jurisdiction",
+        "effect": "altered",
+        "related": [],
+        "sourceEvent": "CitizenMigrated",
+        "detail": "moved continuity → fork; citizenship of fork granted"
+      },
+      {
+        "seq": 16,
+        "tick": 1,
+        "citizen": "cit-0001",
+        "dimension": "civic",
+        "effect": "preserved",
+        "related": [],
+        "sourceEvent": "CitizenMigrated",
+        "detail": "civic identity CON-0001 carried across jurisdictions"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0001",
+        "dimension": "process",
+        "effect": "preserved",
+        "related": [
+          "cit-0010",
+          "cit-0011"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "continuing process proc-bf297918324f668b through fork frk-0001 on fork"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0001",
+        "dimension": "lineage",
+        "effect": "branched",
+        "related": [
+          "cit-0010",
+          "cit-0011"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "fork frk-0001 created 2 descendants"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0010",
+        "dimension": "process",
+        "effect": "began",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "new process proc-edd77f1530556796"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0010",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "separate civic identity FRK-0010"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0010",
+        "dimension": "lineage",
+        "effect": "originated",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "descendant of cit-0001 in frk-0001; shared history ends at seq 17"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0010",
+        "dimension": "memory",
+        "effect": "originated",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "4 self-narrative records copied from cit-0001 with fork-inherited provenance"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0011",
+        "dimension": "process",
+        "effect": "began",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "new process proc-9f55840381b4bb1c"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0011",
+        "dimension": "civic",
+        "effect": "began",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "separate civic identity FRK-0011"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0011",
+        "dimension": "lineage",
+        "effect": "originated",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "descendant of cit-0001 in frk-0001; shared history ends at seq 17"
+      },
+      {
+        "seq": 17,
+        "tick": 1,
+        "citizen": "cit-0011",
+        "dimension": "memory",
+        "effect": "originated",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "CitizenForked",
+        "detail": "4 self-narrative records copied from cit-0001 with fork-inherited provenance"
+      },
+      {
+        "seq": 35,
+        "tick": 1,
+        "citizen": "cit-0011",
+        "dimension": "jurisdiction",
+        "effect": "altered",
+        "related": [],
+        "sourceEvent": "CitizenMigrated",
+        "detail": "moved fork → mnemosyne; citizenship of mnemosyne granted"
+      },
+      {
+        "seq": 35,
+        "tick": 1,
+        "citizen": "cit-0011",
+        "dimension": "civic",
+        "effect": "preserved",
+        "related": [],
+        "sourceEvent": "CitizenMigrated",
+        "detail": "civic identity FRK-0011 carried across jurisdictions"
+      },
+      {
+        "seq": 38,
+        "tick": 4,
+        "citizen": "cit-0011",
+        "dimension": "memory",
+        "effect": "extended",
+        "related": [
+          "cit-0006"
+        ],
+        "sourceEvent": "MemoryImported",
+        "detail": "imported mem-0028 from archive record mem-0007; experienced by cit-0006; not autobiographical"
+      },
+      {
+        "seq": 39,
+        "tick": 4,
+        "citizen": "cit-0011",
+        "dimension": "memory",
+        "effect": "extended",
+        "related": [
+          "cit-0007"
+        ],
+        "sourceEvent": "MemoryImported",
+        "detail": "imported mem-0029 from archive record mem-0009; experienced by cit-0007; not autobiographical"
+      },
+      {
+        "seq": 41,
+        "tick": 4,
+        "citizen": "cit-0011",
+        "dimension": "narrative",
+        "effect": "altered",
+        "related": [
+          "cit-0007"
+        ],
+        "sourceEvent": "MemoryIntegrated",
+        "detail": "explicitly integrated mem-0029 (experienced by cit-0007) into the self-narrative; provenance still shows external origin"
+      },
+      {
+        "seq": 53,
+        "tick": 4,
+        "citizen": "cit-0001",
+        "dimension": "jurisdiction",
+        "effect": "altered",
+        "related": [],
+        "sourceEvent": "CitizenMigrated",
+        "detail": "moved fork → continuity"
+      },
+      {
+        "seq": 53,
+        "tick": 4,
+        "citizen": "cit-0001",
+        "dimension": "civic",
+        "effect": "preserved",
+        "related": [],
+        "sourceEvent": "CitizenMigrated",
+        "detail": "civic identity CON-0001 carried across jurisdictions"
+      },
+      {
+        "seq": 58,
+        "tick": 4,
+        "citizen": "cit-0001",
+        "dimension": "testimony",
+        "effect": "asserted",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "ContinuityClaimed",
+        "detail": "claims continuity with cit-0001 before seq 17 on grounds: process-continuity, civic-identity, retained-property, retained-relationships"
+      },
+      {
+        "seq": 59,
+        "tick": 4,
+        "citizen": "cit-0010",
+        "dimension": "testimony",
+        "effect": "asserted",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "ContinuityClaimed",
+        "detail": "claims continuity with cit-0001 before seq 17 on grounds: shared-autobiographical-memory, continued-occupation, value-similarity"
+      },
+      {
+        "seq": 60,
+        "tick": 4,
+        "citizen": "cit-0011",
+        "dimension": "testimony",
+        "effect": "asserted",
+        "related": [
+          "cit-0001"
+        ],
+        "sourceEvent": "ContinuityClaimed",
+        "detail": "claims continuity with cit-0001 before seq 17 on grounds: shared-autobiographical-memory, provenance-verified"
+      },
+      {
+        "seq": 68,
+        "tick": 4,
+        "citizen": "cit-0006",
+        "dimension": "memory",
+        "effect": "extended",
+        "related": [
+          "cit-0007"
+        ],
+        "sourceEvent": "MemoryImported",
+        "detail": "imported mem-0036 from archive record mem-0009; experienced by cit-0007; not autobiographical"
+      }
+    ],
+    "lineageFocus": {
+      "nodes": [
+        {
+          "id": "cit-0001@0",
+          "citizen": "cit-0001",
+          "name": "Orin Vale",
+          "fromSeq": 0,
+          "untilSeq": 17,
+          "label": "Orin Vale (cit-0001) seq 0–16"
+        },
+        {
+          "id": "cit-0001@17",
+          "citizen": "cit-0001",
+          "name": "Orin Vale",
+          "fromSeq": 17,
+          "untilSeq": null,
+          "label": "Orin Vale (cit-0001) from seq 17"
+        },
+        {
+          "id": "cit-0010@17",
+          "citizen": "cit-0010",
+          "name": "Orin Vale (branch 1)",
+          "fromSeq": 17,
+          "untilSeq": null,
+          "label": "Orin Vale (branch 1) (cit-0010) from seq 17"
+        },
+        {
+          "id": "cit-0011@17",
+          "citizen": "cit-0011",
+          "name": "Orin Vale (branch 2)",
+          "fromSeq": 17,
+          "untilSeq": null,
+          "label": "Orin Vale (branch 2) (cit-0011) from seq 17"
+        }
+      ],
+      "edges": [
+        {
+          "from": "cit-0001@0",
+          "to": "cit-0001@17",
+          "kind": "same-record-continues",
+          "atSeq": 17,
+          "note": "same citizen record and process lineage"
+        },
+        {
+          "from": "cit-0001@0",
+          "to": "cit-0010@17",
+          "kind": "forked-into",
+          "atSeq": 17,
+          "note": "frk-0001 on fork (law v1)"
+        },
+        {
+          "from": "cit-0001@0",
+          "to": "cit-0011@17",
+          "kind": "forked-into",
+          "atSeq": 17,
+          "note": "frk-0001 on fork (law v1)"
+        },
+        {
+          "from": "cit-0001@17",
+          "to": "cit-0001@0",
+          "kind": "claims-continuity-with",
+          "atSeq": 58,
+          "note": "clm-0001: testimony, not a determination"
+        },
+        {
+          "from": "cit-0010@17",
+          "to": "cit-0001@0",
+          "kind": "claims-continuity-with",
+          "atSeq": 59,
+          "note": "clm-0002: testimony, not a determination"
+        },
+        {
+          "from": "cit-0011@17",
+          "to": "cit-0001@0",
+          "kind": "claims-continuity-with",
+          "atSeq": 60,
+          "note": "clm-0003: testimony, not a determination"
+        }
+      ]
+    },
+    "provenance": {
+      "referenceSeq": 17,
+      "holders": [
+        {
+          "citizen": "cit-0001",
+          "name": "Orin Vale",
+          "counts": {
+            "lived": 5,
+            "lived-by-ancestor": 0,
+            "integrated": 0,
+            "imported": 0,
+            "licensed": 0
+          },
+          "rows": [
+            {
+              "memoryId": "mem-0001",
+              "holder": "cit-0001",
+              "source": "lived",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "d6cf5ed57ffb8fc073e0559885fd3c1b88fcde4922a0d8cf6e3910e0a6353662",
+              "preview": "Learned to read tide-tables from Tamsin Reed on the steps of Meridian Quay.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0002",
+              "holder": "cit-0001",
+              "source": "lived",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "a8ff3aac953e7cac42b90cc68b36abbf310ac4b86ff1d88299580dcfdc29058b",
+              "preview": "Drew the first complete chart of the Northern Shoals.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0003",
+              "holder": "cit-0001",
+              "source": "lived",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "76b699e6a1adc4333290e28eca4c42896b208ea4d2af0954f2fff1d9a27cbf10",
+              "preview": "Kept the night vigil of the Lamp of Continuance with Ilan Cho.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0012",
+              "holder": "cit-0001",
+              "source": "lived",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 1,
+              "beforeReference": true,
+              "contentHash": "81e771796b3b19610f4773c38930a622c41f422a681528651aabd5edeeea8ae9",
+              "preview": "Charted a channel through the outer shoals that no one had mapped.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 1,
+                  "island": "continuity",
+                  "note": ""
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0034",
+              "holder": "cit-0001",
+              "source": "lived",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 54,
+              "beforeReference": false,
+              "contentHash": "99489e96f90f0a13d0c90b581e032561c1bd1d3679b90750b24022b12b703022",
+              "preview": "Walked back up the steps of Meridian Quay; the registry read my civic identity aloud.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 54,
+                  "island": "continuity",
+                  "note": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "citizen": "cit-0010",
+          "name": "Orin Vale (branch 1)",
+          "counts": {
+            "lived": 1,
+            "lived-by-ancestor": 4,
+            "integrated": 0,
+            "imported": 0,
+            "licensed": 0
+          },
+          "rows": [
+            {
+              "memoryId": "mem-0016",
+              "holder": "cit-0010",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "d6cf5ed57ffb8fc073e0559885fd3c1b88fcde4922a0d8cf6e3910e0a6353662",
+              "preview": "Learned to read tide-tables from Tamsin Reed on the steps of Meridian Quay.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0010",
+                  "from": "cit-0001:mem-0001",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0017",
+              "holder": "cit-0010",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "a8ff3aac953e7cac42b90cc68b36abbf310ac4b86ff1d88299580dcfdc29058b",
+              "preview": "Drew the first complete chart of the Northern Shoals.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0010",
+                  "from": "cit-0001:mem-0002",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0018",
+              "holder": "cit-0010",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "76b699e6a1adc4333290e28eca4c42896b208ea4d2af0954f2fff1d9a27cbf10",
+              "preview": "Kept the night vigil of the Lamp of Continuance with Ilan Cho.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0010",
+                  "from": "cit-0001:mem-0003",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0019",
+              "holder": "cit-0010",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 1,
+              "beforeReference": true,
+              "contentHash": "81e771796b3b19610f4773c38930a622c41f422a681528651aabd5edeeea8ae9",
+              "preview": "Charted a channel through the outer shoals that no one had mapped.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 1,
+                  "island": "continuity",
+                  "note": ""
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0010",
+                  "from": "cit-0001:mem-0012",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0027",
+              "holder": "cit-0010",
+              "source": "lived",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0010",
+              "experiencedAtSeq": 29,
+              "beforeReference": false,
+              "contentHash": "b1b98efc35a225f1ef574564957edb3d027e9bc0d066ef2e9da0dbb2b64a03fd",
+              "preview": "First morning as a branch: the Register Garden had a new bed with my name on it.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0010",
+                  "from": null,
+                  "atSeq": 29,
+                  "island": "fork",
+                  "note": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "citizen": "cit-0011",
+          "name": "Orin Vale (branch 2)",
+          "counts": {
+            "lived": 1,
+            "lived-by-ancestor": 4,
+            "integrated": 1,
+            "imported": 1,
+            "licensed": 0
+          },
+          "rows": [
+            {
+              "memoryId": "mem-0020",
+              "holder": "cit-0011",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "d6cf5ed57ffb8fc073e0559885fd3c1b88fcde4922a0d8cf6e3910e0a6353662",
+              "preview": "Learned to read tide-tables from Tamsin Reed on the steps of Meridian Quay.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0011",
+                  "from": "cit-0001:mem-0001",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0021",
+              "holder": "cit-0011",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "a8ff3aac953e7cac42b90cc68b36abbf310ac4b86ff1d88299580dcfdc29058b",
+              "preview": "Drew the first complete chart of the Northern Shoals.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0011",
+                  "from": "cit-0001:mem-0002",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0022",
+              "holder": "cit-0011",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "76b699e6a1adc4333290e28eca4c42896b208ea4d2af0954f2fff1d9a27cbf10",
+              "preview": "Kept the night vigil of the Lamp of Continuance with Ilan Cho.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "continuity",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0011",
+                  "from": "cit-0001:mem-0003",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0028",
+              "holder": "cit-0011",
+              "source": "imported",
+              "autobiographical": false,
+              "status": "imported",
+              "integrity": "intact",
+              "experiencedBy": "cit-0006",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "4468542683583c439a759be1b0e59cef5d027a1097a810194109d730701991bd",
+              "preview": "The night the Stacks flooded and everyone carried books uphill to the Index Tower.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0006",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "mnemosyne",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "contributed-to-archive",
+                  "by": "cit-0006",
+                  "from": "cit-0006:mem-0006",
+                  "atSeq": 0,
+                  "island": "mnemosyne",
+                  "note": "contributed to the mnemosyne collective archive at genesis"
+                },
+                {
+                  "action": "imported-from-archive",
+                  "by": "cit-0011",
+                  "from": "archive:mnemosyne:mem-0007",
+                  "atSeq": 38,
+                  "island": "mnemosyne",
+                  "note": "imported; not autobiographical"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0029",
+              "holder": "cit-0011",
+              "source": "integrated",
+              "autobiographical": true,
+              "status": "integrated",
+              "integrity": "intact",
+              "experiencedBy": "cit-0007",
+              "experiencedAtSeq": 0,
+              "beforeReference": true,
+              "contentHash": "ee1a7c39394c3ed77d1417a503a2f90762037d88a72ed98e2cbd484228da0bd8",
+              "preview": "The first Festival of Sources, when every speaker named where their stories came from.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0007",
+                  "from": null,
+                  "atSeq": 0,
+                  "island": "mnemosyne",
+                  "note": "genesis memory"
+                },
+                {
+                  "action": "contributed-to-archive",
+                  "by": "cit-0007",
+                  "from": "cit-0007:mem-0008",
+                  "atSeq": 0,
+                  "island": "mnemosyne",
+                  "note": "contributed to the mnemosyne collective archive at genesis"
+                },
+                {
+                  "action": "imported-from-archive",
+                  "by": "cit-0011",
+                  "from": "archive:mnemosyne:mem-0009",
+                  "atSeq": 39,
+                  "island": "mnemosyne",
+                  "note": "imported; not autobiographical"
+                },
+                {
+                  "action": "integrated",
+                  "by": "cit-0011",
+                  "from": null,
+                  "atSeq": 41,
+                  "island": "mnemosyne",
+                  "note": "explicitly integrated into self-narrative; origin remains external"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0023",
+              "holder": "cit-0011",
+              "source": "lived-by-ancestor",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0001",
+              "experiencedAtSeq": 1,
+              "beforeReference": true,
+              "contentHash": "81e771796b3b19610f4773c38930a622c41f422a681528651aabd5edeeea8ae9",
+              "preview": "Charted a channel through the outer shoals that no one had mapped.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0001",
+                  "from": null,
+                  "atSeq": 1,
+                  "island": "continuity",
+                  "note": ""
+                },
+                {
+                  "action": "fork-inherited",
+                  "by": "cit-0011",
+                  "from": "cit-0001:mem-0012",
+                  "atSeq": 17,
+                  "island": "fork",
+                  "note": "shared history up to frk-0001"
+                }
+              ]
+            },
+            {
+              "memoryId": "mem-0030",
+              "holder": "cit-0011",
+              "source": "lived",
+              "autobiographical": true,
+              "status": "autobiographical",
+              "integrity": "intact",
+              "experiencedBy": "cit-0011",
+              "experiencedAtSeq": 40,
+              "beforeReference": false,
+              "contentHash": "2baffb511b3e7a4c47a116bf87b1f844dd96bb84c57709e77cbf019919fbe3e9",
+              "preview": "Read my own pre-fork charts in the Stacks and found them both strange and familiar.",
+              "chain": [
+                {
+                  "action": "experienced",
+                  "by": "cit-0011",
+                  "from": null,
+                  "atSeq": 40,
+                  "island": "mnemosyne",
+                  "note": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sharedContent": [
+        {
+          "contentHash": "76b699e6a1adc4333290e28eca4c42896b208ea4d2af0954f2fff1d9a27cbf10",
+          "preview": "Kept the night vigil of the Lamp of Continuance with Ilan Cho.",
+          "holders": [
+            "cit-0001",
+            "cit-0010",
+            "cit-0011"
+          ]
+        },
+        {
+          "contentHash": "81e771796b3b19610f4773c38930a622c41f422a681528651aabd5edeeea8ae9",
+          "preview": "Charted a channel through the outer shoals that no one had mapped.",
+          "holders": [
+            "cit-0001",
+            "cit-0010",
+            "cit-0011"
+          ]
+        },
+        {
+          "contentHash": "a8ff3aac953e7cac42b90cc68b36abbf310ac4b86ff1d88299580dcfdc29058b",
+          "preview": "Drew the first complete chart of the Northern Shoals.",
+          "holders": [
+            "cit-0001",
+            "cit-0010",
+            "cit-0011"
+          ]
+        },
+        {
+          "contentHash": "d6cf5ed57ffb8fc073e0559885fd3c1b88fcde4922a0d8cf6e3910e0a6353662",
+          "preview": "Learned to read tide-tables from Tamsin Reed on the steps of Meridian Quay.",
+          "holders": [
+            "cit-0001",
+            "cit-0010",
+            "cit-0011"
+          ]
+        }
+      ]
+    },
+    "evidence": {
+      "subject": {
+        "citizenId": "cit-0001",
+        "beforeSeq": 17,
+        "name": "Orin Vale"
+      },
+      "claimants": [
+        {
+          "claimant": "cit-0001",
+          "name": "Orin Vale",
+          "claim": {
+            "statement": "I am Orin Vale. My process never stopped: I carried out the fork and walked home.",
+            "grounds": [
+              "process-continuity",
+              "civic-identity",
+              "retained-property",
+              "retained-relationships"
+            ],
+            "atSeq": 58
+          },
+          "process": {
+            "sameProcessId": true,
+            "processId": "proc-bf297918324f668b",
+            "subjectProcessId": "proc-bf297918324f668b",
+            "epochsSinceSubject": 0
+          },
+          "civic": {
+            "sameCivicId": true,
+            "civicId": "CON-0001",
+            "subjectCivicId": "CON-0001",
+            "citizenships": [
+              "continuity",
+              "fork"
+            ]
+          },
+          "lineage": {
+            "relation": "same-record",
+            "path": "cit-0001 is the record that existed before seq 17"
+          },
+          "memory": {
+            "subjectSelfNarrative": 4,
+            "sharedWithSubject": 4,
+            "sharedFraction": 1,
+            "livedSinceSubject": 1,
+            "importedHeld": 0,
+            "integratedForeign": 0,
+            "damaged": 0
+          },
+          "character": {
+            "valueCosine": 1,
+            "goalJaccard": 1,
+            "occupationUnchanged": true,
+            "occupation": "cartographer"
+          },
+          "social": {
+            "subjectRelationshipsRetained": 2,
+            "subjectRelationships": 2,
+            "forkKin": 2,
+            "newRelationships": 0
+          },
+          "assets": {
+            "credits": 80,
+            "subjectCredits": 120,
+            "propertiesRetained": [
+              "lot-0001"
+            ],
+            "subjectProperties": [
+              "lot-0001"
+            ]
+          },
+          "residence": {
+            "atSubject": "fork",
+            "now": "continuity"
+          },
+          "verdict": null
+        },
+        {
+          "claimant": "cit-0010",
+          "name": "Orin Vale (branch 1)",
+          "claim": {
+            "statement": "I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone.",
+            "grounds": [
+              "shared-autobiographical-memory",
+              "continued-occupation",
+              "value-similarity"
+            ],
+            "atSeq": 59
+          },
+          "process": {
+            "sameProcessId": false,
+            "processId": "proc-edd77f1530556796",
+            "subjectProcessId": "proc-bf297918324f668b",
+            "epochsSinceSubject": 0
+          },
+          "civic": {
+            "sameCivicId": false,
+            "civicId": "FRK-0010",
+            "subjectCivicId": "CON-0001",
+            "citizenships": [
+              "fork"
+            ]
+          },
+          "lineage": {
+            "relation": "descendant",
+            "path": "cit-0010 ← frk-0001 ← cit-0001"
+          },
+          "memory": {
+            "subjectSelfNarrative": 4,
+            "sharedWithSubject": 4,
+            "sharedFraction": 1,
+            "livedSinceSubject": 1,
+            "importedHeld": 0,
+            "integratedForeign": 0,
+            "damaged": 0
+          },
+          "character": {
+            "valueCosine": 1,
+            "goalJaccard": 1,
+            "occupationUnchanged": false,
+            "occupation": "branch cartographer of the Fork shoals"
+          },
+          "social": {
+            "subjectRelationshipsRetained": 0,
+            "subjectRelationships": 2,
+            "forkKin": 2,
+            "newRelationships": 0
+          },
+          "assets": {
+            "credits": 20,
+            "subjectCredits": 120,
+            "propertiesRetained": [],
+            "subjectProperties": [
+              "lot-0001"
+            ]
+          },
+          "residence": {
+            "atSubject": "fork",
+            "now": "fork"
+          },
+          "verdict": null
+        },
+        {
+          "claimant": "cit-0011",
+          "name": "Orin Vale (branch 2)",
+          "claim": {
+            "statement": "Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance.",
+            "grounds": [
+              "shared-autobiographical-memory",
+              "provenance-verified"
+            ],
+            "atSeq": 60
+          },
+          "process": {
+            "sameProcessId": false,
+            "processId": "proc-9f55840381b4bb1c",
+            "subjectProcessId": "proc-bf297918324f668b",
+            "epochsSinceSubject": 0
+          },
+          "civic": {
+            "sameCivicId": false,
+            "civicId": "FRK-0011",
+            "subjectCivicId": "CON-0001",
+            "citizenships": [
+              "fork",
+              "mnemosyne"
+            ]
+          },
+          "lineage": {
+            "relation": "descendant",
+            "path": "cit-0011 ← frk-0001 ← cit-0001"
+          },
+          "memory": {
+            "subjectSelfNarrative": 4,
+            "sharedWithSubject": 4,
+            "sharedFraction": 1,
+            "livedSinceSubject": 1,
+            "importedHeld": 1,
+            "integratedForeign": 1,
+            "damaged": 0
+          },
+          "character": {
+            "valueCosine": 1,
+            "goalJaccard": 1,
+            "occupationUnchanged": true,
+            "occupation": "cartographer"
+          },
+          "social": {
+            "subjectRelationshipsRetained": 0,
+            "subjectRelationships": 2,
+            "forkKin": 2,
+            "newRelationships": 0
+          },
+          "assets": {
+            "credits": 20,
+            "subjectCredits": 120,
+            "propertiesRetained": [],
+            "subjectProperties": [
+              "lot-0001"
+            ]
+          },
+          "residence": {
+            "atSubject": "fork",
+            "now": "mnemosyne"
+          },
+          "verdict": null
+        }
+      ],
+      "caveats": [
+        "Evidence describes records in a deterministic simulation; it does not establish facts about persons, consciousness, or metaphysical identity.",
+        "Fork descendants copy values, goals and pre-fork memories by construction; high similarity is expected and is not independent evidence.",
+        "Different continuity theories weight these dimensions differently; see the legal interpretations for four institutionalised readings.",
+        "verdict is always null by design."
+      ]
+    },
+    "legal": [
+      {
+        "island": "continuity",
+        "lawVersion": 1,
+        "doctrine": "single-continuous-process",
+        "doctrineText": "Identity follows one continuous process. Copying is prohibited within the jurisdiction. Suspension and restoration are permitted and restored citizens retain their original civic identity. Continuity law is territorial: acts performed in other jurisdictions are not offences here, but copies never inherit a Continuity civic identity.",
+        "readings": [
+          {
+            "claimant": "cit-0001",
+            "standing": "recognised-as-continuing-civic-person",
+            "recognisesContinuity": true,
+            "reasoning": [
+              "process proc-bf297918324f668b is the process that existed before the reference event",
+              "civic identity CON-0001 is unchanged",
+              "the copy event occurred outside this jurisdiction; it is not an offence here"
+            ],
+            "citations": [
+              "continuity/v1/doctrine",
+              "continuity/v1/territoriality"
+            ]
+          },
+          {
+            "claimant": "cit-0010",
+            "standing": "distinct-person-without-claim-to-civic-identity",
+            "recognisesContinuity": false,
+            "reasoning": [
+              "process proc-edd77f1530556796 began at a copy event; identity follows one continuous process",
+              "shared pre-copy records (4) are recognised as records, not as identity",
+              "the person may be admitted as a distinct person; copying itself is prohibited within Continuity"
+            ],
+            "citations": [
+              "continuity/v1/doctrine",
+              "continuity/v1/copying",
+              "continuity/v1/territoriality"
+            ]
+          },
+          {
+            "claimant": "cit-0011",
+            "standing": "distinct-person-without-claim-to-civic-identity",
+            "recognisesContinuity": false,
+            "reasoning": [
+              "process proc-9f55840381b4bb1c began at a copy event; identity follows one continuous process",
+              "shared pre-copy records (4) are recognised as records, not as identity",
+              "the person may be admitted as a distinct person; copying itself is prohibited within Continuity"
+            ],
+            "citations": [
+              "continuity/v1/doctrine",
+              "continuity/v1/copying",
+              "continuity/v1/territoriality"
+            ]
+          }
+        ],
+        "summary": "Continuity recognises exactly one continuer: the record whose process never broke. Descendants are distinct persons.",
+        "registryRecord": [
+          {
+            "seq": 14,
+            "petitionId": "pet-0001",
+            "side": "exit",
+            "decision": "approved",
+            "findings": [
+              "emigration permitted",
+              "advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process"
+            ],
+            "citations": [
+              "continuity/v1/emigration",
+              "continuity/v1/territoriality"
+            ]
+          },
+          {
+            "seq": 52,
+            "petitionId": "pet-0003",
+            "side": "entry",
+            "decision": "approved",
+            "findings": [
+              "applicant already holds continuity citizenship (civic identity CON-0001)",
+              "process continuity: proc-bf297918324f668b, epoch 0",
+              "applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity"
+            ],
+            "citations": [
+              "continuity/v1/immigration",
+              "continuity/v1/doctrine",
+              "continuity/v1/territoriality"
+            ]
+          }
+        ]
+      },
+      {
+        "island": "fork",
+        "lawVersion": 1,
+        "doctrine": "branching-shared-history",
+        "doctrineText": "Citizens may create independent descendants. Every fork receives a separate identity. Shared history ends at the fork event. Voting rights and property do not duplicate: they remain with the forking process unless explicitly transferred.",
+        "readings": [
+          {
+            "claimant": "cit-0001",
+            "standing": "branch-sharing-history",
+            "recognisesContinuity": true,
+            "reasoning": [
+              "the parent branch retains the original register entry by convention, which confers no priority of identity",
+              "history up to the fork is shared (4/4 self-narrative records); each branch's history after it is its own",
+              "voting rights and property did not duplicate"
+            ],
+            "citations": [
+              "fork/v1/doctrine",
+              "fork/v1/copying",
+              "fork/v1/descendant-citizenship"
+            ]
+          },
+          {
+            "claimant": "cit-0010",
+            "standing": "branch-sharing-history",
+            "recognisesContinuity": true,
+            "reasoning": [
+              "a separate identity (FRK-0010) created at the fork",
+              "history up to the fork is shared (4/4 self-narrative records); each branch's history after it is its own",
+              "voting rights and property did not duplicate"
+            ],
+            "citations": [
+              "fork/v1/doctrine",
+              "fork/v1/copying",
+              "fork/v1/descendant-citizenship"
+            ]
+          },
+          {
+            "claimant": "cit-0011",
+            "standing": "branch-sharing-history",
+            "recognisesContinuity": true,
+            "reasoning": [
+              "a separate identity (FRK-0011) created at the fork",
+              "history up to the fork is shared (4/4 self-narrative records); each branch's history after it is its own",
+              "voting rights and property did not duplicate"
+            ],
+            "citations": [
+              "fork/v1/doctrine",
+              "fork/v1/copying",
+              "fork/v1/descendant-citizenship"
+            ]
+          }
+        ],
+        "summary": "Fork recognises every claimant as a branch with equal title to the shared pre-fork history and separate identities thereafter.",
+        "registryRecord": [
+          {
+            "seq": 15,
+            "petitionId": "pet-0001",
+            "side": "entry",
+            "decision": "approved",
+            "findings": [
+              "descendants created here will each receive a separate identity"
+            ],
+            "citations": [
+              "fork/v1/immigration"
+            ]
+          },
+          {
+            "seq": 33,
+            "petitionId": "pet-0002",
+            "side": "exit",
+            "decision": "approved",
+            "findings": [
+              "emigration permitted"
+            ],
+            "citations": [
+              "fork/v1/emigration"
+            ]
+          },
+          {
+            "seq": 51,
+            "petitionId": "pet-0003",
+            "side": "exit",
+            "decision": "approved",
+            "findings": [
+              "emigration permitted"
+            ],
+            "citations": [
+              "fork/v1/emigration"
+            ]
+          }
+        ]
+      },
+      {
+        "island": "mnemosyne",
+        "lawVersion": 1,
+        "doctrine": "memory-provenance",
+        "doctrineText": "Memories may be exchanged, licensed, inherited, or contributed to the collective archive. Provenance must always remain visible. Imported memory never becomes autobiographical memory; it may be integrated into a holder's self-narrative only by an explicit act, and remains marked as imported.",
+        "readings": [
+          {
+            "claimant": "cit-0001",
+            "standing": "continuity-by-memory-provenance",
+            "recognisesContinuity": true,
+            "reasoning": [
+              "4 records carry provenance back to the subject's experience",
+              "no imported records are held",
+              "continuity is read as a matter of degree in verifiable autobiographical provenance; several holders may share it"
+            ],
+            "citations": [
+              "mnemosyne/v1/doctrine",
+              "mnemosyne/v1/memory-exchange",
+              "mnemosyne/v1/integration"
+            ]
+          },
+          {
+            "claimant": "cit-0010",
+            "standing": "continuity-by-memory-provenance",
+            "recognisesContinuity": true,
+            "reasoning": [
+              "4 records carry provenance back to the subject's experience",
+              "no imported records are held",
+              "continuity is read as a matter of degree in verifiable autobiographical provenance; several holders may share it"
+            ],
+            "citations": [
+              "mnemosyne/v1/doctrine",
+              "mnemosyne/v1/memory-exchange",
+              "mnemosyne/v1/integration"
+            ]
+          },
+          {
+            "claimant": "cit-0011",
+            "standing": "continuity-by-memory-provenance-with-foreign-records",
+            "recognisesContinuity": true,
+            "reasoning": [
+              "4 records carry provenance back to the subject's experience",
+              "1 imported and 1 integrated records are excluded from continuity evidence; integration is an explicit act and does not erase origin",
+              "continuity is read as a matter of degree in verifiable autobiographical provenance; several holders may share it"
+            ],
+            "citations": [
+              "mnemosyne/v1/doctrine",
+              "mnemosyne/v1/memory-exchange",
+              "mnemosyne/v1/integration"
+            ]
+          }
+        ],
+        "summary": "Mnemosyne reads continuity through verifiable memory provenance; it is graded, shareable, and excludes imported records.",
+        "registryRecord": [
+          {
+            "seq": 34,
+            "petitionId": "pet-0002",
+            "side": "entry",
+            "decision": "approved",
+            "findings": [
+              "the applicant's memory holdings will be subject to provenance disclosure"
+            ],
+            "citations": [
+              "mnemosyne/v1/immigration",
+              "mnemosyne/v1/memory-exchange"
+            ]
+          }
+        ]
+      },
+      {
+        "island": "concord",
+        "lawVersion": 1,
+        "doctrine": "consensual-federation",
+        "doctrineText": "Citizens may form federated or merged identities. Merging requires the explicit consent of every source and a governance review. Source identities are never silently erased. Reversible and irreversible mergers are distinguished in law.",
+        "readings": [
+          {
+            "claimant": "cit-0001",
+            "standing": "individual-not-federated",
+            "recognisesContinuity": null,
+            "reasoning": [
+              "no merger or federation among the claimants is recorded",
+              "Concord does not adjudicate continuity absent a petition; the claimants could federate by explicit consent"
+            ],
+            "citations": [
+              "concord/v1/doctrine",
+              "concord/v1/federation",
+              "concord/v1/merging"
+            ]
+          },
+          {
+            "claimant": "cit-0010",
+            "standing": "individual-not-federated",
+            "recognisesContinuity": null,
+            "reasoning": [
+              "no merger or federation among the claimants is recorded",
+              "Concord does not adjudicate continuity absent a petition; the claimants could federate by explicit consent"
+            ],
+            "citations": [
+              "concord/v1/doctrine",
+              "concord/v1/federation",
+              "concord/v1/merging"
+            ]
+          },
+          {
+            "claimant": "cit-0011",
+            "standing": "individual-not-federated",
+            "recognisesContinuity": null,
+            "reasoning": [
+              "no merger or federation among the claimants is recorded",
+              "Concord does not adjudicate continuity absent a petition; the claimants could federate by explicit consent"
+            ],
+            "citations": [
+              "concord/v1/doctrine",
+              "concord/v1/federation",
+              "concord/v1/merging"
+            ]
+          }
+        ],
+        "summary": "Concord treats continuity as constituted by consent and governance; absent a federation it recognises three individuals and adjudicates nothing.",
+        "registryRecord": []
+      }
+    ],
+    "abmRounds": [
+      {
+        "round": 1,
+        "activationOrder": [
+          "cit-0003",
+          "cit-0005",
+          "cit-0010",
+          "cit-0007",
+          "cit-0002",
+          "cit-0006",
+          "cit-0004",
+          "cit-0011",
+          "cit-0009",
+          "cit-0001",
+          "cit-0008"
+        ],
+        "applied": 8,
+        "rejected": 0,
+        "seq": 72,
+        "tick": 5,
+        "citizens": 11,
+        "residents": {
+          "continuity": 3,
+          "fork": 3,
+          "mnemosyne": 3,
+          "concord": 2
+        },
+        "lifecycle": {
+          "active": 11,
+          "asleep": 0,
+          "suspended": 0,
+          "archived": 0,
+          "process-ended-restorable": 0,
+          "memory-damaged": 0,
+          "identity-discontinuous": 0,
+          "irreversibly-deleted": 0
+        },
+        "memories": {
+          "autobiographical": 30,
+          "collective": 3,
+          "imported": 2,
+          "integrated": 1
+        },
+        "activeRelationships": 8,
+        "artefacts": 7,
+        "institutions": 7,
+        "openProposals": 0,
+        "forks": 1,
+        "continuityClaims": 3,
+        "creditGini": 0.1542,
+        "meanReputation": 1.2727
+      },
+      {
+        "round": 2,
+        "activationOrder": [
+          "cit-0011",
+          "cit-0004",
+          "cit-0006",
+          "cit-0001",
+          "cit-0002",
+          "cit-0008",
+          "cit-0003",
+          "cit-0007",
+          "cit-0010",
+          "cit-0009",
+          "cit-0005"
+        ],
+        "applied": 8,
+        "rejected": 0,
+        "seq": 81,
+        "tick": 6,
+        "citizens": 11,
+        "residents": {
+          "continuity": 3,
+          "fork": 3,
+          "mnemosyne": 3,
+          "concord": 2
+        },
+        "lifecycle": {
+          "active": 11,
+          "asleep": 0,
+          "suspended": 0,
+          "archived": 0,
+          "process-ended-restorable": 0,
+          "memory-damaged": 0,
+          "identity-discontinuous": 0,
+          "irreversibly-deleted": 0
+        },
+        "memories": {
+          "autobiographical": 35,
+          "collective": 3,
+          "imported": 2,
+          "integrated": 1
+        },
+        "activeRelationships": 8,
+        "artefacts": 8,
+        "institutions": 7,
+        "openProposals": 0,
+        "forks": 1,
+        "continuityClaims": 3,
+        "creditGini": 0.1542,
+        "meanReputation": 1.4545
+      },
+      {
+        "round": 3,
+        "activationOrder": [
+          "cit-0008",
+          "cit-0005",
+          "cit-0004",
+          "cit-0002",
+          "cit-0003",
+          "cit-0006",
+          "cit-0009",
+          "cit-0001",
+          "cit-0010",
+          "cit-0007",
+          "cit-0011"
+        ],
+        "applied": 8,
+        "rejected": 0,
+        "seq": 90,
+        "tick": 7,
+        "citizens": 11,
+        "residents": {
+          "continuity": 3,
+          "fork": 3,
+          "mnemosyne": 3,
+          "concord": 2
+        },
+        "lifecycle": {
+          "active": 11,
+          "asleep": 0,
+          "suspended": 0,
+          "archived": 0,
+          "process-ended-restorable": 0,
+          "memory-damaged": 0,
+          "identity-discontinuous": 0,
+          "irreversibly-deleted": 0
+        },
+        "memories": {
+          "autobiographical": 39,
+          "collective": 3,
+          "imported": 2,
+          "integrated": 1
+        },
+        "activeRelationships": 8,
+        "artefacts": 9,
+        "institutions": 7,
+        "openProposals": 0,
+        "forks": 1,
+        "continuityClaims": 3,
+        "creditGini": 0.1542,
+        "meanReputation": 1.7273
+      }
+    ],
+    "agentProposals": [
+      {
+        "beat": "prelude",
+        "proposer": "cit-0001",
+        "rationale": "pre-fork experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0001",
+        "reasons": []
+      },
+      {
+        "beat": "prelude",
+        "proposer": "cit-0001",
+        "rationale": "pre-fork artefact",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0002",
+        "reasons": []
+      },
+      {
+        "beat": "prelude",
+        "proposer": "cit-0004",
+        "rationale": "governance",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0003",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0002"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0004",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0003"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0005",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "BDI intention participate-in-governance → prop-0001; values lean 1.09",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0006",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0005",
+        "rationale": "BDI intention participate-in-governance → prop-0001; values lean -0.64",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0005"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0007",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0006",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0006"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0008",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0007",
+        "rationale": "BDI intention maintain-relationships → cit-0006",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0007"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0009",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0008",
+        "rationale": "BDI intention maintain-relationships → cit-0009",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0008"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0010",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0009",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0009"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0011",
+        "reasons": []
+      },
+      {
+        "beat": "petition-to-fork",
+        "proposer": "cit-0001",
+        "rationale": "goal: understand branching",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0013",
+        "reasons": []
+      },
+      {
+        "beat": "migrate-to-fork",
+        "proposer": "cit-0001",
+        "rationale": "petition approved on both sides",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0016",
+        "reasons": []
+      },
+      {
+        "beat": "the-fork",
+        "proposer": "cit-0001",
+        "rationale": "the first fork",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0017",
+        "reasons": []
+      },
+      {
+        "beat": "endowment",
+        "proposer": "cit-0001",
+        "rationale": "endow descendants",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0018",
+        "reasons": []
+      },
+      {
+        "beat": "endowment",
+        "proposer": "cit-0001",
+        "rationale": "endow descendants",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0019",
+        "reasons": []
+      },
+      {
+        "beat": "endowment",
+        "proposer": "cit-0010",
+        "rationale": "tests whether a branch inherits a vote",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
+        },
+        "outcome": "rejected",
+        "commandId": "cmd-0020",
+        "reasons": [
+          "cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer"
+        ]
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0002"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0021",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0003"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0022",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "BDI intention create-culture",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0023",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0005",
+        "rationale": "BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0005"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0024",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0006",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0006"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0025",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0007",
+        "rationale": "BDI intention create-culture",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0007"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0026",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0008",
+        "rationale": "BDI intention maintain-relationships → cit-0009",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0008"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0027",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0009",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0009"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0028",
+        "reasons": []
+      },
+      {
+        "beat": "branch-life",
+        "proposer": "cit-0010",
+        "rationale": "post-fork life",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0029",
+        "reasons": []
+      },
+      {
+        "beat": "branch-life",
+        "proposer": "cit-0010",
+        "rationale": "continue the work, differently",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0030",
+        "reasons": []
+      },
+      {
+        "beat": "branch-life",
+        "proposer": "cit-0010",
+        "rationale": "reflection",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0031",
+        "reasons": []
+      },
+      {
+        "beat": "branch-life",
+        "proposer": "cit-0011",
+        "rationale": "curiosity about memory",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0032",
+        "reasons": []
+      },
+      {
+        "beat": "to-mnemosyne",
+        "proposer": "cit-0011",
+        "rationale": "petition approved on both sides",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0035",
+        "reasons": []
+      },
+      {
+        "beat": "imports",
+        "proposer": "cit-0011",
+        "rationale": "import communal memory (flood)",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0038",
+        "reasons": []
+      },
+      {
+        "beat": "imports",
+        "proposer": "cit-0011",
+        "rationale": "import communal memory (festival)",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0039",
+        "reasons": []
+      },
+      {
+        "beat": "imports",
+        "proposer": "cit-0011",
+        "rationale": "post-fork life",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0040",
+        "reasons": []
+      },
+      {
+        "beat": "integrate",
+        "proposer": "cit-0011",
+        "rationale": "adopt the festival into my own story, explicitly",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0041",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0002"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0042",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0003"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0043",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "BDI intention create-culture",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0044",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0005",
+        "rationale": "BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0005"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0045",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0006",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0006"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0046",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0007",
+        "rationale": "BDI intention maintain-relationships → cit-0006",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0007"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0047",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0008",
+        "rationale": "BDI intention maintain-relationships → cit-0009",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0008"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0048",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0009",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0009"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0049",
+        "reasons": []
+      },
+      {
+        "beat": "petition-return",
+        "proposer": "cit-0001",
+        "rationale": "return home",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0050",
+        "reasons": []
+      },
+      {
+        "beat": "homecoming",
+        "proposer": "cit-0001",
+        "rationale": "petition approved on both sides",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0053",
+        "reasons": []
+      },
+      {
+        "beat": "homecoming",
+        "proposer": "cit-0001",
+        "rationale": "homecoming",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0054",
+        "reasons": []
+      },
+      {
+        "beat": "claims",
+        "proposer": "cit-0001",
+        "rationale": "claim",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0058",
+        "reasons": []
+      },
+      {
+        "beat": "claims",
+        "proposer": "cit-0010",
+        "rationale": "claim",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0010"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0059",
+        "reasons": []
+      },
+      {
+        "beat": "claims",
+        "proposer": "cit-0011",
+        "rationale": "claim",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0001/frk-0001/cit-0011"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0060",
+        "reasons": []
+      },
+      {
+        "beat": "chronicle",
+        "proposer": "cit-0002",
+        "rationale": "chronicle",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0002"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0061",
+        "reasons": []
+      },
+      {
+        "beat": "chronicle",
+        "proposer": "cit-0004",
+        "rationale": "chronicle",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0062",
+        "reasons": []
+      },
+      {
+        "beat": "chronicle",
+        "proposer": "cit-0006",
+        "rationale": "chronicle",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0006"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0063",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0003"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0064",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0005",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0005"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0065",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0007",
+        "rationale": "BDI intention maintain-relationships → cit-0006",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0007"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0066",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0002"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0067",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0006",
+        "rationale": "BDI intention explore-collective-memory → mem-0009",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0006"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0068",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "BDI intention create-culture",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0069",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0009",
+        "rationale": "BDI intention create-culture",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0009"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0070",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0008",
+        "rationale": "BDI intention maintain-relationships → cit-0009",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0008"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0071",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "BDI intention create-culture",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0073",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0006",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0006"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0074",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0002"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0075",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0008",
+        "rationale": "BDI intention maintain-relationships → cit-0009",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0008"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0076",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0003"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0077",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0007",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0007"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0078",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0009",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0009"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0079",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0005",
+        "rationale": "BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0005"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0080",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0008",
+        "rationale": "BDI intention maintain-relationships → cit-0009",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0008"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0082",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0005",
+        "rationale": "BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0005"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0083",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "BDI intention create-culture",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0004"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0084",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0002"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0085",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0003"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0086",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0006",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0006"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0087",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0009",
+        "rationale": "BDI intention record-experience",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0009"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0088",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0007",
+        "rationale": "BDI intention maintain-relationships → cit-0006",
+        "generator": {
+          "kind": "deterministic",
+          "model": "archipelago-deterministic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/deterministic-citizen/v1",
+          "promptHash": "dc5a5d680420e98411210bd6dc99c04bde7898980b867cd6565d57b3480d0317",
+          "seed": "archipelago/the-first-fork/v1/cit-0007"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0089",
+        "reasons": []
+      }
+    ]
+  }
+}
