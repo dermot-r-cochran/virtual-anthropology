@@ -16,7 +16,7 @@ All simulation commands run from `the-archipelago/simulation/`:
 
 ```bash
 npm ci                        # first thing in a fresh checkout: node_modules/ is gitignored and nothing is installed (Node >= 22.12, see package.json engines)
-npm run check                 # tsc --noEmit, then vitest run (17 tests in test/, two of them fast-check properties)
+npm run check                 # tsc --noEmit, then vitest run (22 tests in test/, two of them fast-check properties)
 npm test                      # vitest only; npm run test:watch to keep it running
 npm run publish:first-fork    # manifest → simulation → event store → exports/the-first-fork-v1/, reports/, research_manifest.yaml (SOURCE_DATE_EPOCH pinned in the script)
 npm run verify:first-fork     # replay the hash chain and check every output file's sha256 against the manifest
@@ -71,6 +71,12 @@ These come from `docs/ethical-framework.md`, `docs/research-methodology.md` and 
 - **The system never decides which claimant is the real person.** *The First Fork* ends with three continuity claims and evidence that returns no verdict; that is the design, and a test asserts it.
 - **Every manifest says whether it is a demonstration or an experiment** (`category`, required since 2026-10-01; `docs/research-methodology.md`, *Demonstrations and experiments*). A *demonstration*'s protagonists act as the scenario scripts them, so a consistent finding shows that the platform and the declared law tables produce the declared outcome and is not evidence about what citizens would do; an *experiment*'s outcome is not scripted. The label is printed in the report's abstract and design section, in `research_manifest.yaml`, `index.json`, `catalog.json` and on the site, and a demonstration's limitations carry the caveat verbatim. There is no default, because a default would file a run silently. *The First Fork* is a demonstration, and a test pins that it says so everywhere.
 - **Deterministic placeholder minds describe the rules, not cognition.** Results are single runs and support no statistical inference; seed sweeps are listed as future work in the limitations doc, not as something a report may imply.
+
+## Studies: seed sweeps, doctrine variants, alternate timelines
+
+A manifest's optional `study` block (since 2026-10-01; `docs/research-methodology.md`, *Studies*) replicates the base run under declared variations, each a deterministic run of its own identified by its head hash: `seeds` reruns the scenario under derived seeds; `doctrines` overrides one island's statutory law at founding (`laws` in the genesis config, amendable fields only); `timelines` replays the base record to the scenario's branch point, enacts an amendment there if declared (the `EnactAmendment` command, system actor `study` only, recorded as `LawEnacted` with no proposal), and runs the epilogue under the variant's seed. `research/study.ts` runs it; `study.json` and `study.csv` are exported, the report gains a *Study* section, and the site a *Study* view.
+
+Two rules make this sound and both are pinned by tests. **The epilogue is built from the record**: `attachEpilogueMinds` in the First Fork re-attaches every mind from canonical state in a fixed order at the branch point, for the base run and for every timeline alike, so a timeline branched with the base seed reproduces the base run byte for byte (this is why the base head hash moved on 2026-10-01 and was re-pinned). **A variation the scenario cannot proceed under is a result**: the run is recorded as `infeasible` with the scenario's own reason, never thrown. Summaries are min, median, mean and max over completed runs and per-hypothesis outcome counts; nothing is inferred from them, and the limitation saying so is printed with every study.
 
 ## Adding an experiment
 

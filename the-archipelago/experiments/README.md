@@ -6,6 +6,7 @@ Each directory holds an `experiment.yaml`, the authoritative definition of a rep
 - the research question and operationalised hypotheses;
 - the seed, minds and researchers;
 - the research bounds and parameters;
+- an optional `study`: seed sweeps, doctrine variants and alternate timelines, each replicated deterministically;
 - ethics, limitations and future work;
 - the pinned `reproducibility` head hash and event count.
 

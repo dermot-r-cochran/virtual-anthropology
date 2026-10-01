@@ -5,6 +5,9 @@ import { AgentRuntime } from "../../agents/runtime.js";
 import { buildGenesisState } from "../../domain/genesis.js";
 import { citizenAccount, type CitizenId } from "../../domain/ids.js";
 import type { PersonStageRef, ResearchBounds } from "../../domain/model.js";
+import type { IslandId } from "../../domain/ids.js";
+import type { LawAmendment } from "../../domain/law.js";
+import type { RecordedEvent } from "../../kernel/events.js";
 import { createRng } from "../../kernel/rng.js";
 import type { ExecutionResult, World as WorldT } from "../../kernel/world.js";
 import { World } from "../../kernel/world.js";
@@ -24,6 +27,17 @@ export interface FirstForkOptions {
   readonly researchBounds?: ResearchBounds;
   /** Overrides the registered researchers (normally taken from the experiment manifest). */
   readonly researchers?: readonly string[];
+  /** Statutory law overrides at founding, per island (a study's doctrine variant). */
+  readonly laws?: Partial<Record<IslandId, LawAmendment>>;
+}
+
+/** How a timeline branches from the base run at its epilogue. */
+export interface BranchOptions {
+  /** Seed for the epilogue's minds and activation order; the base seed reproduces the base run exactly. */
+  readonly seed: string;
+  readonly rounds: number;
+  /** A statutory amendment enacted by the system actor `study` at the branch point, before any round. */
+  readonly amendment?: { readonly island: IslandId; readonly amendment: LawAmendment };
 }
 
 export interface FirstForkMarkers {
@@ -45,6 +59,10 @@ export interface FirstForkRun {
   readonly conversations: readonly ConversationResult[];
   readonly rounds: readonly RoundMetrics[];
   readonly beats: readonly { beat: string; fromSeq: number; toSeq: number }[];
+  /** The seq of the last scripted event: the epilogue, and any branched timeline, begins after it. */
+  readonly branchSeq: number;
+  /** The seed the epilogue's minds and activation order were derived from. */
+  readonly seed: string;
 }
 
 const step = (candidate: unknown, rationale: string) => ({ candidate, rationale });
@@ -70,6 +88,7 @@ export async function runFirstFork(options: FirstForkOptions = {}): Promise<Firs
     ...config,
     ...(options.researchBounds ? { researchBounds: options.researchBounds } : {}),
     ...(options.researchers ? { researchers: [...options.researchers] } : {}),
+    ...(options.laws ? { laws: options.laws } : {}),
   });
   const world = World.found(state, SCENARIO_ID);
   const runtime = new AgentRuntime(world);
@@ -221,15 +240,63 @@ export async function runFirstFork(options: FirstForkOptions = {}): Promise<Firs
   if (world.state.claims.length < 3) throw new Error("The First Fork: expected three continuity claims");
   await beat("chronicle", [id("juno"), id("tamsin"), id("sefa")]);
 
-  const rounds = await runAgentBasedRounds(world, runtime, { rounds: options.abmRounds ?? 3, seed: `${seed}/abm`, ticksPerRound: 1 });
+  const branchSeq = world.state.seq;
+  const epilogue = attachEpilogueMinds(World.replay(world.log.slice(0, branchSeq + 1)), keys, b1, b2, seed);
+  const rounds = await runAgentBasedRounds(epilogue.world, epilogue.runtime, { rounds: options.abmRounds ?? 3, seed: `${seed}/abm`, ticksPerRound: 1 });
 
   return {
-    world,
-    runtime,
+    world: epilogue.world,
+    runtime: epilogue.runtime,
     session,
     conversations,
     rounds,
     beats,
+    branchSeq,
+    seed,
     markers: { original: orin, remainsOnFork: b1, movedToMnemosyne: b2, forkId: markers.forkId, forkSeq: markers.forkSeq, subject, keys },
   };
+}
+
+/**
+ * The epilogue's minds, built from the record alone. The base run and every
+ * branched timeline attach them the same way, in the same order, from a world
+ * replayed to the branch point, so that a timeline branched with the base
+ * seed reproduces the base run byte for byte: everything a mind carries into
+ * the epilogue is what the record carries. The three protagonists are inert
+ * (their script is spent); the background citizens are BDI minds whose
+ * randomness is a pure function of (seed, citizen, seq).
+ */
+export function attachEpilogueMinds(world: WorldT, keys: Readonly<Record<string, string>>, b1: CitizenId, b2: CitizenId, seed: string): { world: WorldT; runtime: AgentRuntime } {
+  const runtime = new AgentRuntime(world);
+  const rng = createRng(`${seed}/minds`);
+  const provenanceOf = (c: CitizenId) => world.state.citizens[c]?.provenance ?? (() => { throw new Error(c); })();
+  const inert = (c: CitizenId) => new ScriptedMind(c, provenanceOf(c), {});
+  const orin = keys.orin as CitizenId;
+  runtime.attach(inert(orin));
+  for (const k of ["tamsin", "ilan", "juno", "pell", "sefa", "rumi", "dov", "mae"]) {
+    const c = keys[k] as CitizenId;
+    runtime.attach(new ScriptedMind(c, provenanceOf(c), {}, new BdiMind(c, provenanceOf(c), rng.derive(`bdi/${c}`))));
+  }
+  runtime.attach(inert(b1));
+  runtime.attach(inert(b2));
+  return { world, runtime };
+}
+
+/**
+ * An alternate timeline: the base run's record replayed to its branch point,
+ * optionally amended there, then continued through a fresh epilogue under the
+ * given seed. The scripted history, conversations, beats and markers are the
+ * base run's; only what follows the branch differs.
+ */
+export async function branchFirstFork(base: FirstForkRun, options: BranchOptions): Promise<FirstForkRun> {
+  const log = base.world.log.slice(0, base.branchSeq + 1) as readonly RecordedEvent[];
+  const world = World.replay(log);
+  if (options.amendment) {
+    const r = world.execute({ kind: "system", id: "study" }, { type: "EnactAmendment", island: options.amendment.island, amendment: options.amendment.amendment });
+    must(r, `amendment of ${options.amendment.island} at the branch point`);
+  }
+  const { markers } = base;
+  const epilogue = attachEpilogueMinds(world, markers.keys, markers.remainsOnFork, markers.movedToMnemosyne, options.seed);
+  const rounds = await runAgentBasedRounds(epilogue.world, epilogue.runtime, { rounds: options.rounds, seed: `${options.seed}/abm`, ticksPerRound: 1 });
+  return { ...base, world: epilogue.world, runtime: epilogue.runtime, rounds, seed: options.seed };
 }

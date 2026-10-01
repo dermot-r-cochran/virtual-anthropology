@@ -2277,98 +2277,82 @@
     {
       "seq": 66,
       "tick": 4,
-      "type": "CitizenEndorsed",
+      "type": "ChronicleRecorded",
       "actor": "citizen:cit-0007",
-      "hash": "9b83a80fa69dd1c30b5b289f6ab358cab67f0d049aabb889d65118b6cb234645",
+      "hash": "918e00055051f36329c67f1b9b75d2941843df196957d2d438bd1944aa1cdc6b",
       "citizens": [
-        "cit-0006",
         "cit-0007"
       ],
-      "summary": "Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune",
+      "summary": "Rumi Okafor (cit-0007) writes in the mnemosyne chronicle: \"Rumi Okafor notes 4 recent events touching their work on mnemosyne.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0007",
-        "subject": "cit-0006",
-        "delta": 1,
-        "reason": "appreciation for Sefa Lune"
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0004",
+          "chronicler": "cit-0007",
+          "island": "mnemosyne",
+          "text": "Rumi Okafor notes 4 recent events touching their work on mnemosyne.",
+          "references": [
+            9,
+            26,
+            39,
+            47
+          ],
+          "atSeq": 66
+        }
       }
     },
     {
       "seq": 67,
       "tick": 4,
-      "type": "CitizenEndorsed",
+      "type": "ChronicleRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "f79a7f025d4f989767fca07f292c799e6eb2541bdea863ff4cbfac3e62c44ed8",
+      "hash": "176158d4712c0d403882e0417d5349ed1ae591ed784649e1879389a43e95f02c",
       "citizens": [
-        "cit-0001",
         "cit-0002"
       ],
-      "summary": "Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale",
+      "summary": "Tamsin Reed (cit-0002) writes in the continuity chronicle: \"Tamsin Reed notes 4 recent events touching their work on continuity.\"",
       "data": {
-        "type": "CitizenEndorsed",
-        "by": "cit-0002",
-        "subject": "cit-0001",
-        "delta": 1,
-        "reason": "appreciation for Orin Vale"
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0005",
+          "chronicler": "cit-0002",
+          "island": "continuity",
+          "text": "Tamsin Reed notes 4 recent events touching their work on continuity.",
+          "references": [
+            4,
+            21,
+            42,
+            61
+          ],
+          "atSeq": 67
+        }
       }
     },
     {
       "seq": 68,
       "tick": 4,
-      "type": "MemoryImported",
+      "type": "ChronicleRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "7d11f5686098e6679998b3e8b6d968a2e1a1474d7bde83d6a9995cbf1e3431ed",
+      "hash": "017f7126a4fef22ef7e0620426510e1f5de88ca8e633aa66480b0c0f37a8e2c6",
       "citizens": [
-        "cit-0006",
-        "cit-0007"
+        "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+      "summary": "Sefa Lune (cit-0006) writes in the mnemosyne chronicle: \"Sefa Lune notes 7 recent events touching their work on mnemosyne.\"",
       "data": {
-        "type": "MemoryImported",
-        "source": "mem-0009",
-        "record": {
-          "id": "mem-0036",
-          "holder": "cit-0006",
-          "archive": null,
-          "experiencedBy": "cit-0007",
-          "experiencedAtSeq": 0,
+        "type": "ChronicleRecorded",
+        "entry": {
+          "id": "chr-0006",
+          "chronicler": "cit-0006",
           "island": "mnemosyne",
-          "content": "The first Festival of Sources, when every speaker named where their stories came from.",
-          "contentHash": "ee1a7c39394c3ed77d1417a503a2f90762037d88a72ed98e2cbd484228da0bd8",
-          "tags": [
-            "communal",
-            "festival"
+          "text": "Sefa Lune notes 7 recent events touching their work on mnemosyne.",
+          "references": [
+            25,
+            38,
+            46,
+            47,
+            63
           ],
-          "status": "imported",
-          "integrity": "intact",
-          "derivedFrom": "mem-0009",
-          "license": null,
-          "provenance": [
-            {
-              "action": "experienced",
-              "by": "cit-0007",
-              "from": null,
-              "atSeq": 0,
-              "island": "mnemosyne",
-              "note": "genesis memory"
-            },
-            {
-              "action": "contributed-to-archive",
-              "by": "cit-0007",
-              "from": "cit-0007:mem-0008",
-              "atSeq": 0,
-              "island": "mnemosyne",
-              "note": "contributed to the mnemosyne collective archive at genesis"
-            },
-            {
-              "action": "imported-from-archive",
-              "by": "cit-0006",
-              "from": "archive:mnemosyne:mem-0009",
-              "atSeq": 68,
-              "island": "mnemosyne",
-              "note": "imported; not autobiographical"
-            }
-          ]
+          "atSeq": 68
         }
       }
     },
@@ -2377,7 +2361,7 @@
       "tick": 4,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "ff70dddee1cc819a117c448e3133e0f00f9582d1ca99fd8c84123d6a9fc06339",
+      "hash": "e7b9b4a37b9b06bb067bac872c2453aa394421d8cb617e95a20f89c7fbd69c10",
       "citizens": [
         "cit-0004"
       ],
@@ -2403,7 +2387,7 @@
       "tick": 4,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0009",
-      "hash": "ae102e5d647bc62123b1e555398d4370fabe48141b2c076866b54af3051ac3fe",
+      "hash": "4e86753f207ed9798cc3e218e4e1d54c1930be1b0b3cd328b7d3594aea589130",
       "citizens": [
         "cit-0009"
       ],
@@ -2429,7 +2413,7 @@
       "tick": 4,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "b17fbe8af9f5a2af3f9d5deb861846c4e0927cf9ec0c2b391485f836c165d1e2",
+      "hash": "1bd4a9bbb11f2c76cba77da08b15e20005f5402fddd0d260b288087f55d3fa91",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -2448,7 +2432,7 @@
       "tick": 4,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "d9df030787b2f65c482a9d6d4312555b344e10e7f89a9d0982c53215a69c8128",
+      "hash": "6ab6f963d3302cd4627e281ca0f565ae020be5b099f26b15d509e5e5abab4339",
       "citizens": [],
       "summary": "Time advances from tick 4 to 5.",
       "data": {
@@ -2462,7 +2446,7 @@
       "tick": 5,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "f54756ab52cd420cc3c889c1577da80d3e585cee8ab5a192223ddb118b941b61",
+      "hash": "d5099067a5894fac95812a358ad5a1387fe909226a5e9a76974c9d8b2ddf1e19",
       "citizens": [
         "cit-0004"
       ],
@@ -2488,7 +2472,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "a085b52270209b8b09a66e28e8c632a88c11c1d9542cf3e96ae66b17e429c77e",
+      "hash": "70be67f534623af0de68d0b377049ac74e53cd2a9dfccba7ce61809169281401",
       "citizens": [
         "cit-0006"
       ],
@@ -2496,7 +2480,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0037",
+          "id": "mem-0036",
           "holder": "cit-0006",
           "archive": null,
           "experiencedBy": "cit-0006",
@@ -2530,7 +2514,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "b689b1c8f39258d195fc37a33f0e62eec5575906b257789e95665d35a435ff5d",
+      "hash": "32c84ac85dc3fef1e4bc4e6606e050ff32ffbde3031adc7a068d7bde5eb654ca",
       "citizens": [
         "cit-0002"
       ],
@@ -2538,7 +2522,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0038",
+          "id": "mem-0037",
           "holder": "cit-0002",
           "archive": null,
           "experiencedBy": "cit-0002",
@@ -2572,7 +2556,7 @@
       "tick": 5,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "8904897bb44a431d044c5b10a39515ff1e3cabf99e8b0fa307e10b16761e7bd1",
+      "hash": "ebfa7ff26f6cb59e7b343109735b679fd8c79927bd23bd356caf48ea2ac658c0",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -2591,7 +2575,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "1dc22ea3f07d3a82501ac106b6c05f8875406a04090ff48d100de9c07bfa8cb7",
+      "hash": "2793af0054794fd9ac0a16670e4b38029ddb4c48528f10a425f23a22ebe412d8",
       "citizens": [
         "cit-0003"
       ],
@@ -2599,7 +2583,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0039",
+          "id": "mem-0038",
           "holder": "cit-0003",
           "archive": null,
           "experiencedBy": "cit-0003",
@@ -2633,7 +2617,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0007",
-      "hash": "51fc67b85e5705a04d921438619b128f7b134b7311bc004b506729d2082dd2a2",
+      "hash": "2b872d57abec47efbdff23e0fd06925b9e64cfb850528978f03d39aaaec8f89b",
       "citizens": [
         "cit-0007"
       ],
@@ -2641,7 +2625,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0040",
+          "id": "mem-0039",
           "holder": "cit-0007",
           "archive": null,
           "experiencedBy": "cit-0007",
@@ -2675,7 +2659,7 @@
       "tick": 5,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "913ef2dd788338cc6e1616891099cfb2aff22d51f6ea1e4c0e533314dfcccb3f",
+      "hash": "ecf146ac56b3801ce0f6456c63df6b7ec97fd423decffec1d6cbe1543327a462",
       "citizens": [
         "cit-0009"
       ],
@@ -2683,7 +2667,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0041",
+          "id": "mem-0040",
           "holder": "cit-0009",
           "archive": null,
           "experiencedBy": "cit-0009",
@@ -2717,7 +2701,7 @@
       "tick": 5,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0005",
-      "hash": "e80f8d0f33e4873637d78f24151aee7af5e087ced011e4c2b54e5cc70e9179dc",
+      "hash": "5d32f23da88c42789936c0b17dda443f8c403b5a38b9312bcc8e8ed5f076fe79",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -2736,7 +2720,7 @@
       "tick": 5,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "9175405a352ad91a02b4f8ee9b711983a25b1f584fc145eeb3d8ce098b249e06",
+      "hash": "5aea5b54cabca17aa173db25efab0db63a2ed723aeb0653b94076a08986d68b1",
       "citizens": [],
       "summary": "Time advances from tick 5 to 6.",
       "data": {
@@ -2750,7 +2734,7 @@
       "tick": 6,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0008",
-      "hash": "9d2d66ff9af74a5cb7a12c537b87cf4e5d6922cf29bdcf22d066832d03ec2219",
+      "hash": "7b15ecc3010f8e3fdf4a3c5aa554aa5edb859776ee7ea1504173fa682f9baed1",
       "citizens": [
         "cit-0008",
         "cit-0009"
@@ -2769,7 +2753,7 @@
       "tick": 6,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0005",
-      "hash": "9e08fd1b4ee392bd4da192005348a462bb233a655a6cc24d90b447298b583935",
+      "hash": "83a36327a50978860c17aeaccdc03bdbb8bffd6851c663a820bbfa4bfaf552d2",
       "citizens": [
         "cit-0004",
         "cit-0005"
@@ -2788,7 +2772,7 @@
       "tick": 6,
       "type": "ArtefactCreated",
       "actor": "citizen:cit-0004",
-      "hash": "0c1e5c881fc19a07163fef7fe59a7ba123db8ab8b75699dc3d4c653dc72aa82c",
+      "hash": "5528e7eb98f82f98dd400767867b600bbf00c80c70d0a97faac6e0c092df91fa",
       "citizens": [
         "cit-0004"
       ],
@@ -2814,7 +2798,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0002",
-      "hash": "12975cf16b51fd455ed9349573c352d4427d2416244a69fffb632f529cb79f52",
+      "hash": "0e99305079e3425cf6e8c76d6e2805bf0a4988a9ec78258880522d202bbce4e9",
       "citizens": [
         "cit-0002"
       ],
@@ -2822,7 +2806,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0042",
+          "id": "mem-0041",
           "holder": "cit-0002",
           "archive": null,
           "experiencedBy": "cit-0002",
@@ -2856,7 +2840,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0003",
-      "hash": "fae728b2546a9cc32e6c94c8b22b88ec08e3d37f5b42ff7b0e095f6406fb5b98",
+      "hash": "7f849dac917c89e9d4f0f7f6de88f8d0d46dc74187f1a3d2f98123a999b4b8f3",
       "citizens": [
         "cit-0003"
       ],
@@ -2864,7 +2848,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0043",
+          "id": "mem-0042",
           "holder": "cit-0003",
           "archive": null,
           "experiencedBy": "cit-0003",
@@ -2898,7 +2882,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0006",
-      "hash": "5997fc4a7eeb6af5c6b39536fbac3f2699b545bfb173adc3a50e1bdecae17c67",
+      "hash": "f02783046075ebe064ae1d59555fd4c70768a5d97f642db0098ec3395d75fce0",
       "citizens": [
         "cit-0006"
       ],
@@ -2906,7 +2890,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0044",
+          "id": "mem-0043",
           "holder": "cit-0006",
           "archive": null,
           "experiencedBy": "cit-0006",
@@ -2940,7 +2924,7 @@
       "tick": 6,
       "type": "ExperienceRecorded",
       "actor": "citizen:cit-0009",
-      "hash": "dbb63a0e2cb95bb960950dc0e0158fad734d9718dda91d57dd918a711c3cdf50",
+      "hash": "3f731b28b41341d18892866642a262fc8230186d9f4fe58686f778a86def3e97",
       "citizens": [
         "cit-0009"
       ],
@@ -2948,7 +2932,7 @@
       "data": {
         "type": "ExperienceRecorded",
         "memory": {
-          "id": "mem-0045",
+          "id": "mem-0044",
           "holder": "cit-0009",
           "archive": null,
           "experiencedBy": "cit-0009",
@@ -2982,7 +2966,7 @@
       "tick": 6,
       "type": "CitizenEndorsed",
       "actor": "citizen:cit-0007",
-      "hash": "312d37774299f978b76e5948de17d361d828e62d9060ea4c3ec810da8aa889cf",
+      "hash": "6876d80e57536d4221a7e8884cb5c6db4d7c7fc6ebafe94a78ccb201cf7093c9",
       "citizens": [
         "cit-0006",
         "cit-0007"
@@ -3001,7 +2985,7 @@
       "tick": 6,
       "type": "TimeAdvanced",
       "actor": "system:clock",
-      "hash": "6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271",
+      "hash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
       "citizens": [],
       "summary": "Time advances from tick 6 to 7.",
       "data": {
@@ -3029,7 +3013,7 @@
         "birthSeq": 0,
         "parents": [],
         "forkId": null,
-        "reputation": 5,
+        "reputation": 4,
         "credits": 80
       },
       {
@@ -3109,7 +3093,7 @@
         "birthSeq": 0,
         "parents": [],
         "forkId": null,
-        "reputation": 4,
+        "reputation": 3,
         "credits": 100
       },
       {
@@ -4313,41 +4297,6 @@
         "id": "mem-0036",
         "holder": "cit-0006",
         "archive": null,
-        "experiencedBy": "cit-0007",
-        "experiencedAtSeq": 0,
-        "island": "mnemosyne",
-        "status": "imported",
-        "integrity": "intact",
-        "derivedFrom": "mem-0009",
-        "tags": [
-          "communal",
-          "festival"
-        ],
-        "provenance": [
-          {
-            "action": "experienced",
-            "by": "cit-0007",
-            "atSeq": 0,
-            "island": "mnemosyne"
-          },
-          {
-            "action": "contributed-to-archive",
-            "by": "cit-0007",
-            "atSeq": 0,
-            "island": "mnemosyne"
-          },
-          {
-            "action": "imported-from-archive",
-            "by": "cit-0006",
-            "atSeq": 68,
-            "island": "mnemosyne"
-          }
-        ]
-      },
-      {
-        "id": "mem-0037",
-        "holder": "cit-0006",
-        "archive": null,
         "experiencedBy": "cit-0006",
         "experiencedAtSeq": 74,
         "island": "mnemosyne",
@@ -4368,7 +4317,7 @@
         ]
       },
       {
-        "id": "mem-0038",
+        "id": "mem-0037",
         "holder": "cit-0002",
         "archive": null,
         "experiencedBy": "cit-0002",
@@ -4391,7 +4340,7 @@
         ]
       },
       {
-        "id": "mem-0039",
+        "id": "mem-0038",
         "holder": "cit-0003",
         "archive": null,
         "experiencedBy": "cit-0003",
@@ -4414,7 +4363,7 @@
         ]
       },
       {
-        "id": "mem-0040",
+        "id": "mem-0039",
         "holder": "cit-0007",
         "archive": null,
         "experiencedBy": "cit-0007",
@@ -4437,7 +4386,7 @@
         ]
       },
       {
-        "id": "mem-0041",
+        "id": "mem-0040",
         "holder": "cit-0009",
         "archive": null,
         "experiencedBy": "cit-0009",
@@ -4460,7 +4409,7 @@
         ]
       },
       {
-        "id": "mem-0042",
+        "id": "mem-0041",
         "holder": "cit-0002",
         "archive": null,
         "experiencedBy": "cit-0002",
@@ -4483,7 +4432,7 @@
         ]
       },
       {
-        "id": "mem-0043",
+        "id": "mem-0042",
         "holder": "cit-0003",
         "archive": null,
         "experiencedBy": "cit-0003",
@@ -4506,7 +4455,7 @@
         ]
       },
       {
-        "id": "mem-0044",
+        "id": "mem-0043",
         "holder": "cit-0006",
         "archive": null,
         "experiencedBy": "cit-0006",
@@ -4529,7 +4478,7 @@
         ]
       },
       {
-        "id": "mem-0045",
+        "id": "mem-0044",
         "holder": "cit-0009",
         "archive": null,
         "experiencedBy": "cit-0009",
@@ -4695,7 +4644,7 @@
         "lifecycle.irreversibly-deleted": 0,
         "memories.autobiographical": 39,
         "memories.collective": 3,
-        "memories.imported": 2,
+        "memories.imported": 1,
         "memories.integrated": 1,
         "activeRelationships": 8,
         "artefacts": 9,
@@ -4704,7 +4653,7 @@
         "forks": 1,
         "continuityClaims": 3,
         "creditGini": 0.1542,
-        "meanReputation": 1.7273
+        "meanReputation": 1.5455
       }
     }
   ],

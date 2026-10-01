@@ -8,6 +8,7 @@ import { createRng } from "../src/kernel/rng.js";
 import { World } from "../src/kernel/world.js";
 import { guardReply } from "../src/policy/disclosure.js";
 import { firstForkGenesis, FIRST_FORK_SEED } from "../src/scenarios/the-first-fork/genesis.js";
+import { branchFirstFork, runFirstFork } from "../src/scenarios/the-first-fork/run.js";
 
 function fresh() {
   const { state, keys } = buildGenesisState(firstForkGenesis(FIRST_FORK_SEED));
@@ -58,6 +59,43 @@ describe("kernel", () => {
     const g = guardReply("Please don't leave, I need you.");
     expect(g.blocked).toBe(true);
     expect(g.flags.length).toBeGreaterThan(0);
+  });
+
+  it("a study-declared amendment is enacted only by the system actor `study`, and only as a valid law", () => {
+    const { world, keys } = fresh();
+    const version = world.state.islands.fork.law.version;
+    const ok = world.execute({ kind: "system", id: "study" }, { type: "EnactAmendment", island: "fork", amendment: { immigration: "closed" } });
+    expect(ok.status).toBe("applied");
+    expect(world.state.islands.fork.law.immigration).toBe("closed");
+    expect(world.state.islands.fork.law.version).toBe(version + 1);
+    expect(world.log[world.log.length - 1]?.event.type).toBe("LawEnacted");
+    const citizen = world.execute(as(keys.juno!), { type: "EnactAmendment", island: "fork", amendment: { immigration: "open" } });
+    expect(citizen.status === "rejected" && citizen.stage).toBe("authorization");
+    const clock = world.execute({ kind: "system", id: "clock" }, { type: "EnactAmendment", island: "fork", amendment: { immigration: "open" } });
+    expect(clock.status === "rejected" && clock.stage).toBe("authorization");
+    const empty = world.execute({ kind: "system", id: "study" }, { type: "EnactAmendment", island: "fork", amendment: {} });
+    expect(empty.status).toBe("rejected");
+  });
+
+  it("founding law can be overridden on statutory fields only (a doctrine variant)", () => {
+    const { state } = buildGenesisState({ ...firstForkGenesis(FIRST_FORK_SEED), laws: { mnemosyne: { importedMemoryIntegration: "prohibited" } } });
+    expect(state.islands.mnemosyne.law.importedMemoryIntegration).toBe("prohibited");
+    expect(state.islands.mnemosyne.lawHistory[0]?.importedMemoryIntegration).toBe("prohibited");
+    expect(state.islands.fork.law.importedMemoryIntegration).toBe("explicit-act");
+    expect(() => buildGenesisState({ ...firstForkGenesis(FIRST_FORK_SEED), laws: { continuity: { copying: "permitted" } as never } })).toThrow();
+  });
+
+  it("a timeline branched at the epilogue with the base seed reproduces the base run exactly; another seed or an amendment diverges", async () => {
+    const base = await runFirstFork({ abmRounds: 2 });
+    const control = await branchFirstFork(base, { seed: base.seed, rounds: 2 });
+    expect(control.world.headHash).toBe(base.world.headHash);
+    expect(control.world.log.length).toBe(base.world.log.length);
+    const other = await branchFirstFork(base, { seed: `${base.seed}/other`, rounds: 2 });
+    expect(other.world.log.slice(0, base.branchSeq + 1).map((r) => r.hash)).toEqual(base.world.log.slice(0, base.branchSeq + 1).map((r) => r.hash));
+    expect(other.world.headHash).not.toBe(base.world.headHash);
+    const amended = await branchFirstFork(base, { seed: base.seed, rounds: 2, amendment: { island: "fork", amendment: { immigration: "closed" } } });
+    expect(amended.world.log[base.branchSeq + 1]?.event.type).toBe("LawEnacted");
+    expect(amended.world.state.islands.fork.law.immigration).toBe("closed");
   });
 
   it("property: irreversibly-deleted is terminal", () => {

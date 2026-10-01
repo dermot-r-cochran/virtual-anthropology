@@ -53,6 +53,8 @@ export const CommandSchema = z.discriminatedUnion("type", [
   }),
   cmd("CastVote", { proposalId: ProposalIdSchema, voter: CitizenIdSchema, choice: z.enum(["yes", "no", "abstain"]) }),
   cmd("CloseProposal", { proposalId: ProposalIdSchema }),
+  /** A study-declared amendment, enacted by the system actor `study` at a timeline branch point; recorded as LawEnacted with no proposal. */
+  cmd("EnactAmendment", { island: IslandIdSchema, amendment: LawAmendmentSchema }),
   cmd("PetitionMigration", { citizen: CitizenIdSchema, to: IslandIdSchema, reason: text }),
   cmd("ReviewPetition", { petitionId: PetitionIdSchema, side: z.enum(["exit", "entry"]) }),
   cmd("CompleteMigration", { petitionId: PetitionIdSchema }),

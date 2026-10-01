@@ -1,7 +1,7 @@
 # Research limitations
 
 - **Deterministic placeholder minds.** Behaviour is scripted or rule-based (BDI), so results describe the rules, not emergent cognition.
-- **Single runs.** Each experiment is one deterministic run. Findings support no statistical inference; seed sweeps are future work.
+- **Single runs, replicated by declaration.** Each experiment is one deterministic run, and its findings hold in that run. A declared study adds seed sweeps, doctrine variants and alternate timelines, each a deterministic run of its own; their summaries are descriptive (min, median, mean, max, counts) and support no inference beyond the generator and the rules they were run under.
 - **Operationalisation.** Hypotheses are tested only as reduced to one metric and threshold.
 - **Law as a model.** Island doctrines are stylised. Legal readings are mechanical applications of them.
 - **No consciousness inference.** Nothing in the data bears on whether any agent is conscious, and the project does not try to infer it.

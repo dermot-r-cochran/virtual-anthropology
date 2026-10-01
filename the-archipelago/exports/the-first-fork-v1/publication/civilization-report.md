@@ -1,6 +1,6 @@
 # Virtual Anthropology Report: archipelago-first-fork
 
-Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` · configuration `b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f`
+Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e` · configuration `58ade219ea8f5b4499aec0fd41b17b9c62dde74b49b4c28aca523459f74e5e05`
 
 > The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations. Every value below is computed from the event store or the final snapshot. Section notes say which.
 
@@ -67,7 +67,7 @@ _Island law at the end of the run (snapshot)._
 | measure | metric | value | unit |
 |---|---|---:|---|
 | Cultural artefacts | `culture.artefacts` | 9 | artefacts |
-| In-world chronicle entries | `culture.chronicle_entries` | 3 | entries |
+| In-world chronicle entries | `culture.chronicle_entries` | 6 | entries |
 
 | artefact | kind | title | island | origin |
 |---|---|---|---|---|
@@ -149,5 +149,5 @@ _Each statement restates the cited metrics. Interpretation is left to researcher
 - The number of claimants recognised as continuing the subject differs by 3 across islands. 1 island(s) do not adjudicate. _[`legal.recognition_range`, `legal.unadjudicating_islands`]_
 - 1 vote(s) were refused because the voter was outside the electorate snapshot. _[`governance.votes_refused_outside_electorate`]_
 - 1 command(s) were rejected by validation, authorisation or law. 0 law version(s) were enacted. _[`governance.commands_rejected`, `governance.laws_enacted`]_
-- 2 imported record(s) remain marked as imported and 1 were integrated into a self-narrative. Provenance completeness is 1. _[`memory.imported`, `memory.integrated`, `memory.provenance_complete`]_
+- 1 imported record(s) remain marked as imported and 1 were integrated into a self-narrative. Provenance completeness is 1. _[`memory.imported`, `memory.integrated`, `memory.provenance_complete`]_
 - The credit Gini coefficient is 0.1542. Supply conserved = 1. _[`economy.credit_gini`, `economy.supply_conserved`]_

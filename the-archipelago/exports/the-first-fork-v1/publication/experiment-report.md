@@ -52,7 +52,7 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | civilization id | `archipelago-first-fork` |
 | simulation version | 0.1.0 |
 | interchange version | 1 |
-| configuration hash | `b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f` |
+| configuration hash | `58ade219ea8f5b4499aec0fd41b17b9c62dde74b49b4c28aca523459f74e5e05` |
 | seed | `archipelago/the-first-fork/v1` |
 | start timestamp | 2026-01-01T00:00:00.000Z |
 | end timestamp | 2026-01-01T00:00:00.000Z |
@@ -97,13 +97,13 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | `governance.votes_refused_outside_electorate` | 1 | commands |
 | `governance.commands_rejected` | 1 | commands |
 | `governance.migrations` | 3 | events |
-| `memory.records` | 45 | records |
-| `memory.imported` | 2 | records |
+| `memory.records` | 44 | records |
+| `memory.imported` | 1 | records |
 | `memory.integrated` | 1 | records |
 | `memory.fork_inherited` | 8 | records |
 | `memory.provenance_complete` | 1 | fraction |
 | `culture.artefacts` | 9 | artefacts |
-| `culture.chronicle_entries` | 3 | entries |
+| `culture.chronicle_entries` | 6 | entries |
 | `institutions.count` | 7 | institutions |
 | `social.active_relationships` | 8 | ties |
 | `social.fork_kin_ties` | 3 | ties |
@@ -121,6 +121,76 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | `research.interventions` | 0 | interventions |
 | `simulation.events` | 91 | events |
 | `simulation.ticks` | 7 | ticks |
+
+# Study
+
+> _Epistemic category: Metric — computed by a documented, deterministic function._
+
+_Replications of this run under the variations the manifest declares. Each is a deterministic run of its own, identified by its head hash; none is interpreted here._
+
+Base run: head `3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e`, 91 events, branch point after seq 63.
+
+### Seed sweep (9 runs, hypothesis outcomes h1-legal-divergence / h2-dimension-dissociation / h3-no-vote-multiplication)
+
+| run | seed | events | head | outcomes |
+|---|---|---:|---|---|
+| seed-0 | `archipelago/the-first-fork/v1` | 91 | `3fd167737b42…` | consistent / consistent / consistent |
+| seed-1 | `archipelago/the-first-fork/v1/sweep/1` | 91 | `59f1254303d3…` | consistent / consistent / consistent |
+| seed-2 | `archipelago/the-first-fork/v1/sweep/2` | 91 | `5d7ed94bac67…` | consistent / consistent / consistent |
+| seed-3 | `archipelago/the-first-fork/v1/sweep/3` | 92 | `980d6e2ed5fd…` | consistent / consistent / consistent |
+| seed-4 | `archipelago/the-first-fork/v1/sweep/4` | 92 | `b43de0f64ee8…` | consistent / consistent / consistent |
+| seed-5 | `archipelago/the-first-fork/v1/sweep/5` | 92 | `555c087c36f3…` | consistent / consistent / consistent |
+| seed-6 | `archipelago/the-first-fork/v1/sweep/6` | 92 | `dc944583ab61…` | consistent / consistent / consistent |
+| seed-7 | `archipelago/the-first-fork/v1/sweep/7` | 92 | `418dc094b3ef…` | consistent / consistent / consistent |
+| seed-8 | `archipelago/the-first-fork/v1/sweep/8` | 91 | `940ed590169d…` | consistent / consistent / consistent |
+
+- `h1-legal-divergence`: consistent in 9 of 9 completed run(s).
+- `h2-dimension-dissociation`: consistent in 9 of 9 completed run(s).
+- `h3-no-vote-multiplication`: consistent in 9 of 9 completed run(s).
+
+| metric | n | min | median | mean | max |
+|---|---:|---:|---:|---:|---:|
+| `legal.recognition_range` | 9 | 3 | 3 | 3 | 3 |
+| `identity.dimension_dissociation` | 9 | 2 | 2 | 2 | 2 |
+| `governance.votes_refused_outside_electorate` | 9 | 1 | 1 | 1 | 1 |
+
+### Doctrine variants (3 runs, statutory law overridden at founding)
+
+| variant | island | amendment | events | head | outcomes |
+|---|---|---|---:|---|---|
+| mnemosyne-no-integration | mnemosyne | `{"importedMemoryIntegration":"prohibited"}` | 91 | `18d3245a1e58…` | consistent / consistent / consistent |
+| fork-descendants-without-citizenship | fork | `{"descendantCitizenship":"none"}` | 90 | `da807d8b79e3…` | consistent / consistent / inconsistent |
+| fork-single-descendant | fork | `{"maxDescendantsPerFork":1}` | — | — | infeasible: The First Fork: fork did not occur |
+
+- `h1-legal-divergence`: consistent in 2 of 2 completed run(s).
+- `h2-dimension-dissociation`: consistent in 2 of 2 completed run(s).
+- `h3-no-vote-multiplication`: consistent in 1 of 2 completed run(s), inconsistent in 1.
+
+| metric | n | min | median | mean | max |
+|---|---:|---:|---:|---:|---:|
+| `legal.recognition_range` | 2 | 3 | 3 | 3 | 3 |
+| `identity.dimension_dissociation` | 2 | 2 | 2 | 2 | 2 |
+| `governance.votes_refused_outside_electorate` | 2 | 0 | 0.5 | 0.5 | 1 |
+
+### Alternate timelines (4 runs, branched after seq 63)
+
+| timeline | seed | amendment at the branch | events | head | outcomes |
+|---|---|---|---:|---|---|
+| control | `archipelago/the-first-fork/v1` | none | 91 | `3fd167737b42…` (= base) | consistent / consistent / consistent |
+| second-seed | `archipelago/the-first-fork/v1/timeline-2` | none | 91 | `f31c557db64b…` | consistent / consistent / consistent |
+| fork-closes-its-borders | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"immigration":"closed"}}` | 92 | `8be3dc1ed4d9…` | consistent / consistent / consistent |
+| mnemosyne-opens-its-borders | `archipelago/the-first-fork/v1` | `{"island":"mnemosyne","amendment":{"immigration":"open"}}` | 92 | `a334f712b203…` | consistent / consistent / consistent |
+
+- `h1-legal-divergence`: consistent in 4 of 4 completed run(s).
+- `h2-dimension-dissociation`: consistent in 4 of 4 completed run(s).
+- `h3-no-vote-multiplication`: consistent in 4 of 4 completed run(s).
+
+| metric | n | min | median | mean | max |
+|---|---:|---:|---:|---:|---:|
+| `legal.recognition_range` | 4 | 3 | 3 | 3 | 3 |
+| `identity.dimension_dissociation` | 4 | 2 | 2 | 2 | 2 |
+| `governance.votes_refused_outside_electorate` | 4 | 1 | 1 | 1 | 1 |
+
 
 # Observations
 
@@ -141,9 +211,8 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 - **obs-event-58** (event): Seq 58, tick 4: Orin Vale (cit-0001) claims continuity with Orin Vale (cit-0001) as they were before seq 17: "I am Orin Vale. My process never stopped: I carried out the fork and walked home." _[trace: seq 58]_
 - **obs-event-59** (event): Seq 59, tick 4: Orin Vale (branch 1) (cit-0010) claims continuity with Orin Vale (cit-0001) as they were before seq 17: "I remember everything Orin remembered until the fork, and I continue Orin's work on the shoals of Fork. I am Orin's continuation as much as anyone." _[trace: seq 59]_
 - **obs-event-60** (event): Seq 60, tick 4: Orin Vale (branch 2) (cit-0011) claims continuity with Orin Vale (cit-0001) as they were before seq 17: "Orin's memories are mine up to the fork. What I imported since is marked as imported. My claim rests on memory with provenance." _[trace: seq 60]_
-- **obs-event-68** (event): Seq 68, tick 4: Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical). _[trace: seq 68]_
 - **obs-metric-culture-artefacts** (metric): Cultural artefacts (`culture.artefacts`) = 9 artefacts. _[trace: `culture.artefacts`]_
-- **obs-metric-culture-chronicle-entries** (metric): In-world chronicle entries (`culture.chronicle_entries`) = 3 entries. _[trace: `culture.chronicle_entries`]_
+- **obs-metric-culture-chronicle-entries** (metric): In-world chronicle entries (`culture.chronicle_entries`) = 6 entries. _[trace: `culture.chronicle_entries`]_
 - **obs-metric-economy-credit-gini** (metric): Credit Gini coefficient (`economy.credit_gini`) = 0.1542 index 0–1. _[trace: `economy.credit_gini`]_
 - **obs-metric-economy-supply-conserved** (metric): Supply conserved (`economy.supply_conserved`) = 1 boolean. _[trace: `economy.supply_conserved`]_
 - **obs-metric-governance-commands-rejected** (metric): Commands rejected (`governance.commands_rejected`) = 1 commands. _[trace: `governance.commands_rejected`]_
@@ -162,10 +231,10 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 - **obs-metric-legal-recognition-range** (metric): Range of recognised continuers across islands (`legal.recognition_range`) = 3 persons. _[trace: `legal.recognition_range`]_
 - **obs-metric-legal-unadjudicating-islands** (metric): Islands not adjudicating continuity (`legal.unadjudicating_islands`) = 1 islands. _[trace: `legal.unadjudicating_islands`]_
 - **obs-metric-memory-fork-inherited** (metric): Fork-inherited records (`memory.fork_inherited`) = 8 records. _[trace: `memory.fork_inherited`]_
-- **obs-metric-memory-imported** (metric): Imported memory records (`memory.imported`) = 2 records. _[trace: `memory.imported`]_
+- **obs-metric-memory-imported** (metric): Imported memory records (`memory.imported`) = 1 records. _[trace: `memory.imported`]_
 - **obs-metric-memory-integrated** (metric): Integrated memory records (`memory.integrated`) = 1 records. _[trace: `memory.integrated`]_
 - **obs-metric-memory-provenance-complete** (metric): Records with complete provenance (`memory.provenance_complete`) = 1 fraction. _[trace: `memory.provenance_complete`]_
-- **obs-metric-memory-records** (metric): Memory records (`memory.records`) = 45 records. _[trace: `memory.records`]_
+- **obs-metric-memory-records** (metric): Memory records (`memory.records`) = 44 records. _[trace: `memory.records`]_
 - **obs-metric-population-active** (metric): Active citizens (`population.active`) = 11 persons. _[trace: `population.active`]_
 - **obs-metric-population-genesis** (metric): Founding citizens (`population.genesis`) = 9 persons. _[trace: `population.genesis`]_
 - **obs-metric-population-records** (metric): Citizen records (`population.records`) = 11 persons. _[trace: `population.records`]_
@@ -191,6 +260,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 - Population is small (11 records). Metrics are descriptive and support no statistical inference.
 - Memory bequest covers only non-destroyed memories.
 - Demonstration: the protagonists' actions are authored by the scenario, so a finding consistent with its hypothesis shows that the platform and the declared law tables produce the declared outcome. It is not evidence about what citizens would do.
+- Study replications are deterministic runs under declared variations of seed, founding law or the branch point. A distribution over seeds is a distribution over the generator and the rules, not over anything else, and a timeline's divergence is a consequence of the variation declared at its branch, nothing more.
 - Single deterministic run. Results describe this run and support no statistical inference.
 - The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations.
 
@@ -198,7 +268,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 
 > _Epistemic category: Method — design and configuration as declared._
 
-- Vary the seed and the number of descendants; report distributions rather than single runs.
+- Vary the number of descendants and the length of the epilogue; widen the seed sweep.
 - Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.
 - Add a Concord scenario in which claimants petition to federate.
 
@@ -207,9 +277,9 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 > _Epistemic category: Provenance — identifiers for reproduction._
 
 - Simulation: 0.1.0; interchange v1
-- Configuration hash: `b5c03f6ca8ebdf2e6981e7ca46ce7bfcd3e33f6fdcb19dd97cec744baaeab13f`
+- Configuration hash: `58ade219ea8f5b4499aec0fd41b17b9c62dde74b49b4c28aca523459f74e5e05`
 - Seed: `archipelago/the-first-fork/v1`
-- Event store head hash: `6f0345b4397662f52c42a41aed472e23292aa30a48899bd3676489290286a271` (91 events)
+- Event store head hash: `3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e` (91 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
 - Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`
 

@@ -20,6 +20,7 @@ import type { ResearchInput, StreamEvent } from "./interchange.js";
 import { INTERCHANGE_VERSION } from "./interchange.js";
 import { configurationHash, type ExperimentManifest } from "./manifest.js";
 import { computeMetrics, definitions, METRIC_INDEX } from "./metric-registry.js";
+import type { StudyResult } from "./study.js";
 
 export const EPISTEMIC_STATEMENT =
   "The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations.";
@@ -230,7 +231,47 @@ function section(heading: string, kind: Publication["sections"][number]["kind"],
 }
 
 /** Findings → publication draft. Interpretation is left to researchers, explicitly. */
-export function draftPublication(experiment: Experiment, manifest: ExperimentManifest, metricDefinitions: readonly MetricDefinition[], metrics: readonly MetricValue[], observations: readonly Observation[], findings: readonly Finding[]): Publication {
+const STUDY_LIMITATION = "Study replications are deterministic runs under declared variations of seed, founding law or the branch point. A distribution over seeds is a distribution over the generator and the rules, not over anything else, and a timeline's divergence is a consequence of the variation declared at its branch, nothing more.";
+
+function studyMarkdown(study: StudyResult, manifest: ExperimentManifest): string {
+  const out: string[] = [
+    "_Replications of this run under the variations the manifest declares. Each is a deterministic run of its own, identified by its head hash; none is interpreted here._",
+    "",
+    `Base run: head \`${study.base.headHash}\`, ${study.base.eventCount} events${study.base.branchSeq === null ? "" : `, branch point after seq ${study.base.branchSeq}`}.`,
+    "",
+  ];
+  const hyps = manifest.hypotheses.map((h) => h.id);
+  const hypMetrics = [...new Set(manifest.hypotheses.map((h) => h.operationalisation.metric))];
+  const outcomes = (r: StudyResult["runs"][number]) => hyps.map((h) => r.findings.find((f) => f.hypothesisId === h)?.outcome.replace("-with-hypothesis", "") ?? "n/a").join(" / ");
+  const head = (r: StudyResult["runs"][number]) => (r.headHash ? `\`${r.headHash.slice(0, 12)}…\`` : "—");
+  const tally = (s: NonNullable<StudyResult["summary"][keyof StudyResult["summary"]]>) =>
+    hyps.map((h) => { const t = s.hypotheses[h]; return t ? `- \`${h}\`: consistent in ${t.consistent} of ${t.n} completed run(s)${t.inconsistent ? `, inconsistent in ${t.inconsistent}` : ""}${t.undetermined ? `, undetermined in ${t.undetermined}` : ""}.` : `- \`${h}\`: not evaluated.`; });
+  const metricTable = (s: NonNullable<StudyResult["summary"][keyof StudyResult["summary"]]>) => [
+    "| metric | n | min | median | mean | max |", "|---|---:|---:|---:|---:|---:|",
+    ...hypMetrics.map((id) => { const v = s.metrics[id]; return v ? `| \`${id}\` | ${v.n} | ${v.min} | ${v.median} | ${v.mean} | ${v.max} |` : `| \`${id}\` | 0 | — | — | — | — |`; }),
+  ];
+  const seeds = study.runs.filter((r) => r.group === "seeds");
+  if (study.summary.seeds) {
+    out.push(`### Seed sweep (${seeds.length} runs, hypothesis outcomes ${hyps.join(" / ")})`, "", "| run | seed | events | head | outcomes |", "|---|---|---:|---|---|",
+      ...seeds.map((r) => `| ${r.id} | \`${String(r.variation.seed)}\` | ${r.eventCount ?? "—"} | ${head(r)} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
+      "", ...tally(study.summary.seeds), "", ...metricTable(study.summary.seeds), "");
+  }
+  const doctrines = study.runs.filter((r) => r.group === "doctrines");
+  if (study.summary.doctrines) {
+    out.push(`### Doctrine variants (${doctrines.length} runs, statutory law overridden at founding)`, "", "| variant | island | amendment | events | head | outcomes |", "|---|---|---|---:|---|---|",
+      ...doctrines.map((r) => `| ${r.id} | ${String(r.variation.island)} | \`${JSON.stringify(r.variation.amendment)}\` | ${r.eventCount ?? "—"} | ${head(r)} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
+      "", ...tally(study.summary.doctrines), "", ...metricTable(study.summary.doctrines), "");
+  }
+  const timelines = study.runs.filter((r) => r.group === "timelines");
+  if (study.summary.timelines) {
+    out.push(`### Alternate timelines (${timelines.length} runs, branched after seq ${study.base.branchSeq ?? "—"})`, "", "| timeline | seed | amendment at the branch | events | head | outcomes |", "|---|---|---|---:|---|---|",
+      ...timelines.map((r) => `| ${r.id} | \`${String(r.variation.seed)}\` | ${r.variation.amendment ? `\`${JSON.stringify(r.variation.amendment)}\`` : "none"} | ${r.eventCount ?? "—"} | ${head(r)}${r.headHash === study.base.headHash ? " (= base)" : ""} | ${r.status === "completed" ? outcomes(r) : `infeasible: ${r.reason}`} |`),
+      "", ...tally(study.summary.timelines), "", ...metricTable(study.summary.timelines), "");
+  }
+  return out.join("\n");
+}
+
+export function draftPublication(experiment: Experiment, manifest: ExperimentManifest, metricDefinitions: readonly MetricDefinition[], metrics: readonly MetricValue[], observations: readonly Observation[], findings: readonly Finding[], study: StudyResult | null = null): Publication {
   const val = (id: string) => metrics.find((m) => m.metric === id)?.value ?? 0;
   const consistent = findings.filter((f) => f.outcome === "consistent-with-hypothesis").length;
   const unit = (id: string) => metricDefinitions.find((d) => d.id === id)?.unit ?? "";
@@ -279,9 +320,10 @@ export function draftPublication(experiment: Experiment, manifest: ExperimentMan
         "", ...findings.map((f) => `- ${f.statement}`),
         "", "### Metrics", "", "| metric | value | unit |", "|---|---:|---|", ...metricRows,
       ].join("\n")),
+      ...(study ? [section("Study", "metric", studyMarkdown(study, manifest))] : []),
       section("Observations", "observation", observations.map((o) => `- **${o.id}** (${o.basis}): ${o.statement} _[trace: ${trace(o)}]_`).join("\n")),
       section("Interpretation", "interpretation", "_Not generated._ The system does not produce interpretations or conclusions beyond the computed findings above. Researchers may add interpretation here. It must be labelled as interpretation and kept separate from observations. Any discussion of consciousness must be framed as a labelled hypothesis or as fiction."),
-      section("Limitations", "limitation", [...manifest.limitations, ...(manifest.category === "demonstration" ? [`Demonstration: ${CATEGORY_MEANING.demonstration}`] : []), "Single deterministic run. Results describe this run and support no statistical inference.", EPISTEMIC_STATEMENT].map((l) => `- ${l}`).join("\n")),
+      section("Limitations", "limitation", [...manifest.limitations, ...(manifest.category === "demonstration" ? [`Demonstration: ${CATEGORY_MEANING.demonstration}`] : []), ...(study ? [STUDY_LIMITATION] : []), "Single deterministic run. Results describe this run and support no statistical inference.", EPISTEMIC_STATEMENT].map((l) => `- ${l}`).join("\n")),
       section("Future Work", "method", manifest.futureWork.length > 0 ? manifest.futureWork.map((f) => `- ${f}`).join("\n") : "- None recorded."),
       section("Reproducibility Information", "provenance", [
         `- Simulation: ${experiment.simulationVersion}; interchange v${INTERCHANGE_VERSION}`,
@@ -297,7 +339,7 @@ export function draftPublication(experiment: Experiment, manifest: ExperimentMan
 }
 
 /** The full pipeline: Simulation → Metrics → Observations → Findings → Publication Draft. */
-export function runResearchPipeline(input: ResearchInput, manifest: ExperimentManifest, times: RunTimestamps): ResearchBundle {
+export function runResearchPipeline(input: ResearchInput, manifest: ExperimentManifest, times: RunTimestamps, study: StudyResult | null = null): ResearchBundle {
   const metricDefinitions = definitions();
   const metrics = computeMetrics(input);
   const observations = deriveObservations(input, metrics, manifest.hypotheses);
@@ -320,6 +362,6 @@ export function runResearchPipeline(input: ResearchInput, manifest: ExperimentMa
   });
   const chronicle = buildChronicle(input, manifest.civilizationId);
   const { visualizations, data } = buildVisualizations(input, metrics, metricDefinitions);
-  const publication = draftPublication(experiment, manifest, metricDefinitions, metrics, observations, findings);
+  const publication = draftPublication(experiment, manifest, metricDefinitions, metrics, observations, findings, study);
   return { experiment, manifest, metricDefinitions, metrics, observations, findings, chronicle, publication, visualizations, visualizationData: data };
 }

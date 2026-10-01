@@ -24,6 +24,18 @@ Every manifest declares a `category`, and the field is required because a defaul
 
 The category is printed in the experiment report's abstract and design section, in `research_manifest.yaml`, in `index.json` and `catalog.json`, and on the site. A demonstration's report also carries the limitation above verbatim. *The First Fork* is a demonstration: it validates the kernel, the law tables and the publication pipeline, and its three findings are read as that.
 
+## Studies: seed sweeps, doctrine variants and alternate timelines
+
+A manifest may declare a `study`, and the base run is then replicated under declared variations. Every replication is a deterministic run of its own, identified by its head hash, and `study.json` is regenerated and diffed like every other output.
+
+| Group | What varies | How |
+|---|---|---|
+| `seeds` | The seed only | The scenario is rerun under `<seed>/sweep/<i>` for `i` in 1..`count`; the base run is `seed-0` |
+| `doctrines` | Statutory law at founding | One island's amendable fields are overridden in genesis (`laws` in the genesis config); constitutional fields define the island and cannot be varied |
+| `timelines` | What follows the branch point | The base record is replayed to the scenario's branch point (The First Fork: after the last scripted beat, before the agent-based epilogue), an amendment is enacted there by the system actor `study` if declared, and the epilogue runs under the variant's seed |
+
+Three rules keep a study honest. **The epilogue is built from the record**: at the branch point every mind is re-attached from canonical state in a fixed order, and a BDI mind's randomness is a pure function of its seed, its citizen and the current seq, so a timeline branched with the base seed reproduces the base run byte for byte (a test holds this). **A variation the scenario cannot proceed under is a result, not a crash**: the run is recorded as `infeasible` with the scenario's own reason. **Summaries are min, median, mean and max over completed runs**, and per hypothesis a count of consistent, inconsistent and undetermined outcomes; nothing is inferred from them. The report's *Study* section and the site's *Study* view print exactly these.
+
 ## No invented conclusions
 
 - Findings are template text over a computed comparison. Their outcome is one of consistent, inconsistent or undetermined, and they hold only "in this single deterministic run".
@@ -39,3 +51,4 @@ Definitions live in `simulation/src/research/metric-registry.ts`. They are repro
 1. Add `experiments/<name>/experiment.yaml`, with schemaVersion 2 (see `research/manifest.ts`) and a `category` of `demonstration` or `experiment`.
 2. Register the scenario in `simulation/src/scenarios/index.ts`.
 3. Run `npx tsx src/cli.ts publish ../experiments/<name>/experiment.yaml ..` and pin `reproducibility`.
+4. Optionally declare a `study` (see above); a scenario needs a branch point (`ScenarioDriver.branch`) before it can run timelines.

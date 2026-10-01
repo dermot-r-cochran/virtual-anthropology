@@ -12,7 +12,7 @@ import {
   ResearcherIdSchema,
   type IslandId,
 } from "./ids.js";
-import { GENESIS_LAWS, ISLAND_PROFILES } from "./law.js";
+import { GENESIS_LAWS, ISLAND_PROFILES, LawAmendmentSchema, LawSchema } from "./law.js";
 import {
   InstitutionSchema,
   RelationshipSchema,
@@ -65,6 +65,8 @@ export const GenesisConfigSchema = z
     researchEndowment: z.number().int().min(0),
     researchBounds: ResearchBoundsSchema,
     researchers: z.array(ResearcherIdSchema).min(1),
+    /** Statutory (amendable) law fields overridden at founding, per island: a study's doctrine variant. Constitutional fields define the island and cannot be varied. */
+    laws: z.partialRecord(IslandIdSchema, LawAmendmentSchema).default({}),
     mind: z.object({
       model: z.string().min(1),
       modelVersion: z.string().min(1),
@@ -137,8 +139,8 @@ export function buildGenesisState(input: GenesisConfig): { state: WorldState; ke
     state.islands[island] = {
       id: island,
       ...ISLAND_PROFILES[island],
-      law: structuredClone(GENESIS_LAWS[island]),
-      lawHistory: [structuredClone(GENESIS_LAWS[island])],
+      law: LawSchema.parse({ ...structuredClone(GENESIS_LAWS[island]), ...(config.laws[island] ?? {}) }),
+      lawHistory: [LawSchema.parse({ ...structuredClone(GENESIS_LAWS[island]), ...(config.laws[island] ?? {}) })],
       registry,
     };
   }

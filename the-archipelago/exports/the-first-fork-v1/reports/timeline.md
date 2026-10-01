@@ -68,9 +68,9 @@
 | 63 | 4 | chronicle | citizen:cit-0006 | ChronicleRecorded | Sefa Lune (cit-0006) writes in the mnemosyne chronicle: "A branch of Orin Vale arrived and imported communal memories of the flood and the Festival of Sources. Their provenance is shelved with them." |
 | 64 | 4 |  | citizen:cit-0003 | CitizenEndorsed | Ilan Cho (cit-0003) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale |
 | 65 | 4 |  | citizen:cit-0005 | ExperienceRecorded | Pell Marr (cit-0005) records an experience on fork: "Pell Marr kept watch over the split harbour at tick 4." |
-| 66 | 4 |  | citizen:cit-0007 | CitizenEndorsed | Rumi Okafor (cit-0007) endorses Sefa Lune (cit-0006) (+1): appreciation for Sefa Lune |
-| 67 | 4 |  | citizen:cit-0002 | CitizenEndorsed | Tamsin Reed (cit-0002) endorses Orin Vale (cit-0001) (+1): appreciation for Orin Vale |
-| 68 | 4 |  | citizen:cit-0006 | MemoryImported | Sefa Lune (cit-0006) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical). |
+| 66 | 4 |  | citizen:cit-0007 | ChronicleRecorded | Rumi Okafor (cit-0007) writes in the mnemosyne chronicle: "Rumi Okafor notes 4 recent events touching their work on mnemosyne." |
+| 67 | 4 |  | citizen:cit-0002 | ChronicleRecorded | Tamsin Reed (cit-0002) writes in the continuity chronicle: "Tamsin Reed notes 4 recent events touching their work on continuity." |
+| 68 | 4 |  | citizen:cit-0006 | ChronicleRecorded | Sefa Lune (cit-0006) writes in the mnemosyne chronicle: "Sefa Lune notes 7 recent events touching their work on mnemosyne." |
 | 69 | 4 |  | citizen:cit-0004 | ArtefactCreated | Juno Ash (cit-0004) creates the song "A song of the Register Garden" on fork. |
 | 70 | 4 |  | citizen:cit-0009 | ArtefactCreated | Mae Sorrel (cit-0009) creates the essay "An essay of the Common Table" on concord. |
 | 71 | 4 |  | citizen:cit-0008 | CitizenEndorsed | Dov Arlen (cit-0008) endorses Mae Sorrel (cit-0009) (+1): appreciation for Mae Sorrel |
