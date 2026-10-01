@@ -4,12 +4,12 @@ import type { ExperimentManifest, StudyPlan } from "./manifest.js";
 import { computeMetrics } from "./metric-registry.js";
 import { deriveFindings, deriveObservations } from "./pipeline.js";
 
-export type StudyGroup = "seeds" | "doctrines" | "timelines";
+export type StudyGroup = "branches" | "doctrines" | "timelines";
 
 export interface StudyRun {
   readonly id: string;
   readonly group: StudyGroup;
-  /** What was varied, as declared: seed, founding law, or the branch's seed and amendment. */
+  /** What was varied, as declared: the flipped choice, founding law, or the timeline's flips and amendment. */
   readonly variation: Record<string, unknown>;
   /** `infeasible`: the scenario could not proceed under this variation; the reason is the scenario's own. */
   readonly status: "completed" | "infeasible";
@@ -60,7 +60,7 @@ function measureRun(m: ExperimentManifest, run: ScenarioRun): Pick<StudyRun, "me
 }
 
 function completed(m: ExperimentManifest, id: string, group: StudyGroup, variation: Record<string, unknown>, run: ScenarioRun): StudyRun {
-  return { id, group, variation, status: "completed", reason: null, headHash: run.headHash, eventCount: run.log.length, branchSeq: run.branchSeq, ...measureRun(m, run) };
+  return { id, group, variation: run.unusedFlips.length > 0 ? { ...variation, unusedFlips: run.unusedFlips } : variation, status: "completed", reason: null, headHash: run.headHash, eventCount: run.log.length, branchSeq: run.branchSeq, ...measureRun(m, run) };
 }
 
 function infeasible(id: string, group: StudyGroup, variation: Record<string, unknown>, error: unknown): StudyRun {
@@ -109,19 +109,29 @@ export async function runStudy(m: ExperimentManifest, base: ScenarioRun): Promis
   const runs: StudyRun[] = [];
   const summary: Partial<Record<StudyGroup, StudyGroupSummary>> = {};
 
-  if (plan.seeds) {
-    const group: StudyRun[] = [completed(m, "seed-0", "seeds", { seed: m.seed, base: true }, base)];
-    for (let i = 1; i <= plan.seeds.count; i++) {
-      const seed = `${m.seed}/sweep/${i}`;
-      const variation = { seed, base: false };
-      try {
-        group.push(completed(m, `seed-${i}`, "seeds", variation, await driver.run(m, { seed })));
-      } catch (e) {
-        group.push(infeasible(`seed-${i}`, "seeds", variation, e));
+  if (plan.branches) {
+    if (!driver.branch) throw new Error(`scenario ${m.scenario} has no branch point; it cannot run branches`);
+    const rounds = m.parameters.abmRounds;
+    const names = Object.fromEntries(Object.values(base.state.citizens).map((c) => [c.id, c.name]));
+    const group: StudyRun[] = [];
+    let n = 0;
+    outer: for (const point of base.choices) {
+      for (let option = 0; option < point.options.length; option++) {
+        if (option === point.chosen) continue;
+        if (n >= plan.branches.budget) break outer;
+        n++;
+        const id = `branch-${n}`;
+        const flip = { seq: point.seq, citizen: point.citizen, label: point.label, occurrence: point.occurrence, option };
+        const variation = { at: point.seq, citizen: names[point.citizen] ?? point.citizen, choice: point.label, from: point.options[point.chosen], to: point.options[option] };
+        try {
+          group.push(completed(m, id, "branches", variation, await driver.branch(m, { rounds, flips: [flip] })));
+        } catch (e) {
+          group.push(infeasible(id, "branches", variation, e));
+        }
       }
     }
     runs.push(...group);
-    summary.seeds = summarise(group, hypothesisIds);
+    summary.branches = summarise(group, hypothesisIds);
   }
 
   if (plan.doctrines) {
@@ -142,10 +152,9 @@ export async function runStudy(m: ExperimentManifest, base: ScenarioRun): Promis
     if (!driver.branch) throw new Error(`scenario ${m.scenario} has no branch point; it cannot run timelines`);
     const group: StudyRun[] = [];
     for (const v of plan.timelines.variants) {
-      const seed = v.seed ?? m.seed;
-      const variation = { seed, amendment: v.amendment ?? null, rounds: plan.timelines.rounds };
+      const variation = { flips: v.flips ?? [], amendment: v.amendment ?? null, rounds: plan.timelines.rounds };
       try {
-        group.push(completed(m, v.id, "timelines", variation, await driver.branch(m, { seed, rounds: plan.timelines.rounds, ...(v.amendment ? { amendment: v.amendment } : {}) })));
+        group.push(completed(m, v.id, "timelines", variation, await driver.branch(m, { rounds: plan.timelines.rounds, flips: v.flips ?? [], ...(v.amendment ? { amendment: v.amendment } : {}) })));
       } catch (e) {
         group.push(infeasible(v.id, "timelines", variation, e));
       }

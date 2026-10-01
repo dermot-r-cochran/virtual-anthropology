@@ -1,7 +1,5 @@
 import type { CitizenId } from "../domain/ids.js";
-import { roomNames } from "../domain/geography.js";
 import type { MindProvenance } from "../domain/model.js";
-import type { Rng } from "../kernel/rng.js";
 import { DISCLOSURE_STATEMENT } from "../policy/disclosure.js";
 import type { ActionProposal, CitizenMind, CognitiveState, MindContext, Observation } from "./types.js";
 
@@ -11,8 +9,6 @@ import type { ActionProposal, CitizenMind, CognitiveState, MindContext, Observat
  * produce proposals through the same interface a language model would.
  */
 
-const ACTIVITIES = ["walked", "mapped", "repaired a lantern at", "argued about tides at", "kept watch over", "taught a class at"];
-const ARTEFACT_KINDS = ["poem", "song", "essay"] as const;
 
 /** A templated, non-manipulative conversational reply that always discloses. */
 export function deterministicReply(utterance: string, obs: Observation): string {
@@ -63,49 +59,3 @@ export class ScriptedMind implements CitizenMind {
   }
 }
 
-/** Seeded everyday behaviour for background citizens. */
-export class HeuristicMind implements CitizenMind {
-  constructor(
-    readonly citizenId: CitizenId,
-    readonly provenance: MindProvenance,
-    private readonly rng: Rng,
-  ) {}
-
-  propose(obs: Observation, _cog: CognitiveState, ctx: MindContext): ActionProposal[] {
-    if (ctx.beat !== "interlude") return [];
-    const rng = this.rng.derive(`seq-${obs.seq}`);
-    const s = obs.self;
-    const wrap = (candidate: unknown, rationale: string): ActionProposal[] => [{ proposer: s.id, candidate, rationale, generator: this.provenance }];
-
-    const ballot = obs.openProposals.find((p) => p.electorate.includes(s.id) && !(s.id in p.votes) && obs.tick < p.closesAtTick);
-    if (ballot) {
-      const lean = (s.values.novelty ?? 0) + (s.values.autonomy ?? 0) - (s.values.caution ?? 0) - (s.values.tradition ?? 0);
-      return wrap({ type: "CastVote", proposalId: ballot.id, voter: s.id, choice: lean >= 0 ? "yes" : "no" }, `values lean ${lean.toFixed(2)}`);
-    }
-    const roll = rng.next();
-    if (roll < 0.5) {
-      const place = rng.pick(roomNames(s.residence));
-      return wrap(
-        { type: "RecordExperience", citizen: s.id, content: `${s.name} ${rng.pick(ACTIVITIES)} ${place} at tick ${obs.tick}.`, tags: ["everyday", s.residence] },
-        "everyday experience",
-      );
-    }
-    if (roll < 0.7 && obs.kin.length > 0) {
-      const k = rng.pick(obs.kin);
-      return wrap({ type: "Endorse", by: s.id, subject: k.id, delta: 1, reason: `appreciation for ${k.name}` }, "maintain relationship");
-    }
-    if (roll < 0.85) {
-      const kind = rng.pick(ARTEFACT_KINDS);
-      const place = rng.pick(roomNames(s.residence));
-      return wrap(
-        { type: "CreateArtefact", authors: [s.id], island: s.residence, kind, title: `${/^[aeiou]/.test(kind) ? "An" : "A"} ${kind} of ${place}`, body: `Composed by ${s.name}, ${s.occupation}, about ${place} (tick ${obs.tick}).` },
-        "cultural expression",
-      );
-    }
-    return [];
-  }
-
-  respond(utterance: string, obs: Observation): string {
-    return deterministicReply(utterance, obs);
-  }
-}

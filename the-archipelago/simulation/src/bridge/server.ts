@@ -12,7 +12,7 @@ const path = process.argv[2] ?? new URL("../../../experiments/the-first-fork/exp
 const manifest = loadManifest(path);
 if (manifest.scenario !== "the-first-fork") throw new Error(`bridge supports the-first-fork, not ${manifest.scenario}`);
 const run = await runFirstFork({ seed: manifest.seed, abmRounds: manifest.parameters.abmRounds, researchBounds: manifest.researchBounds, researchers: manifest.researchers.map((r) => r.id) });
-const bridge = createBridge(run, manifest.seed);
+const bridge = createBridge(run);
 
 const rl = createInterface({ input: process.stdin, crlfDelay: Infinity });
 let queue = Promise.resolve();

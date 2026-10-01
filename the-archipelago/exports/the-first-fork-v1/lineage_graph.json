@@ -124,21 +124,21 @@
       "from": "cit-0001@17",
       "to": "cit-0001@0",
       "kind": "claims-continuity-with",
-      "atSeq": 58,
+      "atSeq": 59,
       "note": "clm-0001: testimony, not a determination"
     },
     {
       "from": "cit-0010@17",
       "to": "cit-0001@0",
       "kind": "claims-continuity-with",
-      "atSeq": 59,
+      "atSeq": 60,
       "note": "clm-0002: testimony, not a determination"
     },
     {
       "from": "cit-0011@17",
       "to": "cit-0001@0",
       "kind": "claims-continuity-with",
-      "atSeq": 60,
+      "atSeq": 61,
       "note": "clm-0003: testimony, not a determination"
     }
   ]

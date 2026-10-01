@@ -58,8 +58,8 @@ researchBounds:
 parameters:
   abmRounds: 3
 study:
-  seeds:
-    count: 8
+  branches:
+    budget: 12
   doctrines:
     - id: mnemosyne-no-integration
       island: mnemosyne
@@ -77,9 +77,9 @@ study:
     rounds: 3
     variants:
       - id: control
-        seed: archipelago/the-first-fork/v1
-      - id: second-seed
-        seed: archipelago/the-first-fork/v1/timeline-2
+      - id: juno-maps-instead
+        flips:
+          - { seq: 66, citizen: juno, label: activity, option: 1 }
       - id: fork-closes-its-borders
         amendment: { island: fork, amendment: { immigration: closed } }
       - id: mnemosyne-opens-its-borders
@@ -99,9 +99,9 @@ limitations:
   - Population is small (11 records). Metrics are descriptive and support no statistical inference.
   - Memory bequest covers only non-destroyed memories.
 futureWork:
-  - Vary the number of descendants and the length of the epilogue; widen the seed sweep.
+  - Vary the number of descendants and the length of the epilogue; raise the branch budget, and branch on more than one choice at a time.
   - Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.
   - Add a Concord scenario in which claimants petition to federate.
 reproducibility:
-  expectedHeadHash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
-  expectedEventCount: 91
+  expectedHeadHash: 945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e
+  expectedEventCount: 92

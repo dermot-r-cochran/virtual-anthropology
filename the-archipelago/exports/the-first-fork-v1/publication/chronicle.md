@@ -11,32 +11,30 @@ Generated from the event stream. year = simulation tick + 1. Each statement cite
 
 - First migration: Orin Vale migrates from Continuity to Fork. _[16:CitizenMigrated]_
 - First identity fork: Orin Vale forks on Fork, creating Orin Vale (branch 1) and Orin Vale (branch 2). _[17:CitizenForked]_
-- First poem: Juno Ash creates the poem "A poem of the Branching Steps". _[23:ArtefactCreated]_
-- First song: Rumi Okafor creates the song "A song of the Index Tower". _[26:ArtefactCreated]_
+- First poem: Pell Marr creates the poem "A poem of the split harbour". _[24:ArtefactCreated]_
 - First essay: Orin Vale (branch 1) creates the essay "On Being a Branch". _[31:ArtefactCreated]_
 - Orin Vale (branch 2) migrates from Fork to Mnemosyne. _[35:CitizenMigrated]_
 
 ## Year 5
 
-- Proposal "Branch Cooldown Act" is rejected (1 yes, 1 no). _[37:ProposalClosed]_
-- First memory import: Orin Vale (branch 2) imports communal memory mem-0007 (from Mnemosyne), first experienced by Sefa Lune. _[38:MemoryImported]_
-- Orin Vale (branch 2) imports communal memory mem-0009 (from Mnemosyne), first experienced by Rumi Okafor. _[39:MemoryImported]_
-- First memory integration: Orin Vale (branch 2) integrates an imported memory into their self-narrative. _[41:MemoryIntegrated]_
-- Juno Ash creates the essay "An essay of the Branching Steps". _[44:ArtefactCreated]_
-- Orin Vale migrates from Fork to Continuity. _[53:CitizenMigrated]_
-- Researcher res-observer-1 converses with Orin Vale. _[55:ConversationRecorded]_
-- Researcher res-observer-1 converses with Orin Vale (branch 1). _[56:ConversationRecorded]_
-- Researcher res-observer-1 converses with Orin Vale (branch 2). _[57:ConversationRecorded]_
-- Orin Vale claims continuity with Orin Vale as recorded before seq 17. _[58:ContinuityClaimed]_
-- Orin Vale (branch 1) claims continuity with Orin Vale as recorded before seq 17. _[59:ContinuityClaimed]_
-- Orin Vale (branch 2) claims continuity with Orin Vale as recorded before seq 17. _[60:ContinuityClaimed]_
-- Juno Ash creates the song "A song of the Register Garden". _[69:ArtefactCreated]_
-- Mae Sorrel creates the essay "An essay of the Common Table". _[70:ArtefactCreated]_
+- First law reform: Reform passed on Fork: "Branch Cooldown Act" (2 yes, 0 no). _[37:ProposalClosed, 38:LawEnacted]_
+- First memory import: Orin Vale (branch 2) imports communal memory mem-0007 (from Mnemosyne), first experienced by Sefa Lune. _[39:MemoryImported]_
+- Orin Vale (branch 2) imports communal memory mem-0009 (from Mnemosyne), first experienced by Rumi Okafor. _[40:MemoryImported]_
+- First memory integration: Orin Vale (branch 2) integrates an imported memory into their self-narrative. _[42:MemoryIntegrated]_
+- Pell Marr creates the poem "A poem of the split harbour". _[46:ArtefactCreated]_
+- Orin Vale migrates from Fork to Continuity. _[54:CitizenMigrated]_
+- Researcher res-observer-1 converses with Orin Vale. _[56:ConversationRecorded]_
+- Researcher res-observer-1 converses with Orin Vale (branch 1). _[57:ConversationRecorded]_
+- Researcher res-observer-1 converses with Orin Vale (branch 2). _[58:ConversationRecorded]_
+- Orin Vale claims continuity with Orin Vale as recorded before seq 17. _[59:ContinuityClaimed]_
+- Orin Vale (branch 1) claims continuity with Orin Vale as recorded before seq 17. _[60:ContinuityClaimed]_
+- Orin Vale (branch 2) claims continuity with Orin Vale as recorded before seq 17. _[61:ContinuityClaimed]_
+- Pell Marr creates the poem "A poem of the split harbour". _[68:ArtefactCreated]_
 
 ## Year 6
 
-- Juno Ash creates the poem "A poem of the Branching Steps". _[73:ArtefactCreated]_
+- Pell Marr creates the poem "A poem of the split harbour". _[77:ArtefactCreated]_
 
 ## Year 7
 
-- Juno Ash creates the poem "A poem of the Branching Steps". _[84:ArtefactCreated]_
+- Pell Marr creates the poem "A poem of the split harbour". _[86:ArtefactCreated]_

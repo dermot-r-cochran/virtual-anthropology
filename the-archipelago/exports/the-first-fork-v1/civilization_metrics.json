@@ -329,7 +329,7 @@
     },
     {
       "metric": "governance.laws_enacted",
-      "value": 0
+      "value": 1
     },
     {
       "metric": "governance.votes_cast",
@@ -349,7 +349,7 @@
     },
     {
       "metric": "memory.records",
-      "value": 44
+      "value": 63
     },
     {
       "metric": "memory.imported",
@@ -369,7 +369,7 @@
     },
     {
       "metric": "culture.artefacts",
-      "value": 9
+      "value": 7
     },
     {
       "metric": "culture.chronicle_entries",
@@ -437,7 +437,7 @@
     },
     {
       "metric": "simulation.events",
-      "value": 91
+      "value": 92
     },
     {
       "metric": "simulation.ticks",
@@ -447,7 +447,7 @@
   "series": [
     {
       "tick": 7,
-      "seq": 90,
+      "seq": 91,
       "values": {
         "citizens": 11,
         "residents.continuity": 3,
@@ -462,18 +462,18 @@
         "lifecycle.memory-damaged": 0,
         "lifecycle.identity-discontinuous": 0,
         "lifecycle.irreversibly-deleted": 0,
-        "memories.autobiographical": 39,
+        "memories.autobiographical": 58,
         "memories.collective": 3,
         "memories.imported": 1,
         "memories.integrated": 1,
         "activeRelationships": 8,
-        "artefacts": 9,
+        "artefacts": 7,
         "institutions": 7,
         "openProposals": 0,
         "forks": 1,
         "continuityClaims": 3,
         "creditGini": 0.1542,
-        "meanReputation": 1.5455
+        "meanReputation": 0
       }
     }
   ]

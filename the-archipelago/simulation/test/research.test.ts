@@ -82,14 +82,22 @@ describe("The First Fork and the research pipeline", async () => {
     expect(study.base.headHash).toBe(run.headHash);
     expect(study.base.branchSeq).toBe(run.branchSeq);
     const byId = (id: string) => study.runs.find((r: { id: string }) => r.id === id);
-    const seeds = study.runs.filter((r: { group: string }) => r.group === "seeds");
-    expect(seeds).toHaveLength(m.study!.seeds!.count + 1);
-    expect(seeds[0].variation).toEqual({ seed: m.seed, base: true });
-    expect(new Set(seeds.map((r: { headHash: string }) => r.headHash)).size).toBe(seeds.length);
-    expect(study.summary.seeds.hypotheses["h1-legal-divergence"].n).toBe(seeds.length);
+    const branches = study.runs.filter((r: { group: string }) => r.group === "branches");
+    expect(branches.length).toBe(m.study!.branches!.budget);
+    for (const b of branches) {
+      expect(b.status).toBe("completed");
+      expect(b.variation.at).toBeGreaterThanOrEqual(run.branchSeq!);
+      expect(b.variation.to).not.toBe(b.variation.from);
+      expect(b.headHash).not.toBe(run.headHash);
+    }
+    expect(new Set(branches.map((r: { headHash: string }) => r.headHash)).size).toBe(branches.length);
+    expect(study.summary.branches.hypotheses["h1-legal-divergence"].n).toBe(branches.length);
+    expect(run.choices.length).toBeGreaterThan(0);
+    expect(run.choices.every((p: { chosen: number }) => p.chosen === 0)).toBe(true);
     expect(byId("control").headHash).toBe(run.headHash);
     expect(byId("control").eventCount).toBe(run.log.length);
-    expect(byId("second-seed").headHash).not.toBe(run.headHash);
+    expect(byId("juno-maps-instead").headHash).not.toBe(run.headHash);
+    expect(byId("juno-maps-instead").variation.unusedFlips).toBeUndefined();
     expect(byId("fork-closes-its-borders").status).toBe("completed");
     expect(byId("mnemosyne-no-integration").status).toBe("completed");
     expect(byId("mnemosyne-no-integration").metrics["memory.integrated"]).toBe(0);
@@ -103,7 +111,7 @@ describe("The First Fork and the research pipeline", async () => {
     expect(out.exportFiles["research_manifest.yaml"]).toMatch(/counting_rule: consensus/);
     expect(out.exportFiles["research_manifest.yaml"]).toMatch(/counting_rule: majority-of-electorate/);
     const md = out.reportFiles[`reports/experiments/${m.id}.md`]!;
-    expect(md).toMatch(/^### Seed sweep/m);
+    expect(md).toMatch(/^### Branch sweep/m);
     expect(md).toMatch(/^### Alternate timelines/m);
     expect(md).toMatch(/\(= base\)/);
     expect(md).toMatch(/^- Study replications are deterministic runs/m);
@@ -113,8 +121,8 @@ describe("The First Fork and the research pipeline", async () => {
 
   it("manifest validation rejects a malformed study", () => {
     const src = readFileSync(MANIFEST, "utf8");
-    expect(() => parseManifest(src.replace("      - id: control\n        seed: archipelago/the-first-fork/v1\n", "      - id: control\n"))).toThrow(/seed or an amendment/);
-    expect(() => parseManifest(src.replace("id: second-seed", "id: control"))).toThrow(/duplicate/);
+    expect(() => parseManifest(src.replace("id: juno-maps-instead", "id: control"))).toThrow(/duplicate/);
+    expect(() => parseManifest(src.replace("    budget: 12\n", "    budget: 0\n"))).toThrow();
     expect(parseManifest(src.replace(/^study:[\s\S]*?(?=^ethics:)/m, "")).study).toBeUndefined();
   });
 

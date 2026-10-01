@@ -1,4 +1,5 @@
 import { BdiMind } from "../../agents/bdi.js";
+import { ChoiceLog, type ChoicePoint, type Flip } from "../../agents/choice.js";
 import { ScriptedMind, type ScriptStep } from "../../agents/deterministic.js";
 import { runInstitutions } from "../../agents/institutions.js";
 import { AgentRuntime } from "../../agents/runtime.js";
@@ -8,7 +9,6 @@ import type { PersonStageRef, ResearchBounds } from "../../domain/model.js";
 import type { IslandId } from "../../domain/ids.js";
 import type { LawAmendment } from "../../domain/law.js";
 import type { RecordedEvent } from "../../kernel/events.js";
-import { createRng } from "../../kernel/rng.js";
 import type { ExecutionResult, World as WorldT } from "../../kernel/world.js";
 import { World } from "../../kernel/world.js";
 import { runAgentBasedRounds, type RoundMetrics } from "../../research/abm.js";
@@ -31,11 +31,11 @@ export interface FirstForkOptions {
   readonly laws?: Partial<Record<IslandId, LawAmendment>>;
 }
 
-/** How a timeline branches from the base run at its epilogue. */
+/** How a timeline branches from the base run at its epilogue. With no flips and no amendment it reproduces the base run exactly. */
 export interface BranchOptions {
-  /** Seed for the epilogue's minds and activation order; the base seed reproduces the base run exactly. */
-  readonly seed: string;
   readonly rounds: number;
+  /** Choice points to take differently; `citizen` may be a genesis key (e.g. "pell") or a citizen id. */
+  readonly flips?: readonly Flip[];
   /** A statutory amendment enacted by the system actor `study` at the branch point, before any round. */
   readonly amendment?: { readonly island: IslandId; readonly amendment: LawAmendment };
 }
@@ -61,8 +61,12 @@ export interface FirstForkRun {
   readonly beats: readonly { beat: string; fromSeq: number; toSeq: number }[];
   /** The seq of the last scripted event: the epilogue, and any branched timeline, begins after it. */
   readonly branchSeq: number;
-  /** The seed the epilogue's minds and activation order were derived from. */
+  /** Run identity, carried into provenance; nothing random is derived from it. */
   readonly seed: string;
+  /** The epilogue's choice points, in order: every place a mind had alternatives, with the one it took. */
+  readonly choices: readonly ChoicePoint[];
+  /** Flips declared for this run whose choice point never occurred. */
+  readonly unusedFlips: readonly string[];
 }
 
 const step = (candidate: unknown, rationale: string) => ({ candidate, rationale });
@@ -93,11 +97,11 @@ export async function runFirstFork(options: FirstForkOptions = {}): Promise<Firs
   const world = World.found(state, SCENARIO_ID);
   const runtime = new AgentRuntime(world);
   const session = new ResearcherSession(RESEARCHER_ID, world, runtime);
-  const rng = createRng(`${seed}/minds`);
+  const scriptedChoices = new ChoiceLog();
   const id = (k: string) => keys[k] as CitizenId;
   const orin = id("orin");
   const provenanceOf = (c: CitizenId) => world.state.citizens[c]?.provenance ?? (() => { throw new Error(c); })();
-  const bdi = (c: CitizenId) => new BdiMind(c, provenanceOf(c), rng.derive(`bdi/${c}`));
+  const bdi = (c: CitizenId) => new BdiMind(c, provenanceOf(c), scriptedChoices);
   const residenceOf = (c: CitizenId) => world.state.citizens[c]?.residence;
   const beats: { beat: string; fromSeq: number; toSeq: number }[] = [];
   const clock = (ticks: number) => must(world.execute({ kind: "system", id: "clock" }, { type: "AdvanceTime", ticks }), "clock");
@@ -241,8 +245,8 @@ export async function runFirstFork(options: FirstForkOptions = {}): Promise<Firs
   await beat("chronicle", [id("juno"), id("tamsin"), id("sefa")]);
 
   const branchSeq = world.state.seq;
-  const epilogue = attachEpilogueMinds(World.replay(world.log.slice(0, branchSeq + 1)), keys, b1, b2, seed);
-  const rounds = await runAgentBasedRounds(epilogue.world, epilogue.runtime, { rounds: options.abmRounds ?? 3, seed: `${seed}/abm`, ticksPerRound: 1 });
+  const epilogue = attachEpilogueMinds(World.replay(world.log.slice(0, branchSeq + 1)), keys, b1, b2, new ChoiceLog());
+  const rounds = await runAgentBasedRounds(epilogue.world, epilogue.runtime, { rounds: options.abmRounds ?? 3, ticksPerRound: 1 });
 
   return {
     world: epilogue.world,
@@ -253,6 +257,8 @@ export async function runFirstFork(options: FirstForkOptions = {}): Promise<Firs
     beats,
     branchSeq,
     seed,
+    choices: epilogue.choices.points,
+    unusedFlips: epilogue.choices.unusedFlips(),
     markers: { original: orin, remainsOnFork: b1, movedToMnemosyne: b2, forkId: markers.forkId, forkSeq: markers.forkSeq, subject, keys },
   };
 }
@@ -260,33 +266,34 @@ export async function runFirstFork(options: FirstForkOptions = {}): Promise<Firs
 /**
  * The epilogue's minds, built from the record alone. The base run and every
  * branched timeline attach them the same way, in the same order, from a world
- * replayed to the branch point, so that a timeline branched with the base
- * seed reproduces the base run byte for byte: everything a mind carries into
- * the epilogue is what the record carries. The three protagonists are inert
- * (their script is spent); the background citizens are BDI minds whose
- * randomness is a pure function of (seed, citizen, seq).
+ * replayed to the branch point, so that a timeline branched with no flips
+ * reproduces the base run byte for byte: everything a mind carries into the
+ * epilogue is what the record carries, and every choice it then makes is a
+ * recorded choice point taken by default unless a flip says otherwise. The
+ * three protagonists are inert (their script is spent); the background
+ * citizens are BDI minds sharing one choice log.
  */
-export function attachEpilogueMinds(world: WorldT, keys: Readonly<Record<string, string>>, b1: CitizenId, b2: CitizenId, seed: string): { world: WorldT; runtime: AgentRuntime } {
+export function attachEpilogueMinds(world: WorldT, keys: Readonly<Record<string, string>>, b1: CitizenId, b2: CitizenId, choices: ChoiceLog): { world: WorldT; runtime: AgentRuntime; choices: ChoiceLog } {
   const runtime = new AgentRuntime(world);
-  const rng = createRng(`${seed}/minds`);
   const provenanceOf = (c: CitizenId) => world.state.citizens[c]?.provenance ?? (() => { throw new Error(c); })();
   const inert = (c: CitizenId) => new ScriptedMind(c, provenanceOf(c), {});
   const orin = keys.orin as CitizenId;
   runtime.attach(inert(orin));
   for (const k of ["tamsin", "ilan", "juno", "pell", "sefa", "rumi", "dov", "mae"]) {
     const c = keys[k] as CitizenId;
-    runtime.attach(new ScriptedMind(c, provenanceOf(c), {}, new BdiMind(c, provenanceOf(c), rng.derive(`bdi/${c}`))));
+    runtime.attach(new ScriptedMind(c, provenanceOf(c), {}, new BdiMind(c, provenanceOf(c), choices)));
   }
   runtime.attach(inert(b1));
   runtime.attach(inert(b2));
-  return { world, runtime };
+  return { world, runtime, choices };
 }
 
 /**
  * An alternate timeline: the base run's record replayed to its branch point,
- * optionally amended there, then continued through a fresh epilogue under the
- * given seed. The scripted history, conversations, beats and markers are the
- * base run's; only what follows the branch differs.
+ * optionally amended there, then continued through a fresh epilogue in which
+ * the declared flips are taken instead of the defaults. The scripted history,
+ * conversations, beats and markers are the base run's; only what follows the
+ * branch differs, and it differs only by what was declared.
  */
 export async function branchFirstFork(base: FirstForkRun, options: BranchOptions): Promise<FirstForkRun> {
   const log = base.world.log.slice(0, base.branchSeq + 1) as readonly RecordedEvent[];
@@ -296,7 +303,8 @@ export async function branchFirstFork(base: FirstForkRun, options: BranchOptions
     must(r, `amendment of ${options.amendment.island} at the branch point`);
   }
   const { markers } = base;
-  const epilogue = attachEpilogueMinds(world, markers.keys, markers.remainsOnFork, markers.movedToMnemosyne, options.seed);
-  const rounds = await runAgentBasedRounds(epilogue.world, epilogue.runtime, { rounds: options.rounds, seed: `${options.seed}/abm`, ticksPerRound: 1 });
-  return { ...base, world: epilogue.world, runtime: epilogue.runtime, rounds, seed: options.seed };
+  const flips = (options.flips ?? []).map((f) => ({ ...f, citizen: (markers.keys[f.citizen] ?? f.citizen) as CitizenId }));
+  const epilogue = attachEpilogueMinds(world, markers.keys, markers.remainsOnFork, markers.movedToMnemosyne, new ChoiceLog(flips));
+  const rounds = await runAgentBasedRounds(epilogue.world, epilogue.runtime, { rounds: options.rounds, ticksPerRound: 1 });
+  return { ...base, world: epilogue.world, runtime: epilogue.runtime, rounds, choices: epilogue.choices.points, unusedFlips: epilogue.choices.unusedFlips() };
 }

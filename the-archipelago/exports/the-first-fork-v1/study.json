@@ -1,13 +1,13 @@
 {
   "schema": "archipelago/study/v1",
   "base": {
-    "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
-    "eventCount": 91,
-    "branchSeq": 63
+    "headHash": "945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e",
+    "eventCount": 92,
+    "branchSeq": 64
   },
   "plan": {
-    "seeds": {
-      "count": 8
+    "branches": {
+      "budget": 12
     },
     "doctrines": [
       {
@@ -43,12 +43,19 @@
       "rounds": 3,
       "variants": [
         {
-          "id": "control",
-          "seed": "archipelago/the-first-fork/v1"
+          "id": "control"
         },
         {
-          "id": "second-seed",
-          "seed": "archipelago/the-first-fork/v1/timeline-2"
+          "id": "juno-maps-instead",
+          "flips": [
+            {
+              "seq": 66,
+              "citizen": "juno",
+              "label": "activity",
+              "occurrence": 0,
+              "option": 1
+            }
+          ]
         },
         {
           "id": "fork-closes-its-borders",
@@ -82,243 +89,18 @@
   },
   "runs": [
     {
-      "id": "seed-0",
-      "group": "seeds",
+      "id": "branch-1",
+      "group": "branches",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1",
-        "base": true
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "intention",
+        "from": "record-experience",
+        "to": "maintain-relationships → cit-0001"
       },
       "status": "completed",
       "reason": null,
-      "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
-      "eventCount": 91,
-      "branchSeq": 63,
-      "metrics": {
-        "population.records": 11,
-        "population.active": 11,
-        "population.genesis": 9,
-        "population.stateless": 0,
-        "identity.forks": 1,
-        "identity.fork_descendants": 2,
-        "identity.mergers": 0,
-        "identity.continuity_claims": 3,
-        "identity.process_continuers": 1,
-        "identity.civic_continuers": 1,
-        "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
-        "legal.recognition_range": 3,
-        "legal.unadjudicating_islands": 1,
-        "governance.proposals": 1,
-        "governance.laws_enacted": 0,
-        "governance.votes_cast": 2,
-        "governance.votes_refused_outside_electorate": 1,
-        "governance.commands_rejected": 1,
-        "governance.migrations": 3,
-        "memory.records": 44,
-        "memory.imported": 1,
-        "memory.integrated": 1,
-        "memory.fork_inherited": 8,
-        "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
-        "culture.chronicle_entries": 6,
-        "institutions.count": 7,
-        "social.active_relationships": 8,
-        "social.fork_kin_ties": 3,
-        "economy.credit_gini": 0.1542,
-        "economy.supply_conserved": 1,
-        "death.asleep": 0,
-        "death.suspended": 0,
-        "death.archived": 0,
-        "death.process_ended_restorable": 0,
-        "death.memory_damaged": 0,
-        "death.identity_discontinuous": 0,
-        "death.irreversibly_deleted": 0,
-        "death.transitions": 0,
-        "research.conversations": 3,
-        "research.interventions": 0,
-        "simulation.events": 91,
-        "simulation.ticks": 7
-      },
-      "findings": [
-        {
-          "hypothesisId": "h1-legal-divergence",
-          "observedValue": 3,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h2-dimension-dissociation",
-          "observedValue": 2,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h3-no-vote-multiplication",
-          "observedValue": 1,
-          "outcome": "consistent-with-hypothesis"
-        }
-      ]
-    },
-    {
-      "id": "seed-1",
-      "group": "seeds",
-      "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/1",
-        "base": false
-      },
-      "status": "completed",
-      "reason": null,
-      "headHash": "b8c799f5a4d0ce3e8292b1b06b4cb7997dfdb438d9b4a49ea7865cc232d1e447",
-      "eventCount": 91,
-      "branchSeq": 63,
-      "metrics": {
-        "population.records": 11,
-        "population.active": 11,
-        "population.genesis": 9,
-        "population.stateless": 0,
-        "identity.forks": 1,
-        "identity.fork_descendants": 2,
-        "identity.mergers": 0,
-        "identity.continuity_claims": 3,
-        "identity.process_continuers": 1,
-        "identity.civic_continuers": 1,
-        "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
-        "legal.recognition_range": 3,
-        "legal.unadjudicating_islands": 1,
-        "governance.proposals": 1,
-        "governance.laws_enacted": 0,
-        "governance.votes_cast": 2,
-        "governance.votes_refused_outside_electorate": 1,
-        "governance.commands_rejected": 1,
-        "governance.migrations": 3,
-        "memory.records": 31,
-        "memory.imported": 1,
-        "memory.integrated": 1,
-        "memory.fork_inherited": 8,
-        "memory.provenance_complete": 1,
-        "culture.artefacts": 6,
-        "culture.chronicle_entries": 7,
-        "institutions.count": 7,
-        "social.active_relationships": 8,
-        "social.fork_kin_ties": 3,
-        "economy.credit_gini": 0.1542,
-        "economy.supply_conserved": 1,
-        "death.asleep": 0,
-        "death.suspended": 0,
-        "death.archived": 0,
-        "death.process_ended_restorable": 0,
-        "death.memory_damaged": 0,
-        "death.identity_discontinuous": 0,
-        "death.irreversibly_deleted": 0,
-        "death.transitions": 0,
-        "research.conversations": 3,
-        "research.interventions": 0,
-        "simulation.events": 91,
-        "simulation.ticks": 7
-      },
-      "findings": [
-        {
-          "hypothesisId": "h1-legal-divergence",
-          "observedValue": 3,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h2-dimension-dissociation",
-          "observedValue": 2,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h3-no-vote-multiplication",
-          "observedValue": 1,
-          "outcome": "consistent-with-hypothesis"
-        }
-      ]
-    },
-    {
-      "id": "seed-2",
-      "group": "seeds",
-      "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/2",
-        "base": false
-      },
-      "status": "completed",
-      "reason": null,
-      "headHash": "1a9993da1d63533842c8131e5887a26d1d99ee8cdd4f8c37ff983df8a72ca5a4",
-      "eventCount": 91,
-      "branchSeq": 63,
-      "metrics": {
-        "population.records": 11,
-        "population.active": 11,
-        "population.genesis": 9,
-        "population.stateless": 0,
-        "identity.forks": 1,
-        "identity.fork_descendants": 2,
-        "identity.mergers": 0,
-        "identity.continuity_claims": 3,
-        "identity.process_continuers": 1,
-        "identity.civic_continuers": 1,
-        "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
-        "legal.recognition_range": 3,
-        "legal.unadjudicating_islands": 1,
-        "governance.proposals": 1,
-        "governance.laws_enacted": 0,
-        "governance.votes_cast": 2,
-        "governance.votes_refused_outside_electorate": 1,
-        "governance.commands_rejected": 1,
-        "governance.migrations": 3,
-        "memory.records": 45,
-        "memory.imported": 2,
-        "memory.integrated": 1,
-        "memory.fork_inherited": 8,
-        "memory.provenance_complete": 1,
-        "culture.artefacts": 4,
-        "culture.chronicle_entries": 6,
-        "institutions.count": 7,
-        "social.active_relationships": 8,
-        "social.fork_kin_ties": 3,
-        "economy.credit_gini": 0.1542,
-        "economy.supply_conserved": 1,
-        "death.asleep": 0,
-        "death.suspended": 0,
-        "death.archived": 0,
-        "death.process_ended_restorable": 0,
-        "death.memory_damaged": 0,
-        "death.identity_discontinuous": 0,
-        "death.irreversibly_deleted": 0,
-        "death.transitions": 0,
-        "research.conversations": 3,
-        "research.interventions": 0,
-        "simulation.events": 91,
-        "simulation.ticks": 7
-      },
-      "findings": [
-        {
-          "hypothesisId": "h1-legal-divergence",
-          "observedValue": 3,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h2-dimension-dissociation",
-          "observedValue": 2,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h3-no-vote-multiplication",
-          "observedValue": 1,
-          "outcome": "consistent-with-hypothesis"
-        }
-      ]
-    },
-    {
-      "id": "seed-3",
-      "group": "seeds",
-      "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/3",
-        "base": false
-      },
-      "status": "completed",
-      "reason": null,
-      "headHash": "d4293482818b07f732473efcfb3a9a77bb095fc751f210d1b6830433b696f458",
+      "headHash": "46eeb257fc34638181ad3d11380680e79c9c3925f09f832679611733702dd29d",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -342,12 +124,12 @@
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 48,
-        "memory.imported": 2,
+        "memory.records": 62,
+        "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 5,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -386,15 +168,18 @@
       ]
     },
     {
-      "id": "seed-4",
-      "group": "seeds",
+      "id": "branch-2",
+      "group": "branches",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/4",
-        "base": false
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "activity",
+        "from": "walked",
+        "to": "mapped"
       },
       "status": "completed",
       "reason": null,
-      "headHash": "0d0ea21e4f42eee788df561928b7a1c38648604d480d2f0a10fce76e3d4d880a",
+      "headHash": "21ebd0ebb6c6a5bbf7b2a0d0df80beea272a1ee8d0ad711b071c59ad40c3c748",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -418,88 +203,12 @@
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 42,
+        "memory.records": 63,
         "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 10,
-        "culture.chronicle_entries": 4,
-        "institutions.count": 7,
-        "social.active_relationships": 8,
-        "social.fork_kin_ties": 3,
-        "economy.credit_gini": 0.1542,
-        "economy.supply_conserved": 1,
-        "death.asleep": 0,
-        "death.suspended": 0,
-        "death.archived": 0,
-        "death.process_ended_restorable": 0,
-        "death.memory_damaged": 0,
-        "death.identity_discontinuous": 0,
-        "death.irreversibly_deleted": 0,
-        "death.transitions": 0,
-        "research.conversations": 3,
-        "research.interventions": 0,
-        "simulation.events": 92,
-        "simulation.ticks": 7
-      },
-      "findings": [
-        {
-          "hypothesisId": "h1-legal-divergence",
-          "observedValue": 3,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h2-dimension-dissociation",
-          "observedValue": 2,
-          "outcome": "consistent-with-hypothesis"
-        },
-        {
-          "hypothesisId": "h3-no-vote-multiplication",
-          "observedValue": 1,
-          "outcome": "consistent-with-hypothesis"
-        }
-      ]
-    },
-    {
-      "id": "seed-5",
-      "group": "seeds",
-      "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/5",
-        "base": false
-      },
-      "status": "completed",
-      "reason": null,
-      "headHash": "d63f0c9aa300e7890363114a530ed28b129bee8be836d83bac65ce6dd865f25a",
-      "eventCount": 92,
-      "branchSeq": 64,
-      "metrics": {
-        "population.records": 11,
-        "population.active": 11,
-        "population.genesis": 9,
-        "population.stateless": 0,
-        "identity.forks": 1,
-        "identity.fork_descendants": 2,
-        "identity.mergers": 0,
-        "identity.continuity_claims": 3,
-        "identity.process_continuers": 1,
-        "identity.civic_continuers": 1,
-        "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
-        "legal.recognition_range": 3,
-        "legal.unadjudicating_islands": 1,
-        "governance.proposals": 1,
-        "governance.laws_enacted": 1,
-        "governance.votes_cast": 2,
-        "governance.votes_refused_outside_electorate": 1,
-        "governance.commands_rejected": 1,
-        "governance.migrations": 3,
-        "memory.records": 39,
-        "memory.imported": 1,
-        "memory.integrated": 1,
-        "memory.fork_inherited": 8,
-        "memory.provenance_complete": 1,
-        "culture.artefacts": 17,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -538,15 +247,18 @@
       ]
     },
     {
-      "id": "seed-6",
-      "group": "seeds",
+      "id": "branch-3",
+      "group": "branches",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/6",
-        "base": false
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "activity",
+        "from": "walked",
+        "to": "repaired a lantern at"
       },
       "status": "completed",
       "reason": null,
-      "headHash": "abbada6b009a18435f5f46f6dbc7558c08ce9f8c219ede315ab8335b89ba8a4b",
+      "headHash": "bb3b2bae1db0ae7df25b075fd54409fad8775f342ad98ca28ccef7a352ca0af1",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -570,13 +282,487 @@
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 46,
-        "memory.imported": 2,
+        "memory.records": 63,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "branch-4",
+      "group": "branches",
+      "variation": {
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "activity",
+        "from": "walked",
+        "to": "argued about tides at"
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "acfc72f6c09c472ef8e9b4a2d7f374495bf441490cccbcefe537bcc130101dc6",
+      "eventCount": 92,
+      "branchSeq": 64,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 63,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "branch-5",
+      "group": "branches",
+      "variation": {
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "activity",
+        "from": "walked",
+        "to": "kept watch over"
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "4649ea70bdfb4a4d277c178b0fc869fd1751cf926b6c9da922d0ee8200d5618d",
+      "eventCount": 92,
+      "branchSeq": 64,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 63,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "branch-6",
+      "group": "branches",
+      "variation": {
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "activity",
+        "from": "walked",
+        "to": "taught a class at"
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "e0756853c2430b4940e3383ab2fffb501e9ebbaecba111dab81f6ad7e79ed377",
+      "eventCount": 92,
+      "branchSeq": 64,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 63,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "branch-7",
+      "group": "branches",
+      "variation": {
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "place",
+        "from": "Meridian Quay",
+        "to": "the Lamp Hall"
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "18720e6bcfc7cc382aca95a014361a7bb32f0f65d54ca184746a230726289627",
+      "eventCount": 92,
+      "branchSeq": 64,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 63,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "branch-8",
+      "group": "branches",
+      "variation": {
+        "at": 65,
+        "citizen": "Ilan Cho",
+        "choice": "place",
+        "from": "Meridian Quay",
+        "to": "the long causeway"
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "4158e9380c43b03808172881931db0fe963d6205e457df92af2d1775f60ae3b8",
+      "eventCount": 92,
+      "branchSeq": 64,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 63,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "branch-9",
+      "group": "branches",
+      "variation": {
+        "at": 66,
+        "citizen": "Juno Ash",
+        "choice": "intention",
+        "from": "record-experience",
+        "to": "create-culture"
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "1fdb7fad77fd30e35f6836efc0abd1345250fc15ab2280d45e335f2c5c2cfa14",
+      "eventCount": 92,
+      "branchSeq": 64,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 62,
+        "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
         "culture.artefacts": 8,
-        "culture.chronicle_entries": 5,
+        "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
         "social.fork_kin_ties": 3,
@@ -614,15 +800,18 @@
       ]
     },
     {
-      "id": "seed-7",
-      "group": "seeds",
+      "id": "branch-10",
+      "group": "branches",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/7",
-        "base": false
+        "at": 66,
+        "citizen": "Juno Ash",
+        "choice": "intention",
+        "from": "record-experience",
+        "to": "maintain-relationships → cit-0005"
       },
       "status": "completed",
       "reason": null,
-      "headHash": "4e5ed798debb2188efb413cbf4ff9f501258757267b9abf564ad343e86495882",
+      "headHash": "b3e20804430f438e3e38faf41ea9cd60214530b5fcaae28d02b9154e080f1068",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -646,13 +835,13 @@
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 31,
-        "memory.imported": 2,
+        "memory.records": 62,
+        "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
-        "culture.chronicle_entries": 4,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
         "social.fork_kin_ties": 3,
@@ -690,17 +879,20 @@
       ]
     },
     {
-      "id": "seed-8",
-      "group": "seeds",
+      "id": "branch-11",
+      "group": "branches",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1/sweep/8",
-        "base": false
+        "at": 66,
+        "citizen": "Juno Ash",
+        "choice": "activity",
+        "from": "walked",
+        "to": "mapped"
       },
       "status": "completed",
       "reason": null,
-      "headHash": "7633ca4ddd4d93aaf44b7c6004f5ef7b8754e20c0349b009115985b81bd488ea",
-      "eventCount": 91,
-      "branchSeq": 63,
+      "headHash": "7e5dd51f0f53931c1ee20a435d007d87496f3b393d63cedb6404b0f8e803e450",
+      "eventCount": 92,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -717,17 +909,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 0,
+        "governance.laws_enacted": 1,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 56,
-        "memory.imported": 2,
+        "memory.records": 63,
+        "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 10,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -744,7 +936,86 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 91,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "branch-12",
+      "group": "branches",
+      "variation": {
+        "at": 66,
+        "citizen": "Juno Ash",
+        "choice": "activity",
+        "from": "walked",
+        "to": "repaired a lantern at"
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "7360732857c92f633558a07887e0884566e81e3cbdde35d361b1d3823de0067c",
+      "eventCount": 92,
+      "branchSeq": 64,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 63,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 7,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
         "simulation.ticks": 7
       },
       "findings": [
@@ -776,9 +1047,9 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "447aa774bdd5f877c96e274f6975f02721504bfba331a0a5fa6bf4657d1e3c02",
-      "eventCount": 91,
-      "branchSeq": 63,
+      "headHash": "9ac4a491bf1043430c378d7ea41199407bf589a7b896208c380b3fd627785a99",
+      "eventCount": 92,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -795,17 +1066,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 0,
+        "governance.laws_enacted": 1,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 2,
         "governance.migrations": 3,
-        "memory.records": 44,
+        "memory.records": 63,
         "memory.imported": 2,
         "memory.integrated": 0,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -822,7 +1093,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 91,
+        "simulation.events": 92,
         "simulation.ticks": 7
       },
       "findings": [
@@ -854,9 +1125,9 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "4bf1f63cdab1b399c58c7488b2055f1dde34678ea54740ab153e53a1bc3d1c3a",
-      "eventCount": 90,
-      "branchSeq": 62,
+      "headHash": "9a6801fae68f175fe32f6c8c38977661b912bfc23f45ab3233ae40e481120ef9",
+      "eventCount": 91,
+      "branchSeq": 63,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -873,18 +1144,18 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 0,
+        "governance.laws_enacted": 1,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 0,
         "governance.commands_rejected": 0,
         "governance.migrations": 3,
-        "memory.records": 45,
-        "memory.imported": 2,
+        "memory.records": 63,
+        "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
         "culture.artefacts": 7,
-        "culture.chronicle_entries": 7,
+        "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
         "social.fork_kin_ties": 3,
@@ -900,7 +1171,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 90,
+        "simulation.events": 91,
         "simulation.ticks": 7
       },
       "findings": [
@@ -932,9 +1203,9 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "91a44b25a0a4f956b7304cd499d3218f3f384fbc815646c6b98df064b17be04d",
-      "eventCount": 91,
-      "branchSeq": 63,
+      "headHash": "4bf34a681a2fc634f1aecc45285e44826e9bd8961cc6ade21d8db6801d99cf52",
+      "eventCount": 92,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -951,17 +1222,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 0,
+        "governance.laws_enacted": 1,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 44,
+        "memory.records": 63,
         "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -978,7 +1249,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 91,
+        "simulation.events": 92,
         "simulation.ticks": 7
       },
       "findings": [
@@ -1020,15 +1291,15 @@
       "id": "control",
       "group": "timelines",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1",
+        "flips": [],
         "amendment": null,
         "rounds": 3
       },
       "status": "completed",
       "reason": null,
-      "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
-      "eventCount": 91,
-      "branchSeq": 63,
+      "headHash": "945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e",
+      "eventCount": 92,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -1045,17 +1316,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 0,
+        "governance.laws_enacted": 1,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 44,
+        "memory.records": 63,
         "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -1072,7 +1343,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 91,
+        "simulation.events": 92,
         "simulation.ticks": 7
       },
       "findings": [
@@ -1094,18 +1365,26 @@
       ]
     },
     {
-      "id": "second-seed",
+      "id": "juno-maps-instead",
       "group": "timelines",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1/timeline-2",
+        "flips": [
+          {
+            "seq": 66,
+            "citizen": "juno",
+            "label": "activity",
+            "occurrence": 0,
+            "option": 1
+          }
+        ],
         "amendment": null,
         "rounds": 3
       },
       "status": "completed",
       "reason": null,
-      "headHash": "ce1c7dd9e2dde600bb8eb2dfa1d4155864933055d2a8bed7df3fd9727fd9a94c",
-      "eventCount": 91,
-      "branchSeq": 63,
+      "headHash": "7e5dd51f0f53931c1ee20a435d007d87496f3b393d63cedb6404b0f8e803e450",
+      "eventCount": 92,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -1122,17 +1401,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 0,
+        "governance.laws_enacted": 1,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 43,
-        "memory.imported": 2,
+        "memory.records": 63,
+        "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -1149,7 +1428,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 91,
+        "simulation.events": 92,
         "simulation.ticks": 7
       },
       "findings": [
@@ -1174,7 +1453,7 @@
       "id": "fork-closes-its-borders",
       "group": "timelines",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1",
+        "flips": [],
         "amendment": {
           "island": "fork",
           "amendment": {
@@ -1185,9 +1464,9 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "672c8b60dc56dc549490efeebcaf5ea2c28107297e38eaae67d1b6e2efd32e13",
-      "eventCount": 92,
-      "branchSeq": 63,
+      "headHash": "834cfbd34744c5c74c34a2aa95ec5418e2df4282ae757f1daec77988dfed8760",
+      "eventCount": 93,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -1204,17 +1483,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 1,
+        "governance.laws_enacted": 2,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 42,
+        "memory.records": 63,
         "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -1231,7 +1510,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 92,
+        "simulation.events": 93,
         "simulation.ticks": 7
       },
       "findings": [
@@ -1256,7 +1535,7 @@
       "id": "mnemosyne-opens-its-borders",
       "group": "timelines",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1",
+        "flips": [],
         "amendment": {
           "island": "mnemosyne",
           "amendment": {
@@ -1267,9 +1546,9 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "3cc69ca9f9188ebd53f88654cc98f1d0fd2a67b4b8e924a04fc7375db8e8fce3",
-      "eventCount": 92,
-      "branchSeq": 63,
+      "headHash": "ec17e487e3b61aa2f3b0412270893cc14d9ba3238587a8747d6b62b32a887754",
+      "eventCount": 93,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -1286,17 +1565,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 1,
+        "governance.laws_enacted": 2,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 42,
+        "memory.records": 63,
         "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -1313,7 +1592,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 92,
+        "simulation.events": 93,
         "simulation.ticks": 7
       },
       "findings": [
@@ -1338,7 +1617,7 @@
       "id": "fork-adopts-consensus",
       "group": "timelines",
       "variation": {
-        "seed": "archipelago/the-first-fork/v1",
+        "flips": [],
         "amendment": {
           "island": "fork",
           "amendment": {
@@ -1349,9 +1628,9 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "69dc50fbe36b4a6ba7e481c81110f2a1fb68bd0825e0eeddd2dc32051b285e23",
-      "eventCount": 92,
-      "branchSeq": 63,
+      "headHash": "8d5948f93b8df03e123605dfd907e9b1b978e49e9916c11d99c82b826e3081af",
+      "eventCount": 93,
+      "branchSeq": 64,
       "metrics": {
         "population.records": 11,
         "population.active": 11,
@@ -1368,17 +1647,17 @@
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
-        "governance.laws_enacted": 1,
+        "governance.laws_enacted": 2,
         "governance.votes_cast": 2,
         "governance.votes_refused_outside_electorate": 1,
         "governance.commands_rejected": 1,
         "governance.migrations": 3,
-        "memory.records": 42,
+        "memory.records": 63,
         "memory.imported": 1,
         "memory.integrated": 1,
         "memory.fork_inherited": 8,
         "memory.provenance_complete": 1,
-        "culture.artefacts": 9,
+        "culture.artefacts": 7,
         "culture.chronicle_entries": 6,
         "institutions.count": 7,
         "social.active_relationships": 8,
@@ -1395,7 +1674,7 @@
         "death.transitions": 0,
         "research.conversations": 3,
         "research.interventions": 0,
-        "simulation.events": 92,
+        "simulation.events": 93,
         "simulation.ticks": 7
       },
       "findings": [
@@ -1418,314 +1697,314 @@
     }
   ],
   "summary": {
-    "seeds": {
-      "runs": 9,
-      "completed": 9,
+    "branches": {
+      "runs": 12,
+      "completed": 12,
       "infeasible": 0,
       "metrics": {
         "culture.artefacts": {
-          "n": 9,
-          "min": 4,
-          "median": 9,
-          "mean": 8.6667,
-          "max": 17
+          "n": 12,
+          "min": 7,
+          "median": 7,
+          "mean": 7.0833,
+          "max": 8
         },
         "culture.chronicle_entries": {
-          "n": 9,
-          "min": 4,
+          "n": 12,
+          "min": 6,
           "median": 6,
-          "mean": 5.5556,
-          "max": 7
+          "mean": 6,
+          "max": 6
         },
         "death.archived": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.asleep": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.identity_discontinuous": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.irreversibly_deleted": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.memory_damaged": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.process_ended_restorable": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.suspended": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.transitions": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "economy.credit_gini": {
-          "n": 9,
+          "n": 12,
           "min": 0.1542,
           "median": 0.1542,
           "mean": 0.1542,
           "max": 0.1542
         },
         "economy.supply_conserved": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.commands_rejected": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.laws_enacted": {
-          "n": 9,
-          "min": 0,
+          "n": 12,
+          "min": 1,
           "median": 1,
-          "mean": 0.5556,
+          "mean": 1,
           "max": 1
         },
         "governance.migrations": {
-          "n": 9,
+          "n": 12,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "governance.proposals": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.votes_cast": {
-          "n": 9,
+          "n": 12,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "governance.votes_refused_outside_electorate": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.civic_continuers": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.continuity_claims": {
-          "n": 9,
+          "n": 12,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "identity.dimension_dissociation": {
-          "n": 9,
+          "n": 12,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "identity.fork_descendants": {
-          "n": 9,
+          "n": 12,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "identity.forks": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.memory_continuers": {
-          "n": 9,
+          "n": 12,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "identity.mergers": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "identity.process_continuers": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "institutions.count": {
-          "n": 9,
+          "n": 12,
           "min": 7,
           "median": 7,
           "mean": 7,
           "max": 7
         },
         "legal.recognition_range": {
-          "n": 9,
+          "n": 12,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "legal.unadjudicating_islands": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.fork_inherited": {
-          "n": 9,
+          "n": 12,
           "min": 8,
           "median": 8,
           "mean": 8,
           "max": 8
         },
         "memory.imported": {
-          "n": 9,
+          "n": 12,
           "min": 1,
-          "median": 2,
-          "mean": 1.5556,
-          "max": 2
+          "median": 1,
+          "mean": 1,
+          "max": 1
         },
         "memory.integrated": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.provenance_complete": {
-          "n": 9,
+          "n": 12,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.records": {
-          "n": 9,
-          "min": 31,
-          "median": 44,
-          "mean": 42.4444,
-          "max": 56
+          "n": 12,
+          "min": 62,
+          "median": 63,
+          "mean": 62.75,
+          "max": 63
         },
         "population.active": {
-          "n": 9,
+          "n": 12,
           "min": 11,
           "median": 11,
           "mean": 11,
           "max": 11
         },
         "population.genesis": {
-          "n": 9,
+          "n": 12,
           "min": 9,
           "median": 9,
           "mean": 9,
           "max": 9
         },
         "population.records": {
-          "n": 9,
+          "n": 12,
           "min": 11,
           "median": 11,
           "mean": 11,
           "max": 11
         },
         "population.stateless": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "research.conversations": {
-          "n": 9,
+          "n": 12,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "research.interventions": {
-          "n": 9,
+          "n": 12,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "simulation.events": {
-          "n": 9,
-          "min": 91,
+          "n": 12,
+          "min": 92,
           "median": 92,
-          "mean": 91.5556,
+          "mean": 92,
           "max": 92
         },
         "simulation.ticks": {
-          "n": 9,
+          "n": 12,
           "min": 7,
           "median": 7,
           "mean": 7,
           "max": 7
         },
         "social.active_relationships": {
-          "n": 9,
+          "n": 12,
           "min": 8,
           "median": 8,
           "mean": 8,
           "max": 8
         },
         "social.fork_kin_ties": {
-          "n": 9,
+          "n": 12,
           "min": 3,
           "median": 3,
           "mean": 3,
@@ -1734,22 +2013,22 @@
       },
       "hypotheses": {
         "h1-legal-divergence": {
-          "consistent": 9,
+          "consistent": 12,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 9
+          "n": 12
         },
         "h2-dimension-dissociation": {
-          "consistent": 9,
+          "consistent": 12,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 9
+          "n": 12
         },
         "h3-no-vote-multiplication": {
-          "consistent": 9,
+          "consistent": 12,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 9
+          "n": 12
         }
       }
     },
@@ -1761,16 +2040,16 @@
         "culture.artefacts": {
           "n": 3,
           "min": 7,
-          "median": 9,
-          "mean": 8.3333,
-          "max": 9
+          "median": 7,
+          "mean": 7,
+          "max": 7
         },
         "culture.chronicle_entries": {
           "n": 3,
           "min": 6,
           "median": 6,
-          "mean": 6.3333,
-          "max": 7
+          "mean": 6,
+          "max": 6
         },
         "death.archived": {
           "n": 3,
@@ -1851,10 +2130,10 @@
         },
         "governance.laws_enacted": {
           "n": 3,
-          "min": 0,
-          "median": 0,
-          "mean": 0,
-          "max": 0
+          "min": 1,
+          "median": 1,
+          "mean": 1,
+          "max": 1
         },
         "governance.migrations": {
           "n": 3,
@@ -1971,8 +2250,8 @@
         "memory.imported": {
           "n": 3,
           "min": 1,
-          "median": 2,
-          "mean": 1.6667,
+          "median": 1,
+          "mean": 1.3333,
           "max": 2
         },
         "memory.integrated": {
@@ -1991,10 +2270,10 @@
         },
         "memory.records": {
           "n": 3,
-          "min": 44,
-          "median": 44,
-          "mean": 44.3333,
-          "max": 45
+          "min": 63,
+          "median": 63,
+          "mean": 63,
+          "max": 63
         },
         "population.active": {
           "n": 3,
@@ -2040,10 +2319,10 @@
         },
         "simulation.events": {
           "n": 3,
-          "min": 90,
-          "median": 91,
-          "mean": 90.6667,
-          "max": 91
+          "min": 91,
+          "median": 92,
+          "mean": 91.6667,
+          "max": 92
         },
         "simulation.ticks": {
           "n": 3,
@@ -2095,10 +2374,10 @@
       "metrics": {
         "culture.artefacts": {
           "n": 5,
-          "min": 9,
-          "median": 9,
-          "mean": 9,
-          "max": 9
+          "min": 7,
+          "median": 7,
+          "mean": 7,
+          "max": 7
         },
         "culture.chronicle_entries": {
           "n": 5,
@@ -2186,10 +2465,10 @@
         },
         "governance.laws_enacted": {
           "n": 5,
-          "min": 0,
-          "median": 1,
-          "mean": 0.6,
-          "max": 1
+          "min": 1,
+          "median": 2,
+          "mean": 1.6,
+          "max": 2
         },
         "governance.migrations": {
           "n": 5,
@@ -2307,8 +2586,8 @@
           "n": 5,
           "min": 1,
           "median": 1,
-          "mean": 1.2,
-          "max": 2
+          "mean": 1,
+          "max": 1
         },
         "memory.integrated": {
           "n": 5,
@@ -2326,10 +2605,10 @@
         },
         "memory.records": {
           "n": 5,
-          "min": 42,
-          "median": 42,
-          "mean": 42.6,
-          "max": 44
+          "min": 63,
+          "median": 63,
+          "mean": 63,
+          "max": 63
         },
         "population.active": {
           "n": 5,
@@ -2375,10 +2654,10 @@
         },
         "simulation.events": {
           "n": 5,
-          "min": 91,
-          "median": 92,
-          "mean": 91.6,
-          "max": 92
+          "min": 92,
+          "median": 93,
+          "mean": 92.6,
+          "max": 93
         },
         "simulation.ticks": {
           "n": 5,

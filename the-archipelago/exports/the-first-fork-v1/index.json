@@ -7,9 +7,9 @@
   "category": "demonstration",
   "scenario": "the-first-fork",
   "seed": "archipelago/the-first-fork/v1",
-  "configurationHash": "35981af6722c6c3ac908fff304080f2c04a4eb0bb21593dd43f0935f501971ed",
-  "headHash": "d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5",
-  "eventCount": 91,
+  "configurationHash": "1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090",
+  "headHash": "945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e",
+  "eventCount": 92,
   "findings": [
     {
       "hypothesisId": "h1-legal-divergence",
@@ -25,10 +25,10 @@
     }
   ],
   "study": {
-    "runs": 18,
-    "completed": 17,
+    "runs": 21,
+    "completed": 20,
     "groups": {
-      "seeds": 9,
+      "branches": 12,
       "doctrines": 4,
       "timelines": 5
     }
@@ -97,27 +97,27 @@
   "files": [
     {
       "path": "events.jsonl",
-      "sha256": "9bbc0f8d01becda9a5fe36e595e77dec56e49d3f4b31b543f301d7b5d05143c0",
-      "bytes": 103893
+      "sha256": "c7a0ca874b0f57b3e134d218fcbec0abf1527d7b6a84f842211f491f65e2130c",
+      "bytes": 112991
     },
     {
       "path": "interchange.json",
-      "sha256": "7c9c7ae59b853a862c1ea9452e517620a599fa1478f19b85958f79b92b5c53b9",
-      "bytes": 142548
+      "sha256": "a3d59f02943f1f29f0854b28aa7925c2190a44b205d40c60a5bead4debcd8c58",
+      "bytes": 168376
     },
     {
       "path": "dataset.json",
-      "sha256": "78095f99b53de7822791ad82a9f88bfa38155cd797172680b7bd775703c0ae41",
-      "bytes": 165486
+      "sha256": "3eb68930738cc0b9d749931f6e6fcbd1539846d3de23909d85bc645fa8b056cf",
+      "bytes": 164494
     },
     {
       "path": "research.json",
-      "sha256": "872764cbbb22743028a5f580215e2c0a87be4522c68f03f9175448dc0225dc0a",
-      "bytes": 77368
+      "sha256": "72ac5a206fa4ecbf6d0d682123d1f2829f51aa1f58d919487cedd0804ec63ee3",
+      "bytes": 78686
     },
     {
       "path": "lineage_graph.json",
-      "sha256": "7ac780656738d9e244f35e63e66a59f11ff65d22be4e01974ee7b1dccdfa9bdc",
+      "sha256": "979d95e495fd656ec97e1b05c44c45adcbc01a174ad972ce525061a389100cc3",
       "bytes": 3444
     },
     {
@@ -127,53 +127,53 @@
     },
     {
       "path": "governance_events.json",
-      "sha256": "8d55b0ac0fe2add2c9774eb41ea6b468ff2c341a840bc1aaf5800e42e23a7305",
-      "bytes": 7003
+      "sha256": "715f7a8dc44574971bfc91cfa3c6371343f3887025f47c750eb4b36ec1b2e944",
+      "bytes": 7272
     },
     {
       "path": "memory_history.json",
-      "sha256": "5bc9b11e383c9fad7ef2c66eb84f892ae54b982a50ed1e1b8ad466827a078f70",
-      "bytes": 34216
+      "sha256": "89780cf278861816aec787cb9f87029a3ac3c25696ad0f627144f1525df4cff0",
+      "bytes": 50014
     },
     {
       "path": "civilization_metrics.json",
-      "sha256": "ef4952aa01ab2d1b0aaa952ab356b6eb1a867d80a3e383faea83ca0c5b1d9e17",
-      "bytes": 13278
+      "sha256": "12ef41821b571baa3b357b0e31e55128a97406ccbb56ee6014e5edf064f4b476",
+      "bytes": 13273
     },
     {
       "path": "civilization_metrics.csv",
-      "sha256": "882be03bc2d14eaf99319e5df1808b31416f9701c52c53771548c91d3856b126",
-      "bytes": 680
+      "sha256": "6dda6bb22c9da8c5beda376bc1b40ad764cbc0c44f077b9669fde9d0feda0f0f",
+      "bytes": 675
     },
     {
       "path": "study.json",
-      "sha256": "f514c6036bc002121357e2c35816de319b3542c2c734bd3467fdf6616cd69855",
-      "bytes": 66736
+      "sha256": "e15200083d8b0772dd937f70766a693463da3c7032c32befc478f5838a0df9a3",
+      "bytes": 75204
     },
     {
       "path": "study.csv",
-      "sha256": "5ee55ebe4ecd9f93de799fc7f144e7fd0bd4062221f0b46368e5f07a73f48154",
-      "bytes": 42904
+      "sha256": "55afa1712d076acce27dce5a1dddd8b0a3735c10629891ebf40d0fcdbeaf7c39",
+      "bytes": 52252
     },
     {
       "path": "publication/experiment-report.md",
-      "sha256": "d6370368e3786b7adb202b49cfddcb3cfcfbeb3324b057be28603bafbe5f88b5",
-      "bytes": 29575
+      "sha256": "6eaedda45a60630682f547be4335f347c2a9e3ec90faf36c831c876b32c1bb3f",
+      "bytes": 30727
     },
     {
       "path": "publication/civilization-report.md",
-      "sha256": "1bc207496498bfa09896ee26e44e99525c5d01a4eec17ecb6391ca28681dbf03",
-      "bytes": 8645
+      "sha256": "90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea",
+      "bytes": 8518
     },
     {
       "path": "publication/chronicle.md",
-      "sha256": "516a4d1fd86f2e757be8c7ed0d600881c9daca43a1684b04c3c3206ec8b48371",
-      "bytes": 2601
+      "sha256": "c2624b09eb49a8bf7c3fe9b2eab6f101511e424bdd8ca5b084231e834a6b7f75",
+      "bytes": 2447
     },
     {
       "path": "reports/timeline.md",
-      "sha256": "a2f1f59c73ab6b7b61d31940b1b91b3dbda7db5f745c909d0cd0aa8e20df36be",
-      "bytes": 17008
+      "sha256": "94158eddd7ed3d2935d7d28839bc9e38a793a83036259e832d240dee8290f0af",
+      "bytes": 17351
     },
     {
       "path": "reports/lineage.mmd",
@@ -182,7 +182,7 @@
     },
     {
       "path": "reports/memory-provenance.md",
-      "sha256": "ef4c88ef16e56b70445e4743ca0c803a1c8a1d9eb9a20e28b1a6802bec8e0b30",
+      "sha256": "aa9d0a454c18358339fdaa3f8bffa6407bdea3f8b9f91bac38bef17ea7882347",
       "bytes": 4429
     },
     {
@@ -192,18 +192,18 @@
     },
     {
       "path": "reports/legal-interpretations.md",
-      "sha256": "7d5ef61d9a61f65014321f88a23cd3c412f1e7c87b752080443d2566f3753d77",
+      "sha256": "52c1f2763852c5161a4d0975669c20e34b85da4dca697b8c3883f5f7aabea14c",
       "bytes": 7709
     },
     {
       "path": "reports/researcher-commentary-template.md",
-      "sha256": "23314ce16858106adca5a6dabc5767adbac73c2be9eb62a59dc68d01477a58d0",
+      "sha256": "050bfe643b7cb78295ed610c1690ad10e5c0d2c0f2e12b9b1531f919ac1b84c1",
       "bytes": 1451
     },
     {
       "path": "research_manifest.yaml",
-      "sha256": "bc4856f9404c439be5aa7b5ee7d68ea26b1c6e2bf477b6b674e794534db24db0",
-      "bytes": 21463
+      "sha256": "5aabaf139b28ce0e70b6ee0ca9215ba7eeece6d3dd5c0d390f6b5e53b4d0cee2",
+      "bytes": 22879
     }
   ]
 }

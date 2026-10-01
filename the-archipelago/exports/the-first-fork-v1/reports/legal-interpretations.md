@@ -26,9 +26,9 @@ Continuity recognises exactly one continuer: the record whose process never brok
 
 Registry record:
 - seq 14, pet-0001 exit: approved. emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process [continuity/v1/emigration, continuity/v1/territoriality]
-- seq 52, pet-0003 entry: approved. applicant already holds continuity citizenship (civic identity CON-0001); process continuity: proc-bf297918324f668b, epoch 0; applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity [continuity/v1/immigration, continuity/v1/doctrine, continuity/v1/territoriality]
+- seq 53, pet-0003 entry: approved. applicant already holds continuity citizenship (civic identity CON-0001); process continuity: proc-bf297918324f668b, epoch 0; applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity [continuity/v1/immigration, continuity/v1/doctrine, continuity/v1/territoriality]
 
-## Fork — law v1 (branching-shared-history)
+## Fork — law v2 (branching-shared-history)
 
 > Citizens may create independent descendants. Every fork receives a separate identity. Shared history ends at the fork event. Voting rights and property do not duplicate: they remain with the forking process unless explicitly transferred.
 
@@ -38,22 +38,22 @@ Fork recognises every claimant as a branch with equal title to the shared pre-fo
   - the parent branch retains the original register entry by convention, which confers no priority of identity
   - history up to the fork is shared (4/4 self-narrative records); each branch's history after it is its own
   - voting rights and property did not duplicate
-  - citations: fork/v1/doctrine, fork/v1/copying, fork/v1/descendant-citizenship
+  - citations: fork/v2/doctrine, fork/v2/copying, fork/v2/descendant-citizenship
 - **Orin Vale (branch 1)** (cit-0010): `branch-sharing-history`
   - a separate identity (FRK-0010) created at the fork
   - history up to the fork is shared (4/4 self-narrative records); each branch's history after it is its own
   - voting rights and property did not duplicate
-  - citations: fork/v1/doctrine, fork/v1/copying, fork/v1/descendant-citizenship
+  - citations: fork/v2/doctrine, fork/v2/copying, fork/v2/descendant-citizenship
 - **Orin Vale (branch 2)** (cit-0011): `branch-sharing-history`
   - a separate identity (FRK-0011) created at the fork
   - history up to the fork is shared (4/4 self-narrative records); each branch's history after it is its own
   - voting rights and property did not duplicate
-  - citations: fork/v1/doctrine, fork/v1/copying, fork/v1/descendant-citizenship
+  - citations: fork/v2/doctrine, fork/v2/copying, fork/v2/descendant-citizenship
 
 Registry record:
 - seq 15, pet-0001 entry: approved. descendants created here will each receive a separate identity [fork/v1/immigration]
 - seq 33, pet-0002 exit: approved. emigration permitted [fork/v1/emigration]
-- seq 51, pet-0003 exit: approved. emigration permitted [fork/v1/emigration]
+- seq 52, pet-0003 exit: approved. emigration permitted [fork/v2/emigration]
 
 ## Mnemosyne — law v1 (memory-provenance)
 

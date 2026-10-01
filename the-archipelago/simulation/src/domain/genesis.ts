@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { createRng } from "../kernel/rng.js";
 import { sha256Hex } from "../kernel/canonical.js";
 import { civicIdFor, processIdFor } from "../kernel/decide.js";
 import {
@@ -84,7 +83,6 @@ export type GenesisConfig = z.input<typeof GenesisConfigSchema>;
  */
 export function buildGenesisState(input: GenesisConfig): { state: WorldState; keys: Record<string, string> } {
   const config = GenesisConfigSchema.parse(input);
-  const rng = createRng(config.seed);
   const counters: Record<string, number> = {};
   const next = (kind: Parameters<typeof formatId>[0]) => {
     counters[kind] = (counters[kind] ?? 0) + 1;
@@ -186,9 +184,8 @@ export function buildGenesisState(input: GenesisConfig): { state: WorldState; ke
     if (spec.key in keys) throw new Error(`genesis: duplicate citizen key ${spec.key}`);
     const id = next("citizen");
     keys[spec.key] = id;
-    const vrng = rng.derive(`values/${spec.key}`);
     const values: Record<string, number> = {};
-    for (const axis of VALUE_AXES) values[axis] = spec.values?.[axis] ?? Math.round((vrng.next() * 2 - 1) * 100) / 100;
+    for (const axis of VALUE_AXES) values[axis] = spec.values?.[axis] ?? 0; // an unstated value is neutral, never drawn
     for (const [axis, v] of Object.entries(spec.values ?? {})) values[axis] = v;
     const citizen: Citizen = {
       id,

@@ -24,17 +24,17 @@ Every manifest declares a `category`, and the field is required because a defaul
 
 The category is printed in the experiment report's abstract and design section, in `research_manifest.yaml`, in `index.json` and `catalog.json`, and on the site. A demonstration's report also carries the limitation above verbatim. *The First Fork* is a demonstration: it validates the kernel, the law tables and the publication pipeline, and its three findings are read as that.
 
-## Studies: seed sweeps, doctrine variants and alternate timelines
+## Studies: branch sweeps, doctrine variants and alternate timelines
 
 A manifest may declare a `study`, and the base run is then replicated under declared variations. Every replication is a deterministic run of its own, identified by its head hash, and `study.json` is regenerated and diffed like every other output.
 
 | Group | What varies | How |
 |---|---|---|
-| `seeds` | The seed only | The scenario is rerun under `<seed>/sweep/<i>` for `i` in 1..`count`; the base run is `seed-0` |
+| `branches` | One recorded choice | Every choice point after the branch point is taken differently, one flip per timeline, in record order, up to `budget` timelines |
 | `doctrines` | Statutory law at founding | One island's amendable fields are overridden in genesis (`laws` in the genesis config); constitutional fields define the island and cannot be varied |
-| `timelines` | What follows the branch point | The base record is replayed to the scenario's branch point (The First Fork: after the last scripted beat, before the agent-based epilogue), an amendment is enacted there by the system actor `study` if declared, and the epilogue runs under the variant's seed |
+| `timelines` | What follows the branch point | The base record is replayed to the scenario's branch point (The First Fork: after the last scripted beat, before the agent-based epilogue), an amendment is enacted there by the system actor `study` if declared, and the epilogue runs with the variant's declared flips; a variant with neither is a control |
 
-Three rules keep a study honest. **The epilogue is built from the record**: at the branch point every mind is re-attached from canonical state in a fixed order, and a BDI mind's randomness is a pure function of its seed, its citizen and the current seq, so a timeline branched with the base seed reproduces the base run byte for byte (a test holds this). **A variation the scenario cannot proceed under is a result, not a crash**: the run is recorded as `infeasible` with the scenario's own reason. **Summaries are min, median, mean and max over completed runs**, and per hypothesis a count of consistent, inconsistent and undetermined outcomes; nothing is inferred from them. The report's *Study* section and the site's *Study* view print exactly these.
+Three rules keep a study honest. **Nothing is random, so branching replaces sampling**: wherever a mind has more than one option (which kin to tend, which intention among those within a margin of the strongest, which place, activity or artefact kind) it records a choice point and takes the first option in canonical order; a flip names a point by (seq, citizen, label, occurrence) and takes another option; a flip whose point never occurs is reported as moot. **The epilogue is built from the record**: at the branch point every mind is re-attached from canonical state in a fixed order, so a timeline branched with no flips reproduces the base run byte for byte (a test holds this). **A variation the scenario cannot proceed under is a result, not a crash**: the run is recorded as `infeasible` with the scenario's own reason. **Summaries are min, median, mean and max over completed runs**, and per hypothesis a count of consistent, inconsistent and undetermined outcomes; nothing is inferred from them. The report's *Study* section and the site's *Study* view print exactly these.
 
 ## No invented conclusions
 

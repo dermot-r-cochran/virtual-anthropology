@@ -5,14 +5,14 @@
       "id": "prop-0001",
       "island": "fork",
       "title": "Branch Cooldown Act",
-      "status": "rejected",
+      "status": "adopted",
       "electorate": [
         "cit-0004",
         "cit-0005"
       ],
       "votes": {
         "cit-0004": "yes",
-        "cit-0005": "no"
+        "cit-0005": "yes"
       },
       "openedAtSeq": 3
     }
@@ -28,7 +28,7 @@
         "cit-0005"
       ],
       "summary": "Juno Ash (cit-0004) proposes \"Branch Cooldown Act\" on fork; electorate of 2 snapshotted; closes at tick 4.",
-      "hash": "965f822c47c4b2af4bd9e045fdc16af1fd4d839e95fef1556e0dd89232d14f9d"
+      "hash": "c40937955e2c0a1689900a626ced81b726003c3b99ba57dbee1de526e0367cb4"
     },
     {
       "seq": 6,
@@ -39,7 +39,7 @@
         "cit-0004"
       ],
       "summary": "Juno Ash (cit-0004) votes yes on prop-0001.",
-      "hash": "8df39865ceddcb33269d63b6097b9926adf9c84c6e2bb03969d351d57e81002a"
+      "hash": "6c5851cb9aad006eae58291a71f8eb96f2b652c0cba1696db4813bc2e8a06c66"
     },
     {
       "seq": 7,
@@ -49,8 +49,8 @@
       "citizens": [
         "cit-0005"
       ],
-      "summary": "Pell Marr (cit-0005) votes no on prop-0001.",
-      "hash": "3e2d7a448be5a04e545dbe340f593647ba5505ee34bc3f4058bb35484786f945"
+      "summary": "Pell Marr (cit-0005) votes yes on prop-0001.",
+      "hash": "6f7824e22cbd4bffcd05c273eef55784b993deea48db890824ea4b7f02f2ef18"
     },
     {
       "seq": 13,
@@ -61,7 +61,7 @@
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) petitions to migrate continuity → fork: \"To study branching law where it is practised, and perhaps to branch.\"",
-      "hash": "c09e91f86a5ae161a9ecfbaff4a40d8afd37ce679ba200e08fa45b4aca3c2f26"
+      "hash": "ff212d4d9909799afd6ef7c24e80a9998f4e595dab60e8efbc24d0fc759f86cb"
     },
     {
       "seq": 14,
@@ -70,7 +70,7 @@
       "actor": "system:registry:continuity",
       "citizens": [],
       "summary": "The continuity registry approved the exit side of pet-0001 under law v1. Findings: emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process.",
-      "hash": "585d5423bca71c8fe66c537cc5aada68d0c46b68e54c0fa7f656d8402ea9698b"
+      "hash": "994e5044dcbc11afe1bf1a6644e22351e1d5e0a3c38b9391724f8861139b83a6"
     },
     {
       "seq": 15,
@@ -79,7 +79,7 @@
       "actor": "system:registry:fork",
       "citizens": [],
       "summary": "The fork registry approved the entry side of pet-0001 under law v1. Findings: descendants created here will each receive a separate identity.",
-      "hash": "aafe3e2c390c5c5f119e045adb1f3c77630b40e1752c54caa8f55ffeb3b9a8ec"
+      "hash": "ac3150b9de4e29aa5a246a1c816c9b0f2ecfbbaaf2dd61fd384fd82d7aac1d37"
     },
     {
       "seq": 16,
@@ -90,7 +90,7 @@
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) migrates continuity → fork, gaining fork citizenship.",
-      "hash": "834aa99055999b07c78f6586b96be7a5ad6ac613f6a06b73e815f039535a0391"
+      "hash": "b07a110433dcef520b7701eb854989125d5c505d7566154cefbe938108c15f14"
     },
     {
       "seq": 20,
@@ -101,7 +101,7 @@
         "cit-0010"
       ],
       "summary": "A CastVote command by citizen:cit-0010 is rejected at the law stage: cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer",
-      "hash": "0b113c2c64088dda162433b0da9ded9f52189b75a072028cf9a5742ca5f139e7"
+      "hash": "eee6787a5c31c5f200276a9801d72f87bb97939d562b1e3f68c06e7458b73d61"
     },
     {
       "seq": 32,
@@ -112,7 +112,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (branch 2) (cit-0011) petitions to migrate fork → mnemosyne: \"To study the provenance of memory among the archivists.\"",
-      "hash": "b503eace34f1e1d78317946a3fcb74c476373514e7c0492d89bde5bd29c539b9"
+      "hash": "22a1804fb3ab7c101d1e383f3aae9ddf08edbf5a5e6ff41a83d63ca97136de22"
     },
     {
       "seq": 33,
@@ -121,7 +121,7 @@
       "actor": "system:registry:fork",
       "citizens": [],
       "summary": "The fork registry approved the exit side of pet-0002 under law v1. Findings: emigration permitted.",
-      "hash": "b16daa88c42e2a5de89cdc4885533aebdf56bc2163a477f948ce1d7dfbf6f2ca"
+      "hash": "eabbab24fcb2631afa33454f88bafcb4262cd9765e9a21ee26aec8c3f2eeaeef"
     },
     {
       "seq": 34,
@@ -130,7 +130,7 @@
       "actor": "system:registry:mnemosyne",
       "citizens": [],
       "summary": "The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure.",
-      "hash": "62b69dc5fbc4bf8b6c21772d0c68dfb28d4957dc6ffe21f0f007f5152342dd67"
+      "hash": "4156a7e41f99a0ad2b8f44ce65b96af42972f9f77097236d9f2550bcf785a49c"
     },
     {
       "seq": 35,
@@ -141,7 +141,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship.",
-      "hash": "9044cbef4d06734b1a15468f32d6b4c7ae122980e5cdf5c00d4d35472a564cb5"
+      "hash": "c2c5480eeb0f17efd2eb956456f2c6130c86b4e49c3fbd493703f0ace97fc392"
     },
     {
       "seq": 37,
@@ -149,11 +149,20 @@
       "type": "ProposalClosed",
       "actor": "system:clock",
       "citizens": [],
-      "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met; counted by majority-of-votes-cast).",
-      "hash": "6289a60df16db4fcbb239fe41631fe9da4ae305de77622ba0b1146419317072e"
+      "summary": "prop-0001 is adopted (yes 2, no 0, abstain 0; quorum met; counted by majority-of-votes-cast).",
+      "hash": "0bcc71d7b440c7c33fa078a5ec523891352ed2e80602083be6160ea676e90dca"
     },
     {
-      "seq": 50,
+      "seq": 38,
+      "tick": 4,
+      "type": "LawEnacted",
+      "actor": "system:clock",
+      "citizens": [],
+      "summary": "Law of fork v2 is enacted by prop-0001.",
+      "hash": "c558b6ced7a27aa6e42bd067ebbdf014a32bea8d738f046f88d2c33ca7ba6c30"
+    },
+    {
+      "seq": 51,
       "tick": 4,
       "type": "MigrationPetitioned",
       "actor": "citizen:cit-0001",
@@ -161,19 +170,19 @@
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) petitions to migrate fork → continuity: \"To return home to Meridian Quay.\"",
-      "hash": "5a5178008303369fa66a904083eb805cc7d23d79560025ff0f89df51415db416"
+      "hash": "d919fe15ba4be7605be0e48ee8e052864abffc84702ed220b6953b0be8bd0208"
     },
     {
-      "seq": 51,
+      "seq": 52,
       "tick": 4,
       "type": "PetitionReviewed",
       "actor": "system:registry:fork",
       "citizens": [],
-      "summary": "The fork registry approved the exit side of pet-0003 under law v1. Findings: emigration permitted.",
-      "hash": "7985a7eb34a999a33b578ca240cfb071d8a8bbd99d5b0b815f7ebe3abbb6ff06"
+      "summary": "The fork registry approved the exit side of pet-0003 under law v2. Findings: emigration permitted.",
+      "hash": "b38547f42f6f33f4ef058286d23b4971eebb26c4928e35437ad74fde29d49c1e"
     },
     {
-      "seq": 52,
+      "seq": 53,
       "tick": 4,
       "type": "PetitionReviewed",
       "actor": "system:registry:continuity",
@@ -182,10 +191,10 @@
         "cit-0011"
       ],
       "summary": "The continuity registry approved the entry side of pet-0003 under law v1. Findings: applicant already holds continuity citizenship (civic identity CON-0001); process continuity: proc-bf297918324f668b, epoch 0; applicant was the continuing process in copy event frk-0001 on fork (outside this jurisdiction); not an offence here, and descendants cit-0010, cit-0011 hold no claim to this civic identity.",
-      "hash": "b23c530813b4e5d72db7bc60090f03718cb2b5d2156ae3c42ac5b76fe5cc770c"
+      "hash": "4373c88b98a06a4c426f219259340575570828b87191a4f1808fdbc94374bdc2"
     },
     {
-      "seq": 53,
+      "seq": 54,
       "tick": 4,
       "type": "CitizenMigrated",
       "actor": "citizen:cit-0001",
@@ -193,7 +202,7 @@
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) migrates fork → continuity.",
-      "hash": "43c098ab6899773e8cf52c2e09d98b21f5084a1914507094203903946ed60201"
+      "hash": "240bb487ec942a8b40ed304ce56fffeb1175056b10c9e9632d76ccdcedc6efe7"
     }
   ]
 }

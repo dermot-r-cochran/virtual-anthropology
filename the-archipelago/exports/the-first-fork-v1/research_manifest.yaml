@@ -54,7 +54,7 @@ governance_policy:
     emigration: permitted
     descendant_citizenship: none
   - island: fork
-    law_version: 1
+    law_version: 2
     copying: permitted
     counting_rule: majority-of-votes-cast
     memory_exchange: permitted
@@ -93,13 +93,13 @@ population:
     promptId: archipelago/deterministic-citizen/v1
 simulation_seed: archipelago/the-first-fork/v1
 simulation_version: 0.1.0
-configuration_hash: 35981af6722c6c3ac908fff304080f2c04a4eb0bb21593dd43f0935f501971ed
+configuration_hash: 1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090
 start_timestamp: 2026-01-01T00:00:00.000Z
 end_timestamp: 2026-01-01T00:00:00.000Z
 simulated_ticks: 7
 event_store:
-  head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
-  event_count: 91
+  head_hash: 945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e
+  event_count: 92
 metrics:
   - id: population.records
     unit: persons
@@ -163,7 +163,7 @@ metrics:
     definition: Number of `ProposalSubmitted` events.
   - id: governance.laws_enacted
     unit: laws
-    value: 0
+    value: 1
     definition: Number of `LawEnacted` events after genesis.
   - id: governance.votes_cast
     unit: votes
@@ -183,7 +183,7 @@ metrics:
     definition: Number of `CitizenMigrated` events.
   - id: memory.records
     unit: records
-    value: 44
+    value: 63
     definition: All memory records, including collective-archive records and destroyed tombstones.
   - id: memory.imported
     unit: records
@@ -203,7 +203,7 @@ metrics:
     definition: Fraction of records whose provenance chain begins with an `experienced` step (1 = every record traceable to an experience).
   - id: culture.artefacts
     unit: artefacts
-    value: 9
+    value: 7
     definition: Artefacts created by citizens or introduced by researchers.
   - id: culture.chronicle_entries
     unit: entries
@@ -271,7 +271,7 @@ metrics:
     definition: Number of `InterventionApplied` events.
   - id: simulation.events
     unit: events
-    value: 91
+    value: 92
     definition: Length of the event store, including the founding event and rejections.
   - id: simulation.ticks
     unit: ticks
@@ -295,8 +295,8 @@ findings:
     outcome: consistent-with-hypothesis
 study:
   plan:
-    seeds:
-      count: 8
+    branches:
+      budget: 12
     doctrines:
       - id: mnemosyne-no-integration
         island: mnemosyne
@@ -318,116 +318,183 @@ study:
       rounds: 3
       variants:
         - id: control
-          seed: archipelago/the-first-fork/v1
-        - id: second-seed
-          seed: archipelago/the-first-fork/v1/timeline-2
+        - id: juno-maps-instead
+          flips: &a5
+            - seq: 66
+              citizen: juno
+              label: activity
+              occurrence: 0
+              option: 1
         - id: fork-closes-its-borders
-          amendment: &a5
+          amendment: &a6
             island: fork
             amendment:
               immigration: closed
         - id: mnemosyne-opens-its-borders
-          amendment: &a6
+          amendment: &a7
             island: mnemosyne
             amendment:
               immigration: open
         - id: fork-adopts-consensus
-          amendment: &a7
+          amendment: &a8
             island: fork
             amendment:
               countingRule: consensus
   base:
-    head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
-    event_count: 91
-    branch_seq: 63
+    head_hash: 945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e
+    event_count: 92
+    branch_seq: 64
   runs:
-    - id: seed-0
-      group: seeds
+    - id: branch-1
+      group: branches
       status: completed
       reason: null
-      head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
-      event_count: 91
-      variation:
-        seed: archipelago/the-first-fork/v1
-        base: true
-    - id: seed-1
-      group: seeds
-      status: completed
-      reason: null
-      head_hash: b8c799f5a4d0ce3e8292b1b06b4cb7997dfdb438d9b4a49ea7865cc232d1e447
-      event_count: 91
-      variation:
-        seed: archipelago/the-first-fork/v1/sweep/1
-        base: false
-    - id: seed-2
-      group: seeds
-      status: completed
-      reason: null
-      head_hash: 1a9993da1d63533842c8131e5887a26d1d99ee8cdd4f8c37ff983df8a72ca5a4
-      event_count: 91
-      variation:
-        seed: archipelago/the-first-fork/v1/sweep/2
-        base: false
-    - id: seed-3
-      group: seeds
-      status: completed
-      reason: null
-      head_hash: d4293482818b07f732473efcfb3a9a77bb095fc751f210d1b6830433b696f458
+      head_hash: 46eeb257fc34638181ad3d11380680e79c9c3925f09f832679611733702dd29d
       event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1/sweep/3
-        base: false
-    - id: seed-4
-      group: seeds
+        at: 65
+        citizen: Ilan Cho
+        choice: intention
+        from: record-experience
+        to: maintain-relationships → cit-0001
+    - id: branch-2
+      group: branches
       status: completed
       reason: null
-      head_hash: 0d0ea21e4f42eee788df561928b7a1c38648604d480d2f0a10fce76e3d4d880a
+      head_hash: 21ebd0ebb6c6a5bbf7b2a0d0df80beea272a1ee8d0ad711b071c59ad40c3c748
       event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1/sweep/4
-        base: false
-    - id: seed-5
-      group: seeds
+        at: 65
+        citizen: Ilan Cho
+        choice: activity
+        from: walked
+        to: mapped
+    - id: branch-3
+      group: branches
       status: completed
       reason: null
-      head_hash: d63f0c9aa300e7890363114a530ed28b129bee8be836d83bac65ce6dd865f25a
+      head_hash: bb3b2bae1db0ae7df25b075fd54409fad8775f342ad98ca28ccef7a352ca0af1
       event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1/sweep/5
-        base: false
-    - id: seed-6
-      group: seeds
+        at: 65
+        citizen: Ilan Cho
+        choice: activity
+        from: walked
+        to: repaired a lantern at
+    - id: branch-4
+      group: branches
       status: completed
       reason: null
-      head_hash: abbada6b009a18435f5f46f6dbc7558c08ce9f8c219ede315ab8335b89ba8a4b
+      head_hash: acfc72f6c09c472ef8e9b4a2d7f374495bf441490cccbcefe537bcc130101dc6
       event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1/sweep/6
-        base: false
-    - id: seed-7
-      group: seeds
+        at: 65
+        citizen: Ilan Cho
+        choice: activity
+        from: walked
+        to: argued about tides at
+    - id: branch-5
+      group: branches
       status: completed
       reason: null
-      head_hash: 4e5ed798debb2188efb413cbf4ff9f501258757267b9abf564ad343e86495882
+      head_hash: 4649ea70bdfb4a4d277c178b0fc869fd1751cf926b6c9da922d0ee8200d5618d
       event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1/sweep/7
-        base: false
-    - id: seed-8
-      group: seeds
+        at: 65
+        citizen: Ilan Cho
+        choice: activity
+        from: walked
+        to: kept watch over
+    - id: branch-6
+      group: branches
       status: completed
       reason: null
-      head_hash: 7633ca4ddd4d93aaf44b7c6004f5ef7b8754e20c0349b009115985b81bd488ea
-      event_count: 91
+      head_hash: e0756853c2430b4940e3383ab2fffb501e9ebbaecba111dab81f6ad7e79ed377
+      event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1/sweep/8
-        base: false
+        at: 65
+        citizen: Ilan Cho
+        choice: activity
+        from: walked
+        to: taught a class at
+    - id: branch-7
+      group: branches
+      status: completed
+      reason: null
+      head_hash: 18720e6bcfc7cc382aca95a014361a7bb32f0f65d54ca184746a230726289627
+      event_count: 92
+      variation:
+        at: 65
+        citizen: Ilan Cho
+        choice: place
+        from: Meridian Quay
+        to: the Lamp Hall
+    - id: branch-8
+      group: branches
+      status: completed
+      reason: null
+      head_hash: 4158e9380c43b03808172881931db0fe963d6205e457df92af2d1775f60ae3b8
+      event_count: 92
+      variation:
+        at: 65
+        citizen: Ilan Cho
+        choice: place
+        from: Meridian Quay
+        to: the long causeway
+    - id: branch-9
+      group: branches
+      status: completed
+      reason: null
+      head_hash: 1fdb7fad77fd30e35f6836efc0abd1345250fc15ab2280d45e335f2c5c2cfa14
+      event_count: 92
+      variation:
+        at: 66
+        citizen: Juno Ash
+        choice: intention
+        from: record-experience
+        to: create-culture
+    - id: branch-10
+      group: branches
+      status: completed
+      reason: null
+      head_hash: b3e20804430f438e3e38faf41ea9cd60214530b5fcaae28d02b9154e080f1068
+      event_count: 92
+      variation:
+        at: 66
+        citizen: Juno Ash
+        choice: intention
+        from: record-experience
+        to: maintain-relationships → cit-0005
+    - id: branch-11
+      group: branches
+      status: completed
+      reason: null
+      head_hash: 7e5dd51f0f53931c1ee20a435d007d87496f3b393d63cedb6404b0f8e803e450
+      event_count: 92
+      variation:
+        at: 66
+        citizen: Juno Ash
+        choice: activity
+        from: walked
+        to: mapped
+    - id: branch-12
+      group: branches
+      status: completed
+      reason: null
+      head_hash: 7360732857c92f633558a07887e0884566e81e3cbdde35d361b1d3823de0067c
+      event_count: 92
+      variation:
+        at: 66
+        citizen: Juno Ash
+        choice: activity
+        from: walked
+        to: repaired a lantern at
     - id: mnemosyne-no-integration
       group: doctrines
       status: completed
       reason: null
-      head_hash: 447aa774bdd5f877c96e274f6975f02721504bfba331a0a5fa6bf4657d1e3c02
-      event_count: 91
+      head_hash: 9ac4a491bf1043430c378d7ea41199407bf589a7b896208c380b3fd627785a99
+      event_count: 92
       variation:
         island: mnemosyne
         amendment: *a1
@@ -435,8 +502,8 @@ study:
       group: doctrines
       status: completed
       reason: null
-      head_hash: 4bf1f63cdab1b399c58c7488b2055f1dde34678ea54740ab153e53a1bc3d1c3a
-      event_count: 90
+      head_hash: 9a6801fae68f175fe32f6c8c38977661b912bfc23f45ab3233ae40e481120ef9
+      event_count: 91
       variation:
         island: fork
         amendment: *a2
@@ -444,8 +511,8 @@ study:
       group: doctrines
       status: completed
       reason: null
-      head_hash: 91a44b25a0a4f956b7304cd499d3218f3f384fbc815646c6b98df064b17be04d
-      event_count: 91
+      head_hash: 4bf34a681a2fc634f1aecc45285e44826e9bd8961cc6ade21d8db6801d99cf52
+      event_count: 92
       variation:
         island: fork
         amendment: *a3
@@ -462,125 +529,125 @@ study:
       group: timelines
       status: completed
       reason: null
-      head_hash: d1dfdbdfdd109b0339337d2115c8b984bc3a85571002b9d1c54241a739d712d5
-      event_count: 91
+      head_hash: 945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e
+      event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1
+        flips: []
         amendment: null
         rounds: 3
-    - id: second-seed
+    - id: juno-maps-instead
       group: timelines
       status: completed
       reason: null
-      head_hash: ce1c7dd9e2dde600bb8eb2dfa1d4155864933055d2a8bed7df3fd9727fd9a94c
-      event_count: 91
+      head_hash: 7e5dd51f0f53931c1ee20a435d007d87496f3b393d63cedb6404b0f8e803e450
+      event_count: 92
       variation:
-        seed: archipelago/the-first-fork/v1/timeline-2
+        flips: *a5
         amendment: null
         rounds: 3
     - id: fork-closes-its-borders
       group: timelines
       status: completed
       reason: null
-      head_hash: 672c8b60dc56dc549490efeebcaf5ea2c28107297e38eaae67d1b6e2efd32e13
-      event_count: 92
+      head_hash: 834cfbd34744c5c74c34a2aa95ec5418e2df4282ae757f1daec77988dfed8760
+      event_count: 93
       variation:
-        seed: archipelago/the-first-fork/v1
-        amendment: *a5
+        flips: []
+        amendment: *a6
         rounds: 3
     - id: mnemosyne-opens-its-borders
       group: timelines
       status: completed
       reason: null
-      head_hash: 3cc69ca9f9188ebd53f88654cc98f1d0fd2a67b4b8e924a04fc7375db8e8fce3
-      event_count: 92
+      head_hash: ec17e487e3b61aa2f3b0412270893cc14d9ba3238587a8747d6b62b32a887754
+      event_count: 93
       variation:
-        seed: archipelago/the-first-fork/v1
-        amendment: *a6
+        flips: []
+        amendment: *a7
         rounds: 3
     - id: fork-adopts-consensus
       group: timelines
       status: completed
       reason: null
-      head_hash: 69dc50fbe36b4a6ba7e481c81110f2a1fb68bd0825e0eeddd2dc32051b285e23
-      event_count: 92
+      head_hash: 8d5948f93b8df03e123605dfd907e9b1b978e49e9916c11d99c82b826e3081af
+      event_count: 93
       variation:
-        seed: archipelago/the-first-fork/v1
-        amendment: *a7
+        flips: []
+        amendment: *a8
         rounds: 3
 outputs:
   - path: exports/the-first-fork-v1/events.jsonl
-    sha256: 9bbc0f8d01becda9a5fe36e595e77dec56e49d3f4b31b543f301d7b5d05143c0
-    bytes: 103893
+    sha256: c7a0ca874b0f57b3e134d218fcbec0abf1527d7b6a84f842211f491f65e2130c
+    bytes: 112991
   - path: exports/the-first-fork-v1/interchange.json
-    sha256: 7c9c7ae59b853a862c1ea9452e517620a599fa1478f19b85958f79b92b5c53b9
-    bytes: 142548
+    sha256: a3d59f02943f1f29f0854b28aa7925c2190a44b205d40c60a5bead4debcd8c58
+    bytes: 168376
   - path: exports/the-first-fork-v1/dataset.json
-    sha256: 78095f99b53de7822791ad82a9f88bfa38155cd797172680b7bd775703c0ae41
-    bytes: 165486
+    sha256: 3eb68930738cc0b9d749931f6e6fcbd1539846d3de23909d85bc645fa8b056cf
+    bytes: 164494
   - path: exports/the-first-fork-v1/research.json
-    sha256: 872764cbbb22743028a5f580215e2c0a87be4522c68f03f9175448dc0225dc0a
-    bytes: 77368
+    sha256: 72ac5a206fa4ecbf6d0d682123d1f2829f51aa1f58d919487cedd0804ec63ee3
+    bytes: 78686
   - path: exports/the-first-fork-v1/lineage_graph.json
-    sha256: 7ac780656738d9e244f35e63e66a59f11ff65d22be4e01974ee7b1dccdfa9bdc
+    sha256: 979d95e495fd656ec97e1b05c44c45adcbc01a174ad972ce525061a389100cc3
     bytes: 3444
   - path: exports/the-first-fork-v1/relationship_network.json
     sha256: c42ed15ff50513e5ae829a2cf785a8b389542d0adf61abaceb374525efa1f9a6
     bytes: 3538
   - path: exports/the-first-fork-v1/governance_events.json
-    sha256: 8d55b0ac0fe2add2c9774eb41ea6b468ff2c341a840bc1aaf5800e42e23a7305
-    bytes: 7003
+    sha256: 715f7a8dc44574971bfc91cfa3c6371343f3887025f47c750eb4b36ec1b2e944
+    bytes: 7272
   - path: exports/the-first-fork-v1/memory_history.json
-    sha256: 5bc9b11e383c9fad7ef2c66eb84f892ae54b982a50ed1e1b8ad466827a078f70
-    bytes: 34216
+    sha256: 89780cf278861816aec787cb9f87029a3ac3c25696ad0f627144f1525df4cff0
+    bytes: 50014
   - path: exports/the-first-fork-v1/civilization_metrics.json
-    sha256: ef4952aa01ab2d1b0aaa952ab356b6eb1a867d80a3e383faea83ca0c5b1d9e17
-    bytes: 13278
+    sha256: 12ef41821b571baa3b357b0e31e55128a97406ccbb56ee6014e5edf064f4b476
+    bytes: 13273
   - path: exports/the-first-fork-v1/civilization_metrics.csv
-    sha256: 882be03bc2d14eaf99319e5df1808b31416f9701c52c53771548c91d3856b126
-    bytes: 680
+    sha256: 6dda6bb22c9da8c5beda376bc1b40ad764cbc0c44f077b9669fde9d0feda0f0f
+    bytes: 675
   - path: exports/the-first-fork-v1/study.json
-    sha256: f514c6036bc002121357e2c35816de319b3542c2c734bd3467fdf6616cd69855
-    bytes: 66736
+    sha256: e15200083d8b0772dd937f70766a693463da3c7032c32befc478f5838a0df9a3
+    bytes: 75204
   - path: exports/the-first-fork-v1/study.csv
-    sha256: 5ee55ebe4ecd9f93de799fc7f144e7fd0bd4062221f0b46368e5f07a73f48154
-    bytes: 42904
+    sha256: 55afa1712d076acce27dce5a1dddd8b0a3735c10629891ebf40d0fcdbeaf7c39
+    bytes: 52252
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: d6370368e3786b7adb202b49cfddcb3cfcfbeb3324b057be28603bafbe5f88b5
-    bytes: 29575
+    sha256: 6eaedda45a60630682f547be4335f347c2a9e3ec90faf36c831c876b32c1bb3f
+    bytes: 30727
   - path: exports/the-first-fork-v1/publication/civilization-report.md
-    sha256: 1bc207496498bfa09896ee26e44e99525c5d01a4eec17ecb6391ca28681dbf03
-    bytes: 8645
+    sha256: 90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea
+    bytes: 8518
   - path: exports/the-first-fork-v1/publication/chronicle.md
-    sha256: 516a4d1fd86f2e757be8c7ed0d600881c9daca43a1684b04c3c3206ec8b48371
-    bytes: 2601
+    sha256: c2624b09eb49a8bf7c3fe9b2eab6f101511e424bdd8ca5b084231e834a6b7f75
+    bytes: 2447
   - path: exports/the-first-fork-v1/reports/timeline.md
-    sha256: a2f1f59c73ab6b7b61d31940b1b91b3dbda7db5f745c909d0cd0aa8e20df36be
-    bytes: 17008
+    sha256: 94158eddd7ed3d2935d7d28839bc9e38a793a83036259e832d240dee8290f0af
+    bytes: 17351
   - path: exports/the-first-fork-v1/reports/lineage.mmd
     sha256: ce700f704c55f731e36df4858f1b3d1c69780321fc940d623d2066122bb3f3bd
     bytes: 531
   - path: exports/the-first-fork-v1/reports/memory-provenance.md
-    sha256: ef4c88ef16e56b70445e4743ca0c803a1c8a1d9eb9a20e28b1a6802bec8e0b30
+    sha256: aa9d0a454c18358339fdaa3f8bffa6407bdea3f8b9f91bac38bef17ea7882347
     bytes: 4429
   - path: exports/the-first-fork-v1/reports/continuity-evidence.md
     sha256: 27621213cdaa3e095bb0cecc5cc9d0c9635fc058b37512109c9644be0d93326a
     bytes: 2535
   - path: exports/the-first-fork-v1/reports/legal-interpretations.md
-    sha256: 7d5ef61d9a61f65014321f88a23cd3c412f1e7c87b752080443d2566f3753d77
+    sha256: 52c1f2763852c5161a4d0975669c20e34b85da4dca697b8c3883f5f7aabea14c
     bytes: 7709
   - path: exports/the-first-fork-v1/reports/researcher-commentary-template.md
-    sha256: 23314ce16858106adca5a6dabc5767adbac73c2be9eb62a59dc68d01477a58d0
+    sha256: 050bfe643b7cb78295ed610c1690ad10e5c0d2c0f2e12b9b1531f919ac1b84c1
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: d6370368e3786b7adb202b49cfddcb3cfcfbeb3324b057be28603bafbe5f88b5
-    bytes: 29575
+    sha256: 6eaedda45a60630682f547be4335f347c2a9e3ec90faf36c831c876b32c1bb3f
+    bytes: 30727
   - path: reports/civilizations/archipelago-first-fork.md
-    sha256: 1bc207496498bfa09896ee26e44e99525c5d01a4eec17ecb6391ca28681dbf03
-    bytes: 8645
+    sha256: 90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea
+    bytes: 8518
   - path: reports/chronicles/archipelago-first-fork.md
-    sha256: 516a4d1fd86f2e757be8c7ed0d600881c9daca43a1684b04c3c3206ec8b48371
-    bytes: 2601
+    sha256: c2624b09eb49a8bf7c3fe9b2eab6f101511e424bdd8ca5b084231e834a6b7f75
+    bytes: 2447
 limitations:
   - Protagonist behaviour is scripted. The scenario demonstrates institutional consequences; it does not test emergent behaviour.
   - Background agents are deterministic BDI rule systems, not models of human or digital cognition.

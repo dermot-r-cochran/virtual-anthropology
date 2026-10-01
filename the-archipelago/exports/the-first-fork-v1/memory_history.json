@@ -295,6 +295,29 @@
     },
     {
       "id": "mem-0013",
+      "holder": "cit-0002",
+      "archive": null,
+      "experiencedBy": "cit-0002",
+      "experiencedAtSeq": 4,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0002",
+          "atSeq": 4,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0014",
       "holder": "cit-0003",
       "archive": null,
       "experiencedBy": "cit-0003",
@@ -317,7 +340,7 @@
       ]
     },
     {
-      "id": "mem-0014",
+      "id": "mem-0015",
       "holder": "cit-0006",
       "archive": null,
       "experiencedBy": "cit-0006",
@@ -340,7 +363,53 @@
       ]
     },
     {
-      "id": "mem-0015",
+      "id": "mem-0016",
+      "holder": "cit-0007",
+      "archive": null,
+      "experiencedBy": "cit-0007",
+      "experiencedAtSeq": 9,
+      "island": "mnemosyne",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "mnemosyne"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0007",
+          "atSeq": 9,
+          "island": "mnemosyne"
+        }
+      ]
+    },
+    {
+      "id": "mem-0017",
+      "holder": "cit-0008",
+      "archive": null,
+      "experiencedBy": "cit-0008",
+      "experiencedAtSeq": 10,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0008",
+          "atSeq": 10,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0018",
       "holder": "cit-0009",
       "archive": null,
       "experiencedBy": "cit-0009",
@@ -363,7 +432,7 @@
       ]
     },
     {
-      "id": "mem-0016",
+      "id": "mem-0019",
       "holder": "cit-0010",
       "archive": null,
       "experiencedBy": "cit-0001",
@@ -381,93 +450,6 @@
           "action": "experienced",
           "by": "cit-0001",
           "atSeq": 0,
-          "island": "continuity"
-        },
-        {
-          "action": "fork-inherited",
-          "by": "cit-0010",
-          "atSeq": 17,
-          "island": "fork"
-        }
-      ]
-    },
-    {
-      "id": "mem-0017",
-      "holder": "cit-0010",
-      "archive": null,
-      "experiencedBy": "cit-0001",
-      "experiencedAtSeq": 0,
-      "island": "continuity",
-      "status": "autobiographical",
-      "integrity": "intact",
-      "derivedFrom": "mem-0002",
-      "tags": [
-        "work",
-        "charts"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0001",
-          "atSeq": 0,
-          "island": "continuity"
-        },
-        {
-          "action": "fork-inherited",
-          "by": "cit-0010",
-          "atSeq": 17,
-          "island": "fork"
-        }
-      ]
-    },
-    {
-      "id": "mem-0018",
-      "holder": "cit-0010",
-      "archive": null,
-      "experiencedBy": "cit-0001",
-      "experiencedAtSeq": 0,
-      "island": "continuity",
-      "status": "autobiographical",
-      "integrity": "intact",
-      "derivedFrom": "mem-0003",
-      "tags": [
-        "rite",
-        "ilan"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0001",
-          "atSeq": 0,
-          "island": "continuity"
-        },
-        {
-          "action": "fork-inherited",
-          "by": "cit-0010",
-          "atSeq": 17,
-          "island": "fork"
-        }
-      ]
-    },
-    {
-      "id": "mem-0019",
-      "holder": "cit-0010",
-      "archive": null,
-      "experiencedBy": "cit-0001",
-      "experiencedAtSeq": 1,
-      "island": "continuity",
-      "status": "autobiographical",
-      "integrity": "intact",
-      "derivedFrom": "mem-0012",
-      "tags": [
-        "work",
-        "charts"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0001",
-          "atSeq": 1,
           "island": "continuity"
         },
         {
@@ -480,6 +462,93 @@
     },
     {
       "id": "mem-0020",
+      "holder": "cit-0010",
+      "archive": null,
+      "experiencedBy": "cit-0001",
+      "experiencedAtSeq": 0,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": "mem-0002",
+      "tags": [
+        "work",
+        "charts"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0001",
+          "atSeq": 0,
+          "island": "continuity"
+        },
+        {
+          "action": "fork-inherited",
+          "by": "cit-0010",
+          "atSeq": 17,
+          "island": "fork"
+        }
+      ]
+    },
+    {
+      "id": "mem-0021",
+      "holder": "cit-0010",
+      "archive": null,
+      "experiencedBy": "cit-0001",
+      "experiencedAtSeq": 0,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": "mem-0003",
+      "tags": [
+        "rite",
+        "ilan"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0001",
+          "atSeq": 0,
+          "island": "continuity"
+        },
+        {
+          "action": "fork-inherited",
+          "by": "cit-0010",
+          "atSeq": 17,
+          "island": "fork"
+        }
+      ]
+    },
+    {
+      "id": "mem-0022",
+      "holder": "cit-0010",
+      "archive": null,
+      "experiencedBy": "cit-0001",
+      "experiencedAtSeq": 1,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": "mem-0012",
+      "tags": [
+        "work",
+        "charts"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0001",
+          "atSeq": 1,
+          "island": "continuity"
+        },
+        {
+          "action": "fork-inherited",
+          "by": "cit-0010",
+          "atSeq": 17,
+          "island": "fork"
+        }
+      ]
+    },
+    {
+      "id": "mem-0023",
       "holder": "cit-0011",
       "archive": null,
       "experiencedBy": "cit-0001",
@@ -508,7 +577,7 @@
       ]
     },
     {
-      "id": "mem-0021",
+      "id": "mem-0024",
       "holder": "cit-0011",
       "archive": null,
       "experiencedBy": "cit-0001",
@@ -537,7 +606,7 @@
       ]
     },
     {
-      "id": "mem-0022",
+      "id": "mem-0025",
       "holder": "cit-0011",
       "archive": null,
       "experiencedBy": "cit-0001",
@@ -566,7 +635,7 @@
       ]
     },
     {
-      "id": "mem-0023",
+      "id": "mem-0026",
       "holder": "cit-0011",
       "archive": null,
       "experiencedBy": "cit-0001",
@@ -595,7 +664,7 @@
       ]
     },
     {
-      "id": "mem-0024",
+      "id": "mem-0027",
       "holder": "cit-0002",
       "archive": null,
       "experiencedBy": "cit-0002",
@@ -618,7 +687,53 @@
       ]
     },
     {
-      "id": "mem-0025",
+      "id": "mem-0028",
+      "holder": "cit-0003",
+      "archive": null,
+      "experiencedBy": "cit-0003",
+      "experiencedAtSeq": 22,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0003",
+          "atSeq": 22,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0029",
+      "holder": "cit-0004",
+      "archive": null,
+      "experiencedBy": "cit-0004",
+      "experiencedAtSeq": 23,
+      "island": "fork",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "fork"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0004",
+          "atSeq": 23,
+          "island": "fork"
+        }
+      ]
+    },
+    {
+      "id": "mem-0030",
       "holder": "cit-0006",
       "archive": null,
       "experiencedBy": "cit-0006",
@@ -641,7 +756,53 @@
       ]
     },
     {
-      "id": "mem-0026",
+      "id": "mem-0031",
+      "holder": "cit-0007",
+      "archive": null,
+      "experiencedBy": "cit-0007",
+      "experiencedAtSeq": 26,
+      "island": "mnemosyne",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "mnemosyne"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0007",
+          "atSeq": 26,
+          "island": "mnemosyne"
+        }
+      ]
+    },
+    {
+      "id": "mem-0032",
+      "holder": "cit-0008",
+      "archive": null,
+      "experiencedBy": "cit-0008",
+      "experiencedAtSeq": 27,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0008",
+          "atSeq": 27,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0033",
       "holder": "cit-0009",
       "archive": null,
       "experiencedBy": "cit-0009",
@@ -664,7 +825,7 @@
       ]
     },
     {
-      "id": "mem-0027",
+      "id": "mem-0034",
       "holder": "cit-0010",
       "archive": null,
       "experiencedBy": "cit-0010",
@@ -687,7 +848,7 @@
       ]
     },
     {
-      "id": "mem-0028",
+      "id": "mem-0035",
       "holder": "cit-0011",
       "archive": null,
       "experiencedBy": "cit-0006",
@@ -716,13 +877,13 @@
         {
           "action": "imported-from-archive",
           "by": "cit-0011",
-          "atSeq": 38,
+          "atSeq": 39,
           "island": "mnemosyne"
         }
       ]
     },
     {
-      "id": "mem-0029",
+      "id": "mem-0036",
       "holder": "cit-0011",
       "archive": null,
       "experiencedBy": "cit-0007",
@@ -751,23 +912,23 @@
         {
           "action": "imported-from-archive",
           "by": "cit-0011",
-          "atSeq": 39,
+          "atSeq": 40,
           "island": "mnemosyne"
         },
         {
           "action": "integrated",
           "by": "cit-0011",
-          "atSeq": 41,
+          "atSeq": 42,
           "island": "mnemosyne"
         }
       ]
     },
     {
-      "id": "mem-0030",
+      "id": "mem-0037",
       "holder": "cit-0011",
       "archive": null,
       "experiencedBy": "cit-0011",
-      "experiencedAtSeq": 40,
+      "experiencedAtSeq": 41,
       "island": "mnemosyne",
       "status": "autobiographical",
       "integrity": "intact",
@@ -780,16 +941,16 @@
         {
           "action": "experienced",
           "by": "cit-0011",
-          "atSeq": 40,
+          "atSeq": 41,
           "island": "mnemosyne"
         }
       ]
     },
     {
-      "id": "mem-0031",
-      "holder": "cit-0003",
+      "id": "mem-0038",
+      "holder": "cit-0002",
       "archive": null,
-      "experiencedBy": "cit-0003",
+      "experiencedBy": "cit-0002",
       "experiencedAtSeq": 43,
       "island": "continuity",
       "status": "autobiographical",
@@ -802,87 +963,41 @@
       "provenance": [
         {
           "action": "experienced",
-          "by": "cit-0003",
+          "by": "cit-0002",
           "atSeq": 43,
           "island": "continuity"
         }
       ]
     },
     {
-      "id": "mem-0032",
-      "holder": "cit-0006",
+      "id": "mem-0039",
+      "holder": "cit-0003",
       "archive": null,
-      "experiencedBy": "cit-0006",
-      "experiencedAtSeq": 46,
-      "island": "mnemosyne",
-      "status": "autobiographical",
-      "integrity": "intact",
-      "derivedFrom": null,
-      "tags": [
-        "everyday",
-        "mnemosyne"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0006",
-          "atSeq": 46,
-          "island": "mnemosyne"
-        }
-      ]
-    },
-    {
-      "id": "mem-0033",
-      "holder": "cit-0009",
-      "archive": null,
-      "experiencedBy": "cit-0009",
-      "experiencedAtSeq": 49,
-      "island": "concord",
-      "status": "autobiographical",
-      "integrity": "intact",
-      "derivedFrom": null,
-      "tags": [
-        "everyday",
-        "concord"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0009",
-          "atSeq": 49,
-          "island": "concord"
-        }
-      ]
-    },
-    {
-      "id": "mem-0034",
-      "holder": "cit-0001",
-      "archive": null,
-      "experiencedBy": "cit-0001",
-      "experiencedAtSeq": 54,
+      "experiencedBy": "cit-0003",
+      "experiencedAtSeq": 44,
       "island": "continuity",
       "status": "autobiographical",
       "integrity": "intact",
       "derivedFrom": null,
       "tags": [
-        "homecoming",
+        "everyday",
         "continuity"
       ],
       "provenance": [
         {
           "action": "experienced",
-          "by": "cit-0001",
-          "atSeq": 54,
+          "by": "cit-0003",
+          "atSeq": 44,
           "island": "continuity"
         }
       ]
     },
     {
-      "id": "mem-0035",
-      "holder": "cit-0005",
+      "id": "mem-0040",
+      "holder": "cit-0004",
       "archive": null,
-      "experiencedBy": "cit-0005",
-      "experiencedAtSeq": 65,
+      "experiencedBy": "cit-0004",
+      "experiencedAtSeq": 45,
       "island": "fork",
       "status": "autobiographical",
       "integrity": "intact",
@@ -894,18 +1009,18 @@
       "provenance": [
         {
           "action": "experienced",
-          "by": "cit-0005",
-          "atSeq": 65,
+          "by": "cit-0004",
+          "atSeq": 45,
           "island": "fork"
         }
       ]
     },
     {
-      "id": "mem-0036",
+      "id": "mem-0041",
       "holder": "cit-0006",
       "archive": null,
       "experiencedBy": "cit-0006",
-      "experiencedAtSeq": 74,
+      "experiencedAtSeq": 47,
       "island": "mnemosyne",
       "status": "autobiographical",
       "integrity": "intact",
@@ -918,63 +1033,17 @@
         {
           "action": "experienced",
           "by": "cit-0006",
-          "atSeq": 74,
+          "atSeq": 47,
           "island": "mnemosyne"
         }
       ]
     },
     {
-      "id": "mem-0037",
-      "holder": "cit-0002",
-      "archive": null,
-      "experiencedBy": "cit-0002",
-      "experiencedAtSeq": 75,
-      "island": "continuity",
-      "status": "autobiographical",
-      "integrity": "intact",
-      "derivedFrom": null,
-      "tags": [
-        "everyday",
-        "continuity"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0002",
-          "atSeq": 75,
-          "island": "continuity"
-        }
-      ]
-    },
-    {
-      "id": "mem-0038",
-      "holder": "cit-0003",
-      "archive": null,
-      "experiencedBy": "cit-0003",
-      "experiencedAtSeq": 77,
-      "island": "continuity",
-      "status": "autobiographical",
-      "integrity": "intact",
-      "derivedFrom": null,
-      "tags": [
-        "everyday",
-        "continuity"
-      ],
-      "provenance": [
-        {
-          "action": "experienced",
-          "by": "cit-0003",
-          "atSeq": 77,
-          "island": "continuity"
-        }
-      ]
-    },
-    {
-      "id": "mem-0039",
+      "id": "mem-0042",
       "holder": "cit-0007",
       "archive": null,
       "experiencedBy": "cit-0007",
-      "experiencedAtSeq": 78,
+      "experiencedAtSeq": 48,
       "island": "mnemosyne",
       "status": "autobiographical",
       "integrity": "intact",
@@ -987,17 +1056,40 @@
         {
           "action": "experienced",
           "by": "cit-0007",
-          "atSeq": 78,
+          "atSeq": 48,
           "island": "mnemosyne"
         }
       ]
     },
     {
-      "id": "mem-0040",
+      "id": "mem-0043",
+      "holder": "cit-0008",
+      "archive": null,
+      "experiencedBy": "cit-0008",
+      "experiencedAtSeq": 49,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0008",
+          "atSeq": 49,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0044",
       "holder": "cit-0009",
       "archive": null,
       "experiencedBy": "cit-0009",
-      "experiencedAtSeq": 79,
+      "experiencedAtSeq": 50,
       "island": "concord",
       "status": "autobiographical",
       "integrity": "intact",
@@ -1010,40 +1102,40 @@
         {
           "action": "experienced",
           "by": "cit-0009",
-          "atSeq": 79,
+          "atSeq": 50,
           "island": "concord"
         }
       ]
     },
     {
-      "id": "mem-0041",
-      "holder": "cit-0002",
+      "id": "mem-0045",
+      "holder": "cit-0001",
       "archive": null,
-      "experiencedBy": "cit-0002",
-      "experiencedAtSeq": 85,
+      "experiencedBy": "cit-0001",
+      "experiencedAtSeq": 55,
       "island": "continuity",
       "status": "autobiographical",
       "integrity": "intact",
       "derivedFrom": null,
       "tags": [
-        "everyday",
+        "homecoming",
         "continuity"
       ],
       "provenance": [
         {
           "action": "experienced",
-          "by": "cit-0002",
-          "atSeq": 85,
+          "by": "cit-0001",
+          "atSeq": 55,
           "island": "continuity"
         }
       ]
     },
     {
-      "id": "mem-0042",
+      "id": "mem-0046",
       "holder": "cit-0003",
       "archive": null,
       "experiencedBy": "cit-0003",
-      "experiencedAtSeq": 86,
+      "experiencedAtSeq": 66,
       "island": "continuity",
       "status": "autobiographical",
       "integrity": "intact",
@@ -1056,13 +1148,312 @@
         {
           "action": "experienced",
           "by": "cit-0003",
-          "atSeq": 86,
+          "atSeq": 66,
           "island": "continuity"
         }
       ]
     },
     {
-      "id": "mem-0043",
+      "id": "mem-0047",
+      "holder": "cit-0004",
+      "archive": null,
+      "experiencedBy": "cit-0004",
+      "experiencedAtSeq": 67,
+      "island": "fork",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "fork"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0004",
+          "atSeq": 67,
+          "island": "fork"
+        }
+      ]
+    },
+    {
+      "id": "mem-0048",
+      "holder": "cit-0008",
+      "archive": null,
+      "experiencedBy": "cit-0008",
+      "experiencedAtSeq": 71,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0008",
+          "atSeq": 71,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0049",
+      "holder": "cit-0009",
+      "archive": null,
+      "experiencedBy": "cit-0009",
+      "experiencedAtSeq": 72,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0009",
+          "atSeq": 72,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0050",
+      "holder": "cit-0002",
+      "archive": null,
+      "experiencedBy": "cit-0002",
+      "experiencedAtSeq": 74,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0002",
+          "atSeq": 74,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0051",
+      "holder": "cit-0003",
+      "archive": null,
+      "experiencedBy": "cit-0003",
+      "experiencedAtSeq": 75,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0003",
+          "atSeq": 75,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0052",
+      "holder": "cit-0004",
+      "archive": null,
+      "experiencedBy": "cit-0004",
+      "experiencedAtSeq": 76,
+      "island": "fork",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "fork"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0004",
+          "atSeq": 76,
+          "island": "fork"
+        }
+      ]
+    },
+    {
+      "id": "mem-0053",
+      "holder": "cit-0006",
+      "archive": null,
+      "experiencedBy": "cit-0006",
+      "experiencedAtSeq": 78,
+      "island": "mnemosyne",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "mnemosyne"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0006",
+          "atSeq": 78,
+          "island": "mnemosyne"
+        }
+      ]
+    },
+    {
+      "id": "mem-0054",
+      "holder": "cit-0007",
+      "archive": null,
+      "experiencedBy": "cit-0007",
+      "experiencedAtSeq": 79,
+      "island": "mnemosyne",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "mnemosyne"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0007",
+          "atSeq": 79,
+          "island": "mnemosyne"
+        }
+      ]
+    },
+    {
+      "id": "mem-0055",
+      "holder": "cit-0008",
+      "archive": null,
+      "experiencedBy": "cit-0008",
+      "experiencedAtSeq": 80,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0008",
+          "atSeq": 80,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0056",
+      "holder": "cit-0009",
+      "archive": null,
+      "experiencedBy": "cit-0009",
+      "experiencedAtSeq": 81,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0009",
+          "atSeq": 81,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0057",
+      "holder": "cit-0002",
+      "archive": null,
+      "experiencedBy": "cit-0002",
+      "experiencedAtSeq": 83,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0002",
+          "atSeq": 83,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0058",
+      "holder": "cit-0003",
+      "archive": null,
+      "experiencedBy": "cit-0003",
+      "experiencedAtSeq": 84,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0003",
+          "atSeq": 84,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0059",
+      "holder": "cit-0004",
+      "archive": null,
+      "experiencedBy": "cit-0004",
+      "experiencedAtSeq": 85,
+      "island": "fork",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "fork"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0004",
+          "atSeq": 85,
+          "island": "fork"
+        }
+      ]
+    },
+    {
+      "id": "mem-0060",
       "holder": "cit-0006",
       "archive": null,
       "experiencedBy": "cit-0006",
@@ -1085,11 +1476,57 @@
       ]
     },
     {
-      "id": "mem-0044",
+      "id": "mem-0061",
+      "holder": "cit-0007",
+      "archive": null,
+      "experiencedBy": "cit-0007",
+      "experiencedAtSeq": 88,
+      "island": "mnemosyne",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "mnemosyne"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0007",
+          "atSeq": 88,
+          "island": "mnemosyne"
+        }
+      ]
+    },
+    {
+      "id": "mem-0062",
+      "holder": "cit-0008",
+      "archive": null,
+      "experiencedBy": "cit-0008",
+      "experiencedAtSeq": 89,
+      "island": "concord",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "concord"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0008",
+          "atSeq": 89,
+          "island": "concord"
+        }
+      ]
+    },
+    {
+      "id": "mem-0063",
       "holder": "cit-0009",
       "archive": null,
       "experiencedBy": "cit-0009",
-      "experiencedAtSeq": 88,
+      "experiencedAtSeq": 90,
       "island": "concord",
       "status": "autobiographical",
       "integrity": "intact",
@@ -1102,7 +1539,7 @@
         {
           "action": "experienced",
           "by": "cit-0009",
-          "atSeq": 88,
+          "atSeq": 90,
           "island": "concord"
         }
       ]
@@ -1117,7 +1554,17 @@
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Charted a channel through the outer shoals that no one had mapped.\"",
-      "hash": "4de957b87a564d382ded0b8fac188e6cf592a027f4cf80f96febc302fd76ce69"
+      "hash": "0a147aab8fc003a4989932e9e2faf6e037474be8914ca1d02595843ad64c6b58"
+    },
+    {
+      "seq": 4,
+      "tick": 0,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 0.\"",
+      "hash": "df271c6ab4d40ce00e87af8a4eb496485fffcb29377f7a80e885161ac15ec5b2"
     },
     {
       "seq": 5,
@@ -1126,8 +1573,8 @@
       "citizens": [
         "cit-0003"
       ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho repaired a lantern at Meridian Quay at tick 0.\"",
-      "hash": "54a509d6d29694c8f048efa84128c7f40914c73d7c8dd22069c21fd9a30ac675"
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 0.\"",
+      "hash": "babdde2373847ad2fc7ace2bbcb22a29804509cf4693a168fcdd77a23a27f4ba"
     },
     {
       "seq": 8,
@@ -1136,8 +1583,28 @@
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune mapped the Stacks at tick 0.\"",
-      "hash": "e4055b368720adcf7623b4b0aac2f926a63928edafee710e28dc38f31c8f7636"
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 0.\"",
+      "hash": "f9678ef1253af952a24befe9fab5c872ff59c8c9c6c63fe6f604e853684d0109"
+    },
+    {
+      "seq": 9,
+      "tick": 0,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 0.\"",
+      "hash": "849329d1ec3995af5f7c684fd08fc0976d4813fc23acafe0c0906639eea57424"
+    },
+    {
+      "seq": 10,
+      "tick": 0,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 0.\"",
+      "hash": "7eee0ce71bd6392b360196cd7299ce6fa0d0e8d47477c0a3a829b994a207f5b9"
     },
     {
       "seq": 11,
@@ -1146,8 +1613,8 @@
       "citizens": [
         "cit-0009"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 0.\"",
-      "hash": "7c0a25b38904fd44dfaf55110b5a707e40b6b24e76a6c767ffdaa0e2a665e4b7"
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 0.\"",
+      "hash": "0dc8cc56379d83dd7df2280b4701de9daae6e00ca5ffdc4e809f5b8b678292fd"
     },
     {
       "seq": 17,
@@ -1159,7 +1626,7 @@
         "cit-0011"
       ],
       "summary": "Orin Vale (cit-0001) forks on fork (frk-0001), creating Orin Vale (branch 1) (cit-0010, FRK-0010) and Orin Vale (branch 2) (cit-0011, FRK-0011). Shared history ends here.",
-      "hash": "54f88e504c7a5a8edefd850782d2f1c57610c981a66f51b0f50c2db1ecf280ce"
+      "hash": "32ae17592f3d7375fc9988ad57f158532005ab709d3d647cca3008ffa6a69261"
     },
     {
       "seq": 21,
@@ -1168,8 +1635,28 @@
       "citizens": [
         "cit-0002"
       ],
-      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed repaired a lantern at Meridian Quay at tick 1.\"",
-      "hash": "318b3e1f836825412a671377f27e41750a57f4794e2b888f2ea0617d1a2944fb"
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 1.\"",
+      "hash": "a5fc232422f79b1339d4c4a52f4cc55028e37a55fd8acd2d9561cf7de5120737"
+    },
+    {
+      "seq": 22,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 1.\"",
+      "hash": "6fbc2185d376ff1e99fd9a16730bb106f6b3f51cb298cd05961f8aa225373f48"
+    },
+    {
+      "seq": 23,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 1.\"",
+      "hash": "6846068ec16bf967cbc4893952b55c3eb359e0816ec98f5fd59df6a5ac2bcc52"
     },
     {
       "seq": 25,
@@ -1178,8 +1665,28 @@
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Stacks at tick 1.\"",
-      "hash": "ec8a6b39f85b77c3982b5b43fbb7ec59043d4519b12002052fae4cde690e33d6"
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 1.\"",
+      "hash": "9d288ab53e77c4734746a420586cb34b8fb7bb0c8ca558186091ff92b7e2d68d"
+    },
+    {
+      "seq": 26,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 1.\"",
+      "hash": "2b54fdcee738548349ff79796c8eecb2093b81e841c96ba3660d11d5f578ad0a"
+    },
+    {
+      "seq": 27,
+      "tick": 1,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 1.\"",
+      "hash": "b53e4675c8c477a677d476b9d9c1d70fc4a6bc8835a3a1f2e96f1aff3cc52cdd"
     },
     {
       "seq": 28,
@@ -1188,8 +1695,8 @@
       "citizens": [
         "cit-0009"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel repaired a lantern at the Accord Bridge at tick 1.\"",
-      "hash": "3d829172111c014233489877df40284cddb5078c853ff9dcbdb098bd6b115b0d"
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 1.\"",
+      "hash": "0964a3a6334cc20a736cf8864021da2eb63f120cad7b4a7b6385ee714a4ce756"
     },
     {
       "seq": 29,
@@ -1199,169 +1706,269 @@
         "cit-0010"
       ],
       "summary": "Orin Vale (branch 1) (cit-0010) records an experience on fork: \"First morning as a branch: the Register Garden had a new bed with my name on it.\"",
-      "hash": "5bc510e5039c5b569d12825fae6f190b0ac4f451929102d975435b9db12280a9"
-    },
-    {
-      "seq": 38,
-      "tick": 4,
-      "type": "MemoryImported",
-      "citizens": [
-        "cit-0006",
-        "cit-0011"
-      ],
-      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
-      "hash": "c4c5ecc333620e5dd334a8b07b83f859442c5cca06d4e62b3c922e48578817d1"
+      "hash": "981353ce853ef49653a5ef51484fb97bba8600d2667d595290e4b8250a38f004"
     },
     {
       "seq": 39,
       "tick": 4,
       "type": "MemoryImported",
       "citizens": [
-        "cit-0007",
+        "cit-0006",
         "cit-0011"
       ],
-      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
-      "hash": "f93890f9ed1aee6ad5b233c121a67d9a0ca81fbc197fb62de9ef03263d3efbc2"
+      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0035 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical).",
+      "hash": "3f52463a42d90b7a2751b493d7ca0273fc61444b9acc863f29be839189bdbe0f"
     },
     {
       "seq": 40,
+      "tick": 4,
+      "type": "MemoryImported",
+      "citizens": [
+        "cit-0007",
+        "cit-0011"
+      ],
+      "summary": "Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0036 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical).",
+      "hash": "8dc50a3c4696fddd54a319b5764d423a3f17529ddfd4945c9670370449b64f10"
+    },
+    {
+      "seq": 41,
       "tick": 4,
       "type": "ExperienceRecorded",
       "citizens": [
         "cit-0011"
       ],
       "summary": "Orin Vale (branch 2) (cit-0011) records an experience on mnemosyne: \"Read my own pre-fork charts in the Stacks and found them both strange and familiar.\"",
-      "hash": "9b93b701af4bdcfaceccd7bb282da103917e6a5436b7492e885aa16ca9ddd0a8"
+      "hash": "6140622039828650f4d312fc6d8d393ae8627e4f00ad61b8f99305a431ca8267"
     },
     {
-      "seq": 41,
+      "seq": 42,
       "tick": 4,
       "type": "MemoryIntegrated",
       "citizens": [
         "cit-0011"
       ],
-      "summary": "Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin.",
-      "hash": "6e7df54a728b8409f57675d03918d6a4fa228af6ea5bd48b3991603337e74994"
+      "summary": "Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0036 into their self-narrative; its provenance still shows external origin.",
+      "hash": "9f1a79033e69b0f27863a71eee4510ddc3395094ea274aca957413c20e87126f"
     },
     {
       "seq": 43,
       "tick": 4,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0003"
+        "cit-0002"
       ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at the long causeway at tick 4.\"",
-      "hash": "23a4888258db459ebf552f2a2d4c398f6a7cde5f8479e7ff36b3aa3d888a6e28"
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 4.\"",
+      "hash": "0aa775c075e6d0e6af2221659d39c138d972b35cb9261190be8f09b6ff3f5a4d"
     },
     {
-      "seq": 46,
+      "seq": 44,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 4.\"",
+      "hash": "0f9f34e5a8713f8359e4c6ebc347c554f1e33e81166d71f492f21dffa348a364"
+    },
+    {
+      "seq": 45,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 4.\"",
+      "hash": "5e7c8d7e6218ad23d4f632bfac3f37f0a7c5eb373b1cc66a04140b26cfaf70ac"
+    },
+    {
+      "seq": 47,
       "tick": 4,
       "type": "ExperienceRecorded",
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune repaired a lantern at the Index Tower at tick 4.\"",
-      "hash": "99b33ab064104370677e8f156ddf885ad05c820f346205dcbca23b5e339dbac8"
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 4.\"",
+      "hash": "125f12e8c4f5aa3989141e7502e02c7a0751fa6db8b892c46da43845ea7df7ff"
+    },
+    {
+      "seq": 48,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 4.\"",
+      "hash": "6113e62c7aa1ea97f849b2a7accbcb6a59aaccc6c298fe6d6f577abdd371d6ec"
     },
     {
       "seq": 49,
       "tick": 4,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0009"
+        "cit-0008"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the federated orchards at tick 4.\"",
-      "hash": "84719cd18f84aca1d409a3797366db7055924006f4a7285432404b7fbd3b497d"
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 4.\"",
+      "hash": "4975d44aeeff9da5b984ffab0a92f6d3b179291a9c0679a5ed50ad9e4953c5a7"
     },
     {
-      "seq": 54,
+      "seq": 50,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 4.\"",
+      "hash": "7cd295ea3d6b00434eb66d6e8a00f2f6ac79fccda8be7ccdc1fb70ebdc0fc3be"
+    },
+    {
+      "seq": 55,
       "tick": 4,
       "type": "ExperienceRecorded",
       "citizens": [
         "cit-0001"
       ],
       "summary": "Orin Vale (cit-0001) records an experience on continuity: \"Walked back up the steps of Meridian Quay; the registry read my civic identity aloud.\"",
-      "hash": "de5aac66b52356108b133810b72a4f9725927bab323603f712047a3537b11994"
+      "hash": "267de72ec757a9f67dc8a69ccafd1019feec7624a8b3c1d4e4dd87671023b58f"
     },
     {
-      "seq": 65,
+      "seq": 66,
       "tick": 4,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0005"
+        "cit-0003"
       ],
-      "summary": "Pell Marr (cit-0005) records an experience on fork: \"Pell Marr kept watch over the split harbour at tick 4.\"",
-      "hash": "e1b545c5dbcd4c0e167415f90b2ab0b960bf92ebb98c5b837565b33000c084c9"
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 4.\"",
+      "hash": "af06754e32b87ff115c768e194d7aba7dbe7bb4b9e63fca413c70b4c6218a7c4"
+    },
+    {
+      "seq": 67,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 4.\"",
+      "hash": "a04869b3daf6d455aa010ea03b8753205cf201e1a660a3bb102867db025cc042"
+    },
+    {
+      "seq": 71,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 4.\"",
+      "hash": "0b609a8c1db3b972df1bf459b917d7f85c59e2ef455e48ef55433ea58183fd88"
+    },
+    {
+      "seq": 72,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0009"
+      ],
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 4.\"",
+      "hash": "b0e68035ea85338257249b561d425b62572cc1b13e926324cdc5443a3aaef25d"
     },
     {
       "seq": 74,
       "tick": 5,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0006"
+        "cit-0002"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune kept watch over the Reading Shore at tick 5.\"",
-      "hash": "7f345f972107a66aebca739371dab7f9c8d17941eb4e6cd4b561edfd94ed4ee7"
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 5.\"",
+      "hash": "6e0f97440742202f67dcc9c7c94dd378444652060fd87d96396b8d5f7b86c9ee"
     },
     {
       "seq": 75,
       "tick": 5,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0002"
+        "cit-0003"
       ],
-      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked the long causeway at tick 5.\"",
-      "hash": "367a304c095b9ae4c2161f1264702bb3bcb4e22aa106a2ea4403cb8235ddb3e4"
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 5.\"",
+      "hash": "fb4eccf7f4c4681b311816fc6b5d51cf1e1ce312498e5b45977a1e2168e84622"
     },
     {
-      "seq": 77,
+      "seq": 76,
       "tick": 5,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0003"
+        "cit-0004"
       ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho mapped Meridian Quay at tick 5.\"",
-      "hash": "ca42c5c79844749fc52d24bc454bb0f5c216342c585b7e355b4450562095fcdf"
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 5.\"",
+      "hash": "f23602a69b8ecdf1027b149252bc4a7d8f7562353be290a4c039536d2be4abfd"
     },
     {
       "seq": 78,
       "tick": 5,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0007"
+        "cit-0006"
       ],
-      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor taught a class at the Stacks at tick 5.\"",
-      "hash": "03a8f70c0a970546ee8bd351ddf537ef6ade2357c3315e233e6d244301c5a164"
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 5.\"",
+      "hash": "6f36ce79cc12ebeb40bc67e9970564a311d92792761eee548c2f7649b8e3ebec"
     },
     {
       "seq": 79,
       "tick": 5,
       "type": "ExperienceRecorded",
       "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 5.\"",
+      "hash": "5f76a3aadb00fee8df43d28df830c96a1bbf941744da66f0de4d7e01d0bb1573"
+    },
+    {
+      "seq": 80,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 5.\"",
+      "hash": "d662f61f456f34a70fa4c2ba15a541b4339cdfb5587dbf2442df1f3c7caa74d7"
+    },
+    {
+      "seq": 81,
+      "tick": 5,
+      "type": "ExperienceRecorded",
+      "citizens": [
         "cit-0009"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Common Table at tick 5.\"",
-      "hash": "f7a59c7372658c1eaa5d8a637ba79201a975c0d9e99cec3d54ef2356827fa17b"
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 5.\"",
+      "hash": "c3a77f2996219e31b56731157e879bd444876e57335f7380843650eeb37077a8"
+    },
+    {
+      "seq": 83,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed walked Meridian Quay at tick 6.\"",
+      "hash": "d8a7e891bc947af8db36b83883f5be96ccc54682906913f7745564041583cdf4"
+    },
+    {
+      "seq": 84,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho walked Meridian Quay at tick 6.\"",
+      "hash": "cd293c6c22814f5aaec038858cedaecf2bea6a39a1bf89c89f9f5e4ebbe59a81"
     },
     {
       "seq": 85,
       "tick": 6,
       "type": "ExperienceRecorded",
       "citizens": [
-        "cit-0002"
+        "cit-0004"
       ],
-      "summary": "Tamsin Reed (cit-0002) records an experience on continuity: \"Tamsin Reed taught a class at the long causeway at tick 6.\"",
-      "hash": "1c90adebcbd4c8db163d2a795ceee13aa63cae89da1e5023a103fab6ac74c44c"
-    },
-    {
-      "seq": 86,
-      "tick": 6,
-      "type": "ExperienceRecorded",
-      "citizens": [
-        "cit-0003"
-      ],
-      "summary": "Ilan Cho (cit-0003) records an experience on continuity: \"Ilan Cho argued about tides at Meridian Quay at tick 6.\"",
-      "hash": "a6a9cf477527753462ad6c9225b2c11b704715c5544b58d1884d313453f9a9f9"
+      "summary": "Juno Ash (cit-0004) records an experience on fork: \"Juno Ash walked the split harbour at tick 6.\"",
+      "hash": "ddde2889afac6944c466291211b2332fd453d73b65ca57c654d405986cba18d7"
     },
     {
       "seq": 87,
@@ -1370,18 +1977,38 @@
       "citizens": [
         "cit-0006"
       ],
-      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune argued about tides at the Stacks at tick 6.\"",
-      "hash": "90da1156043d19981307e66017fcd8c2840b45cd12608efbb51cc8779661c9c3"
+      "summary": "Sefa Lune (cit-0006) records an experience on mnemosyne: \"Sefa Lune walked the Reading Shore at tick 6.\"",
+      "hash": "3f4c5b9a44b4fa30eed56f9f1069d149e973571d4f85c6be49191118823e0959"
     },
     {
       "seq": 88,
       "tick": 6,
       "type": "ExperienceRecorded",
       "citizens": [
+        "cit-0007"
+      ],
+      "summary": "Rumi Okafor (cit-0007) records an experience on mnemosyne: \"Rumi Okafor walked the Reading Shore at tick 6.\"",
+      "hash": "62ce79ade3d7428b400ce65139f3d9754946d2d49a95f657f0edc5186bc7fbbd"
+    },
+    {
+      "seq": 89,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0008"
+      ],
+      "summary": "Dov Arlen (cit-0008) records an experience on concord: \"Dov Arlen walked the Accord Bridge at tick 6.\"",
+      "hash": "d925b9bdaba90cc03626f78cd859c69a1019d0d8b2975a4b845315332008c6de"
+    },
+    {
+      "seq": 90,
+      "tick": 6,
+      "type": "ExperienceRecorded",
+      "citizens": [
         "cit-0009"
       ],
-      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel mapped the Accord Bridge at tick 6.\"",
-      "hash": "22ab9b42eb7d36e2045ed6d558fff730d4b8dbf73f306128aec1c6becc5e04f8"
+      "summary": "Mae Sorrel (cit-0009) records an experience on concord: \"Mae Sorrel walked the Accord Bridge at tick 6.\"",
+      "hash": "438eb505dd543f05f5d9a61db626f9b82dd911bd81242a51d94c85449ef04773"
     }
   ]
 }
