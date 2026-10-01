@@ -1,0 +1,480 @@
+{
+  "schema": "archipelago/civilization-metrics/v1",
+  "definitions": [
+    {
+      "id": "population.records",
+      "name": "Citizen records",
+      "unit": "persons",
+      "definition": "Number of citizen records ever created (genesis, fork or merger), including ended ones."
+    },
+    {
+      "id": "population.active",
+      "name": "Active citizens",
+      "unit": "persons",
+      "definition": "Citizen records whose lifecycle state is `active` at the end of the run."
+    },
+    {
+      "id": "population.genesis",
+      "name": "Founding citizens",
+      "unit": "persons",
+      "definition": "Citizen records created at genesis."
+    },
+    {
+      "id": "population.stateless",
+      "name": "Stateless citizens",
+      "unit": "persons",
+      "definition": "Citizen records holding no citizenship at the end of the run."
+    },
+    {
+      "id": "identity.forks",
+      "name": "Fork events",
+      "unit": "events",
+      "definition": "Number of `CitizenForked` events."
+    },
+    {
+      "id": "identity.fork_descendants",
+      "name": "Fork descendants",
+      "unit": "persons",
+      "definition": "Citizen records whose birth kind is `fork`."
+    },
+    {
+      "id": "identity.mergers",
+      "name": "Mergers executed",
+      "unit": "events",
+      "definition": "Number of `MergerExecuted` events (merges and federations)."
+    },
+    {
+      "id": "identity.continuity_claims",
+      "name": "Continuity claims",
+      "unit": "claims",
+      "definition": "Number of `ContinuityClaimed` events."
+    },
+    {
+      "id": "identity.process_continuers",
+      "name": "Process continuers of the subject",
+      "unit": "persons",
+      "definition": "Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis)."
+    },
+    {
+      "id": "identity.civic_continuers",
+      "name": "Civic continuers of the subject",
+      "unit": "persons",
+      "definition": "Claimants whose civic identifier equals the subject's pre-reference civic identifier."
+    },
+    {
+      "id": "identity.memory_continuers",
+      "name": "Full-memory continuers of the subject",
+      "unit": "persons",
+      "definition": "Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1)."
+    },
+    {
+      "id": "identity.dimension_dissociation",
+      "name": "Continuity dimension dissociation",
+      "unit": "persons",
+      "definition": "identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity."
+    },
+    {
+      "id": "legal.recognition_range",
+      "name": "Range of recognised continuers across islands",
+      "unit": "persons",
+      "definition": "Max − min, across islands, of the number of claimants each island's law recognises as continuing the subject (unadjudicated readings count as not recognised)."
+    },
+    {
+      "id": "legal.unadjudicating_islands",
+      "name": "Islands not adjudicating continuity",
+      "unit": "islands",
+      "definition": "Islands whose reading of every claimant is `null` (not adjudicated)."
+    },
+    {
+      "id": "governance.proposals",
+      "name": "Proposals submitted",
+      "unit": "proposals",
+      "definition": "Number of `ProposalSubmitted` events."
+    },
+    {
+      "id": "governance.laws_enacted",
+      "name": "Law versions enacted",
+      "unit": "laws",
+      "definition": "Number of `LawEnacted` events after genesis."
+    },
+    {
+      "id": "governance.votes_cast",
+      "name": "Votes cast",
+      "unit": "votes",
+      "definition": "Number of `VoteCast` events."
+    },
+    {
+      "id": "governance.votes_refused_outside_electorate",
+      "name": "Votes refused outside electorate",
+      "unit": "commands",
+      "definition": "Rejected `CastVote` commands whose reason cites the electorate snapshot."
+    },
+    {
+      "id": "governance.commands_rejected",
+      "name": "Commands rejected",
+      "unit": "commands",
+      "definition": "Number of `CommandRejected` events (schema, authorisation, precondition or law)."
+    },
+    {
+      "id": "governance.migrations",
+      "name": "Migrations completed",
+      "unit": "events",
+      "definition": "Number of `CitizenMigrated` events."
+    },
+    {
+      "id": "memory.records",
+      "name": "Memory records",
+      "unit": "records",
+      "definition": "All memory records, including collective-archive records and destroyed tombstones."
+    },
+    {
+      "id": "memory.imported",
+      "name": "Imported memory records",
+      "unit": "records",
+      "definition": "Records currently held with status `imported` (not autobiographical)."
+    },
+    {
+      "id": "memory.integrated",
+      "name": "Integrated memory records",
+      "unit": "records",
+      "definition": "Imported records explicitly integrated into a self-narrative (status `integrated`)."
+    },
+    {
+      "id": "memory.fork_inherited",
+      "name": "Fork-inherited records",
+      "unit": "records",
+      "definition": "Records whose provenance includes a `fork-inherited` step."
+    },
+    {
+      "id": "memory.provenance_complete",
+      "name": "Records with complete provenance",
+      "unit": "fraction",
+      "definition": "Fraction of records whose provenance chain begins with an `experienced` step (1 = every record traceable to an experience)."
+    },
+    {
+      "id": "culture.artefacts",
+      "name": "Cultural artefacts",
+      "unit": "artefacts",
+      "definition": "Artefacts created by citizens or introduced by researchers."
+    },
+    {
+      "id": "culture.chronicle_entries",
+      "name": "In-world chronicle entries",
+      "unit": "entries",
+      "definition": "Number of `ChronicleRecorded` events written by citizens."
+    },
+    {
+      "id": "institutions.count",
+      "name": "Institutions",
+      "unit": "institutions",
+      "definition": "Institutions in existence at the end of the run, including registries."
+    },
+    {
+      "id": "social.active_relationships",
+      "name": "Active relationships",
+      "unit": "ties",
+      "definition": "Relationships with status `active`."
+    },
+    {
+      "id": "social.fork_kin_ties",
+      "name": "Fork-kin ties",
+      "unit": "ties",
+      "definition": "Relationships of kind `fork-kin` (created by fork events)."
+    },
+    {
+      "id": "economy.credit_gini",
+      "name": "Credit Gini coefficient",
+      "unit": "index 0–1",
+      "definition": "Gini coefficient of citizen credit balances at the end of the run."
+    },
+    {
+      "id": "economy.supply_conserved",
+      "name": "Supply conserved",
+      "unit": "boolean",
+      "definition": "1 if the sum of all balances equals the total supply fixed at genesis, else 0."
+    },
+    {
+      "id": "death.asleep",
+      "name": "Citizens asleep",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `asleep` at the end of the run."
+    },
+    {
+      "id": "death.suspended",
+      "name": "Citizens suspended",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `suspended` at the end of the run."
+    },
+    {
+      "id": "death.archived",
+      "name": "Citizens archived",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `archived` at the end of the run."
+    },
+    {
+      "id": "death.process_ended_restorable",
+      "name": "Citizens process-ended-restorable",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `process-ended-restorable` at the end of the run."
+    },
+    {
+      "id": "death.memory_damaged",
+      "name": "Citizens memory-damaged",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `memory-damaged` at the end of the run."
+    },
+    {
+      "id": "death.identity_discontinuous",
+      "name": "Citizens identity-discontinuous",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `identity-discontinuous` at the end of the run."
+    },
+    {
+      "id": "death.irreversibly_deleted",
+      "name": "Citizens irreversibly-deleted",
+      "unit": "persons",
+      "definition": "Citizen records in lifecycle state `irreversibly-deleted` at the end of the run."
+    },
+    {
+      "id": "death.transitions",
+      "name": "Lifecycle transitions",
+      "unit": "events",
+      "definition": "Number of `LifecycleChanged` events."
+    },
+    {
+      "id": "research.conversations",
+      "name": "Researcher conversations",
+      "unit": "conversations",
+      "definition": "Number of `ConversationRecorded` events."
+    },
+    {
+      "id": "research.interventions",
+      "name": "Researcher interventions",
+      "unit": "interventions",
+      "definition": "Number of `InterventionApplied` events."
+    },
+    {
+      "id": "simulation.events",
+      "name": "Events recorded",
+      "unit": "events",
+      "definition": "Length of the event store, including the founding event and rejections."
+    },
+    {
+      "id": "simulation.ticks",
+      "name": "Simulated time",
+      "unit": "ticks",
+      "definition": "Final tick of the simulation clock."
+    }
+  ],
+  "final": [
+    {
+      "metric": "population.records",
+      "value": 11
+    },
+    {
+      "metric": "population.active",
+      "value": 11
+    },
+    {
+      "metric": "population.genesis",
+      "value": 9
+    },
+    {
+      "metric": "population.stateless",
+      "value": 0
+    },
+    {
+      "metric": "identity.forks",
+      "value": 1
+    },
+    {
+      "metric": "identity.fork_descendants",
+      "value": 2
+    },
+    {
+      "metric": "identity.mergers",
+      "value": 0
+    },
+    {
+      "metric": "identity.continuity_claims",
+      "value": 3
+    },
+    {
+      "metric": "identity.process_continuers",
+      "value": 1
+    },
+    {
+      "metric": "identity.civic_continuers",
+      "value": 1
+    },
+    {
+      "metric": "identity.memory_continuers",
+      "value": 3
+    },
+    {
+      "metric": "identity.dimension_dissociation",
+      "value": 2
+    },
+    {
+      "metric": "legal.recognition_range",
+      "value": 3
+    },
+    {
+      "metric": "legal.unadjudicating_islands",
+      "value": 1
+    },
+    {
+      "metric": "governance.proposals",
+      "value": 1
+    },
+    {
+      "metric": "governance.laws_enacted",
+      "value": 0
+    },
+    {
+      "metric": "governance.votes_cast",
+      "value": 2
+    },
+    {
+      "metric": "governance.votes_refused_outside_electorate",
+      "value": 1
+    },
+    {
+      "metric": "governance.commands_rejected",
+      "value": 1
+    },
+    {
+      "metric": "governance.migrations",
+      "value": 3
+    },
+    {
+      "metric": "memory.records",
+      "value": 45
+    },
+    {
+      "metric": "memory.imported",
+      "value": 2
+    },
+    {
+      "metric": "memory.integrated",
+      "value": 1
+    },
+    {
+      "metric": "memory.fork_inherited",
+      "value": 8
+    },
+    {
+      "metric": "memory.provenance_complete",
+      "value": 1
+    },
+    {
+      "metric": "culture.artefacts",
+      "value": 9
+    },
+    {
+      "metric": "culture.chronicle_entries",
+      "value": 3
+    },
+    {
+      "metric": "institutions.count",
+      "value": 7
+    },
+    {
+      "metric": "social.active_relationships",
+      "value": 8
+    },
+    {
+      "metric": "social.fork_kin_ties",
+      "value": 3
+    },
+    {
+      "metric": "economy.credit_gini",
+      "value": 0.1542
+    },
+    {
+      "metric": "economy.supply_conserved",
+      "value": 1
+    },
+    {
+      "metric": "death.asleep",
+      "value": 0
+    },
+    {
+      "metric": "death.suspended",
+      "value": 0
+    },
+    {
+      "metric": "death.archived",
+      "value": 0
+    },
+    {
+      "metric": "death.process_ended_restorable",
+      "value": 0
+    },
+    {
+      "metric": "death.memory_damaged",
+      "value": 0
+    },
+    {
+      "metric": "death.identity_discontinuous",
+      "value": 0
+    },
+    {
+      "metric": "death.irreversibly_deleted",
+      "value": 0
+    },
+    {
+      "metric": "death.transitions",
+      "value": 0
+    },
+    {
+      "metric": "research.conversations",
+      "value": 3
+    },
+    {
+      "metric": "research.interventions",
+      "value": 0
+    },
+    {
+      "metric": "simulation.events",
+      "value": 91
+    },
+    {
+      "metric": "simulation.ticks",
+      "value": 7
+    }
+  ],
+  "series": [
+    {
+      "tick": 7,
+      "seq": 90,
+      "values": {
+        "citizens": 11,
+        "residents.continuity": 3,
+        "residents.fork": 3,
+        "residents.mnemosyne": 3,
+        "residents.concord": 2,
+        "lifecycle.active": 11,
+        "lifecycle.asleep": 0,
+        "lifecycle.suspended": 0,
+        "lifecycle.archived": 0,
+        "lifecycle.process-ended-restorable": 0,
+        "lifecycle.memory-damaged": 0,
+        "lifecycle.identity-discontinuous": 0,
+        "lifecycle.irreversibly-deleted": 0,
+        "memories.autobiographical": 39,
+        "memories.collective": 3,
+        "memories.imported": 2,
+        "memories.integrated": 1,
+        "activeRelationships": 8,
+        "artefacts": 9,
+        "institutions": 7,
+        "openProposals": 0,
+        "forks": 1,
+        "continuityClaims": 3,
+        "creditGini": 0.1542,
+        "meanReputation": 1.7273
+      }
+    }
+  ]
+}

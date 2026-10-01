@@ -115,7 +115,7 @@ export function plan(intention: Intention, obs: Observation, rng: Rng): { candid
           authors: [s.id],
           island: s.residence,
           kind,
-          title: `A ${kind} of ${place}`,
+          title: `${/^[aeiou]/.test(kind) ? "An" : "A"} ${kind} of ${place}`,
           body: `Composed by ${s.name}, ${s.occupation}, about ${place} (tick ${obs.tick}).${echo ? ` It recalls: "${echo.what}"` : ""}`,
         },
         rationale: why(intention.kind),

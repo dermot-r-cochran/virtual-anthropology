@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "datasets": [
+    {
+      "path": "the-first-fork-v1",
+      "id": "the-first-fork-v1",
+      "civilizationId": "archipelago-first-fork",
+      "title": "The First Fork",
+      "scenario": "the-first-fork",
+      "headHash": "eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9",
+      "eventCount": 91,
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    }
+  ]
+}

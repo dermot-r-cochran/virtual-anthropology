@@ -4,7 +4,7 @@ import { runInstitutions } from "../../agents/institutions.js";
 import { AgentRuntime } from "../../agents/runtime.js";
 import { buildGenesisState } from "../../domain/genesis.js";
 import { citizenAccount, type CitizenId } from "../../domain/ids.js";
-import type { PersonStageRef } from "../../domain/model.js";
+import type { PersonStageRef, ResearchBounds } from "../../domain/model.js";
 import { createRng } from "../../kernel/rng.js";
 import type { ExecutionResult, World as WorldT } from "../../kernel/world.js";
 import { World } from "../../kernel/world.js";
@@ -20,6 +20,8 @@ export interface FirstForkOptions {
   readonly seed?: string;
   /** Agent-based epilogue rounds run after the scripted beats (default 3). */
   readonly abmRounds?: number;
+  /** Overrides the genesis research bounds (normally taken from the experiment manifest). */
+  readonly researchBounds?: ResearchBounds;
 }
 
 export interface FirstForkMarkers {
@@ -61,7 +63,8 @@ function must(r: ExecutionResult, what: string): void {
  */
 export async function runFirstFork(options: FirstForkOptions = {}): Promise<FirstForkRun> {
   const seed = options.seed ?? FIRST_FORK_SEED;
-  const { state, keys } = buildGenesisState(firstForkGenesis(seed));
+  const config = firstForkGenesis(seed);
+  const { state, keys } = buildGenesisState(options.researchBounds ? { ...config, researchBounds: options.researchBounds } : config);
   const world = World.found(state, SCENARIO_ID);
   const runtime = new AgentRuntime(world);
   const session = new ResearcherSession(RESEARCHER_ID, world, runtime);

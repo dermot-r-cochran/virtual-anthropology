@@ -98,7 +98,7 @@ export class HeuristicMind implements CitizenMind {
       const kind = rng.pick(ARTEFACT_KINDS);
       const place = rng.pick(roomNames(s.residence));
       return wrap(
-        { type: "CreateArtefact", authors: [s.id], island: s.residence, kind, title: `A ${kind} of ${place}`, body: `Composed by ${s.name}, ${s.occupation}, about ${place} (tick ${obs.tick}).` },
+        { type: "CreateArtefact", authors: [s.id], island: s.residence, kind, title: `${/^[aeiou]/.test(kind) ? "An" : "A"} ${kind} of ${place}`, body: `Composed by ${s.name}, ${s.occupation}, about ${place} (tick ${obs.tick}).` },
         "cultural expression",
       );
     }

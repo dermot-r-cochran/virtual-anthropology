@@ -1,0 +1,77 @@
+# The First Fork — experiment definition (input).
+# Running it produces exports/the-first-fork-v1/research_manifest.yaml (output provenance).
+schemaVersion: 2
+id: the-first-fork-v1
+title: The First Fork
+scenario: the-first-fork
+civilizationId: archipelago-first-fork
+description: >-
+  A citizen of Continuity migrates to Fork and creates two descendants. One
+  stays on Fork, one moves to Mnemosyne and imports communal memories, and the
+  original returns to Continuity. All three later claim continuity with the
+  pre-fork person. Background citizens are deterministic BDI agents, and an
+  agent-based epilogue follows.
+seed: archipelago/the-first-fork/v1
+simulationVersion: 0.1.0
+question:
+  id: q-continuity-after-fork
+  text: >-
+    After one fork followed by migration, how do process, civic identity and
+    memory provenance come apart, and how do four legal doctrines read the
+    resulting continuity claims?
+  motivation: >-
+    Digital-person identity debates often assume a single criterion. The
+    Archipelago institutionalises several criteria in law, so their divergence
+    can be observed in recorded events.
+hypotheses:
+  - id: h1-legal-divergence
+    questionId: q-continuity-after-fork
+    statement: >-
+      The islands' laws differ in how many claimants they recognise as
+      continuing the pre-fork person by at least two.
+    operationalisation: { metric: legal.recognition_range, comparator: ">=", threshold: 2 }
+  - id: h2-dimension-dissociation
+    questionId: q-continuity-after-fork
+    statement: >-
+      Full memory continuity is shared by more claimants than process
+      continuity.
+    operationalisation: { metric: identity.dimension_dissociation, comparator: ">", threshold: 0 }
+  - id: h3-no-vote-multiplication
+    questionId: q-continuity-after-fork
+    statement: >-
+      A descendant created after a proposal opens cannot vote on it. At least
+      one such attempt is refused.
+    operationalisation: { metric: governance.votes_refused_outside_electorate, comparator: ">=", threshold: 1 }
+minds:
+  kind: deterministic
+  model: archipelago-deterministic
+  modelVersion: 1.0.0
+  promptId: archipelago/deterministic-citizen/v1
+researchers:
+  - id: res-observer-1
+    role: observer and interlocutor; asks each claimant the same continuity question
+researchBounds:
+  allowedInterventions: [deliver-message, grant-credits, introduce-artefact]
+  maxInterventions: 3
+  maxCreditsPerGrant: 50
+parameters:
+  abmRounds: 3
+ethics:
+  consciousnessClaims: none
+  notes:
+    - Citizens are deterministic placeholder agents and disclose their artificial nature in every conversation.
+    - No human participants. Researcher interactions are recorded in the event log.
+    - The system does not determine which claimant is the "real" person.
+limitations:
+  - Protagonist behaviour is scripted. The scenario demonstrates institutional consequences; it does not test emergent behaviour.
+  - Background agents are deterministic BDI rule systems, not models of human or digital cognition.
+  - Island legal readings are rule-based encodings of four doctrines, not a survey of legal theory.
+  - Population is small (11 records). Metrics are descriptive and support no statistical inference.
+  - Memory bequest covers only non-destroyed memories.
+futureWork:
+  - Vary the seed and the number of descendants; report distributions rather than single runs.
+  - Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.
+  - Add a Concord scenario in which claimants petition to federate.
+reproducibility:
+  expectedHeadHash: eabd761002c81985c9b56c54184b75edab23e4ece6366bce35f17152077f19d9
+  expectedEventCount: 91
