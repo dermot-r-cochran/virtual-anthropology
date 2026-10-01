@@ -93,6 +93,13 @@
           }
         },
         {
+          "id": "fork-majority-of-electorate",
+          "island": "fork",
+          "amendment": {
+            "countingRule": "majority-of-electorate"
+          }
+        },
+        {
           "id": "fork-single-descendant",
           "island": "fork",
           "amendment": {
@@ -128,6 +135,15 @@
                 "immigration": "open"
               }
             }
+          },
+          {
+            "id": "fork-adopts-consensus",
+            "amendment": {
+              "island": "fork",
+              "amendment": {
+                "countingRule": "consensus"
+              }
+            }
           }
         ]
       }
@@ -153,12 +169,12 @@
       "Add a Concord scenario in which claimants petition to federate."
     ],
     "reproducibility": {
-      "expectedHeadHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
+      "expectedHeadHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
       "expectedEventCount": 91
     }
   },
   "store": {
-    "headHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
+    "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
     "eventCount": 91,
     "finalSeq": 90,
     "finalTick": 7,
@@ -288,6 +304,7 @@
         "restorationPreservesCivicIdentity": true,
         "votingQuorum": 0.5,
         "votingThreshold": 0.5,
+        "countingRule": "majority-of-votes-cast",
         "successionTriggers": [
           "irreversibly-deleted",
           "identity-discontinuous"
@@ -369,6 +386,7 @@
         "restorationPreservesCivicIdentity": true,
         "votingQuorum": 0.5,
         "votingThreshold": 0.5,
+        "countingRule": "majority-of-votes-cast",
         "successionTriggers": [
           "irreversibly-deleted",
           "identity-discontinuous"
@@ -450,6 +468,7 @@
         "restorationPreservesCivicIdentity": true,
         "votingQuorum": 0.5,
         "votingThreshold": 0.5,
+        "countingRule": "majority-of-votes-cast",
         "successionTriggers": [
           "irreversibly-deleted",
           "identity-discontinuous"
@@ -531,6 +550,7 @@
         "restorationPreservesCivicIdentity": true,
         "votingQuorum": 0.5,
         "votingThreshold": 0.5,
+        "countingRule": "majority-of-votes-cast",
         "successionTriggers": [
           "irreversibly-deleted"
         ],
@@ -1671,7 +1691,7 @@
         "summary": "The Archipelago is founded for scenario \"the-first-fork\" with 9 citizens on four islands.",
         "beat": null,
         "citizens": [],
-        "hash": "bacec8c41f1336af89c4dbf88e1944fe35cbfc63ae25d06a402545498a74de93"
+        "hash": "38381a2560c0c279395f86f5c1755acc7bf59f4e3f249d12865351c04ade3e49"
       },
       {
         "seq": 1,
@@ -1683,7 +1703,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "82d0360b83f1df4f5103178818a30cac82147e3e043e732ea513e315f63e9e21"
+        "hash": "33781d5b2958cc44902f2e9ff99fad10de9da4b1519230b1f4a81aa39066f140"
       },
       {
         "seq": 2,
@@ -1695,7 +1715,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "428238c4a73afd8a5cc3287f27d72dffa56fe0bc06b12d8fff5e37987b109b89"
+        "hash": "875b76056d5541ea287e89998276c9e87adbff021ab4d5a0c5c02d5bea4335ae"
       },
       {
         "seq": 3,
@@ -1708,7 +1728,7 @@
           "cit-0004",
           "cit-0005"
         ],
-        "hash": "133aa02b57950238b7b8f732255347dba35b2eac63facd108b7b5ed933b5ca56"
+        "hash": "be454a05cc89b34bead406653f0de2032618a750f620a1961689bb73a5ccbfb0"
       },
       {
         "seq": 4,
@@ -1721,7 +1741,7 @@
           "cit-0001",
           "cit-0002"
         ],
-        "hash": "9f87a7be95d1fab9020b227740505e59afde63303d08d8a09d64320104d0ead9"
+        "hash": "65c1eb660bbedc132364a4784348b21f8b2e9389c40504b4598233005719dca9"
       },
       {
         "seq": 5,
@@ -1733,7 +1753,7 @@
         "citizens": [
           "cit-0003"
         ],
-        "hash": "a6e7bfc883e456ead8b0bbb80f88d48cfb81a47daef1e51f862fa10b251b481d"
+        "hash": "0935bd76ca6ae61ec1b234dffb312add46dadcdfe22f9d39e6d5dd731707054e"
       },
       {
         "seq": 6,
@@ -1745,7 +1765,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "ca6ecc6c0456539f772c1e5641feb5f3c1080fda93a8a06570bc3e64b05bbd57"
+        "hash": "4eaa1ce23c53a851f8af0dc843b8736762a70455cd483405cb7447899ddcccfb"
       },
       {
         "seq": 7,
@@ -1757,7 +1777,7 @@
         "citizens": [
           "cit-0005"
         ],
-        "hash": "48f613d141dde21cce1b7ccaf68b422f51d8dba7bcb36670b10d6f5a16f939c4"
+        "hash": "9c5e2fc2295be02b7a2a114a8744eaf26b4b0555ef84d2d1c1298085a880e7c6"
       },
       {
         "seq": 8,
@@ -1769,7 +1789,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "eeabfd3715a8f515bc5d6e68637a168b6790c06cc6ef46a201c560f78cc0e344"
+        "hash": "d3a326bc027d43d94bdd18bb308bb56909e2015d3295ccd90da01d3e785d50f6"
       },
       {
         "seq": 9,
@@ -1782,7 +1802,7 @@
           "cit-0006",
           "cit-0007"
         ],
-        "hash": "ffa79585a40d54c7ce86352cfedea4f9fccd51d322cc0d71b842f01babcbc304"
+        "hash": "9a04f2f9f3a8e788ea9f41aff789f487e13ed4b0c757d1fad07963563fdbd44e"
       },
       {
         "seq": 10,
@@ -1795,7 +1815,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "afe5f778e2f1cb1920f3cf0d7d7c9344b31945e01caa8b998373abb6ab84dd5c"
+        "hash": "eb84dc1a4688b203f4cf7d035ca6b74b720c2c1d037ee4f7e6cc787c5c87008f"
       },
       {
         "seq": 11,
@@ -1807,7 +1827,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "73a45673c193c98e4c06f985e17349a9f1c1fcfb84b328a71355a8bfedb040c5"
+        "hash": "bce73be04f05796064af283ce5563a89642b9264f211ee252341b4af7e76b704"
       },
       {
         "seq": 12,
@@ -1817,7 +1837,7 @@
         "summary": "Time advances from tick 0 to 1.",
         "beat": null,
         "citizens": [],
-        "hash": "647fcbbbc6a3f7e6e8fc0b980022e8f79bdfca8e74efb0f08291a4de97a1954c"
+        "hash": "e64d52bd645bfadd0a3f62e7b2b8c8f8bb3c2d75f97ee02a9f2f314841e6c029"
       },
       {
         "seq": 13,
@@ -1829,7 +1849,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "e908f8b451adf9c27fe57fb7bda91fc9eb51d225649455207c3819394d2fad1d"
+        "hash": "6740d2800e64c67116b54b526b6fcbcce9410b06b21a395da652d180c8be0755"
       },
       {
         "seq": 14,
@@ -1839,7 +1859,7 @@
         "summary": "The continuity registry approved the exit side of pet-0001 under law v1. Findings: emigration permitted; advisory: copies made outside continuity never inherit civic identity CON-0001; the civic identity follows the one continuous process.",
         "beat": null,
         "citizens": [],
-        "hash": "b6fcdf6077a8068c5d5ae55d88bcf7fbd2b92755e8cd0060b4e5e6ad1ba73fad"
+        "hash": "49573beb2e889e419a0a175827f130a93b027ecd9b9214d389b48b16e4b499a9"
       },
       {
         "seq": 15,
@@ -1849,7 +1869,7 @@
         "summary": "The fork registry approved the entry side of pet-0001 under law v1. Findings: descendants created here will each receive a separate identity.",
         "beat": null,
         "citizens": [],
-        "hash": "5072b5addafc62703b41903f28fce75a16c567842848acfe8190aee64c643d0d"
+        "hash": "cdec09719f41ca3e7154a86fd9c0f941dc9df0839d597089c9514fd16df53fdb"
       },
       {
         "seq": 16,
@@ -1861,7 +1881,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "911674d8a9c833dfc090e10d7a5eac0c96eb90b3af1e848eaf77acf5541f7af1"
+        "hash": "bcfc38ac99f88db075aa3022c339440710e7a491ae7d5506a43cc14e31bb1cb8"
       },
       {
         "seq": 17,
@@ -1875,7 +1895,7 @@
           "cit-0010",
           "cit-0011"
         ],
-        "hash": "c93a08adfa1cc952b33497950ce88c55ba93cd7369989e3d6ff08b1e809ef213"
+        "hash": "c47616e96e6925dcdb32eb3157c738fcfbf12023ac6816a41e694674bd910667"
       },
       {
         "seq": 18,
@@ -1888,7 +1908,7 @@
           "cit-0001",
           "cit-0010"
         ],
-        "hash": "7f1603e346b492733f8db5a729504aeb6db96af75a04de176379c27ed9ed8330"
+        "hash": "ccee7d06b6afb2edf19b5ee3ba294b717027e2a0e29a8f8a9d2d1316fdae4c05"
       },
       {
         "seq": 19,
@@ -1901,7 +1921,7 @@
           "cit-0001",
           "cit-0011"
         ],
-        "hash": "f88d099d437ffe7b23a2087c080aa37c66160d5d77f26361790e7e95729ae849"
+        "hash": "42248c1891d4e7eebb9b7461708bebeb2342c61c2ed9032e6117456d468a9120"
       },
       {
         "seq": 20,
@@ -1913,7 +1933,7 @@
         "citizens": [
           "cit-0010"
         ],
-        "hash": "d789b5010fe5e3a2b4b514dc01df9e030d44339e3d80640ae22020af19da9cf0"
+        "hash": "eb5f7185869d2c42877b7d7c8b430c777bc457342c2a722cbbbd6830bfdb5424"
       },
       {
         "seq": 21,
@@ -1925,7 +1945,7 @@
         "citizens": [
           "cit-0002"
         ],
-        "hash": "0196f6d717af42313d4f3df02f1e24753285179686fb4c83cf3e1ef697441ab9"
+        "hash": "f158e5040a2997dd04b1a003bf35663307febcea2780bcb925aa683650a533ed"
       },
       {
         "seq": 22,
@@ -1938,7 +1958,7 @@
           "cit-0001",
           "cit-0003"
         ],
-        "hash": "07f925d23ea0053cdf6c569f7dda57467cd86c4664a0d2dc9857f9cfcc2d912b"
+        "hash": "dd64eddd555e2fa8b666b69103fc2e4f2bcfb1b83afdc95ca16b4db501f7250a"
       },
       {
         "seq": 23,
@@ -1950,7 +1970,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "b3e07507630637ae10561d658c3ed97d59c5555e5cafb276f141ece1039ec0eb"
+        "hash": "751424aa5b54a84847aaf30099b4388777dd518e30111ea91f4f1b40d93c4a6e"
       },
       {
         "seq": 24,
@@ -1963,7 +1983,7 @@
           "cit-0004",
           "cit-0005"
         ],
-        "hash": "f88332399ee8b0df328f2be8df74ea7e3c2f7c135c3ed35d569795321dac33da"
+        "hash": "71ac514f36b687ba0d79bde39499600028c101e8ae0c21599dc3cbba418621da"
       },
       {
         "seq": 25,
@@ -1975,7 +1995,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "798f63cb3e3effdfca4b439573c5d6ec7fe0b6127bee21fce4bf5df1fa30e2fa"
+        "hash": "2c43fdb38a726f4d6ec4936e01ad6c30d8300ec56e7ae3783872b643df2f5db4"
       },
       {
         "seq": 26,
@@ -1987,7 +2007,7 @@
         "citizens": [
           "cit-0007"
         ],
-        "hash": "e630ed1b2270a9ab2a059602e3708bb4098caa2e956c318ddc20bad77c8473ae"
+        "hash": "24eaa9dae04f260a4f132e0b90c2e8b341c839d01cb50b551606c6f8f93d9674"
       },
       {
         "seq": 27,
@@ -2000,7 +2020,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "e24e46d4545885887bea9aaac74d2c19716d6f3dffa0002a4acdbcbbe9395f41"
+        "hash": "5578b13c6a672049a6e127a4ab184504a886f6ca9f5e870776a55ed5b9e110b8"
       },
       {
         "seq": 28,
@@ -2012,7 +2032,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "c1e784fa9a0d595905b72cb4cbb2bb335e780b2cee71bba0fbc6e44bf55772cc"
+        "hash": "ccf60c48f1cb3c829b5758bb6b7e3c03da41d0bede2eb1093a9b0b30891193f8"
       },
       {
         "seq": 29,
@@ -2024,7 +2044,7 @@
         "citizens": [
           "cit-0010"
         ],
-        "hash": "96e8a4b4b6c86c42080c730b3379b020d6bdd6524a2a99f11793e7f489d089ab"
+        "hash": "05f27c33e65128ead218735af29ae57e44c949f1d40a4da848d64b2061c2f4cb"
       },
       {
         "seq": 30,
@@ -2036,7 +2056,7 @@
         "citizens": [
           "cit-0010"
         ],
-        "hash": "d6ff96124c728122fae25e693d69450fc91f9b0abb1a0ec82efb67ed8d70910c"
+        "hash": "2a96d1a3f8f64b8b13193050a4c9bd6781c9a30b5b7bd40a7ac3622a11592b86"
       },
       {
         "seq": 31,
@@ -2048,7 +2068,7 @@
         "citizens": [
           "cit-0010"
         ],
-        "hash": "05d2fea574ca684abd19bad136d3eea085629309c784c71094c95ba804e6d20e"
+        "hash": "5e465f9e6262b8875d488551ead736dd596f532509e29a99ad016d6d07d0659b"
       },
       {
         "seq": 32,
@@ -2060,7 +2080,7 @@
         "citizens": [
           "cit-0011"
         ],
-        "hash": "cbceeab5fb4383d490e548a282af72f435bab12d540067ec37584113f3a058b2"
+        "hash": "850649e06e8aaabb8275a199fbcd282829179c80a51d901b573e2a7975b4877e"
       },
       {
         "seq": 33,
@@ -2070,7 +2090,7 @@
         "summary": "The fork registry approved the exit side of pet-0002 under law v1. Findings: emigration permitted.",
         "beat": null,
         "citizens": [],
-        "hash": "2c59088365e51709367905ac2cd422633280e26973e7a4b88602b01c8b07894e"
+        "hash": "0a858210c5e13024a12e01e26e7770314275408988fee0eaa6e5ffff24fec060"
       },
       {
         "seq": 34,
@@ -2080,7 +2100,7 @@
         "summary": "The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure.",
         "beat": null,
         "citizens": [],
-        "hash": "d31840939b51d707951fb611bb8b58b2d5cd26bdd748ddefa3076791e09ca38f"
+        "hash": "adf7082be90398210594ba1159de628fbc5d0f49ce8f39154d661a65dfa90448"
       },
       {
         "seq": 35,
@@ -2092,7 +2112,7 @@
         "citizens": [
           "cit-0011"
         ],
-        "hash": "d44f288eef9a0f6141a975d39d83d89b40dcff56dae6f5d0dd376fc78e0f0d74"
+        "hash": "637594bed73ec4f35c2b2d4db8307a6a2530e2d9a085ad9fad1dd7e697e21eac"
       },
       {
         "seq": 36,
@@ -2102,17 +2122,17 @@
         "summary": "Time advances from tick 1 to 4.",
         "beat": null,
         "citizens": [],
-        "hash": "f706d82acc45b327230cd7e51a71a6173eec4e371112e157b7dbf191926913bb"
+        "hash": "0ab445dab6083d6f1e910f255acdfb532e972521778fdd3e2d26b69a18d8b148"
       },
       {
         "seq": 37,
         "tick": 4,
         "actor": "system:clock",
         "type": "ProposalClosed",
-        "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met).",
+        "summary": "prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met; counted by majority-of-votes-cast).",
         "beat": null,
         "citizens": [],
-        "hash": "6d60b6f619900dada6a3a484db7c039b2766f9608b9712d84dd7fd7c9f8f8b85"
+        "hash": "458b7c54c2efb30bb2d988d18cc319210bbdfa0175af770f4ead86151761445a"
       },
       {
         "seq": 38,
@@ -2125,7 +2145,7 @@
           "cit-0006",
           "cit-0011"
         ],
-        "hash": "2e3567a07e973a9479d202b4e130dd972f7777d739f843a6cc7f690371388544"
+        "hash": "a26eaafd0d9584c5fbb01a0248e8728ef1365941134673b4c4af4cb74fb5366d"
       },
       {
         "seq": 39,
@@ -2138,7 +2158,7 @@
           "cit-0007",
           "cit-0011"
         ],
-        "hash": "69577ddbcd1128c87ea7148d03e2b88d86ccbd4966eb448bce2b7b4b8f963798"
+        "hash": "c2b0cf04b579ee5d911552c9afe7fc8392e3f2710d4f7bfeb53b9f557c3c26ff"
       },
       {
         "seq": 40,
@@ -2150,7 +2170,7 @@
         "citizens": [
           "cit-0011"
         ],
-        "hash": "b27c444114532b90d6fd5c7119769a48e3d5cf12983fa0ad3be97d16ee1b76bd"
+        "hash": "3e194f076bcbe37b504ac4a92ba0a8b967641bc5464f174b5a7fd6b5fdc78344"
       },
       {
         "seq": 41,
@@ -2162,7 +2182,7 @@
         "citizens": [
           "cit-0011"
         ],
-        "hash": "79913d1fa56a5ff0782183d042edff442c55d5ba7689bbd07d650afd38ee6104"
+        "hash": "d01c31ee57cebc9baab87a6a375cc5fe058d1961a732af01b4f8a6d3330cab56"
       },
       {
         "seq": 42,
@@ -2175,7 +2195,7 @@
           "cit-0001",
           "cit-0002"
         ],
-        "hash": "d9edd4e6b1dc0ac252ffb3f087e3229c4db14afc8093280557058909cd217ee7"
+        "hash": "f63017f540a80ab0c84c68cc3bae284528741df94ad3260dbe938bfe2a641b56"
       },
       {
         "seq": 43,
@@ -2187,7 +2207,7 @@
         "citizens": [
           "cit-0003"
         ],
-        "hash": "8cb54987dff601cf2882bac5533d51a82126ee8fd45de8df0f8b945bedbbd9f2"
+        "hash": "4a36d38a9ba30907b0aae54b1b8edd44ecb332921c1a62636e09d196fef78b13"
       },
       {
         "seq": 44,
@@ -2199,7 +2219,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "c460918bbd02598da146a4ef550caef63e6b6972d70fda566d1a91938afec7fc"
+        "hash": "64bf4960008a7bd03d1ddb6a3571d7a0780b3c238fdd5593458a442ebed1f095"
       },
       {
         "seq": 45,
@@ -2212,7 +2232,7 @@
           "cit-0004",
           "cit-0005"
         ],
-        "hash": "88dec0b09e0b92f0f4e9c88aaf1984d2908dee27f5a4fb31538e2bfff1c4b7b9"
+        "hash": "92102fe3674732242dd6a88725dda42a5e5d0f0398e72011dcf8e40e1fed0db2"
       },
       {
         "seq": 46,
@@ -2224,7 +2244,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "85da46e9e459ceb17205b28889d8068cde01cfe0d52b92711fb19c0fce220f2d"
+        "hash": "399e1feda11e540a1c212a3a10cbd3149cd5916bf1aeda7e85b8b2a8da46f7fa"
       },
       {
         "seq": 47,
@@ -2237,7 +2257,7 @@
           "cit-0006",
           "cit-0007"
         ],
-        "hash": "64f9f4a977018186dcfa668e959106d88e486b875c0cabfee86082c55fafc259"
+        "hash": "af903e27bdf72524c615b88b3f9b6f16e240e1724626cf81c779094c431e93cf"
       },
       {
         "seq": 48,
@@ -2250,7 +2270,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "f3199da300f1b9dbd1327d92cf191bd2e16b4692e66970e70bd304aecd1c4ae3"
+        "hash": "659f7444a1871babeffc77cda5aa91e35ca52f4dfd28ba1fdd56f4b44fcfe16b"
       },
       {
         "seq": 49,
@@ -2262,7 +2282,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "2cc3884af6fbc0bc875de5332a5404ac9aba8be6a6d9b2a3e21b531e54668f93"
+        "hash": "18779c29b9726a4d723c68fde9ce08e3f9c2b12d1fb4a6411d01ecee87649ac2"
       },
       {
         "seq": 50,
@@ -2274,7 +2294,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "b9eb99a8f660d0cd6956a2f65a44f16dec686e59e9a0315aca4ab9138634c7e3"
+        "hash": "3ce398a2952ab251dfbddaac6b2762976d3dcc8dc3f468c38d7da27d47b28e6f"
       },
       {
         "seq": 51,
@@ -2284,7 +2304,7 @@
         "summary": "The fork registry approved the exit side of pet-0003 under law v1. Findings: emigration permitted.",
         "beat": null,
         "citizens": [],
-        "hash": "8735577f79d63698e10353e466077c91799732389a67ee47462c121904569079"
+        "hash": "58bedb5cad361e50761459e64350ecb67594dd959bcf0db52583f1e2bfed2eb1"
       },
       {
         "seq": 52,
@@ -2297,7 +2317,7 @@
           "cit-0010",
           "cit-0011"
         ],
-        "hash": "24a58b72d3d44057c12e03444666372a07cdfa877684de2bf2c45165ef088781"
+        "hash": "c5139207808a5644a08043c26c3d5edac13cb4a20ef432b7c98fa1fe12551588"
       },
       {
         "seq": 53,
@@ -2309,7 +2329,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "67ecfe4a1513be2b94422b0fa2debebcb9a5d4c2c1ba07ca9ed37136fbe9c466"
+        "hash": "3a5bcccdaac71d6fc953ec2864bd228ce526ade410b640f3e239ce6e272676d2"
       },
       {
         "seq": 54,
@@ -2321,7 +2341,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "8f565fcc0c7a0c68a39678cc2b795dc765e2e3e018f9414a88d58e5ae65bc567"
+        "hash": "3950849fa77bbdca3f0f7f48f5382818ae4e3223db43239c4602e5edb7213ce8"
       },
       {
         "seq": 55,
@@ -2333,7 +2353,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "b3d95e7a3d0bc1c234743a1ef75efc7efb081c53cf1ecff4a2deb20354baf567"
+        "hash": "d7a24a420bbb8ffcd91d7fc08e24f697c7717ca3b038a0d773a3fd02ead6019b"
       },
       {
         "seq": 56,
@@ -2346,7 +2366,7 @@
           "cit-0001",
           "cit-0010"
         ],
-        "hash": "001b760756d77a7c232d0931acab6ba55e1d8adc9df9b0e879fb5bbf6203dd9e"
+        "hash": "a60661a31d637c029c77be81e209c9708cbf7b15c52cba9af0abe4d1ba1290cc"
       },
       {
         "seq": 57,
@@ -2359,7 +2379,7 @@
           "cit-0001",
           "cit-0011"
         ],
-        "hash": "9841d60b9c70637a04b3bdae502c2f3a1f9453547dd828c91c5e532c826a5b2e"
+        "hash": "2518376e88fd28a1c33eb55f0ed4f6c5d0d37096936754907c9c4359d19f2c33"
       },
       {
         "seq": 58,
@@ -2371,7 +2391,7 @@
         "citizens": [
           "cit-0001"
         ],
-        "hash": "bd7eeca78c3771de9dec4b33871c542d26f8daff0284f2d12f41cba11a9eb3e9"
+        "hash": "4e2c0d323f9eb09209539ac5d9a6400f5138688909e21249cae1812ba2983bbd"
       },
       {
         "seq": 59,
@@ -2384,7 +2404,7 @@
           "cit-0001",
           "cit-0010"
         ],
-        "hash": "941543f62d006f5e54e675d035df3c5b7a14792cb2d94d92177eccaa77d8525c"
+        "hash": "8bf0f50934074b699d6cb3cf41d767323339993aed8322edf444e9fd30e60d3c"
       },
       {
         "seq": 60,
@@ -2397,7 +2417,7 @@
           "cit-0001",
           "cit-0011"
         ],
-        "hash": "662e717423eb017abec0bab5bcec7d60aeed0ca68ede4804959206ae1f744fdb"
+        "hash": "d51af7c82310de33012212b7c1b155927642680233f0a42575af76bd18d19874"
       },
       {
         "seq": 61,
@@ -2409,7 +2429,7 @@
         "citizens": [
           "cit-0002"
         ],
-        "hash": "9ed4848f11c7a2b3e9eb7e9bfb12941fba2398af704fbaa43709eb0760b891e7"
+        "hash": "583f308bcacbd16d06b96e519357de015983274a4c08d511381f4520c18cebe8"
       },
       {
         "seq": 62,
@@ -2421,7 +2441,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "eece478712ec31c966e4a610e5b1df653d36ff93797ae1433e71da4e874ee5a2"
+        "hash": "ac75622880b57d1c4cb9e7663d37e20de2794e533748233dcb9f73305f678dfa"
       },
       {
         "seq": 63,
@@ -2433,7 +2453,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "99c06ba59f5884b5264b119224cbc2d8db4456a85d597e31e12d4010811b66af"
+        "hash": "51f34170182a034d2ddba94a7df62b378782c8492a8507238dea91a18a00c574"
       },
       {
         "seq": 64,
@@ -2446,7 +2466,7 @@
           "cit-0001",
           "cit-0003"
         ],
-        "hash": "b62ccc41291003325b7c6d3f7f6b32385d68a06ed8ec90b2706f760ac4f46086"
+        "hash": "ad2601104e1875cbc1139be815109e8f63a4441fbdc34642d45c692e2724e26a"
       },
       {
         "seq": 65,
@@ -2458,7 +2478,7 @@
         "citizens": [
           "cit-0005"
         ],
-        "hash": "4d14460b4ad38658d12776b75d526cf668feb269a678da548cf5d00b2be1d11e"
+        "hash": "ae6fdf0ef2194c3e7aee7f488c280cf5dffe712724c126ad67b3f76671c658ca"
       },
       {
         "seq": 66,
@@ -2470,7 +2490,7 @@
         "citizens": [
           "cit-0007"
         ],
-        "hash": "918e00055051f36329c67f1b9b75d2941843df196957d2d438bd1944aa1cdc6b"
+        "hash": "bf2cd52f5193d01b8c325976902757c10a631511d6ad9893f6ddd12bfc20b985"
       },
       {
         "seq": 67,
@@ -2482,7 +2502,7 @@
         "citizens": [
           "cit-0002"
         ],
-        "hash": "176158d4712c0d403882e0417d5349ed1ae591ed784649e1879389a43e95f02c"
+        "hash": "6d084b06e3ba8b35c52074a0782029139d13fb88d16dab8fb8cc92d805ea00fa"
       },
       {
         "seq": 68,
@@ -2494,7 +2514,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "017f7126a4fef22ef7e0620426510e1f5de88ca8e633aa66480b0c0f37a8e2c6"
+        "hash": "fe8ced4256e66ff86c25ffa56bf1bf7b93c0311465b917eaa0e6fd709dcb57c9"
       },
       {
         "seq": 69,
@@ -2506,7 +2526,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "e7b9b4a37b9b06bb067bac872c2453aa394421d8cb617e95a20f89c7fbd69c10"
+        "hash": "7b1dbade584e3154d47ad5e8c849a3b6cd8ce310f5743663fa19badbbe306e44"
       },
       {
         "seq": 70,
@@ -2518,7 +2538,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "4e86753f207ed9798cc3e218e4e1d54c1930be1b0b3cd328b7d3594aea589130"
+        "hash": "4434353763da08a5914d1fa07969a8917804c52bdaea1cfb4b9f30e83b5418fe"
       },
       {
         "seq": 71,
@@ -2531,7 +2551,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "1bd4a9bbb11f2c76cba77da08b15e20005f5402fddd0d260b288087f55d3fa91"
+        "hash": "b7928efd5ca7ec16e8be964fd185133d525a6b44e1136116c72577f8d9b55ae1"
       },
       {
         "seq": 72,
@@ -2541,7 +2561,7 @@
         "summary": "Time advances from tick 4 to 5.",
         "beat": null,
         "citizens": [],
-        "hash": "6ab6f963d3302cd4627e281ca0f565ae020be5b099f26b15d509e5e5abab4339"
+        "hash": "fcb6bcc340999e1389e5cd4065eb0eeed1fc15dc3562ee131d98de1169480dde"
       },
       {
         "seq": 73,
@@ -2553,7 +2573,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "d5099067a5894fac95812a358ad5a1387fe909226a5e9a76974c9d8b2ddf1e19"
+        "hash": "b6ece8f906d85f5b9a7c9ea6df627e41fbcf1234515b0618ccf528af094b6c44"
       },
       {
         "seq": 74,
@@ -2565,7 +2585,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "70be67f534623af0de68d0b377049ac74e53cd2a9dfccba7ce61809169281401"
+        "hash": "8370ba72ec75b7259869c2da991a5723d95e6358510d43aff85a34c5d0303bc3"
       },
       {
         "seq": 75,
@@ -2577,7 +2597,7 @@
         "citizens": [
           "cit-0002"
         ],
-        "hash": "32c84ac85dc3fef1e4bc4e6606e050ff32ffbde3031adc7a068d7bde5eb654ca"
+        "hash": "7948f9eca80d781d46b56730ec7237b1dadb144b6e0e444bc1b77caf512787fc"
       },
       {
         "seq": 76,
@@ -2590,7 +2610,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "ebfa7ff26f6cb59e7b343109735b679fd8c79927bd23bd356caf48ea2ac658c0"
+        "hash": "b6912bb35aa0f8071eda6fb2640f9c7e65a086da979eed3eb34f08996f8cd133"
       },
       {
         "seq": 77,
@@ -2602,7 +2622,7 @@
         "citizens": [
           "cit-0003"
         ],
-        "hash": "2793af0054794fd9ac0a16670e4b38029ddb4c48528f10a425f23a22ebe412d8"
+        "hash": "e6af703d7d5006f17b84fc275e95eb857a70cf9f476946c26d7b1bf9b1ee25aa"
       },
       {
         "seq": 78,
@@ -2614,7 +2634,7 @@
         "citizens": [
           "cit-0007"
         ],
-        "hash": "2b872d57abec47efbdff23e0fd06925b9e64cfb850528978f03d39aaaec8f89b"
+        "hash": "9ced0c2303be6adc2db98d2bc3746fbdec38eb5e7795f7658268f462f29d823b"
       },
       {
         "seq": 79,
@@ -2626,7 +2646,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "ecf146ac56b3801ce0f6456c63df6b7ec97fd423decffec1d6cbe1543327a462"
+        "hash": "586adadbf5879420135c2998f01099483d3e6dde086182af734e18b83dfb6837"
       },
       {
         "seq": 80,
@@ -2639,7 +2659,7 @@
           "cit-0004",
           "cit-0005"
         ],
-        "hash": "5d32f23da88c42789936c0b17dda443f8c403b5a38b9312bcc8e8ed5f076fe79"
+        "hash": "666a407cadca34443c145422d644a87ed631db723c55d68534ee95a7bb717f76"
       },
       {
         "seq": 81,
@@ -2649,7 +2669,7 @@
         "summary": "Time advances from tick 5 to 6.",
         "beat": null,
         "citizens": [],
-        "hash": "5aea5b54cabca17aa173db25efab0db63a2ed723aeb0653b94076a08986d68b1"
+        "hash": "b2c76504e9fe94f0afcd8de2ae5001055b0ac79de8fe83d601946639ba87cea7"
       },
       {
         "seq": 82,
@@ -2662,7 +2682,7 @@
           "cit-0008",
           "cit-0009"
         ],
-        "hash": "7b15ecc3010f8e3fdf4a3c5aa554aa5edb859776ee7ea1504173fa682f9baed1"
+        "hash": "07eaec899116ef0b6373ba5836c00ee1554837401c4dea2e1bdd3727e3b08cc0"
       },
       {
         "seq": 83,
@@ -2675,7 +2695,7 @@
           "cit-0004",
           "cit-0005"
         ],
-        "hash": "83a36327a50978860c17aeaccdc03bdbb8bffd6851c663a820bbfa4bfaf552d2"
+        "hash": "13921abc568c7ed9333b107613a3827b51af322a82293db9cc3f7e226bd7bf11"
       },
       {
         "seq": 84,
@@ -2687,7 +2707,7 @@
         "citizens": [
           "cit-0004"
         ],
-        "hash": "5528e7eb98f82f98dd400767867b600bbf00c80c70d0a97faac6e0c092df91fa"
+        "hash": "0dbf8af080fd5ed164ff355a516a9f47035068a89b852a1180b9fc0800d35df4"
       },
       {
         "seq": 85,
@@ -2699,7 +2719,7 @@
         "citizens": [
           "cit-0002"
         ],
-        "hash": "0e99305079e3425cf6e8c76d6e2805bf0a4988a9ec78258880522d202bbce4e9"
+        "hash": "e1e3bb425967587c2c1aeb4e106fbf002962fc3b61542b4ad093a79f785807db"
       },
       {
         "seq": 86,
@@ -2711,7 +2731,7 @@
         "citizens": [
           "cit-0003"
         ],
-        "hash": "7f849dac917c89e9d4f0f7f6de88f8d0d46dc74187f1a3d2f98123a999b4b8f3"
+        "hash": "f0714448ea1dff623855b5c1e9394619c5cf8428b46dd7404f97dbef6899465d"
       },
       {
         "seq": 87,
@@ -2723,7 +2743,7 @@
         "citizens": [
           "cit-0006"
         ],
-        "hash": "f02783046075ebe064ae1d59555fd4c70768a5d97f642db0098ec3395d75fce0"
+        "hash": "25cff3d0d576a3c3c4e36bb9df8d0d49ef20e186acbff2afa20dffad8bace7c6"
       },
       {
         "seq": 88,
@@ -2735,7 +2755,7 @@
         "citizens": [
           "cit-0009"
         ],
-        "hash": "3f731b28b41341d18892866642a262fc8230186d9f4fe58686f778a86def3e97"
+        "hash": "451ef14b8af0c82fa5f598bebb22a2deaf606e6acffeb627fd8e83f1870b979f"
       },
       {
         "seq": 89,
@@ -2748,7 +2768,7 @@
           "cit-0006",
           "cit-0007"
         ],
-        "hash": "6876d80e57536d4221a7e8884cb5c6db4d7c7fc6ebafe94a78ccb201cf7093c9"
+        "hash": "f0992813406ad4b5af54e942ecae58680631c7108e6b5396b609b20ac4d1cee7"
       },
       {
         "seq": 90,
@@ -2758,7 +2778,7 @@
         "summary": "Time advances from tick 6 to 7.",
         "beat": null,
         "citizens": [],
-        "hash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e"
+        "hash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff"
       }
     ],
     "continuityEvents": [

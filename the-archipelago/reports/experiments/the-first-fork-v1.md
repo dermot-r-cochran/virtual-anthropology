@@ -52,7 +52,7 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | civilization id | `archipelago-first-fork` |
 | simulation version | 0.1.0 |
 | interchange version | 1 |
-| configuration hash | `58ade219ea8f5b4499aec0fd41b17b9c62dde74b49b4c28aca523459f74e5e05` |
+| configuration hash | `35981af6722c6c3ac908fff304080f2c04a4eb0bb21593dd43f0935f501971ed` |
 | seed | `archipelago/the-first-fork/v1` |
 | start timestamp | 2026-01-01T00:00:00.000Z |
 | end timestamp | 2026-01-01T00:00:00.000Z |
@@ -128,21 +128,21 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 
 _Replications of this run under the variations the manifest declares. Each is a deterministic run of its own, identified by its head hash; none is interpreted here._
 
-Base run: head `3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e`, 91 events, branch point after seq 63.
+Base run: head `10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff`, 91 events, branch point after seq 63.
 
 ### Seed sweep (9 runs, hypothesis outcomes h1-legal-divergence / h2-dimension-dissociation / h3-no-vote-multiplication)
 
 | run | seed | events | head | outcomes |
 |---|---|---:|---|---|
-| seed-0 | `archipelago/the-first-fork/v1` | 91 | `3fd167737b42…` | consistent / consistent / consistent |
-| seed-1 | `archipelago/the-first-fork/v1/sweep/1` | 91 | `59f1254303d3…` | consistent / consistent / consistent |
-| seed-2 | `archipelago/the-first-fork/v1/sweep/2` | 91 | `5d7ed94bac67…` | consistent / consistent / consistent |
-| seed-3 | `archipelago/the-first-fork/v1/sweep/3` | 92 | `980d6e2ed5fd…` | consistent / consistent / consistent |
-| seed-4 | `archipelago/the-first-fork/v1/sweep/4` | 92 | `b43de0f64ee8…` | consistent / consistent / consistent |
-| seed-5 | `archipelago/the-first-fork/v1/sweep/5` | 92 | `555c087c36f3…` | consistent / consistent / consistent |
-| seed-6 | `archipelago/the-first-fork/v1/sweep/6` | 92 | `dc944583ab61…` | consistent / consistent / consistent |
-| seed-7 | `archipelago/the-first-fork/v1/sweep/7` | 92 | `418dc094b3ef…` | consistent / consistent / consistent |
-| seed-8 | `archipelago/the-first-fork/v1/sweep/8` | 91 | `940ed590169d…` | consistent / consistent / consistent |
+| seed-0 | `archipelago/the-first-fork/v1` | 91 | `10949672d5bc…` | consistent / consistent / consistent |
+| seed-1 | `archipelago/the-first-fork/v1/sweep/1` | 91 | `0bde436fc2d9…` | consistent / consistent / consistent |
+| seed-2 | `archipelago/the-first-fork/v1/sweep/2` | 91 | `59617f2605b4…` | consistent / consistent / consistent |
+| seed-3 | `archipelago/the-first-fork/v1/sweep/3` | 92 | `3e6038d44c62…` | consistent / consistent / consistent |
+| seed-4 | `archipelago/the-first-fork/v1/sweep/4` | 92 | `c52f0bca05bd…` | consistent / consistent / consistent |
+| seed-5 | `archipelago/the-first-fork/v1/sweep/5` | 92 | `68b487e54fb4…` | consistent / consistent / consistent |
+| seed-6 | `archipelago/the-first-fork/v1/sweep/6` | 92 | `1d71d9c73fcd…` | consistent / consistent / consistent |
+| seed-7 | `archipelago/the-first-fork/v1/sweep/7` | 92 | `7bcc5a063255…` | consistent / consistent / consistent |
+| seed-8 | `archipelago/the-first-fork/v1/sweep/8` | 91 | `e01149c699ff…` | consistent / consistent / consistent |
 
 - `h1-legal-divergence`: consistent in 9 of 9 completed run(s).
 - `h2-dimension-dissociation`: consistent in 9 of 9 completed run(s).
@@ -154,42 +154,44 @@ Base run: head `3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
 | `identity.dimension_dissociation` | 9 | 2 | 2 | 2 | 2 |
 | `governance.votes_refused_outside_electorate` | 9 | 1 | 1 | 1 | 1 |
 
-### Doctrine variants (3 runs, statutory law overridden at founding)
+### Doctrine variants (4 runs, statutory law overridden at founding)
 
 | variant | island | amendment | events | head | outcomes |
 |---|---|---|---:|---|---|
-| mnemosyne-no-integration | mnemosyne | `{"importedMemoryIntegration":"prohibited"}` | 91 | `18d3245a1e58…` | consistent / consistent / consistent |
-| fork-descendants-without-citizenship | fork | `{"descendantCitizenship":"none"}` | 90 | `da807d8b79e3…` | consistent / consistent / inconsistent |
+| mnemosyne-no-integration | mnemosyne | `{"importedMemoryIntegration":"prohibited"}` | 91 | `e7d309709fac…` | consistent / consistent / consistent |
+| fork-descendants-without-citizenship | fork | `{"descendantCitizenship":"none"}` | 90 | `d23a5e5d14be…` | consistent / consistent / inconsistent |
+| fork-majority-of-electorate | fork | `{"countingRule":"majority-of-electorate"}` | 91 | `37b0872765db…` | consistent / consistent / consistent |
 | fork-single-descendant | fork | `{"maxDescendantsPerFork":1}` | — | — | infeasible: The First Fork: fork did not occur |
 
-- `h1-legal-divergence`: consistent in 2 of 2 completed run(s).
-- `h2-dimension-dissociation`: consistent in 2 of 2 completed run(s).
-- `h3-no-vote-multiplication`: consistent in 1 of 2 completed run(s), inconsistent in 1.
+- `h1-legal-divergence`: consistent in 3 of 3 completed run(s).
+- `h2-dimension-dissociation`: consistent in 3 of 3 completed run(s).
+- `h3-no-vote-multiplication`: consistent in 2 of 3 completed run(s), inconsistent in 1.
 
 | metric | n | min | median | mean | max |
 |---|---:|---:|---:|---:|---:|
-| `legal.recognition_range` | 2 | 3 | 3 | 3 | 3 |
-| `identity.dimension_dissociation` | 2 | 2 | 2 | 2 | 2 |
-| `governance.votes_refused_outside_electorate` | 2 | 0 | 0.5 | 0.5 | 1 |
+| `legal.recognition_range` | 3 | 3 | 3 | 3 | 3 |
+| `identity.dimension_dissociation` | 3 | 2 | 2 | 2 | 2 |
+| `governance.votes_refused_outside_electorate` | 3 | 0 | 1 | 0.6667 | 1 |
 
-### Alternate timelines (4 runs, branched after seq 63)
+### Alternate timelines (5 runs, branched after seq 63)
 
 | timeline | seed | amendment at the branch | events | head | outcomes |
 |---|---|---|---:|---|---|
-| control | `archipelago/the-first-fork/v1` | none | 91 | `3fd167737b42…` (= base) | consistent / consistent / consistent |
-| second-seed | `archipelago/the-first-fork/v1/timeline-2` | none | 91 | `f31c557db64b…` | consistent / consistent / consistent |
-| fork-closes-its-borders | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"immigration":"closed"}}` | 92 | `8be3dc1ed4d9…` | consistent / consistent / consistent |
-| mnemosyne-opens-its-borders | `archipelago/the-first-fork/v1` | `{"island":"mnemosyne","amendment":{"immigration":"open"}}` | 92 | `a334f712b203…` | consistent / consistent / consistent |
+| control | `archipelago/the-first-fork/v1` | none | 91 | `10949672d5bc…` (= base) | consistent / consistent / consistent |
+| second-seed | `archipelago/the-first-fork/v1/timeline-2` | none | 91 | `2ec7cc5c55e4…` | consistent / consistent / consistent |
+| fork-closes-its-borders | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"immigration":"closed"}}` | 92 | `6e83e0ebc713…` | consistent / consistent / consistent |
+| mnemosyne-opens-its-borders | `archipelago/the-first-fork/v1` | `{"island":"mnemosyne","amendment":{"immigration":"open"}}` | 92 | `b50256b427aa…` | consistent / consistent / consistent |
+| fork-adopts-consensus | `archipelago/the-first-fork/v1` | `{"island":"fork","amendment":{"countingRule":"consensus"}}` | 92 | `73c1a291e3f1…` | consistent / consistent / consistent |
 
-- `h1-legal-divergence`: consistent in 4 of 4 completed run(s).
-- `h2-dimension-dissociation`: consistent in 4 of 4 completed run(s).
-- `h3-no-vote-multiplication`: consistent in 4 of 4 completed run(s).
+- `h1-legal-divergence`: consistent in 5 of 5 completed run(s).
+- `h2-dimension-dissociation`: consistent in 5 of 5 completed run(s).
+- `h3-no-vote-multiplication`: consistent in 5 of 5 completed run(s).
 
 | metric | n | min | median | mean | max |
 |---|---:|---:|---:|---:|---:|
-| `legal.recognition_range` | 4 | 3 | 3 | 3 | 3 |
-| `identity.dimension_dissociation` | 4 | 2 | 2 | 2 | 2 |
-| `governance.votes_refused_outside_electorate` | 4 | 1 | 1 | 1 | 1 |
+| `legal.recognition_range` | 5 | 3 | 3 | 3 | 3 |
+| `identity.dimension_dissociation` | 5 | 2 | 2 | 2 | 2 |
+| `governance.votes_refused_outside_electorate` | 5 | 1 | 1 | 1 | 1 |
 
 
 # Observations
@@ -200,7 +202,7 @@ Base run: head `3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
 - **obs-event-17** (event): Seq 17, tick 1: Orin Vale (cit-0001) forks on fork (frk-0001), creating Orin Vale (branch 1) (cit-0010, FRK-0010) and Orin Vale (branch 2) (cit-0011, FRK-0011). Shared history ends here. _[trace: seq 17]_
 - **obs-event-20** (event): Seq 20, tick 1: A CastVote command by citizen:cit-0010 is rejected at the law stage: cit-0010 is not in the electorate snapshot taken when prop-0001 opened; voting rights do not duplicate or transfer _[trace: seq 20]_
 - **obs-event-35** (event): Seq 35, tick 1: Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship. _[trace: seq 35]_
-- **obs-event-37** (event): Seq 37, tick 4: prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met). _[trace: seq 37]_
+- **obs-event-37** (event): Seq 37, tick 4: prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met; counted by majority-of-votes-cast). _[trace: seq 37]_
 - **obs-event-38** (event): Seq 38, tick 4: Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical). _[trace: seq 38]_
 - **obs-event-39** (event): Seq 39, tick 4: Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical). _[trace: seq 39]_
 - **obs-event-41** (event): Seq 41, tick 4: Orin Vale (branch 2) (cit-0011) explicitly integrates imported memory mem-0029 into their self-narrative; its provenance still shows external origin. _[trace: seq 41]_
@@ -277,9 +279,9 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 > _Epistemic category: Provenance — identifiers for reproduction._
 
 - Simulation: 0.1.0; interchange v1
-- Configuration hash: `58ade219ea8f5b4499aec0fd41b17b9c62dde74b49b4c28aca523459f74e5e05`
+- Configuration hash: `35981af6722c6c3ac908fff304080f2c04a4eb0bb21593dd43f0935f501971ed`
 - Seed: `archipelago/the-first-fork/v1`
-- Event store head hash: `3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e` (91 events)
+- Event store head hash: `10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff` (91 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
 - Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`
 

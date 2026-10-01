@@ -14,7 +14,7 @@ import {
   ProposalIdSchema,
   RelationshipIdSchema,
 } from "../domain/ids.js";
-import { LawSchema } from "../domain/law.js";
+import { CountingRuleSchema, LawSchema } from "../domain/law.js";
 import { LifecycleStateSchema } from "../domain/lifecycle.js";
 import {
   ArtefactSchema,
@@ -63,6 +63,8 @@ export const DomainEventSchema = z.discriminatedUnion("type", [
     outcome: z.enum(["adopted", "rejected"]),
     tally: z.object({ yes: z.number().int(), no: z.number().int(), abstain: z.number().int() }),
     quorumMet: z.boolean(),
+    /** The island law's counting rule the tally was decided under. */
+    countingRule: CountingRuleSchema,
   }),
   ev("LawEnacted", { law: LawSchema, proposalId: ProposalIdSchema.nullable() }),
   ev("MigrationPetitioned", { petition: PetitionSchema }),

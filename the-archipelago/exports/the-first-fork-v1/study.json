@@ -1,7 +1,7 @@
 {
   "schema": "archipelago/study/v1",
   "base": {
-    "headHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
+    "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
     "eventCount": 91,
     "branchSeq": 63
   },
@@ -22,6 +22,13 @@
         "island": "fork",
         "amendment": {
           "descendantCitizenship": "none"
+        }
+      },
+      {
+        "id": "fork-majority-of-electorate",
+        "island": "fork",
+        "amendment": {
+          "countingRule": "majority-of-electorate"
         }
       },
       {
@@ -60,6 +67,15 @@
               "immigration": "open"
             }
           }
+        },
+        {
+          "id": "fork-adopts-consensus",
+          "amendment": {
+            "island": "fork",
+            "amendment": {
+              "countingRule": "consensus"
+            }
+          }
         }
       ]
     }
@@ -74,7 +90,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
+      "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -150,7 +166,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "59f1254303d30beb05fbe56169a4256a2cf9d477c9d4d495d3fa64c863870359",
+      "headHash": "0bde436fc2d98199267864d20ad623242bd2e278aa7bd588ae7f304a53debb76",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -226,7 +242,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "5d7ed94bac6720d1e5fcc44b95691fc3d05e554027480946fb92217e40c7c355",
+      "headHash": "59617f2605b4784a169e9b0c268a6a5a1fea5318c20f09f5bba38f0455989342",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -302,7 +318,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "980d6e2ed5fd520d4b988787effc34f144f012e5fc38d5b3d211ae6acff4bb36",
+      "headHash": "3e6038d44c62520d3850b1d86a070f93705b4d591c418a9d12ec517063aadca5",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -378,7 +394,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "b43de0f64ee89f20366b8f6a452968efa356bdfa8e8bc83ec88b206c8447274c",
+      "headHash": "c52f0bca05bde10adc5a2ab27b025634ecd8193acbe71103e9a3f7b1403b305f",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -454,7 +470,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "555c087c36f385294bdaf7d1d467fde3f6f1c186bb6751dda6f03d3db9e69704",
+      "headHash": "68b487e54fb4086a5ceb106452574895dd39ead8e8dd1a9632423f98201242d2",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -530,7 +546,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "dc944583ab61763ac74dbe1e5f3a653bc1973930954d8ea3a9fd21f0a021ca27",
+      "headHash": "1d71d9c73fcd732fd8c67d8cae707f7e90c2f5cfddead16e68800279aff8dfae",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -606,7 +622,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "418dc094b3efec87843ccd154c815526f839af1fa071de22b6160ab085470586",
+      "headHash": "7bcc5a063255e58588ce51423590c42414a57043b6f0eca503bbdb4c1f6428d4",
       "eventCount": 92,
       "branchSeq": 64,
       "metrics": {
@@ -682,7 +698,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "940ed590169d1b911fa13a21a6f467d3979234760b900ce45b423780cea4bd71",
+      "headHash": "e01149c699fff2ea900b380aab44cdc88848a8297a50ad0a712e50322f42005d",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -760,7 +776,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "18d3245a1e58c7dbabf9bf77d9b6fa2f37ff8e47b17c6a8cfb249d6fa2b56325",
+      "headHash": "e7d309709facf66a2c283e91f06b00009fba0e070f3fb26d1a83f6b238df5ec4",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -838,7 +854,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "da807d8b79e3985ca4ab08544badd5872c138b517ecbefedf404595b68abf7fc",
+      "headHash": "d23a5e5d14beee462145f2fe9b2d575f6ddaf390882b9c5001e91efa45d6bfcf",
       "eventCount": 90,
       "branchSeq": 62,
       "metrics": {
@@ -906,6 +922,84 @@
       ]
     },
     {
+      "id": "fork-majority-of-electorate",
+      "group": "doctrines",
+      "variation": {
+        "island": "fork",
+        "amendment": {
+          "countingRule": "majority-of-electorate"
+        }
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "37b0872765dbf46005c5a53f18f68396317caceb6474035c99f371b32fecd179",
+      "eventCount": 91,
+      "branchSeq": 63,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 0,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 44,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 9,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 91,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
       "id": "fork-single-descendant",
       "group": "doctrines",
       "variation": {
@@ -932,7 +1026,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
+      "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -1009,7 +1103,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "f31c557db64b98ae8a8ce301f76588217b69897425d2d119df6e8277de8d7fc4",
+      "headHash": "2ec7cc5c55e40b09c08cc56e95896e3c626d16facb84b1e9880a9e4d31216ac7",
       "eventCount": 91,
       "branchSeq": 63,
       "metrics": {
@@ -1091,7 +1185,7 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "8be3dc1ed4d9ab72c1f5a1a9d6330dc79c36810fe938ef93b1620273e42073bc",
+      "headHash": "6e83e0ebc713ecd978da1fdfaf74e1a5416fb26daf6e24e4a0b285aa9db7a45e",
       "eventCount": 92,
       "branchSeq": 63,
       "metrics": {
@@ -1173,7 +1267,89 @@
       },
       "status": "completed",
       "reason": null,
-      "headHash": "a334f712b203c954d43732f00b7b51b0b83d660b4dcf913c84a003903f442a03",
+      "headHash": "b50256b427aa543adefa90070d5ee0c22fafa2460eb28963e351eb9ecdd454f7",
+      "eventCount": 92,
+      "branchSeq": 63,
+      "metrics": {
+        "population.records": 11,
+        "population.active": 11,
+        "population.genesis": 9,
+        "population.stateless": 0,
+        "identity.forks": 1,
+        "identity.fork_descendants": 2,
+        "identity.mergers": 0,
+        "identity.continuity_claims": 3,
+        "identity.process_continuers": 1,
+        "identity.civic_continuers": 1,
+        "identity.memory_continuers": 3,
+        "identity.dimension_dissociation": 2,
+        "legal.recognition_range": 3,
+        "legal.unadjudicating_islands": 1,
+        "governance.proposals": 1,
+        "governance.laws_enacted": 1,
+        "governance.votes_cast": 2,
+        "governance.votes_refused_outside_electorate": 1,
+        "governance.commands_rejected": 1,
+        "governance.migrations": 3,
+        "memory.records": 42,
+        "memory.imported": 1,
+        "memory.integrated": 1,
+        "memory.fork_inherited": 8,
+        "memory.provenance_complete": 1,
+        "culture.artefacts": 9,
+        "culture.chronicle_entries": 6,
+        "institutions.count": 7,
+        "social.active_relationships": 8,
+        "social.fork_kin_ties": 3,
+        "economy.credit_gini": 0.1542,
+        "economy.supply_conserved": 1,
+        "death.asleep": 0,
+        "death.suspended": 0,
+        "death.archived": 0,
+        "death.process_ended_restorable": 0,
+        "death.memory_damaged": 0,
+        "death.identity_discontinuous": 0,
+        "death.irreversibly_deleted": 0,
+        "death.transitions": 0,
+        "research.conversations": 3,
+        "research.interventions": 0,
+        "simulation.events": 92,
+        "simulation.ticks": 7
+      },
+      "findings": [
+        {
+          "hypothesisId": "h1-legal-divergence",
+          "observedValue": 3,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-dimension-dissociation",
+          "observedValue": 2,
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-no-vote-multiplication",
+          "observedValue": 1,
+          "outcome": "consistent-with-hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "fork-adopts-consensus",
+      "group": "timelines",
+      "variation": {
+        "seed": "archipelago/the-first-fork/v1",
+        "amendment": {
+          "island": "fork",
+          "amendment": {
+            "countingRule": "consensus"
+          }
+        },
+        "rounds": 3
+      },
+      "status": "completed",
+      "reason": null,
+      "headHash": "73c1a291e3f13958b098e36448c4b00596b3c6a433cdf5b8e83a81f2f2ac26d1",
       "eventCount": 92,
       "branchSeq": 63,
       "metrics": {
@@ -1578,313 +1754,313 @@
       }
     },
     "doctrines": {
-      "runs": 3,
-      "completed": 2,
+      "runs": 4,
+      "completed": 3,
       "infeasible": 1,
       "metrics": {
         "culture.artefacts": {
-          "n": 2,
+          "n": 3,
           "min": 7,
-          "median": 8,
-          "mean": 8,
+          "median": 9,
+          "mean": 8.3333,
           "max": 9
         },
         "culture.chronicle_entries": {
-          "n": 2,
+          "n": 3,
           "min": 6,
-          "median": 6.5,
-          "mean": 6.5,
+          "median": 6,
+          "mean": 6.3333,
           "max": 7
         },
         "death.archived": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.asleep": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.identity_discontinuous": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.irreversibly_deleted": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.memory_damaged": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.process_ended_restorable": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.suspended": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.transitions": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "economy.credit_gini": {
-          "n": 2,
+          "n": 3,
           "min": 0.1542,
           "median": 0.1542,
           "mean": 0.1542,
           "max": 0.1542
         },
         "economy.supply_conserved": {
-          "n": 2,
+          "n": 3,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.commands_rejected": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 1,
           "mean": 1,
           "max": 2
         },
         "governance.laws_enacted": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "governance.migrations": {
-          "n": 2,
+          "n": 3,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "governance.proposals": {
-          "n": 2,
+          "n": 3,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.votes_cast": {
-          "n": 2,
+          "n": 3,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "governance.votes_refused_outside_electorate": {
-          "n": 2,
+          "n": 3,
           "min": 0,
-          "median": 0.5,
-          "mean": 0.5,
+          "median": 1,
+          "mean": 0.6667,
           "max": 1
         },
         "identity.civic_continuers": {
-          "n": 2,
+          "n": 3,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.continuity_claims": {
-          "n": 2,
+          "n": 3,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "identity.dimension_dissociation": {
-          "n": 2,
+          "n": 3,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "identity.fork_descendants": {
-          "n": 2,
+          "n": 3,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "identity.forks": {
-          "n": 2,
+          "n": 3,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.memory_continuers": {
-          "n": 2,
+          "n": 3,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "identity.mergers": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "identity.process_continuers": {
-          "n": 2,
+          "n": 3,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "institutions.count": {
-          "n": 2,
+          "n": 3,
           "min": 7,
           "median": 7,
           "mean": 7,
           "max": 7
         },
         "legal.recognition_range": {
-          "n": 2,
+          "n": 3,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "legal.unadjudicating_islands": {
-          "n": 2,
+          "n": 3,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.fork_inherited": {
-          "n": 2,
+          "n": 3,
           "min": 8,
           "median": 8,
           "mean": 8,
           "max": 8
         },
         "memory.imported": {
-          "n": 2,
-          "min": 2,
+          "n": 3,
+          "min": 1,
           "median": 2,
-          "mean": 2,
+          "mean": 1.6667,
           "max": 2
         },
         "memory.integrated": {
-          "n": 2,
+          "n": 3,
           "min": 0,
-          "median": 0.5,
-          "mean": 0.5,
+          "median": 1,
+          "mean": 0.6667,
           "max": 1
         },
         "memory.provenance_complete": {
-          "n": 2,
+          "n": 3,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.records": {
-          "n": 2,
+          "n": 3,
           "min": 44,
-          "median": 44.5,
-          "mean": 44.5,
+          "median": 44,
+          "mean": 44.3333,
           "max": 45
         },
         "population.active": {
-          "n": 2,
+          "n": 3,
           "min": 11,
           "median": 11,
           "mean": 11,
           "max": 11
         },
         "population.genesis": {
-          "n": 2,
+          "n": 3,
           "min": 9,
           "median": 9,
           "mean": 9,
           "max": 9
         },
         "population.records": {
-          "n": 2,
+          "n": 3,
           "min": 11,
           "median": 11,
           "mean": 11,
           "max": 11
         },
         "population.stateless": {
-          "n": 2,
+          "n": 3,
           "min": 0,
-          "median": 0.5,
-          "mean": 0.5,
+          "median": 0,
+          "mean": 0.3333,
           "max": 1
         },
         "research.conversations": {
-          "n": 2,
+          "n": 3,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "research.interventions": {
-          "n": 2,
+          "n": 3,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "simulation.events": {
-          "n": 2,
+          "n": 3,
           "min": 90,
-          "median": 90.5,
-          "mean": 90.5,
+          "median": 91,
+          "mean": 90.6667,
           "max": 91
         },
         "simulation.ticks": {
-          "n": 2,
+          "n": 3,
           "min": 7,
           "median": 7,
           "mean": 7,
           "max": 7
         },
         "social.active_relationships": {
-          "n": 2,
+          "n": 3,
           "min": 8,
           "median": 8,
           "mean": 8,
           "max": 8
         },
         "social.fork_kin_ties": {
-          "n": 2,
+          "n": 3,
           "min": 3,
           "median": 3,
           "mean": 3,
@@ -1893,333 +2069,333 @@
       },
       "hypotheses": {
         "h1-legal-divergence": {
-          "consistent": 2,
+          "consistent": 3,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 2
+          "n": 3
         },
         "h2-dimension-dissociation": {
-          "consistent": 2,
+          "consistent": 3,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 2
+          "n": 3
         },
         "h3-no-vote-multiplication": {
-          "consistent": 1,
+          "consistent": 2,
           "inconsistent": 1,
           "undetermined": 0,
-          "n": 2
+          "n": 3
         }
       }
     },
     "timelines": {
-      "runs": 4,
-      "completed": 4,
+      "runs": 5,
+      "completed": 5,
       "infeasible": 0,
       "metrics": {
         "culture.artefacts": {
-          "n": 4,
+          "n": 5,
           "min": 9,
           "median": 9,
           "mean": 9,
           "max": 9
         },
         "culture.chronicle_entries": {
-          "n": 4,
+          "n": 5,
           "min": 6,
           "median": 6,
           "mean": 6,
           "max": 6
         },
         "death.archived": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.asleep": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.identity_discontinuous": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.irreversibly_deleted": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.memory_damaged": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.process_ended_restorable": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.suspended": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "death.transitions": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "economy.credit_gini": {
-          "n": 4,
+          "n": 5,
           "min": 0.1542,
           "median": 0.1542,
           "mean": 0.1542,
           "max": 0.1542
         },
         "economy.supply_conserved": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.commands_rejected": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.laws_enacted": {
-          "n": 4,
+          "n": 5,
           "min": 0,
-          "median": 0.5,
-          "mean": 0.5,
+          "median": 1,
+          "mean": 0.6,
           "max": 1
         },
         "governance.migrations": {
-          "n": 4,
+          "n": 5,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "governance.proposals": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "governance.votes_cast": {
-          "n": 4,
+          "n": 5,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "governance.votes_refused_outside_electorate": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.civic_continuers": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.continuity_claims": {
-          "n": 4,
+          "n": 5,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "identity.dimension_dissociation": {
-          "n": 4,
+          "n": 5,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "identity.fork_descendants": {
-          "n": 4,
+          "n": 5,
           "min": 2,
           "median": 2,
           "mean": 2,
           "max": 2
         },
         "identity.forks": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "identity.memory_continuers": {
-          "n": 4,
+          "n": 5,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "identity.mergers": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "identity.process_continuers": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "institutions.count": {
-          "n": 4,
+          "n": 5,
           "min": 7,
           "median": 7,
           "mean": 7,
           "max": 7
         },
         "legal.recognition_range": {
-          "n": 4,
+          "n": 5,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "legal.unadjudicating_islands": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.fork_inherited": {
-          "n": 4,
+          "n": 5,
           "min": 8,
           "median": 8,
           "mean": 8,
           "max": 8
         },
         "memory.imported": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
-          "mean": 1.25,
+          "mean": 1.2,
           "max": 2
         },
         "memory.integrated": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.provenance_complete": {
-          "n": 4,
+          "n": 5,
           "min": 1,
           "median": 1,
           "mean": 1,
           "max": 1
         },
         "memory.records": {
-          "n": 4,
+          "n": 5,
           "min": 42,
-          "median": 42.5,
-          "mean": 42.75,
+          "median": 42,
+          "mean": 42.6,
           "max": 44
         },
         "population.active": {
-          "n": 4,
+          "n": 5,
           "min": 11,
           "median": 11,
           "mean": 11,
           "max": 11
         },
         "population.genesis": {
-          "n": 4,
+          "n": 5,
           "min": 9,
           "median": 9,
           "mean": 9,
           "max": 9
         },
         "population.records": {
-          "n": 4,
+          "n": 5,
           "min": 11,
           "median": 11,
           "mean": 11,
           "max": 11
         },
         "population.stateless": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "research.conversations": {
-          "n": 4,
+          "n": 5,
           "min": 3,
           "median": 3,
           "mean": 3,
           "max": 3
         },
         "research.interventions": {
-          "n": 4,
+          "n": 5,
           "min": 0,
           "median": 0,
           "mean": 0,
           "max": 0
         },
         "simulation.events": {
-          "n": 4,
+          "n": 5,
           "min": 91,
-          "median": 91.5,
-          "mean": 91.5,
+          "median": 92,
+          "mean": 91.6,
           "max": 92
         },
         "simulation.ticks": {
-          "n": 4,
+          "n": 5,
           "min": 7,
           "median": 7,
           "mean": 7,
           "max": 7
         },
         "social.active_relationships": {
-          "n": 4,
+          "n": 5,
           "min": 8,
           "median": 8,
           "mean": 8,
           "max": 8
         },
         "social.fork_kin_ties": {
-          "n": 4,
+          "n": 5,
           "min": 3,
           "median": 3,
           "mean": 3,
@@ -2228,22 +2404,22 @@
       },
       "hypotheses": {
         "h1-legal-divergence": {
-          "consistent": 4,
+          "consistent": 5,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 4
+          "n": 5
         },
         "h2-dimension-dissociation": {
-          "consistent": 4,
+          "consistent": 5,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 4
+          "n": 5
         },
         "h3-no-vote-multiplication": {
-          "consistent": 4,
+          "consistent": 5,
           "inconsistent": 0,
           "undetermined": 0,
-          "n": 4
+          "n": 5
         }
       }
     }

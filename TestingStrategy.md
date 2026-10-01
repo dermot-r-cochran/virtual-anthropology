@@ -8,15 +8,16 @@ The repository's claim is that every simulation is publishable: regenerable byte
 
 ## Layer 1 — the simulation suite (`the-archipelago/simulation/test/`, vitest)
 
-Two files, 22 tests, run by `npm test` and, with the typecheck in front of it, by `npm run check`. `tsconfig.json` is strict with `noUncheckedIndexedAccess`, so the typecheck is itself a gate.
+Two files, 23 tests, run by `npm test` and, with the typecheck in front of it, by `npm run check`. `tsconfig.json` is strict with `noUncheckedIndexedAccess`, so the typecheck is itself a gate.
 
-- `kernel.test.ts` (10) — the kernel's guarantees, from a fresh *First Fork* genesis each time:
+- `kernel.test.ts` (11) — the kernel's guarantees, from a fresh *First Fork* genesis each time:
   - the seeded RNG is deterministic per seed;
   - `World.replay` reproduces state and head hash, and tampering with one event is detected;
   - island law: Continuity prohibits copying, Fork creates separate identities without duplicating credits;
   - researchers cannot change a lifecycle state, and unregistered researchers are refused;
   - the disclosure guard requires the artificial-nature statement and blocks manipulation;
   - `EnactAmendment` is applied for the system actor `study` only (a citizen and the clock are refused at authorisation; an empty amendment is refused) and records `LawEnacted`;
+  - the counting rule is island law: one yes and one abstention carries by votes cast and by consensus and fails by the electorate, a tie fails under every rule, consensus needs a yes, and the closed-proposal event names the rule;
   - founding law overrides apply to statutory fields only, and a constitutional field in `laws` fails the schema;
   - a timeline branched at the epilogue with the base seed reproduces the base run exactly, another seed shares the prefix and diverges, and an amendment at the branch is the first event after it;
   - **property** (fast-check): `irreversibly-deleted` is terminal under every transition;

@@ -96,6 +96,10 @@ describe("The First Fork and the research pipeline", async () => {
     expect(byId("fork-single-descendant").status).toBe("infeasible");
     expect(byId("fork-single-descendant").reason).toMatch(/fork/i);
     expect(study.summary.doctrines.infeasible).toBe(1);
+    expect(byId("fork-majority-of-electorate").status).toBe("completed");
+    expect(byId("fork-adopts-consensus").status).toBe("completed");
+    expect(byId("fork-adopts-consensus").eventCount).toBe(run.log.length + 1);
+    expect(out.exportFiles["research_manifest.yaml"]).toMatch(/counting_rule: majority-of-votes-cast/);
     const md = out.reportFiles[`reports/experiments/${m.id}.md`]!;
     expect(md).toMatch(/^### Seed sweep/m);
     expect(md).toMatch(/^### Alternate timelines/m);

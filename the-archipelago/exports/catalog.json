@@ -8,7 +8,7 @@
       "title": "The First Fork",
       "category": "demonstration",
       "scenario": "the-first-fork",
-      "headHash": "3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e",
+      "headHash": "10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff",
       "eventCount": 91,
       "findings": [
         {
@@ -25,12 +25,12 @@
         }
       ],
       "study": {
-        "runs": 16,
-        "completed": 15,
+        "runs": 18,
+        "completed": 17,
         "groups": {
           "seeds": 9,
-          "doctrines": 3,
-          "timelines": 4
+          "doctrines": 4,
+          "timelines": 5
         }
       }
     }

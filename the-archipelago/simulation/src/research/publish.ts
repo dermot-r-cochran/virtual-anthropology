@@ -141,7 +141,7 @@ export function researchManifestYaml(b: ResearchBundle, input: ResearchInput, ou
       islands: input.snapshot.islands.map((i) => ({ id: i.id, name: i.name, doctrine: i.doctrine })),
     },
     governance_policy: input.snapshot.islands.map((i) => ({
-      island: i.id, law_version: i.lawVersion, copying: i.copying, memory_exchange: i.memoryExchange, merging: i.merging,
+      island: i.id, law_version: i.lawVersion, copying: i.copying, counting_rule: i.countingRule, memory_exchange: i.memoryExchange, merging: i.merging,
       federation: i.federation, immigration: i.immigration, emigration: i.emigration, descendant_citizenship: i.descendantCitizenship,
     })),
     population: {

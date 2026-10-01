@@ -77,6 +77,35 @@ describe("kernel", () => {
     expect(empty.status).toBe("rejected");
   });
 
+  it("the counting rule is island law: the same tally carries or fails by the rule in force", () => {
+    const outcomeUnder = (rule: "majority-of-votes-cast" | "majority-of-electorate" | "consensus", votes: Record<string, "yes" | "no" | "abstain">) => {
+      const { world, keys } = fresh();
+      const r = world.execute({ kind: "system", id: "study" }, { type: "EnactAmendment", island: "fork", amendment: { countingRule: rule } });
+      expect(r.status).toBe("applied");
+      const submitted = world.execute(as(keys.juno!), { type: "SubmitProposal", proposer: keys.juno, island: "fork", title: "Test Act", rationale: "x", amendment: null, closesAtTick: 1 });
+      expect(submitted.status).toBe("applied");
+      const p = Object.values(world.state.proposals)[0]!;
+      expect(p.electorate).toEqual([keys.juno, keys.pell].sort());
+      for (const [k, choice] of Object.entries(votes)) expect(world.execute(as(keys[k]!), { type: "CastVote", proposalId: p.id, voter: keys[k], choice }).status).toBe("applied");
+      world.execute({ kind: "system", id: "clock" }, { type: "AdvanceTime", ticks: 1 });
+      const closed = world.execute({ kind: "system", id: "clock" }, { type: "CloseProposal", proposalId: p.id });
+      expect(closed.status).toBe("applied");
+      const ev = world.log[world.log.length - 1]!.event;
+      expect(ev.type === "ProposalClosed" && ev.countingRule).toBe(rule);
+      return world.state.proposals[p.id]!.status;
+    };
+    // one yes, one abstention: carried by votes cast, not by the electorate, carried by consensus
+    expect(outcomeUnder("majority-of-votes-cast", { juno: "yes", pell: "abstain" })).toBe("adopted");
+    expect(outcomeUnder("majority-of-electorate", { juno: "yes", pell: "abstain" })).toBe("rejected");
+    expect(outcomeUnder("consensus", { juno: "yes", pell: "abstain" })).toBe("adopted");
+    // a tie fails under every rule
+    expect(outcomeUnder("majority-of-votes-cast", { juno: "yes", pell: "no" })).toBe("rejected");
+    expect(outcomeUnder("majority-of-electorate", { juno: "yes", pell: "no" })).toBe("rejected");
+    expect(outcomeUnder("consensus", { juno: "yes", pell: "no" })).toBe("rejected");
+    // consensus needs at least one yes
+    expect(outcomeUnder("consensus", { juno: "abstain", pell: "abstain" })).toBe("rejected");
+  });
+
   it("founding law can be overridden on statutory fields only (a doctrine variant)", () => {
     const { state } = buildGenesisState({ ...firstForkGenesis(FIRST_FORK_SEED), laws: { mnemosyne: { importedMemoryIntegration: "prohibited" } } });
     expect(state.islands.mnemosyne.law.importedMemoryIntegration).toBe("prohibited");

@@ -39,7 +39,7 @@ export const SnapshotSchema = z
     ),
     islands: z.array(
       z.object({
-        id, name: id, lawVersion: z.number().int(), doctrine: id, copying: id, memoryExchange: id,
+        id, name: id, lawVersion: z.number().int(), doctrine: id, copying: id, countingRule: id, memoryExchange: id,
         merging: id, federation: id, immigration: id, emigration: id, descendantCitizenship: id,
       }).strict(),
     ),

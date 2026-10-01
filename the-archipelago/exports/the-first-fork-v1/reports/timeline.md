@@ -39,7 +39,7 @@
 | 34 | 1 |  | system:registry:mnemosyne | PetitionReviewed | The mnemosyne registry approved the entry side of pet-0002 under law v1. Findings: the applicant's memory holdings will be subject to provenance disclosure. |
 | 35 | 1 | to-mnemosyne | citizen:cit-0011 | CitizenMigrated | Orin Vale (branch 2) (cit-0011) migrates fork → mnemosyne, gaining mnemosyne citizenship. |
 | 36 | 1 |  | system:clock | TimeAdvanced | Time advances from tick 1 to 4. |
-| 37 | 4 |  | system:clock | ProposalClosed | prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met). |
+| 37 | 4 |  | system:clock | ProposalClosed | prop-0001 is rejected (yes 1, no 1, abstain 0; quorum met; counted by majority-of-votes-cast). |
 | 38 | 4 | imports | citizen:cit-0011 | MemoryImported | Orin Vale (branch 2) (cit-0011) imports archive memory mem-0007 as mem-0028 (experienced by Sefa Lune (cit-0006); marked imported, not autobiographical). |
 | 39 | 4 | imports | citizen:cit-0011 | MemoryImported | Orin Vale (branch 2) (cit-0011) imports archive memory mem-0009 as mem-0029 (experienced by Rumi Okafor (cit-0007); marked imported, not autobiographical). |
 | 40 | 4 | imports | citizen:cit-0011 | ExperienceRecorded | Orin Vale (branch 2) (cit-0011) records an experience on mnemosyne: "Read my own pre-fork charts in the Stacks and found them both strange and familiar." |

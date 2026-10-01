@@ -67,6 +67,9 @@ study:
     - id: fork-descendants-without-citizenship
       island: fork
       amendment: { descendantCitizenship: none }
+    - id: fork-majority-of-electorate
+      island: fork
+      amendment: { countingRule: majority-of-electorate }
     - id: fork-single-descendant
       island: fork
       amendment: { maxDescendantsPerFork: 1 }
@@ -81,6 +84,8 @@ study:
         amendment: { island: fork, amendment: { immigration: closed } }
       - id: mnemosyne-opens-its-borders
         amendment: { island: mnemosyne, amendment: { immigration: open } }
+      - id: fork-adopts-consensus
+        amendment: { island: fork, amendment: { countingRule: consensus } }
 ethics:
   consciousnessClaims: none
   notes:
@@ -98,5 +103,5 @@ futureWork:
   - Replace scripted protagonists with BDI or language-model minds under the same validation pipeline.
   - Add a Concord scenario in which claimants petition to federate.
 reproducibility:
-  expectedHeadHash: 3fd167737b42adf153720c99465a3da2903e3aa2dc3b47e60b47dda25f16f67e
+  expectedHeadHash: 10949672d5bc197a17031a152d5f19c3a31d95ea6d5430ef91a089936c668cff
   expectedEventCount: 91
