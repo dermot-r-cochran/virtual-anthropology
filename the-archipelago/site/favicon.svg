@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="The Archipelago: four islands on a dark sea">
+  <title>The Archipelago</title>
+  <rect width="64" height="64" rx="14" fill="#1d2330"/>
+  <!-- ferry lines between the islands, faint, as the geography draws them -->
+  <g stroke="#ffffff" stroke-opacity="0.18" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <path d="M21 22 L43 19"/>
+    <path d="M21 22 L19 42"/>
+    <path d="M43 19 L45 43"/>
+    <path d="M19 42 L45 43"/>
+  </g>
+  <!-- the four islands in their own colours: Continuity, Fork, Mnemosyne, Concord -->
+  <circle cx="21" cy="22" r="8.5" fill="#2f6db5"/>
+  <circle cx="43" cy="19" r="7" fill="#c0582b"/>
+  <circle cx="19" cy="42" r="7" fill="#7a4fb0"/>
+  <circle cx="45" cy="43" r="8.5" fill="#2e8b57"/>
+</svg>

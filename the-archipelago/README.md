@@ -1,3 +1,5 @@
+<img src="site/favicon.svg" alt="The Archipelago: four islands on a dark sea" width="72" align="left" style="margin-right:1rem">
+
 # The Archipelago
 
 A persistent, deterministic, event-sourced virtual civilization of digital persons across four law-governed islands: **Continuity**, **Fork**, **Mnemosyne** and **Concord**. It is a computational research platform for Virtual Anthropology. Every simulation should be publishable.

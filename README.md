@@ -1,3 +1,5 @@
+<img src="the-archipelago/site/favicon.svg" alt="The Archipelago: four islands on a dark sea" width="72" align="left" style="margin-right:1rem">
+
 # virtual-anthropology
 ## The Archipelago
 
