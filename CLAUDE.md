@@ -102,7 +102,14 @@ exactly.
   explicit objects. The epistemic categories here (observation, metric,
   hypothesis, interpretation) and the rule that interpretation is never
   generated are the same instinct applied to a publication pipeline rather
-  than a belief store. Resemblances, labelled as such, not relationships.
+  than a belief store. Since 2026-10-06 **data crosses to swarm one way**:
+  its `examples/archipelago_first_fork.py` reads a published export here
+  (`exports/<experiment>/dataset.json` and `governance_events.json`, the
+  citizens' values, votes, petitions and goals) from a sibling checkout and
+  synthesises the citizens' positions, every line cited to this record's
+  event hashes; its test pins the shape it reads, so a change to those two
+  files' format is a follow-up there. Nothing is written back, and no code
+  is shared. careful-memory remains a resemblance only.
 - **`dermot-r-cochran/star-rangers`** never crosses. Its record holds
   digital persons, plural minds and identity questions of its own, under a
   CC BY-NC-ND licence and a canon that changes only by extension; this
