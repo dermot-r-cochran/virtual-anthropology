@@ -31,11 +31,27 @@ one held before the draw, and parties may not nominate, endorse or spend.
 Sizing (also decided): the lower house has as many seats as the cube root
 of the voting population, the upper house about a third of that, and the
 executive council about a quarter of the upper house again, deputies not
-counted. For an island of a few hundred active citizens that is a chamber
-of six or seven, an upper house of two and an executive of one, which is a
-useful fact about scale: the design is written for electorates of
-thousands upward, and a study here would have to say that its chamber is a
-model of the rule and not of the chamber.
+counted. At this platform's actual scale, eleven citizens in *The First
+Fork* and two or three living on each island
+(`exports/the-first-fork-v1/dataset.json`), the rule gives a one-seat
+chamber and an upper house and executive that round to zero; for an island
+of a few hundred it would give six or seven, two and one. The design is
+written for electorates of thousands upward, and a study here would have
+to say that its chamber is a model of the rule and not of the chamber.
+
+AI mediation and synthesis (also decided): a synthesis of what citizens
+say is a briefing to the drawn chamber, under six rules (every claim cites
+its utterances; disagreement is structure, never one paragraph;
+interpretation is never generated; several mediators with their agreement
+reported; members may dissent from the briefing on the record; confidence
+carried as how many, how stable, how contested). The reference
+implementation is `episteme/population.py` in `dermot-r-cochran/swarm`
+(ADR-0004 there), and its first population is this platform's citizens,
+read one way from a published export by `examples/archipelago_first_fork.py`
+there: every line cited to this record's event hashes, interpretation
+recorded as none. The Archipelago is the right first population because
+its citizens have no privacy to lose and cannot be brigaded, and the
+synthesis can be checked against the log.
 
 The flaw the renewal rules answer: if sitting members may always stand and
 challengers come only from the pool, every contest is a known name against
