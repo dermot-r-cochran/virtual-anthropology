@@ -109,6 +109,16 @@ exactly.
   repository is MIT, studies simulated citizens, and asserts nothing about
   that world. Keep it that way: a dataset here is not a source for the
   record there, and the record there is not a scenario here.
+- **`dermot-r-cochran/Voting`** shares one document with this repository
+  (since 2026-10-06): `docs/lot-then-vote.md` there and
+  `the-archipelago/docs/lot-then-vote.md` here are the same design, a
+  chamber whose candidates are drawn by lot and then elected as normal,
+  written for the real world there and read against this platform's
+  governance here (a draw as a choice point, a fourth statutory field,
+  which doctrines could bear a chamber). Nothing is implemented; the note
+  exists so that a change to `kernel/decide.ts` or the statutory fields
+  knows the shape of what may one day sit beside them. A decision changed in
+  one copy is changed in the other.
 - **Siblings by convention:** the account's engineering repositories carry
   a `TestingStrategy.md` in the same shape as this one's, and the committed
   golden output that CI regenerates and diffs is the same idea as
