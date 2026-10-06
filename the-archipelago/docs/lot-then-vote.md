@@ -57,7 +57,8 @@ The flaw the renewal rules answer: if sitting members may always stand and
 challengers come only from the pool, every contest is a known name against
 strangers, and the chamber ossifies. A toy model in the Voting crate
 (`examples/tenure.rs`) shows the always-eligible rule leaving about half the
-chamber with fifteen or more years' service, the decaying ticket about a
+chamber with three or more terms' service (read as fifteen years at five a
+term), the decaying ticket about a
 sixth.
 
 ## How it would sit in the Archipelago
