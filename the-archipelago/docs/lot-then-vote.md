@@ -28,6 +28,15 @@ decisions, 6 October 2026):
 Parties (also decided): a pool candidate may state a **prior affiliation**,
 one held before the draw, and parties may not nominate, endorse or spend.
 
+Sizing (also decided): the lower house has as many seats as the cube root
+of the voting population, the upper house about a third of that, and the
+executive council about a quarter of the upper house again, deputies not
+counted. For an island of a few hundred active citizens that is a chamber
+of six or seven, an upper house of two and an executive of one, which is a
+useful fact about scale: the design is written for electorates of
+thousands upward, and a study here would have to say that its chamber is a
+model of the rule and not of the chamber.
+
 The flaw the renewal rules answer: if sitting members may always stand and
 challengers come only from the pool, every contest is a known name against
 strangers, and the chamber ossifies. A toy model in the Voting crate
