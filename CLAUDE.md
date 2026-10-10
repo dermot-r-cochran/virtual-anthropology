@@ -18,6 +18,7 @@ All simulation commands run from `the-archipelago/simulation/`:
 npm ci                        # first thing in a fresh checkout: node_modules/ is gitignored and nothing is installed (Node >= 22.12, see package.json engines)
 npm run check                 # tsc --noEmit, then vitest run (27 tests in test/, two of them fast-check properties)
 npm test                      # vitest only; npm run test:watch to keep it running
+npm run check:docs            # README links, front matter, and the README's counts against the disk (stdlib only)
 npm run publish:first-fork    # manifest → simulation → event store → exports/the-first-fork-v1/, reports/, research_manifest.yaml (SOURCE_DATE_EPOCH pinned in the script)
 npm run verify:first-fork     # replay the hash chain and check every output file's sha256 against the manifest
 npm run scenario:first-fork   # run without publishing
@@ -35,7 +36,7 @@ To look at the site locally, `python3 -m http.server -d the-archipelago` and ope
 
 ## The gates, and the one that matters most
 
-CI (`.github/workflows/archipelago.yml`) runs on every push to `main` and every pull request: `npm ci`, `npm run check`, then **regenerate and diff** — `publish:first-fork`, `verify:first-fork`, and `git diff --exit-code -- ../exports ../reports` — then the Evennia tests on Python 3.12. The diff is the gate that makes the repository what it says it is: the committed exports are the golden output, and any change that alters the simulation's result fails there rather than shipping quietly. Consequences:
+CI (`.github/workflows/archipelago.yml`) runs on every push to `main` and every pull request: `npm ci`, `npm run check`, `npm run check:docs` (every README row or bullet that claims a capability names the test that proves it, or says "no test yet" or "not yet implemented", Dermot's convention of 10 October 2026; the script holds what it can of that to the disk), then **regenerate and diff** — `publish:first-fork`, `verify:first-fork`, and `git diff --exit-code -- ../exports ../reports` — then the Evennia tests on Python 3.12. The diff is the gate that makes the repository what it says it is: the committed exports are the golden output, and any change that alters the simulation's result fails there rather than shipping quietly. Consequences:
 
 - **An intentional change to the simulation regenerates `exports/` and `reports/` in the same pull request**, by running the publish command, never by hand-editing a JSON file. Say in the PR what changed in the outputs and why.
 - **`SOURCE_DATE_EPOCH` is pinned** (`1767225600`) in the publish script and in the workflow, because report timestamps otherwise use the wall clock. Set it the same way if you call the CLI directly, or the diff will show two timestamps and nothing else.

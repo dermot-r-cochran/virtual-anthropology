@@ -32,6 +32,8 @@ jobs:
           cache-dependency-path: the-archipelago/simulation/package-lock.json
       - run: npm ci
       - run: npm run check
+      - name: README links, front matter, and the README's counts against the disk
+        run: npm run check:docs
       - name: Regenerate research outputs and require them to match the committed ones
         run: |
           npm run publish:first-fork
