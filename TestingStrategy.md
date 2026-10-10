@@ -34,9 +34,11 @@ What is not tested: the Evennia typeclasses, scripts and command set themselves,
 
 ## Layer 3 — CI (`.github/workflows/archipelago.yml`)
 
-On every push to `main` and every pull request, one `test` job: `npm ci`, `npm run check`, then **regenerate and diff** (`publish:first-fork`, `verify:first-fork`, `git diff --exit-code -- ../exports ../reports`), then the Evennia suite on Python 3.12. `SOURCE_DATE_EPOCH` is pinned at the workflow level and again in the publish script.
+On every push to `main` and every pull request, one `test` job: `npm ci`, `npm run check`, the doc check `npm run check:docs`, then **regenerate and diff** (`publish:first-fork`, `verify:first-fork`, `git diff --exit-code -- ../exports ../reports`), then the Evennia suite on Python 3.12. `SOURCE_DATE_EPOCH` is pinned at the workflow level and again in the publish script.
 
 The diff step is the repository's golden suite. The committed `exports/` and `reports/` are behaviour-as-specification: any change that alters a simulation result fails there, and an intended change regenerates them in the same pull request. Never patch an exported file by hand to make the diff green; the `verify` step would fail on the hash anyway.
+
+The doc check (`simulation/scripts/check-docs.ts`, added 2026-10-10 with the README-proof convention) imports nothing outside Node's standard library and is typechecked with the rest. It fails on a relative link in a README or under `docs/` that resolves to nothing, a front-matter block below the top of any Markdown file (generated reports included), and `the-archipelago/README.md` disagreeing with the disk: its directory table against the directories present, its four islands against `ISLAND_IDS`, its list of *The First Fork*'s outputs against `exports/the-first-fork-v1/reports/`. What it cannot check is that a test a README cites still proves the claim beside it; a change that renames a test or a capability keeps those citations true.
 
 A `pages` job runs on `main` only, after `test` passes: it publishes again, copies `site/`, `exports/` (as `data/`) and `reports/` into one artifact and deploys it. Because it does not run on pull requests, a break in site assembly merges green and fails on deploy. The first run on `main` failed at `configure-pages` with *Not Found* because Pages was not enabled for the repository; the workflow passes `enablement: true` since 2026-10-01.
 
