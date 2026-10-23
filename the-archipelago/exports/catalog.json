@@ -33,6 +33,35 @@
           "timelines": 5
         }
       }
+    },
+    {
+      "path": "two-voices-v1",
+      "id": "two-voices-v1",
+      "civilizationId": "archipelago-two-voices",
+      "title": "Two Voices in One Record",
+      "category": "demonstration",
+      "scenario": "two-voices",
+      "headHash": "4b6c3f71e1ac8fb3e11a52832d1ab275a837af8227fbc3fa19725ee16b5c5c25",
+      "eventCount": 34,
+      "findings": [
+        {
+          "hypothesisId": "h1-one-record",
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h2-no-copy",
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h3-one-vote",
+          "outcome": "consistent-with-hypothesis"
+        },
+        {
+          "hypothesisId": "h4-difference-is-not-a-fault",
+          "outcome": "consistent-with-hypothesis"
+        }
+      ],
+      "study": null
     }
   ]
 }

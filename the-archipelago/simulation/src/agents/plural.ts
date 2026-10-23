@@ -92,6 +92,11 @@ export function resolveSystem(sys: PluralSystem, voices: Readonly<Record<string,
   return { intention: decided.intention, decidedBy: decided.member, lines };
 }
 
+/** Provenance for a plural system's mind: the hash of every member's rule base and the fallback, under the plural rule-base id. */
+export function pluralProvenance(voices: Readonly<Record<string, RuleBase>>, fallback: RuleBase, seed: string): MindProvenance {
+  return { kind: "symbolic", model: SYMBOLIC_MODEL, modelVersion: SYMBOLIC_MODEL_VERSION, promptId: PLURAL_RULE_BASE_ID, promptHash: sha256Hex(canonicalJson({ fallback, voices })), seed };
+}
+
 export class PluralMind implements CitizenMind {
   readonly provenance: MindProvenance;
   #last: Reconciled | null = null;
@@ -104,7 +109,7 @@ export class PluralMind implements CitizenMind {
     private readonly fallback: RuleBase = CIVIC_RULES,
     seed = `plural/${citizenId}`,
   ) {
-    this.provenance = { kind: "symbolic", model: SYMBOLIC_MODEL, modelVersion: SYMBOLIC_MODEL_VERSION, promptId: PLURAL_RULE_BASE_ID, promptHash: sha256Hex(canonicalJson({ fallback, voices })), seed };
+    this.provenance = pluralProvenance(voices, fallback, seed);
   }
 
   /** The most recent reconciliation: every fronting member's view and how the system decided. */

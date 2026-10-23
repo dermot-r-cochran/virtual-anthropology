@@ -58,7 +58,7 @@ function compare(v: number, c: Comparator, t: number): boolean {
 
 const NOTABLE_EVENTS = new Set([
   "CitizenForked", "CitizenMigrated", "LawEnacted", "ProposalClosed", "MemoryImported", "MemoryIntegrated", "ContinuityClaimed",
-  "MergerExecuted", "MergerReversed", "LifecycleChanged", "InterventionApplied", "ConversationRecorded", "InstitutionFounded",
+  "MergerExecuted", "MergerReversed", "LifecycleChanged", "InterventionApplied", "ConversationRecorded", "InstitutionFounded", "FrontingChanged",
 ]);
 
 /** Metrics → observations. Metric observations restate values; event observations restate events. */
@@ -177,6 +177,9 @@ export function buildChronicle(input: ResearchInput, civilizationId: string): Ci
         break;
       case "ConversationRecorded":
         add(e, "research", `Researcher ${d.conversation.researcher} converses with ${name(d.conversation.citizen)}.`);
+        break;
+      case "FrontingChanged":
+        add(e, "plurality", `${first("front", "First change of front")}${name(d.citizen)}, a plural system, changes front: ${d.to.length === 0 ? "no member fronting" : `${(d.to as string[]).join(", ")} now ${d.to.length > 1 ? "co-front" : "fronts"}`}${(d.newlyFronted as string[]).length > 0 ? ` (${(d.newlyFronted as string[]).join(", ")} for the first time in the record)` : ""}; the one citizen remains.`);
         break;
       default:
         break;

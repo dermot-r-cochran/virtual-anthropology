@@ -1,0 +1,93 @@
+{
+  "schema": "archipelago/governance-events/v1",
+  "proposals": [
+    {
+      "id": "prop-0001",
+      "island": "continuity",
+      "title": "Quay Lanterns Act",
+      "status": "adopted",
+      "electorate": [
+        "cit-0001",
+        "cit-0002",
+        "cit-0003",
+        "cit-0004"
+      ],
+      "votes": {
+        "cit-0001": "yes",
+        "cit-0002": "no",
+        "cit-0003": "yes",
+        "cit-0004": "yes"
+      },
+      "openedAtSeq": 1
+    }
+  ],
+  "events": [
+    {
+      "seq": 1,
+      "tick": 0,
+      "type": "ProposalSubmitted",
+      "actor": "citizen:cit-0002",
+      "citizens": [
+        "cit-0001",
+        "cit-0002",
+        "cit-0003",
+        "cit-0004"
+      ],
+      "summary": "Odile Ferrant (cit-0002) proposes \"Quay Lanterns Act\" on continuity; electorate of 4 snapshotted; closes at tick 4.",
+      "hash": "c995909b34a3e6ae95c3748362dcbb10685c96d31fd6733fd0091dbcf6706f2e"
+    },
+    {
+      "seq": 2,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0001",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Marren Tide (cit-0001) votes yes on prop-0001.",
+      "hash": "514bc888b3fe6c9ea131039a84ea52340f6d9f6d1e1d1601a6a0acdf59c4f7cc"
+    },
+    {
+      "seq": 3,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0002",
+      "citizens": [
+        "cit-0002"
+      ],
+      "summary": "Odile Ferrant (cit-0002) votes no on prop-0001.",
+      "hash": "88d094dc5052e1fe141cff230dab934ba88b22e6f13361fc116e562fb6e18afc"
+    },
+    {
+      "seq": 4,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0003",
+      "citizens": [
+        "cit-0003"
+      ],
+      "summary": "Teo Lask (cit-0003) votes yes on prop-0001.",
+      "hash": "95e3230d6e8a6b26314fcea038d777035e78068ac47f25a7b87822172072943d"
+    },
+    {
+      "seq": 5,
+      "tick": 0,
+      "type": "VoteCast",
+      "actor": "citizen:cit-0004",
+      "citizens": [
+        "cit-0004"
+      ],
+      "summary": "Hale Morrow (cit-0004) votes yes on prop-0001.",
+      "hash": "e2d34c1ac6b78d2736abebf740508146e05e5afc31a8f0ef346664f1d54b7230"
+    },
+    {
+      "seq": 27,
+      "tick": 4,
+      "type": "ProposalClosed",
+      "actor": "system:clock",
+      "citizens": [],
+      "summary": "prop-0001 is adopted (yes 3, no 1, abstain 0; quorum met; counted by majority-of-electorate).",
+      "hash": "cdde1492355f5e631c31690c0583fae54128d798913844554f1a4f5688b4ede5"
+    }
+  ]
+}

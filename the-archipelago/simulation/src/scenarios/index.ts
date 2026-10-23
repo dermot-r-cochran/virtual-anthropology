@@ -8,6 +8,8 @@ import type { IslandInterpretation } from "../research/legal.js";
 import type { ExperimentManifest } from "../research/manifest.js";
 import { firstForkScenarioOutputs } from "./the-first-fork/outputs.js";
 import { branchFirstFork, runFirstFork, type FirstForkRun } from "./the-first-fork/run.js";
+import { twoVoicesScenarioOutputs } from "./two-voices/outputs.js";
+import { runTwoVoices } from "./two-voices/run.js";
 
 /** What every scenario hands to the generic research and export pipeline. */
 export interface ScenarioRun {
@@ -68,6 +70,13 @@ export const SCENARIOS: Record<string, ScenarioDriver> = {
         firstForkBase.set(key, base);
       }
       return firstForkScenarioOutputs(await branchFirstFork(await base, b), m);
+    },
+  },
+  /** Two Voices in One Record: a plural citizen among singular ones. No branch point: the whole season is scripted in its beats. */
+  "two-voices": {
+    async run(m, v) {
+      if (v?.laws) throw new Error("two-voices: doctrine variants are not supported; the scenario declares no study");
+      return twoVoicesScenarioOutputs(await runTwoVoices({ seed: m.seed, abmRounds: m.parameters.abmRounds, researchBounds: m.researchBounds, researchers: m.researchers.map((r) => r.id) }), m);
     },
   },
 };

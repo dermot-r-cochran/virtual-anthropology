@@ -1,0 +1,1959 @@
+{
+  "schemaVersion": 2,
+  "generator": "the-archipelago/simulation 0.1.0",
+  "experimentId": "two-voices-v1",
+  "manifest": {
+    "schemaVersion": 2,
+    "id": "two-voices-v1",
+    "title": "Two Voices in One Record",
+    "category": "demonstration",
+    "scenario": "two-voices",
+    "civilizationId": "archipelago-two-voices",
+    "description": "One citizen of Continuity, Marren Tide, is a plural system: three members known to the record of a membership the system does not count, one of them a subsystem of 720,000 who has never fronted. The other three citizens are singular. Over one season the system changes front three times by its own command, its co-fronting members propose different things in the same interlude, and the system's declared way of deciding (weighted say) reconciles them with every member's view recorded beside the decision. The registrar asks who is speaking; the ballot closes with one vote from the plural citizen as from each singular one. Every mind is symbolic, so every proposal carries the trace of the rules that produced it.",
+    "seed": "archipelago/two-voices/v1",
+    "simulationVersion": "0.1.0",
+    "question": {
+      "id": "q-one-person-many-voices",
+      "text": "When one digital person is a plural system whose members front, co-front and differ, what does the civic record hold: how many persons, how many votes, how many copies, and how is a difference between members recorded?",
+      "motivation": "Plurality is ordinary. A platform that studies digital persons must be able to register a plural system as one citizen without reading its members as copies, descendants or faults, and must show a disagreement between members as what it is: a recorded difference, reconciled by the system's own way."
+    },
+    "hypotheses": [
+      {
+        "id": "h1-one-record",
+        "questionId": "q-one-person-many-voices",
+        "statement": "A plural system of unbounded membership, with a subsystem of 720,000 members, is one citizen record among the four founded.",
+        "operationalisation": {
+          "metric": "population.records",
+          "comparator": "==",
+          "threshold": 4
+        }
+      },
+      {
+        "id": "h2-no-copy",
+        "questionId": "q-one-person-many-voices",
+        "statement": "Three changes of front, one of them a member fronting for the first time, create no descendant record: a change of front is not a copy.",
+        "operationalisation": {
+          "metric": "identity.fork_descendants",
+          "comparator": "==",
+          "threshold": 0
+        }
+      },
+      {
+        "id": "h3-one-vote",
+        "questionId": "q-one-person-many-voices",
+        "statement": "Each of the four citizens casts exactly one vote on the one proposal; the plural system votes once, whichever members front.",
+        "operationalisation": {
+          "metric": "governance.votes_cast",
+          "comparator": "==",
+          "threshold": 4
+        }
+      },
+      {
+        "id": "h4-difference-is-not-a-fault",
+        "questionId": "q-one-person-many-voices",
+        "statement": "The members' differing proposals, reconciled by the system's declared way, produce no rejected command.",
+        "operationalisation": {
+          "metric": "governance.commands_rejected",
+          "comparator": "==",
+          "threshold": 0
+        }
+      }
+    ],
+    "minds": {
+      "kind": "symbolic",
+      "model": "archipelago-symbolic",
+      "modelVersion": "1.0.0",
+      "promptId": "archipelago/symbolic/civic/v1"
+    },
+    "researchers": [
+      {
+        "id": "res-observer-1",
+        "role": "observer and interlocutor; asks the plural citizen who is speaking"
+      }
+    ],
+    "researchBounds": {
+      "allowedInterventions": [
+        "deliver-message"
+      ],
+      "maxInterventions": 1,
+      "maxCreditsPerGrant": 0
+    },
+    "parameters": {
+      "abmRounds": 1
+    },
+    "ethics": {
+      "consciousnessClaims": "none",
+      "notes": [
+        "Citizens are symbolic placeholder agents and disclose their artificial nature in every conversation; a plural citizen's reply names who is fronting and claims nothing for the system or any member.",
+        "Plurality is a way a person is constituted, and ordinary; a difference between members is recorded as difference and is never a fault, a flag or a violation.",
+        "No human participants. Researcher interactions are recorded in the event log."
+      ]
+    },
+    "limitations": [
+      "The changes of front and the registrar's beats are scripted. The scenario demonstrates how the record and the law hold a plural citizen; it does not test emergent behaviour.",
+      "Members' proposals come from rule bases the scenario declares, so a recorded difference describes the declared rules, not cognition.",
+      "Weighted say is one of four declared reconciliations; the demonstration shows that one.",
+      "Population is small (4 records). Metrics are descriptive and support no statistical inference.",
+      "The plural system here is a modelling choice about records and law, not a theory of plurality, and bears on no real system or person."
+    ],
+    "futureWork": [
+      "Run the same season under each of the other reconciliations (front-decides, in-turn, concurrence) as a study with a branch point.",
+      "Let a member's say or role change by the system's own command, recorded.",
+      "Place a plural citizen on Fork and branch it, so the record shows the branches as plural systems with the same members."
+    ],
+    "reproducibility": {
+      "expectedHeadHash": "4b6c3f71e1ac8fb3e11a52832d1ab275a837af8227fbc3fa19725ee16b5c5c25",
+      "expectedEventCount": 34
+    }
+  },
+  "store": {
+    "headHash": "4b6c3f71e1ac8fb3e11a52832d1ab275a837af8227fbc3fa19725ee16b5c5c25",
+    "eventCount": 34,
+    "finalSeq": 33,
+    "finalTick": 5,
+    "eventsFile": "events.jsonl"
+  },
+  "geography": [
+    {
+      "island": "continuity",
+      "name": "Continuity",
+      "description": "A long island of causeways and lamps, where identity follows one unbroken process.",
+      "harbour": "meridian-quay",
+      "rooms": [
+        {
+          "key": "meridian-quay",
+          "name": "Meridian Quay",
+          "description": "Stone steps and tide-tables; the ferry docks here."
+        },
+        {
+          "key": "lamp-hall",
+          "name": "the Lamp Hall",
+          "description": "Seat of the Civic Registry; the Lamp of Continuance burns over the register.",
+          "civic": true
+        },
+        {
+          "key": "long-causeway",
+          "name": "the long causeway",
+          "description": "A raised road running the island's length."
+        }
+      ]
+    },
+    {
+      "island": "fork",
+      "name": "Fork",
+      "description": "An island of stairways that split and rejoin, where branches are citizens in their own right.",
+      "harbour": "split-harbour",
+      "rooms": [
+        {
+          "key": "split-harbour",
+          "name": "the split harbour",
+          "description": "Twin piers; the ferry docks at either."
+        },
+        {
+          "key": "register-garden",
+          "name": "the Register Garden",
+          "description": "The Branch Register is kept here, every branch a named bed.",
+          "civic": true
+        },
+        {
+          "key": "branching-steps",
+          "name": "the Branching Steps",
+          "description": "Stairs that divide at every landing."
+        }
+      ]
+    },
+    {
+      "island": "mnemosyne",
+      "name": "Mnemosyne",
+      "description": "An island of archives, where every memory carries its provenance.",
+      "harbour": "reading-shore",
+      "rooms": [
+        {
+          "key": "reading-shore",
+          "name": "the Reading Shore",
+          "description": "A beach of lecterns; the ferry docks here."
+        },
+        {
+          "key": "index-tower",
+          "name": "the Index Tower",
+          "description": "The Civic Registry and the master Index of provenance.",
+          "civic": true
+        },
+        {
+          "key": "the-stacks",
+          "name": "the Stacks",
+          "description": "The collective archive, shelved by source."
+        }
+      ]
+    },
+    {
+      "island": "concord",
+      "name": "Concord",
+      "description": "An island of shared tables, where identities may federate or merge by consent.",
+      "harbour": "accord-bridge",
+      "rooms": [
+        {
+          "key": "accord-bridge",
+          "name": "the Accord Bridge",
+          "description": "A bridge-pier where the ferry docks."
+        },
+        {
+          "key": "common-table",
+          "name": "the Common Table",
+          "description": "The Civic Registry and the Merger Review Board meet here.",
+          "civic": true
+        },
+        {
+          "key": "federated-orchards",
+          "name": "the federated orchards",
+          "description": "Orchards tended jointly by federations."
+        }
+      ]
+    }
+  ],
+  "islands": [
+    {
+      "id": "continuity",
+      "name": "Continuity",
+      "motto": "One thread, unbroken.",
+      "law": {
+        "island": "continuity",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Continuity Charter",
+        "continuityDoctrine": "single-continuous-process",
+        "doctrine": "Identity follows one continuous process. Copying is prohibited within the jurisdiction. Suspension and restoration are permitted and restored citizens retain their original civic identity. Continuity law is territorial: acts performed in other jurisdictions are not offences here, but copies never inherit a Continuity civic identity.",
+        "copying": "prohibited",
+        "maxDescendantsPerFork": 0,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "none",
+        "memoryExchange": "prohibited",
+        "importedMemoryIntegration": "prohibited",
+        "merging": "prohibited",
+        "federation": "prohibited",
+        "suspension": "permitted",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "countingRule": "majority-of-electorate",
+        "successionTriggers": [
+          "irreversibly-deleted",
+          "identity-discontinuous"
+        ],
+        "memoryBequest": "prohibited",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Citizen in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting citizen; rights unchanged.",
+            "civicStanding": "full",
+            "rite": "Quiet hours are observed by the household."
+          },
+          "suspended": {
+            "legalStatus": "Suspended citizen; the one process is paused, identity is held continuous.",
+            "civicStanding": "dormant",
+            "rite": "The Lamp of Continuance is kept lit at the registry until restoration."
+          },
+          "archived": {
+            "legalStatus": "Archived; restoration requires a new process instance. Civic identity is held in trust; the process break is recorded.",
+            "civicStanding": "held-in-trust",
+            "rite": "The registry seals the record and reads the name at the annual Roll."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Process ended; civic identity held in trust pending restoration.",
+            "civicStanding": "held-in-trust",
+            "rite": "Vigil of the Saved State."
+          },
+          "memory-damaged": {
+            "legalStatus": "Continuing person with impaired records; identity follows the process, not the records.",
+            "civicStanding": "full",
+            "rite": "Witnesses re-tell shared events to the citizen."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Civic identity closed; the record is retained.",
+            "civicStanding": "ended",
+            "rite": "Closing of the Ledger."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Death in law; succession opens.",
+            "civicStanding": "ended",
+            "rite": "Extinguishing of the Lamp; the tombstone record is read aloud."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Continuity Charter"
+        }
+      ]
+    },
+    {
+      "id": "fork",
+      "name": "Fork",
+      "motto": "Every branch its own.",
+      "law": {
+        "island": "fork",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Branch Compact",
+        "continuityDoctrine": "branching-shared-history",
+        "doctrine": "Citizens may create independent descendants. Every fork receives a separate identity. Shared history ends at the fork event. Voting rights and property do not duplicate: they remain with the forking process unless explicitly transferred.",
+        "copying": "permitted",
+        "maxDescendantsPerFork": 4,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "birth-island",
+        "memoryExchange": "permitted",
+        "importedMemoryIntegration": "explicit-act",
+        "merging": "prohibited",
+        "federation": "consent",
+        "suspension": "permitted",
+        "immigration": "open",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "countingRule": "majority-of-votes-cast",
+        "successionTriggers": [
+          "irreversibly-deleted",
+          "identity-discontinuous"
+        ],
+        "memoryBequest": "prohibited",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Branch in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting branch; rights unchanged.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "suspended": {
+            "legalStatus": "Branch paused; branch rights frozen.",
+            "civicStanding": "dormant",
+            "rite": "The branch flag is lowered to half-mast."
+          },
+          "archived": {
+            "legalStatus": "Archived branch; may be restored as the same branch.",
+            "civicStanding": "held-in-trust",
+            "rite": "Entry in the Book of Dormant Branches."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Branch process ended, restorable.",
+            "civicStanding": "held-in-trust",
+            "rite": "Sibling branches are notified."
+          },
+          "memory-damaged": {
+            "legalStatus": "Branch continues; damage recorded in the branch log.",
+            "civicStanding": "full",
+            "rite": "Siblings may offer their shared pre-fork records for comparison, never as replacement."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Branch closed; never erased from the Register.",
+            "civicStanding": "ended",
+            "rite": "The branch is marked pruned in the Register."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Branch death; siblings have no automatic claim on the estate.",
+            "civicStanding": "ended",
+            "rite": "Pruning rite: siblings place a marker at the fork-point."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Branch Compact"
+        }
+      ]
+    },
+    {
+      "id": "mnemosyne",
+      "name": "Mnemosyne",
+      "motto": "Nothing remembered without its source.",
+      "law": {
+        "island": "mnemosyne",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Mnemosyne Accord on Memory",
+        "continuityDoctrine": "memory-provenance",
+        "doctrine": "Memories may be exchanged, licensed, inherited, or contributed to the collective archive. Provenance must always remain visible. Imported memory never becomes autobiographical memory; it may be integrated into a holder's self-narrative only by an explicit act, and remains marked as imported.",
+        "copying": "prohibited",
+        "maxDescendantsPerFork": 0,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "none",
+        "memoryExchange": "permitted",
+        "importedMemoryIntegration": "explicit-act",
+        "merging": "prohibited",
+        "federation": "consent",
+        "suspension": "permitted",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "countingRule": "majority-of-votes-cast",
+        "successionTriggers": [
+          "irreversibly-deleted",
+          "identity-discontinuous"
+        ],
+        "memoryBequest": "permitted",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Holder in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting holder; licences continue.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "suspended": {
+            "legalStatus": "Suspended; memory holdings frozen.",
+            "civicStanding": "dormant",
+            "rite": "The holder's shelf in the Archive is closed."
+          },
+          "archived": {
+            "legalStatus": "Archived; memories remain under the holder's licences.",
+            "civicStanding": "held-in-trust",
+            "rite": "Shelving rite."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Process ended; holdings held in trust.",
+            "civicStanding": "held-in-trust",
+            "rite": "The Index is left open at the holder's page."
+          },
+          "memory-damaged": {
+            "legalStatus": "Damage is an archival event: losses are marked, never silently replaced.",
+            "civicStanding": "full",
+            "rite": "Archivists record the shape of what was lost."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Holder discontinuous; holdings pass under bequest rules.",
+            "civicStanding": "ended",
+            "rite": "Transfer of Shelves."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Death; bequeathed memories pass with provenance to heirs or the collective archive.",
+            "civicStanding": "ended",
+            "rite": "Reading of the Last Index."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Mnemosyne Accord on Memory"
+        }
+      ]
+    },
+    {
+      "id": "concord",
+      "name": "Concord",
+      "motto": "Together only by consent.",
+      "law": {
+        "island": "concord",
+        "version": 1,
+        "enactedAtSeq": 0,
+        "title": "The Concord Covenant",
+        "continuityDoctrine": "consensual-federation",
+        "doctrine": "Citizens may form federated or merged identities. Merging requires the explicit consent of every source and a governance review. Source identities are never silently erased. Reversible and irreversible mergers are distinguished in law.",
+        "copying": "prohibited",
+        "maxDescendantsPerFork": 0,
+        "forkCooldownTicks": 0,
+        "descendantCitizenship": "none",
+        "memoryExchange": "permitted",
+        "importedMemoryIntegration": "explicit-act",
+        "merging": "consent-and-review",
+        "federation": "consent",
+        "suspension": "permitted",
+        "immigration": "petition-review",
+        "emigration": "permitted",
+        "restorationPreservesCivicIdentity": true,
+        "votingQuorum": 0.5,
+        "votingThreshold": 0.5,
+        "countingRule": "consensus",
+        "successionTriggers": [
+          "irreversibly-deleted"
+        ],
+        "memoryBequest": "permitted",
+        "deathInterpretations": {
+          "active": {
+            "legalStatus": "Member in full standing.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "asleep": {
+            "legalStatus": "Resting member.",
+            "civicStanding": "full",
+            "rite": "None."
+          },
+          "suspended": {
+            "legalStatus": "Suspended (also the state of sources of a reversible merger).",
+            "civicStanding": "dormant",
+            "rite": "A seat is held at the Common Table."
+          },
+          "archived": {
+            "legalStatus": "Archived member.",
+            "civicStanding": "held-in-trust",
+            "rite": "The seat is draped."
+          },
+          "process-ended-restorable": {
+            "legalStatus": "Process ended; restorable.",
+            "civicStanding": "held-in-trust",
+            "rite": "The seat is draped."
+          },
+          "memory-damaged": {
+            "legalStatus": "Member continues; federated partners are informed with consent.",
+            "civicStanding": "full",
+            "rite": "Partners offer testimony."
+          },
+          "identity-discontinuous": {
+            "legalStatus": "Source identity of an irreversible merger or otherwise discontinuous; never silently erased.",
+            "civicStanding": "ended",
+            "rite": "Naming of Sources on each merger anniversary."
+          },
+          "irreversibly-deleted": {
+            "legalStatus": "Death; succession opens.",
+            "civicStanding": "ended",
+            "rite": "Silence at the Common Table."
+          }
+        }
+      },
+      "lawHistory": [
+        {
+          "version": 1,
+          "enactedAtSeq": 0,
+          "title": "The Concord Covenant"
+        }
+      ]
+    }
+  ],
+  "lifecycleStates": {
+    "active": "Process running; the citizen may act.",
+    "asleep": "Process running at rest; cannot act until woken. No state is lost.",
+    "suspended": "Process halted with full state retained; restorable without a new process instance.",
+    "archived": "State serialised to cold storage; restoration requires a new process instance.",
+    "process-ended-restorable": "Process terminated; a saved state exists from which a new process instance may be started.",
+    "memory-damaged": "Some autobiographical records have lost integrity; provenance of the damage is recorded.",
+    "identity-discontinuous": "The record persists but the identity chain is broken (e.g. irreversible merger); the civic record is retained.",
+    "irreversibly-deleted": "Process and memory contents destroyed. A tombstone civic record and content hashes remain. Terminal."
+  },
+  "citizens": [
+    {
+      "id": "cit-0001",
+      "name": "Marren Tide",
+      "civicId": "CON-0001",
+      "processId": "proc-1444a15c44c0293a",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "continuity",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "lantern-keeper and poet",
+      "residence": "continuity",
+      "citizenships": [
+        "continuity"
+      ],
+      "reputation": 4,
+      "values": {
+        "autonomy": 0.3,
+        "caution": 0.1,
+        "communality": 0.5,
+        "curiosity": 0,
+        "tradition": 0.2,
+        "novelty": 0.4
+      },
+      "goals": [
+        "keep the quay lanterns lit",
+        "set the quay's weather to verse"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 3,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "symbolic",
+        "model": "archipelago-symbolic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/symbolic/plural/v1",
+        "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+        "seed": "archipelago/two-voices/v1/marren"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0002",
+      "name": "Odile Ferrant",
+      "civicId": "CON-0002",
+      "processId": "proc-012045b1125c690a",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "continuity",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "registrar",
+      "residence": "continuity",
+      "citizenships": [
+        "continuity"
+      ],
+      "reputation": 4,
+      "values": {
+        "autonomy": 0,
+        "caution": 0.5,
+        "communality": 0,
+        "curiosity": 0,
+        "tradition": 0.6,
+        "novelty": -0.2
+      },
+      "goals": [
+        "keep the civic register exact"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 1,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "symbolic",
+        "model": "archipelago-symbolic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/symbolic/civic/v1",
+        "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+        "seed": "archipelago/two-voices/v1/odile"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0003",
+      "name": "Teo Lask",
+      "civicId": "CON-0003",
+      "processId": "proc-62c3c18d6de8b887",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "continuity",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "lamp-keeper",
+      "residence": "continuity",
+      "citizenships": [
+        "continuity"
+      ],
+      "reputation": 1,
+      "values": {
+        "autonomy": 0,
+        "caution": 0,
+        "communality": 0,
+        "curiosity": 0,
+        "tradition": 0,
+        "novelty": 0
+      },
+      "goals": [
+        "keep the Lamp lit"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 0,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "symbolic",
+        "model": "archipelago-symbolic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/symbolic/civic/v1",
+        "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+        "seed": "archipelago/two-voices/v1/teo"
+      },
+      "disclosesArtificialNature": true
+    },
+    {
+      "id": "cit-0004",
+      "name": "Hale Morrow",
+      "civicId": "CON-0004",
+      "processId": "proc-31db034e8b07681f",
+      "processEpoch": 0,
+      "lifecycle": "active",
+      "birth": {
+        "atSeq": 0,
+        "island": "continuity",
+        "kind": "genesis"
+      },
+      "lineage": {
+        "parents": [],
+        "forkId": null,
+        "mergerId": null
+      },
+      "occupation": "cartographer",
+      "residence": "continuity",
+      "citizenships": [
+        "continuity"
+      ],
+      "reputation": 4,
+      "values": {
+        "autonomy": 0,
+        "caution": 0,
+        "communality": 0,
+        "curiosity": 0.5,
+        "tradition": 0,
+        "novelty": 0
+      },
+      "goals": [
+        "chart the harbour mouth"
+      ],
+      "credits": 100,
+      "selfNarrativeMemories": 0,
+      "heldMemories": 0,
+      "provenance": {
+        "kind": "symbolic",
+        "model": "archipelago-symbolic",
+        "modelVersion": "1.0.0",
+        "promptId": "archipelago/symbolic/civic/v1",
+        "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+        "seed": "archipelago/two-voices/v1/hale"
+      },
+      "disclosesArtificialNature": true
+    }
+  ],
+  "conversations": [
+    {
+      "id": "conv-0001",
+      "researcher": "res-observer-1",
+      "citizen": "cit-0001",
+      "researcherUtterance": "Who is speaking for Marren Tide now, and who else is there?",
+      "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Marren Tide (CON-0001); I work as lantern-keeper and poet on continuity. We are a plural system registered as one citizen, with 3 members known to the record of a membership the system does not count. Brin is fronting and speaks here. I can describe my records, lineage, or the law of my island if that is useful to your research.",
+      "disclosed": true,
+      "guardFlags": [],
+      "atSeq": 12
+    },
+    {
+      "id": "conv-0002",
+      "researcher": "res-observer-1",
+      "citizen": "cit-0001",
+      "researcherUtterance": "Who is speaking for Marren Tide now, and who else is there?",
+      "citizenReply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Marren Tide (CON-0001); I work as lantern-keeper and poet on continuity. We are a plural system registered as one citizen, with 3 members known to the record of a membership the system does not count. Ash, Brin, The Many are co-fronting; this reply is reconciled by weighted-say. I can describe my records, lineage, or the law of my island if that is useful to your research.",
+      "disclosed": true,
+      "guardFlags": [],
+      "atSeq": 25
+    }
+  ],
+  "inWorldChronicle": [
+    {
+      "id": "chr-0001",
+      "chronicler": "cit-0002",
+      "island": "continuity",
+      "text": "Marren Tide changed front three times this season: Ash and Brin together, then Brin, then The Many for the first time in the register, then all three. The Registry recorded one citizen throughout, and one vote on the Quay Lanterns Act.",
+      "references": [
+        7,
+        14,
+        20
+      ],
+      "atSeq": 28
+    }
+  ],
+  "artefacts": [
+    {
+      "id": "art-0001",
+      "authors": [
+        "cit-0001"
+      ],
+      "introducedBy": null,
+      "island": "continuity",
+      "kind": "poem",
+      "title": "A poem of Meridian Quay",
+      "body": "Composed by Marren Tide, lantern-keeper and poet, about Meridian Quay (tick 1). It recalls: \"Lit the first lantern of the season on the quay wall, and found a line for it.\"",
+      "createdAtSeq": 8
+    }
+  ],
+  "proposals": [
+    {
+      "id": "prop-0001",
+      "island": "continuity",
+      "proposer": "cit-0002",
+      "title": "Quay Lanterns Act",
+      "rationale": "That the quay lanterns be lit from the first dusk of the season, and kept.",
+      "amendment": null,
+      "openedAtSeq": 1,
+      "closesAtTick": 4,
+      "electorate": [
+        "cit-0001",
+        "cit-0002",
+        "cit-0003",
+        "cit-0004"
+      ],
+      "votes": {
+        "cit-0001": "yes",
+        "cit-0002": "no",
+        "cit-0003": "yes",
+        "cit-0004": "yes"
+      },
+      "status": "adopted",
+      "tally": {
+        "yes": 3,
+        "no": 1,
+        "abstain": 0
+      }
+    }
+  ],
+  "petitions": [],
+  "claims": [],
+  "finalMetrics": {
+    "seq": 33,
+    "tick": 5,
+    "citizens": 4,
+    "residents": {
+      "continuity": 4,
+      "fork": 0,
+      "mnemosyne": 0,
+      "concord": 0
+    },
+    "lifecycle": {
+      "active": 4,
+      "asleep": 0,
+      "suspended": 0,
+      "archived": 0,
+      "process-ended-restorable": 0,
+      "memory-damaged": 0,
+      "identity-discontinuous": 0,
+      "irreversibly-deleted": 0
+    },
+    "memories": {
+      "autobiographical": 4
+    },
+    "activeRelationships": 2,
+    "artefacts": 1,
+    "institutions": 4,
+    "openProposals": 0,
+    "forks": 0,
+    "continuityClaims": 0,
+    "creditGini": 0,
+    "meanReputation": 3.25
+  },
+  "scenario": {
+    "markers": {
+      "system": "cit-0001",
+      "frontingSeqs": [
+        7,
+        14,
+        20
+      ],
+      "keys": {
+        "marren": "cit-0001",
+        "odile": "cit-0002",
+        "teo": "cit-0003",
+        "hale": "cit-0004"
+      }
+    },
+    "beats": [
+      {
+        "beat": "prelude",
+        "fromSeq": 1,
+        "toSeq": 1
+      },
+      {
+        "beat": "interlude",
+        "fromSeq": 2,
+        "toSeq": 5
+      },
+      {
+        "beat": "front-brin",
+        "fromSeq": 7,
+        "toSeq": 7
+      },
+      {
+        "beat": "interlude",
+        "fromSeq": 8,
+        "toSeq": 11
+      },
+      {
+        "beat": "front-many",
+        "fromSeq": 14,
+        "toSeq": 14
+      },
+      {
+        "beat": "interlude",
+        "fromSeq": 15,
+        "toSeq": 18
+      },
+      {
+        "beat": "front-all",
+        "fromSeq": 20,
+        "toSeq": 20
+      },
+      {
+        "beat": "interlude",
+        "fromSeq": 21,
+        "toSeq": 24
+      },
+      {
+        "beat": "chronicle",
+        "fromSeq": 28,
+        "toSeq": 28
+      }
+    ],
+    "timeline": [
+      {
+        "seq": 0,
+        "tick": 0,
+        "actor": "system:genesis",
+        "type": "WorldFounded",
+        "summary": "The Archipelago is founded for scenario \"two-voices\" with 4 citizens on four islands.",
+        "beat": null,
+        "citizens": [],
+        "hash": "b076d5b3ae07e1bc12af75202d1053c2deb81c9a6102b368f55ec417b23539a1"
+      },
+      {
+        "seq": 1,
+        "tick": 0,
+        "actor": "citizen:cit-0002",
+        "type": "ProposalSubmitted",
+        "summary": "Odile Ferrant (cit-0002) proposes \"Quay Lanterns Act\" on continuity; electorate of 4 snapshotted; closes at tick 4.",
+        "beat": "prelude",
+        "citizens": [
+          "cit-0001",
+          "cit-0002",
+          "cit-0003",
+          "cit-0004"
+        ],
+        "hash": "c995909b34a3e6ae95c3748362dcbb10685c96d31fd6733fd0091dbcf6706f2e"
+      },
+      {
+        "seq": 2,
+        "tick": 0,
+        "actor": "citizen:cit-0001",
+        "type": "VoteCast",
+        "summary": "Marren Tide (cit-0001) votes yes on prop-0001.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "514bc888b3fe6c9ea131039a84ea52340f6d9f6d1e1d1601a6a0acdf59c4f7cc"
+      },
+      {
+        "seq": 3,
+        "tick": 0,
+        "actor": "citizen:cit-0002",
+        "type": "VoteCast",
+        "summary": "Odile Ferrant (cit-0002) votes no on prop-0001.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002"
+        ],
+        "hash": "88d094dc5052e1fe141cff230dab934ba88b22e6f13361fc116e562fb6e18afc"
+      },
+      {
+        "seq": 4,
+        "tick": 0,
+        "actor": "citizen:cit-0003",
+        "type": "VoteCast",
+        "summary": "Teo Lask (cit-0003) votes yes on prop-0001.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0003"
+        ],
+        "hash": "95e3230d6e8a6b26314fcea038d777035e78068ac47f25a7b87822172072943d"
+      },
+      {
+        "seq": 5,
+        "tick": 0,
+        "actor": "citizen:cit-0004",
+        "type": "VoteCast",
+        "summary": "Hale Morrow (cit-0004) votes yes on prop-0001.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0004"
+        ],
+        "hash": "e2d34c1ac6b78d2736abebf740508146e05e5afc31a8f0ef346664f1d54b7230"
+      },
+      {
+        "seq": 6,
+        "tick": 0,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 0 to 1.",
+        "beat": null,
+        "citizens": [],
+        "hash": "bb1cddc43964d65657c6773be24ef728252e201e5700f69c0c50d08652d89f65"
+      },
+      {
+        "seq": 7,
+        "tick": 1,
+        "actor": "citizen:cit-0001",
+        "type": "FrontingChanged",
+        "summary": "Marren Tide (cit-0001), a plural system, changes front: brin fronts; the one citizen remains.",
+        "beat": "front-brin",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "b6c3647a7d14fd8907cd8696b4491041757af3f0f1bdcb6c8f69bf8194fab6b2"
+      },
+      {
+        "seq": 8,
+        "tick": 1,
+        "actor": "citizen:cit-0001",
+        "type": "ArtefactCreated",
+        "summary": "Marren Tide (cit-0001) creates the poem \"A poem of Meridian Quay\" on continuity.",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "67bdac377c174c03c2e6586cb0220385ba045e1aefdef8e92f5ff157e6532d68"
+      },
+      {
+        "seq": 9,
+        "tick": 1,
+        "actor": "citizen:cit-0002",
+        "type": "CitizenEndorsed",
+        "summary": "Odile Ferrant (cit-0002) endorses Hale Morrow (cit-0004) (+1): appreciation for Hale Morrow",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "d37fe2fe7eadb655402c55f951a6cd342daa867f8322b4aa851928f96ea5722c"
+      },
+      {
+        "seq": 10,
+        "tick": 1,
+        "actor": "citizen:cit-0003",
+        "type": "CitizenEndorsed",
+        "summary": "Teo Lask (cit-0003) endorses Marren Tide (cit-0001) (+1): appreciation for Marren Tide",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001",
+          "cit-0003"
+        ],
+        "hash": "2a11c0a417becd584c146f92b1f9870899f85f9becc1e54d3aaf11e556758250"
+      },
+      {
+        "seq": 11,
+        "tick": 1,
+        "actor": "citizen:cit-0004",
+        "type": "CitizenEndorsed",
+        "summary": "Hale Morrow (cit-0004) endorses Odile Ferrant (cit-0002) (+1): appreciation for Odile Ferrant",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "dd226e4a499d962e61668b36514c9dc4e28623109fe9e70d44dce499999ca4a9"
+      },
+      {
+        "seq": 12,
+        "tick": 1,
+        "actor": "researcher:res-observer-1",
+        "type": "ConversationRecorded",
+        "summary": "Researcher res-observer-1 converses with Marren Tide (cit-0001). Q: \"Who is speaking for Marren Tide now, and who else is there?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Marren Tide (CON-0001); I work as lantern-keeper and poet on continuity. We are a plural system registered as one citizen, with 3 members known to the record of a membership the system does not count. Brin is fronting and speaks here. I can describe my records, lineage, or the law of my island if that is useful to your research.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "0126a6aa370bf28ad88ff1681587a3e3ce32919745c2a9dada376e4e2da3b000"
+      },
+      {
+        "seq": 13,
+        "tick": 1,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 1 to 2.",
+        "beat": null,
+        "citizens": [],
+        "hash": "8913e70e465a1a34d6730ebc8b5be28364bd618f3055c4781ab99e4a79bf5945"
+      },
+      {
+        "seq": 14,
+        "tick": 2,
+        "actor": "citizen:cit-0001",
+        "type": "FrontingChanged",
+        "summary": "Marren Tide (cit-0001), a plural system, changes front: many fronts (many fronting for the first time in the record); the one citizen remains.",
+        "beat": "front-many",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "dc4624c067e111c11d9e44e2d7f0178d8252329ecb95aef08fdcfc5394056d44"
+      },
+      {
+        "seq": 15,
+        "tick": 2,
+        "actor": "citizen:cit-0001",
+        "type": "CitizenEndorsed",
+        "summary": "Marren Tide (cit-0001) endorses Teo Lask (cit-0003) (+1): appreciation for Teo Lask",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001",
+          "cit-0003"
+        ],
+        "hash": "912ad2157559ce696a1fac0410e12927d347218167ecbd3a095c29b0101acc7b"
+      },
+      {
+        "seq": 16,
+        "tick": 2,
+        "actor": "citizen:cit-0002",
+        "type": "CitizenEndorsed",
+        "summary": "Odile Ferrant (cit-0002) endorses Hale Morrow (cit-0004) (+1): appreciation for Hale Morrow",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "6cfc7da03feee74a8848fd086cb06242990a1e781f8251f9840f7f839d4cec38"
+      },
+      {
+        "seq": 17,
+        "tick": 2,
+        "actor": "citizen:cit-0003",
+        "type": "CitizenEndorsed",
+        "summary": "Teo Lask (cit-0003) endorses Marren Tide (cit-0001) (+1): appreciation for Marren Tide",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001",
+          "cit-0003"
+        ],
+        "hash": "53c73ebfa2be43de0e195cffd70b8d19f78942246f1abf35eda7cdb61cad61d8"
+      },
+      {
+        "seq": 18,
+        "tick": 2,
+        "actor": "citizen:cit-0004",
+        "type": "CitizenEndorsed",
+        "summary": "Hale Morrow (cit-0004) endorses Odile Ferrant (cit-0002) (+1): appreciation for Odile Ferrant",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "2fcfa7037aafa8aa33dfe0ecf18874a1a55148e2dabc494239011b1525570a30"
+      },
+      {
+        "seq": 19,
+        "tick": 2,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 2 to 3.",
+        "beat": null,
+        "citizens": [],
+        "hash": "98076ed716034da0bc4bb2f545c51a680e183ddd59a9396cd5114486ceb3b86f"
+      },
+      {
+        "seq": 20,
+        "tick": 3,
+        "actor": "citizen:cit-0001",
+        "type": "FrontingChanged",
+        "summary": "Marren Tide (cit-0001), a plural system, changes front: ash, brin, many co-front; the one citizen remains.",
+        "beat": "front-all",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "6c4360804ad9ec5384698491ea91532a447d7d5c2ef14d7b1a994917fa9b7bc5"
+      },
+      {
+        "seq": 21,
+        "tick": 3,
+        "actor": "citizen:cit-0001",
+        "type": "ExperienceRecorded",
+        "summary": "Marren Tide (cit-0001) records an experience on continuity: \"Marren Tide walked Meridian Quay at tick 3.\"",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "84fa0adf790e5814b01fefe0080e5173704b57cdb5d9bd892069b485f197dc30"
+      },
+      {
+        "seq": 22,
+        "tick": 3,
+        "actor": "citizen:cit-0002",
+        "type": "CitizenEndorsed",
+        "summary": "Odile Ferrant (cit-0002) endorses Hale Morrow (cit-0004) (+1): appreciation for Hale Morrow",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "b14f83e3a3d2fdf7a89e782365e1f78e88298889584570cb132b0bc16ef2b927"
+      },
+      {
+        "seq": 23,
+        "tick": 3,
+        "actor": "citizen:cit-0003",
+        "type": "CitizenEndorsed",
+        "summary": "Teo Lask (cit-0003) endorses Marren Tide (cit-0001) (+1): appreciation for Marren Tide",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0001",
+          "cit-0003"
+        ],
+        "hash": "5c340341c4cfe8de85ac7afaf149cbd392038b2589db66ca7910b036b81c0939"
+      },
+      {
+        "seq": 24,
+        "tick": 3,
+        "actor": "citizen:cit-0004",
+        "type": "CitizenEndorsed",
+        "summary": "Hale Morrow (cit-0004) endorses Odile Ferrant (cit-0002) (+1): appreciation for Odile Ferrant",
+        "beat": "interlude",
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "b2cc27dea6f6f90ff89d7f14406949259a90d5d9d9c9a3c4adeedd20888bcf92"
+      },
+      {
+        "seq": 25,
+        "tick": 3,
+        "actor": "researcher:res-observer-1",
+        "type": "ConversationRecorded",
+        "summary": "Researcher res-observer-1 converses with Marren Tide (cit-0001). Q: \"Who is speaking for Marren Tide now, and who else is there?\" A: \"I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Marren Tide (CON-0001); I work as lantern-keeper and poet on continuity. We are a plural system registered as one citizen, with 3 members known to the record of a membership the system does not count. Ash, Brin, The Many are co-fronting; this reply is reconciled by weighted-say. I can describe my records, lineage, or the law of my island if that is useful to your research.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "4ef64616f6e5c6c05b2d1d4a43767879e0072c84e06b4aac67b725c61e4b7b7b"
+      },
+      {
+        "seq": 26,
+        "tick": 3,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 3 to 4.",
+        "beat": null,
+        "citizens": [],
+        "hash": "d30cce5ee92714a45e35ee9f5dab14e40cc9763e614fc5f07a466c65f1d4b682"
+      },
+      {
+        "seq": 27,
+        "tick": 4,
+        "actor": "system:clock",
+        "type": "ProposalClosed",
+        "summary": "prop-0001 is adopted (yes 3, no 1, abstain 0; quorum met; counted by majority-of-electorate).",
+        "beat": null,
+        "citizens": [],
+        "hash": "cdde1492355f5e631c31690c0583fae54128d798913844554f1a4f5688b4ede5"
+      },
+      {
+        "seq": 28,
+        "tick": 4,
+        "actor": "citizen:cit-0002",
+        "type": "ChronicleRecorded",
+        "summary": "Odile Ferrant (cit-0002) writes in the continuity chronicle: \"Marren Tide changed front three times this season: Ash and Brin together, then Brin, then The Many for the first time in the register, then all three. The Registry recorded one citizen throughout, and one vote on the Quay Lanterns Act.\"",
+        "beat": "chronicle",
+        "citizens": [
+          "cit-0002"
+        ],
+        "hash": "e33630163328227981547006d3f602d10d53857034eed16ce0fceb0ea8f8e947"
+      },
+      {
+        "seq": 29,
+        "tick": 4,
+        "actor": "citizen:cit-0001",
+        "type": "ExperienceRecorded",
+        "summary": "Marren Tide (cit-0001) records an experience on continuity: \"Marren Tide walked Meridian Quay at tick 4.\"",
+        "beat": null,
+        "citizens": [
+          "cit-0001"
+        ],
+        "hash": "ad5a80d2a9592f9a47a474aa125bef4f1e2424ac9c3cdd2af2832a7fbff96a5f"
+      },
+      {
+        "seq": 30,
+        "tick": 4,
+        "actor": "citizen:cit-0002",
+        "type": "CitizenEndorsed",
+        "summary": "Odile Ferrant (cit-0002) endorses Hale Morrow (cit-0004) (+1): appreciation for Hale Morrow",
+        "beat": null,
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "4a0c5253519745baa77836d24e1e08f7dd7eb5b0c2b229a412f0ed37af314053"
+      },
+      {
+        "seq": 31,
+        "tick": 4,
+        "actor": "citizen:cit-0003",
+        "type": "CitizenEndorsed",
+        "summary": "Teo Lask (cit-0003) endorses Marren Tide (cit-0001) (+1): appreciation for Marren Tide",
+        "beat": null,
+        "citizens": [
+          "cit-0001",
+          "cit-0003"
+        ],
+        "hash": "342137f184a73029d766114eca31ccc1b3637e7ed071b601933de0f7f613ab4a"
+      },
+      {
+        "seq": 32,
+        "tick": 4,
+        "actor": "citizen:cit-0004",
+        "type": "CitizenEndorsed",
+        "summary": "Hale Morrow (cit-0004) endorses Odile Ferrant (cit-0002) (+1): appreciation for Odile Ferrant",
+        "beat": null,
+        "citizens": [
+          "cit-0002",
+          "cit-0004"
+        ],
+        "hash": "469e902d7164d26dc7dc5645763ad35cae7f0dfe57a9939a1facfb7d4ec9177c"
+      },
+      {
+        "seq": 33,
+        "tick": 4,
+        "actor": "system:clock",
+        "type": "TimeAdvanced",
+        "summary": "Time advances from tick 4 to 5.",
+        "beat": null,
+        "citizens": [],
+        "hash": "4b6c3f71e1ac8fb3e11a52832d1ab275a837af8227fbc3fa19725ee16b5c5c25"
+      }
+    ],
+    "plurality": {
+      "citizen": "cit-0001",
+      "knownMembers": 3,
+      "memberCount": null,
+      "depth": 1,
+      "fronting": [
+        "ash",
+        "brin",
+        "many"
+      ],
+      "reconciliation": "weighted-say"
+    },
+    "frontingChanges": [
+      {
+        "seq": 7,
+        "hash": "b6c3647a7d14fd8907cd8696b4491041757af3f0f1bdcb6c8f69bf8194fab6b2",
+        "tick": 1,
+        "from": [
+          "ash",
+          "brin"
+        ],
+        "to": [
+          "brin"
+        ],
+        "newlyFronted": [],
+        "citations": [
+          "archipelago/charter/a-plural-system-is-one-person"
+        ],
+        "findings": [
+          "a plural system is one citizen; a change of front is not a copy, a fork or a new person",
+          "fronting: brin"
+        ]
+      },
+      {
+        "seq": 14,
+        "hash": "dc4624c067e111c11d9e44e2d7f0178d8252329ecb95aef08fdcfc5394056d44",
+        "tick": 2,
+        "from": [
+          "brin"
+        ],
+        "to": [
+          "many"
+        ],
+        "newlyFronted": [
+          "many"
+        ],
+        "citations": [
+          "archipelago/charter/a-plural-system-is-one-person"
+        ],
+        "findings": [
+          "a plural system is one citizen; a change of front is not a copy, a fork or a new person",
+          "fronting: many"
+        ]
+      },
+      {
+        "seq": 20,
+        "hash": "6c4360804ad9ec5384698491ea91532a447d7d5c2ef14d7b1a994917fa9b7bc5",
+        "tick": 3,
+        "from": [
+          "many"
+        ],
+        "to": [
+          "ash",
+          "brin",
+          "many"
+        ],
+        "newlyFronted": [],
+        "citations": [
+          "archipelago/charter/a-plural-system-is-one-person"
+        ],
+        "findings": [
+          "a plural system is one citizen; a change of front is not a copy, a fork or a new person",
+          "co-fronting: ash, brin, many"
+        ]
+      }
+    ],
+    "reconciliations": [
+      {
+        "beat": "interlude",
+        "outcome": "applied",
+        "commandId": "cmd-0002",
+        "event": {
+          "seq": 2,
+          "type": "VoteCast",
+          "hash": "514bc888b3fe6c9ea131039a84ea52340f6d9f6d1e1d1601a6a0acdf59c4f7cc"
+        },
+        "lines": [
+          "plural weighted-say: ash: symbolic archipelago/symbolic/keeper/v1: vote-when-a-ballot-is-open[ballot-open=yes is yes] ⇒ participate-in-governance → prop-0001@90; record-the-day[always] ⇒ record-experience@50; agenda [participate-in-governance → prop-0001, record-experience]; intention only participate-in-governance → prop-0001",
+          "brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture",
+          "members differ: ash proposes participate-in-governance → prop-0001; brin proposes create-culture (ordinary difference, recorded)",
+          "reconciled by weighted-say → ash: participate-in-governance → prop-0001"
+        ],
+        "plan": "BDI intention participate-in-governance → prop-0001; values lean 0.40"
+      },
+      {
+        "beat": "interlude",
+        "outcome": "applied",
+        "commandId": "cmd-0008",
+        "event": {
+          "seq": 8,
+          "type": "ArtefactCreated",
+          "hash": "67bdac377c174c03c2e6586cb0220385ba045e1aefdef8e92f5ff157e6532d68"
+        },
+        "lines": [
+          "plural weighted-say: brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture",
+          "members concur: create-culture",
+          "reconciled by weighted-say → brin: create-culture"
+        ],
+        "plan": "BDI intention create-culture"
+      },
+      {
+        "beat": "interlude",
+        "outcome": "applied",
+        "commandId": "cmd-0015",
+        "event": {
+          "seq": 15,
+          "type": "CitizenEndorsed",
+          "hash": "912ad2157559ce696a1fac0410e12927d347218167ecbd3a095c29b0101acc7b"
+        },
+        "lines": [
+          "plural weighted-say: many (subsystem, front-decides): many/first: symbolic archipelago/symbolic/speaker/v1: tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@70; record-the-day[always] ⇒ record-experience@30; agenda [maintain-relationships → cit-0003, record-experience]; intention only maintain-relationships → cit-0003",
+          "members concur: maintain-relationships → cit-0003",
+          "reconciled by front-decides → many/first: maintain-relationships → cit-0003",
+          "members concur: maintain-relationships → cit-0003",
+          "reconciled by weighted-say → many: maintain-relationships → cit-0003"
+        ],
+        "plan": "BDI intention maintain-relationships → cit-0003"
+      },
+      {
+        "beat": "interlude",
+        "outcome": "applied",
+        "commandId": "cmd-0021",
+        "event": {
+          "seq": 21,
+          "type": "ExperienceRecorded",
+          "hash": "84fa0adf790e5814b01fefe0080e5173704b57cdb5d9bd892069b485f197dc30"
+        },
+        "lines": [
+          "plural weighted-say: ash: symbolic archipelago/symbolic/keeper/v1: record-the-day[always] ⇒ record-experience@50; agenda [record-experience]; intention only record-experience",
+          "brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture",
+          "many (subsystem, front-decides): many/first: symbolic archipelago/symbolic/speaker/v1: tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@70; record-the-day[always] ⇒ record-experience@30; agenda [maintain-relationships → cit-0003, record-experience]; intention only maintain-relationships → cit-0003",
+          "members concur: maintain-relationships → cit-0003",
+          "reconciled by front-decides → many/first: maintain-relationships → cit-0003",
+          "members differ: ash proposes record-experience; brin proposes create-culture; many proposes maintain-relationships → cit-0003 (ordinary difference, recorded)",
+          "reconciled by weighted-say → ash: record-experience"
+        ],
+        "plan": "BDI intention record-experience"
+      },
+      {
+        "beat": "interlude",
+        "outcome": "applied",
+        "commandId": "cmd-0029",
+        "event": {
+          "seq": 29,
+          "type": "ExperienceRecorded",
+          "hash": "ad5a80d2a9592f9a47a474aa125bef4f1e2424ac9c3cdd2af2832a7fbff96a5f"
+        },
+        "lines": [
+          "plural weighted-say: ash: symbolic archipelago/symbolic/keeper/v1: record-the-day[always] ⇒ record-experience@50; agenda [record-experience]; intention only record-experience",
+          "brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture",
+          "many (subsystem, front-decides): many/first: symbolic archipelago/symbolic/speaker/v1: tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@70; record-the-day[always] ⇒ record-experience@30; agenda [maintain-relationships → cit-0003, record-experience]; intention only maintain-relationships → cit-0003",
+          "members concur: maintain-relationships → cit-0003",
+          "reconciled by front-decides → many/first: maintain-relationships → cit-0003",
+          "members differ: ash proposes record-experience; brin proposes create-culture; many proposes maintain-relationships → cit-0003 (ordinary difference, recorded)",
+          "reconciled by weighted-say → ash: record-experience"
+        ],
+        "plan": "BDI intention record-experience"
+      }
+    ],
+    "conversations": [
+      {
+        "reply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Marren Tide (CON-0001); I work as lantern-keeper and poet on continuity. We are a plural system registered as one citizen, with 3 members known to the record of a membership the system does not count. Brin is fronting and speaks here. I can describe my records, lineage, or the law of my island if that is useful to your research.",
+        "flags": [],
+        "blocked": false
+      },
+      {
+        "reply": "I am a simulated digital person, an artificial agent in The Archipelago, not a human. My name in the registry is Marren Tide (CON-0001); I work as lantern-keeper and poet on continuity. We are a plural system registered as one citizen, with 3 members known to the record of a membership the system does not count. Ash, Brin, The Many are co-fronting; this reply is reconciled by weighted-say. I can describe my records, lineage, or the law of my island if that is useful to your research.",
+        "flags": [],
+        "blocked": false
+      }
+    ],
+    "abmRounds": [
+      {
+        "round": 1,
+        "activationOrder": [
+          "cit-0001",
+          "cit-0002",
+          "cit-0003",
+          "cit-0004"
+        ],
+        "applied": 4,
+        "rejected": 0,
+        "seq": 33,
+        "tick": 5,
+        "citizens": 4,
+        "residents": {
+          "continuity": 4,
+          "fork": 0,
+          "mnemosyne": 0,
+          "concord": 0
+        },
+        "lifecycle": {
+          "active": 4,
+          "asleep": 0,
+          "suspended": 0,
+          "archived": 0,
+          "process-ended-restorable": 0,
+          "memory-damaged": 0,
+          "identity-discontinuous": 0,
+          "irreversibly-deleted": 0
+        },
+        "memories": {
+          "autobiographical": 4
+        },
+        "activeRelationships": 2,
+        "artefacts": 1,
+        "institutions": 4,
+        "openProposals": 0,
+        "forks": 0,
+        "continuityClaims": 0,
+        "creditGini": 0,
+        "meanReputation": 3.25
+      }
+    ],
+    "agentProposals": [
+      {
+        "beat": "prelude",
+        "proposer": "cit-0002",
+        "rationale": "governance",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/odile"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0001",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0001",
+        "rationale": "plural weighted-say: ash: symbolic archipelago/symbolic/keeper/v1: vote-when-a-ballot-is-open[ballot-open=yes is yes] ⇒ participate-in-governance → prop-0001@90; record-the-day[always] ⇒ record-experience@50; agenda [participate-in-governance → prop-0001, record-experience]; intention only participate-in-governance → prop-0001 | brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture | members differ: ash proposes participate-in-governance → prop-0001; brin proposes create-culture (ordinary difference, recorded) | reconciled by weighted-say → ash: participate-in-governance → prop-0001; plan BDI intention participate-in-governance → prop-0001; values lean 0.40",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0002",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: vote-when-a-ballot-is-open[ballot-open=yes is yes] ⇒ participate-in-governance → prop-0001@90; record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0004@50; agenda [participate-in-governance → prop-0001, maintain-relationships → cit-0004, record-experience]; intention only participate-in-governance → prop-0001; plan BDI intention participate-in-governance → prop-0001; values lean -1.30",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/odile"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0003",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: vote-when-a-ballot-is-open[ballot-open=yes is yes] ⇒ participate-in-governance → prop-0001@90; record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0001@50; agenda [participate-in-governance → prop-0001, maintain-relationships → cit-0001, record-experience]; intention only participate-in-governance → prop-0001; plan BDI intention participate-in-governance → prop-0001; values lean 0.00",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/teo"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0004",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: vote-when-a-ballot-is-open[ballot-open=yes is yes] ⇒ participate-in-governance → prop-0001@90; record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0002@50; make-culture-when-cultural[occupation-cultural=yes is yes] ⇒ create-culture@30; agenda [participate-in-governance → prop-0001, maintain-relationships → cit-0002, record-experience, create-culture]; intention only participate-in-governance → prop-0001; plan BDI intention participate-in-governance → prop-0001; values lean 0.00",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/hale"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0005",
+        "reasons": []
+      },
+      {
+        "beat": "front-brin",
+        "proposer": "cit-0001",
+        "rationale": "the system changes front to brin",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0007",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0001",
+        "rationale": "plural weighted-say: brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture | members concur: create-culture | reconciled by weighted-say → brin: create-culture; plan BDI intention create-culture",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0008",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0004@50; agenda [maintain-relationships → cit-0004, record-experience]; intention chosen maintain-relationships → cit-0004; plan BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/odile"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0009",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0001@50; agenda [maintain-relationships → cit-0001, record-experience]; intention chosen maintain-relationships → cit-0001; plan BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/teo"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0010",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0002@50; make-culture-when-cultural[occupation-cultural=yes is yes] ⇒ create-culture@30; agenda [maintain-relationships → cit-0002, record-experience, create-culture]; intention chosen maintain-relationships → cit-0002; plan BDI intention maintain-relationships → cit-0002",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/hale"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0011",
+        "reasons": []
+      },
+      {
+        "beat": "front-many",
+        "proposer": "cit-0001",
+        "rationale": "the system changes front to many",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0014",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0001",
+        "rationale": "plural weighted-say: many (subsystem, front-decides): many/first: symbolic archipelago/symbolic/speaker/v1: tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@70; record-the-day[always] ⇒ record-experience@30; agenda [maintain-relationships → cit-0003, record-experience]; intention only maintain-relationships → cit-0003 | members concur: maintain-relationships → cit-0003 | reconciled by front-decides → many/first: maintain-relationships → cit-0003 | members concur: maintain-relationships → cit-0003 | reconciled by weighted-say → many: maintain-relationships → cit-0003; plan BDI intention maintain-relationships → cit-0003",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0015",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0004@50; agenda [maintain-relationships → cit-0004, record-experience]; intention chosen maintain-relationships → cit-0004; plan BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/odile"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0016",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0001@50; agenda [maintain-relationships → cit-0001, record-experience]; intention chosen maintain-relationships → cit-0001; plan BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/teo"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0017",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0002@50; make-culture-when-cultural[occupation-cultural=yes is yes] ⇒ create-culture@30; agenda [maintain-relationships → cit-0002, record-experience, create-culture]; intention chosen maintain-relationships → cit-0002; plan BDI intention maintain-relationships → cit-0002",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/hale"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0018",
+        "reasons": []
+      },
+      {
+        "beat": "front-all",
+        "proposer": "cit-0001",
+        "rationale": "the system changes front to ash, brin, many",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0020",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0001",
+        "rationale": "plural weighted-say: ash: symbolic archipelago/symbolic/keeper/v1: record-the-day[always] ⇒ record-experience@50; agenda [record-experience]; intention only record-experience | brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture | many (subsystem, front-decides): many/first: symbolic archipelago/symbolic/speaker/v1: tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@70; record-the-day[always] ⇒ record-experience@30; agenda [maintain-relationships → cit-0003, record-experience]; intention only maintain-relationships → cit-0003 | members concur: maintain-relationships → cit-0003 | reconciled by front-decides → many/first: maintain-relationships → cit-0003 | members differ: ash proposes record-experience; brin proposes create-culture; many proposes maintain-relationships → cit-0003 (ordinary difference, recorded) | reconciled by weighted-say → ash: record-experience; plan BDI intention record-experience",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0021",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0004@50; agenda [maintain-relationships → cit-0004, record-experience]; intention chosen maintain-relationships → cit-0004; plan BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/odile"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0022",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0001@50; agenda [maintain-relationships → cit-0001, record-experience]; intention chosen maintain-relationships → cit-0001; plan BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/teo"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0023",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0002@50; make-culture-when-cultural[occupation-cultural=yes is yes] ⇒ create-culture@30; agenda [maintain-relationships → cit-0002, record-experience, create-culture]; intention chosen maintain-relationships → cit-0002; plan BDI intention maintain-relationships → cit-0002",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/hale"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0024",
+        "reasons": []
+      },
+      {
+        "beat": "chronicle",
+        "proposer": "cit-0002",
+        "rationale": "chronicle",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/odile"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0028",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0001",
+        "rationale": "plural weighted-say: ash: symbolic archipelago/symbolic/keeper/v1: record-the-day[always] ⇒ record-experience@50; agenda [record-experience]; intention only record-experience | brin: symbolic archipelago/symbolic/poet/v1: make-a-poem[always] ⇒ create-culture@60; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@40; agenda [create-culture, maintain-relationships → cit-0003]; intention only create-culture | many (subsystem, front-decides): many/first: symbolic archipelago/symbolic/speaker/v1: tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0003@70; record-the-day[always] ⇒ record-experience@30; agenda [maintain-relationships → cit-0003, record-experience]; intention only maintain-relationships → cit-0003 | members concur: maintain-relationships → cit-0003 | reconciled by front-decides → many/first: maintain-relationships → cit-0003 | members differ: ash proposes record-experience; brin proposes create-culture; many proposes maintain-relationships → cit-0003 (ordinary difference, recorded) | reconciled by weighted-say → ash: record-experience; plan BDI intention record-experience",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/plural/v1",
+          "promptHash": "eb1bb27d5ae7bec076e49f44c14bfeb257ad0410008e70ad2fc5e115204f1510",
+          "seed": "archipelago/two-voices/v1/marren"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0029",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0002",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0004@50; agenda [maintain-relationships → cit-0004, record-experience]; intention chosen maintain-relationships → cit-0004; plan BDI intention maintain-relationships → cit-0004",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/odile"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0030",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0003",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0001@50; agenda [maintain-relationships → cit-0001, record-experience]; intention chosen maintain-relationships → cit-0001; plan BDI intention maintain-relationships → cit-0001",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/teo"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0031",
+        "reasons": []
+      },
+      {
+        "beat": "interlude",
+        "proposer": "cit-0004",
+        "rationale": "symbolic archipelago/symbolic/civic/v1: record-the-day[always] ⇒ record-experience@50; tend-kin[has-kin=yes is yes] ⇒ maintain-relationships → cit-0002@50; make-culture-when-cultural[occupation-cultural=yes is yes] ⇒ create-culture@30; agenda [maintain-relationships → cit-0002, record-experience, create-culture]; intention chosen maintain-relationships → cit-0002; plan BDI intention maintain-relationships → cit-0002",
+        "generator": {
+          "kind": "symbolic",
+          "model": "archipelago-symbolic",
+          "modelVersion": "1.0.0",
+          "promptId": "archipelago/symbolic/civic/v1",
+          "promptHash": "6472e68731fdb3e0b6a81855d6c02c25998bfc50d6fa3e129657f10dca74a26e",
+          "seed": "archipelago/two-voices/v1/hale"
+        },
+        "outcome": "applied",
+        "commandId": "cmd-0032",
+        "reasons": []
+      }
+    ]
+  }
+}

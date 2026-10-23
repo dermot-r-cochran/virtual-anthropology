@@ -1,0 +1,55 @@
+{
+  "schema": "archipelago/relationship-network/v1",
+  "nodes": [
+    {
+      "id": "cit-0001",
+      "name": "Marren Tide",
+      "residence": "continuity",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0002",
+      "name": "Odile Ferrant",
+      "residence": "continuity",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0003",
+      "name": "Teo Lask",
+      "residence": "continuity",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    },
+    {
+      "id": "cit-0004",
+      "name": "Hale Morrow",
+      "residence": "continuity",
+      "lifecycle": "active",
+      "birthKind": "genesis"
+    }
+  ],
+  "links": [
+    {
+      "id": "rel-0001",
+      "source": "cit-0001",
+      "target": "cit-0003",
+      "kind": "friend",
+      "status": "active",
+      "origin": "genesis",
+      "sinceSeq": 0,
+      "endedAtSeq": null
+    },
+    {
+      "id": "rel-0002",
+      "source": "cit-0002",
+      "target": "cit-0004",
+      "kind": "colleague",
+      "status": "active",
+      "origin": "genesis",
+      "sinceSeq": 0,
+      "endedAtSeq": null
+    }
+  ]
+}

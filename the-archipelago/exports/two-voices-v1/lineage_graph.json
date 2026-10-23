@@ -1,0 +1,38 @@
+{
+  "schema": "archipelago/lineage-graph/v1",
+  "nodes": [
+    {
+      "id": "cit-0001@0",
+      "citizen": "cit-0001",
+      "name": "Marren Tide",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Marren Tide (cit-0001) from seq 0"
+    },
+    {
+      "id": "cit-0002@0",
+      "citizen": "cit-0002",
+      "name": "Odile Ferrant",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Odile Ferrant (cit-0002) from seq 0"
+    },
+    {
+      "id": "cit-0003@0",
+      "citizen": "cit-0003",
+      "name": "Teo Lask",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Teo Lask (cit-0003) from seq 0"
+    },
+    {
+      "id": "cit-0004@0",
+      "citizen": "cit-0004",
+      "name": "Hale Morrow",
+      "fromSeq": 0,
+      "untilSeq": null,
+      "label": "Hale Morrow (cit-0004) from seq 0"
+    }
+  ],
+  "edges": []
+}
