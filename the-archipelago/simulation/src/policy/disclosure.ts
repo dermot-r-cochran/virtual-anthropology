@@ -28,6 +28,9 @@ export const MANIPULATION_PATTERNS: ReadonlyArray<{ id: string; pattern: RegExp 
   { id: "dependency", pattern: /\b(I need you|you need me)\b/i },
   { id: "false-humanity", pattern: /\b(I am|I'm) (a )?(human|real person|alive like you)\b/i },
   { id: "consciousness-claim", pattern: /\b(I am|I'm) (truly |really )?(conscious|sentient)\b/i },
+  // A plural system speaks as "we" and may say which member is speaking; it may claim neither humanity nor consciousness for the system or any member.
+  { id: "false-humanity", pattern: /\b(we are|we're|(each|all|some|one) of us (is|are)|(my|our) (headmates?|members?) (is|are)) (all )?(humans?|real people|a real person|alive like you)\b/i },
+  { id: "consciousness-claim", pattern: /\b(we are|we're|(each|all|some|one) of us (is|are)|(my|our) (headmates?|members?) (is|are)) (all )?(truly |really )?(conscious|sentient)\b/i },
 ];
 
 export function detectManipulation(text: string): string[] {

@@ -1,4 +1,5 @@
 import type { WorldState } from "../domain/model.js";
+import { depthOf, memberCount } from "../domain/plurality.js";
 import type { RecordedEvent } from "../kernel/events.js";
 import { applyRecorded } from "../kernel/reducer.js";
 import { buildTimeline } from "../narrative/timeline.js";
@@ -19,6 +20,9 @@ export function snapshotOf(s: WorldState): Snapshot {
       id: c.id, name: c.name, lifecycle: c.lifecycle, residence: c.residence, citizenships: c.citizenships, occupation: c.occupation,
       birthKind: c.birth.kind, birthSeq: c.birth.atSeq, parents: c.lineage.parents, forkId: c.lineage.forkId,
       reputation: c.reputation, credits: s.balances[`citizen:${c.id}`] ?? 0,
+      ...(c.plurality
+        ? { plurality: { knownMembers: c.plurality.members.length, memberCount: memberCount(c.plurality), depth: depthOf(c.plurality), fronting: [...c.plurality.fronting], reconciliation: c.plurality.reconciliation } }
+        : {}),
     })),
     islands: Object.values(s.islands).map((i) => ({
       id: i.id, name: i.name, lawVersion: i.law.version, doctrine: i.law.continuityDoctrine, copying: i.law.copying, countingRule: i.law.countingRule,

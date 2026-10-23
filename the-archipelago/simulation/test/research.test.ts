@@ -1,11 +1,14 @@
 import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { publishExperiment } from "../src/export/dataset.js";
 import { loadManifest, parseManifest } from "../src/research/manifest.js";
 import { runScenario } from "../src/scenarios/index.js";
 
-const MANIFEST = new URL("../../experiments/the-first-fork/experiment.yaml", import.meta.url).pathname;
-const EXPORTS = new URL("../../exports/the-first-fork-v1/", import.meta.url).pathname;
+// fileURLToPath rather than URL.pathname, and LF-normalised reads: a Windows checkout (drive-letter paths, autocrlf) then compares what CI compares.
+const MANIFEST = fileURLToPath(new URL("../../experiments/the-first-fork/experiment.yaml", import.meta.url));
+const EXPORTS = fileURLToPath(new URL("../../exports/the-first-fork-v1/", import.meta.url));
+const read = (path: string) => readFileSync(path, "utf8").replace(/\r\n/g, "\n");
 const fixed = { start: () => "2026-01-01T00:00:00.000Z", end: () => "2026-01-01T00:00:00.000Z" };
 
 describe("The First Fork and the research pipeline", async () => {
@@ -56,7 +59,7 @@ describe("The First Fork and the research pipeline", async () => {
   });
 
   it("regeneration with a fixed clock is byte-identical to the committed export", () => {
-    for (const f of ["index.json", "research_manifest.yaml", "research.json", "events.jsonl", "study.json", "study.csv"]) expect(out.exportFiles[f]).toBe(readFileSync(EXPORTS + f, "utf8"));
+    for (const f of ["index.json", "research_manifest.yaml", "research.json", "events.jsonl", "study.json", "study.csv"]) expect(out.exportFiles[f]).toBe(read(EXPORTS + f));
   });
 
   it("the First Fork is filed as a demonstration, and every output says so", () => {
@@ -71,7 +74,7 @@ describe("The First Fork and the research pipeline", async () => {
   });
 
   it("manifest validation rejects a missing or unknown category", () => {
-    const src = readFileSync(MANIFEST, "utf8");
+    const src = read(MANIFEST);
     expect(() => parseManifest(src.replace("category: demonstration\n", ""))).toThrow();
     expect(() => parseManifest(src.replace("category: demonstration", "category: study"))).toThrow();
     expect(parseManifest(src.replace("category: demonstration", "category: experiment")).category).toBe("experiment");
@@ -126,14 +129,14 @@ describe("The First Fork and the research pipeline", async () => {
   });
 
   it("manifest validation rejects a malformed study", () => {
-    const src = readFileSync(MANIFEST, "utf8");
+    const src = read(MANIFEST);
     expect(() => parseManifest(src.replace("id: juno-maps-instead", "id: control"))).toThrow(/duplicate/);
     expect(() => parseManifest(src.replace("    budget: 12\n", "    budget: 0\n"))).toThrow();
     expect(parseManifest(src.replace(/^study:[\s\S]*?(?=^ethics:)/m, "")).study).toBeUndefined();
   });
 
   it("manifest validation rejects consciousness claims", () => {
-    const src = readFileSync(MANIFEST, "utf8").replace("consciousnessClaims: none", "consciousnessClaims: asserted");
+    const src = read(MANIFEST).replace("consciousnessClaims: none", "consciousnessClaims: asserted");
     expect(() => parseManifest(src)).toThrow();
   });
 });

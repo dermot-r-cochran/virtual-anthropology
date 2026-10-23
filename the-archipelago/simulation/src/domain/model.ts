@@ -22,14 +22,19 @@ import {
 } from "./ids.js";
 import { LawAmendmentSchema, LawSchema } from "./law.js";
 import { LifecycleStateSchema } from "./lifecycle.js";
+import { PluralSystemSchema } from "./plurality.js";
 
 const seq = z.number().int().min(0);
 const text = z.string().min(1).max(4000);
 const name = z.string().min(1).max(120);
 
-/** Provenance of the generator behind a citizen's cognition (model and prompt provenance). */
+/**
+ * Provenance of the generator behind a citizen's cognition (model and prompt
+ * provenance). For a symbolic mind, `promptId` names the rule base and
+ * `promptHash` is the sha256 of its canonical JSON (`agents/symbolic.ts`).
+ */
 export const MindProvenanceSchema = z.object({
-  kind: z.enum(["deterministic", "language-model"]),
+  kind: z.enum(["deterministic", "language-model", "symbolic"]),
   model: z.string().min(1),
   modelVersion: z.string().min(1),
   promptId: z.string().min(1),
@@ -80,6 +85,12 @@ export const CitizenSchema = z.object({
   lastForkTick: z.number().int().nullable(),
   /** Every citizen discloses that it is an artificial, simulated person. Fixed true. */
   disclosesArtificialNature: z.literal(true),
+  /**
+   * Present when the citizen is a plural system (`domain/plurality.ts`): one
+   * digital person made up of members. Absent for a singular citizen, so a
+   * singular record's canonical JSON is unchanged by the field's existence.
+   */
+  plurality: PluralSystemSchema.optional(),
 });
 export type Citizen = z.infer<typeof CitizenSchema>;
 

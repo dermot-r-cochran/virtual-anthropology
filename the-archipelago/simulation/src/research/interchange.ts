@@ -35,6 +35,11 @@ export const SnapshotSchema = z
         id, name: id, lifecycle: id, residence: id, citizenships: z.array(id), occupation: id,
         birthKind: id, birthSeq: z.number().int(), parents: z.array(id), forkId: id.nullable(),
         reputation: z.number(), credits: z.number(),
+        /** Present only for a plural system: the one citizen's membership as the record knows it. Members are not citizens and appear nowhere else in the snapshot. */
+        plurality: z
+          .object({ knownMembers: z.number().int(), memberCount: z.number().int().nullable(), depth: z.number().int(), fronting: z.array(id), reconciliation: id })
+          .strict()
+          .optional(),
       }).strict(),
     ),
     islands: z.array(

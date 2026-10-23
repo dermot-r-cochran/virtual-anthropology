@@ -354,6 +354,13 @@ export function decide(state: WorldState, command: Command, ctx: DecideContext):
           },
         },
       ];
+    case "ChangeFronting": {
+      const c = mustCitizen(state, command.citizen);
+      const sys = c.plurality;
+      if (!sys) throw new Error("decide: citizen is not a plural system");
+      const newlyFronted = command.fronting.filter((id) => sys.members.find((m) => m.id === id)?.everFronted === false);
+      return [{ type: "FrontingChanged", citizen: c.id, from: [...sys.fronting], to: [...command.fronting], newlyFronted }];
+    }
     case "AdvanceTime":
       return [{ type: "TimeAdvanced", from: state.tick, to: state.tick + command.ticks }];
     case "PauseSimulation":
@@ -485,6 +492,9 @@ function decideFork(state: WorldState, command: CommandOf<"ForkCitizen">, ctx: D
       federations: [],
       lastForkTick: null,
       disclosesArtificialNature: true,
+      // A branch of a plural system is itself a plural system with the same members: the members are
+      // the person's constitution, like values and goals, and are never descendants in their own right.
+      ...(parent.plurality ? { plurality: structuredClone(parent.plurality) } : {}),
     });
   }
   const family = [parent.id, ...descendants.map((d) => d.id)];
