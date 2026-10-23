@@ -77,7 +77,7 @@ export function civilizationReportMarkdown(input: ResearchInput, b: ResearchBund
   const s = input.snapshot;
   const m = b.metrics;
   const isl = (id: string) => s.islands.find((i) => i.id === id)?.name ?? id;
-  const significant = b.chronicle.periods.flatMap((p) => p.statements.filter((st) => ["founding", "identity", "migration", "governance", "testimony"].includes(st.category)).map((st) => ({ year: p.year, st })));
+  const significant = b.chronicle.periods.flatMap((p) => p.statements.filter((st) => ["founding", "identity", "plurality", "migration", "governance", "testimony"].includes(st.category)).map((st) => ({ year: p.year, st })));
   const out = [
     `# Virtual Anthropology Report: ${b.manifest.civilizationId}`, "",
     `Experiment \`${b.experiment.id}\` · seed \`${b.experiment.seed}\` · head \`${b.experiment.eventStore.headHash}\` · configuration \`${b.experiment.configurationHash}\``, "",

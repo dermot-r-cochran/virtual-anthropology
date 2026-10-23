@@ -1,0 +1,118 @@
+{
+  "schema": "archipelago/memory-history/v1",
+  "records": [
+    {
+      "id": "mem-0001",
+      "holder": "cit-0001",
+      "archive": null,
+      "experiencedBy": "cit-0001",
+      "experiencedAtSeq": 0,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "lanterns",
+        "verse"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0001",
+          "atSeq": 0,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0002",
+      "holder": "cit-0002",
+      "archive": null,
+      "experiencedBy": "cit-0002",
+      "experiencedAtSeq": 0,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "registry"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0002",
+          "atSeq": 0,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0003",
+      "holder": "cit-0001",
+      "archive": null,
+      "experiencedBy": "cit-0001",
+      "experiencedAtSeq": 21,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0001",
+          "atSeq": 21,
+          "island": "continuity"
+        }
+      ]
+    },
+    {
+      "id": "mem-0004",
+      "holder": "cit-0001",
+      "archive": null,
+      "experiencedBy": "cit-0001",
+      "experiencedAtSeq": 29,
+      "island": "continuity",
+      "status": "autobiographical",
+      "integrity": "intact",
+      "derivedFrom": null,
+      "tags": [
+        "everyday",
+        "continuity"
+      ],
+      "provenance": [
+        {
+          "action": "experienced",
+          "by": "cit-0001",
+          "atSeq": 29,
+          "island": "continuity"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "seq": 21,
+      "tick": 3,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Marren Tide (cit-0001) records an experience on continuity: \"Marren Tide walked Meridian Quay at tick 3.\"",
+      "hash": "84fa0adf790e5814b01fefe0080e5173704b57cdb5d9bd892069b485f197dc30"
+    },
+    {
+      "seq": 29,
+      "tick": 4,
+      "type": "ExperienceRecorded",
+      "citizens": [
+        "cit-0001"
+      ],
+      "summary": "Marren Tide (cit-0001) records an experience on continuity: \"Marren Tide walked Meridian Quay at tick 4.\"",
+      "hash": "ad5a80d2a9592f9a47a474aa125bef4f1e2424ac9c3cdd2af2832a7fbff96a5f"
+    }
+  ]
+}

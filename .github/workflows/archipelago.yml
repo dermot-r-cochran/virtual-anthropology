@@ -38,6 +38,8 @@ jobs:
         run: |
           npm run publish:first-fork
           npm run verify:first-fork
+          npm run publish:two-voices
+          npm run verify:two-voices
           git diff --exit-code -- ../exports ../reports
       - uses: actions/setup-python@v5
         with:
@@ -70,6 +72,8 @@ jobs:
           npm ci
           npm run publish:first-fork
           npm run verify:first-fork
+          npm run publish:two-voices
+          npm run verify:two-voices
       - name: Assemble static site
         run: |
           mkdir -p _site

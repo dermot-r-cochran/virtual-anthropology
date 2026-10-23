@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "generator": "the-archipelago/simulation 0.1.0",
+  "experimentId": "two-voices-v1",
+  "civilizationId": "archipelago-two-voices",
+  "title": "Two Voices in One Record",
+  "category": "demonstration",
+  "scenario": "two-voices",
+  "seed": "archipelago/two-voices/v1",
+  "configurationHash": "824da84341d12aeef036b7678956721595e4c8210d7b9fb1f0cab7c6ea7e2c60",
+  "headHash": "4b6c3f71e1ac8fb3e11a52832d1ab275a837af8227fbc3fa19725ee16b5c5c25",
+  "eventCount": 34,
+  "findings": [
+    {
+      "hypothesisId": "h1-one-record",
+      "outcome": "consistent-with-hypothesis"
+    },
+    {
+      "hypothesisId": "h2-no-copy",
+      "outcome": "consistent-with-hypothesis"
+    },
+    {
+      "hypothesisId": "h3-one-vote",
+      "outcome": "consistent-with-hypothesis"
+    },
+    {
+      "hypothesisId": "h4-difference-is-not-a-fault",
+      "outcome": "consistent-with-hypothesis"
+    }
+  ],
+  "study": null,
+  "visualizations": [
+    {
+      "id": "viz-lineage",
+      "title": "Identity lineage (person-stages)",
+      "kind": "graph",
+      "dataFile": "lineage_graph.json",
+      "description": "Person-stages split at forks and mergers; edges show record continuation, forks, mergers and continuity claims (testimony).",
+      "encoding": {
+        "node": "person-stage",
+        "edge": "kind",
+        "colour": "edge kind"
+      }
+    },
+    {
+      "id": "viz-relationships",
+      "title": "Relationship network",
+      "kind": "network",
+      "dataFile": "relationship_network.json",
+      "description": "Citizens as nodes and relationships as links.",
+      "encoding": {
+        "node": "citizen",
+        "link": "relationship",
+        "colour": "residence",
+        "stroke": "kind"
+      }
+    },
+    {
+      "id": "viz-governance",
+      "title": "Governance timeline",
+      "kind": "timeline",
+      "dataFile": "governance_events.json",
+      "description": "Proposals, votes, laws, petitions, migrations, mergers and policy refusals over time.",
+      "encoding": {
+        "x": "seq",
+        "row": "type"
+      }
+    },
+    {
+      "id": "viz-memory",
+      "title": "Memory history",
+      "kind": "timeline",
+      "dataFile": "memory_history.json",
+      "description": "Memory records with their provenance chains, and memory events over time.",
+      "encoding": {
+        "x": "seq",
+        "row": "holder",
+        "colour": "status"
+      }
+    },
+    {
+      "id": "viz-metrics",
+      "title": "Civilization metrics over time",
+      "kind": "timeseries",
+      "dataFile": "civilization_metrics.json",
+      "description": "Snapshot metrics at the end of each tick, plus final metric values with definitions.",
+      "encoding": {
+        "x": "tick",
+        "y": "metric value"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "events.jsonl",
+      "sha256": "48b22bfe9c82351d315bf7ad7db9fbc28ee85f71bd80f90338c77766ca778e33",
+      "bytes": 43434
+    },
+    {
+      "path": "interchange.json",
+      "sha256": "ef973d452a749bdc1e01a57ce8eea293fe8677e829ff3865462b06ef389749fd",
+      "bytes": 32884
+    },
+    {
+      "path": "dataset.json",
+      "sha256": "183dba1c9cba3a90a00c339f888eef06764bf3936da2a08c0e3759b3e73f1f39",
+      "bytes": 81225
+    },
+    {
+      "path": "research.json",
+      "sha256": "754e699cae80e527641b36e04a1da5dd042245ae7752e1362c9f78a90ed8902e",
+      "bytes": 53488
+    },
+    {
+      "path": "lineage_graph.json",
+      "sha256": "3e90f7864145e18392c735d45bc7915619d890622fd9a01c9de8af20b3bf4abf",
+      "bytes": 845
+    },
+    {
+      "path": "relationship_network.json",
+      "sha256": "79df38c52ef7dacb5fa136ff292ba1abc6d3b7fa41c6f2b4a8bbc815cf970356",
+      "bytes": 1150
+    },
+    {
+      "path": "governance_events.json",
+      "sha256": "7ce5897cc2a5b4bdb6b56eab8d19613f742057a7ab4dfa5278205fd903036742",
+      "bytes": 2466
+    },
+    {
+      "path": "memory_history.json",
+      "sha256": "c87053aa15ab2a2abe6a331e96b13dd15479dca74041baa7bf53af48188eaa6e",
+      "bytes": 2774
+    },
+    {
+      "path": "civilization_metrics.json",
+      "sha256": "16629e6b44a9e90307a1784ea61579101386bff5e6daf6cf43c5fece499559b7",
+      "bytes": 13160
+    },
+    {
+      "path": "civilization_metrics.csv",
+      "sha256": "a0e8c75da0e8c32c03543baaa5a6dd2de06a33eaeade3ac16545a99062105884",
+      "bytes": 591
+    },
+    {
+      "path": "publication/experiment-report.md",
+      "sha256": "a50bb742a7be4c3e5e9c3f561920ab2c2ddbe8c1de3885bd9d4bbc6fdaf71e8d",
+      "bytes": 20973
+    },
+    {
+      "path": "publication/civilization-report.md",
+      "sha256": "856bc25468ca8a87a96e6db38ffb39537bcdd8115b336b1e9ee1b8eabbd46167",
+      "bytes": 6103
+    },
+    {
+      "path": "publication/chronicle.md",
+      "sha256": "1614be8346146d3c3297e44019b580114e5e1a5840d2a9e1abf7a5effe7e10ad",
+      "bytes": 1139
+    },
+    {
+      "path": "reports/timeline.md",
+      "sha256": "1819eef3f17e9270f83e7ee31e183fcede100c2a24e5cdf62cb22c96a082ecf3",
+      "bytes": 6023
+    },
+    {
+      "path": "reports/two-voices.md",
+      "sha256": "230fe26d9bfd5a6a7a3f998ffbb6e66f5ec01761ebf08fb50ab2953f63288e28",
+      "bytes": 8337
+    },
+    {
+      "path": "research_manifest.yaml",
+      "sha256": "08a0bab56534cf64859355e8c8cf92eb6c05e1a9b957e3d0383e84905bc4594f",
+      "bytes": 14975
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+# Two Voices in One Record — experiment definition (input).
+# Running it produces exports/two-voices-v1/research_manifest.yaml (output provenance).
+schemaVersion: 2
+id: two-voices-v1
+title: Two Voices in One Record
+category: demonstration
+scenario: two-voices
+civilizationId: archipelago-two-voices
+description: >-
+  One citizen of Continuity, Marren Tide, is a plural system: three members
+  known to the record of a membership the system does not count, one of them a
+  subsystem of 720,000 who has never fronted. The other three citizens are
+  singular. Over one season the system changes front three times by its own
+  command, its co-fronting members propose different things in the same
+  interlude, and the system's declared way of deciding (weighted say)
+  reconciles them with every member's view recorded beside the decision. The
+  registrar asks who is speaking; the ballot closes with one vote from the
+  plural citizen as from each singular one. Every mind is symbolic, so every
+  proposal carries the trace of the rules that produced it.
+seed: archipelago/two-voices/v1
+simulationVersion: 0.1.0
+question:
+  id: q-one-person-many-voices
+  text: >-
+    When one digital person is a plural system whose members front, co-front
+    and differ, what does the civic record hold: how many persons, how many
+    votes, how many copies, and how is a difference between members recorded?
+  motivation: >-
+    Plurality is ordinary. A platform that studies digital persons must be able
+    to register a plural system as one citizen without reading its members as
+    copies, descendants or faults, and must show a disagreement between members
+    as what it is: a recorded difference, reconciled by the system's own way.
+hypotheses:
+  - id: h1-one-record
+    questionId: q-one-person-many-voices
+    statement: >-
+      A plural system of unbounded membership, with a subsystem of 720,000
+      members, is one citizen record among the four founded.
+    operationalisation: { metric: population.records, comparator: "==", threshold: 4 }
+  - id: h2-no-copy
+    questionId: q-one-person-many-voices
+    statement: >-
+      Three changes of front, one of them a member fronting for the first time,
+      create no descendant record: a change of front is not a copy.
+    operationalisation: { metric: identity.fork_descendants, comparator: "==", threshold: 0 }
+  - id: h3-one-vote
+    questionId: q-one-person-many-voices
+    statement: >-
+      Each of the four citizens casts exactly one vote on the one proposal; the
+      plural system votes once, whichever members front.
+    operationalisation: { metric: governance.votes_cast, comparator: "==", threshold: 4 }
+  - id: h4-difference-is-not-a-fault
+    questionId: q-one-person-many-voices
+    statement: >-
+      The members' differing proposals, reconciled by the system's declared
+      way, produce no rejected command.
+    operationalisation: { metric: governance.commands_rejected, comparator: "==", threshold: 0 }
+minds:
+  kind: symbolic
+  model: archipelago-symbolic
+  modelVersion: 1.0.0
+  promptId: archipelago/symbolic/civic/v1
+researchers:
+  - id: res-observer-1
+    role: observer and interlocutor; asks the plural citizen who is speaking
+researchBounds:
+  allowedInterventions: [deliver-message]
+  maxInterventions: 1
+  maxCreditsPerGrant: 0
+parameters:
+  abmRounds: 1
+ethics:
+  consciousnessClaims: none
+  notes:
+    - Citizens are symbolic placeholder agents and disclose their artificial nature in every conversation; a plural citizen's reply names who is fronting and claims nothing for the system or any member.
+    - Plurality is a way a person is constituted, and ordinary; a difference between members is recorded as difference and is never a fault, a flag or a violation.
+    - No human participants. Researcher interactions are recorded in the event log.
+limitations:
+  - The changes of front and the registrar's beats are scripted. The scenario demonstrates how the record and the law hold a plural citizen; it does not test emergent behaviour.
+  - Members' proposals come from rule bases the scenario declares, so a recorded difference describes the declared rules, not cognition.
+  - Weighted say is one of four declared reconciliations; the demonstration shows that one.
+  - Population is small (4 records). Metrics are descriptive and support no statistical inference.
+  - The plural system here is a modelling choice about records and law, not a theory of plurality, and bears on no real system or person.
+futureWork:
+  - Run the same season under each of the other reconciliations (front-decides, in-turn, concurrence) as a study with a branch point.
+  - Let a member's say or role change by the system's own command, recorded.
+  - Place a plural citizen on Fork and branch it, so the record shows the branches as plural systems with the same members.
+reproducibility:
+  expectedHeadHash: 4b6c3f71e1ac8fb3e11a52832d1ab275a837af8227fbc3fa19725ee16b5c5c25
+  expectedEventCount: 34
