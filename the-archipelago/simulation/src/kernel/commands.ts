@@ -14,6 +14,7 @@ import {
 import { LawAmendmentSchema } from "../domain/law.js";
 import { LifecycleStateSchema } from "../domain/lifecycle.js";
 import { ArtefactSchema, InstitutionSchema, InterventionSpecSchema, PersonStageRefSchema, RelationshipSchema } from "../domain/model.js";
+import { MemberIdSchema } from "../domain/plurality.js";
 
 const text = z.string().min(1).max(4000);
 const name = z.string().min(1).max(120);
@@ -94,6 +95,8 @@ export const CommandSchema = z.discriminatedUnion("type", [
   cmd("ExecuteMerger", { mergerId: MergerIdSchema }),
   cmd("ReverseMerger", { mergerId: MergerIdSchema, reason: text }),
   cmd("ClaimContinuity", { claimant: CitizenIdSchema, subject: PersonStageRefSchema, statement: text, grounds: z.array(z.string().min(1)).min(1) }),
+  /** A plural system changes which of its members front (co-fronting when several, none when empty). Not a fork, not a copy: the one citizen remains. */
+  cmd("ChangeFronting", { citizen: CitizenIdSchema, fronting: z.array(MemberIdSchema).max(64) }),
   cmd("AdvanceTime", { ticks: z.number().int().min(1).max(1000) }),
   cmd("PauseSimulation", { reason: text }),
   cmd("ResumeSimulation", { reason: text }),

@@ -1,6 +1,7 @@
 import type { RecordedEvent } from "./events.js";
 import { LawSchema } from "../domain/law.js";
 import type { WorldState } from "../domain/model.js";
+import { pluralityViolations } from "../domain/plurality.js";
 
 /**
  * Invariants that must hold for every reachable world state. The kernel checks
@@ -39,6 +40,12 @@ export function checkInvariants(s: WorldState): string[] {
     if (c.birth.kind === "merger" && (c.lineage.mergerId === null || c.lineage.parents.length < 2)) v.push(`${c.id} merger lineage incomplete`);
     if (c.mergedInto !== null && !s.citizens[c.mergedInto]) v.push(`${c.id} merged into unknown citizen`);
     if (c.lifecycle === "active" && c.mergedInto !== null) v.push(`${c.id} is active but merged`);
+    // A plural system is one citizen: its members are structure, never registry entries, parents or descendants.
+    // These checks are structural (unique ids, known fronts, a count no smaller than the known members); none concerns agreement between members.
+    if (c.plurality) {
+      for (const p of pluralityViolations(c.plurality, c.id)) v.push(p);
+      for (const m of c.plurality.members) if (s.citizens[m.id]) v.push(`${c.id} member ${m.id} collides with a citizen id`);
+    }
 
     const ancestors = ancestorsOf(s, c.id);
     for (const id of c.selfNarrativeMemories) {

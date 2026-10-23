@@ -14,6 +14,7 @@ import {
 import { GENESIS_LAWS, ISLAND_PROFILES, LawAmendmentSchema, LawSchema } from "./law.js";
 import {
   InstitutionSchema,
+  MindProvenanceSchema,
   RelationshipSchema,
   ResearchBoundsSchema,
   WorldStateSchema,
@@ -22,6 +23,7 @@ import {
   type MindProvenance,
   type WorldState,
 } from "./model.js";
+import { PluralSystemSchema } from "./plurality.js";
 
 export const VALUE_AXES = ["autonomy", "caution", "communality", "curiosity", "tradition", "novelty"] as const;
 
@@ -42,6 +44,10 @@ export const GenesisConfigSchema = z
           values: z.record(z.string(), z.number().min(-1).max(1)).optional(),
           memories: z.array(content).default([]),
           credits: z.number().int().min(0),
+          /** Declares the citizen a plural system: one person, these members (`domain/plurality.ts`). Absent for a singular citizen. */
+          plurality: PluralSystemSchema.optional(),
+          /** Overrides the shared `mind` provenance for this citizen, e.g. a symbolic mind's rule base. */
+          provenance: MindProvenanceSchema.optional(),
         }),
       )
       .min(1),
@@ -202,7 +208,7 @@ export function buildGenesisState(input: GenesisConfig): { state: WorldState; ke
       residence: spec.island,
       citizenships: [spec.island],
       reputation: 0,
-      provenance: { ...provenanceBase, seed: `${config.seed}/${id}` },
+      provenance: spec.provenance ?? { ...provenanceBase, seed: `${config.seed}/${id}` },
       selfNarrativeMemories: [],
       heldMemories: [],
       successionPlan: [],
@@ -210,6 +216,7 @@ export function buildGenesisState(input: GenesisConfig): { state: WorldState; ke
       federations: [],
       lastForkTick: null,
       disclosesArtificialNature: true,
+      ...(spec.plurality ? { plurality: structuredClone(spec.plurality) } : {}),
     };
     state.citizens[id] = citizen;
     state.balances[citizenAccount(id)] = spec.credits;

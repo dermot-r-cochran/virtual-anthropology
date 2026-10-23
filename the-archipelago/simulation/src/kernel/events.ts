@@ -16,6 +16,7 @@ import {
 } from "../domain/ids.js";
 import { CountingRuleSchema, LawSchema } from "../domain/law.js";
 import { LifecycleStateSchema } from "../domain/lifecycle.js";
+import { MemberIdSchema } from "../domain/plurality.js";
 import {
   ArtefactSchema,
   ChronicleEntrySchema,
@@ -116,6 +117,8 @@ export const DomainEventSchema = z.discriminatedUnion("type", [
   }),
   ev("MergerReversed", { mergerId: MergerIdSchema, reason: z.string() }),
   ev("ContinuityClaimed", { claim: ContinuityClaimSchema }),
+  /** A plural citizen's fronting members changed; `newlyFronted` are members the record had never seen front before. */
+  ev("FrontingChanged", { citizen: CitizenIdSchema, from: z.array(MemberIdSchema), to: z.array(MemberIdSchema), newlyFronted: z.array(MemberIdSchema) }),
   ev("TimeAdvanced", { from: z.number().int(), to: z.number().int() }),
   ev("SimulationPaused", { reason: z.string() }),
   ev("SimulationResumed", { reason: z.string() }),

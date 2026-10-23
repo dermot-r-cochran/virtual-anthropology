@@ -29,6 +29,8 @@ export const CHARTER = {
   researchBounds: "archipelago/charter/bounded-research-interventions",
   selfDetermination: "archipelago/charter/deletion-requires-self-determination",
   provenance: "archipelago/charter/memory-provenance-visible",
+  /** A plural system is one digital person; its members are not copies, forks, descendants or citizens, and a change of front is none of those. */
+  plurality: "archipelago/charter/a-plural-system-is-one-person",
 } as const;
 
 class Denial extends Error {
@@ -505,6 +507,19 @@ function evaluateCommand(state: WorldState, actor: Actor, command: Command): Pol
       citizen(state, command.subject.citizenId);
       if (command.subject.beforeSeq > state.seq) deny("precondition", "subject stage lies in the future");
       return allow(lawOf(state, c.residence), [], ["a claim is testimony, not a determination of identity"]);
+    }
+    case "ChangeFronting": {
+      const c = selfActive(state, actor, command.citizen);
+      const sys = c.plurality;
+      if (!sys) deny("precondition", `${c.id} is not recorded as a plural system`);
+      const known = new Set(sys.members.map((m) => m.id));
+      for (const id of command.fronting) if (!known.has(id)) deny("precondition", `${id} is not a member known to the record of ${c.id}`);
+      if (new Set(command.fronting).size !== command.fronting.length) deny("precondition", "a member is listed twice");
+      // Island law is not consulted: on every island, including where copying is prohibited, a change of front is the one person acting.
+      return allow(lawOf(state, c.residence), [CHARTER.plurality], [
+        "a plural system is one citizen; a change of front is not a copy, a fork or a new person",
+        command.fronting.length > 1 ? `co-fronting: ${command.fronting.join(", ")}` : command.fronting.length === 1 ? `fronting: ${command.fronting[0]}` : "no member fronting",
+      ]);
     }
     case "AdvanceTime": {
       if (!(actor.kind === "researcher" || (actor.kind === "system" && actor.id === "clock"))) {

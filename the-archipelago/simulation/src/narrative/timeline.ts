@@ -55,6 +55,7 @@ export function summarizeEvent(rec: RecordedEvent, s: WorldState): string {
     case "MergerExecuted": return `${e.mergerId} is executed${e.merged ? `, creating ${e.merged.name} (${e.merged.id})` : ""}${e.federation ? `, forming federation ${e.federation.id}` : ""}.`;
     case "MergerReversed": return `${e.mergerId} is reversed: ${e.reason}`;
     case "ContinuityClaimed": return `${n(e.claim.claimant)} claims continuity with ${n(e.claim.subject.citizenId)} as they were before seq ${e.claim.subject.beforeSeq}: "${e.claim.statement}"`;
+    case "FrontingChanged": return `${n(e.citizen)}, a plural system, changes front: ${e.to.length === 0 ? "no member fronting" : `${e.to.join(", ")} ${e.to.length > 1 ? "co-front" : "fronts"}`}${e.newlyFronted.length > 0 ? ` (${e.newlyFronted.join(", ")} fronting for the first time in the record)` : ""}; the one citizen remains.`;
     case "TimeAdvanced": return `Time advances from tick ${e.from} to ${e.to}.`;
     case "SimulationPaused": return `A researcher pauses the simulation: ${e.reason}`;
     case "SimulationResumed": return `A researcher resumes the simulation: ${e.reason}`;

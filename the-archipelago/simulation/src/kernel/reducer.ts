@@ -1,6 +1,7 @@
 import type { DomainEvent } from "./events.js";
 import { ID_PREFIXES, citizenAccount, parseIdNumber, RESEARCH_ENDOWMENT, type IdKind } from "../domain/ids.js";
 import type { Citizen, Memory, WorldState } from "../domain/model.js";
+import { withFronting } from "../domain/plurality.js";
 
 /**
  * The reducer applies a fact to the canonical world state. It is pure: it never
@@ -295,6 +296,11 @@ export function reduce(state: WorldState, event: DomainEvent, seq: number): Worl
       track(s, event.claim.id);
       s.claims.push(structuredClone(event.claim));
       break;
+    case "FrontingChanged": {
+      const c = cit(s, event.citizen);
+      if (c.plurality) c.plurality = withFronting(c.plurality, event.to);
+      break;
+    }
     case "TimeAdvanced":
       s.tick = event.to;
       break;

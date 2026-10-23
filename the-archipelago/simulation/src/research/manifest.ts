@@ -68,7 +68,7 @@ export const ExperimentManifestSchema = z
     simulationVersion: z.string().min(1),
     question: ResearchQuestionSchema,
     hypotheses: z.array(HypothesisSchema).min(1),
-    minds: z.object({ kind: z.enum(["deterministic", "language-model"]), model: z.string().min(1), modelVersion: z.string().min(1), promptId: z.string().min(1) }).strict(),
+    minds: z.object({ kind: z.enum(["deterministic", "language-model", "symbolic"]), model: z.string().min(1), modelVersion: z.string().min(1), promptId: z.string().min(1) }).strict(),
     researchers: z.array(z.object({ id: ResearcherIdSchema, role: z.string().min(1) }).strict()).min(1),
     researchBounds: ResearchBoundsSchema,
     parameters: z.object({ abmRounds: z.number().int().min(0).max(100) }).strict(),

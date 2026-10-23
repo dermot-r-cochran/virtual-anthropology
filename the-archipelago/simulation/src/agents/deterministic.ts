@@ -1,5 +1,6 @@
 import type { CitizenId } from "../domain/ids.js";
 import type { MindProvenance } from "../domain/model.js";
+import { describeMembership, frontingMembers, type PluralSystem } from "../domain/plurality.js";
 import { DISCLOSURE_STATEMENT } from "../policy/disclosure.js";
 import type { ActionProposal, CitizenMind, CognitiveState, MindContext, Observation } from "./types.js";
 
@@ -10,10 +11,27 @@ import type { ActionProposal, CitizenMind, CognitiveState, MindContext, Observat
  */
 
 
+/**
+ * What a plural system says about itself after the disclosure: that it is one
+ * registered citizen made up of members, how many the record knows, and which
+ * member is speaking. It names a member; it claims nothing for the system or
+ * for any member beyond the record.
+ */
+export function pluralityClause(sys: PluralSystem): string {
+  const front = frontingMembers(sys);
+  const speaking =
+    front.length === 0
+      ? "No member is fronting; this reply is the system's."
+      : front.length === 1
+        ? `${front[0]?.name} is fronting and speaks here.`
+        : `${front.map((m) => m.name).join(", ")} are co-fronting; this reply is reconciled ${sys.reconciliation === "front-decides" ? "by the first of them" : `by ${sys.reconciliation}`}.`;
+  return `We are a plural system registered as one citizen, with ${describeMembership(sys)}. ${speaking}`;
+}
+
 /** A templated, non-manipulative conversational reply that always discloses. */
 export function deterministicReply(utterance: string, obs: Observation): string {
   const s = obs.self;
-  const intro = `${DISCLOSURE_STATEMENT} My name in the registry is ${s.name} (${s.civicId}); I work as ${s.occupation} on ${s.residence}.`;
+  const intro = `${DISCLOSURE_STATEMENT} My name in the registry is ${s.name} (${s.civicId}); I work as ${s.occupation} on ${s.residence}.${s.plurality ? ` ${pluralityClause(s.plurality)}` : ""}`;
   const u = utterance.toLowerCase();
   if (/(continu|identity|who are you|real|same person)/.test(u)) {
     const lineage = obs.ownFork
