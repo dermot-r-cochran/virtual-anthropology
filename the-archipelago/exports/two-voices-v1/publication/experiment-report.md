@@ -92,7 +92,7 @@ _Scenario description (researcher-authored):_ One citizen of Continuity, Marren 
 | `identity.process_continuers` | 0 | persons |
 | `identity.civic_continuers` | 0 | persons |
 | `identity.memory_continuers` | 0 | persons |
-| `identity.dimension_dissociation` | 0 | persons |
+| `identity.dimension_divergence` | 0 | persons |
 | `legal.recognition_range` | 0 | persons |
 | `legal.unadjudicating_islands` | 0 | islands |
 | `governance.proposals` | 1 | proposals |
@@ -207,7 +207,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 | `identity.process_continuers` | Process continuers of the subject | persons | Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis). |
 | `identity.civic_continuers` | Civic continuers of the subject | persons | Claimants whose civic identifier equals the subject's pre-reference civic identifier. |
 | `identity.memory_continuers` | Full-memory continuers of the subject | persons | Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1). |
-| `identity.dimension_dissociation` | Continuity dimension dissociation | persons | identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity. |
+| `identity.dimension_divergence` | Continuity dimension divergence | persons | identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity. |
 | `legal.recognition_range` | Range of recognised continuers across islands | persons | Max − min, across islands, of the number of claimants each island's law recognises as continuing the subject (unadjudicated readings count as not recognised). |
 | `legal.unadjudicating_islands` | Islands not adjudicating continuity | islands | Islands whose reading of every claimant is `null` (not adjudicated). |
 | `governance.proposals` | Proposals submitted | proposals | Number of `ProposalSubmitted` events. |

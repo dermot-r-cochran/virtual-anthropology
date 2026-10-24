@@ -29,11 +29,11 @@
         }
       },
       {
-        "id": "h2-dimension-dissociation",
+        "id": "h2-dimension-divergence",
         "questionId": "q-continuity-after-fork",
         "statement": "Full memory continuity is shared by more claimants than process continuity.",
         "operationalisation": {
-          "metric": "identity.dimension_dissociation",
+          "metric": "identity.dimension_divergence",
           "comparator": ">",
           "threshold": 0
         }

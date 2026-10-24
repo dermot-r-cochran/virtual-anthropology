@@ -11,8 +11,8 @@ const EXPORTS = fileURLToPath(new URL("../../exports/two-voices-v1/", import.met
 const read = (path: string) => readFileSync(path, "utf8").replace(/\r\n/g, "\n");
 const fixed = { start: () => "2026-01-01T00:00:00.000Z", end: () => "2026-01-01T00:00:00.000Z" };
 
-/** Words the record must not use of a plural citizen. The First Fork's metric `identity.dimension_dissociation` is about continuity dimensions and is excluded by name. */
-const CLINICAL = /\b(disorder|pathology|pathological|symptom|malfunction|unstable|instability|treatment|dissociative|alters?\b|split personality|fragment)/i;
+/** Words the record must not use of a plural citizen. Since 2026-10-24 no metric carries a clinical word either (the First Fork's `identity.dimension_dissociation` became `identity.dimension_divergence`), so nothing is excluded by name. */
+const CLINICAL = /\b(disorder|pathology|pathological|symptom|malfunction|unstable|instability|treatment|dissociat\w*|alters?\b|split personality|fragment)/i;
 
 describe("Two Voices in One Record", async () => {
   const m = loadManifest(MANIFEST);

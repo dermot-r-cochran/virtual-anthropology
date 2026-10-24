@@ -1,6 +1,6 @@
 # Virtual Anthropology Report: archipelago-first-fork
 
-Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e` · configuration `1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090`
+Experiment `the-first-fork-v1` · seed `archipelago/the-first-fork/v1` · head `945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e` · configuration `c00467dcfb786d1e7bea4fe5345150d5023f17124bd91cfb5c0f9700d3b1ff28`
 
 > The repository studies virtual civilizations. It does not attempt to prove, infer, or assign consciousness. Research outputs distinguish observations, metrics, hypotheses, and interpretations. Every value below is computed from the event store or the final snapshot. Section notes say which.
 
@@ -122,7 +122,7 @@ _From the chronicle. Each line cites its source events._
 | Process continuers of the subject | `identity.process_continuers` | 1 | persons |
 | Civic continuers of the subject | `identity.civic_continuers` | 1 | persons |
 | Full-memory continuers of the subject | `identity.memory_continuers` | 3 | persons |
-| Continuity dimension dissociation | `identity.dimension_dissociation` | 2 | persons |
+| Continuity dimension divergence | `identity.dimension_divergence` | 2 | persons |
 | Range of recognised continuers across islands | `legal.recognition_range` | 3 | persons |
 
 # Digital Death Statistics
@@ -143,7 +143,7 @@ _From the chronicle. Each line cites its source events._
 _Each statement restates the cited metrics. Interpretation is left to researchers and must be labelled as such._
 
 - 1 fork event(s) produced 2 descendant record(s) and 3 fork-kin tie(s). _[`identity.forks`, `identity.fork_descendants`, `social.fork_kin_ties`]_
-- 3 continuity claim(s) were recorded. Among the claimants, 1 share the subject's process identifier, 1 share the civic identifier and 3 hold every pre-reference self-narrative record (dissociation = 2). _[`identity.continuity_claims`, `identity.process_continuers`, `identity.civic_continuers`, `identity.memory_continuers`, `identity.dimension_dissociation`]_
+- 3 continuity claim(s) were recorded. Among the claimants, 1 share the subject's process identifier, 1 share the civic identifier and 3 hold every pre-reference self-narrative record (divergence = 2). _[`identity.continuity_claims`, `identity.process_continuers`, `identity.civic_continuers`, `identity.memory_continuers`, `identity.dimension_divergence`]_
 - The number of claimants recognised as continuing the subject differs by 3 across islands. 1 island(s) do not adjudicate. _[`legal.recognition_range`, `legal.unadjudicating_islands`]_
 - 1 vote(s) were refused because the voter was outside the electorate snapshot. _[`governance.votes_refused_outside_electorate`]_
 - 1 command(s) were rejected by validation, authorisation or law. 1 law version(s) were enacted. _[`governance.commands_rejected`, `governance.laws_enacted`]_

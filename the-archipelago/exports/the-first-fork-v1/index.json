@@ -7,7 +7,7 @@
   "category": "demonstration",
   "scenario": "the-first-fork",
   "seed": "archipelago/the-first-fork/v1",
-  "configurationHash": "1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090",
+  "configurationHash": "c00467dcfb786d1e7bea4fe5345150d5023f17124bd91cfb5c0f9700d3b1ff28",
   "headHash": "945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e",
   "eventCount": 92,
   "findings": [
@@ -16,7 +16,7 @@
       "outcome": "consistent-with-hypothesis"
     },
     {
-      "hypothesisId": "h2-dimension-dissociation",
+      "hypothesisId": "h2-dimension-divergence",
       "outcome": "consistent-with-hypothesis"
     },
     {
@@ -107,13 +107,13 @@
     },
     {
       "path": "dataset.json",
-      "sha256": "3eb68930738cc0b9d749931f6e6fcbd1539846d3de23909d85bc645fa8b056cf",
-      "bytes": 164494
+      "sha256": "6d153045abf2864c14c78f84547c6edf28532c74e83119864e55cb808fb2b023",
+      "bytes": 164490
     },
     {
       "path": "research.json",
-      "sha256": "bce2808c79700119cded74266fb0c84d516e81ece3107500697bf80d9d95775a",
-      "bytes": 79096
+      "sha256": "0943019f44d8fbceb5b9d44d334ce580276c8bb0e33c727de1ef54a2848621d3",
+      "bytes": 79020
     },
     {
       "path": "lineage_graph.json",
@@ -137,8 +137,8 @@
     },
     {
       "path": "civilization_metrics.json",
-      "sha256": "12ef41821b571baa3b357b0e31e55128a97406ccbb56ee6014e5edf064f4b476",
-      "bytes": 13273
+      "sha256": "2ebca6ba655d88ee4d52485c60fb2830812d13fbb544cb3b9f5898cd1feaff3a",
+      "bytes": 13267
     },
     {
       "path": "civilization_metrics.csv",
@@ -147,23 +147,23 @@
     },
     {
       "path": "study.json",
-      "sha256": "9488cb2e94e4ce2c8967144446d3ae0e8f23d8cdf8c8e4b5b0835dcb542c0c2f",
-      "bytes": 76392
+      "sha256": "0bc022d507d59440cc7a17af8251266b72c814a06290275e00b3b38a8da6c318",
+      "bytes": 76300
     },
     {
       "path": "study.csv",
-      "sha256": "ecb9fdfb54af79688f452f2ae4a7d8301c6930f8d04982c2f87a556400ac8dbe",
-      "bytes": 52252
+      "sha256": "41545e6aa777faf18ec086fc3456f0d3e8855823696a5da0d0954e742106c3aa",
+      "bytes": 52212
     },
     {
       "path": "publication/experiment-report.md",
-      "sha256": "bf0b38613b96e083a889bf98c588383f98a70cb36ffe664f5601453429846174",
-      "bytes": 31135
+      "sha256": "71f3573ad3f3dfe470a2bd1422869c015b8ad431efac66e02ed340ee17ab107c",
+      "bytes": 31093
     },
     {
       "path": "publication/civilization-report.md",
-      "sha256": "90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea",
-      "bytes": 8518
+      "sha256": "fed9ea6ce93d4e153258553fd5f116b377058496ca6f7b0faf3ee4a8d0af0c8d",
+      "bytes": 8510
     },
     {
       "path": "publication/chronicle.md",
@@ -202,8 +202,8 @@
     },
     {
       "path": "research_manifest.yaml",
-      "sha256": "3e40a36a34465d43899bf19a777bff5e2b9ac18ee70b4c8c8d61fc7f6e5c3fa6",
-      "bytes": 23933
+      "sha256": "94abfe617d67f40fbea8fb44819f4c4996241af2a1e095ab2d955d7b213afa16",
+      "bytes": 23923
     }
   ]
 }

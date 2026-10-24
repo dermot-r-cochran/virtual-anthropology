@@ -119,7 +119,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -160,7 +160,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -201,7 +201,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -242,7 +242,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -283,7 +283,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -324,7 +324,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -365,7 +365,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -406,7 +406,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -447,7 +447,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -488,7 +488,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -529,7 +529,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -570,7 +570,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -611,7 +611,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -652,7 +652,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -693,7 +693,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -734,7 +734,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -775,7 +775,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -816,7 +816,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -857,7 +857,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -898,7 +898,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -939,7 +939,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -980,7 +980,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1021,7 +1021,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1062,7 +1062,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1099,7 +1099,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1140,7 +1140,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1177,7 +1177,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1218,7 +1218,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1255,7 +1255,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1296,7 +1296,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1349,7 +1349,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1390,7 +1390,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1434,7 +1434,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1475,7 +1475,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1516,7 +1516,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1557,7 +1557,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1598,7 +1598,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1639,7 +1639,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1680,7 +1680,7 @@
         "identity.process_continuers": 1,
         "identity.civic_continuers": 1,
         "identity.memory_continuers": 3,
-        "identity.dimension_dissociation": 2,
+        "identity.dimension_divergence": 2,
         "legal.recognition_range": 3,
         "legal.unadjudicating_islands": 1,
         "governance.proposals": 1,
@@ -1721,7 +1721,7 @@
           "outcome": "consistent-with-hypothesis"
         },
         {
-          "hypothesisId": "h2-dimension-dissociation",
+          "hypothesisId": "h2-dimension-divergence",
           "observedValue": 2,
           "outcome": "consistent-with-hypothesis"
         },
@@ -1879,7 +1879,7 @@
           "mean": 3,
           "max": 3
         },
-        "identity.dimension_dissociation": {
+        "identity.dimension_divergence": {
           "n": 12,
           "min": 2,
           "median": 2,
@@ -2055,7 +2055,7 @@
           "undetermined": 0,
           "n": 12
         },
-        "h2-dimension-dissociation": {
+        "h2-dimension-divergence": {
           "consistent": 12,
           "inconsistent": 0,
           "undetermined": 0,
@@ -2214,7 +2214,7 @@
           "mean": 3,
           "max": 3
         },
-        "identity.dimension_dissociation": {
+        "identity.dimension_divergence": {
           "n": 3,
           "min": 2,
           "median": 2,
@@ -2390,7 +2390,7 @@
           "undetermined": 0,
           "n": 3
         },
-        "h2-dimension-dissociation": {
+        "h2-dimension-divergence": {
           "consistent": 3,
           "inconsistent": 0,
           "undetermined": 0,
@@ -2549,7 +2549,7 @@
           "mean": 3,
           "max": 3
         },
-        "identity.dimension_dissociation": {
+        "identity.dimension_divergence": {
           "n": 5,
           "min": 2,
           "median": 2,
@@ -2725,7 +2725,7 @@
           "undetermined": 0,
           "n": 5
         },
-        "h2-dimension-dissociation": {
+        "h2-dimension-divergence": {
           "consistent": 5,
           "inconsistent": 0,
           "undetermined": 0,
