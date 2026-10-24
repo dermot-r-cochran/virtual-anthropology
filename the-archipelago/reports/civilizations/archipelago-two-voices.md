@@ -102,7 +102,7 @@ _From the chronicle. Each line cites its source events._
 | Process continuers of the subject | `identity.process_continuers` | 0 | persons |
 | Civic continuers of the subject | `identity.civic_continuers` | 0 | persons |
 | Full-memory continuers of the subject | `identity.memory_continuers` | 0 | persons |
-| Continuity dimension dissociation | `identity.dimension_dissociation` | 0 | persons |
+| Continuity dimension divergence | `identity.dimension_divergence` | 0 | persons |
 | Range of recognised continuers across islands | `legal.recognition_range` | 0 | persons |
 
 # Digital Death Statistics

@@ -41,7 +41,7 @@ export const METRICS: readonly Metric[] = [
   m("identity.process_continuers", "Process continuers of the subject", "persons", "Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis).", (i) => i.analyses.continuity?.claimants.filter((c) => c.sameProcess).length ?? 0),
   m("identity.civic_continuers", "Civic continuers of the subject", "persons", "Claimants whose civic identifier equals the subject's pre-reference civic identifier.", (i) => i.analyses.continuity?.claimants.filter((c) => c.sameCivicId).length ?? 0),
   m("identity.memory_continuers", "Full-memory continuers of the subject", "persons", "Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1).", (i) => i.analyses.continuity?.claimants.filter((c) => c.sharedMemoryFraction === 1).length ?? 0),
-  m("identity.dimension_dissociation", "Continuity dimension dissociation", "persons", "identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity.", (i) => {
+  m("identity.dimension_divergence", "Continuity dimension divergence", "persons", "identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity.", (i) => {
     const c = i.analyses.continuity?.claimants ?? [];
     return c.filter((x) => x.sharedMemoryFraction === 1).length - c.filter((x) => x.sameProcess).length;
   }),

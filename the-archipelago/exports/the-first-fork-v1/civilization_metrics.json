@@ -68,8 +68,8 @@
       "definition": "Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1)."
     },
     {
-      "id": "identity.dimension_dissociation",
-      "name": "Continuity dimension dissociation",
+      "id": "identity.dimension_divergence",
+      "name": "Continuity dimension divergence",
       "unit": "persons",
       "definition": "identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity."
     },
@@ -312,7 +312,7 @@
       "value": 3
     },
     {
-      "metric": "identity.dimension_dissociation",
+      "metric": "identity.dimension_divergence",
       "value": 2
     },
     {

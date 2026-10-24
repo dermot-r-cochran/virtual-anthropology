@@ -14,10 +14,10 @@ hypothesis:
       metric: legal.recognition_range
       comparator: ">="
       threshold: 2
-  - id: h2-dimension-dissociation
+  - id: h2-dimension-divergence
     statement: Full memory continuity is shared by more claimants than process continuity.
     operationalisation:
-      metric: identity.dimension_dissociation
+      metric: identity.dimension_divergence
       comparator: ">"
       threshold: 0
   - id: h3-no-vote-multiplication
@@ -93,7 +93,7 @@ population:
     promptId: archipelago/deterministic-citizen/v1
 simulation_seed: archipelago/the-first-fork/v1
 simulation_version: 0.1.0
-configuration_hash: 1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090
+configuration_hash: c00467dcfb786d1e7bea4fe5345150d5023f17124bd91cfb5c0f9700d3b1ff28
 start_timestamp: 2026-01-01T00:00:00.000Z
 end_timestamp: 2026-01-01T00:00:00.000Z
 simulated_ticks: 7
@@ -145,7 +145,7 @@ metrics:
     unit: persons
     value: 3
     definition: Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1).
-  - id: identity.dimension_dissociation
+  - id: identity.dimension_divergence
     unit: persons
     value: 2
     definition: identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity.
@@ -283,8 +283,8 @@ findings:
     observed: 3
     test: ">= 2"
     outcome: consistent-with-hypothesis
-  - hypothesis: h2-dimension-dissociation
-    metric: identity.dimension_dissociation
+  - hypothesis: h2-dimension-divergence
+    metric: identity.dimension_divergence
     observed: 2
     test: "> 0"
     outcome: consistent-with-hypothesis
@@ -620,11 +620,11 @@ outputs:
     sha256: a3d59f02943f1f29f0854b28aa7925c2190a44b205d40c60a5bead4debcd8c58
     bytes: 168376
   - path: exports/the-first-fork-v1/dataset.json
-    sha256: 3eb68930738cc0b9d749931f6e6fcbd1539846d3de23909d85bc645fa8b056cf
-    bytes: 164494
+    sha256: 6d153045abf2864c14c78f84547c6edf28532c74e83119864e55cb808fb2b023
+    bytes: 164490
   - path: exports/the-first-fork-v1/research.json
-    sha256: bce2808c79700119cded74266fb0c84d516e81ece3107500697bf80d9d95775a
-    bytes: 79096
+    sha256: 0943019f44d8fbceb5b9d44d334ce580276c8bb0e33c727de1ef54a2848621d3
+    bytes: 79020
   - path: exports/the-first-fork-v1/lineage_graph.json
     sha256: 979d95e495fd656ec97e1b05c44c45adcbc01a174ad972ce525061a389100cc3
     bytes: 3444
@@ -638,23 +638,23 @@ outputs:
     sha256: 89780cf278861816aec787cb9f87029a3ac3c25696ad0f627144f1525df4cff0
     bytes: 50014
   - path: exports/the-first-fork-v1/civilization_metrics.json
-    sha256: 12ef41821b571baa3b357b0e31e55128a97406ccbb56ee6014e5edf064f4b476
-    bytes: 13273
+    sha256: 2ebca6ba655d88ee4d52485c60fb2830812d13fbb544cb3b9f5898cd1feaff3a
+    bytes: 13267
   - path: exports/the-first-fork-v1/civilization_metrics.csv
     sha256: 6dda6bb22c9da8c5beda376bc1b40ad764cbc0c44f077b9669fde9d0feda0f0f
     bytes: 675
   - path: exports/the-first-fork-v1/study.json
-    sha256: 9488cb2e94e4ce2c8967144446d3ae0e8f23d8cdf8c8e4b5b0835dcb542c0c2f
-    bytes: 76392
+    sha256: 0bc022d507d59440cc7a17af8251266b72c814a06290275e00b3b38a8da6c318
+    bytes: 76300
   - path: exports/the-first-fork-v1/study.csv
-    sha256: ecb9fdfb54af79688f452f2ae4a7d8301c6930f8d04982c2f87a556400ac8dbe
-    bytes: 52252
+    sha256: 41545e6aa777faf18ec086fc3456f0d3e8855823696a5da0d0954e742106c3aa
+    bytes: 52212
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: bf0b38613b96e083a889bf98c588383f98a70cb36ffe664f5601453429846174
-    bytes: 31135
+    sha256: 71f3573ad3f3dfe470a2bd1422869c015b8ad431efac66e02ed340ee17ab107c
+    bytes: 31093
   - path: exports/the-first-fork-v1/publication/civilization-report.md
-    sha256: 90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea
-    bytes: 8518
+    sha256: fed9ea6ce93d4e153258553fd5f116b377058496ca6f7b0faf3ee4a8d0af0c8d
+    bytes: 8510
   - path: exports/the-first-fork-v1/publication/chronicle.md
     sha256: c2624b09eb49a8bf7c3fe9b2eab6f101511e424bdd8ca5b084231e834a6b7f75
     bytes: 2447
@@ -677,11 +677,11 @@ outputs:
     sha256: 050bfe643b7cb78295ed610c1690ad10e5c0d2c0f2e12b9b1531f919ac1b84c1
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: bf0b38613b96e083a889bf98c588383f98a70cb36ffe664f5601453429846174
-    bytes: 31135
+    sha256: 71f3573ad3f3dfe470a2bd1422869c015b8ad431efac66e02ed340ee17ab107c
+    bytes: 31093
   - path: reports/civilizations/archipelago-first-fork.md
-    sha256: 90a9680aa303294946ec652607d2803eac214a66e4052e592e9eac705dd528ea
-    bytes: 8518
+    sha256: fed9ea6ce93d4e153258553fd5f116b377058496ca6f7b0faf3ee4a8d0af0c8d
+    bytes: 8510
   - path: reports/chronicles/archipelago-first-fork.md
     sha256: c2624b09eb49a8bf7c3fe9b2eab6f101511e424bdd8ca5b084231e834a6b7f75
     bytes: 2447

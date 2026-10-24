@@ -58,8 +58,8 @@ export function anthropologicalObservations(metrics: readonly MetricValue[]): { 
     out.push({ text: `${v("identity.forks")} fork event(s) produced ${v("identity.fork_descendants")} descendant record(s) and ${v("social.fork_kin_ties")} fork-kin tie(s).`, metrics: ["identity.forks", "identity.fork_descendants", "social.fork_kin_ties"] });
   if (v("identity.continuity_claims") > 0)
     out.push({
-      text: `${v("identity.continuity_claims")} continuity claim(s) were recorded. Among the claimants, ${v("identity.process_continuers")} share the subject's process identifier, ${v("identity.civic_continuers")} share the civic identifier and ${v("identity.memory_continuers")} hold every pre-reference self-narrative record (dissociation = ${v("identity.dimension_dissociation")}).`,
-      metrics: ["identity.continuity_claims", "identity.process_continuers", "identity.civic_continuers", "identity.memory_continuers", "identity.dimension_dissociation"],
+      text: `${v("identity.continuity_claims")} continuity claim(s) were recorded. Among the claimants, ${v("identity.process_continuers")} share the subject's process identifier, ${v("identity.civic_continuers")} share the civic identifier and ${v("identity.memory_continuers")} hold every pre-reference self-narrative record (divergence = ${v("identity.dimension_divergence")}).`,
+      metrics: ["identity.continuity_claims", "identity.process_continuers", "identity.civic_continuers", "identity.memory_continuers", "identity.dimension_divergence"],
     });
   if (v("identity.continuity_claims") > 0)
     out.push({ text: `The number of claimants recognised as continuing the subject differs by ${v("legal.recognition_range")} across islands. ${v("legal.unadjudicating_islands")} island(s) do not adjudicate.`, metrics: ["legal.recognition_range", "legal.unadjudicating_islands"] });
@@ -109,7 +109,7 @@ export function civilizationReportMarkdown(input: ResearchInput, b: ResearchBund
     "_From the chronicle. Each line cites its source events._", "",
     ...significant.map(({ year, st }) => `- Year ${year}: ${st.text} _[${st.events.map((e) => `${e.seq}:${e.type}`).join(", ")}]_`), "",
     "# Identity Fork Statistics", "",
-    ...metricTable(m, ["identity.forks", "identity.fork_descendants", "social.fork_kin_ties", "memory.fork_inherited", "identity.mergers", "identity.continuity_claims", "identity.process_continuers", "identity.civic_continuers", "identity.memory_continuers", "identity.dimension_dissociation", "legal.recognition_range"]), "",
+    ...metricTable(m, ["identity.forks", "identity.fork_descendants", "social.fork_kin_ties", "memory.fork_inherited", "identity.mergers", "identity.continuity_claims", "identity.process_continuers", "identity.civic_continuers", "identity.memory_continuers", "identity.dimension_divergence", "legal.recognition_range"]), "",
     "# Digital Death Statistics", "",
     ...metricTable(m, ["death.asleep", "death.suspended", "death.archived", "death.process_ended_restorable", "death.memory_damaged", "death.identity_discontinuous", "death.irreversibly_deleted", "death.transitions"]), "",
     "# Anthropological Observations", "",

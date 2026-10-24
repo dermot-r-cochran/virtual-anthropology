@@ -24,8 +24,8 @@ _Motivation (researcher-authored):_ Digital-person identity debates often assume
 
 - **h1-legal-divergence**: The islands' laws differ in how many claimants they recognise as continuing the pre-fork person by at least two.
   - Operationalisation: `legal.recognition_range >= 2`
-- **h2-dimension-dissociation**: Full memory continuity is shared by more claimants than process continuity.
-  - Operationalisation: `identity.dimension_dissociation > 0`
+- **h2-dimension-divergence**: Full memory continuity is shared by more claimants than process continuity.
+  - Operationalisation: `identity.dimension_divergence > 0`
 - **h3-no-vote-multiplication**: A descendant created after a proposal opens cannot vote on it. At least one such attempt is refused.
   - Operationalisation: `governance.votes_refused_outside_electorate >= 1`
 
@@ -52,7 +52,7 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | civilization id | `archipelago-first-fork` |
 | simulation version | 0.1.0 |
 | interchange version | 1 |
-| configuration hash | `1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090` |
+| configuration hash | `c00467dcfb786d1e7bea4fe5345150d5023f17124bd91cfb5c0f9700d3b1ff28` |
 | seed | `archipelago/the-first-fork/v1` |
 | start timestamp | 2026-01-01T00:00:00.000Z |
 | end timestamp | 2026-01-01T00:00:00.000Z |
@@ -66,11 +66,11 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | hypothesis | metric | observed | test | outcome |
 |---|---|---:|---|---|
 | h1-legal-divergence | `legal.recognition_range` | 3 | `>= 2` | consistent-with-hypothesis |
-| h2-dimension-dissociation | `identity.dimension_dissociation` | 2 | `> 0` | consistent-with-hypothesis |
+| h2-dimension-divergence | `identity.dimension_divergence` | 2 | `> 0` | consistent-with-hypothesis |
 | h3-no-vote-multiplication | `governance.votes_refused_outside_electorate` | 1 | `>= 1` | consistent-with-hypothesis |
 
 - Hypothesis h1-legal-divergence: computed `legal.recognition_range` = 3; the test `legal.recognition_range >= 2` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.
-- Hypothesis h2-dimension-dissociation: computed `identity.dimension_dissociation` = 2; the test `identity.dimension_dissociation > 0` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.
+- Hypothesis h2-dimension-divergence: computed `identity.dimension_divergence` = 2; the test `identity.dimension_divergence > 0` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.
 - Hypothesis h3-no-vote-multiplication: computed `governance.votes_refused_outside_electorate` = 1; the test `governance.votes_refused_outside_electorate >= 1` is true. The result is consistent with the hypothesis as operationalised, in this single deterministic run.
 
 ### Metrics
@@ -88,7 +88,7 @@ _Scenario description (researcher-authored):_ A citizen of Continuity migrates t
 | `identity.process_continuers` | 1 | persons |
 | `identity.civic_continuers` | 1 | persons |
 | `identity.memory_continuers` | 3 | persons |
-| `identity.dimension_dissociation` | 2 | persons |
+| `identity.dimension_divergence` | 2 | persons |
 | `legal.recognition_range` | 3 | persons |
 | `legal.unadjudicating_islands` | 1 | islands |
 | `governance.proposals` | 1 | proposals |
@@ -130,7 +130,7 @@ _Replications of this run under the variations the manifest declares. Each is a 
 
 Base run: head `945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e`, 92 events, branch point after seq 64.
 
-### Branch sweep (12 timelines, one choice point taken differently in each; hypothesis outcomes h1-legal-divergence / h2-dimension-dissociation / h3-no-vote-multiplication)
+### Branch sweep (12 timelines, one choice point taken differently in each; hypothesis outcomes h1-legal-divergence / h2-dimension-divergence / h3-no-vote-multiplication)
 
 _Enumeration `fair-round-robin/van-der-corput/v1`: fair (every citizen takes one alternative before any takes a second), unbiased (kinds of choice rotate within a citizen; alternatives in canonical order, one per visit) and representative (within a citizen and kind, points visited in van der Corput order of their position, so picks are spread across the epilogue). The order is declared, not drawn._
 
@@ -150,13 +150,13 @@ _Enumeration `fair-round-robin/van-der-corput/v1`: fair (every citizen takes one
 | branch-12 | 2 | 67 | Pell Marr | intention | record-experience instead of create-culture | 92 | `419d66443ea1…` | consistent / consistent / consistent |
 
 - `h1-legal-divergence`: consistent in 12 of 12 completed run(s).
-- `h2-dimension-dissociation`: consistent in 12 of 12 completed run(s).
+- `h2-dimension-divergence`: consistent in 12 of 12 completed run(s).
 - `h3-no-vote-multiplication`: consistent in 12 of 12 completed run(s).
 
 | metric | n | min | median | mean | max |
 |---|---:|---:|---:|---:|---:|
 | `legal.recognition_range` | 12 | 3 | 3 | 3 | 3 |
-| `identity.dimension_dissociation` | 12 | 2 | 2 | 2 | 2 |
+| `identity.dimension_divergence` | 12 | 2 | 2 | 2 | 2 |
 | `governance.votes_refused_outside_electorate` | 12 | 1 | 1 | 1 | 1 |
 
 ### Doctrine variants (4 runs, statutory law overridden at founding)
@@ -169,13 +169,13 @@ _Enumeration `fair-round-robin/van-der-corput/v1`: fair (every citizen takes one
 | fork-single-descendant | fork | `{"maxDescendantsPerFork":1}` | — | — | infeasible: The First Fork: fork did not occur |
 
 - `h1-legal-divergence`: consistent in 3 of 3 completed run(s).
-- `h2-dimension-dissociation`: consistent in 3 of 3 completed run(s).
+- `h2-dimension-divergence`: consistent in 3 of 3 completed run(s).
 - `h3-no-vote-multiplication`: consistent in 2 of 3 completed run(s), inconsistent in 1.
 
 | metric | n | min | median | mean | max |
 |---|---:|---:|---:|---:|---:|
 | `legal.recognition_range` | 3 | 3 | 3 | 3 | 3 |
-| `identity.dimension_dissociation` | 3 | 2 | 2 | 2 | 2 |
+| `identity.dimension_divergence` | 3 | 2 | 2 | 2 | 2 |
 | `governance.votes_refused_outside_electorate` | 3 | 0 | 1 | 0.6667 | 1 |
 
 ### Alternate timelines (5 runs, branched after seq 64)
@@ -189,13 +189,13 @@ _Enumeration `fair-round-robin/van-der-corput/v1`: fair (every citizen takes one
 | fork-adopts-consensus | none | `{"island":"fork","amendment":{"countingRule":"consensus"}}` | 93 | `8d5948f93b8d…` | consistent / consistent / consistent |
 
 - `h1-legal-divergence`: consistent in 5 of 5 completed run(s).
-- `h2-dimension-dissociation`: consistent in 5 of 5 completed run(s).
+- `h2-dimension-divergence`: consistent in 5 of 5 completed run(s).
 - `h3-no-vote-multiplication`: consistent in 5 of 5 completed run(s).
 
 | metric | n | min | median | mean | max |
 |---|---:|---:|---:|---:|---:|
 | `legal.recognition_range` | 5 | 3 | 3 | 3 | 3 |
-| `identity.dimension_dissociation` | 5 | 2 | 2 | 2 | 2 |
+| `identity.dimension_divergence` | 5 | 2 | 2 | 2 | 2 |
 | `governance.votes_refused_outside_electorate` | 5 | 1 | 1 | 1 | 1 |
 
 
@@ -231,7 +231,7 @@ _Enumeration `fair-round-robin/van-der-corput/v1`: fair (every citizen takes one
 - **obs-metric-governance-votes-refused-outside-electorate** (metric): Votes refused outside electorate (`governance.votes_refused_outside_electorate`) = 1 commands. _[trace: `governance.votes_refused_outside_electorate`]_
 - **obs-metric-identity-civic-continuers** (metric): Civic continuers of the subject (`identity.civic_continuers`) = 1 persons. _[trace: `identity.civic_continuers`]_
 - **obs-metric-identity-continuity-claims** (metric): Continuity claims (`identity.continuity_claims`) = 3 claims. _[trace: `identity.continuity_claims`]_
-- **obs-metric-identity-dimension-dissociation** (metric): Continuity dimension dissociation (`identity.dimension_dissociation`) = 2 persons. _[trace: `identity.dimension_dissociation`]_
+- **obs-metric-identity-dimension-divergence** (metric): Continuity dimension divergence (`identity.dimension_divergence`) = 2 persons. _[trace: `identity.dimension_divergence`]_
 - **obs-metric-identity-fork-descendants** (metric): Fork descendants (`identity.fork_descendants`) = 2 persons. _[trace: `identity.fork_descendants`]_
 - **obs-metric-identity-forks** (metric): Fork events (`identity.forks`) = 1 events. _[trace: `identity.forks`]_
 - **obs-metric-identity-memory-continuers** (metric): Full-memory continuers of the subject (`identity.memory_continuers`) = 3 persons. _[trace: `identity.memory_continuers`]_
@@ -286,7 +286,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 > _Epistemic category: Provenance — identifiers for reproduction._
 
 - Simulation: 0.1.0; interchange v1
-- Configuration hash: `1305bb2a1a54aea5af6d4826950652780120d37f0d448a7d1441892547bfc090`
+- Configuration hash: `c00467dcfb786d1e7bea4fe5345150d5023f17124bd91cfb5c0f9700d3b1ff28`
 - Seed: `archipelago/the-first-fork/v1`
 - Event store head hash: `945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e` (92 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
@@ -307,7 +307,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 | `identity.process_continuers` | Process continuers of the subject | persons | Claimants whose process identifier equals the subject's pre-reference process identifier (0 if no continuity analysis). |
 | `identity.civic_continuers` | Civic continuers of the subject | persons | Claimants whose civic identifier equals the subject's pre-reference civic identifier. |
 | `identity.memory_continuers` | Full-memory continuers of the subject | persons | Claimants holding every self-narrative record the subject held before the reference event (shared fraction = 1). |
-| `identity.dimension_dissociation` | Continuity dimension dissociation | persons | identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity. |
+| `identity.dimension_divergence` | Continuity dimension divergence | persons | identity.memory_continuers − identity.process_continuers. Positive values mean memory continuity is shared more widely than process continuity. |
 | `legal.recognition_range` | Range of recognised continuers across islands | persons | Max − min, across islands, of the number of claimants each island's law recognises as continuing the subject (unadjudicated readings count as not recognised). |
 | `legal.unadjudicating_islands` | Islands not adjudicating continuity | islands | Islands whose reading of every claimant is `null` (not adjudicated). |
 | `governance.proposals` | Proposals submitted | proposals | Number of `ProposalSubmitted` events. |

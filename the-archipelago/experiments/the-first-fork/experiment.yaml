@@ -31,12 +31,12 @@ hypotheses:
       The islands' laws differ in how many claimants they recognise as
       continuing the pre-fork person by at least two.
     operationalisation: { metric: legal.recognition_range, comparator: ">=", threshold: 2 }
-  - id: h2-dimension-dissociation
+  - id: h2-dimension-divergence
     questionId: q-continuity-after-fork
     statement: >-
       Full memory continuity is shared by more claimants than process
       continuity.
-    operationalisation: { metric: identity.dimension_dissociation, comparator: ">", threshold: 0 }
+    operationalisation: { metric: identity.dimension_divergence, comparator: ">", threshold: 0 }
   - id: h3-no-vote-multiplication
     questionId: q-continuity-after-fork
     statement: >-
