@@ -53,6 +53,17 @@ recorded as none. The Archipelago is the right first population because
 its citizens have no privacy to lose and cannot be brigaded, and the
 synthesis can be checked against the log.
 
+Screening by AI (considered, 26 October 2026, not recommended): the premise
+is the author's, that there is no perfect candidate, only acceptable ones, so
+vetting is a floor, pass or fail, and never a ranking, and above the floor
+the lot chooses. An AI process judging the drawn pool for suitability would
+rank where the premise denies a best, bring back a chooser and leave a
+rejected candidate a score rather than a reason. The recommended form checks
+only the statutory floor with deterministic published rules, human review
+and an appeal; on this platform that floor would be one more law-table
+check, never a mind's judgement. The Voting copy, *Open points*, *Vetting*,
+has the full reasoning.
+
 The flaw the renewal rules answer: if sitting members may always stand and
 challengers come only from the pool, every contest is a known name against
 strangers, and the chamber ossifies. A toy model in the Voting crate
