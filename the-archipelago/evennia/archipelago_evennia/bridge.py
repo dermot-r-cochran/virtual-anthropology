@@ -5,6 +5,7 @@ from __future__ import annotations
 import itertools
 import json
 import os
+import shutil
 import subprocess
 import threading
 from pathlib import Path
@@ -27,7 +28,8 @@ class SubprocessTransport:
 
     def __init__(self, simulation_dir: str | os.PathLike[str], experiment: str | os.PathLike[str], command: Optional[list[str]] = None) -> None:
         self._dir = Path(simulation_dir)
-        cmd = command or ["npx", "--no-install", "tsx", "src/bridge/server.ts", str(experiment)]
+        # Resolve npx through PATH: on Windows it is npx.cmd, which Popen does not find by bare name.
+        cmd = command or [shutil.which("npx") or "npx", "--no-install", "tsx", "src/bridge/server.ts", str(experiment)]
         self._proc = subprocess.Popen(
             cmd, cwd=self._dir, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
             text=True, encoding="utf-8", bufsize=1,
