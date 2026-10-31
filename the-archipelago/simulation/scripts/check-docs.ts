@@ -3,7 +3,7 @@
  * no package is imported, so it runs under `tsx` (as CI runs it) or under
  * any Node that strips types.
  *
- * Three checks:
+ * Five checks:
  *
  * 1. Every relative link in a README (the repository's, The Archipelago's,
  *    and any README below it) and under `the-archipelago/docs/` resolves to
@@ -19,6 +19,21 @@
  *    else; "four law-governed islands" and the islands it names match
  *    `ISLAND_IDS` in `src/domain/ids.ts`; and the First Fork's outputs list
  *    has one bullet per file in `exports/the-first-fork-v1/reports/`.
+ * 4. Every test the READMEs and `docs/` cite exists (since 2026-10-31). A
+ *    cited test file (`kernel.test.ts`, `test_bridge.py`, with or without a
+ *    path) is in `simulation/test/` or `evennia/tests/`. A double-quoted
+ *    string on a line that names a test file, or inside a parenthesis, is a
+ *    citation of a vitest title, and must be a substring of some `it(...)`
+ *    title in a test file the line names, or in any test file when the line
+ *    names none (the plural bullets cite by title alone). A backticked
+ *    `SomeTests`, `SomeTests.test_x` or `test_x` must be a unittest class
+ *    or method in `evennia/tests/`. A renamed test used to leave its
+ *    citation standing in the README with nothing behind it; now it fails
+ *    here. What this still cannot check is that the test proves the claim
+ *    beside it.
+ * 5. `docs/evennia.md` and `evennia/README.md` are byte-identical, as
+ *    CLAUDE.md says they are (since 2026-10-31; an edit to one is an edit to
+ *    both).
  *
  * The shape follows architecture-definition-model's check_docs.py. The
  * README-proof convention it backs was Dermot's decision of 10 October 2026:
@@ -131,11 +146,82 @@ function disk(): void {
   if (outputs.length !== reports.length) errors.push(`${rel(readme)}: lists ${outputs.length} outputs of The First Fork, and exports/the-first-fork-v1/reports/ holds ${reports.length} files`);
 }
 
+// 4. cited tests against the suites
+const TS_TITLE = /^\s*(?:it|test)\(\s*(["'])((?:(?!\1)[^\\]|\\.)*)\1/gm;
+const vitest = new Map<string, string[]>(); // basename → it() titles
+for (const name of readdirSync(join(ARCH, "simulation", "test")).filter((n) => n.endsWith(".test.ts")).sort()) {
+  const src = readFileSync(join(ARCH, "simulation", "test", name), "utf8");
+  vitest.set(name, [...src.matchAll(TS_TITLE)].map((m) => m[2] ?? ""));
+}
+const unittest = new Map<string, Set<string>>(); // class → test methods
+const pyFiles = new Set<string>();
+for (const name of readdirSync(join(ARCH, "evennia", "tests")).filter((n) => /^test_\w+\.py$/.test(n)).sort()) {
+  pyFiles.add(name);
+  let cls = "";
+  for (const line of lines(join(ARCH, "evennia", "tests", name))) {
+    const c = /^class\s+(\w+)/.exec(line);
+    if (c) { cls = c[1] ?? ""; if (!unittest.has(cls)) unittest.set(cls, new Set()); continue; }
+    const m = /^\s+def\s+(test_\w+)/.exec(line);
+    if (m && cls) unittest.get(cls)?.add(m[1] ?? "");
+  }
+}
+const pyMethods = new Set([...unittest.values()].flatMap((s) => [...s]));
+const TEST_FILE = /(?:[\w.-]+\/)*([\w-]+\.test\.ts|test_\w+\.py)\b/g;
+const QUOTED = /"([^"]+)"/g;
+const PY_REF = /`([A-Z]\w*Tests)(?:\.(test_\w+))?`|`(test_\w+)`/g;
+let cited = 0;
+function citations(file: string): void {
+  let fenced = false;
+  lines(file).forEach((raw, index) => {
+    if (FENCE.test(raw)) { fenced = !fenced; return; }
+    if (fenced) return;
+    const where = `${rel(file)}:${index + 1}`;
+    const line = raw.replace(/<[^>]*>/g, "");
+    const named: string[] = [];
+    for (const m of line.matchAll(TEST_FILE)) {
+      const name = m[1] ?? "";
+      if (name.endsWith(".ts") ? !vitest.has(name) : !pyFiles.has(name)) errors.push(`${where}: cites ${name}, which is not in the test suites`);
+      else if (name.endsWith(".ts")) named.push(name);
+    }
+    const firstFile = line.search(TEST_FILE);
+    const blanked = line.replace(QUOTED, (q) => " ".repeat(q.length));
+    const pool = named.length ? named : [...vitest.keys()];
+    const titles = pool.flatMap((n) => vitest.get(n) ?? []);
+    for (const m of line.matchAll(QUOTED)) {
+      const at = m.index ?? 0;
+      const before = blanked.slice(0, at);
+      const inParens = (before.match(/\(/g) ?? []).length > (before.match(/\)/g) ?? []).length;
+      if (!inParens && !(firstFile >= 0 && firstFile < at)) continue;
+      cited++;
+      const title = m[1] ?? "";
+      if (!titles.some((t) => t.includes(title))) {
+        errors.push(`${where}: cites "${title}", which is no test in ${named.length ? named.join(", ") : "simulation/test/"}`);
+      }
+    }
+    for (const m of line.matchAll(PY_REF)) {
+      cited++;
+      const [, cls, method, bare] = m;
+      if (bare) { if (!pyMethods.has(bare)) errors.push(`${where}: cites ${bare}, which is no test in evennia/tests/`); continue; }
+      const methods = unittest.get(cls ?? "");
+      if (!methods) errors.push(`${where}: cites ${cls}, which is no test class in evennia/tests/`);
+      else if (method && !methods.has(method)) errors.push(`${where}: cites ${cls}.${method}, which is no test in evennia/tests/`);
+    }
+  });
+}
+
+// 5. the two Evennia docs
+function twins(): void {
+  const a = join(ARCH, "docs", "evennia.md");
+  const b = join(ARCH, "evennia", "README.md");
+  if (!readFileSync(a).equals(readFileSync(b))) errors.push(`${rel(a)} and ${rel(b)} differ; CLAUDE.md says they are byte-identical copies, so edit both`);
+}
+
 const all = markdownFiles(ROOT);
 const linked = all.filter((f) => /(^|\/)README\.md$/.test(rel(f)) || rel(f).startsWith("the-archipelago/docs/"));
 for (const f of all) frontMatter(f);
-for (const f of linked) links(f);
+for (const f of linked) { links(f); citations(f); }
 disk();
+twins();
 for (const e of errors) console.error(`  FAIL: ${e}`);
-console.log(`${all.length} Markdown files, ${linked.length} link-checked, ${errors.length} problem(s)`);
+console.log(`${all.length} Markdown files, ${linked.length} link-checked, ${cited} test citation(s) checked, ${errors.length} problem(s)`);
 process.exit(errors.length ? 1 : 0);
