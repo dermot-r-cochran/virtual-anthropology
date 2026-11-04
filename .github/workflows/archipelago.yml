@@ -32,7 +32,7 @@ jobs:
           cache-dependency-path: the-archipelago/simulation/package-lock.json
       - run: npm ci
       - run: npm run check
-      - name: README links, front matter, and the README's counts against the disk
+      - name: README links, front matter, the README's counts against the disk, cited tests and test counts against the suites
         run: npm run check:docs
       - name: Assemble the site as the Pages job does and check every file app.js reads is there
         run: npm run check:site

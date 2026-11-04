@@ -34,6 +34,16 @@
  * 5. `docs/evennia.md` and `evennia/README.md` are byte-identical, as
  *    CLAUDE.md says they are (since 2026-10-31; an edit to one is an edit to
  *    both).
+ * 6. The test counts the prose gives match the suites (since 2026-11-04).
+ *    In `CLAUDE.md`, `TestingStrategy.md`, the READMEs and `docs/`, code
+ *    fences included (CLAUDE.md counts in a command comment): "N tests" on a
+ *    line that mentions vitest or `npm test` is the number of `it(...)` in
+ *    `simulation/test/`, and on a line that mentions unittest the number of
+ *    `test_*` methods in `evennia/tests/`; "N of them fast-check properties"
+ *    is the number of `fc.assert(` calls; "N files, M tests" counts the
+ *    vitest files; and a backticked test file followed by "(N)" is that
+ *    file's own count. A test added without the prose moving used to leave
+ *    three files a step behind; now it fails here.
  *
  * The shape follows architecture-definition-model's check_docs.py. The
  * README-proof convention it backs was Dermot's decision of 10 October 2026:
@@ -153,17 +163,22 @@ for (const name of readdirSync(join(ARCH, "simulation", "test")).filter((n) => n
   const src = readFileSync(join(ARCH, "simulation", "test", name), "utf8");
   vitest.set(name, [...src.matchAll(TS_TITLE)].map((m) => m[2] ?? ""));
 }
+const properties = new Map<string, number>(); // basename → fc.assert( calls
+for (const name of vitest.keys()) {
+  properties.set(name, (readFileSync(join(ARCH, "simulation", "test", name), "utf8").match(/\bfc\.assert\(/g) ?? []).length);
+}
 const unittest = new Map<string, Set<string>>(); // class → test methods
-const pyFiles = new Set<string>();
+const pyFiles = new Map<string, number>(); // basename → test methods
 for (const name of readdirSync(join(ARCH, "evennia", "tests")).filter((n) => /^test_\w+\.py$/.test(n)).sort()) {
-  pyFiles.add(name);
   let cls = "";
+  let count = 0;
   for (const line of lines(join(ARCH, "evennia", "tests", name))) {
     const c = /^class\s+(\w+)/.exec(line);
     if (c) { cls = c[1] ?? ""; if (!unittest.has(cls)) unittest.set(cls, new Set()); continue; }
     const m = /^\s+def\s+(test_\w+)/.exec(line);
-    if (m && cls) unittest.get(cls)?.add(m[1] ?? "");
+    if (m && cls) { unittest.get(cls)?.add(m[1] ?? ""); count++; }
   }
+  pyFiles.set(name, count);
 }
 const pyMethods = new Set([...unittest.values()].flatMap((s) => [...s]));
 const TEST_FILE = /(?:[\w.-]+\/)*([\w-]+\.test\.ts|test_\w+\.py)\b/g;
@@ -216,12 +231,45 @@ function twins(): void {
   if (!readFileSync(a).equals(readFileSync(b))) errors.push(`${rel(a)} and ${rel(b)} differ; CLAUDE.md says they are byte-identical copies, so edit both`);
 }
 
+// 6. the prose's test counts against the suites
+const sum = (m: Map<string, unknown[] | number>): number => [...m.values()].reduce<number>((n, v) => n + (typeof v === "number" ? v : v.length), 0);
+const COUNT_WORD = `(\\d+|${Object.keys(NUMBERS).join("|")})`;
+const N_TESTS = new RegExp(`\\b${COUNT_WORD} tests\\b`, "gi");
+const N_FILES = new RegExp(`\\b${COUNT_WORD} files, ${COUNT_WORD} tests\\b`, "i");
+const N_PROPERTIES = new RegExp(`\\b${COUNT_WORD} of them fast-check propert`, "i");
+const PER_FILE = /`((?:[\w.-]+\/)*([\w-]+\.test\.ts|test_\w+\.py))` \((\d+)\)/g;
+const number = (w: string): number => NUMBERS[w.toLowerCase()] ?? Number(w);
+let counted = 0;
+function counts(file: string): void {
+  const expected = { vitest: sum(vitest), unittest: sum(pyFiles), properties: sum(properties), files: vitest.size };
+  lines(file).forEach((line, index) => {
+    const where = `${rel(file)}:${index + 1}`;
+    const hold = (what: string, said: string, actual: number): void => {
+      counted++;
+      if (number(said) !== actual) errors.push(`${where}: says ${said} ${what}, and the suites have ${actual}`);
+    };
+    const suite = /\bvitest\b|\bnpm test\b/i.test(line) ? "vitest" : /\bunittest\b/i.test(line) ? "unittest" : null;
+    if (suite) for (const m of line.matchAll(N_TESTS)) hold(`${suite} tests`, m[1] ?? "", expected[suite]);
+    const files = N_FILES.exec(line);
+    if (files && suite === "vitest") hold("vitest files", files[1] ?? "", expected.files);
+    const props = N_PROPERTIES.exec(line);
+    if (props) hold("fast-check properties", props[1] ?? "", expected.properties);
+    for (const m of line.matchAll(PER_FILE)) {
+      const [, , name, said] = m;
+      const actual = name?.endsWith(".ts") ? vitest.get(name ?? "")?.length : pyFiles.get(name ?? "");
+      if (actual !== undefined) hold(`tests in ${name}`, said ?? "", actual);
+    }
+  });
+}
+
 const all = markdownFiles(ROOT);
 const linked = all.filter((f) => /(^|\/)README\.md$/.test(rel(f)) || rel(f).startsWith("the-archipelago/docs/"));
+const prose = [...linked, join(ROOT, "CLAUDE.md"), join(ROOT, "TestingStrategy.md")];
 for (const f of all) frontMatter(f);
 for (const f of linked) { links(f); citations(f); }
+for (const f of prose) counts(f);
 disk();
 twins();
 for (const e of errors) console.error(`  FAIL: ${e}`);
-console.log(`${all.length} Markdown files, ${linked.length} link-checked, ${cited} test citation(s) checked, ${errors.length} problem(s)`);
+console.log(`${all.length} Markdown files, ${linked.length} link-checked, ${cited} test citation(s) and ${counted} test count(s) checked, ${errors.length} problem(s)`);
 process.exit(errors.length ? 1 : 0);
