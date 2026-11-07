@@ -36,7 +36,7 @@ The Evennia bridge client tests run from `the-archipelago/evennia/` and need no 
 python -m unittest discover -s tests -v   # 12 tests: client protocol, world plan, formatting, and a live bridge through the real server
 ```
 
-To look at the site locally, `python3 -m http.server -d the-archipelago` and open `/site/`; the page finds its data at `../exports/` when `data/` is absent.
+To look at the site locally, `python3 -m http.server -d the-archipelago` and open `/site/`; the page finds its data at `../exports/` when `data/` is absent. The published copy is <https://dermot-r-cochran.github.io/virtual-anthropology/>, redeployed from `main` by the Pages job after every merge.
 
 ## The gates, and the one that matters most
 
