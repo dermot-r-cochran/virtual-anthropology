@@ -6,8 +6,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from archipelago_evennia.bridge import BridgeClient, BridgeError, SubprocessTransport  # noqa: E402
-from archipelago_evennia.formatting import (  # noqa: E402
+from archipelago_evennia.bridge import BridgeClient, BridgeError, SubprocessTransport
+from archipelago_evennia.formatting import (
     DISCLOSURE_TAG,
     citizen_description,
     conversation_lines,
@@ -16,7 +16,7 @@ from archipelago_evennia.formatting import (  # noqa: E402
     parse_ask,
     resolve_citizen,
 )
-from archipelago_evennia.worldplan import FERRY_KEY, plan_world  # noqa: E402
+from archipelago_evennia.worldplan import FERRY_KEY, plan_world
 
 SIM_DIR = Path(__file__).resolve().parents[2] / "simulation"
 EXPERIMENT = SIM_DIR.parent / "experiments" / "the-first-fork" / "experiment.yaml"

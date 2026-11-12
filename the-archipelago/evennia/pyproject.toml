@@ -11,3 +11,7 @@ evennia = ["evennia>=6.1.0"]
 
 [tool.setuptools]
 packages = ["archipelago_evennia"]
+
+[tool.ruff]
+# Lint only, with ruff's default rules; run from this folder: ruff check .
+target-version = "py311"

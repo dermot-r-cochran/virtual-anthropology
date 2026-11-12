@@ -12,7 +12,13 @@ import json
 from evennia import CmdSet, Command  # type: ignore
 
 from .bridge import BridgeError, get_client
-from .formatting import conversation_lines, event_line, outcome_line, parse_ask, resolve_citizen
+from .formatting import (
+    conversation_lines,
+    event_line,
+    outcome_line,
+    parse_ask,
+    resolve_citizen,
+)
 
 LOCK = "cmd:perm(Researcher) or perm(Builder)"
 

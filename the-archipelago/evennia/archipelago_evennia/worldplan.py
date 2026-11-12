@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from itertools import pairwise
 from typing import Any
 
 FERRY_KEY = "ferry-deck"
@@ -44,7 +45,7 @@ def plan_world(world: dict[str, Any]) -> WorldPlan:
         specs = region["rooms"]
         for spec in specs:
             rooms.append(RoomPlan(spec["key"], spec["name"], spec["description"], island, bool(spec.get("civic")), spec["key"] == region["harbour"]))
-        for a, b in zip(specs, specs[1:]):
+        for a, b in pairwise(specs):
             exits.append(ExitPlan(f"to {b['name']}", a["key"], b["key"]))
             exits.append(ExitPlan(f"to {a['name']}", b["key"], a["key"]))
         exits.append(ExitPlan("board ferry", region["harbour"], FERRY_KEY, ("ferry",)))
