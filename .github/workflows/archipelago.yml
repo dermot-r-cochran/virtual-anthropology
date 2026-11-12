@@ -33,6 +33,8 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run lint
+      - name: Coverage over src/, held to the ratchet in vitest.config.ts
+        run: npm run coverage
       - name: README links, front matter, the README's counts against the disk, cited tests and test counts against the suites
         run: npm run check:docs
       - name: Assemble the site as the Pages job does and check every file app.js reads is there
