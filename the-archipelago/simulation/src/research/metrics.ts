@@ -28,7 +28,9 @@ export function gini(values: readonly number[]): number {
   const total = xs.reduce((a, b) => a + b, 0);
   if (n === 0 || total === 0) return 0;
   let weighted = 0;
-  xs.forEach((x, i) => (weighted += (i + 1) * x));
+  xs.forEach((x, i) => {
+    weighted += (i + 1) * x;
+  });
   return round4((2 * weighted) / (n * total) - (n + 1) / n);
 }
 

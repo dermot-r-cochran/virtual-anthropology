@@ -244,7 +244,9 @@ export function buildGenesisState(input: GenesisConfig): { state: WorldState; ke
         { action: "contributed-to-archive", by: holder.id, from: `${holder.id}:${src.id}`, atSeq: 0, island: c.archive, note: `contributed to the ${c.archive} collective archive at genesis` },
       ],
     };
-    (state.archives[c.archive] ??= []).push(id);
+    const list = state.archives[c.archive] ?? [];
+    state.archives[c.archive] = list;
+    list.push(id);
   }
 
   for (const inst of config.institutions) {

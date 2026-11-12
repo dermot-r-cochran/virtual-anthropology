@@ -13,6 +13,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check": "npm run typecheck && npm test",
+    "lint": "biome lint .",
     "check:docs": "tsx scripts/check-docs.ts",
     "check:site": "tsx scripts/check-site.ts",
     "scenario:first-fork": "tsx src/cli.ts run ../experiments/the-first-fork/experiment.yaml",
@@ -28,6 +29,7 @@
     "zod": "^4.6.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.6.4",
     "@types/node": "^22.20.4",
     "fast-check": "^4.10.2",
     "tsx": "^4.23.15",
