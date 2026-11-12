@@ -3,7 +3,7 @@
  * no package is imported, so it runs under `tsx` (as CI runs it) or under
  * any Node that strips types.
  *
- * Five checks:
+ * Seven checks:
  *
  * 1. Every relative link in a README (the repository's, The Archipelago's,
  *    and any README below it) and under `the-archipelago/docs/` resolves to
@@ -44,6 +44,18 @@
  *    vitest files; and a backticked test file followed by "(N)" is that
  *    file's own count. A test added without the prose moving used to leave
  *    three files a step behind; now it fails here.
+ * 7. The run counts the prose gives its properties match the suites (since
+ *    2026-11-12). In the same files, "property (fast-check, N runs)", with
+ *    or without emphasis on the first word, is a statement about one
+ *    `fc.assert(` call, and "property (fast-check)" a statement that the
+ *    call declares no `numRuns` and so runs fast-check's default. The file
+ *    is the vitest file the line names, or the nearest line above that
+ *    names one (the kernel bullet's properties are sub-bullets), and a
+ *    heading ends that reach. The statements about a file, in order, must
+ *    be that file's `fc.assert(` calls, in order, each with its `numRuns`;
+ *    and every file that holds a property is stated somewhere. So a
+ *    `numRuns` changed in a test, a number changed in the prose, or a
+ *    property added without its line each fail here.
  *
  * The shape follows architecture-definition-model's check_docs.py. The
  * README-proof convention it backs was Dermot's decision of 10 October 2026:
@@ -262,14 +274,55 @@ function counts(file: string): void {
   });
 }
 
+// 7. the prose's property run counts against the suites
+const runs = new Map<string, (number | null)[]>(); // basename → numRuns of each fc.assert( call, null when undeclared
+for (const name of vitest.keys()) {
+  const calls = readFileSync(join(ARCH, "simulation", "test", name), "utf8").split(/\bfc\.assert\(/).slice(1);
+  runs.set(name, calls.map((call) => {
+    const n = /\bnumRuns:\s*(\d+)/.exec(call.split(/^\s*(?:it|test)\(/m)[0] ?? "");
+    return n ? Number(n[1]) : null;
+  }));
+}
+const PROPERTY = /\bproperty\*{0,2} \(fast-check(?:, (\d+) runs?)?\)/gi;
+const runsText = (n: number | null | undefined): string => (n == null ? "no run count (fast-check's default)" : `${n} run(s)`);
+const stated = new Set<string>();
+let held = 0;
+function runCounts(file: string): void {
+  const said = new Map<string, { where: string; n: number | null }[]>();
+  let current = "";
+  lines(file).forEach((line, index) => {
+    if (line.startsWith("#")) { current = ""; return; }
+    const named = [...line.matchAll(TEST_FILE)].map((m) => m[1] ?? "").find((n) => vitest.has(n));
+    if (named) current = named;
+    for (const m of line.matchAll(PROPERTY)) {
+      const where = `${rel(file)}:${index + 1}`;
+      if (!current) { errors.push(`${where}: a property is stated with no test file named on the line or above it`); continue; }
+      said.set(current, [...(said.get(current) ?? []), { where, n: m[1] ? Number(m[1]) : null }]);
+    }
+  });
+  for (const [name, claims] of said) {
+    stated.add(name);
+    const actual = runs.get(name) ?? [];
+    claims.forEach((claim, i) => {
+      held++;
+      if (i >= actual.length) errors.push(`${claim.where}: states property ${i + 1} of ${name}, which has ${actual.length}`);
+      else if (claim.n !== actual[i]) errors.push(`${claim.where}: says ${runsText(claim.n)} for property ${i + 1} of ${name}, and it declares ${runsText(actual[i])}`);
+    });
+    if (claims.length < actual.length) errors.push(`${rel(file)}: states ${claims.length} of the ${actual.length} properties in ${name}; each has its own "property (fast-check...)" statement`);
+  }
+}
+
 const all = markdownFiles(ROOT);
 const linked = all.filter((f) => /(^|\/)README\.md$/.test(rel(f)) || rel(f).startsWith("the-archipelago/docs/"));
 const prose = [...linked, join(ROOT, "CLAUDE.md"), join(ROOT, "TestingStrategy.md")];
 for (const f of all) frontMatter(f);
 for (const f of linked) { links(f); citations(f); }
-for (const f of prose) counts(f);
+for (const f of prose) { counts(f); runCounts(f); }
+for (const [name, actual] of runs) {
+  if (actual.length && !stated.has(name)) errors.push(`TestingStrategy.md: ${name} holds ${actual.length} fast-check propert${actual.length === 1 ? "y" : "ies"}, and no prose states ${actual.length === 1 ? "it" : "them"}`);
+}
 disk();
 twins();
 for (const e of errors) console.error(`  FAIL: ${e}`);
-console.log(`${all.length} Markdown files, ${linked.length} link-checked, ${cited} test citation(s) and ${counted} test count(s) checked, ${errors.length} problem(s)`);
+console.log(`${all.length} Markdown files, ${linked.length} link-checked, ${cited} test citation(s), ${counted} test count(s) and ${held} property run count(s) checked, ${errors.length} problem(s)`);
 process.exit(errors.length ? 1 : 0);
