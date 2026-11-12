@@ -8,8 +8,9 @@ import os
 import shutil
 import subprocess
 import threading
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, Callable, Optional, Protocol
+from typing import Any, Protocol
 
 from . import PROTOCOL_VERSION
 
@@ -26,7 +27,7 @@ class Transport(Protocol):
 class SubprocessTransport:
     """Runs ``npx tsx src/bridge/server.ts <experiment.yaml>`` and talks over stdio."""
 
-    def __init__(self, simulation_dir: str | os.PathLike[str], experiment: str | os.PathLike[str], command: Optional[list[str]] = None) -> None:
+    def __init__(self, simulation_dir: str | os.PathLike[str], experiment: str | os.PathLike[str], command: list[str] | None = None) -> None:
         self._dir = Path(simulation_dir)
         # Resolve npx through PATH: on Windows it is npx.cmd, which Popen does not find by bare name.
         cmd = command or [shutil.which("npx") or "npx", "--no-install", "tsx", "src/bridge/server.ts", str(experiment)]
@@ -61,7 +62,7 @@ class BridgeClient:
         self._transport = transport
         self._ids: Callable[[], int] = itertools.count(1).__next__
 
-    def request(self, method: str, params: Optional[dict[str, Any]] = None) -> Any:
+    def request(self, method: str, params: dict[str, Any] | None = None) -> Any:
         req: dict[str, Any] = {"id": self._ids(), "method": method}
         if params is not None:
             req["params"] = params
@@ -92,38 +93,38 @@ class BridgeClient:
     def events(self, since_seq: int = -1) -> list[dict[str, Any]]:
         return self.request("events", {"sinceSeq": since_seq})
 
-    def inspect(self, citizen: str, researcher: Optional[str] = None) -> dict[str, Any]:
+    def inspect(self, citizen: str, researcher: str | None = None) -> dict[str, Any]:
         return self.request("inspect", _with_researcher({"citizen": citizen}, researcher))
 
-    def provenance(self, memory: str, researcher: Optional[str] = None) -> dict[str, Any]:
+    def provenance(self, memory: str, researcher: str | None = None) -> dict[str, Any]:
         return self.request("provenance", _with_researcher({"memory": memory}, researcher))
 
-    def converse(self, citizen: str, utterance: str, researcher: Optional[str] = None) -> dict[str, Any]:
+    def converse(self, citizen: str, utterance: str, researcher: str | None = None) -> dict[str, Any]:
         return self.request("converse", _with_researcher({"citizen": citizen, "utterance": utterance}, researcher))
 
     def step(self, rounds: int = 1) -> dict[str, Any]:
         return self.request("step", {"rounds": rounds})
 
-    def pause(self, reason: str, researcher: Optional[str] = None) -> dict[str, Any]:
+    def pause(self, reason: str, researcher: str | None = None) -> dict[str, Any]:
         return self.request("pause", _with_researcher({"reason": reason}, researcher))
 
-    def resume(self, reason: str, researcher: Optional[str] = None) -> dict[str, Any]:
+    def resume(self, reason: str, researcher: str | None = None) -> dict[str, Any]:
         return self.request("resume", _with_researcher({"reason": reason}, researcher))
 
-    def intervene(self, spec: dict[str, Any], justification: str, researcher: Optional[str] = None) -> dict[str, Any]:
+    def intervene(self, spec: dict[str, Any], justification: str, researcher: str | None = None) -> dict[str, Any]:
         return self.request("intervene", _with_researcher({"spec": spec, "justification": justification}, researcher))
 
     def export(self) -> dict[str, Any]:
         return self.request("export")
 
 
-def _with_researcher(params: dict[str, Any], researcher: Optional[str]) -> dict[str, Any]:
+def _with_researcher(params: dict[str, Any], researcher: str | None) -> dict[str, Any]:
     if researcher is not None:
         params["researcher"] = researcher
     return params
 
 
-_client: Optional[BridgeClient] = None
+_client: BridgeClient | None = None
 
 
 def get_client() -> BridgeClient:
@@ -134,14 +135,14 @@ def get_client() -> BridgeClient:
     """
     global _client
     if _client is None:
-        sim_dir: Optional[str] = None
-        experiment: Optional[str] = None
+        sim_dir: str | None = None
+        experiment: str | None = None
         try:  # inside Evennia
             from django.conf import settings  # type: ignore
 
             sim_dir = getattr(settings, "ARCHIPELAGO_SIMULATION_DIR", None)
             experiment = getattr(settings, "ARCHIPELAGO_EXPERIMENT", None)
-        except Exception:  # pragma: no cover - outside Django
+        except Exception:  # noqa: BLE001, S110  # pragma: no cover - outside Django, import or settings access may raise anything
             pass
         sim_dir = sim_dir or os.environ.get("ARCHIPELAGO_SIMULATION_DIR")
         if not sim_dir:
