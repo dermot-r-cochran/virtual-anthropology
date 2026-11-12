@@ -24,8 +24,8 @@ jobs:
       run:
         working-directory: the-archipelago/simulation
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -43,7 +43,7 @@ jobs:
           npm run publish:two-voices
           npm run verify:two-voices
           git diff --exit-code -- ../exports ../reports
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - name: Evennia bridge client tests (no Evennia install needed)
@@ -62,8 +62,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -82,11 +82,12 @@ jobs:
           cp -r the-archipelago/site/. _site/
           cp -r the-archipelago/exports _site/data
           cp -r the-archipelago/reports _site/reports
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
         with:
           enablement: true
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+          include-hidden-files: true
       - id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
