@@ -39,7 +39,7 @@ function inline(s) {
     .replace(/(^|[^\w])_([^_]+)_(?=[^\w]|$)/g, "$1<em>$2</em>");
 }
 function markdown(src) {
-  const lines = src.split("\n");
+  const lines = src.split(/\r?\n/);
   const out = [];
   let i = 0;
   while (i < lines.length) {

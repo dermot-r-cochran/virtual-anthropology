@@ -16,7 +16,7 @@ All simulation commands run from `the-archipelago/simulation/`:
 
 ```bash
 npm ci                        # first thing in a fresh checkout: node_modules/ is gitignored and nothing is installed (Node >= 22.12, see package.json engines)
-npm run check                 # tsc --noEmit, then vitest run (51 tests in test/, five of them fast-check properties)
+npm run check                 # tsc --noEmit, then vitest run (56 tests in test/, five of them fast-check properties; site.test.ts runs site/app.js against the exports)
 npm run lint                  # Biome's recommended lint over src/, test/ and scripts/ (biome.jsonc; lint only, no formatter; errors fail, warnings print)
 npm run coverage              # vitest with v8 coverage over src/, failing below the ratchet in vitest.config.ts (71/57/86/76: statements, branches, functions, lines)
 npm test                      # vitest only; npm run test:watch to keep it running
