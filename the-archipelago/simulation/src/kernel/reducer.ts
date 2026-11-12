@@ -37,7 +37,9 @@ function addMemory(s: WorldState, m: Memory): void {
     if (m.status === "autobiographical" || m.status === "integrated") holder.selfNarrativeMemories.push(m.id);
     else holder.heldMemories.push(m.id);
   } else if (m.archive !== null) {
-    (s.archives[m.archive] ??= []).push(m.id);
+    const list = s.archives[m.archive] ?? [];
+    s.archives[m.archive] = list;
+    list.push(m.id);
   }
 }
 

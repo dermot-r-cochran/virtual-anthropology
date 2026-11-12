@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "includes": ["src/**", "test/**", "scripts/**", "*.ts"] },
+  // Lint only: no formatter, so no file is rewritten for layout.
+  "formatter": { "enabled": false },
+  "assist": { "enabled": false },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "suspicious": {
+        // A symbolic mind's rule base is data with a `then:` field. Its canonical hash is the
+        // mind's provenance, so renaming the field would move every export.
+        "noThenProperty": "off"
+      },
+      "style": {
+        // Tests assert a value is present with `!` right before they check it.
+        "noNonNullAssertion": "off"
+      }
+    }
+  }
+}

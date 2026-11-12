@@ -50,7 +50,10 @@ export function createBridge(run: FirstForkRun): Bridge {
     const key = id ?? run.session.researcherId;
     if (!world.state.researchers.includes(key)) throw new Error(`researcher ${key} is not registered for this experiment`);
     let s = sessions.get(key);
-    if (!s) sessions.set(key, (s = new ResearcherSession(key, world, runtime)));
+    if (!s) {
+      s = new ResearcherSession(key, world, runtime);
+      sessions.set(key, s);
+    }
     return s;
   };
   let liveRounds = 0;
