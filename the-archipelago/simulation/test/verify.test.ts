@@ -8,7 +8,7 @@ import { verifyDataset } from "../src/export/dataset.js";
 import { canonicalJson, sha256Hex } from "../src/kernel/canonical.js";
 import { loadManifest } from "../src/research/manifest.js";
 
-// `verifyDataset` is what `npm run verify:*` and the line printed in every report run. CI proves it
+// `verifyDataset` is what `npm run verify:*` and the Verify line printed in each experiment report run. CI proves it
 // passes on the committed exports; these tests prove it fails when it should, each failure by name.
 const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const PUBLISHED = [
