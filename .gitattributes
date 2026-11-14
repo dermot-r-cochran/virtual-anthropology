@@ -1,0 +1,6 @@
+# The published datasets and reports are recorded by sha256 (index.json, research_manifest.yaml),
+# and the hash is of the LF bytes the publish commands write. Git must hand those bytes back on every
+# platform: with core.autocrlf, the Windows default, a checkout otherwise rewrites each file with
+# CRLF and `npm run verify:*` reports a sound dataset as a hash mismatch for every file.
+the-archipelago/exports/** text eol=lf
+the-archipelago/reports/** text eol=lf
