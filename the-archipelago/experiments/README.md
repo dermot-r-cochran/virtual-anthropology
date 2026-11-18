@@ -13,5 +13,5 @@ Each directory holds an `experiment.yaml`, the authoritative definition of a rep
 To publish an experiment:
 
 ```sh
-cd ../simulation && SOURCE_DATE_EPOCH=1767225600 npx tsx src/cli.ts publish ../experiments/the-first-fork/experiment.yaml ..
+cd ../simulation && npm run publish:first-fork
 ```

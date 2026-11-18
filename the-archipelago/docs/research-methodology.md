@@ -50,7 +50,7 @@ Definitions live in `simulation/src/research/metric-registry.ts`. They are repro
 
 1. Add `experiments/<name>/experiment.yaml`, with schemaVersion 2 (see `research/manifest.ts`) and a `category` of `demonstration` or `experiment`.
 2. Register the scenario in `simulation/src/scenarios/index.ts`.
-3. Run `npx tsx src/cli.ts publish ../experiments/<name>/experiment.yaml ..` with `SOURCE_DATE_EPOCH=1767225600`, pin `reproducibility` from the run, and publish again so the committed `dataset.json` carries the pinned manifest. Add `publish:<name>` and `verify:<name>` scripts beside the First Fork's and run them in both jobs of `.github/workflows/archipelago.yml`, so CI holds the new output still.
+3. Run `npx tsx --env-file=publish.env src/cli.ts publish ../experiments/<name>/experiment.yaml ..` (the env file sets `SOURCE_DATE_EPOCH=1767225600`, and works in any shell, Windows included), pin `reproducibility` from the run, and publish again so the committed `dataset.json` carries the pinned manifest. Add `publish:<name>` and `verify:<name>` scripts beside the First Fork's and run them in both jobs of `.github/workflows/archipelago.yml`, so CI holds the new output still.
 4. Optionally declare a `study` (see above); a scenario needs a branch point (`ScenarioDriver.branch`) before it can run timelines.
 
 Hypotheses are operationalised over the metrics in `research/metric-registry.ts` as it stands. Adding a metric for one experiment changes the definitions reproduced in every report, so it is a change to every published export; prefer existing metrics, and add one only in a pull request that regenerates them all.

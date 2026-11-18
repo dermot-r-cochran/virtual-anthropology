@@ -623,8 +623,8 @@ outputs:
     sha256: 6d153045abf2864c14c78f84547c6edf28532c74e83119864e55cb808fb2b023
     bytes: 164490
   - path: exports/the-first-fork-v1/research.json
-    sha256: 0943019f44d8fbceb5b9d44d334ce580276c8bb0e33c727de1ef54a2848621d3
-    bytes: 79020
+    sha256: c2919b4144df8b8848aff2be9360177e16a3709762de200ece9641cd90d766d2
+    bytes: 79169
   - path: exports/the-first-fork-v1/lineage_graph.json
     sha256: 979d95e495fd656ec97e1b05c44c45adcbc01a174ad972ce525061a389100cc3
     bytes: 3444
@@ -650,8 +650,8 @@ outputs:
     sha256: 41545e6aa777faf18ec086fc3456f0d3e8855823696a5da0d0954e742106c3aa
     bytes: 52212
   - path: exports/the-first-fork-v1/publication/experiment-report.md
-    sha256: 71f3573ad3f3dfe470a2bd1422869c015b8ad431efac66e02ed340ee17ab107c
-    bytes: 31093
+    sha256: ac86e1fe09238bf12f434aabf6e66c4aa905e164a477d236c8972aeafab6ea49
+    bytes: 31242
   - path: exports/the-first-fork-v1/publication/civilization-report.md
     sha256: fed9ea6ce93d4e153258553fd5f116b377058496ca6f7b0faf3ee4a8d0af0c8d
     bytes: 8510
@@ -677,8 +677,8 @@ outputs:
     sha256: 050bfe643b7cb78295ed610c1690ad10e5c0d2c0f2e12b9b1531f919ac1b84c1
     bytes: 1451
   - path: reports/experiments/the-first-fork-v1.md
-    sha256: 71f3573ad3f3dfe470a2bd1422869c015b8ad431efac66e02ed340ee17ab107c
-    bytes: 31093
+    sha256: ac86e1fe09238bf12f434aabf6e66c4aa905e164a477d236c8972aeafab6ea49
+    bytes: 31242
   - path: reports/civilizations/archipelago-first-fork.md
     sha256: fed9ea6ce93d4e153258553fd5f116b377058496ca6f7b0faf3ee4a8d0af0c8d
     bytes: 8510

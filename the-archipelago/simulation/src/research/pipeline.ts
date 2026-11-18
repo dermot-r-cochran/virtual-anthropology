@@ -334,7 +334,7 @@ export function draftPublication(experiment: Experiment, manifest: ExperimentMan
         `- Seed: \`${experiment.seed}\``,
         `- Event store head hash: \`${experiment.eventStore.headHash}\` (${experiment.eventStore.eventCount} events)`,
         "- Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`",
-        "- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`",
+        `- Verify: \`cd simulation && npx tsx src/cli.ts verify ../exports/${experiment.id} ../experiments/${experiment.scenario}/experiment.yaml\` (checks the files, replays the event store and compares its head with the manifest's expected value)`,
         "", "### Metric definitions", "", "| metric | name | unit | definition |", "|---|---|---|---|", ...defRows,
       ].join("\n")),
     ],
