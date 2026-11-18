@@ -190,7 +190,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 - Seed: `archipelago/two-voices/v1`
 - Event store head hash: `4b6c3f71e1ac8fb3e11a52832d1ab275a837af8227fbc3fa19725ee16b5c5c25` (34 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
-- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`
+- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/two-voices-v1 ../experiments/two-voices/experiment.yaml` (checks the files, replays the event store and compares its head with the manifest's expected value)
 
 ### Metric definitions
 

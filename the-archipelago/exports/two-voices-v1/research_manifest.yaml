@@ -316,8 +316,8 @@ outputs:
     sha256: 183dba1c9cba3a90a00c339f888eef06764bf3936da2a08c0e3759b3e73f1f39
     bytes: 81225
   - path: exports/two-voices-v1/research.json
-    sha256: 18c7f62415f5540fca0966a995dd4654e9ef020c5ab0ef2c49851f43e4e614c6
-    bytes: 53476
+    sha256: 9035c379d34033d863dc128200bec2904bcbc33f10fef65f03a2ff4cbbeaa59d
+    bytes: 53617
   - path: exports/two-voices-v1/lineage_graph.json
     sha256: 3e90f7864145e18392c735d45bc7915619d890622fd9a01c9de8af20b3bf4abf
     bytes: 845
@@ -337,8 +337,8 @@ outputs:
     sha256: a0e8c75da0e8c32c03543baaa5a6dd2de06a33eaeade3ac16545a99062105884
     bytes: 591
   - path: exports/two-voices-v1/publication/experiment-report.md
-    sha256: d45a50d8f8889d35dc5f86bb06971f9832f80a57589888ea7e6bdebe456697a3
-    bytes: 20967
+    sha256: c3ad5e00f19812547d4999b3833c11f1a4e411fce2511c137d83b2e98b17752d
+    bytes: 21108
   - path: exports/two-voices-v1/publication/civilization-report.md
     sha256: a2c36ee1b54778c5b4f3ec94960c0e455ed00073e9164b2530acaa679adbba93
     bytes: 6099
@@ -352,8 +352,8 @@ outputs:
     sha256: 230fe26d9bfd5a6a7a3f998ffbb6e66f5ec01761ebf08fb50ab2953f63288e28
     bytes: 8337
   - path: reports/experiments/two-voices-v1.md
-    sha256: d45a50d8f8889d35dc5f86bb06971f9832f80a57589888ea7e6bdebe456697a3
-    bytes: 20967
+    sha256: c3ad5e00f19812547d4999b3833c11f1a4e411fce2511c137d83b2e98b17752d
+    bytes: 21108
   - path: reports/civilizations/archipelago-two-voices.md
     sha256: a2c36ee1b54778c5b4f3ec94960c0e455ed00073e9164b2530acaa679adbba93
     bytes: 6099

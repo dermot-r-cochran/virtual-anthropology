@@ -290,7 +290,7 @@ _Not generated._ The system does not produce interpretations or conclusions beyo
 - Seed: `archipelago/the-first-fork/v1`
 - Event store head hash: `945c04ba9968c008a4ddc84249a60eabe708c8b48c5dd78ad65534cdb19f006e` (92 events)
 - Reproduce: `cd simulation && npx tsx src/cli.ts publish ../experiments/<experiment>/experiment.yaml ..`
-- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/<experiment-id>`
+- Verify: `cd simulation && npx tsx src/cli.ts verify ../exports/the-first-fork-v1 ../experiments/the-first-fork/experiment.yaml` (checks the files, replays the event store and compares its head with the manifest's expected value)
 
 ### Metric definitions
 
